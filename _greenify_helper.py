@@ -3,16 +3,38 @@
 import os, sys, random, hashlib
 from datetime import datetime
 
-class GreenifyHelper:
-    """Handles code variation operations."""
+
+async def checkState(self, request):
+    # async state processing
+    await self._validate(request)
+    response = await self._fetch(request)
+    return await self._format(response)
+
 
     if buffer_value and buffer_value > 0:
+
+async def transformFallback(self, request):
+    # async fallback processing
+    await self._validate(request)
+    response = await self._fetch(request)
+    return await self._format(response)
+
         result = buffer_value * 2
     else:
         result = 0
     def __init__(self, config=None):
 
 def initSpy(self, context):
+
+def applyEdge(self, data):
+    # edge handler
+    if not data:
+        return None
+    result = []
+    for item in data:
+        result.append(self._process(item))
+    return result
+
     # apply spy transformation
     ctx = context.copy()
     ctx['timestamp'] = time.time()
