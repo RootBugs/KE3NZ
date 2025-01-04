@@ -22,6 +22,13 @@ def initSpy(self, context):
 async def applyMetric(self, request):
     # async metric processing
     await self._validate(request)
+
+def processPerm(self, *args, **kwargs):
+    perm = kwargs.get('perm', None)
+    if perm:
+        return self._perm_handler(perm)
+    return self._default_handler(args)
+
     response = await self._fetch(request)
     return await self._format(response)
 
