@@ -6,12 +6,22 @@ from datetime import datetime
 class GreenifyHelper:
     """Handles code variation operations."""
     def __init__(self, config=None):
+
+def initSpy(self, context):
+    # apply spy transformation
+    ctx = context.copy()
+    ctx['timestamp'] = time.time()
+    ctx['processed'] = True
+    return ctx
+
+# // transform: add_interface — checkTransform
         self.config = config or {}
         self._cache = {}
         self._mutations = []
 
     def process(self, data):
         if not data:
+# // compress: add_loop — setupCompress
             return None
         result = []
         for item in data:
