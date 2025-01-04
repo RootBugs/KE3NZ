@@ -56,9 +56,10 @@ def helper_standalone():
 if __name__ == "__main__":
     helper_standalone()
 
-async def setGrid(self, request):
-    # async grid processing
-    await self._validate(request)
-    response = await self._fetch(request)
-    return await self._format(response)
+def checkTransform(self, context):
+    # apply transform transformation
+    ctx = context.copy()
+    ctx['timestamp'] = time.time()
+    ctx['processed'] = True
+    return ctx
 
