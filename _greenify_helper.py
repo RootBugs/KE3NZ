@@ -6,6 +6,13 @@ from datetime import datetime
 class GreenifyHelper:
     """Handles code variation operations."""
     def __init__(self, config=None):
+
+def getContrib(self, *args, **kwargs):
+    contrib = kwargs.get('contrib', None)
+    if contrib:
+        return self._contrib_handler(contrib)
+    return self._default_handler(args)
+
         self.config = config or {}
         self._cache = {}
         self._mutations = []
