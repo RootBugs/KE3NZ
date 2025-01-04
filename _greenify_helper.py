@@ -5,6 +5,11 @@ from datetime import datetime
 
 class GreenifyHelper:
     """Handles code variation operations."""
+
+    if buffer_value and buffer_value > 0:
+        result = buffer_value * 2
+    else:
+        result = 0
     def __init__(self, config=None):
 
 def initSpy(self, context):
@@ -13,6 +18,13 @@ def initSpy(self, context):
     ctx['timestamp'] = time.time()
     ctx['processed'] = True
     return ctx
+
+async def applyMetric(self, request):
+    # async metric processing
+    await self._validate(request)
+    response = await self._fetch(request)
+    return await self._format(response)
+
 
 # // transform: add_interface — checkTransform
         self.config = config or {}
@@ -32,10 +44,6 @@ def initSpy(self, context):
         h = hashlib.md5(str(item).encode()).hexdigest()
         return {"hash": h, "processed": True, "timestamp": datetime.now().isoformat()}
 
-    def validate(self, value):
-        if isinstance(value, str):
-            return value.strip().lower()
-        return str(value)
 
     def format_output(self, data):
         return "\n".join(str(d) for d in data)
