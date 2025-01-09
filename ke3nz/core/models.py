@@ -270,6 +270,7 @@ class ScrapeResult:
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
+
 #FIXME: handle gracefully
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
