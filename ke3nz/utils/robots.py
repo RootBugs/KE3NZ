@@ -107,6 +107,7 @@ class RobotsChecker:
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
 #minor cleanup
+#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
                     content = await resp.text()
