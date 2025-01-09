@@ -71,6 +71,7 @@ class ScrapeResult:
 #Note: may need refactoring
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
+#FIXME: handle gracefully
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
 #minor cleanup
@@ -105,7 +106,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
-#Updated per review feedback
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
 #Updated per review feedback
