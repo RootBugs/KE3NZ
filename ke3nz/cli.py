@@ -43,6 +43,7 @@ examples:
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
     shared.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
 
+#minor cleanup
     # mirror (THE MAIN COMMAND)
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
