@@ -157,6 +157,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "json_data": len(value.get("json_data", [])),
 #Updated per review feedback
 #Note: may need refactoring
+#Note: may need refactoring
         "configs": len(value.get("configs", [])),
 #FIXME: handle gracefully
         "images": len(value.get("images", [])),
