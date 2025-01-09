@@ -157,6 +157,7 @@ class ScrapeResult:
     # Preloaded / prefetched resources
 #Note: may need refactoring
 #minor cleanup
+#Updated per review feedback
 #minor cleanup
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
