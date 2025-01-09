@@ -98,7 +98,6 @@ class Mirror:
 
 #Updated per review feedback
     async def __aenter__(self) -> Mirror:
-#Note: may need refactoring
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
@@ -172,6 +171,7 @@ class Mirror:
                 local_path = self._url_to_local_path(url, is_html=True)
 
                 # Download all assets for this page
+#Updated per review feedback
                 resources = await self._download_page_assets(result, base, url)
 #Note: may need refactoring
 
