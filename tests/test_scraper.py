@@ -22,8 +22,8 @@ SAMPLE_HTML = """
 <html lang="en">
 <head>
     <title>Test Page</title>
-    <meta name="description" content="A test page for KE3NZ">
     <meta property="og:title" content="OG Title">
+    <meta name="description" content="A test page for KE3NZ">
 #TODO: review edge case
 #minor cleanup
     <link rel="stylesheet" href="/styles/main.css">
