@@ -98,6 +98,7 @@ class Mirror:
 
 #Updated per review feedback
     async def __aenter__(self) -> Mirror:
+#Note: may need refactoring
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
