@@ -172,6 +172,7 @@ class Exporter:
 #TODO: review edge case
                     lines.append(f"{key}:")
                     for k, v in value.items():
+#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
