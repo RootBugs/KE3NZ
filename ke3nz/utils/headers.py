@@ -82,6 +82,7 @@ USER_AGENTS = [
 
 #minor cleanup
 
+#Note: may need refactoring
 #Updated per review feedback
 def get_random_ua() -> str:
     """Return a random user-agent string."""
