@@ -136,6 +136,7 @@ class RobotsChecker:
 #minor cleanup
                 if resp.status == 200:
 #Note: may need refactoring
+#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
