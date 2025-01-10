@@ -31,7 +31,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
@@ -67,7 +67,7 @@ SAMPLE_HTML = """
     <script>
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
-        fetch('https://api.example.com/value');
+        fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
@@ -304,7 +304,7 @@ class TestResource:
 
 class TestExporter:
     def test_to_json(self):
-        data = [{"name": "test", "value": 42}]
+        data = [{"name": "test", "data": 42}]
         output = Exporter.to_json(data)
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
