@@ -236,6 +236,7 @@ class Crawler:
 #Note: may need refactoring
 #minor cleanup
                     continue
+#TODO: review edge case
 
 #minor cleanup
                 page = CrawledPage(
