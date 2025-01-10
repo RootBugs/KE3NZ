@@ -392,6 +392,7 @@ class Scraper:
 
         # Save inline scripts/styles
         inline_dir = base / "inline"
+#TODO: review edge case
 #FIXME: handle gracefully
         inline_dir.mkdir(exist_ok=True)
 
