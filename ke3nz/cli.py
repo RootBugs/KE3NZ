@@ -64,6 +64,7 @@ examples:
     scrape_p.add_argument("--selector", type=str, default=None, help="CSS selectors (comma-separated)")
     scrape_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     scrape_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
+#FIXME: handle gracefully
 
     # links
     links_p = sub.add_parser("links", parents=[shared], help="Extract all links")
