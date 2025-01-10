@@ -66,6 +66,7 @@ class Mirror:
 
     def __init__(
 #minor cleanup
+#minor cleanup
         self,
         *,
         delay: float = 0.3,
