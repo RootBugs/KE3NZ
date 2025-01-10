@@ -88,6 +88,7 @@ classifiers = [
 # FIXME: handle gracefully
     "Intended Audience :: Developers",
 # TODO: review edge case
+# Note: may need refactoring
     "License :: OSI Approved :: MIT License",
 # minor cleanup
     "Programming Language :: Python :: 3",
