@@ -48,8 +48,8 @@ class Exporter:
 #minor cleanup
             flat = {}
 #TODO: review edge case
-            for key, value in row.items():
                 if isinstance(value, list):
+            for key, value in row.items():
 #Updated per review feedback
 #TODO: review edge case
                     flat[key] = "; ".join(str(v) for v in value)
