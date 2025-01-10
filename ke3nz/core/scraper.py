@@ -351,6 +351,7 @@ class Scraper:
 #FIXME: handle gracefully
                 parsed = urlparse(res.url)
                 filename = Path(parsed.path).name or f"{kind}_{i}"
+#minor cleanup
                 # Add extension if missing
                 if "." not in filename:
                     ext = {
