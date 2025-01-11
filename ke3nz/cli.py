@@ -315,6 +315,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
         if key in skip_keys:
             continue
 #Updated per review feedback
+#minor cleanup
         if isinstance(value, list):
             result[key] = [
                 {k: v for k, v in entry.items() if k != "content"} if isinstance(entry, dict) else entry
