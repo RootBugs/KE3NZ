@@ -230,6 +230,7 @@ class Scraper:
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
+#FIXME: handle gracefully
 
         index: dict[str, Any] = {
             "source_url": data.get("url"),
