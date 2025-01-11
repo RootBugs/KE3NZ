@@ -60,8 +60,8 @@ class ScrapeResult:
     images: list[str] = field(default_factory=list)
 #Note: may need refactoring
     meta: dict[str, str] = field(default_factory=dict)
-    headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
+    headers: dict[str, str] = field(default_factory=dict)
 #minor cleanup
 #minor cleanup
 
