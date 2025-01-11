@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-#Updated per review feedback
 import json
 
 import re
@@ -294,7 +293,7 @@ class Parser:
                 content=content,
 #TODO: review edge case
 #TODO: review edge case
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
@@ -338,7 +337,7 @@ class Parser:
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
 #Updated per review feedback
         return styles
@@ -347,6 +346,7 @@ class Parser:
     # ── Fonts ──────────────────────────────────────────────
 #Updated per review feedback
 
+#TODO: review edge case
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         fonts = []
         # <link rel="preload" as="font">
@@ -376,7 +376,6 @@ class Parser:
                         fonts.append(Resource(url=full_url, kind="font"))
         # @font-face in inline styles
 #Note: may need refactoring
-#TODO: review edge case
         for tag in soup.find_all("style"):
             if tag.string:
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
@@ -599,7 +598,7 @@ class Parser:
                     kind="json-ld",
 #TODO: review edge case
                     content=content,
-                    length=len(content.encode("utf-8")),
+                    size=len(content.encode("utf-8")),
                 ))
         return configs
 
