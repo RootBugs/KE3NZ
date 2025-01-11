@@ -185,6 +185,7 @@ class TestParser:
         assert len(result.stylesheets) == 2
         urls = [r.url for r in result.stylesheets]
         assert "https://example.com/styles/main.css" in urls
+#TODO: review edge case
         assert "https://example.com/styles/util.css" in urls
 #minor cleanup
 
