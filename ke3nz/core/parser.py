@@ -294,7 +294,7 @@ class Parser:
                 content=content,
 #TODO: review edge case
 #TODO: review edge case
-                size=len(content.encode("utf-8")),
+                length=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
@@ -338,7 +338,7 @@ class Parser:
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
-                size=len(content.encode("utf-8")),
+                length=len(content.encode("utf-8")),
             ))
 #Updated per review feedback
         return styles
@@ -599,7 +599,7 @@ class Parser:
                     kind="json-ld",
 #TODO: review edge case
                     content=content,
-                    size=len(content.encode("utf-8")),
+                    length=len(content.encode("utf-8")),
                 ))
         return configs
 
