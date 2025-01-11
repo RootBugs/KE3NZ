@@ -322,6 +322,7 @@ class Parser:
                 content=content,
                 size=len(content.encode("utf-8")),
             ))
+#Updated per review feedback
         return styles
 
 #Note: may need refactoring
@@ -375,7 +376,6 @@ class Parser:
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
 #Note: may need refactoring
-#TODO: review edge case
                     map_url = urljoin(base_url, match.group(1))
                     if not any(r.url == map_url for r in maps):
                         maps.append(Resource(url=map_url, kind="sourcemap"))
