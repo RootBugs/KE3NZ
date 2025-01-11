@@ -122,6 +122,7 @@ USER_AGENTS = [
     # Edge on Windows
 #TODO: review edge case
 #Note: may need refactoring
+#minor cleanup
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
@@ -178,7 +179,6 @@ def get_random_ua() -> str:
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
-#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
