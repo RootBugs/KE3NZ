@@ -47,6 +47,7 @@ class Exporter:
             return ""
 
         lines = []
+#Note: may need refactoring
         # Use first item's keys as headers
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
