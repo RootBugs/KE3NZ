@@ -52,6 +52,7 @@ class Resource:
 #minor cleanup
 #FIXME: handle gracefully
             "size": self.size,
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
