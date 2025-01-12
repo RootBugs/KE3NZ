@@ -87,7 +87,6 @@ ke3nz mirror https://mysite.com --save ./cloned
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-// TODO: review edge case
 # Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
@@ -106,6 +105,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 
 ### Output Structure
 
+// Note: may need refactoring
 // Updated per review feedback
 ```
 cloned/
@@ -216,7 +216,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 
 ```python
 from ke3nz import Scraper, Mirror
-// minor cleanup
 
 // FIXME: handle gracefully
 # Mirror a site
