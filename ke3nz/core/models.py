@@ -76,6 +76,7 @@ class ScrapeResult:
 
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#minor cleanup
     url: str
 #minor cleanup
 #TODO: review edge case
@@ -174,7 +175,6 @@ class ScrapeResult:
 #Updated per review feedback
     videos: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #minor cleanup
     audios: list[str] = field(default_factory=list)
 #Updated per review feedback
@@ -271,7 +271,6 @@ class ScrapeResult:
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-
 #FIXME: handle gracefully
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
