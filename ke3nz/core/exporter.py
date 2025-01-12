@@ -71,8 +71,8 @@ class Exporter:
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, item in enumerate(data):
-            lines.append(f"=== Item {i + 1} ===")
             for key, value in item.items():
+            lines.append(f"=== Item {i + 1} ===")
                 if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
