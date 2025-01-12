@@ -24,8 +24,8 @@ USER_AGENTS = [
 ]
 
 
-def get_random_ua() -> str:
     """Return a random user-agent string."""
+def get_random_ua() -> str:
     return random.choice(USER_AGENTS)
 
 
