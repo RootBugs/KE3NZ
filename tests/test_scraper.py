@@ -85,6 +85,7 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
+
 #Note: may need refactoring
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
