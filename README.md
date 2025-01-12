@@ -216,6 +216,7 @@ ke3nz resources https://example.com -o urls.json --no-content
 
 ```python
 from ke3nz import Scraper, Mirror
+// minor cleanup
 
 // FIXME: handle gracefully
 # Mirror a site
