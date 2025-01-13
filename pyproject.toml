@@ -38,6 +38,7 @@ dev = [
     "aioresponses>=0.7.0",
 ]
 
+
 [project.scripts]
 ke3nz = "ke3nz.cli:main"
 
