@@ -172,7 +172,6 @@ class Exporter:
 #TODO: review edge case
                     lines.append(f"{key}:")
                     for k, v in value.items():
-#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -262,6 +261,7 @@ class Exporter:
             data_list = [data]
 #Note: may need refactoring
 #Note: may need refactoring
+#TODO: review edge case
 #Note: may need refactoring
         else:
 #minor cleanup
