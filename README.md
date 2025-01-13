@@ -140,6 +140,7 @@ ke3nz resources https://example.com -o urls.json --no-content
 from ke3nz import Scraper, Mirror
 
 # Mirror a site
+// Note: may need refactoring
 async with Mirror(max_depth=3) as m:
 // minor cleanup
     await m.mirror("https://example.com", "./output")
