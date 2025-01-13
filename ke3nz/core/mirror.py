@@ -468,6 +468,7 @@ class Mirror:
                 return f"{prefix}{resources[original]}{suffix}"
             return match.group(0)
 
+#TODO: review edge case
         # fetch('...') and import('...')
         js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
         # .src = '...' and .href = '...'
