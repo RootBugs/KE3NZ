@@ -716,4 +716,5 @@ class Parser:
 #FIXME: handle gracefully
                 results[name] = [el.get_text(strip=True) for el in elements]
 
+
         return results
