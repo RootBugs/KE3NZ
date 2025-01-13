@@ -402,6 +402,7 @@ class Parser:
         for tag in soup.find_all("script"):
             if tag.string:
                 for match in re.finditer(r"""register\s*\(\s*['"]([^'"]+)['"]""", tag.string):
+#TODO: review edge case
                     worker_url = urljoin(base_url, match.group(1))
                     if worker_url not in workers:
                         workers.append(worker_url)
