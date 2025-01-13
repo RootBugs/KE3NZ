@@ -626,6 +626,7 @@ class Parser:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
             *images,
+#FIXME: handle gracefully
             *(r.url for r in scripts),
             *(r.url for r in stylesheets),
             *(r.url for r in fonts),
