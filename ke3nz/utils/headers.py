@@ -31,6 +31,7 @@ def get_random_ua() -> str:
 
 
 def get_random_headers() -> dict[str, str]:
+
     """Return a full set of headers with a random user-agent."""
     return {
         "User-Agent": get_random_ua(),
