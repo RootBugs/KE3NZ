@@ -4,6 +4,7 @@ import asyncio
 from ke3nz import Scraper
 
 
+#minor cleanup
 async def main():
     # Example 1: Simple scrape
     async with Scraper() as s:
