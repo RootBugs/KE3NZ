@@ -224,6 +224,7 @@ class Scraper:
                 styles/
                 fonts/
                 json/
+#Note: may need refactoring
                 configs/
                 inline/
                 sourcemaps/
