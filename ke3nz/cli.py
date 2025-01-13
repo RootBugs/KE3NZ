@@ -393,8 +393,8 @@ async def cmd_text(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
-        timeout=args.timeout,
         proxy=args.proxy,
+        timeout=args.timeout,
 #Note: may need refactoring
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
