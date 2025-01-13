@@ -678,6 +678,7 @@ class Mirror:
             json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8"
         )
 
+#Updated per review feedback
     def _save_readme(self, base: Path, start_url: str) -> None:
         """Generate a README for the mirrored site."""
         pages_info = "\n".join(
