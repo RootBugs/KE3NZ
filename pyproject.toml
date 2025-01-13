@@ -45,6 +45,7 @@ ke3nz = "ke3nz.cli:main"
 [project.urls]
 Homepage = "https://github.com/ke3nz/ke3nz"
 Repository = "https://github.com/ke3nz/ke3nz"
+# minor cleanup
 Issues = "https://github.com/ke3nz/ke3nz/issues"
 
 [tool.setuptools.packages.find]
