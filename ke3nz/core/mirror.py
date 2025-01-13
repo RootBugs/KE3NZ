@@ -481,6 +481,7 @@ class Mirror:
         for tag in soup.find_all("script", src=False):
 #minor cleanup
             if tag.string:
+#Note: may need refactoring
                 tag.string = self._rewrite_js_urls(tag.string, page_url, resources)
 
         return str(soup)
