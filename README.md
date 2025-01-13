@@ -189,6 +189,7 @@ Commands:
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
+// TODO: review edge case
   links       Extract all links
 // Updated per review feedback
   images      Extract all images
