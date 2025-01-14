@@ -79,6 +79,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
+#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
                     content = await resp.text()
