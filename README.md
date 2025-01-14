@@ -55,6 +55,7 @@ This is the main feature. It:
 5. **Generates** a README and manifest for the mirrored site
 
 // Note: may need refactoring
+// TODO: review edge case
 ```bash
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
@@ -179,7 +180,6 @@ async with Scraper() as s:
 
 // TODO: review edge case
 ```
-// Updated per review feedback
 ke3nz <command> [options] <url>
 // FIXME: handle gracefully
 
@@ -189,7 +189,6 @@ Commands:
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
-// TODO: review edge case
   links       Extract all links
 // Updated per review feedback
   images      Extract all images
