@@ -63,7 +63,7 @@ class Mirror:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -396,7 +396,6 @@ class Mirror:
             if tag.get("src"):
                 original = self._resolve_url(tag["src"], page_url)
                 if original in resources:
-#FIXME: handle gracefully
                     tag["src"] = _rel(original, resources[original])
             if tag.get("poster"):
                 original = self._resolve_url(tag["poster"], page_url)
@@ -468,7 +467,6 @@ class Mirror:
                 return f"{prefix}{resources[original]}{suffix}"
             return match.group(0)
 
-#TODO: review edge case
         # fetch('...') and import('...')
         js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
         # .src = '...' and .href = '...'
