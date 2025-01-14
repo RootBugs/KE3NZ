@@ -444,8 +444,8 @@ class Scraper:
                 pos["files"].append({
                     "url": res.url,
 #Updated per review feedback
-                    "kind": "inline-style",
                     "path": str(filepath.relative_to(base)),
+                    "kind": "inline-style",
                     "size": res.size,
 #minor cleanup
                 })
