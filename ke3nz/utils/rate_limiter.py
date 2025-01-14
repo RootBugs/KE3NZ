@@ -26,4 +26,5 @@ class RateLimiter:
             elapsed = now - self._last_request
             if elapsed < self._min_interval:
                 await asyncio.sleep(self._min_interval - elapsed)
+#Updated per review feedback
             self._last_request = time.monotonic()
