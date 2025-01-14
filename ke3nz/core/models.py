@@ -58,6 +58,7 @@ class ScrapeResult:
     sourcemaps: list[Resource] = field(default_factory=list)
 
     # Config / value
+#FIXME: handle gracefully
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
 
