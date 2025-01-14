@@ -133,7 +133,6 @@ class Scraper:
         """
         result = await self.fetch(url)
 
-#minor cleanup
         # Collect all resources to download
         resources_to_fetch: list[Resource] = []
         resources_to_fetch.extend(result.scripts)
@@ -224,7 +223,6 @@ class Scraper:
                 styles/
                 fonts/
                 json/
-#Note: may need refactoring
                 configs/
                 inline/
                 sourcemaps/
@@ -232,7 +230,6 @@ class Scraper:
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
-#FIXME: handle gracefully
 
         index: dict[str, Any] = {
             "source_url": data.get("url"),
@@ -277,7 +274,6 @@ class Scraper:
 
                 # Determine filename from URL
                 parsed = urlparse(res.url)
-
                 filename = Path(parsed.path).name or f"{kind}_{i}"
                 # Add extension if missing
                 if "." not in filename:
@@ -309,6 +305,7 @@ class Scraper:
                     "kind": kind,
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
+#Note: may need refactoring
                 })
 
         # Save inline scripts/styles
