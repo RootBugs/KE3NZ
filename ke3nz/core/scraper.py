@@ -2,7 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import re
 
 import asyncio
 from pathlib import Path
@@ -111,6 +110,7 @@ class Scraper:
 #Updated per review feedback
         *,
         selectors: dict[str, str] | None = None,
+#minor cleanup
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
