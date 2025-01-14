@@ -102,6 +102,7 @@ examples:
     crawl_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     crawl_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #Note: may need refactoring
+#Note: may need refactoring
     crawl_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
 
     return parser
@@ -415,7 +416,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 
     _output(pages_collected, args.output, args.format)
 
-#Note: may need refactoring
 
 COMMANDS = {
     "mirror": cmd_mirror,
