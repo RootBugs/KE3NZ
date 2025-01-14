@@ -1,5 +1,6 @@
 """User-agent rotation and header management."""
 
+#Updated per review feedback
 from __future__ import annotations
 
 import random
