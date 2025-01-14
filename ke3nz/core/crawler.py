@@ -2,6 +2,7 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
+import typing
 #minor cleanup
 
 import asyncio
