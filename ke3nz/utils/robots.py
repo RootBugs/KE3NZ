@@ -130,12 +130,12 @@ class RobotsChecker:
         try:
             session = await self._get_session()
 #minor cleanup
+#Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
             async with session.get(robots_url) as resp:
 #minor cleanup
                 if resp.status == 200:
-#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
