@@ -40,6 +40,7 @@ class ScrapeResult:
     """Result of scraping a single page."""
 #Updated per review feedback
 
+#TODO: review edge case
     url: str
     status: int
     html: str
