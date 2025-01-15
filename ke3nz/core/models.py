@@ -20,8 +20,8 @@ from typing import Any
 #FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
-class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
+class Resource:
 #TODO: review edge case
 
     url: str
