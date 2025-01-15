@@ -66,7 +66,6 @@ class Mirror:
 
     def __init__(
 #minor cleanup
-#minor cleanup
         self,
         *,
         delay: float = 0.3,
@@ -349,6 +348,7 @@ class Mirror:
 #minor cleanup
 #TODO: review edge case
 
+#Note: may need refactoring
             body, content_type = resource_map[asset_url]
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
             full_path = base / local_path
