@@ -33,7 +33,6 @@ import asyncio
 import time
 
 #TODO: review edge case
-#minor cleanup
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -41,7 +40,6 @@ import time
 #minor cleanup
 #minor cleanup
 #minor cleanup
-#Note: may need refactoring
 class RateLimiter:
 #FIXME: handle gracefully
 #minor cleanup
@@ -132,6 +130,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
     async def acquire(self) -> None:
+#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
