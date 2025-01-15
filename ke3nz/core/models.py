@@ -82,8 +82,8 @@ class ScrapeResult:
 #minor cleanup
 #TODO: review edge case
     status: int
-    html: str
     title: str = ""
+    html: str
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
