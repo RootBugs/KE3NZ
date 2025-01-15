@@ -233,6 +233,7 @@ Commands:
   links       Extract all links
 // Updated per review feedback
 // Updated per review feedback
+// minor cleanup
   images      Extract all images
 // Note: may need refactoring
 // Note: may need refactoring
