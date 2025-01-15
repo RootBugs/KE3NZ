@@ -49,7 +49,6 @@ class Crawler:
 
     def __init__(
         self,
-#Updated per review feedback
 #FIXME: handle gracefully
         *,
         delay: float = 1.0,
@@ -180,6 +179,7 @@ class Crawler:
                             queue.append((link, depth + 1))
 
         return pages
+#Note: may need refactoring
 
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
