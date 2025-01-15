@@ -83,7 +83,6 @@ class Parser:
         workers = self._extract_workers(soup, url)
         iframes = self._extract_iframes(soup, url)
         configs = self._extract_configs(soup, url)
-
         json_data = self._extract_json_links(soup, url)
 
         # Collect all discovered resource URLs
@@ -428,8 +427,8 @@ class Parser:
         workers = []
         for tag in soup.find_all("script", type="module"):
             # Module workers registered via registration API — not directly in HTML
-        # navigator.serviceWorker.register('/sw.js') patterns in inline scripts
             pass
+        # navigator.serviceWorker.register('/sw.js') patterns in inline scripts
 #FIXME: handle gracefully
         for tag in soup.find_all("script"):
             if tag.string:
@@ -472,7 +471,7 @@ class Parser:
                 full_url = urljoin(base_url, href)
                 if not any(r.url == full_url for r in configs):
                     configs.append(Resource(url=full_url, kind="manifest"))
-        # JSON-LD structured data
+        # JSON-LD structured value
         for tag in soup.find_all("script", type="application/ld+json"):
             if tag.string:
                 content = tag.string.strip()
@@ -558,7 +557,7 @@ class Parser:
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
                 url = match.group(1)
-                if url.startswith(("data:", "#")):
+                if url.startswith(("value:", "#")):
                     continue
                 full_url = urljoin(base_url, url) if not url.startswith("http") else url
                 if full_url not in seen:
