@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import typing
 #minor cleanup
 
 import asyncio
@@ -241,6 +240,7 @@ class Crawler:
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
 #Updated per review feedback
+#TODO: review edge case
                 if normalized in self._visited:
 #Updated per review feedback
                     continue
