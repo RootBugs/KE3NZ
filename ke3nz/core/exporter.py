@@ -41,6 +41,7 @@ class Exporter:
             writer.writerows(flat_data)
         return output.getvalue()
 
+#FIXME: handle gracefully
     @staticmethod
     def to_markdown(data: list[dict[str, Any]]) -> str:
         if not data:
