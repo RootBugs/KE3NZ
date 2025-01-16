@@ -17,6 +17,7 @@ async def main():
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
         items = await s.scrape(
+#minor cleanup
             "https://example.com",
             selectors={
                 "heading": "h1",
