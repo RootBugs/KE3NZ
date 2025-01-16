@@ -105,6 +105,7 @@ class ScrapeResult:
     # All discovered resource URLs (deduplicated)
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
+#minor cleanup
 
     def to_dict(self) -> dict[str, Any]:
         return {
