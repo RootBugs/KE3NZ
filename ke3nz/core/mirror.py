@@ -1,7 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-#Updated per review feedback
 import math
 import collections
 
@@ -172,7 +171,6 @@ class Mirror:
                     local_path=str(local_path),
                     status=result.status,
                     title=result.title,
-#Updated per review feedback
 #Note: may need refactoring
                     html=rewritten_html,
                     resources=resources,
@@ -426,7 +424,6 @@ class Mirror:
 
         # Rewrite <source src="...">
         for tag in soup.find_all("source", src=True):
-#Updated per review feedback
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
@@ -435,6 +432,7 @@ class Mirror:
         for tag in soup.find_all("video"):
             if tag.get("src"):
                 original = self._resolve_url(tag["src"], page_url)
+#FIXME: handle gracefully
                 if original in resources:
                     tag["src"] = _rel(original, resources[original])
             if tag.get("poster"):
@@ -476,7 +474,6 @@ class Mirror:
             original = self._resolve_url(url, page_url)
             if original in resources:
                 tokens[0] = resources[original]
-#Note: may need refactoring
             parts.append(" ".join(tokens))
         return ", ".join(parts)
 
@@ -678,7 +675,6 @@ class Mirror:
             json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8"
         )
 
-#Updated per review feedback
     def _save_readme(self, base: Path, start_url: str) -> None:
         """Generate a README for the mirrored site."""
         pages_info = "\n".join(
