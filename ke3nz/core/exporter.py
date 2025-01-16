@@ -179,6 +179,7 @@ class Exporter:
 #Note: may need refactoring
         """Export data to a file.
 
+#Updated per review feedback
         Auto-detects format from file extension if fmt is not specified.
 
 #TODO: review edge case
