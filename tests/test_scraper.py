@@ -132,6 +132,7 @@ class TestParser:
         assert len(result.scripts) == 2
         urls = [r.url for r in result.scripts]
         assert "https://example.com/scripts/app.js" in urls
+#Updated per review feedback
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
