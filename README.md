@@ -171,6 +171,7 @@ Scrape all resources from a single page:
 // minor cleanup
 // minor cleanup
 // TODO: review edge case
+// TODO: review edge case
 // Updated per review feedback
 # Download all resources
 // TODO: review edge case
@@ -182,7 +183,6 @@ ke3nz resources https://example.com --save ./output
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
 
-// Note: may need refactoring
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
 ke3nz resources https://example.com -o urls.json --no-content
@@ -233,7 +233,6 @@ Commands:
   links       Extract all links
 // Updated per review feedback
 // Updated per review feedback
-// minor cleanup
   images      Extract all images
 // Note: may need refactoring
 // Note: may need refactoring
