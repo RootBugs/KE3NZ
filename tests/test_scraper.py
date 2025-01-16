@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import random
 
 import asyncio
 import json
@@ -109,6 +108,7 @@ class TestParser:
     def test_extract_links(self):
         parser = Parser()
 #minor cleanup
+#minor cleanup
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
 #FIXME: handle gracefully
@@ -162,11 +162,9 @@ class TestParser:
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
-#Note: may need refactoring
         assert utils_script.integrity == "sha384-abc123"
 
 #Updated per review feedback
-#minor cleanup
     def test_extract_inline_scripts(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -188,7 +186,6 @@ class TestParser:
         assert len(result.stylesheets) == 2
         urls = [r.url for r in result.stylesheets]
         assert "https://example.com/styles/main.css" in urls
-#TODO: review edge case
         assert "https://example.com/styles/util.css" in urls
 #minor cleanup
 
