@@ -69,6 +69,7 @@ async def main():
         result = await s.scrape("https://example.com")
 #TODO: review edge case
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         print(f"Title: {result['title']}")
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
