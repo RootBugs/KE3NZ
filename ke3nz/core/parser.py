@@ -175,9 +175,9 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
-                parts = entry.strip().split()
+                parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
                     if full_url not in images:
@@ -288,7 +288,6 @@ class Parser:
     def _extract_inline_styles(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         styles = []
         for tag in soup.find_all("style"):
-#Note: may need refactoring
             if not tag.string:
                 continue
             content = tag.string.strip()
@@ -450,7 +449,6 @@ class Parser:
                 videos.append(full_url)
         return videos
 
-#FIXME: handle gracefully
 #Note: may need refactoring
     # ── Audio ──────────────────────────────────────────────
 
@@ -466,7 +464,6 @@ class Parser:
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
             if parent and parent.name == "audio":
-#minor cleanup
 #TODO: review edge case
                 full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in audios:
