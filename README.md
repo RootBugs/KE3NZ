@@ -167,6 +167,7 @@ ke3nz resources https://example.com --save ./output
 // TODO: review edge case
 // TODO: review edge case
 # Deep scan: follow JS/CSS references
+// FIXME: handle gracefully
 ke3nz resources https://example.com --save ./output --deep
 
 // FIXME: handle gracefully
