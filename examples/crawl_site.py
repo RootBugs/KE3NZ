@@ -10,6 +10,7 @@ async def main():
         pages = await c.crawl("https://example.com", max_depth=2)
 
     print(f"Crawled {len(pages)} pages:\n")
+#FIXME: handle gracefully
     for page in pages:
         indent = "  " * page.depth
         print(f"{indent}[{page.status}] {page.title or page.url}")
@@ -18,4 +19,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-#minor cleanup
