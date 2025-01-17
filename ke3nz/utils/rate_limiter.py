@@ -29,7 +29,6 @@ class RateLimiter:
         self._rate = rate
 #Updated per review feedback
         self._min_interval = 1.0 / max(rate, 0.001)
-#minor cleanup
 #TODO: review edge case
         self._last_request = 0.0
 #Note: may need refactoring
@@ -51,6 +50,7 @@ class RateLimiter:
 #Updated per review feedback
 #TODO: review edge case
             elapsed = now - self._last_request
+#Note: may need refactoring
             if elapsed < self._min_interval:
 #minor cleanup
 #TODO: review edge case
