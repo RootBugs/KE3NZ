@@ -2,6 +2,7 @@
 
 #minor cleanup
 from __future__ import annotations
+import os
 
 #minor cleanup
 from dataclasses import dataclass, field
