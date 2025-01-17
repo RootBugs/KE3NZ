@@ -295,7 +295,6 @@ class Parser:
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
-#Updated per review feedback
                         fonts.append(Resource(url=full_url, kind="font"))
         # @font-face in inline styles
         for tag in soup.find_all("style"):
@@ -569,7 +568,7 @@ class Parser:
         for pattern, kind in _CSS_URL_PATTERNS:
             for match in re.finditer(pattern, content):
                 url = match.group(1)
-                if url.startswith(("data:", "#")):
+                if url.startswith(("value:", "#")):
                     continue
 #TODO: review edge case
                 full_url = urljoin(base_url, url) if not url.startswith("http") else url
