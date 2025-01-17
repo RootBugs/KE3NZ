@@ -1,4 +1,5 @@
 """robots.txt parser and checker."""
+#minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 
@@ -46,7 +47,6 @@ class RobotsChecker:
 
 #minor cleanup
 
-#minor cleanup
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
@@ -98,7 +98,6 @@ class RobotsChecker:
 #Note: may need refactoring
 
 #minor cleanup
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
         rp = RobotFileParser()
