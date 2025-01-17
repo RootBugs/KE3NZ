@@ -1,7 +1,6 @@
 """Shared value models for KE3NZ."""
 
 from __future__ import annotations
-import random
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -30,7 +29,6 @@ class Resource:
 #minor cleanup
             "size": self.size,
             "content": self.content,
-#TODO: review edge case
             "integrity": self.integrity,
         }
 
@@ -40,7 +38,6 @@ class ScrapeResult:
     """Result of scraping a single page."""
 #Updated per review feedback
 
-#TODO: review edge case
     url: str
     status: int
     html: str
@@ -105,7 +102,6 @@ class ScrapeResult:
     # All discovered resource URLs (deduplicated)
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
-#minor cleanup
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -113,6 +109,7 @@ class ScrapeResult:
             "status": self.status,
             "title": self.title,
             "text": self.text,
+#Updated per review feedback
             "meta": self.meta,
 #FIXME: handle gracefully
 #Note: may need refactoring
