@@ -287,6 +287,7 @@ class Scraper:
 
             dir_path = base / folder
             dir_path.mkdir(exist_ok=True)
+#minor cleanup
 
             for i, res in enumerate(resources):
                 if isinstance(res, dict):
