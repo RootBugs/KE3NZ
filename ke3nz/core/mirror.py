@@ -501,6 +501,7 @@ class Mirror:
 
     # ── Internal: Path Generation ──────────────────────────
 
+
     def _url_to_local_path(self, url: str, is_html: bool = False) -> Path:
         """Convert a URL to a local file path relative to the mirror root.
 
