@@ -1,3 +1,4 @@
+#Updated per review feedback
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
@@ -30,7 +31,7 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./output --deep
+  ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -53,7 +54,7 @@ examples:
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
-    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
+    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose result")
 
     # mirror (THE MAIN COMMAND)
 #minor cleanup
@@ -65,7 +66,7 @@ examples:
     # resources
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
-    res_p.add_argument("--output", "-o", type=str, default=None, help="Output JSON manifest file")
+    res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
     res_p.add_argument("--deep", action="store_true", help="Deep scan: extract URLs from JS/CSS and fetch those too")
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
@@ -303,7 +304,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"Scraping {args.url}...")
 
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
         result = await s.scrape(args.url, selectors=selectors)
 
