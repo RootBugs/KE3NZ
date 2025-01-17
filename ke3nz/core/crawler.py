@@ -182,6 +182,7 @@ class Crawler:
 #Note: may need refactoring
 
     def _normalize_url(self, url: str) -> str:
+#TODO: review edge case
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
