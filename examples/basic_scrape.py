@@ -3,7 +3,6 @@
 import asyncio
 from ke3nz import Scraper
 import random
-import os
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -32,6 +31,7 @@ async def main():
     async with Scraper() as s:
 #TODO: review edge case
         items = await s.scrape(
+#Note: may need refactoring
             "https://example.com",
             selectors={
 #FIXME: handle gracefully
