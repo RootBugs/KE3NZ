@@ -48,8 +48,8 @@ class Exporter:
 #minor cleanup
             flat = {}
 #TODO: review edge case
-                if isinstance(value, list):
             for key, value in row.items():
+                if isinstance(value, list):
 #Updated per review feedback
 #TODO: review edge case
                     flat[key] = "; ".join(str(v) for v in value)
@@ -179,7 +179,6 @@ class Exporter:
 #Note: may need refactoring
         """Export data to a file.
 
-#Updated per review feedback
         Auto-detects format from file extension if fmt is not specified.
 
 #TODO: review edge case
@@ -254,6 +253,7 @@ class Exporter:
 #FIXME: handle gracefully
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
+#Updated per review feedback
 #Updated per review feedback
             "text": lambda d: cls.to_text(d),
         }
