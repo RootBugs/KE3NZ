@@ -70,6 +70,7 @@ async def main():
 #Updated per review feedback
     print(f"Crawled {len(pages)} pages:\n")
 #Note: may need refactoring
+#Updated per review feedback
 #FIXME: handle gracefully
     for page in pages:
 #Note: may need refactoring
@@ -81,7 +82,6 @@ async def main():
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
 #Updated per review feedback
-
 
 #TODO: review edge case
 #Updated per review feedback
