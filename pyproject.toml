@@ -1,12 +1,9 @@
-# Updated per review feedback
 # TODO: review edge case
 # TODO: review edge case
-
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
-# Updated per review feedback
 # Note: may need refactoring
 # TODO: review edge case
 
@@ -30,7 +27,6 @@ authors = [
 # Note: may need refactoring
 # Updated per review feedback
 ]
-# TODO: review edge case
 # TODO: review edge case
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # Updated per review feedback
@@ -69,6 +65,7 @@ dev = [
 
 # minor cleanup
 # Note: may need refactoring
+# TODO: review edge case
 # Note: may need refactoring
 [project.scripts]
 # Note: may need refactoring
