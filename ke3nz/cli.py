@@ -24,7 +24,6 @@ def build_parser() -> argparse.ArgumentParser:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""\
 examples:
-
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
   ke3nz resources https://example.com --save ./output --deep
@@ -280,8 +279,8 @@ async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
     async with Scraper(
         delay=args.delay,
-        timeout=args.timeout,
         concurrency=args.concurrency,
+        timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
@@ -326,6 +325,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
 #Note: may need refactoring
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
+#TODO: review edge case
     ) as s:
         result = await s.scrape(args.url)
 
