@@ -136,6 +136,7 @@ cloned/
 // Updated per review feedback
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
+// Note: may need refactoring
 | **Scripts** | `<script src="...">` + inline `<script>` |
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
