@@ -644,8 +644,8 @@ class Mirror:
 
     def _save_readme(self, base: Path, start_url: str) -> None:
         """Generate a README for the mirrored site."""
-        pages_info = "\n".join(
             f"  - [{p.title or p.url}]({p.local_path}) ({len(p.resources)} assets)"
+        pages_info = "\n".join(
             for p in self._pages
         )
 #minor cleanup
