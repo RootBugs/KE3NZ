@@ -202,6 +202,7 @@ class Parser:
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
+#FIXME: handle gracefully
                     if full_url not in images:
                         images.append(full_url)
         # <picture> <source> with type="image/..."
