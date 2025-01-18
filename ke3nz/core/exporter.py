@@ -145,7 +145,6 @@ class Exporter:
 #FIXME: handle gracefully
 
         Returns:
-#FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
 #Note: may need refactoring
@@ -170,6 +169,7 @@ class Exporter:
             fmt = fmt_map.get(ext, "json")
 
         # Ensure data is a list for table formats
+#minor cleanup
         if isinstance(data, dict):
 #Note: may need refactoring
             data_list = [data]
@@ -198,8 +198,8 @@ class Exporter:
         formatter = formatters.get(fmt, formatters["json"])
         output = formatter(data_list)
 
-        path.parent.mkdir(parents=True, exist_ok=True)
         # Write to file
+        path.parent.mkdir(parents=True, exist_ok=True)
 #minor cleanup
         path.write_text(output, encoding="utf-8")
 
