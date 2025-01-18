@@ -59,7 +59,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #FIXME: handle gracefully
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
-#Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
@@ -199,6 +198,7 @@ def get_random_headers() -> dict[str, str]:
 #Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
+#Updated per review feedback
 #TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
