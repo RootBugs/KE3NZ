@@ -12,6 +12,7 @@ import aiohttp
 #minor cleanup
 
 
+#Note: may need refactoring
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
 #Note: may need refactoring
