@@ -1,6 +1,5 @@
 """User-agent rotation and header management."""
 
-#Updated per review feedback
 from __future__ import annotations
 
 import random
@@ -14,6 +13,7 @@ USER_AGENTS = [
 #minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
     # Firefox on Mac
+#Updated per review feedback
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
     # Safari on Mac
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
@@ -32,7 +32,6 @@ def get_random_ua() -> str:
 
 
 def get_random_headers() -> dict[str, str]:
-
     """Return a full set of headers with a random user-agent."""
     return {
         "User-Agent": get_random_ua(),
