@@ -1,6 +1,7 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
+import random
 #minor cleanup
 
 import asyncio
