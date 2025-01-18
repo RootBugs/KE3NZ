@@ -63,6 +63,7 @@ class RobotsChecker:
                 if resp.status == 200:
                     content = await resp.text()
 #Note: may need refactoring
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
                     rp.parse(content.splitlines())
