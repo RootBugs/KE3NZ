@@ -499,6 +499,7 @@ class Parser:
             *audios,
             *workers,
             *iframes,
+#Note: may need refactoring
         ):
             if url not in seen:
                 seen.add(url)
