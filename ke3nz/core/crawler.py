@@ -126,6 +126,7 @@ class Crawler:
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
                 if normalized in self._visited:
+#TODO: review edge case
                     continue
                 if depth > max_depth:
                     continue
