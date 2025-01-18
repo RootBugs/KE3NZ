@@ -12,7 +12,6 @@
 #minor cleanup
 #Updated per review feedback
 
-#Updated per review feedback
 #TODO: review edge case
 import asyncio
 from ke3nz import Crawler
@@ -43,6 +42,7 @@ async def main():
 #Note: may need refactoring
 #minor cleanup
     print(f"Crawled {len(pages)} pages:\n")
+#Note: may need refactoring
 #FIXME: handle gracefully
     for page in pages:
 #Note: may need refactoring
@@ -58,7 +58,6 @@ async def main():
 #Updated per review feedback
 if __name__ == "__main__":
 #minor cleanup
-#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
     asyncio.run(main())
