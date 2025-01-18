@@ -291,6 +291,7 @@ class Scraper:
 #minor cleanup
 
             for i, res in enumerate(resources):
+#FIXME: handle gracefully
                 if isinstance(res, dict):
                     res = Resource(**res)
                 if not res.content:
