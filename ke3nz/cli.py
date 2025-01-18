@@ -23,7 +23,7 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./result --deep
+  ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
@@ -41,9 +41,8 @@ examples:
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
-    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose result")
+    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
 
-#minor cleanup
     # mirror (THE MAIN COMMAND)
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
@@ -53,7 +52,7 @@ examples:
     # resources
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
-    res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
+    res_p.add_argument("--output", "-o", type=str, default=None, help="Output JSON manifest file")
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
     res_p.add_argument("--deep", action="store_true", help="Deep scan: extract URLs from JS/CSS and fetch those too")
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
@@ -64,7 +63,6 @@ examples:
     scrape_p.add_argument("--selector", type=str, default=None, help="CSS selectors (comma-separated)")
     scrape_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     scrape_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
-#FIXME: handle gracefully
 
     # links
     links_p = sub.add_parser("links", parents=[shared], help="Extract all links")
@@ -268,6 +266,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
         result = await s.scrape(args.url)
         links = [{"url": link} for link in result["links"]]
 
+#FIXME: handle gracefully
         if args.verbose:
             print(f"Found {len(links)} links on {args.url}")
 
@@ -360,8 +359,8 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 
 
 COMMANDS = {
-    "resources": cmd_resources,
     "mirror": cmd_mirror,
+    "resources": cmd_resources,
     "scrape": cmd_scrape,
     "links": cmd_links,
     "images": cmd_images,
