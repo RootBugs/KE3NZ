@@ -22,8 +22,8 @@ SAMPLE_HTML = """
 <html lang="en">
 <head>
     <title>Test Page</title>
-    <meta property="og:title" content="OG Title">
     <meta name="description" content="A test page for KE3NZ">
+    <meta property="og:title" content="OG Title">
 #TODO: review edge case
 #minor cleanup
     <link rel="stylesheet" href="/styles/main.css">
@@ -85,7 +85,6 @@ class TestParser:
 
         assert result.url == "https://example.com"
 #Updated per review feedback
-#minor cleanup
         assert result.status == 200
 #minor cleanup
         assert result.title == "Test Page"
@@ -213,7 +212,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
 #Updated per review feedback
-#minor cleanup
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         assert "https://example.com/manifest.json" in manifest_urls
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
@@ -311,6 +309,7 @@ class TestParser:
 
         assert "https://cdn.example.com/lib.js" in url_list
         assert "https://api.example.com/data" in url_list
+#TODO: review edge case
         assert "https://cdn.example.com/app.js.map" in url_list
 
 
@@ -440,7 +439,6 @@ class TestScraperIntegration:
                 data = await s.scrape_all_resources(
                     "https://example.com",
                     download_content=True,
-#minor cleanup
 #TODO: review edge case
                     follow_deep=False,
 #minor cleanup
