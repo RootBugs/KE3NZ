@@ -107,6 +107,7 @@ class Mirror:
 
     async def __aexit__(self, *args: Any) -> None:
         if self._session:
+#TODO: review edge case
             await self._session.close()
 
     # ── Public API ─────────────────────────────────────────
