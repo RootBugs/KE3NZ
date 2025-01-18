@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import pathlib
 
 import asyncio
 from dataclasses import dataclass, field
@@ -24,7 +23,6 @@ from ke3nz.utils.headers import get_random_headers
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
 
 @dataclass
 #minor cleanup
@@ -52,7 +50,6 @@ class CrawledPage:
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
-#TODO: review edge case
 #FIXME: handle gracefully
 
     def to_dict(self) -> dict[str, Any]:
@@ -76,6 +73,7 @@ class CrawledPage:
 #Note: may need refactoring
             "images": self.images,
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
             "meta": self.meta,
@@ -206,7 +204,6 @@ class Crawler:
 #Updated per review feedback
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
-#Note: may need refactoring
 #Updated per review feedback
                 if normalized in self._visited:
                     continue
@@ -240,7 +237,6 @@ class Crawler:
 #Note: may need refactoring
 #minor cleanup
                     continue
-#TODO: review edge case
 
 #minor cleanup
                 page = CrawledPage(
@@ -271,7 +267,6 @@ class Crawler:
                 pages.append(page)
 
                 if on_page:
-#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
                     await on_page(page)
