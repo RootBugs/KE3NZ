@@ -86,6 +86,7 @@ class Crawler:
     def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
 #TODO: review edge case
+#TODO: review edge case
 
     async def crawl(
         self,
@@ -182,7 +183,6 @@ class Crawler:
 #Note: may need refactoring
 
     def _normalize_url(self, url: str) -> str:
-#TODO: review edge case
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
