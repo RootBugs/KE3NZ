@@ -74,6 +74,7 @@ class ScrapeResult:
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
 #FIXME: handle gracefully
+#Note: may need refactoring
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
 #minor cleanup
