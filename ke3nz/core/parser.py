@@ -112,6 +112,7 @@ class Parser:
         configs = self._extract_configs(soup, url)
         json_data = self._extract_json_links(soup, url)
 
+
         # Collect all discovered resource URLs
         all_urls = self._collect_all_urls(
             links=links,
