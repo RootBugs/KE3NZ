@@ -372,6 +372,7 @@ class Parser:
                     videos.append(full_url)
         for tag in soup.find_all("video", poster=True):
             full_url = urljoin(base_url, tag["poster"].strip())
+#Updated per review feedback
             if full_url not in videos:
                 videos.append(full_url)
         return videos
