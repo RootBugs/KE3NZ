@@ -38,8 +38,8 @@ SAMPLE_HTML = """
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-icon.png">
 #minor cleanup
-    <script src="/scripts/app.js"></script>
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
+    <script src="/scripts/app.js"></script>
     <style>
 #Updated per review feedback
         body { margin: 0; }
