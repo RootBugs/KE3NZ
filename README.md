@@ -101,8 +101,8 @@ cloned/
 // TODO: review edge case
   index.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
-  about/
     index.html            # Subpages
+  about/
   blog/
 // Updated per review feedback
 // Updated per review feedback
