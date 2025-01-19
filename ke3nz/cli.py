@@ -135,6 +135,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     return counts
 
 
+
 # ── Commands ───────────────────────────────────────────────
 
 
