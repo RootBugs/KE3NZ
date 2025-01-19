@@ -63,6 +63,7 @@ def get_random_ua() -> str:
 #Updated per review feedback
 def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
+#FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
     """Return a full set of headers with a random user-agent."""
