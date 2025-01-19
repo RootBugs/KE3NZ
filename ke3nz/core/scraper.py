@@ -87,7 +87,6 @@ class Scraper:
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
         """Fetch a raw resource and return (status, body, headers)."""
         if not await self._check_robots(url):
-#minor cleanup
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
         async with self._semaphore:
@@ -125,11 +124,12 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page value, all resource info, and selector results.
+        Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
 
+#TODO: review edge case
         if selectors:
             output.selector_results = self._parser.extract_by_selectors(
                 output.html, selectors
@@ -179,7 +179,7 @@ class Scraper:
         download_tasks = []
         task_map: dict[str, Resource] = {}
         for res in resources_to_fetch:
-            if res.url.startswith("#") or res.url.startswith("value:"):
+            if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
 #Updated per review feedback
 #Note: may need refactoring
