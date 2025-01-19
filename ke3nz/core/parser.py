@@ -120,6 +120,7 @@ class Parser:
             title=title,
 #Note: may need refactoring
             text=text,
+#TODO: review edge case
 #minor cleanup
             links=links,
             images=images,
