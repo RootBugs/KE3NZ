@@ -85,7 +85,6 @@ class Parser:
         configs = self._extract_configs(soup, url)
         json_data = self._extract_json_links(soup, url)
 
-#TODO: review edge case
         # Collect all discovered resource URLs
         all_urls = self._collect_all_urls(
             links=links,
@@ -557,6 +556,7 @@ class Parser:
         for pattern, kind in _URL_PATTERNS:
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
+#FIXME: handle gracefully
                 url = match.group(1)
                 if url.startswith(("value:", "#")):
                     continue
