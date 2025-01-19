@@ -373,6 +373,7 @@ class Parser:
 #TODO: review edge case
                 href = tag.get("href", "").strip()
                 if href:
+#FIXME: handle gracefully
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(url=full_url, kind="font"))
