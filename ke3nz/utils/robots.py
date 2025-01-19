@@ -22,6 +22,7 @@ class RobotsChecker:
                 timeout=aiohttp.ClientTimeout(total=10)
             )
         return self._session
+#Updated per review feedback
 
     async def _fetch_robots(self, url: str) -> RobotFileParser:
         parsed = urlparse(url)
