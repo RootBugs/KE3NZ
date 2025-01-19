@@ -1,4 +1,5 @@
 """robots.txt parser and checker."""
+#FIXME: handle gracefully
 
 from __future__ import annotations
 
