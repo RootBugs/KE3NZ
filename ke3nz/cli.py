@@ -19,6 +19,7 @@ def build_parser() -> argparse.ArgumentParser:
 #TODO: review edge case
     parser = argparse.ArgumentParser(
 #TODO: review edge case
+#minor cleanup
         prog="ke3nz",
         description="KE3NZ -- Fast async web scraper",
         formatter_class=argparse.RawDescriptionHelpFormatter,
