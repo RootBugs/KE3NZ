@@ -85,7 +85,6 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-
 #Note: may need refactoring
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -221,6 +220,7 @@ class TestParser:
 
         assert "https://example.com/favicon.ico" in result.favicons
         assert "https://example.com/apple-icon.png" in result.favicons
+#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 
@@ -463,7 +463,6 @@ class TestScraperIntegration:
 #Note: may need refactoring
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
-
 
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
