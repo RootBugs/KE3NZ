@@ -103,6 +103,7 @@ class ScrapeResult:
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
             "workers": self.workers,
+#FIXME: handle gracefully
             "iframes": self.iframes,
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
