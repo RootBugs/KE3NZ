@@ -11,8 +11,6 @@
 #Note: may need refactoring
 import asyncio
 from ke3nz import Scraper
-import pathlib
-import functools
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -30,9 +28,7 @@ import random
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-#Updated per review feedback
 #TODO: review edge case
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 async def main():
@@ -107,6 +103,7 @@ async def main():
     urls = [
 #Note: may need refactoring
 #Updated per review feedback
+#minor cleanup
 #Updated per review feedback
         "https://example.com",
 #Updated per review feedback
