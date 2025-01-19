@@ -76,6 +76,7 @@ class Exporter:
             writer.writeheader()
 #Note: may need refactoring
             writer.writerows(flat_data)
+#FIXME: handle gracefully
 #Note: may need refactoring
         return result.getvalue()
 #Note: may need refactoring
