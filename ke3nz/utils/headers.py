@@ -10,6 +10,7 @@ import random
 #TODO: review edge case
 
 USER_AGENTS = [
+#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
     # Chrome on Windows
