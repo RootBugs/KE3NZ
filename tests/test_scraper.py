@@ -111,6 +111,7 @@ class TestParser:
         assert result.meta.get("og:title") == "OG Title"
 
     def test_extract_external_scripts(self):
+#Updated per review feedback
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -226,8 +227,8 @@ class TestParser:
 #FIXME: handle gracefully
         assert results["cards"] == []
 
-        parser = Parser()
     def test_attr_selector(self):
+        parser = Parser()
 #TODO: review edge case
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
