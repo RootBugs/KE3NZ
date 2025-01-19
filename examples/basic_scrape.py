@@ -3,6 +3,7 @@
 import asyncio
 from ke3nz import Scraper
 import random
+import math
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
