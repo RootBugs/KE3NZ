@@ -9,7 +9,6 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
-#minor cleanup
 
 @dataclass
 #TODO: review edge case
@@ -40,6 +39,7 @@ class Resource:
             "content_type": self.content_type,
 #minor cleanup
             "size": self.size,
+#minor cleanup
             "content": self.content,
             "integrity": self.integrity,
         }
@@ -53,7 +53,6 @@ class Resource:
 class ScrapeResult:
     """Result of scraping a single page."""
 #TODO: review edge case
-
 #Note: may need refactoring
 #Updated per review feedback
 
@@ -74,7 +73,6 @@ class ScrapeResult:
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
 #FIXME: handle gracefully
-#Note: may need refactoring
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
 #minor cleanup
@@ -157,7 +155,6 @@ class ScrapeResult:
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
 #minor cleanup
-#Note: may need refactoring
 
     def to_dict(self) -> dict[str, Any]:
         return {
