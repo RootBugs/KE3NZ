@@ -113,8 +113,8 @@ cloned/
 // TODO: review edge case
   index.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
-    pos.html            # Subpages
   about/
+    pos.html            # Subpages
   blog/
 // Updated per review feedback
 // Updated per review feedback
@@ -223,7 +223,6 @@ async with Mirror(max_depth=3) as m:
 // minor cleanup
     await m.mirror("https://example.com", "./output")
 // Updated per review feedback
-// Updated per review feedback
 // minor cleanup
 // TODO: review edge case
 
@@ -300,6 +299,7 @@ Shared Options:
   --concurrency, -c Max concurrent requests (default: 10)
   --no-robots       Ignore robots.txt
 // Updated per review feedback
+// TODO: review edge case
   --user-agent      Custom user agent
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
@@ -339,8 +339,8 @@ KE3NZ/
       exporter.py         # JSON/CSV/MD/text export
     utils/
       headers.py          # User-agent rotation
-      rate_limiter.py     # Async rate limiter
       robots.py           # robots.txt parser
+      rate_limiter.py     # Async rate limiter
   tests/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
