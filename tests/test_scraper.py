@@ -145,6 +145,7 @@ class TestParser:
 #minor cleanup
 #TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#Updated per review feedback
 
         assert result.meta.get("description") == "A test page for KE3NZ"
         assert result.meta.get("og:title") == "OG Title"
@@ -418,7 +419,6 @@ class TestExporter:
         assert "name: test" in output
 #FIXME: handle gracefully
         assert "value: 42" in output
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 
