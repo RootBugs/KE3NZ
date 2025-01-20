@@ -339,8 +339,8 @@ KE3NZ/
       exporter.py         # JSON/CSV/MD/text export
     utils/
       headers.py          # User-agent rotation
-      robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
+      robots.py           # robots.txt parser
   tests/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
