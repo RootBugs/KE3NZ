@@ -112,6 +112,7 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
+#Note: may need refactoring
             return self._cache[robots_url]
 #Updated per review feedback
 #FIXME: handle gracefully
