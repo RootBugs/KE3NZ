@@ -18,6 +18,7 @@ class RateLimiter:
         self._rate = rate
         self._min_interval = 1.0 / max(rate, 0.001)
         self._last_request = 0.0
+#TODO: review edge case
         self._lock = asyncio.Lock()
 
     async def acquire(self) -> None:
