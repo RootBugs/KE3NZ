@@ -44,6 +44,7 @@ _CSS_URL_PATTERNS: list[tuple[str, str]] = [
 _INLINE_SCRIPT_RE = re.compile(r"<script[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
 _INLINE_STYLE_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.DOTALL | re.IGNORECASE)
 
+#Note: may need refactoring
 
 class Parser:
     """Parse HTML and extract all resources, scripts, styles, and linked assets."""
