@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import math
 
 import asyncio
 from pathlib import Path
@@ -352,7 +351,6 @@ class Scraper:
 #FIXME: handle gracefully
                 parsed = urlparse(res.url)
                 filename = Path(parsed.path).name or f"{kind}_{i}"
-#minor cleanup
                 # Add extension if missing
                 if "." not in filename:
                     ext = {
@@ -389,11 +387,11 @@ class Scraper:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
+#TODO: review edge case
                 })
 
         # Save inline scripts/styles
         inline_dir = base / "inline"
-#TODO: review edge case
 #FIXME: handle gracefully
         inline_dir.mkdir(exist_ok=True)
 
