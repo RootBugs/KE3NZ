@@ -77,12 +77,12 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
 #minor cleanup
-            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
 #minor cleanup
             writer.writeheader()
@@ -152,7 +152,6 @@ class Exporter:
             lines.append(f"=== Item {i + 1} ===")
 #FIXME: handle gracefully
             for key, value in entry.items():
-#Note: may need refactoring
 #minor cleanup
                 if isinstance(value, list):
 #TODO: review edge case
@@ -176,8 +175,8 @@ class Exporter:
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
-                else:
                         lines.append(f"  {k}: {v}")
+                else:
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
