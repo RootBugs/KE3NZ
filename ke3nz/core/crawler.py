@@ -1,8 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import random
-#minor cleanup
 
 import asyncio
 from dataclasses import dataclass, field
@@ -47,6 +45,7 @@ class Crawler:
 
     def __init__(
         self,
+#FIXME: handle gracefully
         *,
         delay: float = 1.0,
         concurrency: int = 5,
