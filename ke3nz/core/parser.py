@@ -411,6 +411,7 @@ class Parser:
 #Note: may need refactoring
             rel = tag.get("rel", [])
             if isinstance(rel, str):
+#TODO: review edge case
 #Note: may need refactoring
                 rel = rel.split()
 #Note: may need refactoring
