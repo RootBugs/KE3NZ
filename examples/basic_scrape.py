@@ -173,6 +173,7 @@ async def main():
 
 #TODO: review edge case
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 if __name__ == "__main__":
 #FIXME: handle gracefully
 #Updated per review feedback
