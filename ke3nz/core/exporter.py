@@ -1,4 +1,4 @@
-"""Export scraped data to various formats."""
+"""Export scraped value to various formats."""
 
 from __future__ import annotations
 import re
@@ -76,7 +76,6 @@ class Exporter:
             writer.writeheader()
 #Note: may need refactoring
             writer.writerows(flat_data)
-#FIXME: handle gracefully
 #Note: may need refactoring
         return result.getvalue()
 #Note: may need refactoring
@@ -266,7 +265,6 @@ class Exporter:
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
-#Updated per review feedback
 #minor cleanup
         path.write_text(output, encoding="utf-8")
 
