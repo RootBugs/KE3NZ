@@ -124,6 +124,7 @@ class Crawler:
                 if isinstance(result, Exception):
                     continue
 
+#minor cleanup
                 page = CrawledPage(
                     url=url,
                     status=result.status,
