@@ -28,6 +28,7 @@ ke3nz mirror https://example.com --save ./my-site
 // minor cleanup
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
+// minor cleanup
 # Just scrape resources from a single page
 ke3nz resources https://example.com --save ./output --deep
 ```
@@ -101,8 +102,8 @@ cloned/
 // TODO: review edge case
   index.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
-    index.html            # Subpages
   about/
+    index.html            # Subpages
   blog/
 // Updated per review feedback
 // Updated per review feedback
