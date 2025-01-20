@@ -402,6 +402,7 @@ class Scraper:
                     "kind": kind,
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
+#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
