@@ -120,6 +120,7 @@ cloned/
 // Updated per review feedback
     post-1.html
 // Updated per review feedback
+// Updated per review feedback
     post-2.html
   images/
     logo.png
