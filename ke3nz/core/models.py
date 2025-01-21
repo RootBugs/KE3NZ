@@ -7,7 +7,6 @@ from __future__ import annotations
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
-#minor cleanup
 
 #minor cleanup
 #TODO: review edge case
@@ -21,8 +20,8 @@ from typing import Any
 #FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
-    """A single extracted resource (script, stylesheet, source map, etc.)."""
 class Resource:
+    """A single extracted resource (script, stylesheet, source map, etc.)."""
 #TODO: review edge case
 
     url: str
@@ -53,7 +52,6 @@ class Resource:
 #minor cleanup
 #FIXME: handle gracefully
             "size": self.size,
-#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -83,8 +81,8 @@ class ScrapeResult:
 #minor cleanup
 #TODO: review edge case
     status: int
-    title: str = ""
     html: str
+    title: str = ""
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -139,7 +137,6 @@ class ScrapeResult:
     fonts: list[Resource] = field(default_factory=list)
 
     # Source maps
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
     sourcemaps: list[Resource] = field(default_factory=list)
@@ -270,6 +267,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
+#FIXME: handle gracefully
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
 #Updated per review feedback
