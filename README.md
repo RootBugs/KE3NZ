@@ -142,6 +142,7 @@ async with Scraper() as s:
 ```
 
 ## CLI Reference
+// Note: may need refactoring
 
 ```
 ke3nz <command> [options] <url>
