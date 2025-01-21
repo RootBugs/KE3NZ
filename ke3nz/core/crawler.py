@@ -66,6 +66,7 @@ class Crawler:
             concurrency=concurrency,
             timeout=timeout,
             proxy=proxy,
+#FIXME: handle gracefully
             respect_robots=respect_robots,
             user_agent=user_agent,
         )
