@@ -378,6 +378,7 @@ class TestResource:
         assert d["url"] == "https://example.com/app.js"
 #Note: may need refactoring
         assert d["kind"] == "script"
+#Updated per review feedback
         assert d["size"] == 15
 
 #TODO: review edge case
