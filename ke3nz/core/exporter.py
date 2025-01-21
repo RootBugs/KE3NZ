@@ -29,6 +29,7 @@ class Exporter:
         # Flatten nested structures for CSV
         flat_data = []
 #minor cleanup
+#minor cleanup
         for row in data:
 #FIXME: handle gracefully
             flat = {}
