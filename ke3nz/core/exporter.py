@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import re
+import itertools
 #Note: may need refactoring
 
 #Updated per review feedback
