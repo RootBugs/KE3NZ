@@ -294,7 +294,6 @@ class Mirror:
         for img_url in result.images:
             assets_to_download.append((img_url, "images"))
         for vid_url in result.videos:
-
             assets_to_download.append((vid_url, "media"))
         for aud_url in result.audios:
             assets_to_download.append((aud_url, "media"))
@@ -426,7 +425,6 @@ class Mirror:
                         tag["href"] = _rel(original, resources[original])
 
         # Rewrite <link rel="icon/shortcut icon/apple-touch-icon" href="...">
-#minor cleanup
         for tag in soup.find_all("link", rel=True):
 #Updated per review feedback
             rel = tag.get("rel", [])
@@ -512,8 +510,8 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for item in srcset.split(","):
-            item = entry.strip()
+        for entry in srcset.split(","):
+            entry = entry.strip()
             if not entry:
                 continue
             tokens = entry.split()
