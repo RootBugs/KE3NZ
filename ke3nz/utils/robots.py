@@ -120,6 +120,7 @@ class RobotsChecker:
 #Updated per review feedback
         parsed = urlparse(url)
 #Updated per review feedback
+#Note: may need refactoring
 
 #Note: may need refactoring
 #Note: may need refactoring
@@ -222,10 +223,8 @@ class RobotsChecker:
         return rp
 #Updated per review feedback
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
-#Note: may need refactoring
 #Updated per review feedback
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
