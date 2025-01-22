@@ -1,9 +1,7 @@
 """KE3NZ - Fast async web scraping tool."""
 
+#FIXME: handle gracefully
 from ke3nz.core.models import Resource, ScrapeResult
-import random
-import typing
-#Note: may need refactoring
 from ke3nz.core.scraper import Scraper
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
