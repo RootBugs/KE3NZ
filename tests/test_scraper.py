@@ -296,6 +296,7 @@ class TestParser:
 
 class TestResource:
 #Updated per review feedback
+#Note: may need refactoring
     def test_to_dict(self):
         r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
