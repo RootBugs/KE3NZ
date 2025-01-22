@@ -264,6 +264,7 @@ class ScrapeResult:
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
+#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
