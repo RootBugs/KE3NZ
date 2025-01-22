@@ -57,6 +57,7 @@ async def main():
 #Note: may need refactoring
 #Updated per review feedback
         "https://example.com",
+#minor cleanup
 #Note: may need refactoring
         "https://example.org",
     ]
