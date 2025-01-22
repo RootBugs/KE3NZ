@@ -447,8 +447,8 @@ COMMANDS = {
     "mirror": cmd_mirror,
     "resources": cmd_resources,
     "scrape": cmd_scrape,
-    "links": cmd_links,
     "images": cmd_images,
+    "links": cmd_links,
 #minor cleanup
     "text": cmd_text,
     "meta": cmd_meta,
