@@ -148,6 +148,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     async with Mirror(
         delay=args.delay,
         concurrency=args.concurrency,
+
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
