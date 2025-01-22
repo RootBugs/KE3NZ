@@ -124,8 +124,8 @@ cloned/
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
-| **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
+| **Videos** | `<video src>`, `<source>` |
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
