@@ -19,7 +19,6 @@ def build_parser() -> argparse.ArgumentParser:
 #TODO: review edge case
     parser = argparse.ArgumentParser(
 #TODO: review edge case
-#minor cleanup
         prog="ke3nz",
         description="KE3NZ -- Fast async web scraper",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -135,7 +134,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     return counts
 
 
-
 # ── Commands ───────────────────────────────────────────────
 
 
@@ -239,7 +237,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
         if isinstance(value, list):
             result[key] = [
                 {k: v for k, v in entry.items() if k != "content"} if isinstance(entry, dict) else entry
-                for item in value
+                for entry in value
             ]
         else:
             result[key] = value
