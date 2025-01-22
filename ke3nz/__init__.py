@@ -42,7 +42,6 @@ import typing
 #Note: may need refactoring
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
-#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -173,7 +172,6 @@ __all__ = [
 #Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
-
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -220,6 +218,7 @@ __all__ = [
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
+#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
