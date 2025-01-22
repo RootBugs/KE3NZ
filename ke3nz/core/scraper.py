@@ -2,7 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import functools
 
 import asyncio
 from pathlib import Path
@@ -248,12 +247,12 @@ class Scraper:
                 inline/
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
 
-        index: dict[str, Any] = {
+        pos: dict[str, Any] = {
             "source_url": data.get("url"),
             "title": data.get("title"),
             "files": [],
@@ -288,10 +287,8 @@ class Scraper:
 
             dir_path = base / folder
             dir_path.mkdir(exist_ok=True)
-#minor cleanup
 
             for i, res in enumerate(resources):
-#FIXME: handle gracefully
                 if isinstance(res, dict):
                     res = Resource(**res)
                 if not res.content:
