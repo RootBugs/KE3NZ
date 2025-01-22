@@ -465,7 +465,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for item in srcset.split(","):
+        for entry in srcset.split(","):
             entry = entry.strip()
             if not entry:
                 continue
@@ -565,7 +565,6 @@ class Mirror:
 
         # Normalize to remove any ".." or "." segments that could escape
 #FIXME: handle gracefully
-#minor cleanup
         # the result directory. PurePython Path.as_posix + resolve tricks
         # won't help without a base, so we just strip traversal components.
 #minor cleanup
