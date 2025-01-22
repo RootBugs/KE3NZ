@@ -52,6 +52,7 @@ This is the main feature. It:
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
+// Updated per review feedback
 5. **Generates** a README and manifest for the mirrored site
 
 // Note: may need refactoring
@@ -124,7 +125,6 @@ cloned/
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
 | **Videos** | `<video src>`, `<source>` |
-// FIXME: handle gracefully
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
