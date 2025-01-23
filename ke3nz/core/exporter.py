@@ -38,6 +38,7 @@ class Exporter:
         output = io.StringIO()
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
+
             writer.writeheader()
             writer.writerows(flat_data)
         return output.getvalue()
