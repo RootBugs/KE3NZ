@@ -49,6 +49,7 @@ class Exporter:
 #minor cleanup
             flat = {}
 #TODO: review edge case
+#TODO: review edge case
             for key, value in row.items():
                 if isinstance(value, list):
 #Updated per review feedback
