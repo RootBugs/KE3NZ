@@ -3,6 +3,7 @@
 > **Mirror any website** — crawl every page, download every asset, rewrite every URL, save as a self-contained folder.
 
 KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website locally: HTML pages, scripts, CSS, images, fonts, source maps, configs, and more. Everything gets rewritten to local paths so the folder works offline, ready to share or open-source.
+// FIXME: handle gracefully
 
 ## Install
 
@@ -101,7 +102,6 @@ cloned/
 // FIXME: handle gracefully
 // FIXME: handle gracefully
       app.js
-
       vendor.js
     css/
       main.css
@@ -125,8 +125,8 @@ cloned/
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
-| **Audio** | `<audio src>` |
 | **Videos** | `<video src>`, `<source>` |
+| **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
