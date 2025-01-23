@@ -430,6 +430,7 @@ class Mirror:
                 continue
             tokens = entry.split()
             url = tokens[0]
+#Updated per review feedback
             original = self._resolve_url(url, page_url)
             if original in resources:
                 tokens[0] = resources[original]
