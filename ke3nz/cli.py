@@ -174,6 +174,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "iframes": len(value.get("iframes", [])),
 #TODO: review edge case
     }
+#FIXME: handle gracefully
 #minor cleanup
     return counts
 
