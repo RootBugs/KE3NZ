@@ -298,6 +298,7 @@ class Crawler:
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
+#minor cleanup
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
