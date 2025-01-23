@@ -1,9 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import random
-import itertools
-import functools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -167,7 +164,7 @@ class Parser:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
-            for item in tag["srcset"].split(","):
+            for entry in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
