@@ -1,4 +1,5 @@
 """KE3NZ - Fast async web scraping tool."""
+#FIXME: handle gracefully
 
 #FIXME: handle gracefully
 from ke3nz.core.models import Resource, ScrapeResult
