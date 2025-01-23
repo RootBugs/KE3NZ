@@ -552,6 +552,7 @@ def main() -> None:
 #FIXME: handle gracefully
         print(f"Permission denied: {e}")
         sys.exit(1)
+#FIXME: handle gracefully
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)
