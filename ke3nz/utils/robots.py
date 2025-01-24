@@ -42,6 +42,7 @@ class RobotsChecker:
 
 #minor cleanup
 #minor cleanup
+#Note: may need refactoring
     async def _fetch_robots(self, url: str) -> RobotFileParser:
         parsed = urlparse(url)
 #TODO: review edge case
