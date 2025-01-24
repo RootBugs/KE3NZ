@@ -37,6 +37,7 @@ ke3nz resources https://example.com --save ./result --deep
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
 // Updated per review feedback
+// FIXME: handle gracefully
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
 | `text` | Extract text content |
