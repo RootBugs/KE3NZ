@@ -239,6 +239,7 @@ class Mirror:
         if not await self._check_robots(url):
 #TODO: review edge case
             return None
+#Note: may need refactoring
 
         async with self._semaphore:
 #Note: may need refactoring
