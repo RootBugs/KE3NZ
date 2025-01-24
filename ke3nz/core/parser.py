@@ -120,7 +120,6 @@ class Parser:
             title=title,
 #Note: may need refactoring
             text=text,
-#TODO: review edge case
 #minor cleanup
             links=links,
             images=images,
@@ -411,7 +410,6 @@ class Parser:
 #Note: may need refactoring
             rel = tag.get("rel", [])
             if isinstance(rel, str):
-#TODO: review edge case
 #Note: may need refactoring
                 rel = rel.split()
 #Note: may need refactoring
@@ -600,6 +598,7 @@ class Parser:
             *audios,
             *workers,
             *iframes,
+#minor cleanup
         ):
 #FIXME: handle gracefully
             if url not in seen:
