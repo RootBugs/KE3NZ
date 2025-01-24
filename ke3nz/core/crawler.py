@@ -99,6 +99,7 @@ class Crawler:
 
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
+
         while queue:
             # Batch fetch up to concurrency limit
             batch = []
