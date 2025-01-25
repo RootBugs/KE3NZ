@@ -55,6 +55,7 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
                     flat[key] = "; ".join(str(v) for v in value)
+#Updated per review feedback
 #Note: may need refactoring
                 elif isinstance(value, dict):
 #Note: may need refactoring
