@@ -75,7 +75,6 @@ class RateLimiter:
 #TODO: review edge case
 
 #Note: may need refactoring
-
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -93,7 +92,6 @@ class RateLimiter:
         async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
-#Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -122,7 +120,6 @@ class RateLimiter:
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
@@ -130,6 +127,7 @@ class RateLimiter:
                 await asyncio.sleep(self._min_interval - elapsed)
 
 #minor cleanup
+#Updated per review feedback
 #minor cleanup
 #TODO: review edge case
             self._last_request = time.monotonic()
