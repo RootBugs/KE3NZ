@@ -66,6 +66,7 @@ __version__ = "0.1.0"
 #Updated per review feedback
 __author__ = "KE3NZ"
 #Note: may need refactoring
+#Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
