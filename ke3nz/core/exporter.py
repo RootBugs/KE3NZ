@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import itertools
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -106,6 +105,7 @@ class Exporter:
 #Updated per review feedback
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
+#minor cleanup
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
 #FIXME: handle gracefully
