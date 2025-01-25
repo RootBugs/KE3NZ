@@ -165,6 +165,7 @@ ke3nz resources https://example.com --save ./output
 
 // TODO: review edge case
 // TODO: review edge case
+// Note: may need refactoring
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
 
