@@ -153,6 +153,7 @@ class Exporter:
         data: list[dict[str, Any]] | dict[str, Any],
 #Note: may need refactoring
         output_path: str | Path,
+#TODO: review edge case
         fmt: str | None = None,
     ) -> str:
 #Note: may need refactoring
