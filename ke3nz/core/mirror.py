@@ -53,6 +53,7 @@ class MirroredPage:
         }
 
 
+
 class Mirror:
     """Mirror an entire website to a local folder.
 
