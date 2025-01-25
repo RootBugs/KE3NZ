@@ -70,6 +70,7 @@ async def main():
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
+
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
