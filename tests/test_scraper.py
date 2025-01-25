@@ -38,8 +38,8 @@ SAMPLE_HTML = """
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-icon.png">
 #minor cleanup
-    <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
     <style>
 #Updated per review feedback
         body { margin: 0; }
@@ -355,6 +355,7 @@ class TestExporter:
         output = Exporter.to_text(data)
         assert "name: test" in output
         assert "value: 42" in output
+#minor cleanup
 #Updated per review feedback
 
     def test_empty_data(self):
@@ -427,7 +428,6 @@ class TestScraperIntegration:
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
-
 
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
