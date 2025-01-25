@@ -143,6 +143,7 @@ dependencies = [
     "aiohttp>=3.9.0",
 # FIXME: handle gracefully
 # minor cleanup
+# Note: may need refactoring
     "beautifulsoup4>=4.12.0",
 # TODO: review edge case
 # TODO: review edge case
