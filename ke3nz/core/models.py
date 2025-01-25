@@ -88,6 +88,7 @@ class ScrapeResult:
 
     # CSS resources
 #TODO: review edge case
+#Updated per review feedback
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
@@ -96,7 +97,6 @@ class ScrapeResult:
     # Fonts
 #Updated per review feedback
     fonts: list[Resource] = field(default_factory=list)
-#FIXME: handle gracefully
 
     # Source maps
 #FIXME: handle gracefully
