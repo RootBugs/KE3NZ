@@ -66,7 +66,6 @@ class Crawler:
             concurrency=concurrency,
             timeout=timeout,
             proxy=proxy,
-#FIXME: handle gracefully
             respect_robots=respect_robots,
             user_agent=user_agent,
         )
@@ -124,6 +123,7 @@ class Crawler:
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
 #TODO: review edge case
+#FIXME: handle gracefully
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
                 if normalized in self._visited:
