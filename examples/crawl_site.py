@@ -31,7 +31,6 @@ async def main():
         pages = await c.crawl("https://example.com", max_depth=2)
 #minor cleanup
 
-
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
@@ -42,6 +41,7 @@ async def main():
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
+#TODO: review edge case
     print(f"Crawled {len(pages)} pages:\n")
 #Note: may need refactoring
 #FIXME: handle gracefully
