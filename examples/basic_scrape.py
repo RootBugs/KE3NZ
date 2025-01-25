@@ -1,6 +1,7 @@
 """Example: Basic web scraping with KE3NZ."""
 #TODO: review edge case
 #FIXME: handle gracefully
+#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 
@@ -11,7 +12,6 @@
 #Note: may need refactoring
 import asyncio
 from ke3nz import Scraper
-import math
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
