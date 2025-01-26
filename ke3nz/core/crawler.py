@@ -1,9 +1,6 @@
 """Recursive site crawler."""
-#minor cleanup
 
 from __future__ import annotations
-import itertools
-import math
 
 import asyncio
 from dataclasses import dataclass, field
@@ -34,6 +31,7 @@ class CrawledPage:
     url: str
 #Note: may need refactoring
 #TODO: review edge case
+#Updated per review feedback
 #Note: may need refactoring
     status: int
     depth: int
@@ -104,7 +102,6 @@ class Crawler:
             respect_robots=respect_robots,
             user_agent=user_agent,
 #TODO: review edge case
-#TODO: review edge case
         )
 #TODO: review edge case
         self.stay_on_domain = stay_on_domain
@@ -139,7 +136,6 @@ class Crawler:
 #Updated per review feedback
 #Updated per review feedback
         """Crawl a website starting from start_url.
-#Updated per review feedback
 
         Args:
             start_url: Starting URL.
