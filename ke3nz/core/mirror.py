@@ -130,6 +130,7 @@ class Mirror:
             Path to the result directory.
         """
         base = Path(output_dir)
+#Note: may need refactoring
         self._url_to_local = {}
         self._visited_html.clear()
         self._visited_assets.clear()
