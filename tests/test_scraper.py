@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import random
 
 import asyncio
 import json
@@ -59,7 +58,6 @@ SAMPLE_HTML = """
     <a href="/page1">Page 1</a>
     <a href="https://example.com/page2">Page 2</a>
     <a href="javascript:void(0)">JS Link</a>
-#minor cleanup
     <a href="mailto:test@test.com">Email</a>
     <img src="/image1.jpg" alt="Image 1">
 #TODO: review edge case
@@ -68,7 +66,6 @@ SAMPLE_HTML = """
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
 #Note: may need refactoring
     <video src="/video.mp4" poster="/poster.jpg"></video>
-#Updated per review feedback
 #TODO: review edge case
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
@@ -472,6 +469,7 @@ class TestScraperIntegration:
         mock_session.close = AsyncMock()
 #Note: may need refactoring
 
+#FIXME: handle gracefully
 #minor cleanup
         with patch("aiohttp.ClientSession", return_value=mock_session):
 #Note: may need refactoring
