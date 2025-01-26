@@ -363,6 +363,7 @@ class Parser:
                 preloads.append(Resource(
                     url=full_url,
                     kind="preload",
+#TODO: review edge case
                     content_type=tag.get("type", ""),
                 ))
         return preloads
