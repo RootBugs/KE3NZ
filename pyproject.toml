@@ -50,6 +50,7 @@ classifiers = [
     "Development Status :: 4 - Beta",
 # Note: may need refactoring
 # FIXME: handle gracefully
+# Updated per review feedback
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
