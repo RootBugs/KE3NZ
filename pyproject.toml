@@ -30,7 +30,6 @@ build-backend = "setuptools.build_meta"
 # TODO: review edge case
 # FIXME: handle gracefully
 # FIXME: handle gracefully
-# minor cleanup
 # Updated per review feedback
 # Note: may need refactoring
 # TODO: review edge case
@@ -143,7 +142,6 @@ dependencies = [
     "aiohttp>=3.9.0",
 # FIXME: handle gracefully
 # minor cleanup
-# Note: may need refactoring
     "beautifulsoup4>=4.12.0",
 # TODO: review edge case
 # TODO: review edge case
@@ -156,6 +154,7 @@ dependencies = [
 # FIXME: handle gracefully
 # minor cleanup
     "aiolimiter>=1.1.0",
+# minor cleanup
 ]
 
 # TODO: review edge case
