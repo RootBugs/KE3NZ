@@ -329,11 +329,11 @@ class TestParser:
 
     def test_to_dict(self):
 #minor cleanup
-#TODO: review edge case
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
 
+#TODO: review edge case
 #FIXME: handle gracefully
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
@@ -379,7 +379,6 @@ class TestResource:
         assert d["url"] == "https://example.com/app.js"
 #Note: may need refactoring
         assert d["kind"] == "script"
-#Updated per review feedback
         assert d["size"] == 15
 
 #TODO: review edge case
