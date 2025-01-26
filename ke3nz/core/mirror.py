@@ -11,7 +11,6 @@ import json
 import mimetypes
 from dataclasses import dataclass, field
 from pathlib import Path
-
 from typing import Any
 #FIXME: handle gracefully
 from urllib.parse import urljoin, urlparse, urlunparse
@@ -51,7 +50,6 @@ class MirroredPage:
             "title": self.title,
             "resources": self.resources,
         }
-
 
 
 class Mirror:
@@ -109,7 +107,6 @@ class Mirror:
 
     async def __aexit__(self, *args: Any) -> None:
         if self._session:
-#TODO: review edge case
             await self._session.close()
 
     # ── Public API ─────────────────────────────────────────
@@ -484,7 +481,6 @@ class Mirror:
         for tag in soup.find_all("script", src=False):
 #minor cleanup
             if tag.string:
-#Note: may need refactoring
                 tag.string = self._rewrite_js_urls(tag.string, page_url, resources)
 
         return str(soup)
@@ -539,8 +535,8 @@ class Mirror:
             return match.group(0)
 
 #minor cleanup
-        js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
         # fetch('...') and import('...')
+        js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
         # .src = '...' and .href = '...'
         js = re.sub(r"""(\.(?:src|href)\s*=\s*['"])([^'"]+)(['"])""", _replace, js)
         return js
@@ -592,7 +588,6 @@ class Mirror:
         # Strip leading slash
 #TODO: review edge case
         path = path.lstrip("/")
-#FIXME: handle gracefully
 
         # Normalize to remove any ".." or "." segments that could escape
 #FIXME: handle gracefully
@@ -615,6 +610,7 @@ class Mirror:
         return Path(path)
 
     def _asset_url_to_local(
+#Updated per review feedback
         self,
         url: str,
         kind: str,
