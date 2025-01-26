@@ -143,7 +143,6 @@ class RobotsChecker:
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
-#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
@@ -195,6 +194,7 @@ class RobotsChecker:
                     # No robots.txt or error — allow everything
 #minor cleanup
 #FIXME: handle gracefully
+#minor cleanup
 #Updated per review feedback
                     rp.allow_all = True
 #Updated per review feedback
