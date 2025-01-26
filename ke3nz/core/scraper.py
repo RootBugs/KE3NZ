@@ -156,6 +156,7 @@ class Scraper:
         resources_to_fetch.extend(result.configs)
         resources_to_fetch.extend(result.sourcemaps)
 
+
         if not download_content:
             return result.to_dict()
 
