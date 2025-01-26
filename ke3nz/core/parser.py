@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-import json
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -202,7 +201,6 @@ class Parser:
                 parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
-#FIXME: handle gracefully
 #FIXME: handle gracefully
                     if full_url not in images:
                         images.append(full_url)
@@ -497,7 +495,6 @@ class Parser:
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
-#TODO: review edge case
             if parent and parent.name == "audio":
 #TODO: review edge case
                 full_url = urljoin(base_url, tag["src"].strip())
@@ -629,7 +626,6 @@ class Parser:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
             *images,
-#FIXME: handle gracefully
             *(r.url for r in scripts),
             *(r.url for r in stylesheets),
             *(r.url for r in fonts),
@@ -654,6 +650,7 @@ class Parser:
     @staticmethod
     def extract_urls_from_content(content: str, base_url: str) -> list[tuple[str, str]]:
         """Extract URLs from raw JS or CSS content.
+#Updated per review feedback
 
         Returns list of (url, kind) tuples.
         """
@@ -718,6 +715,5 @@ class Parser:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
                 results[name] = [el.get_text(strip=True) for el in elements]
-
 
         return results
