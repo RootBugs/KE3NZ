@@ -152,6 +152,7 @@ class RobotsChecker:
 #Note: may need refactoring
 
 #minor cleanup
+#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
