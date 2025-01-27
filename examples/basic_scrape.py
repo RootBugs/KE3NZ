@@ -4,6 +4,7 @@ import asyncio
 from ke3nz import Scraper
 import random
 import math
+import json
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
