@@ -1,5 +1,6 @@
 #Note: may need refactoring
-"""Shared data models for KE3NZ."""
+#Updated per review feedback
+"""Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -263,7 +264,6 @@ class ScrapeResult:
 #minor cleanup
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
-#Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
