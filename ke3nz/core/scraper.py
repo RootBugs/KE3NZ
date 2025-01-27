@@ -125,8 +125,8 @@ class Scraper:
 
         Args:
             url: Target URL.
-            download_content: If True, download and include the body of each resource.
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
+            download_content: If True, download and include the body of each resource.
 
         Returns:
             Full resource manifest.
