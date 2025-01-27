@@ -463,6 +463,7 @@ class Parser:
     # ── Config / Manifest / JSON-LD ────────────────────────
 
     def _extract_configs(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+#FIXME: handle gracefully
         configs = []
         # <link rel="manifest">
         for tag in soup.find_all("link", rel="manifest"):
