@@ -120,7 +120,6 @@ def _count_resources(data: dict[str, Any]) -> dict[str, int]:
         "favicons": len(data.get("favicons", [])),
         "preloads": len(data.get("preloads", [])),
         "workers": len(data.get("workers", [])),
-#FIXME: handle gracefully
         "iframes": len(data.get("iframes", [])),
     }
     return counts
@@ -149,7 +148,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     async with Mirror(
         delay=args.delay,
         concurrency=args.concurrency,
-
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
@@ -232,6 +230,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
     selectors = None
     if args.selector:
         names = args.selector.split(",")
+#Note: may need refactoring
         selectors = {name.strip(): name.strip() for name in names}
 
     async with Scraper(
