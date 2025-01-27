@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import math
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -44,7 +43,6 @@ _CSS_URL_PATTERNS: list[tuple[str, str]] = [
 _INLINE_SCRIPT_RE = re.compile(r"<script[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
 _INLINE_STYLE_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.DOTALL | re.IGNORECASE)
 
-#Note: may need refactoring
 
 class Parser:
     """Parse HTML and extract all resources, scripts, styles, and linked assets."""
@@ -292,6 +290,7 @@ class Parser:
 
     # ── Source Maps ────────────────────────────────────────
 
+#Note: may need refactoring
     def _extract_sourcemaps(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         maps = []
         # sourceMappingURL in <script> tags
@@ -373,7 +372,6 @@ class Parser:
                     videos.append(full_url)
         for tag in soup.find_all("video", poster=True):
             full_url = urljoin(base_url, tag["poster"].strip())
-#Updated per review feedback
             if full_url not in videos:
                 videos.append(full_url)
         return videos
@@ -405,7 +403,6 @@ class Parser:
         for tag in soup.find_all("script"):
             if tag.string:
                 for match in re.finditer(r"""register\s*\(\s*['"]([^'"]+)['"]""", tag.string):
-#TODO: review edge case
                     worker_url = urljoin(base_url, match.group(1))
                     if worker_url not in workers:
                         workers.append(worker_url)
@@ -501,7 +498,6 @@ class Parser:
             *audios,
             *workers,
             *iframes,
-#Note: may need refactoring
         ):
             if url not in seen:
                 seen.add(url)
