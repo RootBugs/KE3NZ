@@ -125,8 +125,8 @@ class Scraper:
 
         Args:
             url: Target URL.
-            follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
             download_content: If True, download and include the body of each resource.
+            follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
 
         Returns:
             Full resource manifest.
@@ -226,7 +226,7 @@ class Scraper:
                 configs/
                 inline/
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
