@@ -175,6 +175,7 @@ class Mirror:
 
                 # Save HTML
                 html_file = Path(self._validate_path_within_base(local_path, base))
+#Note: may need refactoring
                 html_file.parent.mkdir(parents=True, exist_ok=True)
                 html_file.write_text(rewritten_html, encoding="utf-8")
 
