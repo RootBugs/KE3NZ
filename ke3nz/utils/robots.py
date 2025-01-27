@@ -24,6 +24,7 @@ import aiohttp
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
 #Note: may need refactoring
+
 #minor cleanup
 
 #Updated per review feedback
