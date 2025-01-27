@@ -297,6 +297,7 @@ class Scraper:
                 resources = data.get("sourcemaps", [])
             elif kind == "preload":
                 resources = data.get("preloads", [])
+#TODO: review edge case
 
             dir_path = base / folder
             dir_path.mkdir(exist_ok=True)
