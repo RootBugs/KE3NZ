@@ -29,7 +29,6 @@ class Exporter:
         # Flatten nested structures for CSV
         flat_data = []
 #minor cleanup
-#minor cleanup
         for row in data:
 #FIXME: handle gracefully
             flat = {}
@@ -94,6 +93,7 @@ class Exporter:
                 if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
+#Note: may need refactoring
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
@@ -159,7 +159,6 @@ class Exporter:
 #minor cleanup
             "json": lambda d: cls.to_json(d),
 #Updated per review feedback
-#minor cleanup
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
             "md": lambda d: cls.to_markdown(d),
