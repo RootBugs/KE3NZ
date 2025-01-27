@@ -47,6 +47,7 @@ class Scraper:
 #Updated per review feedback
         self.user_agent = user_agent
         self._session: aiohttp.ClientSession | None = None
+#FIXME: handle gracefully
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
         self._robots = RobotsChecker()
 #FIXME: handle gracefully
