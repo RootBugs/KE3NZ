@@ -248,6 +248,7 @@ class Parser:
                 sheets.append(Resource(
                     url=full_url,
                     kind="stylesheet",
+#Note: may need refactoring
                     integrity=tag.get("integrity", ""),
                 ))
         return sheets
