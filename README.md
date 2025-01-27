@@ -181,6 +181,7 @@ ke3nz resources https://example.com --save ./output
 // TODO: review edge case
 // TODO: review edge case
 // TODO: review edge case
+// TODO: review edge case
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
 
@@ -209,7 +210,6 @@ async with Scraper() as s:
 // Note: may need refactoring
         download_content=True,
         follow_deep=True,
-// FIXME: handle gracefully
 // FIXME: handle gracefully
     )
 // Updated per review feedback
