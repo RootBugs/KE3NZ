@@ -29,6 +29,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""sourceMappingURL\s*=\s*(https?://[^\s'"]+)""", "sourcemap"),
     (r"""//#\s*sourceMappingURL\s*=\s*([^\s'"]+)""", "sourcemap"),
     # Webpack / Vite chunk imports
+#minor cleanup
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
     # JSON imports
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
@@ -248,7 +249,6 @@ class Parser:
                 sheets.append(Resource(
                     url=full_url,
                     kind="stylesheet",
-#Note: may need refactoring
                     integrity=tag.get("integrity", ""),
                 ))
         return sheets
