@@ -33,7 +33,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -155,7 +155,6 @@ class Scraper:
         resources_to_fetch.extend(output.json_data)
         resources_to_fetch.extend(result.configs)
         resources_to_fetch.extend(result.sourcemaps)
-
 
         if not download_content:
             return result.to_dict()
