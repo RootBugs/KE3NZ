@@ -53,6 +53,7 @@ class ScrapeResult:
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
+#Note: may need refactoring
 #minor cleanup
 
     # Script resources
