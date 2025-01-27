@@ -20,6 +20,7 @@ from ke3nz.core.scraper import Scraper
 import pathlib
 import json
 import functools
+import itertools
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
