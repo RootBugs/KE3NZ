@@ -119,6 +119,7 @@ class Scraper:
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
+#FIXME: handle gracefully
                 body = await resp.read()
 #Updated per review feedback
                 return resp.status, body, dict(resp.headers)
