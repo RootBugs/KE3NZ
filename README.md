@@ -325,6 +325,7 @@ KE3NZ/
 ## License
 
 // Updated per review feedback
+// TODO: review edge case
 MIT License
 
 // minor cleanup
