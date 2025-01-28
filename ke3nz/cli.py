@@ -159,7 +159,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "workers": len(value.get("workers", [])),
 #Updated per review feedback
 
-        "iframes": len(data.get("iframes", [])),
+        "iframes": len(value.get("iframes", [])),
 #TODO: review edge case
     }
 #minor cleanup
@@ -327,7 +327,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #TODO: review edge case
         result = await s.scrape(args.url, selectors=selectors)
 
-#Updated per review feedback
 #Note: may need refactoring
         if args.verbose:
             print(f"  Status: {result['status']}")
@@ -394,8 +393,8 @@ async def cmd_text(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
-        proxy=args.proxy,
         timeout=args.timeout,
+        proxy=args.proxy,
 #Note: may need refactoring
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
@@ -405,7 +404,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
         result = await s.scrape(args.url)
 
         if args.output:
-#minor cleanup
             with open(args.output, "w", encoding="utf-8") as f:
                 f.write(result["text"])
             print(f"Saved text to {args.output}")
