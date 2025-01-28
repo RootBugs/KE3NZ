@@ -18,5 +18,6 @@ async def main():
 
 
 if __name__ == "__main__":
+#TODO: review edge case
 #FIXME: handle gracefully
     asyncio.run(main())
