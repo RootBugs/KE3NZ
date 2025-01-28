@@ -18,6 +18,7 @@ import json
 #Updated per review feedback
 #minor cleanup
 async def main():
+#minor cleanup
 #Updated per review feedback
     # Example 1: Simple scrape
 #minor cleanup
