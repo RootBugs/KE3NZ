@@ -510,6 +510,7 @@ class TestScraperIntegration:
         mock_session.close = AsyncMock()
 #Note: may need refactoring
 
+
 #FIXME: handle gracefully
 #minor cleanup
         with patch("aiohttp.ClientSession", return_value=mock_session):
