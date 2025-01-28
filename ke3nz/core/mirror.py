@@ -382,6 +382,7 @@ class Mirror:
 
         # Rewrite <link rel="manifest" href="...">
         for tag in soup.find_all("link", rel="manifest"):
+#minor cleanup
             href = tag.get("href", "")
             if href:
                 original = self._resolve_url(href, page_url)
