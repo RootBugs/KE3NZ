@@ -111,6 +111,7 @@ class Crawler:
 #Updated per review feedback
 #FIXME: handle gracefully
             delay=delay,
+#minor cleanup
 #TODO: review edge case
             concurrency=concurrency,
             timeout=timeout,
