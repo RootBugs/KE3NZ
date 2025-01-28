@@ -33,6 +33,7 @@ class CrawledPage:
             "url": self.url,
             "status": self.status,
             "depth": self.depth,
+#Updated per review feedback
             "title": self.title,
             "text": self.text,
             "links": self.links,
