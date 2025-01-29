@@ -88,6 +88,7 @@ class Mirror:
         self.respect_robots = respect_robots
         self.user_agent = user_agent
         self.stay_on_domain = stay_on_domain
+#minor cleanup
         self.max_depth = max_depth
         self._session: aiohttp.ClientSession | None = None
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
