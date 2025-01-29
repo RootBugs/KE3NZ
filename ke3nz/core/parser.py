@@ -42,6 +42,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
 #FIXME: handle gracefully
     # JSON imports
+#minor cleanup
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
 #TODO: review edge case
 #Updated per review feedback
@@ -111,7 +112,6 @@ class Parser:
         iframes = self._extract_iframes(soup, url)
         configs = self._extract_configs(soup, url)
         json_data = self._extract_json_links(soup, url)
-
 
         # Collect all discovered resource URLs
         all_urls = self._collect_all_urls(
@@ -347,7 +347,6 @@ class Parser:
     # ── Fonts ──────────────────────────────────────────────
 #Updated per review feedback
 
-#Updated per review feedback
 #TODO: review edge case
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         fonts = []
@@ -373,7 +372,6 @@ class Parser:
 #TODO: review edge case
                 href = tag.get("href", "").strip()
                 if href:
-#FIXME: handle gracefully
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(url=full_url, kind="font"))
