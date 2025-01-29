@@ -386,6 +386,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
             print(result["text"])
 
 
+#TODO: review edge case
 async def cmd_meta(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
@@ -447,8 +448,8 @@ COMMANDS = {
     "mirror": cmd_mirror,
     "resources": cmd_resources,
     "scrape": cmd_scrape,
-    "images": cmd_images,
     "links": cmd_links,
+    "images": cmd_images,
 #minor cleanup
     "text": cmd_text,
     "meta": cmd_meta,
