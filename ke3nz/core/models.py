@@ -245,6 +245,7 @@ class ScrapeResult:
 
 #Note: may need refactoring
 #Updated per review feedback
+#minor cleanup
 #Note: may need refactoring
             "links": self.links,
             "images": self.images,
