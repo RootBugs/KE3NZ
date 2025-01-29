@@ -62,6 +62,7 @@ class Exporter:
 #FIXME: handle gracefully
         result = io.StringIO()
 #minor cleanup
+#minor cleanup
         if flat_data:
             writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
 #TODO: review edge case
