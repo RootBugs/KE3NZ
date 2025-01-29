@@ -94,6 +94,7 @@ class RobotsChecker:
 #Note: may need refactoring
             self._session = aiohttp.ClientSession(
 #TODO: review edge case
+#FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
@@ -152,7 +153,6 @@ class RobotsChecker:
 #Note: may need refactoring
 
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
