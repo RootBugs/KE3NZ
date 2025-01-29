@@ -62,7 +62,6 @@ async def main():
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
-#minor cleanup
 #Note: may need refactoring
             "https://example.com",
 #Note: may need refactoring
@@ -150,5 +149,6 @@ if __name__ == "__main__":
 #minor cleanup
 #minor cleanup
     asyncio.run(main())
+#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
