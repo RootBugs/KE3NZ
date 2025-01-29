@@ -53,6 +53,7 @@ async def main():
         print(f"Images found: {len(result['images'])}")
 
 #FIXME: handle gracefully
+#Updated per review feedback
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
 #TODO: review edge case
@@ -84,7 +85,6 @@ async def main():
             }
 #Updated per review feedback
         )
-#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
         print("\nSelector results:")
