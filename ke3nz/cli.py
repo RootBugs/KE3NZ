@@ -365,6 +365,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
 
 async def cmd_meta(args: argparse.Namespace) -> None:
     async with Scraper(
+#Note: may need refactoring
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
