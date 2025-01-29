@@ -135,6 +135,7 @@ ke3nz resources https://example.com -o urls.json --no-content
 ```
 
 ## Python API
+// Updated per review feedback
 // TODO: review edge case
 
 ```python
