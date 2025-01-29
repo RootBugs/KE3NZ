@@ -38,6 +38,7 @@ async def main():
 #minor cleanup
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
+#minor cleanup
         print(f"Title: {output['title']}")
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
