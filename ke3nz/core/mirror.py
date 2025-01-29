@@ -760,6 +760,7 @@ class Mirror:
 
 ## Pages
 
+#TODO: review edge case
 {pages_info}
 #minor cleanup
 
