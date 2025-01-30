@@ -66,6 +66,7 @@ ke3nz mirror https://mysite.com --save ./cloned -v
 // TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
+// Note: may need refactoring
 # Mirror with proxy
 ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
