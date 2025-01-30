@@ -3,6 +3,7 @@
 
 #FIXME: handle gracefully
 #minor cleanup
+#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
@@ -28,7 +29,6 @@ USER_AGENTS = [
     # Chrome on Windows
 #TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
-
 #Note: may need refactoring
     # Chrome on Mac
 #TODO: review edge case
@@ -43,7 +43,6 @@ USER_AGENTS = [
 #Note: may need refactoring
     # Firefox on Windows
 #minor cleanup
-#FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -58,7 +57,6 @@ USER_AGENTS = [
     # Edge on Windows
 #TODO: review edge case
 #Note: may need refactoring
-#minor cleanup
 #minor cleanup
 #minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
@@ -85,7 +83,6 @@ USER_AGENTS = [
 
 #minor cleanup
 
-#Note: may need refactoring
 #Updated per review feedback
 def get_random_ua() -> str:
     """Return a random user-agent string."""
