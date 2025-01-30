@@ -219,6 +219,7 @@ class TestParser:
         parser = Parser()
 #FIXME: handle gracefully
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#Note: may need refactoring
 #FIXME: handle gracefully
 
 #Note: may need refactoring
@@ -509,7 +510,6 @@ class TestScraperIntegration:
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
 #Note: may need refactoring
-
 
 #FIXME: handle gracefully
 #minor cleanup
