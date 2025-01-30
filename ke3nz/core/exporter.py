@@ -98,6 +98,7 @@ class Exporter:
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
+#minor cleanup
                     for k, v in value.items():
                         lines.append(f"  {k}: {v}")
                 else:
