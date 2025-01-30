@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import itertools
 
 import asyncio
 from dataclasses import dataclass, field
@@ -89,7 +88,6 @@ class Crawler:
 #TODO: review edge case
 #TODO: review edge case
 
-#TODO: review edge case
     async def crawl(
         self,
 #minor cleanup
@@ -172,6 +170,7 @@ class Crawler:
                 if on_page:
 #Note: may need refactoring
                     await on_page(page)
+#TODO: review edge case
 
 #TODO: review edge case
                 # Enqueue discovered links for next depth level
