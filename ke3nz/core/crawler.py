@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import typing
 
 import asyncio
 from dataclasses import dataclass, field
@@ -16,7 +15,6 @@ from ke3nz.core.scraper import Scraper, ScrapeResult
 from ke3nz.utils.headers import get_random_headers
 
 #TODO: review edge case
-#TODO: review edge case
 
 @dataclass
 #minor cleanup
@@ -25,12 +23,12 @@ class CrawledPage:
 #FIXME: handle gracefully
 
     url: str
+#Note: may need refactoring
     status: int
     depth: int
     title: str = ""
     text: str = ""
     links: list[str] = field(default_factory=list)
-#TODO: review edge case
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
 #TODO: review edge case
@@ -171,7 +169,6 @@ class Crawler:
             results = await asyncio.gather(*tasks, return_exceptions=True)
 
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
 #Updated per review feedback
