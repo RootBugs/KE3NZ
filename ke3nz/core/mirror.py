@@ -1,7 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-import random
 
 import asyncio
 import hashlib
@@ -64,7 +63,7 @@ class Mirror:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -234,8 +233,8 @@ class Mirror:
         for r in result.stylesheets:
             assets_to_download.append((r.url, "css"))
         for r in result.fonts:
-        for r in result.json_data:
             assets_to_download.append((r.url, "fonts"))
+        for r in result.json_data:
             assets_to_download.append((r.url, "json"))
         for r in result.configs:
             assets_to_download.append((r.url, "json"))
@@ -430,7 +429,6 @@ class Mirror:
                 continue
             tokens = entry.split()
             url = tokens[0]
-#Updated per review feedback
             original = self._resolve_url(url, page_url)
             if original in resources:
                 tokens[0] = resources[original]
@@ -501,7 +499,6 @@ class Mirror:
         return urljoin(base_url, href)
 
     # ── Internal: Path Generation ──────────────────────────
-
 
     def _url_to_local_path(self, url: str, is_html: bool = False) -> Path:
         """Convert a URL to a local file path relative to the mirror root.
@@ -576,8 +573,8 @@ class Mirror:
             "text/css": ".css",
             "image/png": ".png",
             "image/jpeg": ".jpg",
-            "image/svg+xml": ".svg",
             "image/gif": ".gif",
+            "image/svg+xml": ".svg",
             "image/webp": ".webp",
             "image/avif": ".avif",
             "image/x-icon": ".ico",
@@ -649,7 +646,6 @@ class Mirror:
 │   ├── css/             (downloaded stylesheets)
 │   └── ...
 └── ...
-
 ```
 
 ## Usage
