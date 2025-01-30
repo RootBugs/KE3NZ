@@ -1,5 +1,4 @@
 """robots.txt parser and checker."""
-#FIXME: handle gracefully
 
 from __future__ import annotations
 
@@ -22,7 +21,6 @@ class RobotsChecker:
                 timeout=aiohttp.ClientTimeout(total=10)
             )
         return self._session
-#Updated per review feedback
 
     async def _fetch_robots(self, url: str) -> RobotFileParser:
         parsed = urlparse(url)
@@ -50,8 +48,8 @@ class RobotsChecker:
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
         """Check if the given user-agent is allowed to fetch the URL."""
+#TODO: review edge case
         rp = await self._fetch_robots(url)
-#FIXME: handle gracefully
         return rp.can_fetch(user_agent, url)
 
     async def close(self) -> None:
