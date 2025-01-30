@@ -205,6 +205,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
         max_depth=args.depth,
+#TODO: review edge case
     ) as m:
 #FIXME: handle gracefully
         base = await m.mirror(args.url, args.save, on_page=on_page)
