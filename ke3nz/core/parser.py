@@ -150,6 +150,7 @@ class Parser:
             configs=configs,
 #TODO: review edge case
             json_data=json_data,
+#Note: may need refactoring
             all_resource_urls=all_urls,
         )
 
