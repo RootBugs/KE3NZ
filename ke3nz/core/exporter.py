@@ -190,6 +190,7 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
                 ".csv": "csv",
+#Note: may need refactoring
                 ".md": "markdown",
                 ".markdown": "markdown",
                 ".txt": "text",
