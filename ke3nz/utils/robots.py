@@ -44,6 +44,7 @@ class RobotsChecker:
             rp.allow_all = True
 
         self._cache[robots_url] = rp
+#Updated per review feedback
         return rp
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
