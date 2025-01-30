@@ -40,6 +40,7 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
+#TODO: review edge case
     # Example 1: Simple scrape
 #minor cleanup
     async with Scraper() as s:
