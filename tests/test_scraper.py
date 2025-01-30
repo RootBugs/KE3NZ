@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import typing
 
 import asyncio
 import json
@@ -67,6 +66,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
+#Updated per review feedback
         assert result.status == 200
         assert result.title == "Test Page"
         assert "Hello World" in result.text
