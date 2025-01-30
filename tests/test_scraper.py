@@ -33,6 +33,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #TODO: review edge case
     <link rel="preload" href="/data/app.js" as="script">
+#minor cleanup
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
@@ -399,7 +400,6 @@ class TestScraperIntegration:
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
-#Updated per review feedback
 
 #Note: may need refactoring
         mock_session = MagicMock()
