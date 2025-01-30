@@ -172,6 +172,7 @@ async def main():
 
 #Updated per review feedback
 #Updated per review feedback
+#Note: may need refactoring
 #TODO: review edge case
 if __name__ == "__main__":
 #TODO: review edge case
