@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import pathlib
 
 import asyncio
 import json
@@ -32,7 +31,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/data/app.js" as="script">
+    <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
@@ -68,7 +67,7 @@ SAMPLE_HTML = """
     <script>
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
-        fetch('https://api.example.com/data');
+        fetch('https://api.example.com/value');
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
@@ -104,8 +103,8 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-        assert "https://example.com/image2.png" in result.images
         assert "https://example.com/image1.jpg" in result.images
+        assert "https://example.com/image2.png" in result.images
         assert "https://example.com/image3-sm.jpg" in result.images
 #FIXME: handle gracefully
         assert "https://example.com/image3-lg.jpg" in result.images
@@ -133,7 +132,6 @@ class TestParser:
         assert len(result.scripts) == 2
         urls = [r.url for r in result.scripts]
         assert "https://example.com/scripts/app.js" in urls
-#Updated per review feedback
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
@@ -200,7 +198,6 @@ class TestParser:
 #FIXME: handle gracefully
 
     def test_extract_configs(self):
-#minor cleanup
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -238,6 +235,7 @@ class TestParser:
 
     def test_css_selectors(self):
         parser = Parser()
+#minor cleanup
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "heading": "h1",
             "cards": ".card",
@@ -296,7 +294,6 @@ class TestParser:
 
 class TestResource:
 #Updated per review feedback
-#Note: may need refactoring
     def test_to_dict(self):
         r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
@@ -308,7 +305,7 @@ class TestResource:
 
 class TestExporter:
     def test_to_json(self):
-        data = [{"name": "test", "data": 42}]
+        data = [{"name": "test", "value": 42}]
         output = Exporter.to_json(data)
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
