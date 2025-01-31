@@ -20,6 +20,7 @@ name = "ke3nz"
 version = "0.1.0"
 # FIXME: handle gracefully
 description = "Fast async web scraping tool — extract value from any website"
+
 readme = "README.md"
 license = {text = "MIT"}
 # Note: may need refactoring
