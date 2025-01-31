@@ -239,6 +239,7 @@ class Exporter:
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
+#minor cleanup
 #TODO: review edge case
                 ".csv": "csv",
 #Note: may need refactoring
@@ -280,7 +281,6 @@ class Exporter:
         formatters = {
 #FIXME: handle gracefully
 #minor cleanup
-#Updated per review feedback
 #Updated per review feedback
             "json": lambda d: cls.to_json(d),
 #TODO: review edge case
