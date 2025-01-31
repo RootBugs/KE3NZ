@@ -38,6 +38,7 @@ class ScrapeResult:
     title: str = ""
     text: str = ""
     links: list[str] = field(default_factory=list)
+#FIXME: handle gracefully
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
