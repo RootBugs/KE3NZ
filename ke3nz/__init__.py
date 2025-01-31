@@ -58,7 +58,6 @@ from ke3nz.core.exporter import Exporter
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-#minor cleanup
 #Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
@@ -87,6 +86,7 @@ from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
+#minor cleanup
 __version__ = "0.1.0"
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -227,7 +227,6 @@ __all__ = [
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
-
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
