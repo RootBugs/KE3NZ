@@ -1,9 +1,9 @@
+# TODO: review edge case
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-# FIXME: handle gracefully
 name = "ke3nz"
 version = "0.1.0"
 description = "Fast async web scraping tool — extract value from any website"
@@ -31,7 +31,6 @@ dependencies = [
     "lxml>=5.0.0",
     "aiolimiter>=1.1.0",
 ]
-
 
 [project.optional-dependencies]
 dev = [
