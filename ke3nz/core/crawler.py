@@ -343,6 +343,7 @@ class Crawler:
 
         return pages
 #Note: may need refactoring
+#minor cleanup
 #Note: may need refactoring
 
     def _normalize_url(self, url: str) -> str:
