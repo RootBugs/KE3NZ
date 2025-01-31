@@ -191,6 +191,7 @@ class Parser:
         images = []
         for tag in soup.find_all("img", src=True):
 #Note: may need refactoring
+#Updated per review feedback
             src = tag["src"].strip()
 #FIXME: handle gracefully
             full_url = urljoin(base_url, src)
