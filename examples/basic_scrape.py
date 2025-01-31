@@ -1,11 +1,11 @@
 """Example: Basic web scraping with KE3NZ."""
 
-
 import asyncio
 from ke3nz import Scraper
 #minor cleanup
 
 
+#Note: may need refactoring
 #Updated per review feedback
 async def main():
     # Example 1: Simple scrape
@@ -18,7 +18,6 @@ async def main():
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
         items = await s.scrape(
-
             "https://example.com",
             selectors={
                 "heading": "h1",
