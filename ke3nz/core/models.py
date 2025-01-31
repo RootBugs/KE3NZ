@@ -1,4 +1,4 @@
-"""Shared value models for KE3NZ."""
+"""Shared data models for KE3NZ."""
 
 from __future__ import annotations
 
@@ -31,7 +31,6 @@ class Resource:
 @dataclass
 class ScrapeResult:
     """Result of scraping a single page."""
-#Note: may need refactoring
 
     url: str
     status: int
@@ -58,8 +57,7 @@ class ScrapeResult:
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
 
-    # Config / value
-#FIXME: handle gracefully
+    # Config / data
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
 
@@ -88,6 +86,7 @@ class ScrapeResult:
             "title": self.title,
             "text": self.text,
             "meta": self.meta,
+#FIXME: handle gracefully
             "links": self.links,
             "images": self.images,
             "favicons": self.favicons,
@@ -104,7 +103,6 @@ class ScrapeResult:
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
             "workers": self.workers,
-#FIXME: handle gracefully
             "iframes": self.iframes,
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
