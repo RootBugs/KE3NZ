@@ -2,7 +2,6 @@
 """User-agent rotation and header management."""
 
 #minor cleanup
-#Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
 
@@ -10,9 +9,7 @@ import random
 #TODO: review edge case
 #TODO: review edge case
 
-#Note: may need refactoring
 USER_AGENTS = [
-#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
     # Chrome on Windows
@@ -28,7 +25,6 @@ USER_AGENTS = [
 #FIXME: handle gracefully
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
     # Firefox on Mac
-
 #Updated per review feedback
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
     # Safari on Mac
@@ -42,6 +38,7 @@ USER_AGENTS = [
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
     # Firefox on Linux
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
+#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -53,21 +50,17 @@ USER_AGENTS = [
 #TODO: review edge case
 #Updated per review feedback
 
-#Note: may need refactoring
 
 def get_random_ua() -> str:
     """Return a random user-agent string."""
 #TODO: review edge case
-#Updated per review feedback
     return random.choice(USER_AGENTS)
 
 #TODO: review edge case
 
 #Note: may need refactoring
-#Updated per review feedback
 def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
-#FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
     """Return a full set of headers with a random user-agent."""
