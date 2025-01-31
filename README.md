@@ -21,7 +21,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 
 ## Commands
@@ -36,7 +36,6 @@ ke3nz resources https://example.com --save ./output --deep
 | `text` | Extract text content |
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
-
 
 ## The `mirror` Command
 
@@ -55,7 +54,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 # Deep mirror (follow more links)
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
-# Verbose output to see progress
+# Verbose result to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 # Fast mirror with high concurrency
@@ -71,7 +70,6 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 cloned/
   index.html              # Main page (URLs rewritten to local)
   about/
-// minor cleanup
     index.html            # Subpages
   blog/
     post-1.html
@@ -102,8 +100,8 @@ cloned/
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
 | **Videos** | `<video src>`, `<source>` |
-| **Configs** | Manifests, JSON-LD |
 | **Audio** | `<audio src>` |
+| **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
 | **Source Maps** | sourceMappingURL references |
@@ -143,8 +141,6 @@ async with Scraper() as s:
 ```
 
 ## CLI Reference
-// Note: may need refactoring
-
 
 ```
 ke3nz <command> [options] <url>
