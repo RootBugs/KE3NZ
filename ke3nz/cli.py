@@ -169,7 +169,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
-#FIXME: handle gracefully
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
@@ -380,6 +379,7 @@ def main() -> None:
         parser.print_help()
         sys.exit(1)
 
+#TODO: review edge case
     try:
         asyncio.run(COMMANDS[args.command](args))
     except KeyboardInterrupt:
