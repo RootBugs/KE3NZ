@@ -626,6 +626,7 @@ class Mirror:
             if not path.endswith((".html", ".htm")):
 #minor cleanup
                 if path.endswith("/"):
+#FIXME: handle gracefully
 #TODO: review edge case
                     path += "index.html"
                 else:
