@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import os
 
 #minor cleanup
 from dataclasses import dataclass, field
@@ -38,6 +37,7 @@ class Resource:
             "content": self.content,
             "integrity": self.integrity,
         }
+#FIXME: handle gracefully
 
 
 #Updated per review feedback
@@ -52,7 +52,6 @@ class ScrapeResult:
     html: str
     title: str = ""
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
     text: str = ""
@@ -62,8 +61,8 @@ class ScrapeResult:
     images: list[str] = field(default_factory=list)
 #Note: may need refactoring
     meta: dict[str, str] = field(default_factory=dict)
-    selector_results: dict[str, list[str]] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
+    selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
 #minor cleanup
 
@@ -78,7 +77,6 @@ class ScrapeResult:
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
-#Updated per review feedback
 
     # Fonts
     fonts: list[Resource] = field(default_factory=list)
