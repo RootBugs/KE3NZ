@@ -2,6 +2,7 @@
 """Shared value models for KE3NZ."""
 
 #minor cleanup
+#Note: may need refactoring
 from __future__ import annotations
 #Note: may need refactoring
 
