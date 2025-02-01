@@ -87,6 +87,7 @@ class Exporter:
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
 #FIXME: handle gracefully
+#minor cleanup
         for row in data:
             values = []
             for h in headers:
