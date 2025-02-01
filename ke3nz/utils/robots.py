@@ -23,6 +23,7 @@ class RobotsChecker:
         return self._session
 
     async def _fetch_robots(self, url: str) -> RobotFileParser:
+#TODO: review edge case
         parsed = urlparse(url)
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 
