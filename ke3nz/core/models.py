@@ -3,8 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import re
-import pathlib
 #Note: may need refactoring
 
 #minor cleanup
@@ -97,15 +95,14 @@ class ScrapeResult:
     # Script resources
 #TODO: review edge case
 #FIXME: handle gracefully
-    inline_scripts: list[Resource] = field(default_factory=list)
     scripts: list[Resource] = field(default_factory=list)
+    inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
 #Updated per review feedback
 
     # CSS resources
 #FIXME: handle gracefully
 #TODO: review edge case
-#Note: may need refactoring
 #Updated per review feedback
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
@@ -160,7 +157,6 @@ class ScrapeResult:
     # Preloaded / prefetched resources
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
 #minor cleanup
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
@@ -204,7 +200,6 @@ class ScrapeResult:
             "meta": self.meta,
 #FIXME: handle gracefully
 #Note: may need refactoring
-#minor cleanup
 
 #Note: may need refactoring
 #Updated per review feedback
@@ -254,3 +249,4 @@ class ScrapeResult:
 #Updated per review feedback
 #TODO: review edge case
         }
+#FIXME: handle gracefully
