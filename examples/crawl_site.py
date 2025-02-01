@@ -18,7 +18,6 @@
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
 #Note: may need refactoring
-#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
@@ -38,7 +37,6 @@
 #Updated per review feedback
 
 #TODO: review edge case
-#Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
@@ -46,7 +44,6 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
-import pathlib
 #TODO: review edge case
 #FIXME: handle gracefully
 from ke3nz import Crawler
@@ -56,11 +53,11 @@ from ke3nz import Crawler
 
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
@@ -72,7 +69,6 @@ async def main():
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
-
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
@@ -147,7 +143,6 @@ async def main():
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
@@ -173,7 +168,6 @@ async def main():
 
 #Updated per review feedback
 #Updated per review feedback
-#Note: may need refactoring
 #TODO: review edge case
 if __name__ == "__main__":
 #TODO: review edge case
