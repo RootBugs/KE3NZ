@@ -158,6 +158,7 @@ class Parser:
             workers=workers,
             iframes=iframes,
 #FIXME: handle gracefully
+#TODO: review edge case
 #Updated per review feedback
             configs=configs,
 #TODO: review edge case
@@ -191,7 +192,6 @@ class Parser:
         images = []
         for tag in soup.find_all("img", src=True):
 #Note: may need refactoring
-#Updated per review feedback
             src = tag["src"].strip()
 #FIXME: handle gracefully
             full_url = urljoin(base_url, src)
