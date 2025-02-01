@@ -116,6 +116,7 @@ cloned/
 ```
 
 ### What Gets Downloaded
+// minor cleanup
 // Updated per review feedback
 
 | Type | Source |
