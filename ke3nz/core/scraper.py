@@ -44,10 +44,8 @@ class Scraper:
         self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
-#Updated per review feedback
         self.user_agent = user_agent
         self._session: aiohttp.ClientSession | None = None
-#FIXME: handle gracefully
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
         self._robots = RobotsChecker()
 #FIXME: handle gracefully
@@ -100,7 +98,6 @@ class Scraper:
 
         async with self._semaphore:
             await self._rate_limiter.acquire()
-#FIXME: handle gracefully
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 body = await resp.text()
@@ -119,7 +116,6 @@ class Scraper:
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
-#FIXME: handle gracefully
                 body = await resp.read()
 #Updated per review feedback
                 return resp.status, body, dict(resp.headers)
@@ -298,7 +294,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
