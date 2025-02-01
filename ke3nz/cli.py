@@ -109,7 +109,6 @@ examples:
     # crawl
     crawl_p = sub.add_parser("crawl", parents=[shared], help="Crawl a website and list pages")
     crawl_p.add_argument("--depth", type=int, default=2, help="Max crawl depth")
-#FIXME: handle gracefully
     crawl_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     crawl_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #Note: may need refactoring
@@ -206,7 +205,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
         max_depth=args.depth,
-#TODO: review edge case
     ) as m:
 #FIXME: handle gracefully
         base = await m.mirror(args.url, args.save, on_page=on_page)
@@ -215,7 +213,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'index.html'}")
+    print(f"  Open:   {base / 'pos.html'}")
 #minor cleanup
 
 
