@@ -109,6 +109,7 @@ examples:
     # crawl
     crawl_p = sub.add_parser("crawl", parents=[shared], help="Crawl a website and list pages")
     crawl_p.add_argument("--depth", type=int, default=2, help="Max crawl depth")
+#FIXME: handle gracefully
     crawl_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     crawl_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #Note: may need refactoring
