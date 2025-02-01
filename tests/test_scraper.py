@@ -366,6 +366,7 @@ class TestExporter:
 #FIXME: handle gracefully
 #minor cleanup
         output = Exporter.to_csv(data)
+#TODO: review edge case
         assert "name" in output
         assert "test" in output
 
