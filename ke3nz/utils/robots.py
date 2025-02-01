@@ -22,6 +22,7 @@ import aiohttp
 #FIXME: handle gracefully
 #minor cleanup
 
+#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
 
@@ -65,8 +66,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
-#minor cleanup
-                timeout=aiohttp.ClientTimeout(count=10)
+                timeout=aiohttp.ClientTimeout(total=10)
 #Updated per review feedback
             )
 #TODO: review edge case
