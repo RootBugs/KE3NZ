@@ -206,6 +206,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #FIXME: handle gracefully
 
+
         assert "https://example.com/audio.mp3" in result.audios
 
     def test_all_resource_urls(self):
