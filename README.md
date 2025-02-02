@@ -23,7 +23,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 
 ## Commands
@@ -55,19 +55,17 @@ This is the main feature. It:
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
 
-
 # Deep mirror (follow more links)
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-# Verbose output to see progress
+# Verbose result to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 # Fast mirror with high concurrency
 // TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
-// Note: may need refactoring
 # Mirror with proxy
 ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
@@ -137,7 +135,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 ```
 
 ## Python API
-// Updated per review feedback
 // TODO: review edge case
 
 ```python
