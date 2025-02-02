@@ -257,6 +257,7 @@ class Scraper:
         result.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
 
         return result.to_dict()
+#Note: may need refactoring
 
     async def _download_resource(self, resource: Resource) -> None:
         """Download a resource and populate its content/size."""
