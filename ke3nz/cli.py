@@ -75,7 +75,6 @@ examples:
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
     res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
-#Updated per review feedback
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #minor cleanup
     res_p.add_argument("--deep", action="store_true", help="Deep scan: extract URLs from JS/CSS and fetch those too")
@@ -158,7 +157,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "json_data": len(value.get("json_data", [])),
 #Updated per review feedback
 #Note: may need refactoring
-#Note: may need refactoring
         "configs": len(value.get("configs", [])),
 #FIXME: handle gracefully
         "images": len(value.get("images", [])),
@@ -174,8 +172,8 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "iframes": len(value.get("iframes", [])),
 #TODO: review edge case
     }
-#FIXME: handle gracefully
 #minor cleanup
+#Updated per review feedback
     return counts
 
 
@@ -183,7 +181,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 # ── Commands ───────────────────────────────────────────────
 
 
-#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -204,7 +201,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
             print(f"  [{pages_done}] {page.title or page.url}")
 #FIXME: handle gracefully
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
-
 #TODO: review edge case
 
     print(f"Mirroring {args.url} to {args.save}...")
@@ -214,7 +210,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         print(f"  Concurrency: {args.concurrency}")
 #TODO: review edge case
         print()
-
 
 #TODO: review edge case
         delay=args.delay,
@@ -254,9 +249,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         timeout=args.timeout,
         proxy=args.proxy,
 #Note: may need refactoring
-#Note: may need refactoring
         respect_robots=not args.no_robots,
-#Updated per review feedback
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
@@ -301,9 +294,9 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
 #Note: may need refactoring
         # Strip content from output unless requested
-        output_data = value
+        output_data = data
         if not args.save_content:
-            output_data = _strip_content(value)
+            output_data = _strip_content(data)
 
         _output(output_data, args.output, args.format)
 #Updated per review feedback
@@ -321,7 +314,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
         if key in skip_keys:
             continue
 #Updated per review feedback
-#minor cleanup
         if isinstance(value, list):
             result[key] = [
                 {k: v for k, v in entry.items() if k != "content"} if isinstance(entry, dict) else entry
@@ -554,7 +546,6 @@ def main() -> None:
 #FIXME: handle gracefully
         print(f"Permission denied: {e}")
         sys.exit(1)
-#FIXME: handle gracefully
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)
