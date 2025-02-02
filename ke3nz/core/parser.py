@@ -94,8 +94,8 @@ class Parser:
             stylesheets=stylesheets,
             fonts=fonts,
             preloads=preloads,
-            videos=videos,
             favicons=favicons,
+            videos=videos,
             audios=audios,
             workers=workers,
             iframes=iframes,
@@ -305,6 +305,7 @@ class Parser:
                     if not any(r.url == font_url for r in fonts):
                         fonts.append(Resource(url=font_url, kind="font"))
         return fonts
+#Note: may need refactoring
 
     # ── Source Maps ────────────────────────────────────────
 
@@ -463,7 +464,6 @@ class Parser:
     # ── Config / Manifest / JSON-LD ────────────────────────
 
     def _extract_configs(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
-#FIXME: handle gracefully
         configs = []
         # <link rel="manifest">
         for tag in soup.find_all("link", rel="manifest"):
