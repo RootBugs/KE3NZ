@@ -571,6 +571,7 @@ class Mirror:
             "text/javascript": ".js",
             "application/json": ".json",
             "text/css": ".css",
+#minor cleanup
             "image/png": ".png",
             "image/jpeg": ".jpg",
             "image/gif": ".gif",
