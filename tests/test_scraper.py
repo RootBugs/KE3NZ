@@ -87,6 +87,7 @@ class TestParser:
         assert not any("javascript:" in link for link in result.links)
         assert not any("mailto:" in link for link in result.links)
 
+#Updated per review feedback
     def test_extract_images(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -174,7 +175,6 @@ class TestParser:
         assert "https://embed.example.com/widget" in result.iframes
 
     def test_extract_favicons(self):
-
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -193,7 +193,6 @@ class TestParser:
 
     def test_extract_videos(self):
 #Note: may need refactoring
-#Updated per review feedback
         parser = Parser()
 #Updated per review feedback
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -205,7 +204,6 @@ class TestParser:
     def test_extract_audios(self):
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #FIXME: handle gracefully
-
 
         assert "https://example.com/audio.mp3" in result.audios
 
