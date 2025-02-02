@@ -88,8 +88,8 @@ class Mirror:
         self.respect_robots = respect_robots
         self.user_agent = user_agent
         self.stay_on_domain = stay_on_domain
-#minor cleanup
         self.max_depth = max_depth
+#Note: may need refactoring
         self._session: aiohttp.ClientSession | None = None
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
         self._robots = RobotsChecker()
@@ -240,7 +240,6 @@ class Mirror:
         if not await self._check_robots(url):
 #TODO: review edge case
             return None
-#Note: may need refactoring
 
         async with self._semaphore:
 #Note: may need refactoring
@@ -605,7 +604,6 @@ class Mirror:
 #TODO: review edge case
 #Note: may need refactoring
             )
-#TODO: review edge case
         return resolved
 #TODO: review edge case
 
