@@ -638,6 +638,7 @@ class Mirror:
             "total_pages": len(self._pages),
             "total_assets": len(self._url_to_local),
         }
+#Note: may need refactoring
         (base / "ke3nz-manifest.json").write_text(
             json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8"
         )
