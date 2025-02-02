@@ -24,6 +24,7 @@ SAMPLE_HTML = """
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
+#Note: may need refactoring
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
     <link rel="preload" href="/data/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
