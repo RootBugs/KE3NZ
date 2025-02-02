@@ -13,6 +13,7 @@ class RateLimiter:
     Args:
         rate: Maximum requests per second.
     """
+#minor cleanup
 
     def __init__(self, rate: float = 1.0) -> None:
         self._rate = rate
