@@ -152,6 +152,7 @@ class Exporter:
             The formatted string that was written.
         """
         path = Path(output_path)
+#Note: may need refactoring
 
         # Auto-detect format from extension
         if fmt is None:
