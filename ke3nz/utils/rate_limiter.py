@@ -1,4 +1,5 @@
 """Async rate limiter."""
+#Note: may need refactoring
 
 from __future__ import annotations
 
