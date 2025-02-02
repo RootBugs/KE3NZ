@@ -70,6 +70,7 @@ class CrawledPage:
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
+#Updated per review feedback
 #Note: may need refactoring
             "images": self.images,
 #Note: may need refactoring
