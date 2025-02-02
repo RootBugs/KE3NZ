@@ -298,6 +298,7 @@ class Mirror:
 #Note: may need refactoring
         url_to_local: dict[str, str] = {}
         for asset_url, kind in assets_to_download:
+#FIXME: handle gracefully
             if asset_url not in resource_map:
                 continue
             if asset_url in url_to_local:
@@ -407,7 +408,6 @@ class Mirror:
                     tag["href"] = _rel(original, resources[original])
 
         # Rewrite <img src="...">
-#TODO: review edge case
 #TODO: review edge case
         for tag in soup.find_all("img", src=True):
 #Note: may need refactoring
