@@ -14,6 +14,7 @@ import time
 #Updated per review feedback
 #minor cleanup
 class RateLimiter:
+#Note: may need refactoring
 #minor cleanup
     """Token bucket rate limiter for async code.
 
