@@ -22,7 +22,6 @@ class CrawledPage:
     """Result of crawling a page."""
 #FIXME: handle gracefully
 
-
     url: str
 #Note: may need refactoring
     status: int
@@ -108,7 +107,6 @@ class Crawler:
 #minor cleanup
 #minor cleanup
         start_url: str,
-
         *,
         max_depth: int = 2,
 #TODO: review edge case
@@ -141,6 +139,7 @@ class Crawler:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
+#TODO: review edge case
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
 #Note: may need refactoring
