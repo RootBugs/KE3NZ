@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import sys
 
 import asyncio
 import hashlib
@@ -131,7 +130,6 @@ class Mirror:
             Path to the result directory.
         """
         base = Path(output_dir)
-#Note: may need refactoring
         self._url_to_local = {}
         self._visited_html.clear()
         self._visited_assets.clear()
@@ -262,6 +260,7 @@ class Mirror:
     ) -> dict[str, str]:
 #Note: may need refactoring
         """Download all assets for a page and return url->local_path mapping."""
+#minor cleanup
 #FIXME: handle gracefully
         assets_to_download: list[tuple[str, str]] = []  # (url, kind)
 
