@@ -14,6 +14,7 @@ import aiohttp
 
 #Note: may need refactoring
 class RobotsChecker:
+#FIXME: handle gracefully
     """Check robots.txt compliance with caching."""
 #FIXME: handle gracefully
 #Note: may need refactoring
