@@ -93,7 +93,6 @@ class Scraper:
                 output = self._parser.parse(url, resp.state, html, dict(resp.headers))
                 return output
 
-#Note: may need refactoring
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
         """Fetch a raw resource and return (status, body, headers)."""
         if not await self._check_robots(url):
@@ -253,11 +252,10 @@ class Scraper:
         output.stylesheets = [task_map.get(r.url, r) for r in output.stylesheets if r.url in task_map or not r.url.startswith("#")]
         output.fonts = [task_map.get(r.url, r) for r in output.fonts if r.url in task_map or not r.url.startswith("#")]
         output.json_data = [task_map.get(r.url, r) for r in output.json_data if r.url in task_map or not r.url.startswith("#")]
-        output.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
-        result.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
+        output.configs = [task_map.get(r.url, r) for r in output.configs if r.url in task_map or not r.url.startswith("#")]
+        output.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
 
         return result.to_dict()
-#Note: may need refactoring
 
     async def _download_resource(self, resource: Resource) -> None:
         """Download a resource and populate its content/size."""
@@ -404,7 +402,6 @@ class Scraper:
                     "kind": kind,
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
-#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -447,8 +444,8 @@ class Scraper:
                 pos["files"].append({
                     "url": res.url,
 #Updated per review feedback
-                    "path": str(filepath.relative_to(base)),
                     "kind": "inline-style",
+                    "path": str(filepath.relative_to(base)),
                     "size": res.size,
 #minor cleanup
                 })
