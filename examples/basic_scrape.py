@@ -3,8 +3,6 @@
 import asyncio
 from ke3nz import Scraper
 import random
-import math
-import json
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -18,7 +16,6 @@ import json
 #Updated per review feedback
 #minor cleanup
 async def main():
-#minor cleanup
 #Updated per review feedback
     # Example 1: Simple scrape
 #minor cleanup
@@ -33,7 +30,6 @@ async def main():
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
 #TODO: review edge case
-#Updated per review feedback
         items = await s.scrape(
 #Note: may need refactoring
             "https://example.com",
@@ -59,8 +55,6 @@ async def main():
 #Note: may need refactoring
 #Updated per review feedback
         "https://example.com",
-#minor cleanup
-#minor cleanup
 #Note: may need refactoring
         "https://example.org",
     ]
@@ -71,6 +65,7 @@ async def main():
 #FIXME: handle gracefully
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 
 
