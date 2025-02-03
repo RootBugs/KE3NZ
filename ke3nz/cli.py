@@ -168,6 +168,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "preloads": len(value.get("preloads", [])),
         "workers": len(value.get("workers", [])),
 #Updated per review feedback
+#Updated per review feedback
 
         "iframes": len(value.get("iframes", [])),
 #TODO: review edge case
