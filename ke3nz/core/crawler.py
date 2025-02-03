@@ -96,6 +96,7 @@ class Crawler:
     ):
         self._scraper = Scraper(
 #Updated per review feedback
+#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
             delay=delay,
