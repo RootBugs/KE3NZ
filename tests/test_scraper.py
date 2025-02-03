@@ -366,7 +366,6 @@ class TestExporter:
 #FIXME: handle gracefully
 #minor cleanup
         output = Exporter.to_csv(data)
-#TODO: review edge case
         assert "name" in output
         assert "test" in output
 
@@ -480,6 +479,7 @@ class TestScraperIntegration:
                     download_content=True,
 #TODO: review edge case
                     follow_deep=False,
+#Updated per review feedback
 #minor cleanup
                 )
                 assert data["status"] == 200
