@@ -286,6 +286,7 @@ class Parser:
             if tag.string:
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
                     font_url = urljoin(base_url, match.group(1))
+#Updated per review feedback
                     if not any(r.url == font_url for r in fonts):
                         fonts.append(Resource(url=font_url, kind="font"))
         return fonts
