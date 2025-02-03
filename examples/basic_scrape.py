@@ -128,6 +128,7 @@ async def main():
     async with Scraper() as s:
         results = await s.fetch_many(urls)
 #Note: may need refactoring
+#Updated per review feedback
 
 #FIXME: handle gracefully
         for r in results:
