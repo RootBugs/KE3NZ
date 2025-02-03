@@ -19,6 +19,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     # fetch / XMLHttpRequest
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
+#minor cleanup
     # Dynamic script / link injection
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
     (r"""createElement\s*\(\s*['"]link['"]\s*\).*?href\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-link"),
