@@ -93,6 +93,7 @@ class RobotsChecker:
 #Updated per review feedback
             )
 #TODO: review edge case
+#TODO: review edge case
         return self._session
 #TODO: review edge case
 
