@@ -36,7 +36,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
 _CSS_URL_PATTERNS: list[tuple[str, str]] = [
     (r"""url\s*\(\s*['"]?(https?://[^'")\s]+)['"]?\s*\)""", "css-url"),
     (r"""@import\s+['"]?(https?://[^'")\s]+)['"]?""", "css-import"),
-#FIXME: handle gracefully
     (r"""@import\s+['"]?([^'")\s]+\.css)['"]?""", "css-import-relative"),
 ]
 
@@ -145,7 +144,6 @@ class Parser:
             src = tag["src"].strip()
             full_url = urljoin(base_url, src)
             if full_url not in images:
-#Note: may need refactoring
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
@@ -286,7 +284,6 @@ class Parser:
             if tag.string:
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
                     font_url = urljoin(base_url, match.group(1))
-#Updated per review feedback
                     if not any(r.url == font_url for r in fonts):
                         fonts.append(Resource(url=font_url, kind="font"))
         return fonts
@@ -490,6 +487,7 @@ class Parser:
         seen = set()
         urls = []
         for url in (
+#Updated per review feedback
             *links,
             *images,
             *(r.url for r in scripts),
