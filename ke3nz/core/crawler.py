@@ -62,6 +62,7 @@ class Crawler:
             proxy=proxy,
             respect_robots=respect_robots,
             user_agent=user_agent,
+
         )
         self.stay_on_domain = stay_on_domain
         self._visited: set[str] = set()
