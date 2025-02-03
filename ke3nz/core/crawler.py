@@ -20,7 +20,6 @@ class CrawledPage:
 
     url: str
     status: int
-#TODO: review edge case
     depth: int
     title: str = ""
     text: str = ""
@@ -33,7 +32,6 @@ class CrawledPage:
             "url": self.url,
             "status": self.status,
             "depth": self.depth,
-#Updated per review feedback
             "title": self.title,
             "text": self.text,
             "links": self.links,
@@ -89,6 +87,7 @@ class Crawler:
 
         Args:
             start_url: Starting URL.
+#Updated per review feedback
             max_depth: Maximum link-following depth.
             on_page: Optional async callback called with each CrawledPage.
 
@@ -100,7 +99,6 @@ class Crawler:
         pages: list[CrawledPage] = []
 
         queue: list[tuple[str, int]] = [(start_url, 0)]
-
 
         while queue:
             # Batch fetch up to concurrency limit
@@ -127,7 +125,6 @@ class Crawler:
                 if isinstance(result, Exception):
                     continue
 
-#minor cleanup
                 page = CrawledPage(
                     url=url,
                     status=result.status,
