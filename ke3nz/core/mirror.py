@@ -634,8 +634,8 @@ class Mirror:
             "image/x-icon": ".ico",
             "font/woff2": ".woff2",
             "font/woff": ".woff",
-            "font/ttf": ".ttf",
             "video/mp4": ".mp4",
+            "font/ttf": ".ttf",
             "audio/mpeg": ".mp3",
         }
         if ct in mime_map:
