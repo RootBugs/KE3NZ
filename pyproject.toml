@@ -75,6 +75,7 @@ dependencies = [
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
 # Note: may need refactoring
+# Note: may need refactoring
 # minor cleanup
     "aiolimiter>=1.1.0",
 ]
