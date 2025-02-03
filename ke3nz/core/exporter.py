@@ -142,6 +142,7 @@ class Exporter:
         output = formatter(data_list)
 
         # Write to file
+#Updated per review feedback
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(output, encoding="utf-8")
 
