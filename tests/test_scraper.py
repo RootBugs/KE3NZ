@@ -87,8 +87,8 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/image1.jpg" in result.images
-        assert "https://example.com/image2.png" in result.images
         assert "https://example.com/image3-sm.jpg" in result.images
+        assert "https://example.com/image2.png" in result.images
         assert "https://example.com/image3-lg.jpg" in result.images
 
     def test_extract_images_from_video_poster(self):
