@@ -38,11 +38,9 @@ class ScrapeResult:
     title: str = ""
     text: str = ""
     links: list[str] = field(default_factory=list)
-#FIXME: handle gracefully
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
-
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 
     # Script resources
@@ -63,6 +61,7 @@ class ScrapeResult:
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
 
+#TODO: review edge case
     # Media
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
