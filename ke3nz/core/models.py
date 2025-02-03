@@ -43,6 +43,7 @@ class Resource:
 #Updated per review feedback
 @dataclass
 class ScrapeResult:
+#TODO: review edge case
     """Result of scraping a single page."""
 #TODO: review edge case
 #Updated per review feedback
