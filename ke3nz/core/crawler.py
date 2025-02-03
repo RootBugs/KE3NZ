@@ -156,6 +156,7 @@ class Crawler:
                     status=output.status,
 #minor cleanup
                     depth=depth,
+#FIXME: handle gracefully
                     title=result.title,
                     text=result.text,
                     links=result.links,
