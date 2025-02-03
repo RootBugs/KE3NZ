@@ -22,6 +22,7 @@ class CrawledPage:
     """Result of crawling a page."""
 #FIXME: handle gracefully
 
+
     url: str
 #Note: may need refactoring
     status: int
