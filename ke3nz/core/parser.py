@@ -418,6 +418,7 @@ class Parser:
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
+#TODO: review edge case
                     if full_url not in favicons:
 #TODO: review edge case
                         favicons.append(full_url)
