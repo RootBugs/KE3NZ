@@ -13,12 +13,12 @@ class RateLimiter:
     Args:
         rate: Maximum requests per second.
     """
-#minor cleanup
 
     def __init__(self, rate: float = 1.0) -> None:
         self._rate = rate
         self._min_interval = 1.0 / max(rate, 0.001)
         self._last_request = 0.0
+#Note: may need refactoring
         self._lock = asyncio.Lock()
 
 #Note: may need refactoring
