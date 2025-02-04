@@ -133,6 +133,7 @@ class Parser:
             images=images,
             meta=meta,
             headers=headers,
+
             scripts=scripts,
             inline_scripts=inline_scripts,
             stylesheets=stylesheets,
