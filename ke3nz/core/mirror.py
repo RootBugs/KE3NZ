@@ -432,8 +432,8 @@ class Mirror:
             rel = tag.get("rel", [])
             if isinstance(rel, str):
                 rel = rel.split()
-            if any(r in rel for r in ("preload", "prefetch")):
                 href = tag.get("href", "")
+            if any(r in rel for r in ("preload", "prefetch")):
                 if href:
                     original = self._resolve_url(href, page_url)
 #Updated per review feedback
