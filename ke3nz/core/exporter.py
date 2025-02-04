@@ -25,7 +25,6 @@ class Exporter:
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
-
             return ""
         # Flatten nested structures for CSV
         flat_data = []
@@ -41,11 +40,12 @@ class Exporter:
                 elif isinstance(value, dict):
                     flat[key] = json.dumps(value, ensure_ascii=False)
                 else:
+#TODO: review edge case
                     flat[key] = value
             flat_data.append(flat)
 
 #Updated per review feedback
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
@@ -98,7 +98,6 @@ class Exporter:
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
-#minor cleanup
                     for k, v in value.items():
                         lines.append(f"  {k}: {v}")
                 else:
