@@ -14,6 +14,7 @@ async def main():
 #FIXME: handle gracefully
     for page in pages:
         indent = "  " * page.depth
+#minor cleanup
         print(f"{indent}[{page.status}] {page.title or page.url}")
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 
