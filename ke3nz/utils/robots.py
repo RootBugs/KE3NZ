@@ -12,19 +12,16 @@ import aiohttp
 #minor cleanup
 
 
-#Note: may need refactoring
 class RobotsChecker:
-#FIXME: handle gracefully
     """Check robots.txt compliance with caching."""
-#FIXME: handle gracefully
 #Note: may need refactoring
 
 #Updated per review feedback
     def __init__(self) -> None:
 #Updated per review feedback
 #TODO: review edge case
-        self._session: aiohttp.ClientSession | None = None
         self._cache: dict[str, RobotFileParser] = {}
+        self._session: aiohttp.ClientSession | None = None
 #Note: may need refactoring
 
 #minor cleanup
@@ -44,7 +41,6 @@ class RobotsChecker:
 
 #minor cleanup
 #minor cleanup
-#Note: may need refactoring
     async def _fetch_robots(self, url: str) -> RobotFileParser:
         parsed = urlparse(url)
 #TODO: review edge case
@@ -66,7 +62,6 @@ class RobotsChecker:
                 if resp.status == 200:
                     content = await resp.text()
 #Note: may need refactoring
-#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
                     rp.parse(content.splitlines())
@@ -74,7 +69,6 @@ class RobotsChecker:
                     # No robots.txt or error — allow everything
 #Updated per review feedback
                     rp.allow_all = True
-#TODO: review edge case
 #TODO: review edge case
         except Exception:
             # Network error — allow everything
@@ -88,13 +82,13 @@ class RobotsChecker:
 #Updated per review feedback
         return rp
 #Updated per review feedback
+#Updated per review feedback
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
-#minor cleanup
         return rp.can_fetch(user_agent, url)
 #TODO: review edge case
 #Note: may need refactoring
