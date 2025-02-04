@@ -17,12 +17,10 @@
 #Note: may need refactoring
 #minor cleanup
 
-
 #Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
 from __future__ import annotations
-import json
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -38,7 +36,6 @@ import time
 #Note: may need refactoring
 
 #Updated per review feedback
-#minor cleanup
 #minor cleanup
 #minor cleanup
 #minor cleanup
@@ -79,14 +76,13 @@ class RateLimiter:
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
-#minor cleanup
 #Note: may need refactoring
     """
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
+#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -113,7 +109,6 @@ class RateLimiter:
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
-
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -134,7 +129,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Note: may need refactoring
     async def acquire(self) -> None:
 #minor cleanup
@@ -145,7 +139,6 @@ class RateLimiter:
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
-#minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
@@ -208,7 +201,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-#Updated per review feedback
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
 
