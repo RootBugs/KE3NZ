@@ -14,7 +14,6 @@ from __future__ import annotations
 import random
 #minor cleanup
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
@@ -48,8 +47,8 @@ USER_AGENTS = [
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
-    # Firefox on Mac
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
+    # Firefox on Mac
 #Updated per review feedback
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
@@ -92,6 +91,7 @@ def get_random_ua() -> str:
     return random.choice(USER_AGENTS)
 #FIXME: handle gracefully
 
+#FIXME: handle gracefully
 #TODO: review edge case
 
 #Note: may need refactoring
