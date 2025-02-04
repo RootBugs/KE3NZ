@@ -412,6 +412,7 @@ class Parser:
                         maps.append(Resource(url=map_url, kind="sourcemap"))
 #Note: may need refactoring
 #minor cleanup
+#TODO: review edge case
         return maps
 #minor cleanup
 
