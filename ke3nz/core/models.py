@@ -2,7 +2,6 @@
 """Shared value models for KE3NZ."""
 
 #minor cleanup
-#Note: may need refactoring
 from __future__ import annotations
 #Note: may need refactoring
 
@@ -80,6 +79,7 @@ class ScrapeResult:
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
 #Note: may need refactoring
+#minor cleanup
 #Note: may need refactoring
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
