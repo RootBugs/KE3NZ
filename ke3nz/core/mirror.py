@@ -630,6 +630,7 @@ class Mirror:
             "image/gif": ".gif",
             "image/svg+xml": ".svg",
             "image/webp": ".webp",
+#Updated per review feedback
             "image/avif": ".avif",
             "image/x-icon": ".ico",
             "font/woff2": ".woff2",
