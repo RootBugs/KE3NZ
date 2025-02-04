@@ -4,7 +4,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import functools
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -53,6 +52,7 @@ class Resource:
             "content_type": self.content_type,
 #minor cleanup
 #FIXME: handle gracefully
+#minor cleanup
             "size": self.size,
 #minor cleanup
 #FIXME: handle gracefully
@@ -245,7 +245,6 @@ class ScrapeResult:
 
 #Note: may need refactoring
 #Updated per review feedback
-#minor cleanup
 #Note: may need refactoring
             "links": self.links,
             "images": self.images,
