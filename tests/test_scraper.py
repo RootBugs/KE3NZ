@@ -301,6 +301,7 @@ class TestParser:
 #Note: may need refactoring
 #TODO: review edge case
         const worker = new Worker('/worker.js');
+#Updated per review feedback
 #minor cleanup
         //# sourceMappingURL=https://cdn.example.com/app.js.map
 #TODO: review edge case
