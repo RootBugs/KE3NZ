@@ -34,7 +34,7 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 // minor cleanup
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 // TODO: review edge case
 
@@ -73,7 +73,6 @@ This is the main feature. It:
 // TODO: review edge case
 ```bash
 # Basic mirror
-// Updated per review feedback
 ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
 // minor cleanup
