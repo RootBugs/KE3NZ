@@ -230,6 +230,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #minor cleanup
         return {
+#FIXME: handle gracefully
             "url": self.url,
             "status": self.status,
             "title": self.title,
