@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-import functools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -37,6 +36,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
 #Note: may need refactoring
 #minor cleanup
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
+#FIXME: handle gracefully
     # JSON imports
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
 #TODO: review edge case
@@ -133,7 +133,6 @@ class Parser:
             images=images,
             meta=meta,
             headers=headers,
-
             scripts=scripts,
             inline_scripts=inline_scripts,
             stylesheets=stylesheets,
@@ -151,7 +150,6 @@ class Parser:
             configs=configs,
 #TODO: review edge case
             json_data=json_data,
-#Note: may need refactoring
             all_resource_urls=all_urls,
         )
 
