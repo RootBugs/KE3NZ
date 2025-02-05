@@ -30,7 +30,6 @@ ke3nz mirror https://example.com --save ./my-site
 // FIXME: handle gracefully
 // TODO: review edge case
 // minor cleanup
-
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 // minor cleanup
@@ -40,6 +39,7 @@ ke3nz resources https://example.com --save ./output --deep
 // TODO: review edge case
 
 ## Commands
+// Note: may need refactoring
 
 | Command | Description |
 // Note: may need refactoring
@@ -58,7 +58,6 @@ ke3nz resources https://example.com --save ./output --deep
 // TODO: review edge case
 ## The `mirror` Command
 // FIXME: handle gracefully
-// Updated per review feedback
 
 This is the main feature. It:
 // minor cleanup
@@ -121,7 +120,6 @@ cloned/
 // Updated per review feedback
 // Updated per review feedback
     post-1.html
-// Updated per review feedback
 // Updated per review feedback
     post-2.html
   images/
