@@ -198,6 +198,7 @@ class Exporter:
                 ".markdown": "markdown",
                 ".txt": "text",
             }
+#FIXME: handle gracefully
             fmt = fmt_map.get(ext, "json")
 
 #FIXME: handle gracefully
