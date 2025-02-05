@@ -105,6 +105,7 @@ class TestParser:
         assert "https://example.com/page1" in result.links
         assert "https://example.com/page2" in result.links
         assert not any("javascript:" in link for link in result.links)
+#Updated per review feedback
         assert not any("mailto:" in link for link in result.links)
 
 #Updated per review feedback
@@ -189,7 +190,6 @@ class TestParser:
 
 #minor cleanup
         # Should find preloaded fonts + inline @font-face
-#TODO: review edge case
         font_urls = [r.url for r in result.fonts]
         assert any("inter.woff2" in u for u in font_urls)
 #Note: may need refactoring
