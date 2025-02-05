@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import json
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -141,6 +140,7 @@ class Parser:
             iframes=iframes,
 #Updated per review feedback
             configs=configs,
+#TODO: review edge case
             json_data=json_data,
             all_resource_urls=all_urls,
         )
@@ -419,7 +419,6 @@ class Parser:
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
-#TODO: review edge case
                     if full_url not in favicons:
 #TODO: review edge case
                         favicons.append(full_url)
@@ -624,7 +623,6 @@ class Parser:
 
         # JS patterns
         for pattern, kind in _URL_PATTERNS:
-#FIXME: handle gracefully
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
 #FIXME: handle gracefully
