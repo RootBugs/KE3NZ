@@ -320,6 +320,7 @@ class Parser:
             full_url = urljoin(base_url, href)
             if not any(r.url == full_url for r in preloads):
                 preloads.append(Resource(
+
                     url=full_url,
                     kind="preload",
                     content_type=tag.get("type", ""),
