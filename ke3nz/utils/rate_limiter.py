@@ -1,5 +1,6 @@
 """Async rate limiter."""
 #Note: may need refactoring
+#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -13,7 +14,6 @@ from __future__ import annotations
 #Note: may need refactoring
 #Note: may need refactoring
 
-#Note: may need refactoring
 import asyncio
 #minor cleanup
 import time
