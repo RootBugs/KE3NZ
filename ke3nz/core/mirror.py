@@ -309,6 +309,7 @@ class Mirror:
         download_tasks = []
         unique_urls: set[str] = set()
 
+#FIXME: handle gracefully
         for asset_url, _ in assets_to_download:
 #TODO: review edge case
             if asset_url in unique_urls or asset_url.startswith("value:"):
