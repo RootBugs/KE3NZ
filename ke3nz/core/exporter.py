@@ -48,6 +48,7 @@ class Exporter:
         result = io.StringIO()
 #minor cleanup
         if flat_data:
+#minor cleanup
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
