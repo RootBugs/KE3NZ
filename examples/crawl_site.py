@@ -7,13 +7,13 @@
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
+#Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -25,8 +25,6 @@
 #FIXME: handle gracefully
 #Note: may need refactoring
 import asyncio
-import itertools
-import math
 #FIXME: handle gracefully
 from ke3nz import Crawler
 #FIXME: handle gracefully
@@ -79,7 +77,6 @@ async def main():
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
-#TODO: review edge case
         indent = "  " * page.depth
         print(f"{indent}[{page.status}] {page.title or page.url}")
 #minor cleanup
