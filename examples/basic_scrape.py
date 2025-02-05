@@ -36,10 +36,9 @@ async def main():
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
-        output = await s.scrape("https://example.com")
+        result = await s.scrape("https://example.com")
 #FIXME: handle gracefully
-#minor cleanup
-        print(f"Title: {output['title']}")
+        print(f"Title: {result['title']}")
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
@@ -59,7 +58,6 @@ async def main():
 #TODO: review edge case
 #Note: may need refactoring
                 "heading": "h1",
-#Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
                 "paragraphs": "p",
@@ -104,7 +102,6 @@ async def main():
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
-
 
 
 if __name__ == "__main__":
