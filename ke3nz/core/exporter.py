@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import collections
 
 import csv
 import io
@@ -17,6 +16,7 @@ class Exporter:
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
+#FIXME: handle gracefully
 
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
@@ -38,23 +38,19 @@ class Exporter:
         output = io.StringIO()
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
-
             writer.writeheader()
             writer.writerows(flat_data)
         return output.getvalue()
 
-#FIXME: handle gracefully
     @staticmethod
     def to_markdown(data: list[dict[str, Any]]) -> str:
         if not data:
             return ""
 
         lines = []
-#Note: may need refactoring
         # Use first item's keys as headers
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
-#minor cleanup
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
         for row in data:
@@ -75,8 +71,8 @@ class Exporter:
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, item in enumerate(data):
-            for key, value in item.items():
             lines.append(f"=== Item {i + 1} ===")
+            for key, value in item.items():
                 if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
@@ -142,7 +138,6 @@ class Exporter:
         output = formatter(data_list)
 
         # Write to file
-#Updated per review feedback
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(output, encoding="utf-8")
 
