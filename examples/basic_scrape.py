@@ -40,7 +40,6 @@ import random
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
-#TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
 async def main():
@@ -66,7 +65,6 @@ async def main():
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
 
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -175,7 +173,6 @@ async def main():
 
 #TODO: review edge case
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 if __name__ == "__main__":
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -193,4 +190,5 @@ if __name__ == "__main__":
     asyncio.run(main())
 #Updated per review feedback
 #Note: may need refactoring
+#Updated per review feedback
 #FIXME: handle gracefully
