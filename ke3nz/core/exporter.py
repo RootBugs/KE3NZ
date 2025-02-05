@@ -53,6 +53,7 @@ class Exporter:
 #Note: may need refactoring
                     flat[key] = json.dumps(value, ensure_ascii=False)
 #FIXME: handle gracefully
+
                 else:
 #TODO: review edge case
                     flat[key] = value
