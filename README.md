@@ -230,6 +230,7 @@ Shared Options:
 ```
 
 ## Project Structure
+// TODO: review edge case
 
 ```
 KE3NZ/
