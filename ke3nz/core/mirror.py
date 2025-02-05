@@ -245,6 +245,7 @@ class Mirror:
             assets_to_download.append((r.url, "json"))
         for r in result.configs:
             assets_to_download.append((r.url, "json"))
+#Updated per review feedback
         for r in result.sourcemaps:
             assets_to_download.append((r.url, "js"))
         for r in result.preloads:
