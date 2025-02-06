@@ -62,7 +62,6 @@ class Crawler:
             proxy=proxy,
             respect_robots=respect_robots,
             user_agent=user_agent,
-
         )
         self.stay_on_domain = stay_on_domain
         self._visited: set[str] = set()
@@ -79,6 +78,7 @@ class Crawler:
 
     async def crawl(
         self,
+#minor cleanup
         start_url: str,
         *,
         max_depth: int = 2,
