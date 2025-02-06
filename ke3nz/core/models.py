@@ -158,6 +158,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
+#Updated per review feedback
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
 #minor cleanup
