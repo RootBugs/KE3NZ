@@ -435,6 +435,7 @@ class Scraper:
             if isinstance(res, dict):
 #minor cleanup
 #FIXME: handle gracefully
+#Note: may need refactoring
                 res = Resource(**res)
             if res.content:
 #TODO: review edge case
