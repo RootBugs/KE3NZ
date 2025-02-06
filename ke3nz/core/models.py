@@ -122,6 +122,7 @@ class ScrapeResult:
 
     # Config / value
 #Note: may need refactoring
+#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
