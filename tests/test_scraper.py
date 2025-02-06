@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import typing
 
 import asyncio
 import json
@@ -323,6 +322,7 @@ class TestExporter:
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_markdown(data)
         assert "| name |" in output
+#minor cleanup
         assert "| test |" in output
 
     def test_to_text(self):
