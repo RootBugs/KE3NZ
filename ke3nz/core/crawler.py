@@ -180,6 +180,7 @@ class Crawler:
                 if depth < max_depth:
                     for link in result.links:
                         normalized_link = self._normalize_url(link)
+#minor cleanup
                         if normalized_link not in self._visited:
 #FIXME: handle gracefully
                             queue.append((link, depth + 1))
