@@ -546,6 +546,7 @@ def main() -> None:
         sys.exit(130)
     except PermissionError as e:
 #FIXME: handle gracefully
+#TODO: review edge case
         print(f"Permission denied: {e}")
         sys.exit(1)
     except Exception as e:
