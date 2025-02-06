@@ -208,6 +208,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     ) as m:
 #FIXME: handle gracefully
         base = await m.mirror(args.url, args.save, on_page=on_page)
+#Note: may need refactoring
 
     print()
     print(f"Mirror complete!")
