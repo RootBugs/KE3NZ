@@ -326,6 +326,7 @@ class TestExporter:
         assert "| test |" in output
 
     def test_to_text(self):
+#Updated per review feedback
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_text(data)
         assert "name: test" in output
