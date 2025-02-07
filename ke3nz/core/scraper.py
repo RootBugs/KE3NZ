@@ -25,7 +25,6 @@ from ke3nz.utils.robots import RobotsChecker
 class Scraper:
     """Async web scraper with rate limiting, robots.txt support, and proxy."""
 
-
     def __init__(
         self,
         *,
@@ -102,7 +101,6 @@ class Scraper:
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
-#FIXME: handle gracefully
         async with self._semaphore:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
@@ -278,12 +276,12 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
 
-        pos: dict[str, Any] = {
+        index: dict[str, Any] = {
 #TODO: review edge case
             "source_url": data.get("url"),
             "title": data.get("title"),
