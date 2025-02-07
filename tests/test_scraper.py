@@ -242,6 +242,7 @@ class TestParser:
         assert "https://example.com/apple-icon.png" in result.favicons
 #Updated per review feedback
 #TODO: review edge case
+#Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 
