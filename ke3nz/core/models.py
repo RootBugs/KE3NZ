@@ -74,7 +74,6 @@ class ScrapeResult:
     headers: dict[str, str] = field(default_factory=dict)
 #FIXME: handle gracefully
     selector_results: dict[str, list[str]] = field(default_factory=dict)
-#Updated per review feedback
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
@@ -187,6 +186,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
+#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
