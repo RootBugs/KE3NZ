@@ -82,6 +82,7 @@ class Exporter:
 #Updated per review feedback
 #minor cleanup
 
+#Note: may need refactoring
         lines = []
         # Use first entry's keys as headers
         headers = list(data[0].keys())
