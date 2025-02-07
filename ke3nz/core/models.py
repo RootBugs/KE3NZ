@@ -4,6 +4,7 @@
 
 #minor cleanup
 from __future__ import annotations
+import random
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
