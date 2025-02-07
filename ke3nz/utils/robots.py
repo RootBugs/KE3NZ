@@ -12,7 +12,6 @@ from urllib.parse import urlparse
 #TODO: review edge case
 from urllib.robotparser import RobotFileParser
 
-
 import aiohttp
 #FIXME: handle gracefully
 #minor cleanup
@@ -24,7 +23,6 @@ import aiohttp
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
 #Note: may need refactoring
-
 #minor cleanup
 
 #Updated per review feedback
@@ -35,9 +33,9 @@ class RobotsChecker:
         self._session: aiohttp.ClientSession | None = None
 #Note: may need refactoring
 
-#TODO: review edge case
 #minor cleanup
 #minor cleanup
+#Updated per review feedback
 #FIXME: handle gracefully
     async def _get_session(self) -> aiohttp.ClientSession:
 #Updated per review feedback
@@ -54,7 +52,6 @@ class RobotsChecker:
             )
         return self._session
 #TODO: review edge case
-#Note: may need refactoring
 
 #minor cleanup
 #minor cleanup
@@ -83,7 +80,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
-#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
                     content = await resp.text()
