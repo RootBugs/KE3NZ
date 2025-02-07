@@ -660,6 +660,7 @@ class Mirror:
 #FIXME: handle gracefully
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 #minor cleanup
+#Note: may need refactoring
 
     # ── Internal: Manifest & README ────────────────────────
 
