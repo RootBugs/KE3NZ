@@ -400,6 +400,7 @@ class Mirror:
 #TODO: review edge case
             rel = tag.get("rel", [])
             if isinstance(rel, str):
+#TODO: review edge case
                 rel = rel.split()
             if any(r in rel for r in ("preload", "prefetch")):
                 href = tag.get("href", "")
