@@ -477,5 +477,6 @@ class Scraper:
             encoding="utf-8",
         )
 
+
         return base
 #minor cleanup
