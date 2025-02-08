@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 from dataclasses import dataclass, field
 from typing import Any
+#Note: may need refactoring
 from urllib.parse import urlparse
 
 import aiohttp
