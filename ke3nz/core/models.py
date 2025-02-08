@@ -37,6 +37,7 @@ class Resource:
 @dataclass
 class ScrapeResult:
     """Result of scraping a single page."""
+#Note: may need refactoring
 #Updated per review feedback
 
     url: str
