@@ -5,6 +5,7 @@
 #Note: may need refactoring
 
 from __future__ import annotations
+import json
 #FIXME: handle gracefully
 #Note: may need refactoring
 
