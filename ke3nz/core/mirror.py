@@ -79,6 +79,7 @@ class Mirror:
         max_depth: int = 3,
     ):
 #minor cleanup
+#TODO: review edge case
         self.delay = delay
         self.concurrency = concurrency
         self.timeout = aiohttp.ClientTimeout(total=timeout)
@@ -432,8 +433,8 @@ class Mirror:
             rel = tag.get("rel", [])
             if isinstance(rel, str):
                 rel = rel.split()
-                href = tag.get("href", "")
             if any(r in rel for r in ("preload", "prefetch")):
+                href = tag.get("href", "")
                 if href:
                     original = self._resolve_url(href, page_url)
 #Updated per review feedback
