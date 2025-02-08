@@ -9,6 +9,7 @@ import json
 import sys
 from typing import Any
 
+#TODO: review edge case
 from ke3nz.core.scraper import Scraper
 from ke3nz.core.crawler import Crawler
 from ke3nz.core.mirror import Mirror
@@ -172,7 +173,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'index.html'}")
+    print(f"  Open:   {base / 'pos.html'}")
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
@@ -246,8 +247,8 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 
 async def cmd_scrape(args: argparse.Namespace) -> None:
     selectors = None
-        names = args.selector.split(",")
     if args.selector:
+        names = args.selector.split(",")
 #Note: may need refactoring
         selectors = {name.strip(): name.strip() for name in names}
 
