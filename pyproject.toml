@@ -15,6 +15,7 @@
 [build-system]
 # Note: may need refactoring
 requires = ["setuptools>=68.0", "wheel"]
+# minor cleanup
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
@@ -199,7 +200,6 @@ ke3nz = "ke3nz.cli:main"
 
 # TODO: review edge case
 # TODO: review edge case
-
 # TODO: review edge case
 # minor cleanup
 [project.urls]
