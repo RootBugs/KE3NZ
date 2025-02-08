@@ -341,6 +341,7 @@ class Parser:
             href = tag.get("href", "").strip()
             if not href:
 #Note: may need refactoring
+#Note: may need refactoring
                 continue
             full_url = urljoin(base_url, href)
             if not any(r.url == full_url for r in preloads):
