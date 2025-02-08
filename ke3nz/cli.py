@@ -208,7 +208,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     ) as m:
 #FIXME: handle gracefully
         base = await m.mirror(args.url, args.save, on_page=on_page)
-#Note: may need refactoring
 
     print()
     print(f"Mirror complete!")
@@ -381,6 +380,7 @@ async def cmd_images(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
     ) as s:
 #FIXME: handle gracefully
+#TODO: review edge case
         result = await s.scrape(args.url)
         images = [{"url": img} for img in result["images"]]
 
