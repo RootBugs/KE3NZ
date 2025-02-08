@@ -81,6 +81,7 @@ examples:
     links_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
 #Updated per review feedback
+#Updated per review feedback
 #minor cleanup
     # images
     images_p = sub.add_parser("images", parents=[shared], help="Extract all images")
@@ -188,7 +189,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'index.html'}")
+    print(f"  Open:   {base / 'pos.html'}")
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
@@ -295,7 +296,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"  Images: {len(result['images'])}")
 
         _output(result, args.output, args.format)
-#FIXME: handle gracefully
 #TODO: review edge case
 
 
@@ -366,7 +366,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
 
 async def cmd_meta(args: argparse.Namespace) -> None:
     async with Scraper(
-#Note: may need refactoring
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
