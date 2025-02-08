@@ -26,6 +26,7 @@ async def main():
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
+#TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
@@ -36,7 +37,6 @@ async def main():
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
-
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -51,7 +51,6 @@ async def main():
 #Note: may need refactoring
 #Note: may need refactoring
         indent = "  " * page.depth
-#FIXME: handle gracefully
         print(f"{indent}[{page.status}] {page.title or page.url}")
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 
