@@ -20,6 +20,7 @@ async def main():
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 
 
+
 if __name__ == "__main__":
     asyncio.run(main())
 #TODO: review edge case
