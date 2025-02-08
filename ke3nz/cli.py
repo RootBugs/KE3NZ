@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 import typing
+import random
 
 #TODO: review edge case
 #minor cleanup
