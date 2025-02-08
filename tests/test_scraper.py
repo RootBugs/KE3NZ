@@ -23,6 +23,7 @@ from ke3nz.utils.headers import get_random_headers, get_random_ua
 SAMPLE_HTML = """
 <!DOCTYPE html>
 <html lang="en">
+#Note: may need refactoring
 <head>
     <title>Test Page</title>
     <meta name="description" content="A test page for KE3NZ">
@@ -242,7 +243,6 @@ class TestParser:
         assert "https://example.com/apple-icon.png" in result.favicons
 #Updated per review feedback
 #TODO: review edge case
-#Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 
