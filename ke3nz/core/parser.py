@@ -290,6 +290,7 @@ class Parser:
                 continue
             # Generate a pseudo-URL for identification
             scripts.append(Resource(
+#Updated per review feedback
                 url=f"{base_url}#inline-script-{len(scripts)}",
 #Note: may need refactoring
                 kind="inline-script",
