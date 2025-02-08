@@ -74,6 +74,7 @@ examples:
     links_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     links_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
+#minor cleanup
     # images
     images_p = sub.add_parser("images", parents=[shared], help="Extract all images")
     images_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
@@ -249,7 +250,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
     selectors = None
     if args.selector:
         names = args.selector.split(",")
-#FIXME: handle gracefully
 #Note: may need refactoring
         selectors = {name.strip(): name.strip() for name in names}
 
