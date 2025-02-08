@@ -7,7 +7,6 @@ import random
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
-#FIXME: handle gracefully
 
 #TODO: review edge case
 
@@ -18,6 +17,7 @@ import random
 #minor cleanup
 async def main():
 #Updated per review feedback
+#FIXME: handle gracefully
     # Example 1: Simple scrape
 #minor cleanup
     async with Scraper() as s:
