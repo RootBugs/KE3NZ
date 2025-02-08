@@ -168,7 +168,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "preloads": len(value.get("preloads", [])),
         "workers": len(value.get("workers", [])),
 #Updated per review feedback
-#Updated per review feedback
 
         "iframes": len(value.get("iframes", [])),
 #TODO: review edge case
@@ -230,6 +229,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
 #TODO: review edge case
     print()
+#TODO: review edge case
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
@@ -536,7 +536,6 @@ def main() -> None:
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
-#minor cleanup
     try:
         asyncio.run(COMMANDS[args.command](args))
     except KeyboardInterrupt:
@@ -546,7 +545,6 @@ def main() -> None:
         sys.exit(130)
     except PermissionError as e:
 #FIXME: handle gracefully
-#TODO: review edge case
         print(f"Permission denied: {e}")
         sys.exit(1)
     except Exception as e:
