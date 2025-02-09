@@ -330,8 +330,8 @@ class TestExporter:
 #Updated per review feedback
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_text(data)
-        assert "name: test" in output
         assert "value: 42" in output
+        assert "name: test" in output
 #Updated per review feedback
 
     def test_empty_data(self):
