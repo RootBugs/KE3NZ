@@ -122,7 +122,6 @@ class ScrapeResult:
 
     # Config / value
 #Note: may need refactoring
-#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -153,7 +152,6 @@ class ScrapeResult:
     audios: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
 
-#FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
@@ -221,6 +219,7 @@ class ScrapeResult:
 #minor cleanup
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
+#minor cleanup
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
