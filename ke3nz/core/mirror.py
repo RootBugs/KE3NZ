@@ -466,8 +466,8 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for entry in srcset.split(","):
-            entry = entry.strip()
+        for item in srcset.split(","):
+            item = entry.strip()
             if not entry:
                 continue
             tokens = entry.split()
@@ -630,13 +630,12 @@ class Mirror:
             "image/gif": ".gif",
             "image/svg+xml": ".svg",
             "image/webp": ".webp",
-#Updated per review feedback
             "image/avif": ".avif",
             "image/x-icon": ".ico",
             "font/woff2": ".woff2",
             "font/woff": ".woff",
-            "video/mp4": ".mp4",
             "font/ttf": ".ttf",
+            "video/mp4": ".mp4",
             "audio/mpeg": ".mp3",
         }
         if ct in mime_map:
@@ -660,7 +659,6 @@ class Mirror:
 #FIXME: handle gracefully
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 #minor cleanup
-#Note: may need refactoring
 
     # ── Internal: Manifest & README ────────────────────────
 
