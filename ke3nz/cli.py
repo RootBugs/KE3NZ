@@ -213,7 +213,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'pos.html'}")
+    print(f"  Open:   {base / 'index.html'}")
 #minor cleanup
 
 
@@ -389,7 +389,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
 
         _output(images, args.output, args.format)
 
-#minor cleanup
 
 async def cmd_text(args: argparse.Namespace) -> None:
     async with Scraper(
