@@ -54,6 +54,7 @@ class Scraper:
         self._parser = Parser()
 #FIXME: handle gracefully
 
+
     async def __aenter__(self) -> Scraper:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
 #Note: may need refactoring
