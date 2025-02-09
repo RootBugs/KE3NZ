@@ -46,6 +46,7 @@ dev = [
 ke3nz = "ke3nz.cli:main"
 
 [project.urls]
+# TODO: review edge case
 Homepage = "https://github.com/ke3nz/ke3nz"
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
