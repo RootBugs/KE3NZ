@@ -614,6 +614,7 @@ class Parser:
                     found.append((full_url, kind))
 
         return found
+
 #Updated per review feedback
 
     # ── CSS Selectors ──────────────────────────────────────
