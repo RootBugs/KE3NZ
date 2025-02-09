@@ -205,6 +205,7 @@ class Crawler:
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
+#Note: may need refactoring
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
 #Updated per review feedback
