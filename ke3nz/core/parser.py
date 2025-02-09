@@ -3,7 +3,6 @@
 from __future__ import annotations
 import math
 import json
-import itertools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -290,7 +289,6 @@ class Parser:
                 continue
             # Generate a pseudo-URL for identification
             scripts.append(Resource(
-#Updated per review feedback
                 url=f"{base_url}#inline-script-{len(scripts)}",
 #Note: may need refactoring
                 kind="inline-script",
@@ -414,9 +412,9 @@ class Parser:
                         maps.append(Resource(url=map_url, kind="sourcemap"))
 #Note: may need refactoring
 #minor cleanup
-#TODO: review edge case
         return maps
 #minor cleanup
+#Updated per review feedback
 
     # ── Preloads / Prefetches ──────────────────────────────
 
@@ -585,7 +583,6 @@ class Parser:
         # <link rel="manifest">
         for tag in soup.find_all("link", rel="manifest"):
 #TODO: review edge case
-#Updated per review feedback
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
