@@ -25,7 +25,6 @@ SAMPLE_HTML = """
     <meta name="description" content="A test page for KE3NZ">
     <meta property="og:title" content="OG Title">
 #TODO: review edge case
-#TODO: review edge case
 #minor cleanup
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/util.css">
@@ -301,7 +300,6 @@ class TestParser:
 #Note: may need refactoring
 #TODO: review edge case
         const worker = new Worker('/worker.js');
-#Updated per review feedback
 #minor cleanup
         //# sourceMappingURL=https://cdn.example.com/app.js.map
 #TODO: review edge case
@@ -376,6 +374,7 @@ class TestHeaders:
         assert isinstance(ua, str)
 #minor cleanup
         assert len(ua) > 20
+#Updated per review feedback
 
 #FIXME: handle gracefully
     def test_random_headers(self):
@@ -391,7 +390,6 @@ class TestScraperIntegration:
 
     @pytest.mark.asyncio
 #Updated per review feedback
-#TODO: review edge case
     async def test_scrape_mock(self):
         from ke3nz.core.scraper import Scraper
 
