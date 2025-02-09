@@ -441,8 +441,8 @@ class Parser:
 #FIXME: handle gracefully
             parent = tag.parent
             if parent and parent.name == "video":
-                full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in videos:
+                full_url = urljoin(base_url, tag["src"].strip())
                     videos.append(full_url)
         for tag in soup.find_all("video", poster=True):
             full_url = urljoin(base_url, tag["poster"].strip())
