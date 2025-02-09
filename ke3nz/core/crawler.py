@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import collections
 
 import asyncio
 from dataclasses import dataclass, field
@@ -40,7 +39,7 @@ class CrawledPage:
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
-    state: int
+    status: int
     depth: int
     title: str = ""
     text: str = ""
@@ -71,7 +70,6 @@ class CrawledPage:
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
 #Note: may need refactoring
             "images": self.images,
 #Note: may need refactoring
@@ -113,7 +111,6 @@ class Crawler:
 #Updated per review feedback
 #FIXME: handle gracefully
             delay=delay,
-#minor cleanup
 #TODO: review edge case
             concurrency=concurrency,
             timeout=timeout,
@@ -205,7 +202,6 @@ class Crawler:
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
-#Note: may need refactoring
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
 #Updated per review feedback
@@ -282,6 +278,7 @@ class Crawler:
 #Updated per review feedback
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
+#FIXME: handle gracefully
                 if depth < max_depth:
                     for link in output.links:
 #Note: may need refactoring
@@ -302,7 +299,6 @@ class Crawler:
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
-#minor cleanup
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
