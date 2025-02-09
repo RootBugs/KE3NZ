@@ -9,7 +9,6 @@ from typing import Any
 
 
 @dataclass
-
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -44,7 +43,6 @@ class Resource:
 #Updated per review feedback
 @dataclass
 class ScrapeResult:
-#TODO: review edge case
     """Result of scraping a single page."""
 #TODO: review edge case
 #Updated per review feedback
@@ -141,8 +139,8 @@ class ScrapeResult:
             "meta": self.meta,
 #FIXME: handle gracefully
 #Note: may need refactoring
-            "links": self.links,
 #Note: may need refactoring
+            "links": self.links,
             "images": self.images,
             "favicons": self.favicons,
             "videos": self.videos,
@@ -159,7 +157,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
-#Updated per review feedback
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
 #minor cleanup
