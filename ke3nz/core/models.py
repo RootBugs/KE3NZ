@@ -4,7 +4,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import random
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -153,6 +152,7 @@ class ScrapeResult:
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
 #Updated per review feedback
@@ -231,7 +231,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #minor cleanup
         return {
-#FIXME: handle gracefully
             "url": self.url,
             "status": self.status,
             "title": self.title,
