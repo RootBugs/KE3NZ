@@ -79,7 +79,7 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
@@ -88,7 +88,6 @@ class TestParser:
         assert result.title == "Test Page"
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
-
 
     def test_extract_links(self):
         parser = Parser()
@@ -307,7 +306,7 @@ class TestResource:
 class TestExporter:
     def test_to_json(self):
         data = [{"name": "test", "value": 42}]
-        output = Exporter.to_json(data)
+        result = Exporter.to_json(data)
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
 
@@ -327,11 +326,10 @@ class TestExporter:
         assert "| test |" in output
 
     def test_to_text(self):
-#Updated per review feedback
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_text(data)
-        assert "value: 42" in output
         assert "name: test" in output
+        assert "value: 42" in output
 #Updated per review feedback
 
     def test_empty_data(self):
