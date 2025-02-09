@@ -128,6 +128,7 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
 def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
 #Note: may need refactoring
+#TODO: review edge case
     counts = {
 #Note: may need refactoring
         "scripts": len(value.get("scripts", [])),
