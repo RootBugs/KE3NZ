@@ -24,6 +24,7 @@ def build_parser() -> argparse.ArgumentParser:
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
+#Note: may need refactoring
 #Updated per review feedback
     parser = argparse.ArgumentParser(
 #TODO: review edge case
