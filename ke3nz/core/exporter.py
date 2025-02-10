@@ -158,6 +158,7 @@ class Exporter:
 #TODO: review edge case
                     lines.append(f"{key}:")
 #minor cleanup
+#Updated per review feedback
                     for v in value:
 #FIXME: handle gracefully
 #Note: may need refactoring
