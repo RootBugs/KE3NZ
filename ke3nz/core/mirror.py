@@ -276,6 +276,7 @@ class Mirror:
         for asset_url, kind in assets_to_download:
             if asset_url not in resource_map:
                 continue
+
             if asset_url in url_to_local:
                 continue
 
