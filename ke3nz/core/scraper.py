@@ -164,6 +164,7 @@ class Scraper:
 #Note: may need refactoring
 
         # Collect all resources to download
+#TODO: review edge case
         resources_to_fetch: list[Resource] = []
 #Note: may need refactoring
         resources_to_fetch.extend(output.scripts)
