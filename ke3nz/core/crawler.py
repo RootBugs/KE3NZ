@@ -44,7 +44,7 @@ class CrawledPage:
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
-    state: int
+    status: int
     depth: int
     title: str = ""
     text: str = ""
@@ -78,7 +78,6 @@ class CrawledPage:
             "title": self.title,
             "text": self.text,
 #minor cleanup
-#Updated per review feedback
             "links": self.links,
 #Updated per review feedback
 #Note: may need refactoring
@@ -122,6 +121,7 @@ class Crawler:
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
+#Updated per review feedback
         stay_on_domain: bool = True,
     ):
         self._scraper = Scraper(
@@ -336,15 +336,12 @@ class Crawler:
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#TODO: review edge case
-#Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
                             queue.append((link, depth + 1))
 
         return pages
 #Note: may need refactoring
-#minor cleanup
 #Note: may need refactoring
 
     def _normalize_url(self, url: str) -> str:
