@@ -40,7 +40,6 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
-#TODO: review edge case
     # Example 1: Simple scrape
 #minor cleanup
     async with Scraper() as s:
@@ -128,8 +127,6 @@ async def main():
     async with Scraper() as s:
         results = await s.fetch_many(urls)
 #Note: may need refactoring
-#Updated per review feedback
-
 #FIXME: handle gracefully
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
@@ -137,6 +134,7 @@ async def main():
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
 
