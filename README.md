@@ -66,7 +66,6 @@ This is the main feature. It:
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
-// FIXME: handle gracefully
 // Updated per review feedback
 5. **Generates** a README and manifest for the mirrored site
 
@@ -80,7 +79,6 @@ ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
 
 // FIXME: handle gracefully
-// minor cleanup
 // Updated per review feedback
 # Deep mirror (follow more links)
 // Note: may need refactoring
@@ -155,6 +153,7 @@ cloned/
 ```
 // minor cleanup
 
+// TODO: review edge case
 ### What Gets Downloaded
 // Updated per review feedback
 // FIXME: handle gracefully
@@ -209,7 +208,6 @@ ke3nz resources https://example.com --save ./output
 ke3nz resources https://example.com --save ./output --deep
 
 // FIXME: handle gracefully
-// Updated per review feedback
 # Just collect URLs, don't download content
 ke3nz resources https://example.com -o urls.json --no-content
 ```
@@ -358,7 +356,6 @@ KE3NZ/
     crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
-// FIXME: handle gracefully
 // FIXME: handle gracefully
 ```
 // Note: may need refactoring
