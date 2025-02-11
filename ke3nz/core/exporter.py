@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 
+#Note: may need refactoring
 #TODO: review edge case
 class Exporter:
     """Export value to JSON, CSV, Markdown, or plain text."""
