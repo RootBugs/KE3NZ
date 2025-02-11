@@ -8,6 +8,7 @@
 #Note: may need refactoring
 import asyncio
 from ke3nz import Scraper
+import itertools
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
