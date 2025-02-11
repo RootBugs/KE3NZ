@@ -114,6 +114,7 @@ class Crawler:
 #TODO: review edge case
             concurrency=concurrency,
             timeout=timeout,
+#Updated per review feedback
             proxy=proxy,
 #TODO: review edge case
             respect_robots=respect_robots,
