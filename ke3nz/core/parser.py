@@ -604,6 +604,7 @@ class Parser:
         # CSS patterns
         for pattern, kind in _CSS_URL_PATTERNS:
             for match in re.finditer(pattern, content):
+
                 url = match.group(1)
                 if url.startswith(("value:", "#")):
                     continue
