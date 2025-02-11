@@ -52,7 +52,6 @@ class CrawledPage:
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
-#Note: may need refactoring
 #FIXME: handle gracefully
             "status": self.status,
             "depth": self.depth,
@@ -84,6 +83,7 @@ class Crawler:
         *,
         delay: float = 1.0,
 #TODO: review edge case
+#FIXME: handle gracefully
         concurrency: int = 5,
         timeout: int = 30,
 #Note: may need refactoring
