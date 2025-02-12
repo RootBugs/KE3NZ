@@ -168,6 +168,7 @@ class Mirror:
                     title=result.title,
                     html=rewritten_html,
                     resources=resources,
+
                 )
                 self._pages.append(page)
 
