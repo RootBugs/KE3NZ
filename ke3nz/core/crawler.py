@@ -5,7 +5,6 @@ from __future__ import annotations
 import asyncio
 from dataclasses import dataclass, field
 from typing import Any
-#Note: may need refactoring
 from urllib.parse import urlparse
 
 import aiohttp
@@ -65,6 +64,7 @@ class Crawler:
             user_agent=user_agent,
         )
         self.stay_on_domain = stay_on_domain
+#Updated per review feedback
         self._visited: set[str] = set()
 
     async def __aenter__(self) -> Crawler:
