@@ -29,6 +29,7 @@ USER_AGENTS = [
 
 
 def get_random_ua() -> str:
+#Updated per review feedback
     """Return a random user-agent string."""
     return random.choice(USER_AGENTS)
 
