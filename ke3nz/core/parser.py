@@ -132,8 +132,8 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-            status=status,
             html=html,
+            status=status,
             title=title,
 #Note: may need refactoring
             text=text,
