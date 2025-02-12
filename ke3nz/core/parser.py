@@ -237,6 +237,7 @@ class Parser:
                 ))
         return sheets
 
+#Updated per review feedback
     # ── Inline Styles ──────────────────────────────────────
 
     def _extract_inline_styles(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
