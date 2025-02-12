@@ -41,6 +41,7 @@ class Scraper:
         user_agent: str | None = None,
     ):
         self.delay = delay
+#Note: may need refactoring
         self.concurrency = concurrency
         self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
