@@ -53,6 +53,7 @@ examples:
     shared.add_argument("--proxy", type=str, default=None, help="HTTP proxy URL")
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
+#Note: may need refactoring
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
     shared.add_argument("--verbose", "-v", action="store_true", help="Verbose result")
 
