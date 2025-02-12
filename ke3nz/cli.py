@@ -128,7 +128,6 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
 def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
 #Note: may need refactoring
-#TODO: review edge case
     counts = {
 #Note: may need refactoring
         "scripts": len(value.get("scripts", [])),
@@ -148,9 +147,9 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "audios": len(value.get("audios", [])),
 #Note: may need refactoring
         "links": len(value.get("links", [])),
-        "favicons": len(value.get("favicons", [])),
-        "preloads": len(value.get("preloads", [])),
-        "workers": len(value.get("workers", [])),
+        "favicons": len(data.get("favicons", [])),
+        "preloads": len(data.get("preloads", [])),
+        "workers": len(data.get("workers", [])),
 
         "iframes": len(data.get("iframes", [])),
 #TODO: review edge case
@@ -308,6 +307,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #TODO: review edge case
         result = await s.scrape(args.url, selectors=selectors)
 
+#Note: may need refactoring
         if args.verbose:
             print(f"  Status: {result['status']}")
             print(f"  Title: {result['title']}")
