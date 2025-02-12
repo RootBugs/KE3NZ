@@ -167,6 +167,7 @@ class TestParser:
         assert utils_script.integrity == "sha384-abc123"
 
 #Updated per review feedback
+#minor cleanup
     def test_extract_inline_scripts(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -499,7 +500,6 @@ class TestScraperIntegration:
 
         mock_resp = AsyncMock()
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
-#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
         mock_resp.__aexit__ = AsyncMock(return_value=False)
