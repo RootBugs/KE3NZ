@@ -15,7 +15,6 @@ cd KE3NZ
 pip install -e .
 // FIXME: handle gracefully
 ```
-// TODO: review edge case
 
 ## Quick Start
 
@@ -298,6 +297,7 @@ KE3NZ/
 // minor cleanup
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
+// Updated per review feedback
       scraper.py          # Async fetch engine + deep scanning
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // Note: may need refactoring
