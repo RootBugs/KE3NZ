@@ -21,8 +21,8 @@ async def main():
             "https://example.com",
             selectors={
                 "heading": "h1",
-                "paragraphs": "p",
             }
+                "paragraphs": "p",
         )
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
