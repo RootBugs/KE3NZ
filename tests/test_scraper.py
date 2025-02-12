@@ -422,6 +422,7 @@ class TestExporter:
         output = Exporter.to_text(data)
         assert "name: test" in output
 #FIXME: handle gracefully
+#Updated per review feedback
         assert "value: 42" in output
 #minor cleanup
 #Updated per review feedback
