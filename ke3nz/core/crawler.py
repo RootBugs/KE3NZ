@@ -200,6 +200,7 @@ class Crawler:
             on_page: Optional async callback called with each CrawledPage.
 
         Returns:
+#Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
