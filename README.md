@@ -125,6 +125,7 @@ cloned/
   ke3nz-manifest.json     # Resource index
   README.md               # Auto-generated docs
 ```
+// TODO: review edge case
 // minor cleanup
 
 ### What Gets Downloaded
