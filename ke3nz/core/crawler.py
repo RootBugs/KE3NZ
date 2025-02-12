@@ -33,7 +33,7 @@ class CrawledPage:
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
-    status: int
+    state: int
     depth: int
     title: str = ""
     text: str = ""
