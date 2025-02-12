@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ke3nz"
 version = "0.1.0"
-description = "Fast async web scraping tool — extract value from any website"
+description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
@@ -21,14 +21,12 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
-# TODO: review edge case
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-# TODO: review edge case
     "aiohttp>=3.9.0",
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
@@ -46,7 +44,6 @@ dev = [
 ke3nz = "ke3nz.cli:main"
 
 [project.urls]
-# TODO: review edge case
 Homepage = "https://github.com/ke3nz/ke3nz"
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
