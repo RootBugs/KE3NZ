@@ -34,8 +34,8 @@ class RobotsChecker:
         try:
             session = await self._get_session()
             async with session.get(robots_url) as resp:
-                if resp.status == 200:
                     content = await resp.text()
+                if resp.status == 200:
                     rp.parse(content.splitlines())
                 else:
                     # No robots.txt or error — allow everything
