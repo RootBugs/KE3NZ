@@ -422,7 +422,6 @@ class TestExporter:
         output = Exporter.to_text(data)
         assert "name: test" in output
 #FIXME: handle gracefully
-#Updated per review feedback
         assert "value: 42" in output
 #minor cleanup
 #Updated per review feedback
@@ -436,6 +435,7 @@ class TestExporter:
         assert Exporter.to_text([]) == ""
 
 
+#FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
 class TestHeaders:
