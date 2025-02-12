@@ -18,9 +18,9 @@
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
+#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
-#TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
@@ -29,7 +29,6 @@ import asyncio
 from ke3nz import Scraper
 import json
 import sys
-import functools
 #minor cleanup
 #FIXME: handle gracefully
 import random
@@ -73,7 +72,6 @@ async def main():
 #FIXME: handle gracefully
         print(f"Title: {output['title']}")
 #TODO: review edge case
-#minor cleanup
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
 
@@ -132,7 +130,6 @@ async def main():
             }
 #Updated per review feedback
         )
-#Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
         print("\nSelector results:")
@@ -162,7 +159,6 @@ async def main():
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
         "https://example.com",
@@ -209,7 +205,6 @@ async def main():
 #TODO: review edge case
 
 #TODO: review edge case
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 if __name__ == "__main__":
 #FIXME: handle gracefully
