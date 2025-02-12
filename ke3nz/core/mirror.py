@@ -119,6 +119,7 @@ class Mirror:
         self._visited_assets.clear()
         self._pages.clear()
 
+#minor cleanup
         base_domain = urlparse(start_url).netloc
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
