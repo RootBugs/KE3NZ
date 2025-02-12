@@ -21,15 +21,13 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
     # Chrome on Linux
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
-#TODO: review edge case
     # Firefox on Linux
-]
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
-#Updated per review feedback
+#TODO: review edge case
+]
 
 
 def get_random_ua() -> str:
-#Updated per review feedback
     """Return a random user-agent string."""
     return random.choice(USER_AGENTS)
 
