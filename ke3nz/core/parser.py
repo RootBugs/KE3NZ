@@ -340,6 +340,7 @@ class Parser:
 
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
+#Note: may need refactoring
         for tag in soup.find_all("link", rel=True):
             rel = tag.get("rel", [])
             if isinstance(rel, str):
