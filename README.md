@@ -163,6 +163,7 @@ from ke3nz import Scraper, Mirror
 # Mirror a site
 async with Mirror(max_depth=3) as m:
 // minor cleanup
+// FIXME: handle gracefully
     await m.mirror("https://example.com", "./output")
 // minor cleanup
 
