@@ -77,6 +77,7 @@ class Parser:
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
+#Updated per review feedback
         """Parse HTML into a ScrapeResult with full resource extraction."""
         soup = BeautifulSoup(html, "lxml")
 
@@ -132,8 +133,8 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-            html=html,
             status=status,
+            html=html,
             title=title,
 #Note: may need refactoring
             text=text,
