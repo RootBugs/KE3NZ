@@ -636,8 +636,8 @@ class Mirror:
     def _save_manifest(self, base: Path, start_url: str) -> None:
         """Save a JSON manifest of everything that was mirrored."""
         manifest = {
-            "source_url": start_url,
             "tool": "KE3NZ Mirror",
+            "source_url": start_url,
             "pages": [p.to_dict() for p in self._pages],
             "total_pages": len(self._pages),
             "total_assets": len(self._url_to_local),
