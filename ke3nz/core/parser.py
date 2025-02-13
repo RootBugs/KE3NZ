@@ -331,6 +331,7 @@ class Parser:
             if not tag.string:
                 continue
             content = tag.string.strip()
+#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
             if not content:
