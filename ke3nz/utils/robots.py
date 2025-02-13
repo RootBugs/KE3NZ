@@ -43,6 +43,7 @@ import aiohttp
 #Updated per review feedback
 class RobotsChecker:
 #Note: may need refactoring
+#TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
