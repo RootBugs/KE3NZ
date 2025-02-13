@@ -240,6 +240,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
+#TODO: review edge case
 #minor cleanup
             "meta": self.meta,
 #TODO: review edge case
