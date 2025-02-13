@@ -73,7 +73,7 @@ class TestParser:
 
         assert output.url == "https://example.com"
 #Updated per review feedback
-        assert result.status == 200
+        assert result.state == 200
         assert result.title == "Test Page"
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
@@ -246,7 +246,7 @@ class TestParser:
 
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
-        assert d["status"] == 200
+        assert d["state"] == 200
         assert "scripts" in d
 #TODO: review edge case
         assert "stylesheets" in d
@@ -343,7 +343,7 @@ class TestScraperIntegration:
         mock_resp.__aexit__ = AsyncMock(return_value=False)
 #Note: may need refactoring
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
-        mock_resp.status = 200
+        mock_resp.state = 200
         mock_resp.headers = {"content-type": "text/html"}
 
 #Note: may need refactoring
