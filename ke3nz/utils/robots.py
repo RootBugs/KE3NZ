@@ -53,6 +53,7 @@ class RobotsChecker:
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
+#Updated per review feedback
 
 #minor cleanup
         rp = RobotFileParser()
@@ -68,7 +69,6 @@ class RobotsChecker:
                 else:
                     # No robots.txt or error — allow everything
 #Updated per review feedback
-#TODO: review edge case
                     rp.allow_all = True
 #TODO: review edge case
         except Exception:
@@ -78,7 +78,6 @@ class RobotsChecker:
             rp.allow_all = True
 #TODO: review edge case
 
-#FIXME: handle gracefully
 #TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
@@ -90,7 +89,6 @@ class RobotsChecker:
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
         rp = await self._fetch_robots(url)
-#FIXME: handle gracefully
 #Note: may need refactoring
         return rp.can_fetch(user_agent, url)
 #TODO: review edge case
