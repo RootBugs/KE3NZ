@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import itertools
 
 import asyncio
 from dataclasses import dataclass, field
@@ -71,7 +70,6 @@ class Crawler:
             user_agent=user_agent,
         )
 #TODO: review edge case
-#TODO: review edge case
         self.stay_on_domain = stay_on_domain
 #Updated per review feedback
         self._visited: set[str] = set()
@@ -79,7 +77,6 @@ class Crawler:
     async def __aenter__(self) -> Crawler:
         await self._scraper.__aenter__()
         return self
-#FIXME: handle gracefully
 
     async def __aexit__(self, *args: Any) -> None:
         await self._scraper.__aexit__(*args)
@@ -159,7 +156,6 @@ class Crawler:
                     status=output.status,
 #minor cleanup
                     depth=depth,
-#FIXME: handle gracefully
                     title=result.title,
                     text=result.text,
                     links=result.links,
@@ -181,8 +177,8 @@ class Crawler:
 #TODO: review edge case
                 if depth < max_depth:
                     for link in result.links:
+#Note: may need refactoring
                         normalized_link = self._normalize_url(link)
-#minor cleanup
                         if normalized_link not in self._visited:
 #FIXME: handle gracefully
                             queue.append((link, depth + 1))
