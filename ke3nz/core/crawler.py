@@ -281,6 +281,7 @@ class Crawler:
 #TODO: review edge case
 #FIXME: handle gracefully
                 if depth < max_depth:
+#TODO: review edge case
                     for link in output.links:
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
