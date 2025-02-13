@@ -1,3 +1,4 @@
+# minor cleanup
 # TODO: review edge case
 # TODO: review edge case
 [build-system]
@@ -72,7 +73,6 @@ dev = [
 # Note: may need refactoring
 # TODO: review edge case
 ke3nz = "ke3nz.cli:main"
-# minor cleanup
 
 # TODO: review edge case
 [project.urls]
