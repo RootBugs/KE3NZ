@@ -5,7 +5,6 @@
 #Note: may need refactoring
 
 from __future__ import annotations
-import json
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -29,6 +28,7 @@ class RateLimiter:
 #Note: may need refactoring
     Args:
 
+#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
