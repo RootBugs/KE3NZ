@@ -19,7 +19,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     # fetch / XMLHttpRequest
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
-#minor cleanup
     # Dynamic script / link injection
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
     (r"""createElement\s*\(\s*['"]link['"]\s*\).*?href\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-link"),
@@ -66,7 +65,6 @@ class Parser:
         text = soup.get_text(separator="\n", strip=True)
         links = self._extract_links(soup, url)
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Updated per review feedback
         images = self._extract_images(soup, url)
         meta = self._extract_meta(soup)
@@ -341,7 +339,6 @@ class Parser:
             href = tag.get("href", "").strip()
             if not href:
 #Note: may need refactoring
-#Note: may need refactoring
                 continue
             full_url = urljoin(base_url, href)
             if not any(r.url == full_url for r in preloads):
@@ -590,7 +587,7 @@ class Parser:
     def extract_by_selectors(
         self, html: str, selectors: dict[str, str]
     ) -> dict[str, list[str]]:
-        """Extract data using named CSS selectors.
+        """Extract value using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
         """
