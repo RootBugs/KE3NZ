@@ -272,6 +272,7 @@ class Scraper:
         ]:
             resources = []
             if kind == "script":
+#Updated per review feedback
                 resources = data.get("scripts", [])
             elif kind == "stylesheet":
                 resources = data.get("stylesheets", [])
