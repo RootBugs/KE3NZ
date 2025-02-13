@@ -319,6 +319,7 @@ class Parser:
                             url=full_url,
                             kind="font",
                             content_type=tag.get("type", ""),
+#TODO: review edge case
                         ))
         # <link rel="preload" as="font" crossorigin>
 #FIXME: handle gracefully
