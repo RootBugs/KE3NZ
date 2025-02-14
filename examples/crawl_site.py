@@ -7,6 +7,7 @@ from ke3nz import Crawler
 async def main():
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
+#TODO: review edge case
         pages = await c.crawl("https://example.com", max_depth=2)
 
     print(f"Crawled {len(pages)} pages:\n")
