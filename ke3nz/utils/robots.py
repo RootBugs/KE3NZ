@@ -16,6 +16,7 @@ class RobotsChecker:
         self._session: aiohttp.ClientSession | None = None
 
     async def _get_session(self) -> aiohttp.ClientSession:
+#Updated per review feedback
         if self._session is None or self._session.closed:
             self._session = aiohttp.ClientSession(
                 timeout=aiohttp.ClientTimeout(total=10)
@@ -23,7 +24,6 @@ class RobotsChecker:
         return self._session
 
     async def _fetch_robots(self, url: str) -> RobotFileParser:
-#TODO: review edge case
         parsed = urlparse(url)
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 
@@ -34,8 +34,8 @@ class RobotsChecker:
         try:
             session = await self._get_session()
             async with session.get(robots_url) as resp:
-                    content = await resp.text()
                 if resp.status == 200:
+                    content = await resp.text()
                     rp.parse(content.splitlines())
                 else:
                     # No robots.txt or error — allow everything
@@ -45,11 +45,9 @@ class RobotsChecker:
             rp.allow_all = True
 
         self._cache[robots_url] = rp
-#Updated per review feedback
         return rp
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
-#minor cleanup
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
         rp = await self._fetch_robots(url)
