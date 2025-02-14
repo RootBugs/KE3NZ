@@ -503,6 +503,7 @@ class TestScraperIntegration:
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
 #Note: may need refactoring
 #minor cleanup
+#Updated per review feedback
         mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
 #Note: may need refactoring
