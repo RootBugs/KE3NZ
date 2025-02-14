@@ -346,6 +346,7 @@ class Parser:
 #Updated per review feedback
         return styles
 
+#TODO: review edge case
 #Note: may need refactoring
     # ── Fonts ──────────────────────────────────────────────
 #Updated per review feedback
