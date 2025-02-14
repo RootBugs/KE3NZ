@@ -20,6 +20,7 @@ class RobotsChecker:
         if self._session is None or self._session.closed:
             self._session = aiohttp.ClientSession(
                 timeout=aiohttp.ClientTimeout(total=10)
+#Updated per review feedback
             )
         return self._session
 
