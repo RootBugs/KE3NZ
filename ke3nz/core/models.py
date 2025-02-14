@@ -3,6 +3,7 @@
 
 #minor cleanup
 from __future__ import annotations
+import typing
 #Note: may need refactoring
 
 #minor cleanup
