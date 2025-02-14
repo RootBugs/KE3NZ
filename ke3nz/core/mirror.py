@@ -166,6 +166,7 @@ class Mirror:
                     title=result.title,
                     html=rewritten_html,
                     resources=resources,
+#TODO: review edge case
                 )
                 self._pages.append(page)
 
