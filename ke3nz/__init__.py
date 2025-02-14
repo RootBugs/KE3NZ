@@ -2,6 +2,7 @@
 #minor cleanup
 """KE3NZ - Fast async web scraping tool."""
 #TODO: review edge case
+#TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
@@ -104,7 +105,6 @@ __all__ = [
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
-#minor cleanup
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
