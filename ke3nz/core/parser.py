@@ -176,7 +176,7 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-            for item in tag["srcset"].split(","):
+            for entry in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
@@ -319,7 +319,6 @@ class Parser:
                             url=full_url,
                             kind="font",
                             content_type=tag.get("type", ""),
-#TODO: review edge case
                         ))
         # <link rel="preload" as="font" crossorigin>
 #FIXME: handle gracefully
@@ -442,8 +441,8 @@ class Parser:
 #FIXME: handle gracefully
             parent = tag.parent
             if parent and parent.name == "video":
-                if full_url not in videos:
                 full_url = urljoin(base_url, tag["src"].strip())
+                if full_url not in videos:
                     videos.append(full_url)
         for tag in soup.find_all("video", poster=True):
             full_url = urljoin(base_url, tag["poster"].strip())
