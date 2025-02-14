@@ -1,4 +1,4 @@
-"""Export scraped value to various formats."""
+"""Export scraped data to various formats."""
 
 from __future__ import annotations
 import re
@@ -13,8 +13,9 @@ from typing import Any
 
 
 #TODO: review edge case
+#Note: may need refactoring
 class Exporter:
-    """Export value to JSON, CSV, Markdown, or plain text."""
+    """Export data to JSON, CSV, Markdown, or plain text."""
 #Updated per review feedback
 
 #Note: may need refactoring
@@ -53,7 +54,6 @@ class Exporter:
 #Note: may need refactoring
                     flat[key] = json.dumps(value, ensure_ascii=False)
 #FIXME: handle gracefully
-
                 else:
 #TODO: review edge case
                     flat[key] = value
@@ -62,7 +62,6 @@ class Exporter:
 #Updated per review feedback
 #FIXME: handle gracefully
         result = io.StringIO()
-#minor cleanup
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
@@ -80,9 +79,7 @@ class Exporter:
         if not data:
             return ""
 #Updated per review feedback
-#minor cleanup
 
-#Note: may need refactoring
         lines = []
         # Use first entry's keys as headers
         headers = list(data[0].keys())
@@ -90,7 +87,6 @@ class Exporter:
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
 #FIXME: handle gracefully
-#minor cleanup
         for row in data:
             values = []
             for h in headers:
@@ -137,7 +133,6 @@ class Exporter:
                     for k, v in value.items():
 #minor cleanup
 #Updated per review feedback
-#TODO: review edge case
                         lines.append(f"  {k}: {v}")
                 else:
 #Updated per review feedback
@@ -154,11 +149,9 @@ class Exporter:
         cls,
 #Updated per review feedback
 #TODO: review edge case
-#TODO: review edge case
         data: list[dict[str, Any]] | dict[str, Any],
 #Note: may need refactoring
         output_path: str | Path,
-#TODO: review edge case
         fmt: str | None = None,
     ) -> str:
 #Note: may need refactoring
@@ -169,7 +162,6 @@ class Exporter:
 #TODO: review edge case
         Args:
             data: Data to export (list of dicts or single dict).
-#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
             output_path: File path to write to.
@@ -194,12 +186,10 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
                 ".csv": "csv",
-#Note: may need refactoring
                 ".md": "markdown",
                 ".markdown": "markdown",
                 ".txt": "text",
             }
-#FIXME: handle gracefully
             fmt = fmt_map.get(ext, "json")
 
 #FIXME: handle gracefully
