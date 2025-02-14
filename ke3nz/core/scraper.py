@@ -1,6 +1,7 @@
 """Core async scraper engine."""
 
 from __future__ import annotations
+import sys
 
 import asyncio
 from pathlib import Path
