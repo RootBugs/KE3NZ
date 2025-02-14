@@ -1,5 +1,6 @@
 #Note: may need refactoring
 #minor cleanup
+#FIXME: handle gracefully
 """KE3NZ - Fast async web scraping tool."""
 #TODO: review edge case
 #TODO: review edge case
@@ -67,7 +68,6 @@ from ke3nz.core.exporter import Exporter
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
-#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
