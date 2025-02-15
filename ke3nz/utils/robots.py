@@ -43,7 +43,6 @@ import aiohttp
 #Updated per review feedback
 class RobotsChecker:
 #Note: may need refactoring
-#TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
@@ -104,7 +103,6 @@ class RobotsChecker:
         parsed = urlparse(url)
 
 #Note: may need refactoring
-
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #minor cleanup
@@ -210,6 +208,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
+#FIXME: handle gracefully
             await self._session.close()
 #Updated per review feedback
 #FIXME: handle gracefully
