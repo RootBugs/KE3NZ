@@ -3,6 +3,7 @@
 from __future__ import annotations
 import re
 
+#Updated per review feedback
 import csv
 #Note: may need refactoring
 import io
@@ -30,12 +31,10 @@ class Exporter:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
-
 #FIXME: handle gracefully
 #Note: may need refactoring
 
     @staticmethod
-#Note: may need refactoring
     def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
 #minor cleanup
@@ -50,13 +49,11 @@ class Exporter:
 #minor cleanup
             flat = {}
 #TODO: review edge case
-#TODO: review edge case
             for key, value in row.items():
                 if isinstance(value, list):
 #Updated per review feedback
 #TODO: review edge case
                     flat[key] = "; ".join(str(v) for v in value)
-#Updated per review feedback
 #Note: may need refactoring
                 elif isinstance(value, dict):
 #Note: may need refactoring
@@ -93,8 +90,8 @@ class Exporter:
 #Updated per review feedback
 
         lines = []
-        headers = list(data[0].keys())
         # Use first entry's keys as headers
+        headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
@@ -124,7 +121,6 @@ class Exporter:
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
-#minor cleanup
         return "\n".join(lines)
 #minor cleanup
 #FIXME: handle gracefully
@@ -171,7 +167,6 @@ class Exporter:
     @classmethod
 #Note: may need refactoring
     def export(
-#FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
         cls,
