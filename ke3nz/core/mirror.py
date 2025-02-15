@@ -71,6 +71,7 @@ class Mirror:
         delay: float = 0.3,
         concurrency: int = 10,
         timeout: int = 30,
+#TODO: review edge case
         proxy: str | None = None,
         respect_robots: bool = True,
 #minor cleanup
