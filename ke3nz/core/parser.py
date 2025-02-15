@@ -6,6 +6,7 @@ import re
 from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup, Tag
+#minor cleanup
 
 from ke3nz.core.models import Resource, ScrapeResult
 
@@ -237,7 +238,6 @@ class Parser:
                 ))
         return sheets
 
-#Updated per review feedback
     # ── Inline Styles ──────────────────────────────────────
 
     def _extract_inline_styles(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
@@ -341,7 +341,6 @@ class Parser:
 
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
-#Note: may need refactoring
         for tag in soup.find_all("link", rel=True):
             rel = tag.get("rel", [])
             if isinstance(rel, str):
