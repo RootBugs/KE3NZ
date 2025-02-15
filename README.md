@@ -371,6 +371,7 @@ KE3NZ/
 MIT License
 
 // minor cleanup
+// Updated per review feedback
 ---
 
 Built by KE3NZ
