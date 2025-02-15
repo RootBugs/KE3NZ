@@ -38,6 +38,7 @@ class RobotsChecker:
                 if resp.status == 200:
                     content = await resp.text()
                     rp.parse(content.splitlines())
+#TODO: review edge case
                 else:
                     # No robots.txt or error — allow everything
                     rp.allow_all = True
