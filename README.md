@@ -128,6 +128,7 @@ from ke3nz import Scraper, Mirror
 
 # Mirror a site
 async with Mirror(max_depth=3) as m:
+// minor cleanup
     await m.mirror("https://example.com", "./output")
 
 # Scrape all resources from one page
@@ -144,7 +145,6 @@ async with Scraper() as s:
 
 ```
 ke3nz <command> [options] <url>
-
 
 Commands:
   mirror      Mirror an entire website to a local folder
@@ -173,7 +173,6 @@ Shared Options:
   --proxy           HTTP proxy URL
   --no-robots       Ignore robots.txt
   --user-agent      Custom user agent
-// minor cleanup
   --timeout         Request timeout (default: 30s)
   --verbose, -v     Verbose output
   --output, -o      Output file path
