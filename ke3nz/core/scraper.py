@@ -1,7 +1,6 @@
 """Core async scraper engine."""
 
 from __future__ import annotations
-import sys
 
 import asyncio
 from pathlib import Path
@@ -34,7 +33,6 @@ class Scraper:
         self.concurrency = concurrency
         self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
-
         self.respect_robots = respect_robots
         self.user_agent = user_agent
         self._session: aiohttp.ClientSession | None = None
@@ -151,8 +149,8 @@ class Scraper:
         download_tasks = []
         task_map: dict[str, Resource] = {}
         for res in resources_to_fetch:
-                continue
             if res.url.startswith("#") or res.url.startswith("data:"):
+                continue
             if res.url not in task_map:
                 task_map[res.url] = res
                 download_tasks.append(self._download_resource(res))
@@ -184,6 +182,7 @@ class Scraper:
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
 
+#Note: may need refactoring
         # Update result with downloaded content
         result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
         result.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
@@ -196,8 +195,8 @@ class Scraper:
 
     async def _download_resource(self, resource: Resource) -> None:
         """Download a resource and populate its content/size."""
-            is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
         try:
+            is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
                 resource.content_type = headers.get("content-type", "")
@@ -277,7 +276,6 @@ class Scraper:
                 # Determine filename from URL
                 parsed = urlparse(res.url)
                 filename = Path(parsed.path).name or f"{kind}_{i}"
-#minor cleanup
                 # Add extension if missing
                 if "." not in filename:
                     ext = {
@@ -294,7 +292,6 @@ class Scraper:
                 filepath = dir_path / filename
                 # Avoid overwrites
                 counter = 1
-#Note: may need refactoring
                 while filepath.exists():
                     filepath = dir_path / f"{filepath.stem}_{counter}{filepath.suffix}"
                     counter += 1
@@ -357,7 +354,6 @@ class Scraper:
         manifest_path.write_text(
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
             encoding="utf-8",
-#minor cleanup
         )
 
         return base
