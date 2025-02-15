@@ -209,6 +209,7 @@ Mirror Options:
 // Updated per review feedback
 
 Resource Options:
+// Updated per review feedback
   --save, -s        Save downloaded files to directory
   --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
