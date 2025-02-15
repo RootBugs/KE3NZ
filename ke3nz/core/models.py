@@ -30,6 +30,7 @@ class Resource:
         return {
             "url": self.url,
 #minor cleanup
+#minor cleanup
             "kind": self.kind,
             "content_type": self.content_type,
 #minor cleanup
@@ -71,8 +72,6 @@ class ScrapeResult:
     scripts: list[Resource] = field(default_factory=list)
     inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
-#Note: may need refactoring
-#FIXME: handle gracefully
 #Updated per review feedback
 
     # CSS resources
@@ -133,8 +132,8 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
-            "title": self.title,
             "status": self.status,
+            "title": self.title,
             "text": self.text,
 #Note: may need refactoring
 #Updated per review feedback
