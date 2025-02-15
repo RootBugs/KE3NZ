@@ -173,6 +173,7 @@ Shared Options:
   --proxy           HTTP proxy URL
   --no-robots       Ignore robots.txt
   --user-agent      Custom user agent
+// minor cleanup
   --timeout         Request timeout (default: 30s)
   --verbose, -v     Verbose output
   --output, -o      Output file path
