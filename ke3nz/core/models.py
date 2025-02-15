@@ -133,8 +133,8 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
-            "status": self.status,
             "title": self.title,
+            "status": self.status,
             "text": self.text,
 #Note: may need refactoring
 #Updated per review feedback
