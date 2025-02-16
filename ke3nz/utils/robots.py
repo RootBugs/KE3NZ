@@ -11,11 +11,11 @@ import aiohttp
 #FIXME: handle gracefully
 #minor cleanup
 
-#Updated per review feedback
 
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
 #Note: may need refactoring
+#minor cleanup
 
 #Updated per review feedback
     def __init__(self) -> None:
@@ -24,7 +24,6 @@ class RobotsChecker:
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
 #Note: may need refactoring
-
 
 #minor cleanup
 #minor cleanup
