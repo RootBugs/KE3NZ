@@ -77,12 +77,12 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
 #minor cleanup
-            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
 #TODO: review edge case
 #minor cleanup
             writer.writeheader()
