@@ -117,7 +117,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page data, all resource info, and selector results.
+        Returns dict with page value, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
@@ -141,8 +141,8 @@ class Scraper:
 
         Args:
 #Updated per review feedback
-            download_content: If True, download and include the body of each resource.
             url: Target URL.
+            download_content: If True, download and include the body of each resource.
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
 
         Returns:
@@ -297,7 +297,6 @@ class Scraper:
                 resources = data.get("sourcemaps", [])
             elif kind == "preload":
                 resources = data.get("preloads", [])
-#TODO: review edge case
 
             dir_path = base / folder
             dir_path.mkdir(exist_ok=True)
