@@ -160,6 +160,7 @@ class TestParser:
         assert len(result.inline_scripts) >= 2  # ld+json + regular
 #FIXME: handle gracefully
         contents = [r.content for r in result.inline_scripts]
+#TODO: review edge case
         assert any("serviceWorker.register" in c for c in contents)
 
     def test_extract_external_stylesheets(self):
@@ -486,7 +487,6 @@ class TestScraperIntegration:
                 assert data["status"] == 200
                 assert len(data["scripts"]) > 0
                 assert len(data["stylesheets"]) > 0
-#Note: may need refactoring
                 assert len(data["fonts"]) > 0
                 assert len(data["inline_scripts"]) > 0
                 assert len(data["inline_styles"]) > 0
