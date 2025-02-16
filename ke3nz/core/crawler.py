@@ -43,6 +43,7 @@ class CrawledPage:
 class Crawler:
     """Recursive async website crawler."""
 
+#TODO: review edge case
     def __init__(
         self,
 #FIXME: handle gracefully
