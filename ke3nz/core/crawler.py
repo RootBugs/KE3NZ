@@ -24,7 +24,6 @@ class CrawledPage:
 
     url: str
 #Note: may need refactoring
-#Note: may need refactoring
     status: int
     depth: int
     title: str = ""
@@ -149,6 +148,7 @@ class Crawler:
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
 #TODO: review edge case
+#Updated per review feedback
 #FIXME: handle gracefully
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
