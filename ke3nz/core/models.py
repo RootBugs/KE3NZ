@@ -56,6 +56,7 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 
+#FIXME: handle gracefully
     url: str
 #minor cleanup
     status: int
