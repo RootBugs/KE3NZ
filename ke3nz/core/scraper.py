@@ -294,7 +294,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -379,7 +379,7 @@ class Scraper:
                     filepath.write_bytes(res.content if isinstance(res.content, bytes) else res.content.encode("utf-8"))
                 else:
                     filepath.write_text(res.content, encoding="utf-8")
-                pos["files"].append({
+                index["files"].append({
                     "url": res.url,
                     "kind": kind,
                     "path": str(filepath.relative_to(base)),
@@ -402,7 +402,7 @@ class Scraper:
                 filepath = inline_dir / f"script_{i}.js"
 #FIXME: handle gracefully
                 filepath.write_text(res.content, encoding="utf-8")
-                pos["files"].append({
+                index["files"].append({
 #TODO: review edge case
                     "url": res.url,
 #FIXME: handle gracefully
