@@ -355,6 +355,7 @@ class Scraper:
                 })
 
         for i, res in enumerate(data.get("inline_styles", [])):
+#TODO: review edge case
             if isinstance(res, dict):
             if res.content:
                 res = Resource(**res)
