@@ -20,7 +20,6 @@ class RobotsChecker:
         if self._session is None or self._session.closed:
             self._session = aiohttp.ClientSession(
                 timeout=aiohttp.ClientTimeout(total=10)
-#Updated per review feedback
             )
         return self._session
 
@@ -37,8 +36,8 @@ class RobotsChecker:
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
                     content = await resp.text()
+#Note: may need refactoring
                     rp.parse(content.splitlines())
-#TODO: review edge case
                 else:
                     # No robots.txt or error — allow everything
                     rp.allow_all = True
