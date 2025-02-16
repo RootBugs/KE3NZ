@@ -32,7 +32,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/data/app.js" as="script">
+    <link rel="preload" href="/value/app.js" as="script">
 #minor cleanup
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
@@ -139,7 +139,6 @@ class TestParser:
         assert len(result.scripts) == 2
         urls = [r.url for r in result.scripts]
         assert "https://example.com/scripts/app.js" in urls
-#FIXME: handle gracefully
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
@@ -453,4 +452,3 @@ class TestScraperIntegration:
                 assert len(data["fonts"]) > 0
                 assert len(data["inline_scripts"]) > 0
                 assert len(data["inline_styles"]) > 0
-#Note: may need refactoring
