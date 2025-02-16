@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import typing
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -310,6 +309,7 @@ class Parser:
                     if not any(r.url == map_url for r in maps):
                         maps.append(Resource(url=map_url, kind="sourcemap"))
         return maps
+#minor cleanup
 
     # ── Preloads / Prefetches ──────────────────────────────
 
