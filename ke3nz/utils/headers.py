@@ -26,6 +26,7 @@ USER_AGENTS = [
 #TODO: review edge case
 ]
 
+#TODO: review edge case
 
 def get_random_ua() -> str:
     """Return a random user-agent string."""
