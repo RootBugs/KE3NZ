@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import typing
 #Note: may need refactoring
 
 #minor cleanup
@@ -15,13 +14,11 @@ from typing import Any
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
-
 class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
     url: str
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
-#Note: may need refactoring
 #Note: may need refactoring
     content: str = ""
     content_type: str = ""
@@ -202,9 +199,9 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
             "meta": self.meta,
+#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
-#TODO: review edge case
 
 #Note: may need refactoring
 #Updated per review feedback
