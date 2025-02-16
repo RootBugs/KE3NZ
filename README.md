@@ -125,7 +125,6 @@ cloned/
   ke3nz-manifest.json     # Resource index
   README.md               # Auto-generated docs
 ```
-// TODO: review edge case
 // minor cleanup
 
 ### What Gets Downloaded
@@ -166,14 +165,12 @@ ke3nz resources https://example.com --save ./output
 
 // TODO: review edge case
 // TODO: review edge case
-// Note: may need refactoring
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
 
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
 ke3nz resources https://example.com -o urls.json --no-content
-// Note: may need refactoring
 ```
 
 ## Python API
@@ -265,6 +262,7 @@ KE3NZ/
   ke3nz/
     __init__.py
 // Updated per review feedback
+// minor cleanup
     cli.py               # CLI with 8 commands
     core/
       models.py           # Resource + ScrapeResult dataclasses
