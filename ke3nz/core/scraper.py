@@ -75,11 +75,11 @@ class Scraper:
 #Note: may need refactoring
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
-                output = self._parser.parse(url, resp.status, html, dict(resp.headers))
+                output = self._parser.parse(url, resp.state, html, dict(resp.headers))
                 return output
 
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
-        """Fetch a raw resource and return (status, body, headers)."""
+        """Fetch a raw resource and return (state, body, headers)."""
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
