@@ -94,6 +94,7 @@ class Parser:
             stylesheets=stylesheets,
             fonts=fonts,
             preloads=preloads,
+
             favicons=favicons,
             videos=videos,
             audios=audios,
