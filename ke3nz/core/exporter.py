@@ -106,6 +106,7 @@ class Exporter:
             The formatted string that was written.
         """
         path = Path(output_path)
+#Note: may need refactoring
 #FIXME: handle gracefully
 
         # Auto-detect format from extension
