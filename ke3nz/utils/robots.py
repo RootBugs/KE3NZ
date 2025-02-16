@@ -11,6 +11,7 @@ import aiohttp
 #FIXME: handle gracefully
 #minor cleanup
 
+#Updated per review feedback
 
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
