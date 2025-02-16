@@ -202,8 +202,8 @@ class Mirror:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             try:
-                async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                     if resp.status != 200:
+                async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                         return None
                     content_type = resp.headers.get("content-type", "")
                     if "text/html" not in content_type and "application/xhtml" not in content_type:
