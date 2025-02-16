@@ -24,7 +24,6 @@ SAMPLE_HTML = """
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
-#Note: may need refactoring
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
     <link rel="preload" href="/data/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
@@ -64,7 +63,7 @@ SAMPLE_HTML = """
 class TestParser:
     def test_parse_basic(self):
         parser = Parser()
-        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
@@ -87,8 +86,8 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/image1.jpg" in result.images
-        assert "https://example.com/image3-sm.jpg" in result.images
         assert "https://example.com/image2.png" in result.images
+        assert "https://example.com/image3-sm.jpg" in result.images
         assert "https://example.com/image3-lg.jpg" in result.images
 
     def test_extract_images_from_video_poster(self):
@@ -138,6 +137,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.inline_styles) >= 1
+#FIXME: handle gracefully
         assert any("margin" in r.content for r in result.inline_styles)
 
     def test_extract_fonts(self):
@@ -315,7 +315,6 @@ class TestScraperIntegration:
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
 
-#Updated per review feedback
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
