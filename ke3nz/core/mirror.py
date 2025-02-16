@@ -84,8 +84,8 @@ class Mirror:
         self.max_depth = max_depth
         self._session: aiohttp.ClientSession | None = None
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
-        self._semaphore = asyncio.Semaphore(concurrency)
         self._robots = RobotsChecker()
+        self._semaphore = asyncio.Semaphore(concurrency)
         self._parser = Parser()
 
 #minor cleanup
@@ -230,6 +230,7 @@ class Mirror:
 #minor cleanup
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+#TODO: review edge case
             try:
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                     if resp.status != 200:
@@ -383,12 +384,10 @@ class Mirror:
 #FIXME: handle gracefully
 
         # Rewrite <script src="...">
-
         for tag in soup.find_all("script", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
-#Updated per review feedback
 
         # Rewrite <link rel="stylesheet" href="...">
         for tag in soup.find_all("link", rel="stylesheet"):
@@ -402,7 +401,6 @@ class Mirror:
 #TODO: review edge case
             rel = tag.get("rel", [])
             if isinstance(rel, str):
-#TODO: review edge case
                 rel = rel.split()
             if any(r in rel for r in ("preload", "prefetch")):
                 href = tag.get("href", "")
@@ -621,7 +619,6 @@ class Mirror:
         content_type: str = "",
 #minor cleanup
     ) -> str:
-
         """Convert an asset URL to a local path relative to the mirror root.
 
         The returned path is sanitized to prevent directory traversal:
