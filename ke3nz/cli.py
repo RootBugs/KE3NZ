@@ -12,7 +12,6 @@ from ke3nz.core.scraper import Scraper
 from ke3nz.core.crawler import Crawler
 from ke3nz.core.mirror import Mirror
 from ke3nz.core.exporter import Exporter
-#Updated per review feedback
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -68,7 +67,6 @@ examples:
     # links
     links_p = sub.add_parser("links", parents=[shared], help="Extract all links")
     links_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
-#TODO: review edge case
     links_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # images
@@ -213,6 +211,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
 def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
     """Remove raw content from resource dicts to keep output clean."""
+#Note: may need refactoring
     result = {}
     skip_keys = {"html"}
     for key, value in data.items():
