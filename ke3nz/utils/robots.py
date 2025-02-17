@@ -65,7 +65,6 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
-#Updated per review feedback
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
 #FIXME: handle gracefully
@@ -148,7 +147,7 @@ class RobotsChecker:
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
-#FIXME: handle gracefully
+#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
