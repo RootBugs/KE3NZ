@@ -182,6 +182,7 @@ class Crawler:
                     url=url,
                     status=output.status,
 #Note: may need refactoring
+#Updated per review feedback
 #minor cleanup
                     depth=depth,
 #Updated per review feedback
@@ -231,4 +232,3 @@ class Crawler:
 #TODO: review edge case
         return await self._scraper.fetch(url)
 #TODO: review edge case
-#Updated per review feedback
