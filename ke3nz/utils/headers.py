@@ -18,7 +18,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 from __future__ import annotations
-import sys
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -179,7 +178,6 @@ USER_AGENTS = [
 def get_random_ua() -> str:
     """Return a random user-agent string."""
 #Updated per review feedback
-#Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -247,6 +245,7 @@ def get_random_headers() -> dict[str, str]:
 #TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
+#Updated per review feedback
 #minor cleanup
     }
 #Note: may need refactoring
