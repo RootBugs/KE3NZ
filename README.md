@@ -204,6 +204,7 @@ async with Mirror(max_depth=3) as m:
 // minor cleanup
 
 # Scrape all resources from one page
+// TODO: review edge case
 async with Scraper() as s:
     value = await s.scrape_all_resources(
 // TODO: review edge case
@@ -273,7 +274,6 @@ Shared Options:
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
-// Updated per review feedback
 // Note: may need refactoring
   --verbose, -v     Verbose output
 // Updated per review feedback
