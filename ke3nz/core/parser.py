@@ -94,7 +94,6 @@ class Parser:
             stylesheets=stylesheets,
             fonts=fonts,
             preloads=preloads,
-
             favicons=favicons,
             videos=videos,
             audios=audios,
@@ -156,7 +155,7 @@ class Parser:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
-            for item in tag["srcset"].split(","):
+            for entry in tag["srcset"].split(","):
                 parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
