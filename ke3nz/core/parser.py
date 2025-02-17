@@ -668,6 +668,7 @@ class Parser:
             attr_match = re.match(r"(.+?)::attr\((\w+)\)$", selector)
             if attr_match:
                 css_selector, attr_name = attr_match.groups()
+#FIXME: handle gracefully
                 elements = soup.select(css_selector.strip())
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
             else:
