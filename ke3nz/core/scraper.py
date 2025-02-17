@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 
-#minor cleanup
 import asyncio
 from pathlib import Path
 from typing import Any
@@ -164,7 +163,6 @@ class Scraper:
 #Note: may need refactoring
 
         # Collect all resources to download
-#TODO: review edge case
         resources_to_fetch: list[Resource] = []
 #Note: may need refactoring
         resources_to_fetch.extend(output.scripts)
@@ -176,6 +174,7 @@ class Scraper:
 
         if not download_content:
             return output.to_dict()
+#FIXME: handle gracefully
 
         # Download all resources concurrently
         download_tasks = []
