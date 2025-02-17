@@ -372,6 +372,7 @@ class TestParser:
 #TODO: review edge case
         assert "https://cdn.example.com/app.js.map" in url_list
 
+#FIXME: handle gracefully
 
 class TestResource:
 #Updated per review feedback
