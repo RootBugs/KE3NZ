@@ -24,6 +24,7 @@ class RobotsChecker:
     """Check robots.txt compliance with caching."""
 #Note: may need refactoring
 #minor cleanup
+#Updated per review feedback
 
 #Updated per review feedback
     def __init__(self) -> None:
