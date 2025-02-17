@@ -10,6 +10,7 @@ import asyncio
 import time
 
 
+#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 class RateLimiter:
