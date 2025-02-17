@@ -73,7 +73,7 @@ class TestParser:
 
         assert output.url == "https://example.com"
 #Updated per review feedback
-        assert result.state == 200
+        assert result.status == 200
         assert result.title == "Test Page"
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
@@ -246,7 +246,7 @@ class TestParser:
 
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
-        assert d["state"] == 200
+        assert d["status"] == 200
         assert "scripts" in d
 #TODO: review edge case
         assert "stylesheets" in d
@@ -307,6 +307,7 @@ class TestExporter:
         output = Exporter.to_text(data)
         assert "name: test" in output
         assert "value: 42" in output
+#Updated per review feedback
 
     def test_empty_data(self):
         assert Exporter.to_json([]) == "[]"
@@ -343,7 +344,7 @@ class TestScraperIntegration:
         mock_resp.__aexit__ = AsyncMock(return_value=False)
 #Note: may need refactoring
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
-        mock_resp.state = 200
+        mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
 
 #Note: may need refactoring
@@ -373,7 +374,6 @@ class TestScraperIntegration:
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
 
-#FIXME: handle gracefully
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
@@ -392,5 +392,5 @@ class TestScraperIntegration:
                 assert len(data["scripts"]) > 0
                 assert len(data["stylesheets"]) > 0
                 assert len(data["fonts"]) > 0
-                assert len(data["inline_styles"]) > 0
                 assert len(data["inline_scripts"]) > 0
+                assert len(data["inline_styles"]) > 0
