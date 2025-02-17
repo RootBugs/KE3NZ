@@ -126,6 +126,7 @@ class RobotsChecker:
 #Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
+#minor cleanup
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #minor cleanup
 #Note: may need refactoring
