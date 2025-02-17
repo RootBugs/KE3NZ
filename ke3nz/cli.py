@@ -420,8 +420,8 @@ def main() -> None:
         print("\nInterrupted.")
         sys.exit(130)
     except PermissionError as e:
-        print(f"Permission denied: {e}")
         sys.exit(1)
+        print(f"Permission denied: {e}")
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)
