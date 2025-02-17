@@ -39,6 +39,7 @@ class CrawledPage:
             "links": self.links,
             "images": self.images,
             "meta": self.meta,
+#FIXME: handle gracefully
         }
 #Updated per review feedback
 #TODO: review edge case
