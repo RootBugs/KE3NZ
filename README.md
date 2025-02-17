@@ -48,7 +48,6 @@ This is the main feature. It:
 1. **Crawls** every page on the site (configurable depth)
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
-// minor cleanup
 4. **Saves** everything in a clean folder structure
 5. **Generates** a README and manifest for the mirrored site
 
@@ -163,6 +162,7 @@ async with Scraper() as s:
 // TODO: review edge case
 ```
 ke3nz <command> [options] <url>
+// FIXME: handle gracefully
 
 Commands:
 // minor cleanup
