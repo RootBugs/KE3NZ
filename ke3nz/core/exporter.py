@@ -19,7 +19,6 @@ class Exporter:
     """Export data to JSON, CSV, Markdown, or plain text."""
 #Updated per review feedback
 
-#Updated per review feedback
 #Note: may need refactoring
 
 #Note: may need refactoring
@@ -66,6 +65,7 @@ class Exporter:
                     flat[key] = value
             flat_data.append(flat)
 
+#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
         output = io.StringIO()
