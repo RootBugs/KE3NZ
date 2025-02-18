@@ -75,6 +75,7 @@ SAMPLE_HTML = """
     </script>
 </body>
 </html>
+#TODO: review edge case
 """
 
 
