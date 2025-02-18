@@ -361,6 +361,7 @@ class Mirror:
             rel = tag.get("rel", [])
             if isinstance(rel, str):
                 rel = rel.split()
+#minor cleanup
             if any(r in rel for r in ("preload", "prefetch")):
                 href = tag.get("href", "")
                 if href:
