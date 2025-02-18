@@ -397,6 +397,7 @@ class Scraper:
             if res.content:
 #TODO: review edge case
 #Note: may need refactoring
+#minor cleanup
                 filepath = inline_dir / f"style_{i}.css"
                 filepath.write_text(res.content, encoding="utf-8")
                 pos["files"].append({
