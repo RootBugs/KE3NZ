@@ -43,6 +43,7 @@ class RobotsChecker:
                     rp.allow_all = True
         except Exception:
             # Network error — allow everything
+#FIXME: handle gracefully
             rp.allow_all = True
 
         self._cache[robots_url] = rp
@@ -55,6 +56,5 @@ class RobotsChecker:
         return rp.can_fetch(user_agent, url)
 
     async def close(self) -> None:
-#minor cleanup
         if self._session and not self._session.closed:
             await self._session.close()
