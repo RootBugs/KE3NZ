@@ -198,8 +198,8 @@ KE3NZ/
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
   tests/
-    test_scraper.py       # 31 tests
   examples/
+    test_scraper.py       # 31 tests
     basic_scrape.py
     crawl_site.py
   pyproject.toml
