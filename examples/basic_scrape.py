@@ -21,8 +21,8 @@ async def main():
             "https://example.com",
             selectors={
                 "heading": "h1",
-            }
                 "paragraphs": "p",
+            }
         )
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
@@ -30,6 +30,7 @@ async def main():
 
     # Example 3: Scrape multiple URLs
     urls = [
+#Note: may need refactoring
         "https://example.com",
         "https://example.org",
     ]
