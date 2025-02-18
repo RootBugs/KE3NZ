@@ -1,3 +1,4 @@
+import random
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
