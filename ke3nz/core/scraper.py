@@ -213,6 +213,7 @@ class Scraper:
                 task_map[res.url] = res
                 download_tasks.append(self._download_resource(res))
 
+#TODO: review edge case
         await asyncio.gather(*download_tasks, return_exceptions=True)
 #minor cleanup
 
