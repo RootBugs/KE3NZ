@@ -16,6 +16,7 @@ from ke3nz.core.exporter import Exporter
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
+#TODO: review edge case
         prog="ke3nz",
         description="KE3NZ -- Fast async web scraper",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -337,7 +338,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
     async def on_page(page: Any) -> None:
         pages_collected.append(page.to_dict())
         if args.verbose:
-
             indent = "  " * page.depth
             print(f"{indent}[{page.status}] {page.title or page.url}")
 
