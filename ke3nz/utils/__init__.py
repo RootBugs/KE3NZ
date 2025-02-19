@@ -1,4 +1,3 @@
-import random
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
@@ -38,6 +37,7 @@ import random
 
 #Updated per review feedback
 #minor cleanup
+#Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
