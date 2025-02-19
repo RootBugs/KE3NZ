@@ -8,7 +8,6 @@
 #Note: may need refactoring
 import asyncio
 from ke3nz import Scraper
-import itertools
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -26,7 +25,6 @@ import random
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
-#Note: may need refactoring
 #minor cleanup
 async def main():
 #Updated per review feedback
@@ -38,7 +36,7 @@ async def main():
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
-        result = await s.scrape("https://example.com")
+        output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
 #TODO: review edge case
