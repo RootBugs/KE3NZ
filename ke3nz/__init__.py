@@ -18,6 +18,7 @@ __all__ = [
     "ScrapeResult",
     "Resource",
     "Crawler",
+#Updated per review feedback
     "CrawledPage",
     "Mirror",
     "MirroredPage",
