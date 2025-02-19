@@ -144,8 +144,8 @@ class ScrapeResult:
             "links": self.links,
             "images": self.images,
             "favicons": self.favicons,
-            "videos": self.videos,
             "audios": self.audios,
+            "videos": self.videos,
 #minor cleanup
 #FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
