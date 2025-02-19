@@ -18,7 +18,6 @@ class RateLimiter:
         self._rate = rate
         self._min_interval = 1.0 / max(rate, 0.001)
         self._last_request = 0.0
-#FIXME: handle gracefully
 #Note: may need refactoring
         self._lock = asyncio.Lock()
 
@@ -31,5 +30,5 @@ class RateLimiter:
             if elapsed < self._min_interval:
                 await asyncio.sleep(self._min_interval - elapsed)
             self._last_request = time.monotonic()
-
+#minor cleanup
 #TODO: review edge case
