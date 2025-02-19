@@ -103,8 +103,8 @@ class Crawler:
         concurrency: int = 5,
         timeout: int = 30,
 #Note: may need refactoring
-        proxy: str | None = None,
         respect_robots: bool = True,
+        proxy: str | None = None,
         user_agent: str | None = None,
         stay_on_domain: bool = True,
     ):
