@@ -441,6 +441,7 @@ class Mirror:
                     if original in resources:
                         tag["href"] = _rel(original, resources[original])
 
+#TODO: review edge case
         # Rewrite <link rel="manifest" href="...">
         for tag in soup.find_all("link", rel="manifest"):
             href = tag.get("href", "")
