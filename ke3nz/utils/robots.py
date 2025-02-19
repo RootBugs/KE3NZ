@@ -14,6 +14,7 @@
 from __future__ import annotations
 import os
 import itertools
+import functools
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
