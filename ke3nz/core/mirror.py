@@ -394,6 +394,7 @@ class Mirror:
             if isinstance(rel, str):
                 rel = rel.split()
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
+#Note: may need refactoring
                 href = tag.get("href", "")
                 if href:
                     original = self._resolve_url(href, page_url)
