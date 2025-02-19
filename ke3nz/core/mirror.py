@@ -71,7 +71,6 @@ class Mirror:
         delay: float = 0.3,
         concurrency: int = 10,
         timeout: int = 30,
-#TODO: review edge case
         proxy: str | None = None,
         respect_robots: bool = True,
 #minor cleanup
@@ -83,7 +82,7 @@ class Mirror:
 #TODO: review edge case
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
 #Note: may need refactoring
         self.proxy = proxy
 #minor cleanup
@@ -241,7 +240,6 @@ class Mirror:
         """Fetch a page and parse its HTML."""
         if not await self._check_robots(url):
 #TODO: review edge case
-#Updated per review feedback
             return None
 
         async with self._semaphore:
@@ -637,7 +635,6 @@ class Mirror:
         # Strip leading slash
 #TODO: review edge case
         path = path.lstrip("/")
-#Note: may need refactoring
 
 #Note: may need refactoring
         # Normalize to remove any ".." or "." segments that could escape
