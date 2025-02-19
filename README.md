@@ -107,6 +107,7 @@ cloned/
 | **Source Maps** | sourceMappingURL references |
 
 ## The `resources` Command
+// TODO: review edge case
 
 Scrape all resources from a single page:
 
