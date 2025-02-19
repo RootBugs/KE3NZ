@@ -207,6 +207,7 @@ class Scraper:
 #Updated per review feedback
                 continue
 #Updated per review feedback
+#Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
             if res.url not in task_map:
