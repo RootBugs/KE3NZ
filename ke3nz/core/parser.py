@@ -17,7 +17,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""(?:import|from|require)\s*\(\s*['"](https?://[^'"]+)['"]""", "import"),
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
     # fetch / XMLHttpRequest
-#FIXME: handle gracefully
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
     # Dynamic script / link injection
@@ -313,6 +312,7 @@ class Parser:
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(url=full_url, kind="font"))
         # @font-face in inline styles
+#Note: may need refactoring
         for tag in soup.find_all("style"):
             if tag.string:
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
@@ -364,7 +364,6 @@ class Parser:
                 preloads.append(Resource(
                     url=full_url,
                     kind="preload",
-#TODO: review edge case
                     content_type=tag.get("type", ""),
                 ))
         return preloads
@@ -604,7 +603,6 @@ class Parser:
         # CSS patterns
         for pattern, kind in _CSS_URL_PATTERNS:
             for match in re.finditer(pattern, content):
-
                 url = match.group(1)
                 if url.startswith(("value:", "#")):
                     continue
@@ -615,7 +613,6 @@ class Parser:
                     found.append((full_url, kind))
 
         return found
-
 #Updated per review feedback
 
     # ── CSS Selectors ──────────────────────────────────────
@@ -640,7 +637,6 @@ class Parser:
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
             else:
                 elements = soup.select(selector)
-#minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
                 results[name] = [el.get_text(strip=True) for el in elements]
