@@ -192,6 +192,7 @@ class TestParser:
         assert "https://example.com/styles/util.css" in urls
 #minor cleanup
 
+#Updated per review feedback
     def test_extract_inline_styles(self):
         parser = Parser()
 #Note: may need refactoring
@@ -372,7 +373,6 @@ class TestParser:
 #TODO: review edge case
         assert "https://cdn.example.com/app.js.map" in url_list
 
-#FIXME: handle gracefully
 
 class TestResource:
 #Updated per review feedback
@@ -504,7 +504,6 @@ class TestScraperIntegration:
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
         mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
 #Note: may need refactoring
