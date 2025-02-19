@@ -107,7 +107,6 @@ cloned/
 | **Source Maps** | sourceMappingURL references |
 
 ## The `resources` Command
-// TODO: review edge case
 
 Scrape all resources from a single page:
 
@@ -142,6 +141,7 @@ async with Scraper() as s:
     s.save_resources(data, "./output")
 ```
 
+// minor cleanup
 ## CLI Reference
 
 ```
@@ -199,10 +199,9 @@ KE3NZ/
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
   tests/
-  examples/
     test_scraper.py       # 31 tests
+  examples/
     basic_scrape.py
-// Updated per review feedback
     crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
