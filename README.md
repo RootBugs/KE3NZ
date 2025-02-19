@@ -51,14 +51,12 @@ This is the main feature. It:
 
 1. **Crawls** every page on the site (configurable depth)
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
-
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
 // Updated per review feedback
 5. **Generates** a README and manifest for the mirrored site
 
 // Note: may need refactoring
-// TODO: review edge case
 // TODO: review edge case
 ```bash
 # Basic mirror
@@ -165,7 +163,6 @@ from ke3nz import Scraper, Mirror
 # Mirror a site
 async with Mirror(max_depth=3) as m:
 // minor cleanup
-// FIXME: handle gracefully
     await m.mirror("https://example.com", "./output")
 // minor cleanup
 
@@ -199,6 +196,7 @@ Commands:
 // Updated per review feedback
   images      Extract all images
 // Note: may need refactoring
+// minor cleanup
   text        Extract text content
   meta        Extract page metadata
   crawl       Crawl a website and list pages
@@ -210,7 +208,6 @@ Mirror Options:
 // Updated per review feedback
 
 Resource Options:
-// Updated per review feedback
   --save, -s        Save downloaded files to directory
   --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
@@ -234,7 +231,6 @@ Shared Options:
 ```
 
 ## Project Structure
-// TODO: review edge case
 
 ```
 KE3NZ/
