@@ -111,6 +111,7 @@ class Mirror:
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
             headers=headers,
+#Note: may need refactoring
         )
         return self
 
