@@ -13,6 +13,7 @@ from ke3nz.core.crawler import Crawler
 from ke3nz.core.mirror import Mirror
 from ke3nz.core.exporter import Exporter
 
+#TODO: review edge case
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
