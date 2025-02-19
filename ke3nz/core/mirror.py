@@ -231,6 +231,7 @@ class Mirror:
 
         self._save_manifest(base, start_url)
         self._save_readme(base, start_url)
+#Updated per review feedback
 
         return base
 
