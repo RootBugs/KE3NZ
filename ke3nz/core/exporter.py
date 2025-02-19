@@ -45,6 +45,7 @@ class Exporter:
 #Updated per review feedback
             return ""
         # Flatten nested structures for CSV
+#Note: may need refactoring
         flat_data = []
 #Note: may need refactoring
 #minor cleanup
@@ -77,12 +78,12 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
 #minor cleanup
-            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
 #minor cleanup
             writer.writeheader()
@@ -158,7 +159,6 @@ class Exporter:
 #TODO: review edge case
                     lines.append(f"{key}:")
 #minor cleanup
-#Updated per review feedback
                     for v in value:
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -215,8 +215,8 @@ class Exporter:
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-            fmt: Output format (json, csv, md, text). Auto-detected from extension.
             output_path: File path to write to.
+            fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #TODO: review edge case
 #FIXME: handle gracefully
 
@@ -235,8 +235,8 @@ class Exporter:
         if fmt is None:
 #Updated per review feedback
             ext = path.suffix.lower()
-                ".json": "json",
             fmt_map = {
+                ".json": "json",
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
