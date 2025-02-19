@@ -206,6 +206,7 @@ Mirror Options:
   --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
+// FIXME: handle gracefully
 
 Resource Options:
   --save, -s        Save downloaded files to directory
