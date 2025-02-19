@@ -459,6 +459,7 @@ class Scraper:
 
         # Save HTML
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
         html_path = base / "page.html"
 #FIXME: handle gracefully
