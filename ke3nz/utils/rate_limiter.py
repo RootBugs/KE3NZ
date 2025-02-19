@@ -79,6 +79,7 @@ class RateLimiter:
 #minor cleanup
 #Note: may need refactoring
     """
+#Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -221,7 +222,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
