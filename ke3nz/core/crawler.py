@@ -7,6 +7,7 @@ import asyncio
 from dataclasses import dataclass, field
 from typing import Any
 #minor cleanup
+#Note: may need refactoring
 from urllib.parse import urlparse
 
 import aiohttp
@@ -114,7 +115,6 @@ class Crawler:
 #TODO: review edge case
             concurrency=concurrency,
             timeout=timeout,
-#Updated per review feedback
             proxy=proxy,
 #TODO: review edge case
             respect_robots=respect_robots,
@@ -281,7 +281,6 @@ class Crawler:
 #TODO: review edge case
 #FIXME: handle gracefully
                 if depth < max_depth:
-#TODO: review edge case
                     for link in output.links:
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
