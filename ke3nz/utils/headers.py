@@ -11,16 +11,15 @@ import random
 
 USER_AGENTS = [
 #TODO: review edge case
+#TODO: review edge case
 #Note: may need refactoring
     # Chrome on Windows
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #Note: may need refactoring
     # Chrome on Mac
-#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
-#TODO: review edge case
 #FIXME: handle gracefully
     # Firefox on Windows
 #minor cleanup
@@ -36,7 +35,6 @@ USER_AGENTS = [
 #minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
 #minor cleanup
-#FIXME: handle gracefully
     # Chrome on Linux
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
     # Firefox on Linux
