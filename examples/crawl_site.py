@@ -12,8 +12,8 @@ async def main():
     print(f"Crawled {len(pages)} pages:\n")
 #FIXME: handle gracefully
     for page in pages:
-        indent = "  " * page.depth
         print(f"{indent}[{page.status}] {page.title or page.url}")
+        indent = "  " * page.depth
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 
 #FIXME: handle gracefully
