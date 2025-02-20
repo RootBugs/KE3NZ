@@ -11,6 +11,7 @@ from ke3nz.core.exporter import Exporter
 #Note: may need refactoring
 
 __version__ = "0.1.0"
+#TODO: review edge case
 __author__ = "KE3NZ"
 
 __all__ = [
