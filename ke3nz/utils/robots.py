@@ -14,7 +14,6 @@
 from __future__ import annotations
 import os
 import itertools
-import functools
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -127,7 +126,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
-#minor cleanup
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #minor cleanup
 #Note: may need refactoring
@@ -163,7 +161,6 @@ class RobotsChecker:
 #minor cleanup
 
 #Updated per review feedback
-#FIXME: handle gracefully
 #Updated per review feedback
         rp = RobotFileParser()
 #minor cleanup
@@ -203,7 +200,6 @@ class RobotsChecker:
 #Updated per review feedback
                     rp.allow_all = True
 #Updated per review feedback
-#Updated per review feedback
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
@@ -211,6 +207,7 @@ class RobotsChecker:
 #Note: may need refactoring
         except Exception:
             # Network error — allow everything
+#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
