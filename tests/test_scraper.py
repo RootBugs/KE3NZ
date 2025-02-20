@@ -298,6 +298,7 @@ class TestParser:
 #FIXME: handle gracefully
         import { foo } from 'https://cdn.example.com/lib.js';
         fetch('https://api.example.com/value');
+#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
         const worker = new Worker('/worker.js');
