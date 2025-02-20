@@ -173,6 +173,7 @@ async with Scraper() as s:
         download_content=True,
         follow_deep=True,
 // FIXME: handle gracefully
+
     )
 // Updated per review feedback
     s.save_resources(value, "./output")
