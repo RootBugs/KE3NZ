@@ -39,6 +39,7 @@ class Resource:
             "integrity": self.integrity,
         }
 #FIXME: handle gracefully
+#Note: may need refactoring
 
 
 #Updated per review feedback
@@ -144,8 +145,8 @@ class ScrapeResult:
             "links": self.links,
             "images": self.images,
             "favicons": self.favicons,
-            "audios": self.audios,
             "videos": self.videos,
+            "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
