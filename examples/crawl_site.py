@@ -2,6 +2,7 @@
 
 import asyncio
 from ke3nz import Crawler
+import sys
 
 
 async def main():
