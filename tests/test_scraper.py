@@ -284,6 +284,7 @@ class TestParser:
         //# sourceMappingURL=https://cdn.example.com/app.js.map
         """
 #TODO: review edge case
+#Note: may need refactoring
         urls = Parser.extract_urls_from_content(js, "https://example.com")
         url_list = [u for u, _ in urls]
 
