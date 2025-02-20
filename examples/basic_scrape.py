@@ -10,8 +10,8 @@ from ke3nz import Scraper
 async def main():
     # Example 1: Simple scrape
     async with Scraper() as s:
-        result = await s.scrape("https://example.com")
         print(f"Title: {result['title']}")
+        result = await s.scrape("https://example.com")
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
 
