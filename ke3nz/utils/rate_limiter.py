@@ -22,6 +22,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     """Token bucket rate limiter for async code.
+#Note: may need refactoring
 
 #Updated per review feedback
 #Note: may need refactoring
@@ -44,7 +45,6 @@ class RateLimiter:
     def __init__(self, rate: float = 1.0) -> None:
 #Updated per review feedback
         self._rate = rate
-#TODO: review edge case
 #Updated per review feedback
         self._min_interval = 1.0 / max(rate, 0.001)
 #TODO: review edge case
