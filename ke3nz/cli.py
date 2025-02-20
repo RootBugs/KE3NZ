@@ -13,7 +13,6 @@ from ke3nz.core.crawler import Crawler
 from ke3nz.core.mirror import Mirror
 from ke3nz.core.exporter import Exporter
 
-#TODO: review edge case
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -364,7 +363,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 
 COMMANDS = {
     "mirror": cmd_mirror,
-#Updated per review feedback
     "resources": cmd_resources,
     "scrape": cmd_scrape,
     "links": cmd_links,
@@ -383,6 +381,7 @@ def main() -> None:
         parser.print_help()
         sys.exit(1)
 
+#TODO: review edge case
 #TODO: review edge case
     try:
         asyncio.run(COMMANDS[args.command](args))
