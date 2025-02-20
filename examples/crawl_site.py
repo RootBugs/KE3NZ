@@ -1,6 +1,5 @@
 #Note: may need refactoring
 #TODO: review edge case
-#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
@@ -56,6 +55,7 @@ async def main():
         print(f"{indent}[{page.status}] {page.title or page.url}")
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 
+#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
