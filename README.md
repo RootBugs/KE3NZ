@@ -21,7 +21,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./result --deep
+ke3nz resources https://example.com --save ./output --deep
 ```
 
 ## Commands
@@ -51,11 +51,10 @@ This is the main feature. It:
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
 
-// minor cleanup
 # Deep mirror (follow more links)
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
-# Verbose result to see progress
+# Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 # Fast mirror with high concurrency
