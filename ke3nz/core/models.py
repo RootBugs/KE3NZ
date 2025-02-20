@@ -4,7 +4,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import collections
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -12,7 +11,6 @@ import collections
 
 #minor cleanup
 #TODO: review edge case
-#Updated per review feedback
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -136,7 +134,6 @@ class ScrapeResult:
 #TODO: review edge case
 
 #TODO: review edge case
-#TODO: review edge case
     # Fonts
 #Updated per review feedback
     fonts: list[Resource] = field(default_factory=list)
@@ -144,6 +141,7 @@ class ScrapeResult:
     # Source maps
 #FIXME: handle gracefully
 #Updated per review feedback
+#FIXME: handle gracefully
     sourcemaps: list[Resource] = field(default_factory=list)
 
 #FIXME: handle gracefully
@@ -241,7 +239,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
-#TODO: review edge case
 #minor cleanup
             "meta": self.meta,
 #TODO: review edge case
