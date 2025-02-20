@@ -19,7 +19,6 @@ from ke3nz.core.scraper import Scraper
 import pathlib
 import json
 import functools
-import sys
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
@@ -31,6 +30,7 @@ from ke3nz.core.mirror import Mirror, MirroredPage
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -54,7 +54,6 @@ __author__ = "KE3NZ"
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
-#TODO: review edge case
 #Note: may need refactoring
 
 #Updated per review feedback
