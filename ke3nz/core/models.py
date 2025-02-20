@@ -61,6 +61,7 @@ class ScrapeResult:
     # Config / data
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
+#TODO: review edge case
 
 #TODO: review edge case
     # Media
