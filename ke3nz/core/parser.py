@@ -540,6 +540,7 @@ class Parser:
     def _collect_all_urls(
         self,
         links: list[str],
+#FIXME: handle gracefully
         images: list[str],
         scripts: list[Resource],
         stylesheets: list[Resource],
