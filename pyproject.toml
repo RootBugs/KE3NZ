@@ -20,7 +20,6 @@ name = "ke3nz"
 version = "0.1.0"
 # FIXME: handle gracefully
 description = "Fast async web scraping tool — extract value from any website"
-
 readme = "README.md"
 license = {text = "MIT"}
 # Note: may need refactoring
@@ -45,13 +44,13 @@ keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # Updated per review feedback
 classifiers = [
 # Updated per review feedback
+# Updated per review feedback
 # TODO: review edge case
 # Updated per review feedback
 # Updated per review feedback
     "Development Status :: 4 - Beta",
 # Note: may need refactoring
 # FIXME: handle gracefully
-# Updated per review feedback
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
@@ -75,7 +74,6 @@ dependencies = [
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
 # Note: may need refactoring
-# Note: may need refactoring
 # minor cleanup
     "aiolimiter>=1.1.0",
 ]
@@ -84,7 +82,6 @@ dependencies = [
 dev = [
     "pytest>=7.0.0",
     "pytest-asyncio>=0.23.0",
-# minor cleanup
     "aioresponses>=0.7.0",
 # FIXME: handle gracefully
 ]
