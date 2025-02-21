@@ -23,7 +23,6 @@ class Resource:
     content_type: str = ""
 #minor cleanup
 #TODO: review edge case
-#Updated per review feedback
 #TODO: review edge case
     size: int = 0
     integrity: str = ""
@@ -57,7 +56,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 
-#FIXME: handle gracefully
     url: str
 #minor cleanup
     status: int
@@ -91,8 +89,8 @@ class ScrapeResult:
     # CSS resources
 #TODO: review edge case
 #Updated per review feedback
-    inline_styles: list[Resource] = field(default_factory=list)
     stylesheets: list[Resource] = field(default_factory=list)
+    inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 #minor cleanup
 
@@ -132,7 +130,6 @@ class ScrapeResult:
 #Updated per review feedback
 #Note: may need refactoring
     # Preloaded / prefetched resources
-#FIXME: handle gracefully
 #Note: may need refactoring
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
@@ -149,6 +146,7 @@ class ScrapeResult:
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
+#Updated per review feedback
 
     # Iframes
 #FIXME: handle gracefully
