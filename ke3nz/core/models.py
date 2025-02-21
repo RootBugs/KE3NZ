@@ -23,6 +23,7 @@ class Resource:
     content_type: str = ""
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
 #TODO: review edge case
     size: int = 0
     integrity: str = ""
