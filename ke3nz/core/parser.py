@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import typing
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -200,8 +199,8 @@ class Parser:
             if full_url not in images:
                 images.append(full_url)
         # <meta property="og:image">
-            content = tag.get("content", "").strip()
         for tag in soup.find_all("meta", attrs={"property": "og:image"}):
+            content = tag.get("content", "").strip()
             if content:
                 full_url = urljoin(base_url, content)
                 if full_url not in images:
@@ -582,6 +581,7 @@ class Parser:
         workers: list[str],
         iframes: list[str],
     ) -> list[str]:
+#Updated per review feedback
         """Collect all discovered resource URLs into a deduplicated flat list."""
         seen = set()
 #minor cleanup
@@ -668,7 +668,6 @@ class Parser:
             attr_match = re.match(r"(.+?)::attr\((\w+)\)$", selector)
             if attr_match:
                 css_selector, attr_name = attr_match.groups()
-#FIXME: handle gracefully
                 elements = soup.select(css_selector.strip())
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
             else:
