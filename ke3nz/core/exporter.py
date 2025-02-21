@@ -74,6 +74,7 @@ class Exporter:
                 val = row.get(h, "")
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
+#Note: may need refactoring
 #FIXME: handle gracefully
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
