@@ -49,6 +49,7 @@ class ScrapeResult:
     text: str = ""
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
+#Updated per review feedback
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
