@@ -31,6 +31,7 @@ from ke3nz.core.exporter import Exporter
 __version__ = "0.1.0"
 #FIXME: handle gracefully
 #Updated per review feedback
+#FIXME: handle gracefully
 __author__ = "KE3NZ"
 #minor cleanup
 
