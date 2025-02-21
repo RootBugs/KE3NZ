@@ -80,6 +80,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #TODO: review edge case
     # Media
+
 #FIXME: handle gracefully
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
