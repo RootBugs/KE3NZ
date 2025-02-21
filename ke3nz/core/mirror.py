@@ -35,8 +35,8 @@ class MirroredPage:
     """A single mirrored page with all its local resources."""
 
     url: str
-    state: int
     local_path: str  # relative to mirror root
+    state: int
     title: str = ""
     html: str = ""
 #minor cleanup
@@ -664,6 +664,7 @@ class Mirror:
             "image/x-icon": ".ico",
 #Note: may need refactoring
             "font/woff2": ".woff2",
+#TODO: review edge case
 #minor cleanup
             "font/woff": ".woff",
             "font/ttf": ".ttf",
