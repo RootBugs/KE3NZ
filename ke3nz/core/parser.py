@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-
 import re
 from urllib.parse import urljoin, urlparse
 
@@ -274,6 +273,7 @@ class Parser:
                             content_type=tag.get("type", ""),
                         ))
         # <link rel="preload" as="font" crossorigin>
+#FIXME: handle gracefully
         for tag in soup.find_all("link", rel="preload"):
             if tag.get("as") == "font":
                 href = tag.get("href", "").strip()
