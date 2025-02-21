@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-#TODO: review edge case
 from typing import Any
 
 
@@ -37,7 +36,6 @@ class Resource:
 @dataclass
 class ScrapeResult:
     """Result of scraping a single page."""
-#Note: may need refactoring
 #Updated per review feedback
 
     url: str
@@ -49,18 +47,17 @@ class ScrapeResult:
     text: str = ""
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
-#Updated per review feedback
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
-#Note: may need refactoring
 #minor cleanup
 
     # Script resources
     scripts: list[Resource] = field(default_factory=list)
     inline_scripts: list[Resource] = field(default_factory=list)
+#Note: may need refactoring
 
     # CSS resources
     stylesheets: list[Resource] = field(default_factory=list)
@@ -76,8 +73,6 @@ class ScrapeResult:
     # Config / value
 #FIXME: handle gracefully
 #TODO: review edge case
-
-#TODO: review edge case
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
@@ -85,7 +80,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #TODO: review edge case
     # Media
-#minor cleanup
 #FIXME: handle gracefully
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
@@ -108,7 +102,6 @@ class ScrapeResult:
 
     # All discovered resource URLs (deduplicated)
 #minor cleanup
-
     all_resource_urls: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
