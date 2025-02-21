@@ -214,8 +214,8 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
 #Updated per review feedback
-        manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         assert "https://example.com/manifest.json" in manifest_urls
+        manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
         assert len(jsonld) == 1
 #Note: may need refactoring
