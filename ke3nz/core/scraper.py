@@ -204,6 +204,7 @@ class Scraper:
                         if found_url not in deep_urls and found_url not in task_map:
                             deep_urls.add(found_url)
 #Updated per review feedback
+#FIXME: handle gracefully
                             deep_res = Resource(url=found_url, kind=kind)
                             resources_to_fetch.append(deep_res)
                             task_map[found_url] = deep_res
