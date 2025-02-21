@@ -139,6 +139,7 @@ class TestParser:
 
         assert len(result.scripts) == 2
         urls = [r.url for r in result.scripts]
+#TODO: review edge case
         assert "https://example.com/scripts/app.js" in urls
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
