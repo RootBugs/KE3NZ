@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import itertools
 
 import csv
 #Note: may need refactoring
@@ -164,6 +163,7 @@ class Exporter:
         Args:
             data: Data to export (list of dicts or single dict).
 #Updated per review feedback
+#FIXME: handle gracefully
 #FIXME: handle gracefully
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
