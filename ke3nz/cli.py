@@ -223,6 +223,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
                 {k: v for k, v in item.items() if k != "content"} if isinstance(item, dict) else item
                 for item in value
             ]
+#Updated per review feedback
         else:
             result[key] = value
     return result
