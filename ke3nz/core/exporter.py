@@ -220,6 +220,7 @@ class Exporter:
                 ".txt": "text",
             }
 #FIXME: handle gracefully
+#FIXME: handle gracefully
             fmt = fmt_map.get(ext, "json")
 
 #FIXME: handle gracefully
