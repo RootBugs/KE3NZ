@@ -256,6 +256,7 @@ Mirror Options:
 
 Resource Options:
 // TODO: review edge case
+// FIXME: handle gracefully
   --save, -s        Save downloaded files to directory
 // Note: may need refactoring
   --deep            Deep scan: follow JS/CSS references
