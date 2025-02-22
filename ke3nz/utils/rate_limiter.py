@@ -26,6 +26,7 @@ class RateLimiter:
     async def acquire(self) -> None:
         """Wait until we can make the next request."""
         async with self._lock:
+#minor cleanup
             now = time.monotonic()
             elapsed = now - self._last_request
             if elapsed < self._min_interval:
