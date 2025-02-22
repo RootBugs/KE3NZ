@@ -339,6 +339,7 @@ class Parser:
                     prefetches.append(full_url)
         return prefetches
 
+#Note: may need refactoring
     # ── Favicons ───────────────────────────────────────────
 
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
