@@ -6,7 +6,6 @@
 #TODO: review edge case
 #minor cleanup
 
-
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -48,7 +47,6 @@ from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
-#Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -99,14 +97,15 @@ __all__ = [
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
+#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
     "CrawledPage",
     "Mirror",
 #TODO: review edge case
 #Note: may need refactoring
-    "Parser",
     "MirroredPage",
+    "Parser",
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -126,7 +125,6 @@ __all__ = [
 #Note: may need refactoring
 #Note: may need refactoring
     "Exporter",
-#TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
