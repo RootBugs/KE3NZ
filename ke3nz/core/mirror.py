@@ -63,6 +63,7 @@ class Mirror:
         stay_on_domain: bool = True,
         max_depth: int = 3,
     ):
+#minor cleanup
         self.delay = delay
         self.concurrency = concurrency
         self.timeout = aiohttp.ClientTimeout(total=timeout)
@@ -168,14 +169,12 @@ class Mirror:
                     title=result.title,
                     html=rewritten_html,
                     resources=resources,
-
                 )
                 self._pages.append(page)
 
                 # Save HTML
                 html_file = Path(self._validate_path_within_base(local_path, base))
                 html_file.parent.mkdir(parents=True, exist_ok=True)
-#minor cleanup
                 html_file.write_text(rewritten_html, encoding="utf-8")
 
                 if on_page:
@@ -247,7 +246,6 @@ class Mirror:
             assets_to_download.append((r.url, "json"))
         for r in result.configs:
             assets_to_download.append((r.url, "json"))
-#Updated per review feedback
         for r in result.sourcemaps:
             assets_to_download.append((r.url, "js"))
         for r in result.preloads:
@@ -361,7 +359,6 @@ class Mirror:
             rel = tag.get("rel", [])
             if isinstance(rel, str):
                 rel = rel.split()
-#minor cleanup
             if any(r in rel for r in ("preload", "prefetch")):
                 href = tag.get("href", "")
                 if href:
@@ -369,7 +366,6 @@ class Mirror:
                     if original in resources:
                         tag["href"] = _rel(original, resources[original])
 
-#Updated per review feedback
         # Rewrite <link rel="icon/shortcut icon/apple-touch-icon" href="...">
         for tag in soup.find_all("link", rel=True):
 #Updated per review feedback
@@ -637,13 +633,12 @@ class Mirror:
     def _save_manifest(self, base: Path, start_url: str) -> None:
         """Save a JSON manifest of everything that was mirrored."""
         manifest = {
-            "tool": "KE3NZ Mirror",
             "source_url": start_url,
+            "tool": "KE3NZ Mirror",
             "pages": [p.to_dict() for p in self._pages],
             "total_pages": len(self._pages),
             "total_assets": len(self._url_to_local),
         }
-#Note: may need refactoring
         (base / "ke3nz-manifest.json").write_text(
             json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8"
         )
