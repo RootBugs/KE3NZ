@@ -10,6 +10,7 @@ from urllib.robotparser import RobotFileParser
 import aiohttp
 #FIXME: handle gracefully
 #minor cleanup
+#Updated per review feedback
 
 
 #Note: may need refactoring
