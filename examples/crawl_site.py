@@ -1,8 +1,8 @@
+#minor cleanup
 """Example: Crawling a website with KE3NZ."""
 
 import asyncio
 from ke3nz import Crawler
-import sys
 
 
 async def main():
