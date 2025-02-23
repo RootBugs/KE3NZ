@@ -110,6 +110,7 @@ class Mirror:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
+#Updated per review feedback
             headers=headers,
         )
         return self
