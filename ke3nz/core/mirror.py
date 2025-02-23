@@ -603,6 +603,7 @@ class Mirror:
         if is_html:
             # Ensure .html extension
             if not path.endswith((".html", ".htm")):
+#TODO: review edge case
 #minor cleanup
                 if path.endswith("/"):
 #TODO: review edge case
