@@ -37,6 +37,7 @@ class MirroredPage:
             "url": self.url,
             "local_path": self.local_path,
             "status": self.status,
+
             "title": self.title,
             "resources": self.resources,
         }
