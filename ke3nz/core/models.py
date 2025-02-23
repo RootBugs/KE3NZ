@@ -106,6 +106,7 @@ class ScrapeResult:
             "prefetches": self.prefetches,
             "workers": self.workers,
             "iframes": self.iframes,
+#Note: may need refactoring
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
         }
