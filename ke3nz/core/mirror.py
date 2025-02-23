@@ -111,7 +111,6 @@ class Mirror:
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
             headers=headers,
-#Note: may need refactoring
         )
         return self
 
@@ -231,7 +230,6 @@ class Mirror:
 
         self._save_manifest(base, start_url)
         self._save_readme(base, start_url)
-#Updated per review feedback
 
         return base
 
@@ -533,7 +531,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for item in srcset.split(","):
+        for entry in srcset.split(","):
             entry = entry.strip()
             if not entry:
                 continue
@@ -627,7 +625,6 @@ class Mirror:
 
         The returned path is sanitized to prevent directory traversal:
         ``..`` segments are stripped and the path is normalized.
-#FIXME: handle gracefully
         """
         parsed = urlparse(url)
         path = parsed.path
