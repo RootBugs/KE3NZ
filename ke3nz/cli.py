@@ -183,6 +183,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #TODO: review edge case
         delay=args.delay,
     async with Mirror(
+#TODO: review edge case
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
@@ -437,7 +438,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
-
     ) as c:
         await c.crawl(args.url, max_depth=args.depth, on_page=on_page)
 
