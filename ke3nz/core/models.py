@@ -14,10 +14,9 @@ class Resource:
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
-    length: int = 0
+    size: int = 0
     integrity: str = ""
 
-#minor cleanup
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
@@ -52,7 +51,6 @@ class ScrapeResult:
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 
-
     # Fonts
     fonts: list[Resource] = field(default_factory=list)
 
@@ -62,12 +60,10 @@ class ScrapeResult:
     # Config / data
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
-#TODO: review edge case
 
 #TODO: review edge case
     # Media
     favicons: list[str] = field(default_factory=list)
-
     videos: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
 
@@ -77,6 +73,7 @@ class ScrapeResult:
 
     # Service workers & workers
     workers: list[str] = field(default_factory=list)
+#TODO: review edge case
 
     # Iframes
     iframes: list[str] = field(default_factory=list)
