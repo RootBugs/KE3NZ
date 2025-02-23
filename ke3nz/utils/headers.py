@@ -103,7 +103,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
-#FIXME: handle gracefully
 #minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
 #Note: may need refactoring
@@ -168,6 +167,7 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
+#Updated per review feedback
 #Updated per review feedback
 #minor cleanup
     """Return a full set of headers with a random user-agent."""
