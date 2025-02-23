@@ -27,7 +27,6 @@
 #FIXME: handle gracefully
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
-#minor cleanup
 import pathlib
 import json
 import functools
@@ -75,7 +74,6 @@ from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
 __version__ = "0.1.0"
 #FIXME: handle gracefully
-#minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
@@ -111,6 +109,7 @@ __all__ = [
 #minor cleanup
 #TODO: review edge case
     "ScrapeResult",
+#Updated per review feedback
     "Resource",
 #TODO: review edge case
 #Updated per review feedback
