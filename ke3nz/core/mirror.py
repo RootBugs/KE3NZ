@@ -63,7 +63,7 @@ class Mirror:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -119,7 +119,6 @@ class Mirror:
         self._visited_assets.clear()
         self._pages.clear()
 
-#minor cleanup
         base_domain = urlparse(start_url).netloc
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
@@ -166,7 +165,6 @@ class Mirror:
                     title=result.title,
                     html=rewritten_html,
                     resources=resources,
-#TODO: review edge case
                 )
                 self._pages.append(page)
 
@@ -202,8 +200,8 @@ class Mirror:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             try:
-                    if resp.status != 200:
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
+                    if resp.status != 200:
                         return None
                     content_type = resp.headers.get("content-type", "")
                     if "text/html" not in content_type and "application/xhtml" not in content_type:
@@ -274,11 +272,11 @@ class Mirror:
             resource_map[asset_url] = result
 
         # Build URL -> local path mapping
+#Note: may need refactoring
         url_to_local: dict[str, str] = {}
         for asset_url, kind in assets_to_download:
             if asset_url not in resource_map:
                 continue
-
             if asset_url in url_to_local:
                 continue
 
@@ -574,7 +572,6 @@ class Mirror:
             "text/javascript": ".js",
             "application/json": ".json",
             "text/css": ".css",
-#minor cleanup
             "image/png": ".png",
             "image/jpeg": ".jpg",
             "image/gif": ".gif",
@@ -644,7 +641,6 @@ class Mirror:
 ├── index.html           (or page.html)
 ├── ke3nz-manifest.json  (resource index)
 ├── images/              (downloaded images)
-#minor cleanup
 ├── fonts/               (downloaded fonts)
 ├── assets/
 │   ├── js/              (downloaded scripts)
