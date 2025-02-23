@@ -134,6 +134,7 @@ cloned/
       inter.woff2
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource index
+// FIXME: handle gracefully
   README.md               # Auto-generated docs
 ```
 // minor cleanup
@@ -256,7 +257,6 @@ Mirror Options:
 
 Resource Options:
 // TODO: review edge case
-// FIXME: handle gracefully
   --save, -s        Save downloaded files to directory
 // Note: may need refactoring
   --deep            Deep scan: follow JS/CSS references
@@ -293,8 +293,8 @@ KE3NZ/
 // Updated per review feedback
 // minor cleanup
     cli.py               # CLI with 8 commands
-      models.py           # Resource + ScrapeResult dataclasses
     core/
+      models.py           # Resource + ScrapeResult dataclasses
 // FIXME: handle gracefully
 // minor cleanup
       parser.py           # HTML parsing + full resource extraction
