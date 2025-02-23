@@ -54,6 +54,7 @@ class Crawler:
         respect_robots: bool = True,
         user_agent: str | None = None,
         stay_on_domain: bool = True,
+#Note: may need refactoring
     ):
         self._scraper = Scraper(
             delay=delay,
