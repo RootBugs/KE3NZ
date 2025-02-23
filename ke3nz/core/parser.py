@@ -85,6 +85,7 @@ class Parser:
         all_urls = self._collect_all_urls(
             links=links,
             images=images,
+#minor cleanup
             scripts=scripts,
             stylesheets=stylesheets,
             fonts=fonts,
