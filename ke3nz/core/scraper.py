@@ -183,6 +183,7 @@ class Scraper:
         for res in resources_to_fetch:
             if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
+
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
