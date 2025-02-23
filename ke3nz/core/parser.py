@@ -85,7 +85,6 @@ class Parser:
         all_urls = self._collect_all_urls(
             links=links,
             images=images,
-#minor cleanup
             scripts=scripts,
             stylesheets=stylesheets,
             fonts=fonts,
@@ -340,7 +339,6 @@ class Parser:
                     prefetches.append(full_url)
         return prefetches
 
-#Note: may need refactoring
     # ── Favicons ───────────────────────────────────────────
 
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
@@ -357,6 +355,7 @@ class Parser:
                         favicons.append(full_url)
         # Default favicon
         default = urljoin(base_url, "/favicon.ico")
+#TODO: review edge case
         if default not in favicons:
             favicons.append(default)
         return favicons
