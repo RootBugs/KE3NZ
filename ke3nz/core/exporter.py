@@ -211,6 +211,7 @@ class Exporter:
                 ".json": "json",
 #minor cleanup
 #Updated per review feedback
+#FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
                 ".csv": "csv",
