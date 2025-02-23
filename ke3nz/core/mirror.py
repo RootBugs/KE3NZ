@@ -275,6 +275,7 @@ class Mirror:
         results = await asyncio.gather(*download_tasks, return_exceptions=True)
 
         for asset_url, result in zip(unique_urls, results):
+#minor cleanup
             if isinstance(result, Exception) or result is None:
                 continue
 #Note: may need refactoring
