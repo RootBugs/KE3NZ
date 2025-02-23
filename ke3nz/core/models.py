@@ -56,6 +56,7 @@ class ScrapeResult:
 
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
+#Updated per review feedback
 
     # Config / data
     json_data: list[Resource] = field(default_factory=list)
