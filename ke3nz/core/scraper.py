@@ -79,7 +79,7 @@ class Scraper:
                 return output
 
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
-        """Fetch a raw resource and return (state, body, headers)."""
+        """Fetch a raw resource and return (status, body, headers)."""
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
@@ -117,7 +117,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page value, all resource info, and selector results.
+        Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
@@ -168,7 +168,7 @@ class Scraper:
         download_tasks = []
         task_map: dict[str, Resource] = {}
         for res in resources_to_fetch:
-            if res.url.startswith("#") or res.url.startswith("value:"):
+            if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
 #Note: may need refactoring
             if res.url not in task_map:
@@ -203,7 +203,6 @@ class Scraper:
                 await asyncio.gather(*new_tasks, return_exceptions=True)
 
 #Updated per review feedback
-#minor cleanup
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
 #minor cleanup
@@ -235,7 +234,6 @@ class Scraper:
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body.encode("utf-8"))
         except Exception:
-#minor cleanup
 #Updated per review feedback
             resource.content = f"[failed to fetch: {resource.url}]"
 
