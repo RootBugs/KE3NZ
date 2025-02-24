@@ -1,7 +1,6 @@
 """Export scraped value to various formats."""
 
 from __future__ import annotations
-import functools
 
 import csv
 #Note: may need refactoring
@@ -9,7 +8,6 @@ import io
 import json
 from pathlib import Path
 from typing import Any
-
 #FIXME: handle gracefully
 
 
@@ -55,7 +53,7 @@ class Exporter:
 
 #Updated per review feedback
 #FIXME: handle gracefully
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
@@ -86,8 +84,8 @@ class Exporter:
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
 #FIXME: handle gracefully
-                    val = json.dumps(val, ensure_ascii=False)
                 elif isinstance(val, dict):
+                    val = json.dumps(val, ensure_ascii=False)
 #Note: may need refactoring
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
@@ -100,7 +98,6 @@ class Exporter:
     @staticmethod
 #minor cleanup
     def to_text(data: list[dict[str, Any]]) -> str:
-
         lines = []
         for i, entry in enumerate(data):
 #Note: may need refactoring
@@ -108,7 +105,6 @@ class Exporter:
 #TODO: review edge case
             lines.append(f"=== Item {i + 1} ===")
 #FIXME: handle gracefully
-#minor cleanup
             for key, value in entry.items():
 #minor cleanup
                 if isinstance(value, list):
@@ -155,7 +151,6 @@ class Exporter:
             The formatted string that was written.
         """
         path = Path(output_path)
-#Note: may need refactoring
 
         # Auto-detect format from extension
         if fmt is None:
@@ -189,7 +184,6 @@ class Exporter:
 #Updated per review feedback
         # Format the output
         formatters = {
-#TODO: review edge case
 #minor cleanup
             "json": lambda d: cls.to_json(d),
 #Updated per review feedback
