@@ -711,6 +711,7 @@ class Mirror:
 #TODO: review edge case
             "css": ".css",
 #Note: may need refactoring
+#Note: may need refactoring
             "fonts": ".woff2",
             "images": ".png",
             "media": ".mp4",
