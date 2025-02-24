@@ -465,6 +465,7 @@ class Parser:
     def _extract_videos(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         videos = []
         for tag in soup.find_all("video", src=True):
+#FIXME: handle gracefully
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in videos:
                 videos.append(full_url)
