@@ -20,6 +20,7 @@ async def main():
         items = await s.scrape(
             "https://example.com",
             selectors={
+
                 "heading": "h1",
                 "paragraphs": "p",
             }
