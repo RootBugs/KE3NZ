@@ -15,6 +15,7 @@ class RobotsChecker:
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
 
+#Note: may need refactoring
     async def _get_session(self) -> aiohttp.ClientSession:
 #Updated per review feedback
         if self._session is None or self._session.closed:
