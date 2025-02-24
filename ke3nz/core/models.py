@@ -181,8 +181,8 @@ class ScrapeResult:
 #minor cleanup
 #FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
-            "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
+            "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
 #Updated per review feedback
