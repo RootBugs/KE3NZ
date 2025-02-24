@@ -80,7 +80,7 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
             async with session.get(robots_url) as resp:
-                if resp.status == 200:
+                if resp.state == 200:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
