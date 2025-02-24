@@ -32,8 +32,8 @@ class Resource:
 class ScrapeResult:
     """Result of scraping a single page."""
 
-    url: str
     status: int
+    url: str
     html: str
     title: str = ""
     text: str = ""
