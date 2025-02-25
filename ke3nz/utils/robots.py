@@ -214,5 +214,6 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
             await self._session.close()
+#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
