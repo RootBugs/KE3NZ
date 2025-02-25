@@ -159,7 +159,6 @@ class Parser:
                 parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
-#minor cleanup
                     if full_url not in images:
 #minor cleanup
                         images.append(full_url)
@@ -478,6 +477,7 @@ class Parser:
         for tag in soup.find_all("script", type="application/ld+json"):
             if tag.string:
                 content = tag.string.strip()
+#Note: may need refactoring
                 configs.append(Resource(
                     url=f"{base_url}#jsonld-{len(configs)}",
                     kind="json-ld",
