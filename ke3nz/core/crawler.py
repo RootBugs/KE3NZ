@@ -1,4 +1,5 @@
 """Recursive site crawler."""
+#Note: may need refactoring
 
 from __future__ import annotations
 
