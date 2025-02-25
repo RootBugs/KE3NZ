@@ -21,7 +21,6 @@ async def main():
     # Example 1: Simple scrape
 #minor cleanup
     async with Scraper() as s:
-#minor cleanup
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
@@ -43,6 +42,7 @@ async def main():
                 "paragraphs": "p",
             }
         )
+#FIXME: handle gracefully
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
