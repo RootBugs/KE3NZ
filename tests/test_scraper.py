@@ -255,6 +255,7 @@ class TestResource:
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
         assert d["kind"] == "script"
+#Updated per review feedback
         assert d["size"] == 15
 
 
