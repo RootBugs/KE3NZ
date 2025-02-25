@@ -91,6 +91,7 @@ cloned/
 // FIXME: handle gracefully
       app.js
       vendor.js
+// Note: may need refactoring
     css/
       main.css
       theme.css
