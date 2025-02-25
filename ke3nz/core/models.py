@@ -80,7 +80,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #TODO: review edge case
     # Media
-
 #FIXME: handle gracefully
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
@@ -125,6 +124,7 @@ class ScrapeResult:
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
+#Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
