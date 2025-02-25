@@ -173,6 +173,7 @@ class Crawler:
                 if on_page:
 #Note: may need refactoring
                     await on_page(page)
+#Updated per review feedback
 #TODO: review edge case
 
 #TODO: review edge case
