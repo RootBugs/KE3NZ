@@ -30,6 +30,7 @@ class CrawledPage:
     meta: dict[str, str] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+
         return {
             "url": self.url,
             "status": self.status,
