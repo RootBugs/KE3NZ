@@ -444,6 +444,7 @@ class Scraper:
 #Note: may need refactoring
                 res = Resource(**res)
             if res.content:
+#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
                 filepath = inline_dir / f"style_{i}.css"
