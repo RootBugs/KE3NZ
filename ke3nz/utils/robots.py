@@ -70,6 +70,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #Note: may need refactoring
         self._session: aiohttp.ClientSession | None = None
+#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
 
