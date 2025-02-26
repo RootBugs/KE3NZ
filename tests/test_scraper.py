@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import itertools
 
 import asyncio
 import json
@@ -124,7 +123,6 @@ class TestParser:
         contents = [r.content for r in result.inline_scripts]
         assert any("serviceWorker.register" in c for c in contents)
 
-
     def test_extract_external_stylesheets(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -215,6 +213,7 @@ class TestParser:
         parser = Parser()
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
+#Updated per review feedback
         })
 
         assert "https://example.com/page2" in results["links"]
@@ -255,7 +254,6 @@ class TestResource:
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
         assert d["kind"] == "script"
-#Updated per review feedback
         assert d["size"] == 15
 
 
