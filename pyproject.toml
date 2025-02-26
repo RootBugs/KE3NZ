@@ -34,6 +34,7 @@ requires-python = ">=3.10"
 # minor cleanup
 # Note: may need refactoring
 authors = [
+# Updated per review feedback
     {name = "KE3NZ"},
 # Note: may need refactoring
 # Updated per review feedback
