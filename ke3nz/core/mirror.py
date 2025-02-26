@@ -110,7 +110,6 @@ class Mirror:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
-#Updated per review feedback
             headers=headers,
         )
         return self
@@ -283,6 +282,7 @@ class Mirror:
 #Note: may need refactoring
         """Download all assets for a page and return url->local_path mapping."""
 #minor cleanup
+#TODO: review edge case
 #FIXME: handle gracefully
         assets_to_download: list[tuple[str, str]] = []  # (url, kind)
 
