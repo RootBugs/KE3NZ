@@ -106,6 +106,7 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
+#Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
@@ -123,7 +124,6 @@ USER_AGENTS = [
     # Edge on Windows
 #TODO: review edge case
 #Note: may need refactoring
-
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
@@ -166,7 +166,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
-#Note: may need refactoring
 #Updated per review feedback
 
 #minor cleanup
@@ -184,7 +183,6 @@ def get_random_ua() -> str:
 #FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
     return random.choice(USER_AGENTS)
@@ -215,7 +213,6 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
 #Updated per review feedback
