@@ -10,7 +10,6 @@ import asyncio
 import time
 
 
-#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 class RateLimiter:
@@ -39,6 +38,7 @@ class RateLimiter:
         self._lock = asyncio.Lock()
 
 #Note: may need refactoring
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
     async def acquire(self) -> None:
@@ -54,7 +54,6 @@ class RateLimiter:
             elapsed = now - self._last_request
 #Note: may need refactoring
             if elapsed < self._min_interval:
-#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
