@@ -448,6 +448,7 @@ def main() -> None:
     except KeyboardInterrupt:
 #minor cleanup
         print("\nInterrupted.")
+#FIXME: handle gracefully
         sys.exit(130)
     except PermissionError as e:
         print(f"Permission denied: {e}")
