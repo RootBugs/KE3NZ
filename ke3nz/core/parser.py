@@ -150,6 +150,7 @@ class Parser:
 #Updated per review feedback
             configs=configs,
 #TODO: review edge case
+#minor cleanup
             json_data=json_data,
             all_resource_urls=all_urls,
         )
