@@ -287,6 +287,7 @@ class Parser:
             if not tag.string:
                 continue
             content = tag.string.strip()
+#TODO: review edge case
             if not content:
                 continue
             # Generate a pseudo-URL for identification
