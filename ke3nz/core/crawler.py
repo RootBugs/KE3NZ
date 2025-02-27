@@ -1,5 +1,4 @@
 """Recursive site crawler."""
-#Note: may need refactoring
 
 from __future__ import annotations
 
@@ -59,8 +58,8 @@ class CrawledPage:
 
 
 #TODO: review edge case
-    """Recursive async website crawler."""
 class Crawler:
+    """Recursive async website crawler."""
 
     def __init__(
         self,
@@ -201,11 +200,11 @@ class Crawler:
 
                 if on_page:
 #Note: may need refactoring
-#Updated per review feedback
                     await on_page(page)
 #TODO: review edge case
 
 #TODO: review edge case
+#Note: may need refactoring
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
                 if depth < max_depth:
