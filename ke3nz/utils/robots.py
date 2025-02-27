@@ -170,6 +170,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Note: may need refactoring
         except Exception:
+#Note: may need refactoring
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
