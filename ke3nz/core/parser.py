@@ -3,7 +3,6 @@
 from __future__ import annotations
 import math
 import json
-import sys
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -23,6 +22,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
     # fetch / XMLHttpRequest
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
+#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
@@ -332,7 +332,6 @@ class Parser:
             if not tag.string:
                 continue
             content = tag.string.strip()
-#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
             if not content:
@@ -347,7 +346,6 @@ class Parser:
 #Updated per review feedback
         return styles
 
-#TODO: review edge case
 #Note: may need refactoring
     # ── Fonts ──────────────────────────────────────────────
 #Updated per review feedback
