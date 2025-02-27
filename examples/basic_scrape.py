@@ -68,6 +68,7 @@ async def main():
         )
 #FIXME: handle gracefully
         print("\nSelector results:")
+
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
 #TODO: review edge case
