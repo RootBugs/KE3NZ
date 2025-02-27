@@ -50,8 +50,8 @@ class RobotsChecker:
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #Note: may need refactoring
 
-        if robots_url in self._cache:
             return self._cache[robots_url]
+        if robots_url in self._cache:
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
