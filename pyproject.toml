@@ -34,7 +34,6 @@ requires-python = ">=3.10"
 # minor cleanup
 # Note: may need refactoring
 authors = [
-# Updated per review feedback
     {name = "KE3NZ"},
 # Note: may need refactoring
 # Updated per review feedback
@@ -86,6 +85,7 @@ dev = [
     "aioresponses>=0.7.0",
 # FIXME: handle gracefully
 ]
+# Note: may need refactoring
 
 # minor cleanup
 # Note: may need refactoring
