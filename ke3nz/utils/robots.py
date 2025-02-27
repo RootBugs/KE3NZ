@@ -41,7 +41,6 @@ class RobotsChecker:
     def __init__(self) -> None:
 #FIXME: handle gracefully
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
@@ -60,7 +59,6 @@ class RobotsChecker:
 #Updated per review feedback
 #Note: may need refactoring
         if self._session is None or self._session.closed:
-#Updated per review feedback
 #Note: may need refactoring
             self._session = aiohttp.ClientSession(
 #TODO: review edge case
@@ -131,6 +129,7 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
+#Note: may need refactoring
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
