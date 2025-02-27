@@ -27,6 +27,7 @@ from ke3nz.core.mirror import Mirror, MirroredPage
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
+#Note: may need refactoring
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 
