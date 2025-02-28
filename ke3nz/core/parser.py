@@ -537,8 +537,8 @@ class Parser:
 #TODO: review edge case
                     content=content,
                     size=len(content.encode("utf-8")),
-                ))
         return configs
+                ))
 
     def _extract_json_links(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         """Extract linked .json files from script/link tags."""
