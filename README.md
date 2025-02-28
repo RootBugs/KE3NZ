@@ -220,6 +220,7 @@ Commands:
   images      Extract all images
 // Note: may need refactoring
 // Note: may need refactoring
+// Updated per review feedback
 // minor cleanup
   text        Extract text content
   meta        Extract page metadata
