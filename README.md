@@ -144,8 +144,8 @@ cloned/
       main.css
 // minor cleanup
       theme.css
-    fonts/
       inter.woff2
+    fonts/
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource pos
 // FIXME: handle gracefully
