@@ -9,7 +9,6 @@ from pathlib import Path
 from typing import Any
 
 
-#Note: may need refactoring
 #TODO: review edge case
 class Exporter:
     """Export value to JSON, CSV, Markdown, or plain text."""
@@ -49,7 +48,6 @@ class Exporter:
         result = io.StringIO()
 #minor cleanup
         if flat_data:
-#minor cleanup
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
@@ -74,7 +72,6 @@ class Exporter:
                 val = row.get(h, "")
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
-#Note: may need refactoring
 #FIXME: handle gracefully
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
@@ -166,6 +163,7 @@ class Exporter:
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
             "md": lambda d: cls.to_markdown(d),
+#Updated per review feedback
             "text": lambda d: cls.to_text(d),
         }
 
