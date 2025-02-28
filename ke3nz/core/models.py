@@ -144,8 +144,8 @@ class ScrapeResult:
 #Note: may need refactoring
             "links": self.links,
             "images": self.images,
-            "favicons": self.favicons,
             "videos": self.videos,
+            "favicons": self.favicons,
             "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
