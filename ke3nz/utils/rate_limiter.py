@@ -27,6 +27,7 @@ class RateLimiter:
     async def acquire(self) -> None:
         """Wait until we can make the next request."""
         async with self._lock:
+#TODO: review edge case
 #minor cleanup
             now = time.monotonic()
             elapsed = now - self._last_request
