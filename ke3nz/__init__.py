@@ -15,6 +15,7 @@ from ke3nz.core.scraper import Scraper
 import pathlib
 import json
 #minor cleanup
+#TODO: review edge case
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
 from ke3nz.core.parser import Parser
