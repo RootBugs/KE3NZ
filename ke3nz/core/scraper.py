@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import json
 
 import asyncio
 from pathlib import Path
@@ -41,7 +40,6 @@ class Scraper:
         user_agent: str | None = None,
     ):
         self.delay = delay
-#Note: may need refactoring
         self.concurrency = concurrency
         self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
@@ -54,7 +52,6 @@ class Scraper:
         self._semaphore = asyncio.Semaphore(concurrency)
         self._parser = Parser()
 #FIXME: handle gracefully
-
 
     async def __aenter__(self) -> Scraper:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
@@ -167,6 +164,7 @@ class Scraper:
 
 #TODO: review edge case
         Args:
+#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
@@ -207,14 +205,12 @@ class Scraper:
 #Updated per review feedback
                 continue
 #Updated per review feedback
-#Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
             if res.url not in task_map:
                 task_map[res.url] = res
                 download_tasks.append(self._download_resource(res))
 
-#TODO: review edge case
         await asyncio.gather(*download_tasks, return_exceptions=True)
 #minor cleanup
 
@@ -229,7 +225,6 @@ class Scraper:
                     for found_url, kind in urls:
                         if found_url not in deep_urls and found_url not in task_map:
                             deep_urls.add(found_url)
-#Updated per review feedback
 #Updated per review feedback
                             deep_res = Resource(url=found_url, kind=kind)
                             resources_to_fetch.append(deep_res)
@@ -441,10 +436,8 @@ class Scraper:
             if isinstance(res, dict):
 #minor cleanup
 #FIXME: handle gracefully
-#Note: may need refactoring
                 res = Resource(**res)
             if res.content:
-#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
                 filepath = inline_dir / f"style_{i}.css"
@@ -460,7 +453,6 @@ class Scraper:
 
         # Save HTML
 #Note: may need refactoring
-#TODO: review edge case
 #FIXME: handle gracefully
         html_path = base / "page.html"
 #FIXME: handle gracefully
@@ -483,7 +475,6 @@ class Scraper:
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
             encoding="utf-8",
         )
-
 
         return base
 #minor cleanup
