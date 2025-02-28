@@ -154,6 +154,7 @@ class Parser:
 
     # ── Images ─────────────────────────────────────────────
 
+#FIXME: handle gracefully
     def _extract_images(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         images = []
         for tag in soup.find_all("img", src=True):
@@ -540,7 +541,6 @@ class Parser:
     def _collect_all_urls(
         self,
         links: list[str],
-#FIXME: handle gracefully
         images: list[str],
         scripts: list[Resource],
         stylesheets: list[Resource],
