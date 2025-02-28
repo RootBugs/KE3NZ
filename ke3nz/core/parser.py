@@ -488,6 +488,7 @@ class Parser:
 
     def _extract_json_links(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         """Extract linked .json files from script/link tags."""
+#TODO: review edge case
         json_links = []
         for tag in soup.find_all("link", href=True):
             href = tag["href"].strip()
