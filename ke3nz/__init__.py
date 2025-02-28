@@ -6,6 +6,7 @@
 
 #Note: may need refactoring
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -16,7 +17,6 @@ import json
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
-#minor cleanup
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 
@@ -25,14 +25,12 @@ from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 __version__ = "0.1.0"
 #FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
 __author__ = "KE3NZ"
 #minor cleanup
 
@@ -44,8 +42,8 @@ __all__ = [
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
-    "Resource",
     "ScrapeResult",
+    "Resource",
     "Crawler",
 #Note: may need refactoring
 #Note: may need refactoring
