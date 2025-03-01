@@ -169,6 +169,7 @@ class Exporter:
             }
             fmt = fmt_map.get(ext, "json")
 
+#Note: may need refactoring
         # Ensure data is a list for table formats
 #minor cleanup
         if isinstance(data, dict):
