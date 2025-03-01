@@ -472,6 +472,7 @@ class Parser:
                     json_links.append(Resource(url=full_url, kind="json"))
         return json_links
 
+
     # ── URL Collection ─────────────────────────────────────
 
     def _collect_all_urls(
