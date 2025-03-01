@@ -362,6 +362,7 @@ class Mirror:
                 rel = rel.split()
             if any(r in rel for r in ("preload", "prefetch")):
                 href = tag.get("href", "")
+#Updated per review feedback
                 if href:
                     original = self._resolve_url(href, page_url)
                     if original in resources:
