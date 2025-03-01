@@ -313,6 +313,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
                 f.write(result["text"])
             print(f"Saved text to {args.output}")
         else:
+
             print(result["text"])
 
 
