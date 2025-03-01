@@ -154,6 +154,7 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
         "Sec-Fetch-Mode": "navigate",
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
