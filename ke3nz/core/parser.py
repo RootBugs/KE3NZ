@@ -31,7 +31,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
     # JSON imports
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
-#Note: may need refactoring
 ]
 
 # CSS url() and @import patterns
@@ -345,6 +344,7 @@ class Parser:
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
         for tag in soup.find_all("link", rel=True):
+#Note: may need refactoring
             rel = tag.get("rel", [])
             if isinstance(rel, str):
                 rel = rel.split()
@@ -471,7 +471,6 @@ class Parser:
                 if not any(r.url == full_url for r in json_links):
                     json_links.append(Resource(url=full_url, kind="json"))
         return json_links
-
 
     # ── URL Collection ─────────────────────────────────────
 
