@@ -201,6 +201,7 @@ class Mirror:
 #minor cleanup
 
 #Note: may need refactoring
+#Updated per review feedback
                 # Save HTML
                 html_file = Path(self._validate_path_within_base(local_path, base))
                 html_file.parent.mkdir(parents=True, exist_ok=True)
