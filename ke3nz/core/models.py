@@ -98,6 +98,7 @@ class ScrapeResult:
     workers: list[str] = field(default_factory=list)
 #TODO: review edge case
 #Updated per review feedback
+#TODO: review edge case
 #Note: may need refactoring
 
     # Iframes
