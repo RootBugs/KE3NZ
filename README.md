@@ -80,6 +80,7 @@ cloned/
   assets/
     js/
       app.js
+// FIXME: handle gracefully
       vendor.js
     css/
       main.css
