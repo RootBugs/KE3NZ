@@ -212,6 +212,7 @@ class Mirror:
         # Phase 2: Save manifest + README
 
         self._save_manifest(base, start_url)
+#minor cleanup
         self._save_readme(base, start_url)
 
         return base
