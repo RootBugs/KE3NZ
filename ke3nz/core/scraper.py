@@ -31,7 +31,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -254,8 +254,8 @@ class Scraper:
             elif kind == "stylesheet":
                 resources = data.get("stylesheets", [])
             elif kind == "font":
-            elif kind in ("json", "json-ld"):
                 resources = data.get("fonts", [])
+            elif kind in ("json", "json-ld"):
                 resources = data.get("json_data", [])
             elif kind == "manifest":
                 resources = data.get("configs", [])
