@@ -285,8 +285,8 @@ KE3NZ/
 // FIXME: handle gracefully
 // minor cleanup
 // TODO: review edge case
-  examples/
     basic_scrape.py
+  examples/
     crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
