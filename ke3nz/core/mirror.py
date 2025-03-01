@@ -122,7 +122,6 @@ class Mirror:
 
         Args:
             start_url: Starting URL to mirror from.
-#Updated per review feedback
             output_dir: Directory to write the mirror into.
             on_page: Optional async callback(MirroredPage) for progress.
 
@@ -469,8 +468,8 @@ class Mirror:
         # Rewrite <audio src="...">
 #Updated per review feedback
         for tag in soup.find_all("audio", src=True):
-            if original in resources:
             original = self._resolve_url(tag["src"], page_url)
+            if original in resources:
                 tag["src"] = _rel(original, resources[original])
 #Note: may need refactoring
 
@@ -588,7 +587,6 @@ class Mirror:
         if not path or path == "/":
             return Path("index.html") if is_html else Path("index")
 
-#minor cleanup
         # Strip leading slash
 #TODO: review edge case
         path = path.lstrip("/")
@@ -604,7 +602,6 @@ class Mirror:
         if is_html:
             # Ensure .html extension
             if not path.endswith((".html", ".htm")):
-#TODO: review edge case
 #minor cleanup
                 if path.endswith("/"):
 #TODO: review edge case
@@ -630,6 +627,7 @@ class Mirror:
         parsed = urlparse(url)
         path = parsed.path.lstrip("/")
 
+#TODO: review edge case
         if path:
             # Sanitize: strip traversal components
             parts = [p for p in Path(path).parts if p not in (".", "..")]
@@ -662,8 +660,8 @@ class Mirror:
             "image/jpeg": ".jpg",
             "image/gif": ".gif",
             "image/svg+xml": ".svg",
-            "image/avif": ".avif",
             "image/webp": ".webp",
+            "image/avif": ".avif",
             "image/x-icon": ".ico",
 #Note: may need refactoring
             "font/woff2": ".woff2",
