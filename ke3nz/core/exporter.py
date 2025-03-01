@@ -170,6 +170,7 @@ class Exporter:
 #minor cleanup
                 elif isinstance(value, dict):
 #minor cleanup
+#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
                     lines.append(f"{key}:")
