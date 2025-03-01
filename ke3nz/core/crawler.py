@@ -1,3 +1,4 @@
+#TODO: review edge case
 """Recursive site crawler."""
 
 
