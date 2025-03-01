@@ -643,6 +643,7 @@ class Mirror:
 ├── ke3nz-manifest.json  (resource index)
 ├── images/              (downloaded images)
 ├── fonts/               (downloaded fonts)
+#Updated per review feedback
 ├── assets/
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
