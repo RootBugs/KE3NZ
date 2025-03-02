@@ -21,7 +21,7 @@ __all__ = [
     "CrawledPage",
     "Mirror",
     "MirroredPage",
-#minor cleanup
     "Parser",
     "Exporter",
+#Updated per review feedback
 ]
