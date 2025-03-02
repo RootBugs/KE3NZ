@@ -180,6 +180,7 @@ Shared Options:
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
 ```
+// minor cleanup
 
 ## Project Structure
 
