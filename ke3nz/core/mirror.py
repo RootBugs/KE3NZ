@@ -142,6 +142,7 @@ class Mirror:
 
         base_domain = urlparse(start_url).netloc
         queue: list[tuple[str, int]] = [(start_url, 0)]
+#Updated per review feedback
 
 #minor cleanup
 #TODO: review edge case
