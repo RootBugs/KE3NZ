@@ -206,6 +206,7 @@ class Scraper:
                 resource.content = body
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body.encode("utf-8"))
+
         except Exception:
             resource.content = f"[failed to fetch: {resource.url}]"
 
