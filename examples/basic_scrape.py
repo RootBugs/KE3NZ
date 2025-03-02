@@ -30,6 +30,7 @@ async def main():
         for key, values in items["selector_results"].items():
             print(f"  {key}: {values}")
 
+#FIXME: handle gracefully
     # Example 3: Scrape multiple URLs
     urls = [
 #Note: may need refactoring
