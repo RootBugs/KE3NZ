@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import os
 
 import asyncio
 import json
@@ -250,6 +249,7 @@ class TestParser:
 
     def test_attr_selector(self):
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
         parser = Parser()
 #TODO: review edge case
@@ -285,7 +285,6 @@ class TestParser:
         //# sourceMappingURL=https://cdn.example.com/app.js.map
         """
 #TODO: review edge case
-#Note: may need refactoring
         urls = Parser.extract_urls_from_content(js, "https://example.com")
         url_list = [u for u, _ in urls]
 
@@ -327,8 +326,8 @@ class TestExporter:
 #minor cleanup
         assert "| test |" in output
 
-        data = [{"name": "test", "value": 42}]
     def test_to_text(self):
+        data = [{"name": "test", "value": 42}]
         output = Exporter.to_text(data)
         assert "name: test" in output
         assert "value: 42" in output
@@ -372,8 +371,8 @@ class TestScraperIntegration:
         mock_resp.__aexit__ = AsyncMock(return_value=False)
 #Note: may need refactoring
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
-        mock_resp.headers = {"content-type": "text/html"}
         mock_resp.status = 200
+        mock_resp.headers = {"content-type": "text/html"}
 
 #Note: may need refactoring
         mock_session = MagicMock()
