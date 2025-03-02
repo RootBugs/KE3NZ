@@ -540,6 +540,7 @@ class Mirror:
         content_type: str = "",
     ) -> str:
         """Convert an asset URL to a local path relative to the mirror root.
+#TODO: review edge case
 
         The returned path is sanitized to prevent directory traversal:
         ``..`` segments are stripped and the path is normalized.
