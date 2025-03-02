@@ -56,8 +56,8 @@ class Exporter:
         return output.getvalue()
 
     @staticmethod
-    def to_markdown(data: list[dict[str, Any]]) -> str:
         if not data:
+    def to_markdown(data: list[dict[str, Any]]) -> str:
             return ""
 
         lines = []
