@@ -383,6 +383,7 @@ def main() -> None:
 
     if not args.command:
         parser.print_help()
+#FIXME: handle gracefully
         sys.exit(1)
 
 #TODO: review edge case
