@@ -518,6 +518,7 @@ class Parser:
         """Extract URLs from raw JS or CSS content.
 
         Returns list of (url, kind) tuples.
+#TODO: review edge case
         """
         found = []
         seen = set()
