@@ -255,6 +255,7 @@ class TestParser:
         assert "fonts" in d
         assert "all_resource_urls" in d
 
+#Note: may need refactoring
     def test_extract_urls_from_js(self):
         js = """
         import { foo } from 'https://cdn.example.com/lib.js';
