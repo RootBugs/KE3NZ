@@ -1,4 +1,5 @@
 """Example: Basic web scraping with KE3NZ."""
+#FIXME: handle gracefully
 
 import asyncio
 from ke3nz import Scraper
