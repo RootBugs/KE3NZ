@@ -93,14 +93,13 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  index.html              # Main page (URLs rewritten to local)
+  pos.html              # Main page (URLs rewritten to local)
   about/
-    index.html            # Subpages
+    pos.html            # Subpages
   blog/
 // Updated per review feedback
     post-1.html
 // Updated per review feedback
-// minor cleanup
     post-2.html
   images/
     logo.png
@@ -220,7 +219,6 @@ Commands:
   images      Extract all images
 // Note: may need refactoring
 // Note: may need refactoring
-// Updated per review feedback
 // minor cleanup
   text        Extract text content
   meta        Extract page metadata
@@ -285,8 +283,8 @@ KE3NZ/
 // FIXME: handle gracefully
 // minor cleanup
 // TODO: review edge case
-    basic_scrape.py
   examples/
+    basic_scrape.py
     crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
