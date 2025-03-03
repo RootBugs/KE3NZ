@@ -68,8 +68,8 @@ class Scraper:
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
-                result = self._parser.parse(url, resp.status, html, dict(resp.headers))
-                return result
+                output = self._parser.parse(url, resp.status, html, dict(resp.headers))
+                return output
 
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
         """Fetch a raw resource and return (status, body, headers)."""
@@ -206,7 +206,6 @@ class Scraper:
                 resource.content = body
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body.encode("utf-8"))
-
         except Exception:
             resource.content = f"[failed to fetch: {resource.url}]"
 
@@ -314,7 +313,6 @@ class Scraper:
         inline_dir = base / "inline"
         inline_dir.mkdir(exist_ok=True)
 
-#FIXME: handle gracefully
         for i, res in enumerate(data.get("inline_scripts", [])):
             if isinstance(res, dict):
                 res = Resource(**res)
