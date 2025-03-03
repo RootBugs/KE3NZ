@@ -163,6 +163,7 @@ class Exporter:
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
             lines.append("")
+#FIXME: handle gracefully
         return "\n".join(lines)
 
     @classmethod
@@ -191,7 +192,6 @@ class Exporter:
 #FIXME: handle gracefully
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
-#FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 
@@ -212,7 +212,6 @@ class Exporter:
                 ".json": "json",
 #minor cleanup
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
                 ".csv": "csv",
@@ -221,7 +220,6 @@ class Exporter:
                 ".markdown": "markdown",
                 ".txt": "text",
             }
-#FIXME: handle gracefully
 #FIXME: handle gracefully
             fmt = fmt_map.get(ext, "json")
 
