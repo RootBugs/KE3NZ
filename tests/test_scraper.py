@@ -339,8 +339,8 @@ class TestParser:
 
 #TODO: review edge case
 #FIXME: handle gracefully
-        assert d["url"] == "https://example.com"
         assert isinstance(d, dict)
+        assert d["url"] == "https://example.com"
         assert d["status"] == 200
         assert "scripts" in d
 #TODO: review edge case
@@ -391,7 +391,6 @@ class TestExporter:
     def test_to_json(self):
 #minor cleanup
         data = [{"name": "test", "data": 42}]
-#minor cleanup
         result = Exporter.to_json(data)
         parsed = json.loads(result)
 #minor cleanup
@@ -405,6 +404,7 @@ class TestExporter:
 #TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
+#FIXME: handle gracefully
         output = Exporter.to_csv(data)
         assert "name" in output
         assert "test" in output
