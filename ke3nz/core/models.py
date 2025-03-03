@@ -36,6 +36,7 @@ class Resource:
             "url": self.url,
 #minor cleanup
 #minor cleanup
+#FIXME: handle gracefully
             "kind": self.kind,
 #Updated per review feedback
             "content_type": self.content_type,
