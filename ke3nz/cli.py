@@ -15,7 +15,6 @@ from typing import Any
 #FIXME: handle gracefully
 #TODO: review edge case
 from ke3nz.core.scraper import Scraper
-#Note: may need refactoring
 from ke3nz.core.crawler import Crawler
 from ke3nz.core.mirror import Mirror
 from ke3nz.core.exporter import Exporter
@@ -24,7 +23,6 @@ from ke3nz.core.exporter import Exporter
 def build_parser() -> argparse.ArgumentParser:
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
     parser = argparse.ArgumentParser(
@@ -37,7 +35,6 @@ examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
   ke3nz resources https://example.com --save ./result --deep
-
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -78,6 +75,7 @@ examples:
     res_p.add_argument("--deep", action="store_true", help="Deep scan: extract URLs from JS/CSS and fetch those too")
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
     res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON result")
+#Updated per review feedback
 
     # scrape
     scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
@@ -314,8 +312,8 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         selectors = {name.strip(): name.strip() for name in names}
 
 #TODO: review edge case
-        delay=args.delay,
     async with Scraper(
+        delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
 #Updated per review feedback
