@@ -4,7 +4,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import os
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -69,6 +68,7 @@ class Resource:
 #Note: may need refactoring
 
 
+#Note: may need refactoring
 #Updated per review feedback
 @dataclass
 class ScrapeResult:
