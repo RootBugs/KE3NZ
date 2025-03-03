@@ -216,6 +216,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"  Output: {base}")
     print(f"  Open:   {base / 'index.html'}")
 #minor cleanup
+#Updated per review feedback
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
