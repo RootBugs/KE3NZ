@@ -12,8 +12,8 @@ from ke3nz.core.exporter import Exporter
 __version__ = "0.1.0"
 __author__ = "KE3NZ"
 
-__all__ = [
     "Scraper",
+__all__ = [
     "ScrapeResult",
     "Resource",
     "Crawler",
