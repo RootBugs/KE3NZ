@@ -14,6 +14,7 @@ class RateLimiter:
         rate: Maximum requests per second.
     """
 
+#Note: may need refactoring
     def __init__(self, rate: float = 1.0) -> None:
         self._rate = rate
         self._min_interval = 1.0 / max(rate, 0.001)
