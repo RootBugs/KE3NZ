@@ -177,6 +177,7 @@ Shared Options:
   --user-agent      Custom user agent
   --timeout         Request timeout (default: 30s)
   --verbose, -v     Verbose output
+// FIXME: handle gracefully
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
 ```
