@@ -14,13 +14,12 @@ class Exporter:
 
     @staticmethod
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
-        return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
         indent = 2 if pretty else None
+        return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #FIXME: handle gracefully
 
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
-#Updated per review feedback
         if not data:
             return ""
         # Flatten nested structures for CSV
@@ -37,6 +36,7 @@ class Exporter:
             flat_data.append(flat)
 
         output = io.StringIO()
+#minor cleanup
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
             writer.writeheader()
@@ -107,8 +107,6 @@ class Exporter:
             The formatted string that was written.
         """
         path = Path(output_path)
-#Note: may need refactoring
-#FIXME: handle gracefully
 
         # Auto-detect format from extension
         if fmt is None:
