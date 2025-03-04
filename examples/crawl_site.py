@@ -17,7 +17,6 @@
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
-#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
 """Example: Crawling a website with KE3NZ."""
@@ -41,6 +40,7 @@
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
+#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 
@@ -53,7 +53,6 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
-import re
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -175,7 +174,6 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
-#minor cleanup
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
 #FIXME: handle gracefully
