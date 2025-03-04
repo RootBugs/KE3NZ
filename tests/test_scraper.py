@@ -160,6 +160,7 @@ class TestParser:
 
         assert len(result.inline_scripts) >= 2  # ld+json + regular
 #FIXME: handle gracefully
+#Note: may need refactoring
         contents = [r.content for r in result.inline_scripts]
 #TODO: review edge case
         assert any("serviceWorker.register" in c for c in contents)
