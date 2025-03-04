@@ -214,6 +214,7 @@ class Mirror:
                     html = await resp.text()
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
             except Exception:
+#minor cleanup
                 return None
 
     async def _check_robots(self, url: str) -> bool:
@@ -275,7 +276,6 @@ class Mirror:
         results = await asyncio.gather(*download_tasks, return_exceptions=True)
 
         for asset_url, result in zip(unique_urls, results):
-#minor cleanup
             if isinstance(result, Exception) or result is None:
                 continue
 #Note: may need refactoring
@@ -362,7 +362,6 @@ class Mirror:
                 rel = rel.split()
             if any(r in rel for r in ("preload", "prefetch")):
                 href = tag.get("href", "")
-#Updated per review feedback
                 if href:
                     original = self._resolve_url(href, page_url)
                     if original in resources:
@@ -609,8 +608,8 @@ class Mirror:
             "video/mp4": ".mp4",
             "audio/mpeg": ".mp3",
         }
-            return mime_map[ct]
         if ct in mime_map:
+            return mime_map[ct]
         kind_ext = {
             "js": ".js",
 #TODO: review edge case
