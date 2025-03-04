@@ -145,6 +145,7 @@ class Parser:
             images=images,
             meta=meta,
 #minor cleanup
+#Note: may need refactoring
             headers=headers,
             scripts=scripts,
 #Note: may need refactoring
