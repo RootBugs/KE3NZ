@@ -170,7 +170,6 @@ class Exporter:
 #minor cleanup
                 elif isinstance(value, dict):
 #minor cleanup
-#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
                     lines.append(f"{key}:")
@@ -211,6 +210,7 @@ class Exporter:
 
 #TODO: review edge case
 #Note: may need refactoring
+#Updated per review feedback
         Args:
             data: Data to export (list of dicts or single dict).
 #Updated per review feedback
