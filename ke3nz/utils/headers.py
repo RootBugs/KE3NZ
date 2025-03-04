@@ -4,6 +4,7 @@
 
 #FIXME: handle gracefully
 #minor cleanup
+#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -103,7 +104,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
-#FIXME: handle gracefully
 #minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
 #Note: may need refactoring
