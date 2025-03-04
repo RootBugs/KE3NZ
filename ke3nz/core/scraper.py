@@ -303,6 +303,7 @@ class Scraper:
                 scripts/
                 styles/
                 fonts/
+#minor cleanup
 #TODO: review edge case
                 json/
 #minor cleanup
