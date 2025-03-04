@@ -41,6 +41,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
+#Updated per review feedback
         self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
@@ -127,7 +128,6 @@ class Scraper:
 #FIXME: handle gracefully
 #Updated per review feedback
         url: str,
-#TODO: review edge case
 #Updated per review feedback
         *,
 #Updated per review feedback
