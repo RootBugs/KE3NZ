@@ -190,6 +190,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
         if args.verbose:
             print(f"  Page: {data['title'] or data['url']}")
+#minor cleanup
             print(f"  Status: {data['status']}")
             print()
             print(f"  Resources found: {total}")
