@@ -19,7 +19,6 @@ from __future__ import annotations
 #Note: may need refactoring
 #Note: may need refactoring
 
-#FIXME: handle gracefully
 import asyncio
 #minor cleanup
 import time
@@ -66,6 +65,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
+#FIXME: handle gracefully
 
     def __init__(self, rate: float = 1.0) -> None:
 #FIXME: handle gracefully
