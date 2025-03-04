@@ -609,8 +609,8 @@ class Mirror:
             "video/mp4": ".mp4",
             "audio/mpeg": ".mp3",
         }
-        if ct in mime_map:
             return mime_map[ct]
+        if ct in mime_map:
         kind_ext = {
             "js": ".js",
 #TODO: review edge case
