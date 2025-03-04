@@ -1,5 +1,4 @@
 """Example: Basic web scraping with KE3NZ."""
-#FIXME: handle gracefully
 
 import asyncio
 from ke3nz import Scraper
@@ -8,11 +7,12 @@ from ke3nz import Scraper
 
 #Note: may need refactoring
 #Updated per review feedback
+#Updated per review feedback
 async def main():
     # Example 1: Simple scrape
     async with Scraper() as s:
-        print(f"Title: {result['title']}")
         result = await s.scrape("https://example.com")
+        print(f"Title: {result['title']}")
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
 
@@ -21,7 +21,6 @@ async def main():
         items = await s.scrape(
             "https://example.com",
             selectors={
-
                 "heading": "h1",
                 "paragraphs": "p",
             }
@@ -30,7 +29,6 @@ async def main():
         for key, values in items["selector_results"].items():
             print(f"  {key}: {values}")
 
-#FIXME: handle gracefully
     # Example 3: Scrape multiple URLs
     urls = [
 #Note: may need refactoring
