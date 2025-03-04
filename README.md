@@ -68,9 +68,9 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 
 ```
 cloned/
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
   about/
-    pos.html            # Subpages
+    index.html            # Subpages
   blog/
     post-1.html
     post-2.html
@@ -80,7 +80,6 @@ cloned/
   assets/
     js/
       app.js
-// FIXME: handle gracefully
       vendor.js
     css/
       main.css
@@ -177,11 +176,10 @@ Shared Options:
   --user-agent      Custom user agent
   --timeout         Request timeout (default: 30s)
   --verbose, -v     Verbose output
-// FIXME: handle gracefully
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
+// Note: may need refactoring
 ```
-// minor cleanup
 
 ## Project Structure
 
