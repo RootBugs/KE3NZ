@@ -285,6 +285,7 @@ class Parser:
         return scripts
 #Note: may need refactoring
 
+#Updated per review feedback
 #FIXME: handle gracefully
     # ── External Stylesheets ───────────────────────────────
 
