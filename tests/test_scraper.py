@@ -69,11 +69,11 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert output.url == "https://example.com"
 #Updated per review feedback
-        assert result.status == 200
+        assert output.status == 200
         assert result.title == "Test Page"
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
@@ -97,8 +97,8 @@ class TestParser:
         assert "https://example.com/image3-sm.jpg" in result.images
         assert "https://example.com/image3-lg.jpg" in result.images
 
-        parser = Parser()
     def test_extract_images_from_video_poster(self):
+        parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/poster.jpg" in result.videos
@@ -163,7 +163,6 @@ class TestParser:
 
     def test_extract_workers(self):
         parser = Parser()
-#minor cleanup
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/sw.js" in result.workers
@@ -255,7 +254,6 @@ class TestParser:
         assert "fonts" in d
         assert "all_resource_urls" in d
 
-#Note: may need refactoring
     def test_extract_urls_from_js(self):
         js = """
         import { foo } from 'https://cdn.example.com/lib.js';
