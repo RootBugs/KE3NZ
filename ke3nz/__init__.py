@@ -138,11 +138,11 @@ __all__ = [
     "Resource",
 #TODO: review edge case
 #minor cleanup
+#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
     "Crawler",
-#Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
