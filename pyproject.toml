@@ -81,6 +81,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+# Note: may need refactoring
 dev = [
     "pytest>=7.0.0",
     "pytest-asyncio>=0.23.0",
