@@ -670,6 +670,7 @@ class Mirror:
         self._asset_counter += 1
         folder = {
 #FIXME: handle gracefully
+#Note: may need refactoring
             "js": "assets/js",
             "css": "assets/css",
             "fonts": "assets/fonts",
