@@ -1,8 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import functools
-import itertools
 
 import argparse
 import asyncio
@@ -140,6 +138,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         pages_done += 1
         if args.verbose:
             print(f"  [{pages_done}] {page.title or page.url}")
+#FIXME: handle gracefully
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
 
     print(f"Mirroring {args.url} to {args.save}...")
@@ -190,7 +189,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
         if args.verbose:
             print(f"  Page: {data['title'] or data['url']}")
-#minor cleanup
             print(f"  Status: {data['status']}")
             print()
             print(f"  Resources found: {total}")
@@ -226,7 +224,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
                 {k: v for k, v in item.items() if k != "content"} if isinstance(item, dict) else item
                 for item in value
             ]
-#Updated per review feedback
         else:
             result[key] = value
     return result
@@ -314,7 +311,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
                 f.write(result["text"])
             print(f"Saved text to {args.output}")
         else:
-
             print(result["text"])
 
 
@@ -384,7 +380,6 @@ def main() -> None:
 
     if not args.command:
         parser.print_help()
-#FIXME: handle gracefully
         sys.exit(1)
 
 #TODO: review edge case
