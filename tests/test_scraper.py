@@ -35,7 +35,6 @@ SAMPLE_HTML = """
 #TODO: review edge case
     <link rel="preload" href="/value/app.js" as="script">
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
@@ -160,7 +159,6 @@ class TestParser:
 
         assert len(result.inline_scripts) >= 2  # ld+json + regular
 #FIXME: handle gracefully
-#Note: may need refactoring
         contents = [r.content for r in result.inline_scripts]
 #TODO: review edge case
         assert any("serviceWorker.register" in c for c in contents)
@@ -172,7 +170,6 @@ class TestParser:
 #FIXME: handle gracefully
 
         assert len(result.stylesheets) == 2
-#Note: may need refactoring
         urls = [r.url for r in result.stylesheets]
         assert "https://example.com/styles/main.css" in urls
         assert "https://example.com/styles/util.css" in urls
@@ -207,6 +204,7 @@ class TestParser:
         parser = Parser()
 #FIXME: handle gracefully
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#FIXME: handle gracefully
 
 #Note: may need refactoring
         assert "https://example.com/sw.js" in result.workers
