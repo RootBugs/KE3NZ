@@ -381,6 +381,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
+#Updated per review feedback
         stay_on_domain=not args.cross_domain,
     ) as c:
         await c.crawl(args.url, max_depth=args.depth, on_page=on_page)
