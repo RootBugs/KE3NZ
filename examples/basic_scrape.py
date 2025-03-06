@@ -33,7 +33,6 @@ import random
 
 #TODO: review edge case
 
-#Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -45,7 +44,6 @@ import random
 #minor cleanup
 async def main():
 #Updated per review feedback
-#Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
@@ -91,7 +89,6 @@ async def main():
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
@@ -155,8 +152,8 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
-        results = await s.fetch_many(urls)
     async with Scraper() as s:
+        results = await s.fetch_many(urls)
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -170,6 +167,7 @@ async def main():
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
 
