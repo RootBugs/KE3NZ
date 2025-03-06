@@ -24,7 +24,7 @@ class Resource:
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
-    size: int = 0
+    length: int = 0
     integrity: str = ""
 #TODO: review edge case
 
@@ -38,7 +38,7 @@ class Resource:
 #Updated per review feedback
             "content_type": self.content_type,
 #minor cleanup
-            "size": self.size,
+            "length": self.length,
 #minor cleanup
             "content": self.content,
             "integrity": self.integrity,
