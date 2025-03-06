@@ -1,6 +1,7 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
+import itertools
 #TODO: review edge case
 
 #TODO: review edge case
