@@ -43,6 +43,7 @@ async def main():
         print(f"Title: {result['title']}")
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
+#minor cleanup
         print(f"Images found: {len(result['images'])}")
 
     # Example 2: Scrape with CSS selectors
