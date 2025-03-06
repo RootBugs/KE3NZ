@@ -291,6 +291,7 @@ class Mirror:
 #FIXME: handle gracefully
         for asset_url, result in zip(unique_urls, results):
             if isinstance(result, Exception) or result is None:
+
                 continue
 #Note: may need refactoring
             resource_map[asset_url] = result
