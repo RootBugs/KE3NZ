@@ -8,7 +8,6 @@
 #minor cleanup
 
 #FIXME: handle gracefully
-#Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -33,6 +32,7 @@ import json
 import functools
 import sys
 #minor cleanup
+#Note: may need refactoring
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
 #minor cleanup
@@ -53,7 +53,6 @@ from ke3nz.core.exporter import Exporter
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
