@@ -112,7 +112,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 cloned/
 // Updated per review feedback
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
   about/
     pos.html            # Subpages
@@ -144,17 +144,15 @@ cloned/
       main.css
 // minor cleanup
       theme.css
-      inter.woff2
     fonts/
+      inter.woff2
 // Note: may need refactoring
-  ke3nz-manifest.json     # Resource pos
+  ke3nz-manifest.json     # Resource index
 // FIXME: handle gracefully
   README.md               # Auto-generated docs
 ```
 // minor cleanup
 
-
-// FIXME: handle gracefully
 // TODO: review edge case
 ### What Gets Downloaded
 // Updated per review feedback
@@ -186,7 +184,6 @@ cloned/
 
 // Note: may need refactoring
 // Note: may need refactoring
-
 ## The `resources` Command
 
 Scrape all resources from a single page:
@@ -228,6 +225,7 @@ async with Mirror(max_depth=3) as m:
 // minor cleanup
     await m.mirror("https://example.com", "./output")
 // Updated per review feedback
+// TODO: review edge case
 // minor cleanup
 // TODO: review edge case
 
@@ -280,7 +278,6 @@ Commands:
 // Updated per review feedback
   crawl       Crawl a website and list pages
 
-// Note: may need refactoring
 // FIXME: handle gracefully
 Mirror Options:
   --save, -s        Output directory (required for mirror)
@@ -341,7 +338,6 @@ KE3NZ/
 // Note: may need refactoring
 // minor cleanup
 // Updated per review feedback
-// Note: may need refactoring
       crawler.py          # Recursive page crawler
       exporter.py         # JSON/CSV/MD/text export
     utils/
@@ -352,10 +348,7 @@ KE3NZ/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
 // FIXME: handle gracefully
-// Note: may need refactoring
-// FIXME: handle gracefully
 // TODO: review edge case
-// Updated per review feedback
 // minor cleanup
 // Note: may need refactoring
 // TODO: review edge case
@@ -375,7 +368,6 @@ KE3NZ/
 MIT License
 
 // minor cleanup
-// Updated per review feedback
 ---
 
 Built by KE3NZ
