@@ -8,10 +8,10 @@
 #Note: may need refactoring
 import asyncio
 from ke3nz import Scraper
-import typing
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -27,7 +27,6 @@ import random
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
-#FIXME: handle gracefully
 async def main():
 #Updated per review feedback
 #minor cleanup
@@ -43,7 +42,6 @@ async def main():
         print(f"Title: {result['title']}")
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
-#minor cleanup
         print(f"Images found: {len(result['images'])}")
 
     # Example 2: Scrape with CSS selectors
@@ -69,15 +67,12 @@ async def main():
         )
 #FIXME: handle gracefully
         print("\nSelector results:")
-
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
 #TODO: review edge case
             print(f"  {key}: {values}")
 #TODO: review edge case
 
-#Note: may need refactoring
-#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
