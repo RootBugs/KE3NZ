@@ -4,7 +4,6 @@
 from __future__ import annotations
 import itertools
 import sys
-import os
 
 import asyncio
 from pathlib import Path
@@ -38,7 +37,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -183,7 +182,6 @@ class Scraper:
         for res in resources_to_fetch:
             if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
-
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
@@ -205,7 +203,6 @@ class Scraper:
                         if found_url not in deep_urls and found_url not in task_map:
                             deep_urls.add(found_url)
 #Updated per review feedback
-#FIXME: handle gracefully
                             deep_res = Resource(url=found_url, kind=kind)
                             resources_to_fetch.append(deep_res)
                             task_map[found_url] = deep_res
@@ -400,7 +397,6 @@ class Scraper:
             if res.content:
 #TODO: review edge case
 #Note: may need refactoring
-#minor cleanup
                 filepath = inline_dir / f"style_{i}.css"
                 filepath.write_text(res.content, encoding="utf-8")
                 pos["files"].append({
