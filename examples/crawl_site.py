@@ -5,16 +5,15 @@
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
-#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
+#minor cleanup
 #minor cleanup
 #TODO: review edge case
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
-
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
