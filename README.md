@@ -217,6 +217,7 @@ Resource Options:
   --save-content    Include raw content in JSON output
 
 Shared Options:
+// Updated per review feedback
   --delay           Delay between requests (default: 0.3s)
   --concurrency, -c Max concurrent requests (default: 10)
   --proxy           HTTP proxy URL
