@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-import collections
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -150,7 +149,6 @@ class Parser:
 #Updated per review feedback
             configs=configs,
 #TODO: review edge case
-#minor cleanup
             json_data=json_data,
             all_resource_urls=all_urls,
         )
@@ -285,7 +283,6 @@ class Parser:
         return scripts
 #Note: may need refactoring
 
-#Updated per review feedback
 #FIXME: handle gracefully
     # ── External Stylesheets ───────────────────────────────
 
@@ -356,7 +353,6 @@ class Parser:
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
-#Updated per review feedback
                         fonts.append(Resource(url=full_url, kind="font"))
         # @font-face in inline styles
 #Note: may need refactoring
@@ -432,6 +428,7 @@ class Parser:
 
 #minor cleanup
     # ── Favicons ───────────────────────────────────────────
+#minor cleanup
 
 #TODO: review edge case
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
@@ -467,7 +464,6 @@ class Parser:
     def _extract_videos(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         videos = []
         for tag in soup.find_all("video", src=True):
-#FIXME: handle gracefully
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in videos:
                 videos.append(full_url)
@@ -609,7 +605,6 @@ class Parser:
     def _collect_all_urls(
         self,
         links: list[str],
-#FIXME: handle gracefully
         images: list[str],
         scripts: list[Resource],
         stylesheets: list[Resource],
