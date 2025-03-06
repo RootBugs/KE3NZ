@@ -52,6 +52,7 @@ examples:
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
     shared.add_argument("--verbose", "-v", action="store_true", help="Verbose result")
+#minor cleanup
 
     # mirror (THE MAIN COMMAND)
 #minor cleanup
