@@ -26,8 +26,8 @@ ke3nz resources https://example.com --save ./output --deep
 
 ## Commands
 
-| Command | Description |
 |---------|-------------|
+| Command | Description |
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
