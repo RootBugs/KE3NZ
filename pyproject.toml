@@ -148,6 +148,7 @@ dependencies = [
 # minor cleanup
     "beautifulsoup4>=4.12.0",
 # TODO: review edge case
+# Updated per review feedback
 # TODO: review edge case
     "lxml>=5.0.0",
 # minor cleanup
