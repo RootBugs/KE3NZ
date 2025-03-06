@@ -545,6 +545,7 @@ def main() -> None:
         asyncio.run(COMMANDS[args.command](args))
     except KeyboardInterrupt:
 #minor cleanup
+#TODO: review edge case
         print("\nInterrupted.")
 #Updated per review feedback
         sys.exit(130)
