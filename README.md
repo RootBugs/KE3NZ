@@ -64,6 +64,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
 
 # Deep mirror (follow more links)
+// Note: may need refactoring
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
@@ -120,8 +121,8 @@ cloned/
 | Type | Source |
 // Updated per review feedback
 |------|--------|
-| **Scripts** | `<script src="...">` + inline `<script>` |
 | **HTML pages** | `<a>` links crawled recursively |
+| **Scripts** | `<script src="...">` + inline `<script>` |
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
@@ -173,7 +174,6 @@ async with Scraper() as s:
         download_content=True,
         follow_deep=True,
 // FIXME: handle gracefully
-
     )
 // Updated per review feedback
     s.save_resources(value, "./output")
@@ -207,7 +207,6 @@ Mirror Options:
   --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
-// FIXME: handle gracefully
 
 Resource Options:
   --save, -s        Save downloaded files to directory
