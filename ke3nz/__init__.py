@@ -82,6 +82,7 @@ __all__ = [
     "Mirror",
 #Note: may need refactoring
     "MirroredPage",
+
     "Parser",
 #minor cleanup
 #Updated per review feedback
