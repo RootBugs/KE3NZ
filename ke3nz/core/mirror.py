@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import random
 
 import asyncio
 import hashlib
@@ -115,7 +114,6 @@ class Mirror:
 
     # ── Public API ─────────────────────────────────────────
 
-#Note: may need refactoring
     async def mirror(
         self,
         start_url: str,
@@ -143,7 +141,6 @@ class Mirror:
 
         base_domain = urlparse(start_url).netloc
         queue: list[tuple[str, int]] = [(start_url, 0)]
-#Updated per review feedback
 
 #minor cleanup
 #TODO: review edge case
@@ -203,7 +200,6 @@ class Mirror:
 #minor cleanup
 
 #Note: may need refactoring
-#Updated per review feedback
                 # Save HTML
                 html_file = Path(self._validate_path_within_base(local_path, base))
                 html_file.parent.mkdir(parents=True, exist_ok=True)
@@ -228,7 +224,6 @@ class Mirror:
         return base
 
     # ── Internal: Fetch & Parse ────────────────────────────
-#Updated per review feedback
 
     async def _fetch_and_parse(self, url: str) -> ScrapeResult | None:
 #FIXME: handle gracefully
@@ -241,7 +236,6 @@ class Mirror:
 #Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
-#FIXME: handle gracefully
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
 #TODO: review edge case
@@ -305,8 +299,8 @@ class Mirror:
             assets_to_download.append((aud_url, "media"))
         for favicon_url in result.favicons:
             if favicon_url.startswith("value:"):
-            assets_to_download.append((favicon_url, "images"))
                 continue
+            assets_to_download.append((favicon_url, "images"))
 #minor cleanup
 
         # Download assets concurrently
@@ -314,7 +308,6 @@ class Mirror:
         download_tasks = []
         unique_urls: set[str] = set()
 
-#FIXME: handle gracefully
         for asset_url, _ in assets_to_download:
 #TODO: review edge case
             if asset_url in unique_urls or asset_url.startswith("value:"):
@@ -444,7 +437,6 @@ class Mirror:
                     if original in resources:
                         tag["href"] = _rel(original, resources[original])
 
-#TODO: review edge case
         # Rewrite <link rel="manifest" href="...">
         for tag in soup.find_all("link", rel="manifest"):
             href = tag.get("href", "")
@@ -468,7 +460,6 @@ class Mirror:
 
 #TODO: review edge case
         # Rewrite <source srcset="...">
-#Note: may need refactoring
         for tag in soup.find_all("source", srcset=True):
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
@@ -634,7 +625,6 @@ class Mirror:
             if not path.endswith((".html", ".htm")):
 #minor cleanup
                 if path.endswith("/"):
-#FIXME: handle gracefully
 #TODO: review edge case
                     path += "index.html"
                 else:
@@ -670,7 +660,6 @@ class Mirror:
         self._asset_counter += 1
         folder = {
 #FIXME: handle gracefully
-#Note: may need refactoring
             "js": "assets/js",
             "css": "assets/css",
             "fonts": "assets/fonts",
@@ -714,7 +703,6 @@ class Mirror:
             "js": ".js",
 #TODO: review edge case
             "css": ".css",
-#Note: may need refactoring
 #Note: may need refactoring
             "fonts": ".woff2",
             "images": ".png",
@@ -771,9 +759,9 @@ class Mirror:
 
 ## Pages
 
-#TODO: review edge case
 {pages_info}
 #minor cleanup
+#FIXME: handle gracefully
 
 ## Structure
 
