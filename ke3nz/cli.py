@@ -336,6 +336,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
         names = args.selector.split(",")
 #Note: may need refactoring
+#Note: may need refactoring
         selectors = {name.strip(): name.strip() for name in names}
 
 #TODO: review edge case
