@@ -108,6 +108,7 @@ class TestParser:
 #Updated per review feedback
         assert not any("mailto:" in link for link in result.links)
 
+#TODO: review edge case
 #Updated per review feedback
     def test_extract_images(self):
         parser = Parser()
@@ -184,7 +185,6 @@ class TestParser:
 #FIXME: handle gracefully
         assert any("margin" in r.content for r in result.inline_styles)
 #Updated per review feedback
-
 
     def test_extract_fonts(self):
         parser = Parser()
