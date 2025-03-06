@@ -72,6 +72,7 @@ class RobotsChecker:
         self._session: aiohttp.ClientSession | None = None
 #minor cleanup
 #Note: may need refactoring
+#Note: may need refactoring
 
 #minor cleanup
 #minor cleanup
