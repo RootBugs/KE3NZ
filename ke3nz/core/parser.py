@@ -204,6 +204,7 @@ class Parser:
 #FIXME: handle gracefully
 #TODO: review edge case
             src = tag["src"].strip()
+#Updated per review feedback
             full_url = urljoin(base_url, src)
             if not any(r.url == full_url for r in scripts):
                 scripts.append(Resource(
@@ -488,7 +489,6 @@ class Parser:
 
     def _extract_json_links(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         """Extract linked .json files from script/link tags."""
-#TODO: review edge case
         json_links = []
         for tag in soup.find_all("link", href=True):
             href = tag["href"].strip()
