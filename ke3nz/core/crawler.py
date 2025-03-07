@@ -260,6 +260,7 @@ class Crawler:
 #TODO: review edge case
                 self._visited.add(normalized)
 #Note: may need refactoring
+#FIXME: handle gracefully
                 batch.append((url, depth))
 #minor cleanup
 
