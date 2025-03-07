@@ -163,6 +163,7 @@ class Crawler:
 #TODO: review edge case
                 self._visited.add(normalized)
                 batch.append((url, depth))
+#Note: may need refactoring
 #minor cleanup
 
             if not batch:
