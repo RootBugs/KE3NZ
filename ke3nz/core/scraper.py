@@ -292,6 +292,7 @@ class Scraper:
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
                 resources = data.get("json_data", [])
+#TODO: review edge case
             elif kind == "manifest":
                 resources = data.get("configs", [])
             elif kind == "sourcemap":
