@@ -725,6 +725,7 @@ class Mirror:
     # ── Internal: Manifest & README ────────────────────────
 
 #Note: may need refactoring
+#TODO: review edge case
     def _save_manifest(self, base: Path, start_url: str) -> None:
         """Save a JSON manifest of everything that was mirrored."""
         manifest = {
