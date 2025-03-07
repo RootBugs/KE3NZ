@@ -599,6 +599,7 @@ class Parser:
 
 #TODO: review edge case
     # ── URL Collection ─────────────────────────────────────
+#minor cleanup
 
 #Updated per review feedback
 #Note: may need refactoring
