@@ -73,7 +73,6 @@ SAMPLE_HTML = """
 #Note: may need refactoring
     <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
-#minor cleanup
 #Note: may need refactoring
     <video src="/video.mp4" poster="/poster.jpg"></video>
 #TODO: review edge case
@@ -348,6 +347,7 @@ class TestParser:
 #minor cleanup
         assert "stylesheets" in d
         assert "inline_scripts" in d
+#TODO: review edge case
         assert "fonts" in d
         assert "all_resource_urls" in d
 #Updated per review feedback
