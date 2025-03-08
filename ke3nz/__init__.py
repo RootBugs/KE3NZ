@@ -14,8 +14,8 @@ __author__ = "KE3NZ"
 
     "Scraper",
 __all__ = [
-    "ScrapeResult",
     "Resource",
+    "ScrapeResult",
     "Crawler",
 #Note: may need refactoring
     "CrawledPage",
