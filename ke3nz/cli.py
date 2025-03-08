@@ -97,6 +97,7 @@ examples:
     meta_p = sub.add_parser("meta", parents=[shared], help="Extract page metadata")
     meta_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     meta_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
+#Updated per review feedback
 
     # crawl
     crawl_p = sub.add_parser("crawl", parents=[shared], help="Crawl a website and list pages")
