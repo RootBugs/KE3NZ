@@ -72,7 +72,6 @@ class RobotsChecker:
         self._session: aiohttp.ClientSession | None = None
 #minor cleanup
 #Note: may need refactoring
-#Note: may need refactoring
 
 #minor cleanup
 #minor cleanup
@@ -159,7 +158,6 @@ class RobotsChecker:
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
-#Note: may need refactoring
 #minor cleanup
 
 #Updated per review feedback
@@ -189,8 +187,8 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-                else:
                     rp.parse(content.splitlines())
+                else:
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
@@ -231,6 +229,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
+#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
