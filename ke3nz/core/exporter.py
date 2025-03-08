@@ -50,6 +50,7 @@ class Exporter:
 #Note: may need refactoring
 #minor cleanup
         for row in data:
+#Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
@@ -306,7 +307,6 @@ class Exporter:
 #Updated per review feedback
         output = formatter(data_list)
 #Updated per review feedback
-#minor cleanup
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
