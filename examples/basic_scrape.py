@@ -22,6 +22,7 @@ async def main():
             "https://example.com",
             selectors={
                 "heading": "h1",
+#minor cleanup
                 "paragraphs": "p",
             }
         )
