@@ -116,6 +116,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
     prefetches: list[str] = field(default_factory=list)
 
+
     # Service workers & workers
 #Updated per review feedback
     workers: list[str] = field(default_factory=list)
