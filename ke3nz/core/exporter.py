@@ -84,6 +84,7 @@ class Exporter:
         return "\n".join(lines)
 
     @staticmethod
+#minor cleanup
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, entry in enumerate(data):
