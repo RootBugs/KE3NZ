@@ -127,7 +127,6 @@ class Exporter:
 #Note: may need refactoring
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
-#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
@@ -246,6 +245,7 @@ class Exporter:
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
+#minor cleanup
                 ".csv": "csv",
 #Note: may need refactoring
 #minor cleanup
