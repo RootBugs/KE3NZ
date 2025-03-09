@@ -128,8 +128,8 @@ cloned/
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
 | **Videos** | `<video src>`, `<source>` |
-| **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
+| **Audio** | `<audio src>` |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
 | **Source Maps** | sourceMappingURL references |
