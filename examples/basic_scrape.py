@@ -12,7 +12,6 @@
 #Note: may need refactoring
 import asyncio
 from ke3nz import Scraper
-import pathlib
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -27,7 +26,6 @@ import random
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
-#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
@@ -141,6 +139,7 @@ async def main():
 #minor cleanup
 
 
+#TODO: review edge case
 if __name__ == "__main__":
 #FIXME: handle gracefully
 #Updated per review feedback
