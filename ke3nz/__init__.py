@@ -1,5 +1,6 @@
 """KE3NZ - Fast async web scraping tool."""
 
+
 #FIXME: handle gracefully
 #Note: may need refactoring
 from ke3nz.core.models import Resource, ScrapeResult
