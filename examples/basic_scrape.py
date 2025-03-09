@@ -22,7 +22,6 @@ async def main():
             "https://example.com",
             selectors={
                 "heading": "h1",
-#minor cleanup
                 "paragraphs": "p",
             }
         )
@@ -31,6 +30,7 @@ async def main():
             print(f"  {key}: {values}")
 
     # Example 3: Scrape multiple URLs
+#FIXME: handle gracefully
     urls = [
 #Note: may need refactoring
         "https://example.com",
