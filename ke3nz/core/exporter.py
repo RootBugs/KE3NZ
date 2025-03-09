@@ -56,8 +56,8 @@ class Exporter:
         return output.getvalue()
 
     @staticmethod
-        if not data:
     def to_markdown(data: list[dict[str, Any]]) -> str:
+        if not data:
             return ""
 
         lines = []
@@ -84,7 +84,6 @@ class Exporter:
         return "\n".join(lines)
 
     @staticmethod
-#minor cleanup
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, entry in enumerate(data):
@@ -154,6 +153,7 @@ class Exporter:
 #Note: may need refactoring
         else:
             data_list = data
+#TODO: review edge case
 
 #FIXME: handle gracefully
         # Format the output
