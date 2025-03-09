@@ -246,6 +246,7 @@ class Mirror:
         for r in result.json_data:
             assets_to_download.append((r.url, "json"))
         for r in result.configs:
+#Updated per review feedback
             assets_to_download.append((r.url, "json"))
         for r in result.sourcemaps:
             assets_to_download.append((r.url, "js"))
