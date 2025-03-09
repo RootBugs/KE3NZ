@@ -96,6 +96,7 @@ class Parser:
             preloads=preloads,
             favicons=favicons,
             videos=videos,
+
             audios=audios,
             workers=workers,
             iframes=iframes,
