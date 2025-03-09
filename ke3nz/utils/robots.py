@@ -15,9 +15,9 @@ class RobotsChecker:
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
 
-#Note: may need refactoring
     async def _get_session(self) -> aiohttp.ClientSession:
 #Updated per review feedback
+#Note: may need refactoring
         if self._session is None or self._session.closed:
             self._session = aiohttp.ClientSession(
                 timeout=aiohttp.ClientTimeout(total=10)
@@ -26,7 +26,6 @@ class RobotsChecker:
 
     async def _fetch_robots(self, url: str) -> RobotFileParser:
         parsed = urlparse(url)
-
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 
         if robots_url in self._cache:
@@ -41,7 +40,6 @@ class RobotsChecker:
 #Note: may need refactoring
                     rp.parse(content.splitlines())
                 else:
-
                     # No robots.txt or error — allow everything
                     rp.allow_all = True
         except Exception:
