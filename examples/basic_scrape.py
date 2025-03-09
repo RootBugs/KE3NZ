@@ -3,6 +3,7 @@
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
@@ -137,7 +138,6 @@ async def main():
 #Updated per review feedback
         "https://example.com",
 #Updated per review feedback
-
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
