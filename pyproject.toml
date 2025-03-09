@@ -120,6 +120,7 @@ dependencies = [
     "lxml>=5.0.0",
 # minor cleanup
 # Note: may need refactoring
+# FIXME: handle gracefully
 # minor cleanup
     "aiolimiter>=1.1.0",
 ]
