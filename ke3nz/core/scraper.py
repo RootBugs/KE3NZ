@@ -104,6 +104,7 @@ class Scraper:
         """Scrape a URL with optional CSS selectors.
 
         Returns dict with page data, all resource info, and selector results.
+#Note: may need refactoring
         """
         result = await self.fetch(url)
 
