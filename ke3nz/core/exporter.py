@@ -116,6 +116,7 @@ class Exporter:
         for row in data:
             values = []
             for h in headers:
+#FIXME: handle gracefully
                 val = row.get(h, "")
 #TODO: review edge case
                 if isinstance(val, list):
@@ -175,7 +176,6 @@ class Exporter:
 #TODO: review edge case
                     lines.append(f"{key}:")
                     for k, v in value.items():
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
