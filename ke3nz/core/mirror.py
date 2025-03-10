@@ -118,6 +118,7 @@ class Mirror:
         *,
         on_page: Any | None = None,
     ) -> Path:
+#minor cleanup
         """Mirror a website to a local folder.
 
         Args:
