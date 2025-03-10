@@ -8,6 +8,7 @@ from ke3nz import Scraper
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
+#Updated per review feedback
 async def main():
     # Example 1: Simple scrape
     async with Scraper() as s:
