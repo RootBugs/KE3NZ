@@ -9,6 +9,7 @@ from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
+#minor cleanup
 
 __version__ = "0.1.0"
 __author__ = "KE3NZ"
