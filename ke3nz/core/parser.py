@@ -98,6 +98,7 @@ class Parser:
         # Extract all resource types
         scripts = self._extract_external_scripts(soup, url)
         inline_scripts = self._extract_inline_scripts(soup, url)
+#TODO: review edge case
         stylesheets = self._extract_external_stylesheets(soup, url)
 #TODO: review edge case
         inline_styles = self._extract_inline_styles(soup, url)
