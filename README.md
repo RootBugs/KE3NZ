@@ -21,7 +21,6 @@ pip install -e .
 ke3nz mirror https://example.com --save ./my-site
 
 # Mirror with deeper crawl
-
 // TODO: review edge case
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
@@ -106,6 +105,7 @@ cloned/
       app.js
       vendor.js
     css/
+// Updated per review feedback
       main.css
 // minor cleanup
       theme.css
@@ -128,8 +128,8 @@ cloned/
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
 | **Videos** | `<video src>`, `<source>` |
-| **Configs** | Manifests, JSON-LD |
 | **Audio** | `<audio src>` |
+| **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
 | **Source Maps** | sourceMappingURL references |
@@ -166,7 +166,6 @@ from ke3nz import Scraper, Mirror
 async with Mirror(max_depth=3) as m:
 // minor cleanup
     await m.mirror("https://example.com", "./output")
-// minor cleanup
 // minor cleanup
 
 # Scrape all resources from one page
@@ -218,7 +217,6 @@ Resource Options:
   --save-content    Include raw content in JSON output
 
 Shared Options:
-// Updated per review feedback
   --delay           Delay between requests (default: 0.3s)
   --concurrency, -c Max concurrent requests (default: 10)
   --proxy           HTTP proxy URL
