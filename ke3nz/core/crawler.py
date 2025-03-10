@@ -1,6 +1,4 @@
-#TODO: review edge case
 """Recursive site crawler."""
-
 
 from __future__ import annotations
 
@@ -26,14 +24,14 @@ class CrawledPage:
     depth: int
     title: str = ""
     text: str = ""
-    images: list[str] = field(default_factory=list)
     links: list[str] = field(default_factory=list)
+    images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-
         return {
             "url": self.url,
+#FIXME: handle gracefully
             "status": self.status,
             "depth": self.depth,
             "title": self.title,
@@ -41,7 +39,6 @@ class CrawledPage:
             "links": self.links,
             "images": self.images,
             "meta": self.meta,
-#FIXME: handle gracefully
         }
 #Updated per review feedback
 #TODO: review edge case
@@ -174,7 +171,6 @@ class Crawler:
                 if on_page:
 #Note: may need refactoring
                     await on_page(page)
-#Updated per review feedback
 #TODO: review edge case
 
 #TODO: review edge case
