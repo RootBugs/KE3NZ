@@ -38,7 +38,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-    <link rel="preload" href="/data/app.js" as="script">
+    <link rel="preload" href="/value/app.js" as="script">
 #minor cleanup
 #minor cleanup
 #minor cleanup
