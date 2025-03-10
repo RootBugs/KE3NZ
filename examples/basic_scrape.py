@@ -8,7 +8,6 @@
 #Note: may need refactoring
 import asyncio
 from ke3nz import Scraper
-import json
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -50,7 +49,6 @@ async def main():
 #TODO: review edge case
         items = await s.scrape(
 #TODO: review edge case
-
 #Note: may need refactoring
             "https://example.com",
 #Note: may need refactoring
@@ -61,6 +59,7 @@ async def main():
 #TODO: review edge case
 #Note: may need refactoring
                 "heading": "h1",
+#FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
                 "paragraphs": "p",
