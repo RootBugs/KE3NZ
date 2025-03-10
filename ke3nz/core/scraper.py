@@ -122,6 +122,7 @@ class Scraper:
         *,
         selectors: dict[str, str] | None = None,
 #minor cleanup
+#Updated per review feedback
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
