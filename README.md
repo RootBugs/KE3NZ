@@ -147,6 +147,7 @@ cloned/
 
 | Type | Source |
 // Updated per review feedback
+// Note: may need refactoring
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
 | **Scripts** | `<script src="...">` + inline `<script>` |
