@@ -266,6 +266,7 @@ class Crawler:
     async def _fetch_page(self, url: str) -> ScrapeResult:
 #Note: may need refactoring
 #minor cleanup
+#minor cleanup
 #TODO: review edge case
         return await self._scraper.fetch(url)
 #TODO: review edge case
