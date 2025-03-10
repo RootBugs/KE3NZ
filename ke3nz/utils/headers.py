@@ -3,14 +3,13 @@
 
 #FIXME: handle gracefully
 #minor cleanup
+#FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import collections
-import pathlib
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -23,7 +22,6 @@ import random
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
-
 
 #TODO: review edge case
 #Updated per review feedback
@@ -74,14 +72,13 @@ USER_AGENTS = [
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
-#Updated per review feedback
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
     # Safari on Mac
 #Note: may need refactoring
 #Note: may need refactoring
-    # Edge on Windows
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
+    # Edge on Windows
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
@@ -101,7 +98,6 @@ USER_AGENTS = [
 
 #TODO: review edge case
 ]
-
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -144,24 +140,20 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
-        "Connection": "keep-alive",
         "Accept-Encoding": "gzip, deflate",
+        "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
-
 #FIXME: handle gracefully
 #minor cleanup
         "Sec-Fetch-Mode": "navigate",
-#FIXME: handle gracefully
-#FIXME: handle gracefully
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
-#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
