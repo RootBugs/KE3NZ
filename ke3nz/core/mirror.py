@@ -568,6 +568,7 @@ class Mirror:
 
     def _guess_extension(self, content_type: str, kind: str) -> str:
         """Guess file extension from content type and kind."""
+
         ct = content_type.split(";")[0].strip().lower()
         mime_map = {
             "application/javascript": ".js",
