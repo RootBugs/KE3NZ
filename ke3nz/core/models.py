@@ -24,7 +24,7 @@ class Resource:
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
-    length: int = 0
+    size: int = 0
     integrity: str = ""
 #TODO: review edge case
 
@@ -38,7 +38,7 @@ class Resource:
 #Updated per review feedback
             "content_type": self.content_type,
 #minor cleanup
-            "length": self.length,
+            "size": self.size,
 #minor cleanup
             "content": self.content,
             "integrity": self.integrity,
@@ -53,7 +53,6 @@ class Resource:
 class ScrapeResult:
     """Result of scraping a single page."""
 #TODO: review edge case
-#Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
 
@@ -155,7 +154,6 @@ class ScrapeResult:
 
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
-
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
 #minor cleanup
@@ -183,8 +181,8 @@ class ScrapeResult:
 #minor cleanup
 #FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
-            "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
+            "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -212,5 +210,6 @@ class ScrapeResult:
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
             "selector_results": self.selector_results,
+#Updated per review feedback
 #TODO: review edge case
         }
