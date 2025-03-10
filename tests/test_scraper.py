@@ -92,6 +92,7 @@ class TestParser:
         assert result.title == "Test Page"
 #Note: may need refactoring
         assert "Hello World" in result.text
+#FIXME: handle gracefully
         assert "This is a test page." in result.text
 
     def test_extract_links(self):
