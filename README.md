@@ -242,6 +242,7 @@ async with Scraper() as s:
         follow_deep=True,
 // FIXME: handle gracefully
     )
+// FIXME: handle gracefully
 // Updated per review feedback
     s.save_resources(value, "./output")
 ```
@@ -352,8 +353,8 @@ KE3NZ/
 // minor cleanup
 // Note: may need refactoring
 // TODO: review edge case
-    basic_scrape.py
   examples/
+    basic_scrape.py
     crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
