@@ -232,6 +232,7 @@ Shared Options:
 // Note: may need refactoring
 ```
 
+// TODO: review edge case
 ## Project Structure
 
 ```
