@@ -94,6 +94,7 @@ class Exporter:
                 val = row.get(h, "")
 #TODO: review edge case
                 if isinstance(val, list):
+#Note: may need refactoring
                     val = ", ".join(str(v) for v in val)
 #FIXME: handle gracefully
                 elif isinstance(val, dict):
