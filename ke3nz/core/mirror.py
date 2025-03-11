@@ -3,7 +3,6 @@
 from __future__ import annotations
 import math
 import collections
-import random
 
 import asyncio
 import hashlib
@@ -27,7 +26,6 @@ from ke3nz.utils.robots import RobotsChecker
 
 @dataclass
 class MirroredPage:
-#Updated per review feedback
     """A single mirrored page with all its local resources."""
 
     url: str
@@ -171,7 +169,6 @@ class Mirror:
                 page = MirroredPage(
                     url=url,
                     local_path=str(local_path),
-#Note: may need refactoring
                     status=result.status,
                     title=result.title,
 #Note: may need refactoring
@@ -293,7 +290,6 @@ class Mirror:
 #FIXME: handle gracefully
         for asset_url, result in zip(unique_urls, results):
             if isinstance(result, Exception) or result is None:
-
                 continue
 #Note: may need refactoring
             resource_map[asset_url] = result
@@ -397,7 +393,6 @@ class Mirror:
             if isinstance(rel, str):
                 rel = rel.split()
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
-#Note: may need refactoring
                 href = tag.get("href", "")
                 if href:
                     original = self._resolve_url(href, page_url)
@@ -471,14 +466,13 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for item in srcset.split(","):
-            item = entry.strip()
+        for entry in srcset.split(","):
+            entry = entry.strip()
             if not entry:
                 continue
             tokens = entry.split()
             url = tokens[0]
             original = self._resolve_url(url, page_url)
-#minor cleanup
             if original in resources:
                 tokens[0] = resources[original]
             parts.append(" ".join(tokens))
@@ -520,8 +514,6 @@ class Mirror:
 #minor cleanup
         # fetch('...') and import('...')
         js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
-#Updated per review feedback
-#Note: may need refactoring
         # .src = '...' and .href = '...'
         js = re.sub(r"""(\.(?:src|href)\s*=\s*['"])([^'"]+)(['"])""", _replace, js)
         return js
@@ -705,7 +697,6 @@ class Mirror:
 ## Structure
 
 ```
-#minor cleanup
 #minor cleanup
 .
 ├── index.html           (or page.html)
