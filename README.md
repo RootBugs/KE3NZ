@@ -207,6 +207,7 @@ async with Mirror(max_depth=3) as m:
     await m.mirror("https://example.com", "./output")
 // Updated per review feedback
 // minor cleanup
+// FIXME: handle gracefully
 
 # Scrape all resources from one page
 // TODO: review edge case
