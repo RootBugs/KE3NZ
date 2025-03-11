@@ -183,6 +183,7 @@ Scrape all resources from a single page:
 ke3nz resources https://example.com --save ./output
 
 // TODO: review edge case
+// FIXME: handle gracefully
 // TODO: review edge case
 // TODO: review edge case
 // TODO: review edge case
