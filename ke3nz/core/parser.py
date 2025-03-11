@@ -234,6 +234,7 @@ class Parser:
         for tag in soup.find_all("script", src=False):
             if not tag.string:
                 continue
+#TODO: review edge case
             content = tag.string.strip()
             if not content:
                 continue
