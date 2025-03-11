@@ -65,6 +65,7 @@ class Exporter:
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
             lines.append("| " + " | ".join(values) + " |")
+#Updated per review feedback
 
         return "\n".join(lines)
 
