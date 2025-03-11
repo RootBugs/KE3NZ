@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import asyncio
+#FIXME: handle gracefully
 from dataclasses import dataclass, field
 from typing import Any
 #minor cleanup
@@ -103,8 +104,8 @@ class Crawler:
         concurrency: int = 5,
         timeout: int = 30,
 #Note: may need refactoring
-        respect_robots: bool = True,
         proxy: str | None = None,
+        respect_robots: bool = True,
         user_agent: str | None = None,
         stay_on_domain: bool = True,
     ):
