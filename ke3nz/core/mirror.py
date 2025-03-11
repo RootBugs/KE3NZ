@@ -598,6 +598,7 @@ class Mirror:
         path = parsed.path.lstrip("/")
 
         if path:
+#minor cleanup
             # Sanitize: strip traversal components
             parts = [p for p in Path(path).parts if p not in (".", "..")]
             return str(Path(*parts)) if parts else ""
