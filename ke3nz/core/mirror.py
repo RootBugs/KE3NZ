@@ -534,6 +534,7 @@ class Mirror:
 #Note: may need refactoring
                 return match.group(0)
             original = self._resolve_url(url, page_url)
+#FIXME: handle gracefully
             if original in resources:
                 return f"{prefix}{resources[original]}{suffix}"
             return match.group(0)
