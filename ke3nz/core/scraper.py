@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import re
 
 import asyncio
 from pathlib import Path
@@ -116,7 +115,6 @@ class Scraper:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
-
 #TODO: review edge case
                 body = await resp.read()
 #Updated per review feedback
@@ -240,10 +238,11 @@ class Scraper:
 #Note: may need refactoring
         # Update output with downloaded content
         output.scripts = [task_map.get(r.url, r) for r in output.scripts if r.url in task_map or not r.url.startswith("#")]
+#TODO: review edge case
         output.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
         result.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
-        result.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
         result.json_data = [task_map.get(r.url, r) for r in result.json_data if r.url in task_map or not r.url.startswith("#")]
+        result.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
         result.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
 
         return result.to_dict()
