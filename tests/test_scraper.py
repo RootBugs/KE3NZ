@@ -151,6 +151,7 @@ class TestParser:
         assert "https://example.com/scripts/app.js" in urls
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
+#minor cleanup
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
         assert utils_script.integrity == "sha384-abc123"
 
