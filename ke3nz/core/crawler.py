@@ -264,6 +264,7 @@ class Crawler:
                 batch.append((url, depth))
 #minor cleanup
 
+#FIXME: handle gracefully
 #Updated per review feedback
             if not batch:
                 break
