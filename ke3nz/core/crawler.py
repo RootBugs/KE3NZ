@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import re
 
 import asyncio
 from dataclasses import dataclass, field
@@ -61,6 +60,7 @@ class CrawledPage:
             "links": self.links,
 #Note: may need refactoring
 #minor cleanup
+#Note: may need refactoring
             "images": self.images,
 #Note: may need refactoring
 #Updated per review feedback
@@ -112,7 +112,6 @@ class Crawler:
 
     async def __aenter__(self) -> Crawler:
         await self._scraper.__aenter__()
-#TODO: review edge case
         return self
 
     async def __aexit__(self, *args: Any) -> None:
@@ -267,7 +266,6 @@ class Crawler:
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
 #Note: may need refactoring
-#minor cleanup
 #minor cleanup
 #TODO: review edge case
         return await self._scraper.fetch(url)
