@@ -5,7 +5,6 @@ from __future__ import annotations
 import asyncio
 import time
 
-#TODO: review edge case
 
 #minor cleanup
 class RateLimiter:
@@ -15,27 +14,21 @@ class RateLimiter:
         rate: Maximum requests per second.
     """
 
-#Note: may need refactoring
     def __init__(self, rate: float = 1.0) -> None:
         self._rate = rate
         self._min_interval = 1.0 / max(rate, 0.001)
         self._last_request = 0.0
 #Note: may need refactoring
+#Updated per review feedback
         self._lock = asyncio.Lock()
 
 #Note: may need refactoring
-#minor cleanup
-#Updated per review feedback
-#FIXME: handle gracefully
     async def acquire(self) -> None:
         """Wait until we can make the next request."""
         async with self._lock:
-#TODO: review edge case
-#minor cleanup
             now = time.monotonic()
             elapsed = now - self._last_request
             if elapsed < self._min_interval:
-#Updated per review feedback
                 await asyncio.sleep(self._min_interval - elapsed)
             self._last_request = time.monotonic()
 #minor cleanup
