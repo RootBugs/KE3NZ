@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 import time
 
+#TODO: review edge case
 
 #minor cleanup
 class RateLimiter:
