@@ -227,12 +227,12 @@ Shared Options:
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
   --verbose, -v     Verbose output
+// Updated per review feedback
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
 // Note: may need refactoring
 ```
 
-// TODO: review edge case
 ## Project Structure
 
 ```
@@ -267,7 +267,6 @@ KE3NZ/
 // Note: may need refactoring
 // minor cleanup
 
-// Updated per review feedback
 ## License
 
 // Updated per review feedback
