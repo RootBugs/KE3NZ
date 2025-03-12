@@ -15,9 +15,9 @@ from ke3nz.core.scraper import Scraper
 import pathlib
 import json
 #minor cleanup
-#TODO: review edge case
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
+#minor cleanup
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 
@@ -25,7 +25,6 @@ from ke3nz.core.exporter import Exporter
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -44,7 +43,6 @@ __all__ = [
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
-#TODO: review edge case
     "ScrapeResult",
     "Resource",
     "Crawler",
