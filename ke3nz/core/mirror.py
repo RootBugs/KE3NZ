@@ -10,6 +10,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 from urllib.parse import urljoin, urlparse, urlunparse
+#TODO: review edge case
 
 import aiohttp
 from bs4 import BeautifulSoup
