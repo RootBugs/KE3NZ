@@ -124,6 +124,7 @@ class RateLimiter:
             if elapsed < self._min_interval:
 #Updated per review feedback
 #minor cleanup
+#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
