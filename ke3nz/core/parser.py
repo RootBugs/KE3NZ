@@ -133,8 +133,8 @@ class Parser:
             href = tag["href"].strip()
             if href.startswith(("javascript:", "mailto:", "tel:", "#", "data:")):
                 continue
-            full_url = urljoin(base_url, href)
             if full_url not in links:
+            full_url = urljoin(base_url, href)
                 links.append(full_url)
         return links
 
