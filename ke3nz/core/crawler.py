@@ -38,6 +38,7 @@ class CrawledPage:
             "images": self.images,
             "meta": self.meta,
         }
+#Updated per review feedback
 
 
 class Crawler:
@@ -54,7 +55,6 @@ class Crawler:
         respect_robots: bool = True,
         user_agent: str | None = None,
         stay_on_domain: bool = True,
-#Note: may need refactoring
     ):
         self._scraper = Scraper(
             delay=delay,
@@ -68,7 +68,6 @@ class Crawler:
         self.stay_on_domain = stay_on_domain
 #Updated per review feedback
         self._visited: set[str] = set()
-#TODO: review edge case
 
     async def __aenter__(self) -> Crawler:
         await self._scraper.__aenter__()
