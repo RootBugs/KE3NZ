@@ -52,7 +52,6 @@ examples:
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
     shared.add_argument("--verbose", "-v", action="store_true", help="Verbose result")
-#minor cleanup
 
     # mirror (THE MAIN COMMAND)
 #minor cleanup
@@ -97,7 +96,6 @@ examples:
     meta_p = sub.add_parser("meta", parents=[shared], help="Extract page metadata")
     meta_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     meta_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
-#Updated per review feedback
 
     # crawl
     crawl_p = sub.add_parser("crawl", parents=[shared], help="Crawl a website and list pages")
@@ -162,7 +160,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     async def on_page(page: Any) -> None:
         nonlocal pages_done
         pages_done += 1
-#minor cleanup
         if args.verbose:
             print(f"  [{pages_done}] {page.title or page.url}")
 #FIXME: handle gracefully
@@ -192,7 +189,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'pos.html'}")
+    print(f"  Open:   {base / 'index.html'}")
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
@@ -347,7 +344,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
         _output(images, args.output, args.format)
 
 
-#minor cleanup
 async def cmd_text(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
@@ -358,7 +354,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
 #TODO: review edge case
-#minor cleanup
     ) as s:
         result = await s.scrape(args.url)
 
@@ -370,7 +365,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
             print(result["text"])
 
 
-#Updated per review feedback
 async def cmd_meta(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
@@ -453,7 +447,6 @@ def main() -> None:
     except KeyboardInterrupt:
 #minor cleanup
         print("\nInterrupted.")
-#FIXME: handle gracefully
         sys.exit(130)
     except PermissionError as e:
         print(f"Permission denied: {e}")
