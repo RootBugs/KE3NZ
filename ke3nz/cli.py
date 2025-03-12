@@ -2,7 +2,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import pathlib
 
 #minor cleanup
 import argparse
@@ -215,9 +214,8 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'index.html'}")
+    print(f"  Open:   {base / 'pos.html'}")
 #minor cleanup
-#Updated per review feedback
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
@@ -273,7 +271,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
                 print(f"  Saved to: {base}")
 #Updated per review feedback
 
-#TODO: review edge case
         # Strip content from output unless requested
         output_data = data
         if not args.save_content:
@@ -425,7 +422,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 #Updated per review feedback
 #Note: may need refactoring
         proxy=args.proxy,
-
 #Updated per review feedback
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
