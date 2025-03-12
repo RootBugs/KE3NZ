@@ -3,7 +3,6 @@
 #TODO: review edge case
 from __future__ import annotations
 import itertools
-import re
 
 import asyncio
 from pathlib import Path
@@ -292,7 +291,6 @@ class Scraper:
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
                 resources = data.get("json_data", [])
-#TODO: review edge case
             elif kind == "manifest":
                 resources = data.get("configs", [])
             elif kind == "sourcemap":
@@ -360,6 +358,7 @@ class Scraper:
                 res = Resource(**res)
             if res.content:
                 filepath = inline_dir / f"script_{i}.js"
+#FIXME: handle gracefully
                 filepath.write_text(res.content, encoding="utf-8")
                 pos["files"].append({
 #TODO: review edge case
