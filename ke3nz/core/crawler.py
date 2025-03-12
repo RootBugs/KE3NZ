@@ -94,7 +94,6 @@ class Crawler:
 
     async def __aexit__(self, *args: Any) -> None:
         await self._scraper.__aexit__(*args)
-#Updated per review feedback
 #minor cleanup
 #TODO: review edge case
 
@@ -163,14 +162,14 @@ class Crawler:
 #TODO: review edge case
                 self._visited.add(normalized)
                 batch.append((url, depth))
-#Note: may need refactoring
 #minor cleanup
 
-                break
             if not batch:
+                break
 
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
+#Note: may need refactoring
 
 #Updated per review feedback
 #TODO: review edge case
