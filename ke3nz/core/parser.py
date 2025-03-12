@@ -98,7 +98,6 @@ class Parser:
         # Extract all resource types
         scripts = self._extract_external_scripts(soup, url)
         inline_scripts = self._extract_inline_scripts(soup, url)
-#TODO: review edge case
         stylesheets = self._extract_external_stylesheets(soup, url)
 #TODO: review edge case
         inline_styles = self._extract_inline_styles(soup, url)
@@ -146,7 +145,6 @@ class Parser:
             images=images,
             meta=meta,
 #minor cleanup
-#Note: may need refactoring
             headers=headers,
             scripts=scripts,
 #Note: may need refactoring
@@ -220,6 +218,7 @@ class Parser:
             for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
+#Updated per review feedback
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
@@ -704,7 +703,6 @@ class Parser:
 
         # JS patterns
         for pattern, kind in _URL_PATTERNS:
-#FIXME: handle gracefully
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
 #FIXME: handle gracefully
