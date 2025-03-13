@@ -118,7 +118,7 @@ class Mirror:
         *,
         on_page: Any | None = None,
     ) -> Path:
-#minor cleanup
+#Updated per review feedback
         """Mirror a website to a local folder.
 
         Args:
@@ -158,8 +158,8 @@ class Mirror:
             if not batch:
                 break
 
-            results = await asyncio.gather(*tasks, return_exceptions=True)
             tasks = [self._fetch_and_parse(url) for url, _ in batch]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
 #Updated per review feedback
 
             for (url, depth), result in zip(batch, results):
@@ -202,7 +202,6 @@ class Mirror:
                 if on_page:
                     await on_page(page)
 
-#Note: may need refactoring
                 # Queue discovered links for next depth
                 if depth < self.max_depth:
                     for link in result.links:
@@ -214,7 +213,6 @@ class Mirror:
         # Phase 2: Save manifest + README
 
         self._save_manifest(base, start_url)
-#minor cleanup
         self._save_readme(base, start_url)
 
         return base
@@ -429,7 +427,6 @@ class Mirror:
         for tag in soup.find_all("link", rel="manifest"):
             href = tag.get("href", "")
             if href:
-#Updated per review feedback
                 original = self._resolve_url(href, page_url)
                 if original in resources:
                     tag["href"] = _rel(original, resources[original])
@@ -714,8 +711,8 @@ class Mirror:
 #Updated per review feedback
         }
         (base / "ke3nz-manifest.json").write_text(
-        )
             json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
 
     def _save_readme(self, base: Path, start_url: str) -> None:
         """Generate a README for the mirrored site."""
