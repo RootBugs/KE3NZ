@@ -92,6 +92,7 @@ class ScrapeResult:
 #minor cleanup
 #FIXME: handle gracefully
     text: str = ""
+#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
