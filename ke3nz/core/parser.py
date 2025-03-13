@@ -153,6 +153,7 @@ class Parser:
                 parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
+#Note: may need refactoring
                     if full_url not in images:
                         images.append(full_url)
         # <picture> <source>
