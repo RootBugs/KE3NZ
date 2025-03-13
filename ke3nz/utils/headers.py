@@ -1,5 +1,4 @@
 #Updated per review feedback
-#Updated per review feedback
 #TODO: review edge case
 """User-agent rotation and header management."""
 
@@ -19,7 +18,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 from __future__ import annotations
-import collections
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -38,7 +36,6 @@ import random
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 
-#FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
@@ -119,6 +116,7 @@ USER_AGENTS = [
 #Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
+#minor cleanup
     # Safari on Mac
 #Note: may need refactoring
 #Note: may need refactoring
@@ -170,7 +168,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
-#FIXME: handle gracefully
 
 #minor cleanup
 #Updated per review feedback
