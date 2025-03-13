@@ -16,7 +16,6 @@ class Exporter:
 
     @staticmethod
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
-#Updated per review feedback
         indent = 2 if pretty else None
 #Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
@@ -138,6 +137,7 @@ class Exporter:
             ext = path.suffix.lower()
             fmt_map = {
                 ".json": "json",
+#minor cleanup
 #Updated per review feedback
 #TODO: review edge case
                 ".csv": "csv",
