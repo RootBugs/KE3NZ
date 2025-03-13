@@ -18,7 +18,6 @@ class Exporter:
     """Export data to JSON, CSV, Markdown, or plain text."""
 #Updated per review feedback
 
-#Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
     @staticmethod
@@ -62,7 +61,7 @@ class Exporter:
 
 #Updated per review feedback
 #FIXME: handle gracefully
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
@@ -94,7 +93,6 @@ class Exporter:
                 val = row.get(h, "")
 #TODO: review edge case
                 if isinstance(val, list):
-#Note: may need refactoring
                     val = ", ".join(str(v) for v in val)
 #FIXME: handle gracefully
                 elif isinstance(val, dict):
@@ -201,7 +199,6 @@ class Exporter:
         if isinstance(data, dict):
 #Note: may need refactoring
             data_list = [data]
-#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
