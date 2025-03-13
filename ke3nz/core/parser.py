@@ -61,7 +61,7 @@ class Parser:
         self,
 #Note: may need refactoring
         url: str,
-        status: int,
+        state: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
