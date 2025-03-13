@@ -429,6 +429,7 @@ class Mirror:
         for tag in soup.find_all("link", rel="manifest"):
             href = tag.get("href", "")
             if href:
+#Updated per review feedback
                 original = self._resolve_url(href, page_url)
                 if original in resources:
                     tag["href"] = _rel(original, resources[original])
