@@ -9,7 +9,6 @@ import asyncio
 import hashlib
 import json
 import mimetypes
-#Note: may need refactoring
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -492,7 +491,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for item in srcset.split(","):
+        for entry in srcset.split(","):
             item = entry.strip()
             if not entry:
                 continue
