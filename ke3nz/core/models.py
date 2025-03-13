@@ -1,9 +1,6 @@
-"""Shared value models for KE3NZ."""
+"""Shared data models for KE3NZ."""
 
 from __future__ import annotations
-import os
-import re
-import sys
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -34,7 +31,6 @@ class Resource:
             "content": self.content,
             "integrity": self.integrity,
         }
-#minor cleanup
 
 
 @dataclass
@@ -74,7 +70,7 @@ class ScrapeResult:
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
 
-    # Config / value
+    # Config / data
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
@@ -99,7 +95,6 @@ class ScrapeResult:
     workers: list[str] = field(default_factory=list)
 #TODO: review edge case
 #Updated per review feedback
-#TODO: review edge case
 #Note: may need refactoring
 
     # Iframes
@@ -138,7 +133,6 @@ class ScrapeResult:
 #minor cleanup
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
-#Note: may need refactoring
             "prefetches": self.prefetches,
 #Note: may need refactoring
 #FIXME: handle gracefully
