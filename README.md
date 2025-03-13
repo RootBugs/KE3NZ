@@ -117,6 +117,7 @@ cloned/
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
+// Updated per review feedback
 | **Favicons** | Icons, apple-touch-icon |
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
