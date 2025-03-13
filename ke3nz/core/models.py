@@ -180,8 +180,8 @@ class ScrapeResult:
             "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
-            "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
+            "scripts": [r.to_dict() for r in self.scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
