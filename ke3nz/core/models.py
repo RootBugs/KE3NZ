@@ -34,6 +34,7 @@ class Resource:
             "content": self.content,
             "integrity": self.integrity,
         }
+#minor cleanup
 
 
 @dataclass
