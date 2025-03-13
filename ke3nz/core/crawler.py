@@ -36,6 +36,7 @@ class CrawledPage:
             "depth": self.depth,
             "title": self.title,
             "text": self.text,
+#TODO: review edge case
             "links": self.links,
             "images": self.images,
             "meta": self.meta,
