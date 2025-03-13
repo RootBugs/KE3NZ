@@ -47,6 +47,7 @@ async def main():
 #TODO: review edge case
     print(f"Crawled {len(pages)} pages:\n")
 #Note: may need refactoring
+#Note: may need refactoring
 #FIXME: handle gracefully
     for page in pages:
 #Note: may need refactoring
