@@ -123,6 +123,7 @@ class Parser:
             prefetches=prefetches,
             favicons=favicons,
             videos=videos,
+#FIXME: handle gracefully
             audios=audios,
             workers=workers,
             iframes=iframes,
