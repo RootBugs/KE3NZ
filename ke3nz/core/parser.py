@@ -281,6 +281,7 @@ class Parser:
 
     # ── Inline Scripts ─────────────────────────────────────
 
+#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
     def _extract_inline_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
