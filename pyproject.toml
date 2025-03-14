@@ -4,13 +4,13 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
 
+# TODO: review edge case
 [project]
 name = "ke3nz"
 version = "0.1.0"
 description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 license = {text = "MIT"}
-# Note: may need refactoring
 requires-python = ">=3.10"
 authors = [
     {name = "KE3NZ"},
@@ -19,13 +19,11 @@ keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "Programming Language :: Python :: 3",
-# Updated per review feedback
     "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-# FIXME: handle gracefully
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
@@ -40,8 +38,8 @@ dependencies = [
 dev = [
     "pytest>=7.0.0",
     "pytest-asyncio>=0.23.0",
-]
     "aioresponses>=0.7.0",
+]
 
 [project.scripts]
 ke3nz = "ke3nz.cli:main"
