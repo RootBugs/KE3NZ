@@ -40,6 +40,7 @@ ke3nz resources https://example.com --save ./output --deep
 
 ## The `mirror` Command
 
+
 This is the main feature. It:
 
 1. **Crawls** every page on the site (configurable depth)
