@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import sys
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -235,7 +234,6 @@ class Parser:
         for tag in soup.find_all("script", src=False):
             if not tag.string:
                 continue
-#TODO: review edge case
             content = tag.string.strip()
             if not content:
                 continue
@@ -506,6 +504,7 @@ class Parser:
                     configs.append(Resource(url=full_url, kind="manifest"))
         # JSON-LD structured value
         for tag in soup.find_all("script", type="application/ld+json"):
+#minor cleanup
             if tag.string:
                 content = tag.string.strip()
 #Note: may need refactoring
