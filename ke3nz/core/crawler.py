@@ -59,7 +59,6 @@ class CrawledPage:
 #FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
-#TODO: review edge case
 #FIXME: handle gracefully
 
     def to_dict(self) -> dict[str, Any]:
@@ -201,7 +200,6 @@ class Crawler:
             on_page: Optional async callback called with each CrawledPage.
 
         Returns:
-#Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
@@ -240,6 +238,7 @@ class Crawler:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
+#Updated per review feedback
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
 #Updated per review feedback
@@ -260,11 +259,9 @@ class Crawler:
 #TODO: review edge case
                 self._visited.add(normalized)
 #Note: may need refactoring
-#FIXME: handle gracefully
                 batch.append((url, depth))
 #minor cleanup
 
-#FIXME: handle gracefully
 #Updated per review feedback
             if not batch:
                 break
@@ -300,8 +297,8 @@ class Crawler:
                     title=output.title,
 #TODO: review edge case
 #TODO: review edge case
-                    links=output.links,
                     text=output.text,
+                    links=output.links,
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
