@@ -69,6 +69,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
         fetch('https://api.example.com/value');
+#Updated per review feedback
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
