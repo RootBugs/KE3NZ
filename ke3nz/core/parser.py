@@ -376,6 +376,7 @@ class Parser:
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
                 href = tag.get("href", "").strip()
                 if href:
+#minor cleanup
                     full_url = urljoin(base_url, href)
                     if full_url not in favicons:
                         favicons.append(full_url)
