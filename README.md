@@ -34,7 +34,7 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 // minor cleanup
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./result --deep
+ke3nz resources https://example.com --save ./output --deep
 ```
 // TODO: review edge case
 
