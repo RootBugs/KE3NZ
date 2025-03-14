@@ -192,6 +192,7 @@ Commands:
 // minor cleanup
 // Updated per review feedback
   mirror      Mirror an entire website to a local folder
+// minor cleanup
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
   links       Extract all links
