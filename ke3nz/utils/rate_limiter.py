@@ -214,6 +214,7 @@ class RateLimiter:
 #minor cleanup
 #TODO: review edge case
             self._last_request = time.monotonic()
+#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
