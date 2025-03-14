@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 import typing
-import os
 
 #TODO: review edge case
 #minor cleanup
@@ -289,7 +288,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
         if args.save:
 #FIXME: handle gracefully
-
 #Note: may need refactoring
             base = s.save_resources(value, args.save)
             if args.verbose:
@@ -336,7 +334,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
         names = args.selector.split(",")
 #Note: may need refactoring
-#Note: may need refactoring
         selectors = {name.strip(): name.strip() for name in names}
 
 #TODO: review edge case
@@ -364,6 +361,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"  Links: {len(result['links'])}")
             print(f"  Images: {len(result['images'])}")
 
+#TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
         _output(result, args.output, args.format)
@@ -397,7 +395,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
 
         _output(links, args.output, args.format)
 
-#TODO: review edge case
 
 async def cmd_images(args: argparse.Namespace) -> None:
     async with Scraper(
@@ -545,7 +542,6 @@ def main() -> None:
         asyncio.run(COMMANDS[args.command](args))
     except KeyboardInterrupt:
 #minor cleanup
-#TODO: review edge case
         print("\nInterrupted.")
 #Updated per review feedback
         sys.exit(130)
