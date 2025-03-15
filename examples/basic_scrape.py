@@ -44,6 +44,7 @@ async def main():
 #Note: may need refactoring
     # Example 1: Simple scrape
 #minor cleanup
+#Note: may need refactoring
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
