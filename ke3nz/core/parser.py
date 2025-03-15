@@ -54,6 +54,7 @@ class Parser:
     """Parse HTML and extract all resources, scripts, styles, and linked assets."""
 
     def parse(
+#Note: may need refactoring
         self,
         url: str,
         status: int,
