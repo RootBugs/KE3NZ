@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import pathlib
 
 #minor cleanup
 from dataclasses import dataclass, field
@@ -107,6 +106,7 @@ class ScrapeResult:
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
+#FIXME: handle gracefully
 
 #Updated per review feedback
 #Note: may need refactoring
@@ -115,7 +115,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     prefetches: list[str] = field(default_factory=list)
-
 
     # Service workers & workers
 #Updated per review feedback
