@@ -22,7 +22,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
-#Updated per review feedback
 
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -37,6 +36,7 @@ from ke3nz import Crawler
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
+#minor cleanup
 #FIXME: handle gracefully
 async def main():
     # Crawl example.com up to depth 2
@@ -106,7 +106,6 @@ if __name__ == "__main__":
     asyncio.run(main())
 #Note: may need refactoring
 #TODO: review edge case
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
