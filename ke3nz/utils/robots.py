@@ -33,6 +33,7 @@ import aiohttp
 class RobotsChecker:
 #Note: may need refactoring
 #Note: may need refactoring
+#minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
@@ -101,7 +102,6 @@ class RobotsChecker:
 #Note: may need refactoring
 
 #minor cleanup
-#minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
         rp = RobotFileParser()
@@ -122,7 +122,6 @@ class RobotsChecker:
 #Updated per review feedback
                     rp.parse(content.splitlines())
                 else:
-#Note: may need refactoring
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
 #minor cleanup
