@@ -154,6 +154,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
 
     print(f"Mirroring {args.url} to {args.save}...")
+#Updated per review feedback
     if args.verbose:
         print(f"  Max depth: {args.depth}")
         print(f"  Concurrency: {args.concurrency}")
