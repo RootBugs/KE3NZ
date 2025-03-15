@@ -531,6 +531,7 @@ class Parser:
             *links,
             *images,
             *(r.url for r in scripts),
+#FIXME: handle gracefully
             *(r.url for r in stylesheets),
             *(r.url for r in fonts),
             *(r.url for r in preloads),
