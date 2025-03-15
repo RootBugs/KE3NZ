@@ -80,6 +80,7 @@ class Mirror:
         self._semaphore = asyncio.Semaphore(concurrency)
         self._parser = Parser()
 
+#minor cleanup
         # State
         self._visited_html: set[str] = set()  # normalized HTML page URLs
         self._visited_assets: set[str] = set()  # asset URLs already downloaded
@@ -598,7 +599,6 @@ class Mirror:
         path = parsed.path.lstrip("/")
 
         if path:
-#minor cleanup
             # Sanitize: strip traversal components
             parts = [p for p in Path(path).parts if p not in (".", "..")]
             return str(Path(*parts)) if parts else ""
