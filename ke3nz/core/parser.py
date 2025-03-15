@@ -96,7 +96,6 @@ class Parser:
             preloads=preloads,
             favicons=favicons,
             videos=videos,
-
             audios=audios,
             workers=workers,
             iframes=iframes,
@@ -123,7 +122,6 @@ class Parser:
             prefetches=prefetches,
             favicons=favicons,
             videos=videos,
-#FIXME: handle gracefully
             audios=audios,
             workers=workers,
             iframes=iframes,
@@ -377,7 +375,6 @@ class Parser:
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
                 href = tag.get("href", "").strip()
                 if href:
-#minor cleanup
                     full_url = urljoin(base_url, href)
                     if full_url not in favicons:
                         favicons.append(full_url)
@@ -543,6 +540,7 @@ class Parser:
             *workers,
             *iframes,
         ):
+#FIXME: handle gracefully
             if url not in seen:
                 seen.add(url)
                 urls.append(url)
