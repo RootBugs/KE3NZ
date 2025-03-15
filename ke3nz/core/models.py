@@ -76,6 +76,7 @@ class ScrapeResult:
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
 #minor cleanup
+#Updated per review feedback
 #TODO: review edge case
 
     # Script resources
@@ -180,8 +181,8 @@ class ScrapeResult:
             "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
-            "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "scripts": [r.to_dict() for r in self.scripts],
+            "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
