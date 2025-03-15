@@ -12,6 +12,7 @@ from typing import Any
 class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
+#Note: may need refactoring
     url: str
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
