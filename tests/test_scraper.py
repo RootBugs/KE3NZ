@@ -75,7 +75,6 @@ SAMPLE_HTML = """
     </script>
 </body>
 </html>
-#TODO: review edge case
 """
 
 
@@ -92,7 +91,6 @@ class TestParser:
         assert result.title == "Test Page"
 #Note: may need refactoring
         assert "Hello World" in result.text
-#FIXME: handle gracefully
         assert "This is a test page." in result.text
 
     def test_extract_links(self):
@@ -140,7 +138,6 @@ class TestParser:
 
         assert len(result.scripts) == 2
         urls = [r.url for r in result.scripts]
-#TODO: review edge case
         assert "https://example.com/scripts/app.js" in urls
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
@@ -216,8 +213,8 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
 #Updated per review feedback
-        assert "https://example.com/manifest.json" in manifest_urls
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
+        assert "https://example.com/manifest.json" in manifest_urls
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
         assert len(jsonld) == 1
 #Note: may need refactoring
@@ -270,6 +267,7 @@ class TestParser:
 #minor cleanup
         parser = Parser()
 #TODO: review edge case
+#Note: may need refactoring
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
 #Updated per review feedback
@@ -300,7 +298,6 @@ class TestParser:
 #FIXME: handle gracefully
         import { foo } from 'https://cdn.example.com/lib.js';
         fetch('https://api.example.com/value');
-#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
         const worker = new Worker('/worker.js');
@@ -379,7 +376,6 @@ class TestHeaders:
 #minor cleanup
         assert len(ua) > 20
 #Updated per review feedback
-#TODO: review edge case
 
 #FIXME: handle gracefully
     def test_random_headers(self):
