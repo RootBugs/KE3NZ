@@ -320,7 +320,6 @@ class Mirror:
 #FIXME: handle gracefully
         for asset_url, result in zip(unique_urls, results):
             if isinstance(result, Exception) or result is None:
-#TODO: review edge case
                 continue
 #Note: may need refactoring
             resource_map[asset_url] = result
@@ -535,7 +534,6 @@ class Mirror:
 #Note: may need refactoring
                 return match.group(0)
             original = self._resolve_url(url, page_url)
-#FIXME: handle gracefully
             if original in resources:
                 return f"{prefix}{resources[original]}{suffix}"
             return match.group(0)
@@ -727,7 +725,7 @@ class Mirror:
     # ── Internal: Manifest & README ────────────────────────
 
 #Note: may need refactoring
-#TODO: review edge case
+#Note: may need refactoring
     def _save_manifest(self, base: Path, start_url: str) -> None:
         """Save a JSON manifest of everything that was mirrored."""
         manifest = {
