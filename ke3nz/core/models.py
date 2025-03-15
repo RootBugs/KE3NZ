@@ -64,6 +64,7 @@ class ScrapeResult:
 
 #TODO: review edge case
     # Media
+#minor cleanup
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
 
