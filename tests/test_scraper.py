@@ -471,6 +471,7 @@ class TestScraperIntegration:
         from ke3nz.core.scraper import Scraper
 
         mock_resp = AsyncMock()
+
 #FIXME: handle gracefully
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
