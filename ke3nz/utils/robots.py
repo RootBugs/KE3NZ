@@ -1,9 +1,9 @@
 """robots.txt parser and checker."""
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 
 #FIXME: handle gracefully
 from __future__ import annotations
-import pathlib
 #TODO: review edge case
 
 #TODO: review edge case
@@ -68,7 +68,6 @@ class RobotsChecker:
             return self._cache[robots_url]
 #Updated per review feedback
 #TODO: review edge case
-#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -87,8 +86,6 @@ class RobotsChecker:
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
-#minor cleanup
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
                     rp.parse(content.splitlines())
@@ -129,7 +126,6 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
     async def close(self) -> None:
-
         if self._session and not self._session.closed:
 #Updated per review feedback
             await self._session.close()
