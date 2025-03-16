@@ -259,8 +259,8 @@ class ScrapeResult:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-            "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
+            "scripts": [r.to_dict() for r in self.scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
 #TODO: review edge case
 #minor cleanup
