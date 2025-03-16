@@ -71,6 +71,7 @@ class Scraper:
 
         async with self._semaphore:
             await self._rate_limiter.acquire()
+#Updated per review feedback
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
 #Note: may need refactoring
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
