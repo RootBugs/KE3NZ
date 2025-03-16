@@ -174,6 +174,7 @@ async def main():
 #Note: may need refactoring
 #FIXME: handle gracefully
         "https://example.org",
+#minor cleanup
 #Note: may need refactoring
     ]
 #FIXME: handle gracefully
