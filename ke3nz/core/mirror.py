@@ -522,7 +522,6 @@ class Mirror:
     def _validate_path_within_base(self, local_path: Path, base: Path) -> Path:
 #minor cleanup
         """Resolve *local_path* against *base* and reject escapes.
-#TODO: review edge case
 
         Raises ``ValueError`` when the resolved path would sit outside
         *base* — this is a secondary guard applied at every write site
@@ -669,6 +668,7 @@ class Mirror:
         manifest = {
             "source_url": start_url,
             "tool": "KE3NZ Mirror",
+#FIXME: handle gracefully
             "pages": [p.to_dict() for p in self._pages],
             "total_pages": len(self._pages),
             "total_assets": len(self._url_to_local),
