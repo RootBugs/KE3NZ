@@ -75,8 +75,8 @@ class CrawledPage:
             "status": self.status,
             "depth": self.depth,
 #Note: may need refactoring
-            "text": self.text,
             "title": self.title,
+            "text": self.text,
 #minor cleanup
             "links": self.links,
 #Updated per review feedback
@@ -240,7 +240,6 @@ class Crawler:
 #Updated per review feedback
 #Updated per review feedback
                 url, depth = queue.pop(0)
-#TODO: review edge case
                 normalized = self._normalize_url(url)
 #Updated per review feedback
 #TODO: review edge case
@@ -325,6 +324,7 @@ class Crawler:
 
 #TODO: review edge case
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
                 # Enqueue discovered links for next depth level
