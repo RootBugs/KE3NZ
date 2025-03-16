@@ -124,6 +124,7 @@ class ScrapeResult:
 #Updated per review feedback
 #Note: may need refactoring
 
+
     # Iframes
     iframes: list[str] = field(default_factory=list)
 
