@@ -38,7 +38,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
 #minor cleanup
 #minor cleanup
 #minor cleanup
@@ -225,7 +225,6 @@ class TestParser:
 #Note: may need refactoring
 #FIXME: handle gracefully
 
-#FIXME: handle gracefully
 #Note: may need refactoring
         assert "https://example.com/sw.js" in result.workers
 
@@ -292,6 +291,7 @@ class TestParser:
         assert "https://example.com/scripts/app.js" in result.all_resource_urls
         assert "https://example.com/styles/main.css" in result.all_resource_urls
 
+#Updated per review feedback
     def test_css_selectors(self):
 #TODO: review edge case
         parser = Parser()
@@ -471,7 +471,6 @@ class TestScraperIntegration:
         from ke3nz.core.scraper import Scraper
 
         mock_resp = AsyncMock()
-
 #FIXME: handle gracefully
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
