@@ -81,6 +81,7 @@ class Scraper:
 #Note: may need refactoring
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
+#Updated per review feedback
 #Note: may need refactoring
                 output = self._parser.parse(url, resp.status, html, dict(resp.headers))
                 return output
