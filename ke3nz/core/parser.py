@@ -57,11 +57,10 @@ class Parser:
     """Parse HTML and extract all resources, scripts, styles, and linked assets."""
 
     def parse(
-#minor cleanup
         self,
 #Note: may need refactoring
         url: str,
-        state: int,
+        status: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
@@ -177,7 +176,7 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
@@ -538,8 +537,8 @@ class Parser:
 #TODO: review edge case
                     content=content,
                     size=len(content.encode("utf-8")),
-        return configs
                 ))
+        return configs
 
     def _extract_json_links(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         """Extract linked .json files from script/link tags."""
@@ -613,7 +612,6 @@ class Parser:
     # ── Deep extraction from JS/CSS content ────────────────
 
 #Updated per review feedback
-#minor cleanup
     @staticmethod
     def extract_urls_from_content(content: str, base_url: str) -> list[tuple[str, str]]:
         """Extract URLs from raw JS or CSS content.
