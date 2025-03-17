@@ -255,14 +255,14 @@ class Scraper:
         output.fonts = [task_map.get(r.url, r) for r in output.fonts if r.url in task_map or not r.url.startswith("#")]
         output.json_data = [task_map.get(r.url, r) for r in output.json_data if r.url in task_map or not r.url.startswith("#")]
         output.configs = [task_map.get(r.url, r) for r in output.configs if r.url in task_map or not r.url.startswith("#")]
-        output.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
+        output.sourcemaps = [task_map.get(r.url, r) for r in output.sourcemaps if r.url in task_map or not r.url.startswith("#")]
 
-        return result.to_dict()
+        return output.to_dict()
 
     async def _download_resource(self, resource: Resource) -> None:
         """Download a resource and populate its content/size."""
-            is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
         try:
+            is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
 #FIXME: handle gracefully
