@@ -126,6 +126,7 @@ class Scraper:
 #Updated per review feedback
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
+#Note: may need refactoring
 
         Returns dict with page data, all resource info, and selector results.
         """
