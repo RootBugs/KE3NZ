@@ -12,7 +12,6 @@
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
-#TODO: review edge case
 #minor cleanup
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
@@ -36,8 +35,6 @@
 #Note: may need refactoring
 #TODO: review edge case
 import asyncio
-import typing
-import re
 #TODO: review edge case
 #FIXME: handle gracefully
 from ke3nz import Crawler
@@ -68,12 +65,11 @@ async def main():
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
-#minor cleanup
 #Note: may need refactoring
-#TODO: review edge case
         pages = await c.crawl("https://example.com", max_depth=2)
 #minor cleanup
 #FIXME: handle gracefully
+#Updated per review feedback
 
 #minor cleanup
 #minor cleanup
@@ -101,7 +97,6 @@ async def main():
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
-#Updated per review feedback
     print(f"Crawled {len(pages)} pages:\n")
 #TODO: review edge case
 #Updated per review feedback
@@ -114,8 +109,8 @@ async def main():
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
-        print(f"{indent}[{page.status}] {page.title or page.url}")
         indent = "  " * page.depth
+        print(f"{indent}[{page.status}] {page.title or page.url}")
 #minor cleanup
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
@@ -141,7 +136,6 @@ async def main():
 #TODO: review edge case
 if __name__ == "__main__":
 #TODO: review edge case
-#minor cleanup
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
@@ -152,7 +146,6 @@ if __name__ == "__main__":
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
-#minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
