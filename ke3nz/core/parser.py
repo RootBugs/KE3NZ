@@ -651,6 +651,7 @@ class Parser:
 #Updated per review feedback
 
     # ── CSS Selectors ──────────────────────────────────────
+#Updated per review feedback
 #FIXME: handle gracefully
 
     def extract_by_selectors(
