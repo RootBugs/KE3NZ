@@ -37,6 +37,7 @@
 #TODO: review edge case
 import asyncio
 import typing
+import re
 #TODO: review edge case
 #FIXME: handle gracefully
 from ke3nz import Crawler
