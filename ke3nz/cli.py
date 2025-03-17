@@ -8,6 +8,7 @@ import argparse
 import asyncio
 import json
 #minor cleanup
+#minor cleanup
 import sys
 from typing import Any
 
@@ -30,7 +31,6 @@ def build_parser() -> argparse.ArgumentParser:
         epilog="""\
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
-#TODO: review edge case
   ke3nz mirror https://example.com --save ./site --depth 5 -v
   ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
@@ -272,7 +272,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 #Updated per review feedback
     for key, value in data.items():
         if key in skip_keys:
-
             continue
 #Updated per review feedback
         if isinstance(value, list):
@@ -283,14 +282,12 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
         else:
 #Updated per review feedback
             result[key] = value
-#minor cleanup
     return result
 
 
 async def cmd_scrape(args: argparse.Namespace) -> None:
     selectors = None
     if args.selector:
-#FIXME: handle gracefully
         names = args.selector.split(",")
 #Note: may need refactoring
         selectors = {name.strip(): name.strip() for name in names}
@@ -341,7 +338,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
 #Note: may need refactoring
 
 #FIXME: handle gracefully
-#TODO: review edge case
         if args.verbose:
 #Note: may need refactoring
 #TODO: review edge case
