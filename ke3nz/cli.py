@@ -272,6 +272,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 #Updated per review feedback
     for key, value in data.items():
         if key in skip_keys:
+
             continue
 #Updated per review feedback
         if isinstance(value, list):
