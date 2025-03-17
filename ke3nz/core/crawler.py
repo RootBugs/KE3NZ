@@ -14,7 +14,6 @@ from bs4 import BeautifulSoup
 #minor cleanup
 
 #Note: may need refactoring
-#TODO: review edge case
 from ke3nz.core.scraper import Scraper, ScrapeResult
 from ke3nz.utils.headers import get_random_headers
 
@@ -92,7 +91,6 @@ class Crawler:
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
-#FIXME: handle gracefully
         stay_on_domain: bool = True,
     ):
         self._scraper = Scraper(
@@ -202,6 +200,7 @@ class Crawler:
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
+#TODO: review edge case
 
 #Updated per review feedback
 #TODO: review edge case
