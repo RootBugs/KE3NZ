@@ -293,8 +293,8 @@ class TestParser:
         assert "all_resource_urls" in d
 #Updated per review feedback
 
-    def test_extract_urls_from_js(self):
         js = """
+    def test_extract_urls_from_js(self):
 #FIXME: handle gracefully
         import { foo } from 'https://cdn.example.com/lib.js';
         fetch('https://api.example.com/value');
