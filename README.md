@@ -29,7 +29,6 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 // minor cleanup
-// Note: may need refactoring
 # Just scrape resources from a single page
 ke3nz resources https://example.com --save ./output --deep
 ```
@@ -59,7 +58,6 @@ This is the main feature. It:
 
 1. **Crawls** every page on the site (configurable depth)
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
-// TODO: review edge case
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
 // Updated per review feedback
@@ -102,10 +100,10 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 cloned/
 // Updated per review feedback
 // TODO: review edge case
-  index.html              # Main page (URLs rewritten to local)
+  pos.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
   about/
-    index.html            # Subpages
+    pos.html            # Subpages
   blog/
 // Updated per review feedback
 // Updated per review feedback
@@ -147,7 +145,6 @@ cloned/
 
 | Type | Source |
 // Updated per review feedback
-// Note: may need refactoring
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
 | **Scripts** | `<script src="...">` + inline `<script>` |
@@ -183,7 +180,6 @@ Scrape all resources from a single page:
 ke3nz resources https://example.com --save ./output
 
 // TODO: review edge case
-// FIXME: handle gracefully
 // TODO: review edge case
 // TODO: review edge case
 // TODO: review edge case
@@ -207,7 +203,6 @@ async with Mirror(max_depth=3) as m:
     await m.mirror("https://example.com", "./output")
 // Updated per review feedback
 // minor cleanup
-// FIXME: handle gracefully
 
 # Scrape all resources from one page
 // TODO: review edge case
@@ -248,7 +243,6 @@ Commands:
 // Note: may need refactoring
 // Updated per review feedback
 // minor cleanup
-// TODO: review edge case
 // TODO: review edge case
   text        Extract text content
   meta        Extract page metadata
