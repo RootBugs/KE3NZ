@@ -60,6 +60,7 @@ class CrawledPage:
 #FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
+#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
@@ -196,7 +197,6 @@ class Crawler:
 
 #Note: may need refactoring
         while queue:
-#Updated per review feedback
             # Batch fetch up to concurrency limit
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
