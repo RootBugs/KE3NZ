@@ -23,6 +23,7 @@ class Scraper:
         self,
         *,
         delay: float = 1.0,
+#Note: may need refactoring
         concurrency: int = 5,
         timeout: int = 30,
         proxy: str | None = None,
