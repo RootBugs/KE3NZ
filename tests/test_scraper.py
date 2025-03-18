@@ -346,6 +346,7 @@ class TestExporter:
 #TODO: review edge case
 class TestHeaders:
     def test_random_ua(self):
+#FIXME: handle gracefully
         ua = get_random_ua()
         assert isinstance(ua, str)
 #minor cleanup
