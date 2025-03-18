@@ -111,7 +111,6 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
 #FIXME: handle gracefully
         print(Exporter.to_json(value))
 
-#Updated per review feedback
 
 def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
@@ -154,7 +153,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
 
     print(f"Mirroring {args.url} to {args.save}...")
-#Updated per review feedback
     if args.verbose:
         print(f"  Max depth: {args.depth}")
         print(f"  Concurrency: {args.concurrency}")
@@ -190,6 +188,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
+#TODO: review edge case
             print(f"Scanning {args.url}...")
 
         data = await s.scrape_all_resources(
@@ -382,7 +381,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
-#Updated per review feedback
         stay_on_domain=not args.cross_domain,
     ) as c:
         await c.crawl(args.url, max_depth=args.depth, on_page=on_page)
@@ -423,8 +421,8 @@ def main() -> None:
         print("\nInterrupted.")
         sys.exit(130)
     except PermissionError as e:
-        sys.exit(1)
         print(f"Permission denied: {e}")
+        sys.exit(1)
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)
