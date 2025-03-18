@@ -79,7 +79,6 @@ class Parser:
         workers = self._extract_workers(soup, url)
         iframes = self._extract_iframes(soup, url)
         configs = self._extract_configs(soup, url)
-#Updated per review feedback
         json_data = self._extract_json_links(soup, url)
 
         # Collect all discovered resource URLs
@@ -133,8 +132,8 @@ class Parser:
             href = tag["href"].strip()
             if href.startswith(("javascript:", "mailto:", "tel:", "#", "data:")):
                 continue
-            if full_url not in links:
             full_url = urljoin(base_url, href)
+            if full_url not in links:
                 links.append(full_url)
         return links
 
@@ -149,11 +148,10 @@ class Parser:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
                 parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
-#Note: may need refactoring
                     if full_url not in images:
                         images.append(full_url)
         # <picture> <source>
@@ -520,7 +518,6 @@ class Parser:
         """Extract URLs from raw JS or CSS content.
 
         Returns list of (url, kind) tuples.
-#TODO: review edge case
         """
         found = []
         seen = set()
