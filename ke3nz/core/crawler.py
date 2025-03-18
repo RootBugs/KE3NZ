@@ -27,6 +27,7 @@ class CrawledPage:
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
+#TODO: review edge case
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -36,7 +37,6 @@ class CrawledPage:
             "depth": self.depth,
             "title": self.title,
             "text": self.text,
-#TODO: review edge case
             "links": self.links,
             "images": self.images,
             "meta": self.meta,
