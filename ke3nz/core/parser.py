@@ -433,8 +433,8 @@ class Parser:
 #Note: may need refactoring
     # ── Audio ──────────────────────────────────────────────
 
-    def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         audios = []
+    def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         for tag in soup.find_all("audio", src=True):
 #Note: may need refactoring
             full_url = urljoin(base_url, tag["src"].strip())
