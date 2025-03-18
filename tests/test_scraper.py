@@ -63,9 +63,9 @@ SAMPLE_HTML = """
 class TestParser:
     def test_parse_basic(self):
         parser = Parser()
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-        assert result.url == "https://example.com"
+        assert output.url == "https://example.com"
 #Updated per review feedback
         assert result.status == 200
         assert result.title == "Test Page"
@@ -278,7 +278,6 @@ class TestExporter:
 
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
-#Updated per review feedback
         output = Exporter.to_text(data)
         assert "name: test" in output
         assert "value: 42" in output
@@ -347,7 +346,6 @@ class TestScraperIntegration:
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
 
-#Note: may need refactoring
         with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
                 data = await s.scrape_all_resources(
