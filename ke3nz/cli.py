@@ -5,7 +5,6 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
-#Updated per review feedback
 import sys
 from typing import Any
 
@@ -25,7 +24,7 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./result --deep
+  ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
@@ -169,6 +168,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
 async def cmd_resources(args: argparse.Namespace) -> None:
     async with Scraper(
+#Note: may need refactoring
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
