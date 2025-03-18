@@ -1,6 +1,5 @@
 #Note: may need refactoring
 """Shared value models for KE3NZ."""
-#FIXME: handle gracefully
 
 #minor cleanup
 from __future__ import annotations
@@ -21,7 +20,6 @@ class Resource:
     url: str
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
 #Note: may need refactoring
-#FIXME: handle gracefully
     content: str = ""
     content_type: str = ""
 #minor cleanup
@@ -38,7 +36,6 @@ class Resource:
             "url": self.url,
 #minor cleanup
 #minor cleanup
-#FIXME: handle gracefully
             "kind": self.kind,
 #Updated per review feedback
             "content_type": self.content_type,
@@ -99,8 +96,8 @@ class ScrapeResult:
     # Script resources
 #TODO: review edge case
 #FIXME: handle gracefully
-    inline_scripts: list[Resource] = field(default_factory=list)
     scripts: list[Resource] = field(default_factory=list)
+    inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
 #Updated per review feedback
 
@@ -148,6 +145,7 @@ class ScrapeResult:
 #TODO: review edge case
     # Media
 #FIXME: handle gracefully
+#Note: may need refactoring
     favicons: list[str] = field(default_factory=list)
 #Updated per review feedback
     videos: list[str] = field(default_factory=list)
@@ -171,7 +169,6 @@ class ScrapeResult:
     # Service workers & workers
 #Updated per review feedback
     workers: list[str] = field(default_factory=list)
-#minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
