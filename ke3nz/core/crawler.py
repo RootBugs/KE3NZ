@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import asyncio
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 from dataclasses import dataclass, field
 from typing import Any
 #minor cleanup
@@ -35,7 +36,6 @@ class CrawledPage:
 #Note: may need refactoring
 
     url: str
-#TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
