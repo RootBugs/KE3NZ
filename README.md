@@ -176,8 +176,8 @@ Shared Options:
   --proxy           HTTP proxy URL
   --no-robots       Ignore robots.txt
   --user-agent      Custom user agent
-  --timeout         Request timeout (default: 30s)
   --verbose, -v     Verbose output
+  --timeout         Request timeout (default: 30s)
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
 // Note: may need refactoring
