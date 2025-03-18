@@ -10,7 +10,6 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 from urllib.parse import urljoin, urlparse, urlunparse
-#TODO: review edge case
 
 import aiohttp
 from bs4 import BeautifulSoup
@@ -38,7 +37,6 @@ class MirroredPage:
             "url": self.url,
             "local_path": self.local_path,
             "status": self.status,
-
             "title": self.title,
             "resources": self.resources,
         }
@@ -251,7 +249,7 @@ class Mirror:
         for aud_url in result.audios:
             assets_to_download.append((aud_url, "media"))
         for favicon_url in result.favicons:
-            if favicon_url.startswith("value:"):
+            if favicon_url.startswith("data:"):
                 continue
             assets_to_download.append((favicon_url, "images"))
 
@@ -485,8 +483,8 @@ class Mirror:
         were to produce a traversal path, it would never reach disk.
         """
         resolved = (base / local_path).resolve()
-            resolved.relative_to(base.resolve())
         try:
+            resolved.relative_to(base.resolve())
         except ValueError:
             raise ValueError(
                 f"Path traversal detected: {local_path} resolves outside "
@@ -541,7 +539,6 @@ class Mirror:
         content_type: str = "",
     ) -> str:
         """Convert an asset URL to a local path relative to the mirror root.
-#TODO: review edge case
 
         The returned path is sanitized to prevent directory traversal:
         ``..`` segments are stripped and the path is normalized.
@@ -569,7 +566,6 @@ class Mirror:
 
     def _guess_extension(self, content_type: str, kind: str) -> str:
         """Guess file extension from content type and kind."""
-
         ct = content_type.split(";")[0].strip().lower()
         mime_map = {
             "application/javascript": ".js",
@@ -627,6 +623,7 @@ class Mirror:
             f"  - [{p.title or p.url}]({p.local_path}) ({len(p.resources)} assets)"
             for p in self._pages
         )
+#minor cleanup
         readme = f"""# Mirrored Website
 
 > Mirrored from: {start_url}
@@ -646,7 +643,6 @@ class Mirror:
 ├── ke3nz-manifest.json  (resource index)
 ├── images/              (downloaded images)
 ├── fonts/               (downloaded fonts)
-#Updated per review feedback
 ├── assets/
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
