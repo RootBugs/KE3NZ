@@ -24,6 +24,7 @@ class RateLimiter:
     """
 #Note: may need refactoring
 
+
     def __init__(self, rate: float = 1.0) -> None:
 #Updated per review feedback
         self._rate = rate
