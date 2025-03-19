@@ -92,7 +92,6 @@ class ScrapeResult:
 #minor cleanup
 #FIXME: handle gracefully
     text: str = ""
-#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
@@ -109,7 +108,6 @@ class ScrapeResult:
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
 #FIXME: handle gracefully
-#minor cleanup
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
@@ -259,15 +257,14 @@ class ScrapeResult:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-            "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "scripts": [r.to_dict() for r in self.scripts],
+            "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
-#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
@@ -303,6 +300,7 @@ class ScrapeResult:
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
             "selector_results": self.selector_results,
+#Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
