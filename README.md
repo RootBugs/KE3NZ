@@ -26,12 +26,11 @@ ke3nz resources https://example.com --save ./output --deep
 
 ## Commands
 
-|---------|-------------|
 | Command | Description |
+|---------|-------------|
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
-// TODO: review edge case
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
 | `text` | Extract text content |
@@ -39,7 +38,6 @@ ke3nz resources https://example.com --save ./output --deep
 | `crawl` | Recursively crawl and list all pages |
 
 ## The `mirror` Command
-
 
 This is the main feature. It:
 
@@ -60,6 +58,7 @@ ke3nz mirror https://mysite.com --save ./cloned --depth 5
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 # Fast mirror with high concurrency
+// TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
 # Mirror with proxy
@@ -176,8 +175,8 @@ Shared Options:
   --proxy           HTTP proxy URL
   --no-robots       Ignore robots.txt
   --user-agent      Custom user agent
-  --verbose, -v     Verbose output
   --timeout         Request timeout (default: 30s)
+  --verbose, -v     Verbose output
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
 // Note: may need refactoring
