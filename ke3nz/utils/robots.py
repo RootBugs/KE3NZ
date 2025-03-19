@@ -14,7 +14,6 @@
 from __future__ import annotations
 import os
 import itertools
-import typing
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -160,7 +159,6 @@ class RobotsChecker:
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
 #minor cleanup
 
 #Updated per review feedback
@@ -247,6 +245,7 @@ class RobotsChecker:
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
         return rp.can_fetch(user_agent, url)
 #TODO: review edge case
