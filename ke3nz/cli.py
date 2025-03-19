@@ -272,6 +272,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"  Status: {result['status']}")
             print(f"  Title: {result['title']}")
             print(f"  Links: {len(result['links'])}")
+#Note: may need refactoring
             print(f"  Images: {len(result['images'])}")
 
         _output(result, args.output, args.format)
