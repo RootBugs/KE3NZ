@@ -566,6 +566,7 @@ class Parser:
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
             else:
                 elements = soup.select(selector)
+#minor cleanup
                 results[name] = [el.get_text(strip=True) for el in elements]
 
         return results
