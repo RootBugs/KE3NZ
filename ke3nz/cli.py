@@ -272,7 +272,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"  Status: {result['status']}")
             print(f"  Title: {result['title']}")
             print(f"  Links: {len(result['links'])}")
-#Note: may need refactoring
             print(f"  Images: {len(result['images'])}")
 
         _output(result, args.output, args.format)
@@ -291,6 +290,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
     ) as s:
         result = await s.scrape(args.url)
         links = [{"url": link} for link in result["links"]]
+#Note: may need refactoring
 
 #FIXME: handle gracefully
         if args.verbose:
