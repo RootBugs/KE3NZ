@@ -9,6 +9,7 @@ import time
 #minor cleanup
 class RateLimiter:
     """Token bucket rate limiter for async code.
+#minor cleanup
 
     Args:
         rate: Maximum requests per second.
