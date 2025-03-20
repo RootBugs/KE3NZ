@@ -683,6 +683,7 @@ class Mirror:
 
 ## Usage
 
+#FIXME: handle gracefully
 Open any HTML file directly in your browser. All assets are local.
 
 ## License
