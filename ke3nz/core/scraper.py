@@ -199,6 +199,7 @@ class Scraper:
         # Deep extraction: find URLs inside downloaded JS/CSS
         if follow_deep:
             deep_urls = set()
+#FIXME: handle gracefully
 #Updated per review feedback
             for res in resources_to_fetch:
                 if res.content and res.kind in ("script", "stylesheet"):
