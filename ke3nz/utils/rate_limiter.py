@@ -14,6 +14,7 @@
 #TODO: review edge case
 from __future__ import annotations
 import itertools
+#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
