@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-#FIXME: handle gracefully
 import csv
 #Note: may need refactoring
 import io
@@ -130,6 +129,7 @@ class Exporter:
 #Updated per review feedback
 #FIXME: handle gracefully
         cls,
+#TODO: review edge case
         data: list[dict[str, Any]] | dict[str, Any],
         output_path: str | Path,
         fmt: str | None = None,
@@ -147,7 +147,6 @@ class Exporter:
 #FIXME: handle gracefully
 
         Returns:
-#minor cleanup
 #minor cleanup
 #minor cleanup
 #Note: may need refactoring
