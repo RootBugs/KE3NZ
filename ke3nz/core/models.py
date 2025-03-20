@@ -1,4 +1,5 @@
 """Shared data models for KE3NZ."""
+#TODO: review edge case
 
 from __future__ import annotations
 
