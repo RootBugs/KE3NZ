@@ -3,7 +3,6 @@
 import asyncio
 from ke3nz import Scraper
 import random
-import re
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -16,7 +15,6 @@ import re
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-#TODO: review edge case
 async def main():
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -26,7 +24,6 @@ async def main():
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
-
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
@@ -60,6 +57,7 @@ async def main():
 #Note: may need refactoring
 #Updated per review feedback
         "https://example.com",
+#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
         "https://example.org",
