@@ -4,7 +4,6 @@
 #minor cleanup
 #Note: may need refactoring
 from __future__ import annotations
-import json
 
 import random
 #TODO: review edge case
@@ -54,6 +53,7 @@ USER_AGENTS = [
 #TODO: review edge case
 #Updated per review feedback
 
+#minor cleanup
 
 def get_random_ua() -> str:
     """Return a random user-agent string."""
