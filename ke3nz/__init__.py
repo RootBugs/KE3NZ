@@ -61,7 +61,6 @@ from ke3nz.core.exporter import Exporter
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
@@ -183,6 +182,7 @@ __all__ = [
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
