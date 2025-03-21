@@ -99,6 +99,7 @@ class Parser:
             images=images,
             scripts=scripts,
             stylesheets=stylesheets,
+#TODO: review edge case
             fonts=fonts,
             preloads=preloads,
 #FIXME: handle gracefully
