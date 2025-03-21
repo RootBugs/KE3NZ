@@ -90,6 +90,7 @@ USER_AGENTS = [
     # Firefox on Windows
 #TODO: review edge case
 #minor cleanup
+#minor cleanup
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
@@ -227,7 +228,6 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
-
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
