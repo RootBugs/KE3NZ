@@ -213,6 +213,7 @@ class Parser:
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
         meta = {}
         for tag in soup.find_all("meta"):
+#Note: may need refactoring
             name = tag.get("name") or tag.get("property", "")
             content = tag.get("content", "")
             if name and content:
@@ -651,7 +652,6 @@ class Parser:
 #Updated per review feedback
 
     # ── CSS Selectors ──────────────────────────────────────
-#Updated per review feedback
 #FIXME: handle gracefully
 
     def extract_by_selectors(
