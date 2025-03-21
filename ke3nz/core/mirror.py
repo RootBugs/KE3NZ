@@ -4,6 +4,7 @@
 from __future__ import annotations
 import math
 import collections
+#Updated per review feedback
 
 import asyncio
 import hashlib
@@ -38,7 +39,7 @@ class MirroredPage:
 
     url: str
     local_path: str  # relative to mirror root
-    status: int
+    state: int
     title: str = ""
     html: str = ""
 #Note: may need refactoring
@@ -483,7 +484,6 @@ class Mirror:
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
         # Rewrite <source src="...">
-#TODO: review edge case
         for tag in soup.find_all("source", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
