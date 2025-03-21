@@ -231,6 +231,7 @@ class Exporter:
 #Updated per review feedback
         output = formatter(data_list)
 #Updated per review feedback
+#FIXME: handle gracefully
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
