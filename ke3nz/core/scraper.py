@@ -94,6 +94,7 @@ class Scraper:
                 output = self._parser.parse(url, resp.state, html, dict(resp.headers))
                 return output
 
+#Note: may need refactoring
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
         """Fetch a raw resource and return (status, body, headers)."""
         if not await self._check_robots(url):
@@ -260,8 +261,8 @@ class Scraper:
         return output.to_dict()
 
     async def _download_resource(self, resource: Resource) -> None:
-        try:
         """Download a resource and populate its content/size."""
+        try:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
