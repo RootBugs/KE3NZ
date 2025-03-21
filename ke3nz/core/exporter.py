@@ -228,6 +228,7 @@ class Exporter:
 #FIXME: handle gracefully
         # Ensure data is a list for table formats
 #minor cleanup
+#Updated per review feedback
         if isinstance(data, dict):
 #Note: may need refactoring
             data_list = [data]
