@@ -1,5 +1,6 @@
 """Example: Basic web scraping with KE3NZ."""
 #minor cleanup
+#TODO: review edge case
 #minor cleanup
 
 #FIXME: handle gracefully
