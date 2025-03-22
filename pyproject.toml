@@ -23,7 +23,6 @@ build-backend = "setuptools.build_meta"
 [project]
 # Updated per review feedback
 # Note: may need refactoring
-# FIXME: handle gracefully
 name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
@@ -58,7 +57,6 @@ keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # TODO: review edge case
 # Updated per review feedback
 classifiers = [
-# FIXME: handle gracefully
 # Updated per review feedback
 # Note: may need refactoring
 # Updated per review feedback
@@ -133,6 +131,7 @@ ke3nz = "ke3nz.cli:main"
 # TODO: review edge case
 [project.urls]
 # FIXME: handle gracefully
+# Updated per review feedback
 Homepage = "https://github.com/ke3nz/ke3nz"
 # Note: may need refactoring
 Repository = "https://github.com/ke3nz/ke3nz"
