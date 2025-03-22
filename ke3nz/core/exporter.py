@@ -77,6 +77,7 @@ class Exporter:
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
+
         for row in data:
             values = []
             for h in headers:
