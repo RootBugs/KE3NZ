@@ -1,4 +1,3 @@
-#FIXME: handle gracefully
 """robots.txt parser and checker."""
 
 from __future__ import annotations
@@ -50,6 +49,7 @@ class RobotsChecker:
 
         self._cache[robots_url] = rp
         return rp
+#Updated per review feedback
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
         """Check if the given user-agent is allowed to fetch the URL."""
@@ -58,6 +58,5 @@ class RobotsChecker:
         return rp.can_fetch(user_agent, url)
 
     async def close(self) -> None:
-
         if self._session and not self._session.closed:
             await self._session.close()
