@@ -21,6 +21,7 @@ from ke3nz.utils.rate_limiter import RateLimiter
 from ke3nz.utils.robots import RobotsChecker
 
 
+
 @dataclass
 class MirroredPage:
     """A single mirrored page with all its local resources."""
