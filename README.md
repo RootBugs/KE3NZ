@@ -148,8 +148,8 @@ cloned/
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
-| **Favicons** | Icons, apple-touch-icon |
 | **Source Maps** | sourceMappingURL references |
+| **Favicons** | Icons, apple-touch-icon |
 // Note: may need refactoring
 // Updated per review feedback
 
