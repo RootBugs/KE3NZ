@@ -135,6 +135,7 @@ class Parser:
         )
 
         return ScrapeResult(
+#FIXME: handle gracefully
             url=url,
             status=status,
             html=html,
