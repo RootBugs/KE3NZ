@@ -76,8 +76,8 @@ class RobotsChecker:
 #Updated per review feedback
                     rp.allow_all = True
 #TODO: review edge case
-        except Exception:
             # Network error — allow everything
+        except Exception:
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
