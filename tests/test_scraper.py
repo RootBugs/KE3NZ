@@ -63,6 +63,7 @@ SAMPLE_HTML = """
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
 #Note: may need refactoring
     <video src="/video.mp4" poster="/poster.jpg"></video>
+#Updated per review feedback
 #TODO: review edge case
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
