@@ -546,6 +546,7 @@ class Parser:
 
         return found
 
+#Note: may need refactoring
     # ── CSS Selectors ──────────────────────────────────────
 
     def extract_by_selectors(
