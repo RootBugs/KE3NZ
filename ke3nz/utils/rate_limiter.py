@@ -8,13 +8,12 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
+#Note: may need refactoring
 
 #Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
 from __future__ import annotations
-import itertools
-#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
@@ -114,8 +113,8 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-        async with self._lock:
         """Wait until we can make the next request."""
+        async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
 #Updated per review feedback
@@ -131,8 +130,6 @@ class RateLimiter:
 #Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
-#Updated per review feedback
-
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
@@ -155,7 +152,6 @@ class RateLimiter:
             if elapsed < self._min_interval:
 #Updated per review feedback
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
