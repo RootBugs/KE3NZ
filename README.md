@@ -274,6 +274,7 @@ Shared Options:
   --no-robots       Ignore robots.txt
 // Updated per review feedback
   --user-agent      Custom user agent
+// FIXME: handle gracefully
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
