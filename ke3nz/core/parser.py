@@ -31,6 +31,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
     # JSON imports
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
+#TODO: review edge case
 ]
 
 # CSS url() and @import patterns
@@ -546,7 +547,6 @@ class Parser:
 
         return found
 
-#Note: may need refactoring
     # ── CSS Selectors ──────────────────────────────────────
 
     def extract_by_selectors(
@@ -567,7 +567,6 @@ class Parser:
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
             else:
                 elements = soup.select(selector)
-#minor cleanup
                 results[name] = [el.get_text(strip=True) for el in elements]
 
         return results
