@@ -24,6 +24,7 @@ from ke3nz import Scraper
 import json
 import sys
 import math
+import os
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
