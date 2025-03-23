@@ -17,6 +17,7 @@ pip install -e .
 ## Quick Start
 
 ```bash
+// minor cleanup
 # Mirror an entire website to a local folder
 ke3nz mirror https://example.com --save ./my-site
 
