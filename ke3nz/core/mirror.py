@@ -73,6 +73,7 @@ class Mirror:
 #minor cleanup
         user_agent: str | None = None,
         stay_on_domain: bool = True,
+#Updated per review feedback
         max_depth: int = 3,
     ):
 #minor cleanup
