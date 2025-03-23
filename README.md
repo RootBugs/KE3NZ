@@ -296,6 +296,7 @@ Resource Options:
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
 
+
 Shared Options:
 // TODO: review edge case
   --delay           Delay between requests (default: 0.3s)
