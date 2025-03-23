@@ -490,6 +490,7 @@ class Mirror:
 
 #minor cleanup
         # fetch('...') and import('...')
+#TODO: review edge case
         js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
         # .src = '...' and .href = '...'
         js = re.sub(r"""(\.(?:src|href)\s*=\s*['"])([^'"]+)(['"])""", _replace, js)
