@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-#Updated per review feedback
 import json
 
 import re
@@ -135,7 +134,6 @@ class Parser:
         )
 
         return ScrapeResult(
-#FIXME: handle gracefully
             url=url,
             status=status,
             html=html,
@@ -205,7 +203,7 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
@@ -636,7 +634,6 @@ class Parser:
 #TODO: review edge case
     # ── URL Collection ─────────────────────────────────────
 
-#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
