@@ -111,6 +111,7 @@ class RobotsChecker:
         parsed = urlparse(url)
 
 #Note: may need refactoring
+#Updated per review feedback
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #minor cleanup
