@@ -7,6 +7,7 @@
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
+#Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
@@ -23,7 +24,6 @@ import random
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
-#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
@@ -77,7 +77,6 @@ USER_AGENTS = [
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
-#minor cleanup
 #Note: may need refactoring
 #minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
@@ -203,7 +202,6 @@ def get_random_headers() -> dict[str, str]:
         "Cache-Control": "max-age=0",
 #Note: may need refactoring
 #Updated per review feedback
-#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
