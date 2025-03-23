@@ -223,6 +223,7 @@ class Exporter:
                 ".txt": "text",
             }
 #FIXME: handle gracefully
+#Updated per review feedback
             fmt = fmt_map.get(ext, "json")
 
 #FIXME: handle gracefully
