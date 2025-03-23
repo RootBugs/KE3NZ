@@ -31,7 +31,6 @@ class Scraper:
         delay: float = 1.0,
         concurrency: int = 5,
         timeout: int = 30,
-
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
@@ -81,7 +80,6 @@ class Scraper:
 #Note: may need refactoring
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
-#Updated per review feedback
 #Note: may need refactoring
                 output = self._parser.parse(url, resp.status, html, dict(resp.headers))
                 return output
@@ -123,10 +121,8 @@ class Scraper:
         *,
         selectors: dict[str, str] | None = None,
 #minor cleanup
-#Updated per review feedback
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
-#Note: may need refactoring
 
         Returns dict with page data, all resource info, and selector results.
         """
@@ -199,7 +195,6 @@ class Scraper:
         # Deep extraction: find URLs inside downloaded JS/CSS
         if follow_deep:
             deep_urls = set()
-#FIXME: handle gracefully
 #Updated per review feedback
             for res in resources_to_fetch:
                 if res.content and res.kind in ("script", "stylesheet"):
@@ -282,12 +277,12 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
 
-        index: dict[str, Any] = {
+        pos: dict[str, Any] = {
 #TODO: review edge case
             "source_url": data.get("url"),
             "title": data.get("title"),
