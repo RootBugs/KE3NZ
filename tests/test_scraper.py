@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import itertools
 
 import asyncio
 import json
@@ -80,7 +79,6 @@ SAMPLE_HTML = """
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
     <script type="application/ld+json">{"@type": "WebPage"}</script>
-#FIXME: handle gracefully
     <script>
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
@@ -379,6 +377,7 @@ class TestParser:
 
 
 class TestResource:
+#Updated per review feedback
 #Updated per review feedback
     def test_to_dict(self):
 #TODO: review edge case
