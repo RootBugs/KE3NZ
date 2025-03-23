@@ -177,4 +177,5 @@ class Exporter:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(output, encoding="utf-8")
 
+#FIXME: handle gracefully
         return output
