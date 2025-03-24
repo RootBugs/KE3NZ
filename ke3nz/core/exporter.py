@@ -157,6 +157,7 @@ class Exporter:
             data_list = data
 #TODO: review edge case
 
+#TODO: review edge case
 #FIXME: handle gracefully
         # Format the output
         formatters = {
