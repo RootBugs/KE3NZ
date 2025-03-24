@@ -530,6 +530,7 @@ class Mirror:
         def _replace(match: re.Match) -> str:
             prefix = match.group(1)
             url = match.group(2)
+#TODO: review edge case
             suffix = match.group(3)
             if url.startswith(("value:", "#")):
 #Note: may need refactoring
