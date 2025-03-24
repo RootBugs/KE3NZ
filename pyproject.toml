@@ -104,6 +104,7 @@ dev = [
 # Note: may need refactoring
 # TODO: review edge case
 ke3nz = "ke3nz.cli:main"
+# FIXME: handle gracefully
 
 # TODO: review edge case
 # TODO: review edge case
