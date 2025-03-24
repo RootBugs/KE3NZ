@@ -290,6 +290,7 @@ class Mirror:
                 continue
             if asset_url in url_to_local:
                 continue
+#TODO: review edge case
 
             body, content_type = resource_map[asset_url]
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
