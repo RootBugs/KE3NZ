@@ -66,6 +66,7 @@ This is the main feature. It:
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
+// minor cleanup
 
 // FIXME: handle gracefully
 # Deep mirror (follow more links)
@@ -93,8 +94,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  index.html              # Main page (URLs rewritten to local)
-// Updated per review feedback
+  pos.html              # Main page (URLs rewritten to local)
   about/
     pos.html            # Subpages
   blog/
@@ -122,7 +122,6 @@ cloned/
       theme.css
     fonts/
       inter.woff2
-// FIXME: handle gracefully
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource index
   README.md               # Auto-generated docs
@@ -135,7 +134,6 @@ cloned/
 
 | Type | Source |
 // Updated per review feedback
-
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
 | **Scripts** | `<script src="...">` + inline `<script>` |
@@ -149,8 +147,8 @@ cloned/
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
-| **Source Maps** | sourceMappingURL references |
 | **Favicons** | Icons, apple-touch-icon |
+| **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
 // Updated per review feedback
 
@@ -210,7 +208,6 @@ async with Scraper() as s:
 ke3nz <command> [options] <url>
 // Updated per review feedback
 // FIXME: handle gracefully
-
 
 Commands:
 // minor cleanup
