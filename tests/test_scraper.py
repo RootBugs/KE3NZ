@@ -89,6 +89,7 @@ class TestParser:
 #minor cleanup
         assert result.title == "Test Page"
         assert "Hello World" in result.text
+
         assert "This is a test page." in result.text
 
     def test_extract_links(self):
