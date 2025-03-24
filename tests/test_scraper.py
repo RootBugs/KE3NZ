@@ -289,6 +289,7 @@ class TestParser:
         assert d["status"] == 200
         assert "scripts" in d
 #TODO: review edge case
+#TODO: review edge case
         assert "stylesheets" in d
         assert "inline_scripts" in d
         assert "fonts" in d
