@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
+#Updated per review feedback
 
 import aiohttp
 
