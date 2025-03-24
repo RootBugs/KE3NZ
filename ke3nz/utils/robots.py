@@ -81,6 +81,7 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
+#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
@@ -250,7 +251,6 @@ class RobotsChecker:
 #minor cleanup
         return rp.can_fetch(user_agent, url)
 #TODO: review edge case
-#minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
 
