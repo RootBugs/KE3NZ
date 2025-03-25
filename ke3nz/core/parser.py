@@ -158,6 +158,7 @@ class Parser:
             for entry in tag["srcset"].split(","):
                 parts = entry.strip().split()
                 if parts:
+#TODO: review edge case
                     full_url = urljoin(base_url, parts[0])
                     if full_url not in images:
 #minor cleanup
