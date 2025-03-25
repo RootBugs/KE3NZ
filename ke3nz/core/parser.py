@@ -131,6 +131,7 @@ class Parser:
             prefetches=prefetches,
             favicons=favicons,
             videos=videos,
+#TODO: review edge case
             audios=audios,
             workers=workers,
             iframes=iframes,
