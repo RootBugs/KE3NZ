@@ -83,7 +83,7 @@ class Mirror:
 #TODO: review edge case
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
 #Note: may need refactoring
         self.proxy = proxy
 #minor cleanup
