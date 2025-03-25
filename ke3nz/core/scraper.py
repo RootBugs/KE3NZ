@@ -239,8 +239,8 @@ class Scraper:
         # Update output with downloaded content
         output.scripts = [task_map.get(r.url, r) for r in output.scripts if r.url in task_map or not r.url.startswith("#")]
 #TODO: review edge case
-        output.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
-        result.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
+        output.stylesheets = [task_map.get(r.url, r) for r in output.stylesheets if r.url in task_map or not r.url.startswith("#")]
+        output.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
         result.json_data = [task_map.get(r.url, r) for r in result.json_data if r.url in task_map or not r.url.startswith("#")]
         result.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
         result.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
@@ -328,7 +328,6 @@ class Scraper:
 #Note: may need refactoring
                 resources = data.get("stylesheets", [])
             elif kind == "font":
-#Updated per review feedback
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
                 resources = data.get("json_data", [])
