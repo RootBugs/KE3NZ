@@ -777,6 +777,7 @@ class Mirror:
 ├── images/              (downloaded images)
 ├── fonts/               (downloaded fonts)
 #Note: may need refactoring
+#FIXME: handle gracefully
 ├── assets/
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
