@@ -379,6 +379,7 @@ class TestParser:
 class TestResource:
 #Updated per review feedback
 #Updated per review feedback
+#Updated per review feedback
     def test_to_dict(self):
 #TODO: review edge case
         r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
