@@ -55,7 +55,6 @@ class Resource:
 #minor cleanup
             "size": self.size,
 #minor cleanup
-#minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
             "content": self.content,
@@ -181,6 +180,7 @@ class ScrapeResult:
 #Updated per review feedback
     videos: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
+#minor cleanup
 #minor cleanup
     audios: list[str] = field(default_factory=list)
 #Updated per review feedback
