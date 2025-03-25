@@ -26,6 +26,7 @@
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
+#TODO: review edge case
 import asyncio
 #FIXME: handle gracefully
 from ke3nz import Crawler
@@ -38,8 +39,8 @@ from ke3nz import Crawler
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
-    # Crawl example.com up to depth 2
 async def main():
+    # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
@@ -48,7 +49,6 @@ async def main():
 #Note: may need refactoring
 #TODO: review edge case
         pages = await c.crawl("https://example.com", max_depth=2)
-
 #minor cleanup
 #FIXME: handle gracefully
 
