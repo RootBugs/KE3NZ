@@ -6,7 +6,6 @@
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -15,7 +14,6 @@
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
-#Updated per review feedback
 #minor cleanup
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
@@ -46,7 +44,6 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
-import random
 #TODO: review edge case
 #FIXME: handle gracefully
 from ke3nz import Crawler
@@ -118,7 +115,6 @@ async def main():
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -127,7 +123,6 @@ async def main():
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
-#Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -150,7 +145,6 @@ async def main():
 #Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 
@@ -167,7 +161,6 @@ async def main():
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
@@ -190,7 +183,7 @@ if __name__ == "__main__":
 #TODO: review edge case
     asyncio.run(main())
 #Note: may need refactoring
-#Note: may need refactoring
+#TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
