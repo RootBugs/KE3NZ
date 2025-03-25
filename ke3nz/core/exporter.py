@@ -68,11 +68,11 @@ class Exporter:
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
-            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
 #TODO: review edge case
 #minor cleanup
             writer.writeheader()
@@ -192,7 +192,6 @@ class Exporter:
 #FIXME: handle gracefully
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
-#FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 
@@ -215,7 +214,6 @@ class Exporter:
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
-#TODO: review edge case
                 ".csv": "csv",
 #minor cleanup
                 ".md": "markdown",
@@ -223,13 +221,11 @@ class Exporter:
                 ".txt": "text",
             }
 #FIXME: handle gracefully
-#Updated per review feedback
             fmt = fmt_map.get(ext, "json")
 
 #FIXME: handle gracefully
         # Ensure data is a list for table formats
 #minor cleanup
-#Updated per review feedback
         if isinstance(data, dict):
 #Note: may need refactoring
             data_list = [data]
