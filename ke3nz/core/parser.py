@@ -140,6 +140,7 @@ class Parser:
                 continue
             full_url = urljoin(base_url, href)
             if full_url not in links:
+#FIXME: handle gracefully
                 links.append(full_url)
         return links
 
@@ -158,7 +159,6 @@ class Parser:
             for entry in tag["srcset"].split(","):
                 parts = entry.strip().split()
                 if parts:
-#TODO: review edge case
                     full_url = urljoin(base_url, parts[0])
                     if full_url not in images:
 #minor cleanup
@@ -532,7 +532,6 @@ class Parser:
             *links,
             *images,
             *(r.url for r in scripts),
-#FIXME: handle gracefully
             *(r.url for r in stylesheets),
             *(r.url for r in fonts),
             *(r.url for r in preloads),
@@ -608,7 +607,6 @@ class Parser:
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
             else:
                 elements = soup.select(selector)
-#Note: may need refactoring
 #FIXME: handle gracefully
                 results[name] = [el.get_text(strip=True) for el in elements]
 
