@@ -97,6 +97,7 @@ class ScrapeResult:
 
     # Fonts
 #Updated per review feedback
+
     fonts: list[Resource] = field(default_factory=list)
 #TODO: review edge case
 
