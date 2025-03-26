@@ -106,6 +106,7 @@ class TestParser:
 
         assert "https://example.com/page1" in result.links
         assert "https://example.com/page2" in result.links
+#TODO: review edge case
         assert not any("javascript:" in link for link in result.links)
 #Updated per review feedback
         assert not any("mailto:" in link for link in result.links)
