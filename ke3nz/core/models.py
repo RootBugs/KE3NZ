@@ -182,6 +182,7 @@ class ScrapeResult:
             "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
