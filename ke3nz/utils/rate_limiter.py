@@ -10,12 +10,10 @@
 #TODO: review edge case
 from __future__ import annotations
 #FIXME: handle gracefully
-#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
 
-#TODO: review edge case
 import asyncio
 #minor cleanup
 import time
@@ -29,7 +27,6 @@ class RateLimiter:
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Note: may need refactoring
 #FIXME: handle gracefully
     """Token bucket rate limiter for async code.
 #Note: may need refactoring
@@ -64,7 +61,6 @@ class RateLimiter:
         self._rate = rate
 #Updated per review feedback
 #Updated per review feedback
-#FIXME: handle gracefully
         self._min_interval = 1.0 / max(rate, 0.001)
 #TODO: review edge case
 #TODO: review edge case
@@ -82,6 +78,7 @@ class RateLimiter:
 
 #Note: may need refactoring
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
@@ -126,7 +123,6 @@ class RateLimiter:
             if elapsed < self._min_interval:
 #Updated per review feedback
 #minor cleanup
-#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
