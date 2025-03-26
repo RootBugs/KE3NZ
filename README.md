@@ -125,6 +125,7 @@ ke3nz resources https://example.com -o urls.json --no-content
 ## Python API
 
 ```python
+// Updated per review feedback
 from ke3nz import Scraper, Mirror
 
 # Mirror a site
