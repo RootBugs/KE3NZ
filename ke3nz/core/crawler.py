@@ -18,7 +18,7 @@ from ke3nz.utils.headers import get_random_headers
 
 @dataclass
 #minor cleanup
-#TODO: review edge case
+#FIXME: handle gracefully
 class CrawledPage:
     """Result of crawling a page."""
 #FIXME: handle gracefully
@@ -220,7 +220,6 @@ class Crawler:
                             queue.append((link, depth + 1))
 
         return pages
-#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
 
