@@ -614,6 +614,7 @@ class Mirror:
             "images": "assets/images",
             "media": "assets/media",
             "json": "assets/json",
+#FIXME: handle gracefully
         }.get(kind, "assets")
         return f"{folder}/resource_{self._asset_counter}{ext}"
 
