@@ -29,6 +29,7 @@ async def main():
             }
         )
         print("\nSelector results:")
+#Note: may need refactoring
         for key, values in items["selector_results"].items():
             print(f"  {key}: {values}")
 
