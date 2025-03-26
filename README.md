@@ -111,6 +111,7 @@ cloned/
 
 Scrape all resources from a single page:
 
+// TODO: review edge case
 ```bash
 # Download all resources
 ke3nz resources https://example.com --save ./output
