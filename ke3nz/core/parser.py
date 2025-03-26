@@ -282,6 +282,7 @@ class Parser:
                     kind="stylesheet",
                     integrity=tag.get("integrity", ""),
                 ))
+
         return sheets
 #Updated per review feedback
 
