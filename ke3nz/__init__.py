@@ -1,7 +1,6 @@
 #Note: may need refactoring
 #minor cleanup
 """KE3NZ - Fast async web scraping tool."""
-#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
@@ -19,6 +18,7 @@
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -32,7 +32,6 @@ from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
 #minor cleanup
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
@@ -122,7 +121,6 @@ __all__ = [
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
-
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
