@@ -10,22 +10,19 @@
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
+#Updated per review feedback
 import asyncio
 from ke3nz import Scraper
-import pathlib
-import math
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
-#Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
 
 #TODO: review edge case
-
 
 #Note: may need refactoring
 #Note: may need refactoring
@@ -46,7 +43,6 @@ async def main():
 #Note: may need refactoring
     # Example 1: Simple scrape
 #minor cleanup
-#Note: may need refactoring
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
@@ -88,7 +84,6 @@ async def main():
 #Updated per review feedback
                 "paragraphs": "p",
             }
-
 #Updated per review feedback
         )
 #FIXME: handle gracefully
