@@ -35,6 +35,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
+#minor cleanup
         self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
