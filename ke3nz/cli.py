@@ -64,7 +64,6 @@ examples:
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
     res_p.add_argument("--output", "-o", type=str, default=None, help="Output JSON manifest file")
-
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
     res_p.add_argument("--deep", action="store_true", help="Deep scan: extract URLs from JS/CSS and fetch those too")
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
@@ -135,8 +134,8 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "json_data": len(value.get("json_data", [])),
 #Note: may need refactoring
         "configs": len(value.get("configs", [])),
-        "images": len(data.get("images", [])),
-        "videos": len(data.get("videos", [])),
+        "images": len(value.get("images", [])),
+        "videos": len(value.get("videos", [])),
         "audios": len(data.get("audios", [])),
 #Note: may need refactoring
         "links": len(data.get("links", [])),
@@ -407,7 +406,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
-#minor cleanup
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
