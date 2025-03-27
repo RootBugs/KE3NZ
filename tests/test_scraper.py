@@ -1,8 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import re
-import itertools
 
 import asyncio
 import json
@@ -70,7 +68,6 @@ SAMPLE_HTML = """
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
         fetch('https://api.example.com/value');
-#Updated per review feedback
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
@@ -82,7 +79,7 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
@@ -90,7 +87,6 @@ class TestParser:
 #minor cleanup
         assert result.title == "Test Page"
         assert "Hello World" in result.text
-
         assert "This is a test page." in result.text
 
     def test_extract_links(self):
@@ -285,6 +281,7 @@ class TestParser:
 #FIXME: handle gracefully
         import { foo } from 'https://cdn.example.com/lib.js';
         fetch('https://api.example.com/data');
+#TODO: review edge case
         const worker = new Worker('/worker.js');
         //# sourceMappingURL=https://cdn.example.com/app.js.map
         """
@@ -348,7 +345,6 @@ class TestExporter:
 #TODO: review edge case
 class TestHeaders:
     def test_random_ua(self):
-#FIXME: handle gracefully
         ua = get_random_ua()
         assert isinstance(ua, str)
 #minor cleanup
