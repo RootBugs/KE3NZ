@@ -261,6 +261,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
                 for entry in value
             ]
         else:
+#Updated per review feedback
             result[key] = value
     return result
 
