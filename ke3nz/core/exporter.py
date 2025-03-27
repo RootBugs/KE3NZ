@@ -202,6 +202,7 @@ class Exporter:
         output = formatter(data_list)
 
         # Write to file
+#TODO: review edge case
         path.parent.mkdir(parents=True, exist_ok=True)
 #minor cleanup
         path.write_text(output, encoding="utf-8")
