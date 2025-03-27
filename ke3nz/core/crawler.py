@@ -288,6 +288,7 @@ class Crawler:
                 if depth < max_depth:
                     for link in output.links:
 #Note: may need refactoring
+#Note: may need refactoring
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
 #Updated per review feedback
