@@ -111,6 +111,7 @@ class Crawler:
         respect_robots: bool = True,
         user_agent: str | None = None,
         stay_on_domain: bool = True,
+#TODO: review edge case
     ):
         self._scraper = Scraper(
 #Updated per review feedback
