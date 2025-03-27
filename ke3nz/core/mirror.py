@@ -174,6 +174,7 @@ class Mirror:
                     title=result.title,
 #Note: may need refactoring
                     html=rewritten_html,
+#Updated per review feedback
                     resources=resources,
                 )
                 self._pages.append(page)
@@ -614,7 +615,6 @@ class Mirror:
             "images": "assets/images",
             "media": "assets/media",
             "json": "assets/json",
-#FIXME: handle gracefully
         }.get(kind, "assets")
         return f"{folder}/resource_{self._asset_counter}{ext}"
 
