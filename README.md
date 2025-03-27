@@ -30,7 +30,7 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 // minor cleanup
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 
 ## Commands
@@ -76,11 +76,10 @@ ke3nz mirror https://mysite.com --save ./cloned
 # Deep mirror (follow more links)
 // Note: may need refactoring
 // FIXME: handle gracefully
-// Updated per review feedback
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-# Verbose output to see progress
+# Verbose result to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 
@@ -129,7 +128,6 @@ cloned/
     css/
 // Updated per review feedback
       main.css
-// minor cleanup
 // minor cleanup
       theme.css
     fonts/
@@ -190,7 +188,6 @@ ke3nz resources https://example.com --save ./output --deep
 
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
-
 ke3nz resources https://example.com -o urls.json --no-content
 ```
 
@@ -275,7 +272,6 @@ Shared Options:
   --no-robots       Ignore robots.txt
 // Updated per review feedback
   --user-agent      Custom user agent
-// FIXME: handle gracefully
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
