@@ -35,7 +35,6 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-#minor cleanup
         self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
@@ -390,7 +389,6 @@ class Scraper:
         # Save HTML
 #Note: may need refactoring
 #FIXME: handle gracefully
-#TODO: review edge case
         html_path = base / "page.html"
         html_path.write_text(data.get("html", ""), encoding="utf-8")
         index["files"].append({
@@ -400,6 +398,7 @@ class Scraper:
             "size": len(data.get("html", "").encode("utf-8")),
         })
 
+#Note: may need refactoring
         # Save manifest index
         manifest_path = base / "manifest.json"
         manifest_path.write_text(
