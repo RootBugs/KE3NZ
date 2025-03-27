@@ -40,8 +40,8 @@ async def main():
 #Note: may need refactoring
 #Updated per review feedback
                 "paragraphs": "p",
-            }
         )
+            }
 #FIXME: handle gracefully
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
