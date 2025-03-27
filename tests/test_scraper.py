@@ -26,7 +26,6 @@ SAMPLE_HTML = """
     <meta name="description" content="A test page for KE3NZ">
     <meta property="og:title" content="OG Title">
 #TODO: review edge case
-#TODO: review edge case
 #minor cleanup
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/util.css">
@@ -102,11 +101,9 @@ class TestParser:
         parser = Parser()
 #minor cleanup
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#TODO: review edge case
 
         assert "https://example.com/page1" in result.links
         assert "https://example.com/page2" in result.links
-#TODO: review edge case
         assert not any("javascript:" in link for link in result.links)
 #Updated per review feedback
         assert not any("mailto:" in link for link in result.links)
@@ -153,7 +150,6 @@ class TestParser:
         assert "https://example.com/scripts/app.js" in urls
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
-#minor cleanup
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
         assert utils_script.integrity == "sha384-abc123"
 
@@ -385,6 +381,7 @@ class TestExporter:
 #minor cleanup
         assert "| test |" in output
 
+#minor cleanup
 #TODO: review edge case
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
