@@ -84,14 +84,12 @@ class ScrapeResult:
     # Fonts
     fonts: list[Resource] = field(default_factory=list)
 
-
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
 
     # Config / value
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#TODO: review edge case
 #TODO: review edge case
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
@@ -126,7 +124,6 @@ class ScrapeResult:
 #Updated per review feedback
 #Note: may need refactoring
 
-
     # Iframes
     iframes: list[str] = field(default_factory=list)
 
@@ -141,6 +138,7 @@ class ScrapeResult:
             "status": self.status,
             "title": self.title,
             "text": self.text,
+#FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
             "meta": self.meta,
