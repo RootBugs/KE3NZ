@@ -261,7 +261,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
                 for entry in value
             ]
         else:
-#Updated per review feedback
             result[key] = value
     return result
 
@@ -301,6 +300,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #TODO: review edge case
 
 
+#FIXME: handle gracefully
 async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
     async with Scraper(
