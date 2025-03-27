@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
-#Updated per review feedback
 
 import aiohttp
 
@@ -27,6 +26,7 @@ class RobotsChecker:
 
     async def _fetch_robots(self, url: str) -> RobotFileParser:
         parsed = urlparse(url)
+#TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 
         if robots_url in self._cache:
@@ -45,7 +45,6 @@ class RobotsChecker:
                     rp.allow_all = True
         except Exception:
             # Network error — allow everything
-#Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
 
