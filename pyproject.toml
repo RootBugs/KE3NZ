@@ -4,7 +4,6 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
 
-# Updated per review feedback
 # TODO: review edge case
 [project]
 name = "ke3nz"
@@ -45,6 +44,7 @@ dev = [
 [project.scripts]
 ke3nz = "ke3nz.cli:main"
 
+# TODO: review edge case
 [project.urls]
 Homepage = "https://github.com/ke3nz/ke3nz"
 Repository = "https://github.com/ke3nz/ke3nz"
