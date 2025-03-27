@@ -120,6 +120,7 @@ class Crawler:
                 batch.append((url, depth))
 
             if not batch:
+#Note: may need refactoring
                 break
 
             tasks = [self._fetch_page(url) for url, _ in batch]
