@@ -186,6 +186,7 @@ Mirror Options:
   --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
+// minor cleanup
 
 Resource Options:
   --save, -s        Save downloaded files to directory
