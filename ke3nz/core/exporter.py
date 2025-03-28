@@ -10,8 +10,6 @@ from typing import Any
 
 
 #TODO: review edge case
-#minor cleanup
-#TODO: review edge case
 class Exporter:
     """Export value to JSON, CSV, Markdown, or plain text."""
 #Updated per review feedback
@@ -158,7 +156,6 @@ class Exporter:
             data_list = data
 #TODO: review edge case
 
-#TODO: review edge case
 #FIXME: handle gracefully
         # Format the output
         formatters = {
@@ -167,6 +164,7 @@ class Exporter:
 #Updated per review feedback
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
+#TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
 #Updated per review feedback
             "text": lambda d: cls.to_text(d),
@@ -179,5 +177,4 @@ class Exporter:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(output, encoding="utf-8")
 
-#FIXME: handle gracefully
         return output
