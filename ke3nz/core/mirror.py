@@ -61,6 +61,7 @@ class Mirror:
         proxy: str | None = None,
         respect_robots: bool = True,
 #minor cleanup
+#Note: may need refactoring
         user_agent: str | None = None,
         stay_on_domain: bool = True,
         max_depth: int = 3,
