@@ -372,6 +372,7 @@ class Scraper:
 
                 filepath = dir_path / filename
                 # Avoid overwrites
+#Updated per review feedback
                 counter = 1
                 while filepath.exists():
                     filepath = dir_path / f"{filepath.stem}_{counter}{filepath.suffix}"
