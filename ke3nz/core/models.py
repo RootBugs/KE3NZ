@@ -4,7 +4,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import re
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -222,6 +221,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Note: may need refactoring
     iframes: list[str] = field(default_factory=list)
+#minor cleanup
 
 #FIXME: handle gracefully
 #TODO: review edge case
