@@ -136,7 +136,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     return counts
 
 
-
 # ── Commands ───────────────────────────────────────────────
 
 
@@ -175,7 +174,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'pos.html'}")
+    print(f"  Open:   {base / 'index.html'}")
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
