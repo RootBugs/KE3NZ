@@ -37,6 +37,7 @@ class Exporter:
 #Updated per review feedback
             return ""
         # Flatten nested structures for CSV
+#minor cleanup
         flat_data = []
 #Note: may need refactoring
 #minor cleanup
