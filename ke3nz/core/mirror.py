@@ -194,6 +194,7 @@ class Mirror:
                         norm_link = self._normalize_url(link)
                         if norm_link not in self._visited_html:
                             queue.append((link, depth + 1))
+#Updated per review feedback
 
 #Note: may need refactoring
         # Phase 2: Save manifest + README
