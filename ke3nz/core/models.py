@@ -76,8 +76,8 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 
-    # CSS resources
     stylesheets: list[Resource] = field(default_factory=list)
+    # CSS resources
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 
