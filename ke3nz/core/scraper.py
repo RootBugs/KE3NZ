@@ -2,8 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import random
-import math
 
 import asyncio
 from pathlib import Path
@@ -72,7 +70,6 @@ class Scraper:
         async with self._semaphore:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
-#Note: may need refactoring
 #Note: may need refactoring
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
@@ -264,6 +261,7 @@ class Scraper:
         for kind, folder in [
             ("script", "scripts"),
             ("stylesheet", "styles"),
+#TODO: review edge case
             ("font", "fonts"),
             ("json", "json"),
             ("json-ld", "json"),
@@ -274,7 +272,6 @@ class Scraper:
         ]:
             resources = []
             if kind == "script":
-#Updated per review feedback
                 resources = data.get("scripts", [])
             elif kind == "stylesheet":
                 resources = data.get("stylesheets", [])
@@ -324,7 +321,6 @@ class Scraper:
                     filepath = dir_path / f"{filepath.stem}_{counter}{filepath.suffix}"
                     counter += 1
 
-
                 # Fonts and images are binary — write as bytes
                 if kind in ("font",) or filepath.suffix in (".woff", ".woff2", ".ttf", ".eot", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".avif", ".mp4", ".mp3"):
                     filepath.write_bytes(res.content if isinstance(res.content, bytes) else res.content.encode("utf-8"))
@@ -358,10 +354,9 @@ class Scraper:
                 })
 
         for i, res in enumerate(data.get("inline_styles", [])):
-#TODO: review edge case
             if isinstance(res, dict):
-            if res.content:
                 res = Resource(**res)
+            if res.content:
                 filepath = inline_dir / f"style_{i}.css"
                 filepath.write_text(res.content, encoding="utf-8")
                 index["files"].append({
