@@ -69,6 +69,7 @@ class CrawledPage:
 #FIXME: handle gracefully
             "status": self.status,
             "depth": self.depth,
+#Note: may need refactoring
             "title": self.title,
             "text": self.text,
             "links": self.links,
@@ -111,7 +112,6 @@ class Crawler:
         respect_robots: bool = True,
         user_agent: str | None = None,
         stay_on_domain: bool = True,
-#TODO: review edge case
     ):
         self._scraper = Scraper(
 #Updated per review feedback
@@ -287,7 +287,6 @@ class Crawler:
 #FIXME: handle gracefully
                 if depth < max_depth:
                     for link in output.links:
-#Note: may need refactoring
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
