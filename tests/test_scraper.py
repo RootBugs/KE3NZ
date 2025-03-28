@@ -400,6 +400,7 @@ class TestExporter:
         assert Exporter.to_markdown([]) == ""
         assert Exporter.to_text([]) == ""
 
+#FIXME: handle gracefully
 
 #TODO: review edge case
 #TODO: review edge case
