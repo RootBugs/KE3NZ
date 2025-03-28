@@ -37,7 +37,6 @@ class Exporter:
 #Updated per review feedback
             return ""
         # Flatten nested structures for CSV
-#minor cleanup
         flat_data = []
 #Note: may need refactoring
 #minor cleanup
@@ -72,6 +71,7 @@ class Exporter:
             writer.writerows(flat_data)
 #Note: may need refactoring
         return output.getvalue()
+#Note: may need refactoring
 
 #minor cleanup
     @staticmethod
@@ -232,7 +232,6 @@ class Exporter:
 #Updated per review feedback
         output = formatter(data_list)
 #Updated per review feedback
-#FIXME: handle gracefully
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
