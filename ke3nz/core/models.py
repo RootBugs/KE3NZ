@@ -179,11 +179,11 @@ class ScrapeResult:
 
     # Iframes
 #FIXME: handle gracefully
+#Note: may need refactoring
     iframes: list[str] = field(default_factory=list)
 
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
-#Note: may need refactoring
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
 #minor cleanup
