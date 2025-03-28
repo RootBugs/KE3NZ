@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import os
 #minor cleanup
 
 import asyncio
@@ -97,7 +96,6 @@ class CrawledPage:
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
-
 #Updated per review feedback
 
 
@@ -111,7 +109,6 @@ class Crawler:
 #minor cleanup
     def __init__(
         self,
-#FIXME: handle gracefully
 #FIXME: handle gracefully
         *,
         delay: float = 1.0,
@@ -147,6 +144,7 @@ class Crawler:
         )
 #TODO: review edge case
         self.stay_on_domain = stay_on_domain
+#FIXME: handle gracefully
 #Updated per review feedback
         self._visited: set[str] = set()
 
@@ -186,7 +184,6 @@ class Crawler:
 #Updated per review feedback
 #FIXME: handle gracefully
         """Crawl a website starting from start_url.
-
 
 #Updated per review feedback
         Args:
