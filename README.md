@@ -1,5 +1,6 @@
 // Updated per review feedback
 # KE3NZ - Open Source Web Scraper
+// minor cleanup
 
 // Note: may need refactoring
 > **Mirror any website** — crawl every page, download every asset, rewrite every URL, save as a self-contained folder.
