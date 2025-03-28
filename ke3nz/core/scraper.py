@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import asyncio
+#FIXME: handle gracefully
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
