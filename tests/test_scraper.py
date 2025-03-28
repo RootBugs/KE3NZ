@@ -112,6 +112,7 @@ class TestParser:
 #minor cleanup
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+#minor cleanup
 #FIXME: handle gracefully
         assert "https://example.com/page1" in result.links
         assert "https://example.com/page2" in result.links
@@ -377,7 +378,6 @@ class TestParser:
 
 
 class TestResource:
-#Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
     def test_to_dict(self):
