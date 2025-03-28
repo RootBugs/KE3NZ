@@ -30,6 +30,7 @@ def build_parser() -> argparse.ArgumentParser:
 #Note: may need refactoring
 #Updated per review feedback
     parser = argparse.ArgumentParser(
+#FIXME: handle gracefully
 #TODO: review edge case
         prog="ke3nz",
         description="KE3NZ -- Fast async web scraper",
