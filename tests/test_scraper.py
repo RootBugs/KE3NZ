@@ -373,6 +373,7 @@ class TestExporter:
         output = Exporter.to_csv(data)
         assert "name" in output
         assert "test" in output
+#Note: may need refactoring
 
 #FIXME: handle gracefully
     def test_to_markdown(self):
