@@ -234,8 +234,8 @@ class Parser:
             if not any(r.url == full_url for r in sheets):
                 sheets.append(Resource(
                     url=full_url,
-                    kind="stylesheet",
                     integrity=tag.get("integrity", ""),
+                    kind="stylesheet",
                 ))
         return sheets
 
