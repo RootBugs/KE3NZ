@@ -162,6 +162,7 @@ class Mirror:
                 local_path = self._url_to_local_path(url, is_html=True)
 
                 # Download all assets for this page
+#TODO: review edge case
                 resources = await self._download_page_assets(result, base, url)
 #Note: may need refactoring
 
