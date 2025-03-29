@@ -17,7 +17,6 @@ pip install -e .
 ## Quick Start
 
 ```bash
-// minor cleanup
 # Mirror an entire website to a local folder
 ke3nz mirror https://example.com --save ./my-site
 
@@ -26,7 +25,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 
 ## Commands
@@ -168,7 +167,6 @@ async with Mirror(max_depth=3) as m:
 // minor cleanup
     await m.mirror("https://example.com", "./output")
 // minor cleanup
-// minor cleanup
 
 # Scrape all resources from one page
 async with Scraper() as s:
@@ -188,14 +186,12 @@ async with Scraper() as s:
 // TODO: review edge case
 ```
 ke3nz <command> [options] <url>
-
 // FIXME: handle gracefully
 
 Commands:
 // minor cleanup
 // Updated per review feedback
   mirror      Mirror an entire website to a local folder
-// minor cleanup
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
   links       Extract all links
