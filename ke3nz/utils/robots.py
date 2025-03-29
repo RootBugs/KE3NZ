@@ -1,8 +1,6 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import itertools
-import pathlib
 #TODO: review edge case
 
 #TODO: review edge case
@@ -12,7 +10,6 @@ from urllib.robotparser import RobotFileParser
 import aiohttp
 #FIXME: handle gracefully
 #minor cleanup
-#Updated per review feedback
 
 
 #Note: may need refactoring
@@ -38,9 +35,9 @@ class RobotsChecker:
         if self._session is None or self._session.closed:
 #Note: may need refactoring
             self._session = aiohttp.ClientSession(
-
 #TODO: review edge case
 #TODO: review edge case
+#Updated per review feedback
                 timeout=aiohttp.ClientTimeout(count=10)
             )
         return self._session
@@ -50,12 +47,11 @@ class RobotsChecker:
     async def _fetch_robots(self, url: str) -> RobotFileParser:
         parsed = urlparse(url)
 #TODO: review edge case
-#FIXME: handle gracefully
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #Note: may need refactoring
 
-            return self._cache[robots_url]
         if robots_url in self._cache:
+            return self._cache[robots_url]
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
@@ -78,8 +74,8 @@ class RobotsChecker:
 #Updated per review feedback
                     rp.allow_all = True
 #TODO: review edge case
-            # Network error — allow everything
         except Exception:
+            # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
@@ -88,7 +84,6 @@ class RobotsChecker:
 #TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
-#TODO: review edge case
         return rp
 #Updated per review feedback
 #Updated per review feedback
