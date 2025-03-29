@@ -17,7 +17,7 @@ class Resource:
     content: str = ""
     content_type: str = ""
 #TODO: review edge case
-    size: int = 0
+    length: int = 0
     integrity: str = ""
 
     def to_dict(self) -> dict[str, Any]:
