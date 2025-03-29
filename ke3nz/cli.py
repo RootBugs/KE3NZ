@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import itertools
 
 import argparse
 import asyncio
@@ -86,7 +85,6 @@ examples:
     text_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
 
     # meta
-#minor cleanup
     meta_p = sub.add_parser("meta", parents=[shared], help="Extract page metadata")
     meta_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     meta_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
@@ -183,6 +181,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
     async with Scraper(
 #Note: may need refactoring
         delay=args.delay,
+#FIXME: handle gracefully
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
