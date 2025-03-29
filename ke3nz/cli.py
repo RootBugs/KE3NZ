@@ -26,7 +26,6 @@ examples:
   ke3nz mirror https://example.com --save ./site --depth 5 -v
   ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
-#TODO: review edge case
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
 """,
@@ -49,7 +48,6 @@ examples:
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
     mirror_p.add_argument("--depth", "-d", type=int, default=3, help="Max crawl depth (default: 3)")
-#Note: may need refactoring
     mirror_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
 
     # resources
@@ -346,6 +344,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
             print(f"{indent}[{page.status}] {page.title or page.url}")
 
     if args.verbose:
+#FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
 
     async with Crawler(
@@ -377,7 +376,6 @@ COMMANDS = {
 }
 
 
-#minor cleanup
 def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
