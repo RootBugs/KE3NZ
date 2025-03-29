@@ -58,6 +58,7 @@ SAMPLE_HTML = """
     <script type="application/ld+json">{"@type": "WebPage"}</script>
     <script>
         navigator.serviceWorker.register('/sw.js');
+#Updated per review feedback
         fetch('https://api.example.com/value');
         const url = '/chunk-a1b2c3.js';
     </script>
