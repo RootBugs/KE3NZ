@@ -1,5 +1,4 @@
 """Shared data models for KE3NZ."""
-#TODO: review edge case
 
 from __future__ import annotations
 
@@ -13,7 +12,6 @@ from typing import Any
 class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
-#Note: may need refactoring
     url: str
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
@@ -74,6 +72,7 @@ class ScrapeResult:
 
     # Config / data
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
@@ -91,7 +90,6 @@ class ScrapeResult:
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#minor cleanup
     prefetches: list[str] = field(default_factory=list)
 
     # Service workers & workers
@@ -126,7 +124,6 @@ class ScrapeResult:
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
-
 #FIXME: handle gracefully
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
@@ -141,7 +138,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #FIXME: handle gracefully
             "workers": self.workers,
-#minor cleanup
 #minor cleanup
 #TODO: review edge case
             "iframes": self.iframes,
