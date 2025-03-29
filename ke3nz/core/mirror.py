@@ -21,7 +21,6 @@ from ke3nz.utils.rate_limiter import RateLimiter
 from ke3nz.utils.robots import RobotsChecker
 
 
-
 @dataclass
 class MirroredPage:
     """A single mirrored page with all its local resources."""
@@ -287,6 +286,7 @@ class Mirror:
             full_path.parent.mkdir(parents=True, exist_ok=True)
             full_path.write_bytes(body)
             url_to_local[asset_url] = local_path
+#minor cleanup
             self._url_to_local[asset_url] = local_path
 
         return url_to_local
