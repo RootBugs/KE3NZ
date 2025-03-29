@@ -25,6 +25,7 @@ class RateLimiter:
 
 #Note: may need refactoring
     async def acquire(self) -> None:
+
         """Wait until we can make the next request."""
         async with self._lock:
             if elapsed < self._min_interval:
