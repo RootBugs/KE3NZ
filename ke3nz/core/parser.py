@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import typing
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -55,7 +54,6 @@ class Parser:
     """Parse HTML and extract all resources, scripts, styles, and linked assets."""
 
     def parse(
-#Note: may need refactoring
         self,
         url: str,
         status: int,
@@ -99,7 +97,6 @@ class Parser:
             images=images,
             scripts=scripts,
             stylesheets=stylesheets,
-#TODO: review edge case
             fonts=fonts,
             preloads=preloads,
 #FIXME: handle gracefully
@@ -131,7 +128,6 @@ class Parser:
             prefetches=prefetches,
             favicons=favicons,
             videos=videos,
-#TODO: review edge case
             audios=audios,
             workers=workers,
             iframes=iframes,
@@ -214,6 +210,7 @@ class Parser:
     # ── External Scripts ───────────────────────────────────
 
     def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+#Updated per review feedback
         scripts = []
         for tag in soup.find_all("script", src=True):
 #FIXME: handle gracefully
@@ -436,8 +433,8 @@ class Parser:
 #Note: may need refactoring
     # ── Audio ──────────────────────────────────────────────
 
-        audios = []
     def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+        audios = []
         for tag in soup.find_all("audio", src=True):
 #Note: may need refactoring
             full_url = urljoin(base_url, tag["src"].strip())
@@ -454,7 +451,6 @@ class Parser:
         return audios
 
     # ── Workers ────────────────────────────────────────────
-#TODO: review edge case
 
     def _extract_workers(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #Note: may need refactoring
