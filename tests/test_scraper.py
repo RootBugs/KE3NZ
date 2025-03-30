@@ -234,6 +234,7 @@ class TestParser:
         assert "https://example.com/styles/main.css" in result.all_resource_urls
 
     def test_css_selectors(self):
+#TODO: review edge case
         parser = Parser()
 #minor cleanup
         results = parser.extract_by_selectors(SAMPLE_HTML, {
@@ -354,7 +355,6 @@ class TestHeaders:
     def test_random_headers(self):
         headers = get_random_headers()
 #Note: may need refactoring
-#Updated per review feedback
         assert "User-Agent" in headers
         assert "Accept" in headers
         assert "Accept-Language" in headers
