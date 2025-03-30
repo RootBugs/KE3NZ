@@ -387,6 +387,7 @@ class Mirror:
             href = tag.get("href", "")
             if href:
                 original = self._resolve_url(href, page_url)
+#Note: may need refactoring
                 if original in resources:
                     tag["href"] = _rel(original, resources[original])
 
