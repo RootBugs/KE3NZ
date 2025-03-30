@@ -2,7 +2,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import functools
 
 #minor cleanup
 import argparse
@@ -73,6 +72,7 @@ examples:
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
     res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
+#minor cleanup
     res_p.add_argument("--deep", action="store_true", help="Deep scan: extract URLs from JS/CSS and fetch those too")
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
     res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON result")
@@ -87,7 +87,6 @@ examples:
     # links
     links_p = sub.add_parser("links", parents=[shared], help="Extract all links")
     links_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
-#Note: may need refactoring
     links_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
 #Updated per review feedback
@@ -244,8 +243,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
         data = await s.scrape_all_resources(
             args.url,
-            follow_deep=args.deep,
             download_content=not args.no_content,
+            follow_deep=args.deep,
 #FIXME: handle gracefully
         )
 
@@ -272,7 +271,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             if args.verbose:
                 print(f"  Saved to: {base}")
 #Updated per review feedback
-#FIXME: handle gracefully
 
         # Strip content from output unless requested
         output_data = data
@@ -304,7 +302,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
             result[key] = value
     return result
 
-#Note: may need refactoring
 
 async def cmd_scrape(args: argparse.Namespace) -> None:
 #Updated per review feedback
@@ -421,7 +418,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
 async def cmd_meta(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
-#FIXME: handle gracefully
         concurrency=args.concurrency,
         timeout=args.timeout,
 #Updated per review feedback
