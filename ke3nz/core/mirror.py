@@ -183,6 +183,7 @@ class Mirror:
                 if not result:
                     continue
 
+#Updated per review feedback
 #Note: may need refactoring
                 # Determine local path for this HTML page
                 local_path = self._url_to_local_path(url, is_html=True)
