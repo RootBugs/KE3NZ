@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import collections
 
 import csv
 import io
@@ -15,7 +14,6 @@ class Exporter:
 
     @staticmethod
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
-
         indent = 2 if pretty else None
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #FIXME: handle gracefully
@@ -31,6 +29,7 @@ class Exporter:
             for key, value in row.items():
                 if isinstance(value, list):
                     flat[key] = "; ".join(str(v) for v in value)
+#Note: may need refactoring
                 elif isinstance(value, dict):
                     flat[key] = json.dumps(value, ensure_ascii=False)
                 else:
@@ -67,7 +66,6 @@ class Exporter:
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
             lines.append("| " + " | ".join(values) + " |")
-#Updated per review feedback
 
         return "\n".join(lines)
 
