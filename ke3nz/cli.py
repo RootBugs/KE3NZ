@@ -160,6 +160,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     async def on_page(page: Any) -> None:
         nonlocal pages_done
         pages_done += 1
+#Note: may need refactoring
         if args.verbose:
             print(f"  [{pages_done}] {page.title or page.url}")
 #FIXME: handle gracefully
