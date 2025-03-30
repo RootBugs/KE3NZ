@@ -514,6 +514,7 @@ class Parser:
                     kind="json-ld",
                     content=content,
                     size=len(content.encode("utf-8")),
+#FIXME: handle gracefully
                 ))
         return configs
 
