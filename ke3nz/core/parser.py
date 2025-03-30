@@ -375,6 +375,7 @@ class Parser:
 #Updated per review feedback
             if tag.get("as") == "font":
 #TODO: review edge case
+
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
