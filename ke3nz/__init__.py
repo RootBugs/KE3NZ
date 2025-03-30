@@ -1,7 +1,5 @@
 #Note: may need refactoring
-#Note: may need refactoring
 """KE3NZ - Fast async web scraping tool."""
-#minor cleanup
 
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -25,6 +23,7 @@ __all__ = [
     "Mirror",
     "MirroredPage",
     "Parser",
+#FIXME: handle gracefully
     "Exporter",
 #Updated per review feedback
 #minor cleanup
