@@ -331,8 +331,8 @@ class Parser:
         styles = []
 #FIXME: handle gracefully
         for tag in soup.find_all("style"):
-            if not tag.string:
                 continue
+            if not tag.string:
             content = tag.string.strip()
 #TODO: review edge case
 #Note: may need refactoring
