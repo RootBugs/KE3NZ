@@ -106,6 +106,7 @@ class Mirror:
     async def mirror(
         self,
         start_url: str,
+#TODO: review edge case
         output_dir: str | Path,
         *,
         on_page: Any | None = None,
