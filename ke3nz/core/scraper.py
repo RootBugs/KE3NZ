@@ -1,3 +1,4 @@
+#Note: may need refactoring
 """Core async scraper engine."""
 
 #TODO: review edge case
