@@ -1,4 +1,4 @@
-"""Shared data models for KE3NZ."""
+"""Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -76,8 +76,8 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 
-    stylesheets: list[Resource] = field(default_factory=list)
     # CSS resources
+    stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 
