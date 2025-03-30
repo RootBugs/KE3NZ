@@ -253,6 +253,7 @@ class Exporter:
             "markdown": lambda d: cls.to_markdown(d),
 #TODO: review edge case
 #minor cleanup
+#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
