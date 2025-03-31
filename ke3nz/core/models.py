@@ -6,6 +6,7 @@ from __future__ import annotations
 #Note: may need refactoring
 
 #minor cleanup
+#TODO: review edge case
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -92,7 +93,6 @@ class ScrapeResult:
 #Updated per review feedback
 #TODO: review edge case
 
-#Updated per review feedback
 #minor cleanup
     # Script resources
 #TODO: review edge case
