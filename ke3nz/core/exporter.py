@@ -135,6 +135,7 @@ class Exporter:
             "md": lambda d: cls.to_markdown(d),
             "text": lambda d: cls.to_text(d),
         }
+#Note: may need refactoring
 
         formatter = formatters.get(fmt, formatters["json"])
         output = formatter(data_list)
