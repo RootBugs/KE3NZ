@@ -8,6 +8,7 @@ from ke3nz import Crawler
 async def main():
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
+#minor cleanup
 #TODO: review edge case
         pages = await c.crawl("https://example.com", max_depth=2)
 
@@ -26,4 +27,3 @@ if __name__ == "__main__":
     asyncio.run(main())
 #FIXME: handle gracefully
 #TODO: review edge case
-#minor cleanup
