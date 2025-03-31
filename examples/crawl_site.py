@@ -3,12 +3,11 @@
 
 import asyncio
 from ke3nz import Crawler
-import json
 
 
 async def main():
-    async with Crawler(delay=0.5) as c:
     # Crawl example.com up to depth 2
+    async with Crawler(delay=0.5) as c:
 #TODO: review edge case
         pages = await c.crawl("https://example.com", max_depth=2)
 
@@ -25,4 +24,5 @@ async def main():
 #Updated per review feedback
 if __name__ == "__main__":
     asyncio.run(main())
+#FIXME: handle gracefully
 #TODO: review edge case
