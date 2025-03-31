@@ -101,6 +101,7 @@ class Exporter:
 #Note: may need refactoring
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
+#FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
             lines.append("| " + " | ".join(values) + " |")
