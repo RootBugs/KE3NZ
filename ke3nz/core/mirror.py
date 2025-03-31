@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import random
 
 import asyncio
 import hashlib
@@ -78,7 +77,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
