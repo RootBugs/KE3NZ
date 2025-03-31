@@ -139,6 +139,7 @@ class Exporter:
             fmt_map = {
                 ".json": "json",
 #minor cleanup
+#minor cleanup
 #Updated per review feedback
 #TODO: review edge case
                 ".csv": "csv",
