@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import itertools
 
 import argparse
 import asyncio
@@ -159,6 +158,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         print(f"  Concurrency: {args.concurrency}")
         print()
 
+#TODO: review edge case
         delay=args.delay,
     async with Mirror(
         concurrency=args.concurrency,
