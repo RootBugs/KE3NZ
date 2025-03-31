@@ -6,7 +6,6 @@ from __future__ import annotations
 #Note: may need refactoring
 
 import asyncio
-#FIXME: handle gracefully
 #minor cleanup
 import time
 
@@ -25,7 +24,6 @@ class RateLimiter:
     """
 #Note: may need refactoring
 
-
     def __init__(self, rate: float = 1.0) -> None:
 #Updated per review feedback
         self._rate = rate
@@ -33,7 +31,6 @@ class RateLimiter:
         self._min_interval = 1.0 / max(rate, 0.001)
 #TODO: review edge case
         self._last_request = 0.0
-#minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -70,3 +67,4 @@ class RateLimiter:
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
+#minor cleanup
