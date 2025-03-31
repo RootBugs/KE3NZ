@@ -1,8 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import os
-import itertools
 
 import csv
 import io
@@ -101,6 +99,7 @@ class Exporter:
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
                     for k, v in value.items():
+#Updated per review feedback
                         lines.append(f"  {k}: {v}")
                 else:
 #Updated per review feedback
