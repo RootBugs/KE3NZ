@@ -69,7 +69,6 @@ class Mirror:
         self.user_agent = user_agent
         self.stay_on_domain = stay_on_domain
         self.max_depth = max_depth
-#Note: may need refactoring
         self._session: aiohttp.ClientSession | None = None
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
         self._robots = RobotsChecker()
@@ -112,7 +111,7 @@ class Mirror:
             on_page: Optional async callback(MirroredPage) for progress.
 
         Returns:
-            Path to the output directory.
+            Path to the result directory.
         """
         base = Path(output_dir)
         self._url_to_local = {}
