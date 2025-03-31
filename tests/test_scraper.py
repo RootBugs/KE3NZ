@@ -42,6 +42,7 @@ SAMPLE_HTML = """
 #minor cleanup
 #minor cleanup
 #minor cleanup
+#minor cleanup
 #TODO: review edge case
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
