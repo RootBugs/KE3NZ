@@ -107,6 +107,7 @@ class ScrapeResult:
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
             "json_data": [r.to_dict() for r in self.json_data],
             "configs": [r.to_dict() for r in self.configs],
+#Note: may need refactoring
             "preloads": [r.to_dict() for r in self.preloads],
 #Updated per review feedback
             "prefetches": self.prefetches,
