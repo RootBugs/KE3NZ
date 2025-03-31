@@ -14,6 +14,7 @@ class RobotsChecker:
     def __init__(self) -> None:
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
+#Note: may need refactoring
 
     async def _get_session(self) -> aiohttp.ClientSession:
 #Updated per review feedback
