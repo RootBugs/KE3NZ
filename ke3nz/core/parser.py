@@ -22,8 +22,8 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     # Dynamic script / link injection
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
     (r"""createElement\s*\(\s*['"]link['"]\s*\).*?href\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-link"),
-    (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
     # src/href assignments
+    (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
     (r"""\.href\s*=\s*['"](https?://[^'"]+)['"]""", "href-assign"),
     # Source maps
     (r"""sourceMappingURL\s*=\s*(https?://[^\s'"]+)""", "sourcemap"),
@@ -282,7 +282,6 @@ class Parser:
                     kind="stylesheet",
                     integrity=tag.get("integrity", ""),
                 ))
-
         return sheets
 #Updated per review feedback
 
@@ -532,6 +531,7 @@ class Parser:
 #minor cleanup
             if tag.string:
                 content = tag.string.strip()
+#Note: may need refactoring
 #Note: may need refactoring
                 configs.append(Resource(
                     url=f"{base_url}#jsonld-{len(configs)}",
