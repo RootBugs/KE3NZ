@@ -102,6 +102,7 @@ class RobotsChecker:
 #Updated per review feedback
         parsed = urlparse(url)
 
+
 #Note: may need refactoring
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
