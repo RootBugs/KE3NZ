@@ -2,15 +2,12 @@
 
 import asyncio
 from ke3nz import Scraper
-import math
 #minor cleanup
 
 
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
-#Updated per review feedback
-#minor cleanup
 async def main():
     # Example 1: Simple scrape
     async with Scraper() as s:
@@ -29,8 +26,8 @@ async def main():
             }
         )
         print("\nSelector results:")
-#Note: may need refactoring
         for key, values in items["selector_results"].items():
+#TODO: review edge case
             print(f"  {key}: {values}")
 
     # Example 3: Scrape multiple URLs
