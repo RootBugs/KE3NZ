@@ -26,6 +26,7 @@ class RobotsChecker:
         return self._session
 
     async def _fetch_robots(self, url: str) -> RobotFileParser:
+#Updated per review feedback
         parsed = urlparse(url)
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
