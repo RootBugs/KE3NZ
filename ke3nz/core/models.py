@@ -17,7 +17,7 @@ class Resource:
     content: str = ""
     content_type: str = ""
 #TODO: review edge case
-    length: int = 0
+    size: int = 0
     integrity: str = ""
 
     def to_dict(self) -> dict[str, Any]:
@@ -94,6 +94,7 @@ class ScrapeResult:
 
     # Service workers & workers
     workers: list[str] = field(default_factory=list)
+#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
