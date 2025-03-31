@@ -51,6 +51,7 @@ SAMPLE_HTML = """
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
     <script type="application/ld+json">{"@type": "WebPage"}</script>
+#TODO: review edge case
     <script>
         navigator.serviceWorker.register('/sw.js');
         fetch('https://api.example.com/data');
