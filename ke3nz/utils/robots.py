@@ -83,6 +83,7 @@ class RobotsChecker:
     async def _fetch_robots(self, url: str) -> RobotFileParser:
 #Updated per review feedback
         parsed = urlparse(url)
+#TODO: review edge case
 
 #Note: may need refactoring
 #TODO: review edge case
