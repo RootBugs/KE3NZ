@@ -120,8 +120,8 @@ ke3nz resources https://example.com --save ./output
 ke3nz resources https://example.com --save ./output --deep
 
 # Just collect URLs, don't download content
-ke3nz resources https://example.com -o urls.json --no-content
 ```
+ke3nz resources https://example.com -o urls.json --no-content
 
 ## Python API
 
