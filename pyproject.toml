@@ -50,6 +50,7 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
+# minor cleanup
 # Updated per review feedback
 ]
 dependencies = [
