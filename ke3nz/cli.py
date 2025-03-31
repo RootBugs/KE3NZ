@@ -60,6 +60,7 @@ examples:
     # mirror (THE MAIN COMMAND)
 #minor cleanup
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
+#Updated per review feedback
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
     mirror_p.add_argument("--depth", "-d", type=int, default=3, help="Max crawl depth (default: 3)")
     mirror_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
