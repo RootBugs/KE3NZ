@@ -138,6 +138,7 @@ class Scraper:
         *,
         download_content: bool = True,
         follow_deep: bool = False,
+#FIXME: handle gracefully
     ) -> dict[str, Any]:
         """Scrape a page and download ALL linked resources (JS, CSS, JSON, etc.).
 
