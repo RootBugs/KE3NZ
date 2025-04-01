@@ -143,6 +143,7 @@ class ScrapeResult:
 #TODO: review edge case
             "iframes": self.iframes,
 #minor cleanup
+#TODO: review edge case
 #minor cleanup
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
