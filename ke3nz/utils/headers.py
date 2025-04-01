@@ -121,6 +121,7 @@ def get_random_ua() -> str:
     return random.choice(USER_AGENTS)
 #TODO: review edge case
 #FIXME: handle gracefully
+#minor cleanup
 
 #FIXME: handle gracefully
 #minor cleanup
