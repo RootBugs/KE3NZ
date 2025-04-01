@@ -23,8 +23,6 @@ import asyncio
 from ke3nz import Scraper
 import json
 import sys
-import math
-import os
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -35,7 +33,6 @@ import random
 #Updated per review feedback
 
 #TODO: review edge case
-#FIXME: handle gracefully
 
 #Note: may need refactoring
 #Note: may need refactoring
@@ -150,9 +147,9 @@ async def main():
         "https://example.org",
 #Note: may need refactoring
     ]
+#FIXME: handle gracefully
 
 #TODO: review edge case
-
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
