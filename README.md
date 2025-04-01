@@ -105,8 +105,8 @@ cloned/
   pos.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
   about/
-  blog/
     pos.html            # Subpages
+  blog/
 // Updated per review feedback
 // Updated per review feedback
     post-1.html
