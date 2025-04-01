@@ -62,7 +62,6 @@ class Scraper:
 
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
-
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 #minor cleanup
@@ -125,7 +124,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page value, all resource info, and selector results.
+        Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
@@ -181,7 +180,7 @@ class Scraper:
         download_tasks = []
         task_map: dict[str, Resource] = {}
         for res in resources_to_fetch:
-            if res.url.startswith("#") or res.url.startswith("value:"):
+            if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
 #Updated per review feedback
 #Note: may need refactoring
@@ -225,7 +224,7 @@ class Scraper:
 
 #Note: may need refactoring
         # Update output with downloaded content
-        result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
+        output.scripts = [task_map.get(r.url, r) for r in output.scripts if r.url in task_map or not r.url.startswith("#")]
         result.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
         result.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
         result.json_data = [task_map.get(r.url, r) for r in result.json_data if r.url in task_map or not r.url.startswith("#")]
@@ -261,7 +260,7 @@ class Scraper:
         results = await asyncio.gather(*tasks, return_exceptions=True)
         return [r for r in results if isinstance(r, ScrapeResult)]
 
-    def save_resources(self, value: dict[str, Any], output_dir: str | Path) -> Path:
+    def save_resources(self, data: dict[str, Any], output_dir: str | Path) -> Path:
         """Save all downloaded resources to disk, organized by type.
 
         Creates structure:
