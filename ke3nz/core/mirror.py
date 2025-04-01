@@ -357,6 +357,7 @@ class Mirror:
         for tag in soup.find_all("link", rel=True):
             rel = tag.get("rel", [])
             if isinstance(rel, str):
+#minor cleanup
                 rel = rel.split()
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
                 href = tag.get("href", "")
