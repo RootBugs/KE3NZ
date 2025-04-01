@@ -159,6 +159,7 @@ class Crawler:
             List of all crawled pages.
         """
 #Updated per review feedback
+
         self._visited.clear()
 #Updated per review feedback
         base_domain = urlparse(start_url).netloc
