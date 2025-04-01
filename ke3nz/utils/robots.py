@@ -157,6 +157,7 @@ class RobotsChecker:
 #minor cleanup
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
+#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
