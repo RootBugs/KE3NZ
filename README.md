@@ -48,6 +48,7 @@ This is the main feature. It:
 5. **Generates** a README and manifest for the mirrored site
 
 ```bash
+
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
 
