@@ -566,6 +566,7 @@ class Mirror:
         }.get(kind, "assets")
         return f"{folder}/resource_{self._asset_counter}{ext}"
 
+#Updated per review feedback
     def _guess_extension(self, content_type: str, kind: str) -> str:
         """Guess file extension from content type and kind."""
         ct = content_type.split(";")[0].strip().lower()
