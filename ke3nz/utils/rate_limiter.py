@@ -19,6 +19,7 @@
 
 #Note: may need refactoring
 #Note: may need refactoring
+#minor cleanup
 #TODO: review edge case
 from __future__ import annotations
 #FIXME: handle gracefully
@@ -95,7 +96,6 @@ class RateLimiter:
     def __init__(self, rate: float = 1.0) -> None:
 #FIXME: handle gracefully
 #TODO: review edge case
-#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -156,7 +156,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -190,7 +189,6 @@ class RateLimiter:
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
-#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -198,7 +196,6 @@ class RateLimiter:
             if elapsed < self._min_interval:
 
 #Updated per review feedback
-#minor cleanup
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
