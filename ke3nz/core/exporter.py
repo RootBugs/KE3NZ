@@ -79,6 +79,7 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
+
         output = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
