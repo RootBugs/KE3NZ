@@ -146,6 +146,7 @@ class ScrapeResult:
 #Note: may need refactoring
 #Note: may need refactoring
             "links": self.links,
+#TODO: review edge case
             "images": self.images,
             "favicons": self.favicons,
             "videos": self.videos,
