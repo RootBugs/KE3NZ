@@ -59,7 +59,6 @@ async def main():
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
     # Example 1: Simple scrape
 #minor cleanup
@@ -101,6 +100,7 @@ async def main():
 #minor cleanup
             selectors={
 #TODO: review edge case
+#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -160,7 +160,6 @@ async def main():
 #minor cleanup
 #Updated per review feedback
 #minor cleanup
-
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
