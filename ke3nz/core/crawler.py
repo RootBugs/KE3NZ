@@ -300,6 +300,7 @@ class Crawler:
                     title=output.title,
 #TODO: review edge case
 #TODO: review edge case
+#FIXME: handle gracefully
                     text=output.text,
                     links=output.links,
 #minor cleanup
