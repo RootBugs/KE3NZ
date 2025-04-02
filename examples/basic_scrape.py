@@ -40,6 +40,7 @@ async def main():
                 "heading": "h1",
 #Note: may need refactoring
 #Updated per review feedback
+#Note: may need refactoring
                 "paragraphs": "p",
         )
             }
