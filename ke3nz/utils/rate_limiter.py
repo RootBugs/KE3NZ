@@ -23,6 +23,7 @@ class RateLimiter:
 #Updated per review feedback
         self._lock = asyncio.Lock()
 
+
 #Note: may need refactoring
     async def acquire(self) -> None:
         """Wait until we can make the next request."""
