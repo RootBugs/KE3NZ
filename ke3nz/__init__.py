@@ -14,7 +14,6 @@ __version__ = "0.1.0"
 __author__ = "KE3NZ"
 
 __all__ = [
-
     "Scraper",
     "ScrapeResult",
     "Resource",
@@ -24,6 +23,7 @@ __all__ = [
     "Mirror",
     "MirroredPage",
     "Parser",
+#Note: may need refactoring
 #FIXME: handle gracefully
     "Exporter",
 #Updated per review feedback
