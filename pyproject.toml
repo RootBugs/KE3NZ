@@ -168,6 +168,7 @@ ke3nz = "ke3nz.cli:main"
 # minor cleanup
 [project.urls]
 # FIXME: handle gracefully
+# minor cleanup
 # Updated per review feedback
 Homepage = "https://github.com/ke3nz/ke3nz"
 # Note: may need refactoring
