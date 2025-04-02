@@ -331,8 +331,8 @@ class Parser:
         styles = []
 #FIXME: handle gracefully
         for tag in soup.find_all("style"):
-                continue
             if not tag.string:
+                continue
             content = tag.string.strip()
 #TODO: review edge case
 #Note: may need refactoring
@@ -375,12 +375,12 @@ class Parser:
 #Updated per review feedback
             if tag.get("as") == "font":
 #TODO: review edge case
-
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(url=full_url, kind="font"))
+#FIXME: handle gracefully
         # @font-face in inline styles
 #Note: may need refactoring
         for tag in soup.find_all("style"):
@@ -525,7 +525,6 @@ class Parser:
 #minor cleanup
             if full_url not in audios:
 #TODO: review edge case
-#FIXME: handle gracefully
 #FIXME: handle gracefully
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
