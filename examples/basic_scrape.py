@@ -124,6 +124,7 @@ async def main():
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
+
 #TODO: review edge case
 #minor cleanup
     async with Scraper() as s:
