@@ -78,6 +78,7 @@ dependencies = [
 # minor cleanup
     "aiolimiter>=1.1.0",
 ]
+# FIXME: handle gracefully
 
 [project.optional-dependencies]
 dev = [
