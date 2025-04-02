@@ -58,6 +58,7 @@ class ScrapeResult:
     scripts: list[Resource] = field(default_factory=list)
     inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
+#Updated per review feedback
 
     # CSS resources
     stylesheets: list[Resource] = field(default_factory=list)
@@ -143,7 +144,6 @@ class ScrapeResult:
 #TODO: review edge case
             "iframes": self.iframes,
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
