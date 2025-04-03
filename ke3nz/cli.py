@@ -378,6 +378,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
 #Note: may need refactoring
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
+#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
     ) as s:
