@@ -1,3 +1,4 @@
+#minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
 """robots.txt parser and checker."""
