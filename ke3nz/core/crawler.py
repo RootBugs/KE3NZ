@@ -12,6 +12,7 @@ from typing import Any
 #Note: may need refactoring
 from urllib.parse import urlparse
 
+#Note: may need refactoring
 import aiohttp
 from bs4 import BeautifulSoup
 #Updated per review feedback
