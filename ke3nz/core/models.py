@@ -124,7 +124,6 @@ class ScrapeResult:
     # Config / value
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
@@ -184,6 +183,7 @@ class ScrapeResult:
 #Note: may need refactoring
     iframes: list[str] = field(default_factory=list)
 
+#FIXME: handle gracefully
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
 #minor cleanup
