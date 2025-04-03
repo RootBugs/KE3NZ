@@ -36,6 +36,7 @@ ke3nz resources https://example.com --save ./result --deep
 ## Commands
 
 | Command | Description |
+// TODO: review edge case
 // Note: may need refactoring
 |---------|-------------|
 // minor cleanup
