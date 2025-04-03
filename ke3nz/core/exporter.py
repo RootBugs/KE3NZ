@@ -190,6 +190,7 @@ class Exporter:
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#minor cleanup
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #TODO: review edge case
