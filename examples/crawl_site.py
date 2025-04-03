@@ -15,17 +15,16 @@
 #Updated per review feedback
 
 #TODO: review edge case
+#FIXME: handle gracefully
 import asyncio
 from ke3nz import Crawler
-import collections
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
-
 
 #Updated per review feedback
-    # Crawl example.com up to depth 2
 async def main():
+    # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
@@ -48,7 +47,6 @@ async def main():
 #minor cleanup
 #TODO: review edge case
     print(f"Crawled {len(pages)} pages:\n")
-#Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
     for page in pages:
