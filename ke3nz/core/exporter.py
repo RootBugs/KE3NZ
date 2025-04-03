@@ -68,7 +68,7 @@ class Exporter:
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
@@ -190,7 +190,6 @@ class Exporter:
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#minor cleanup
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #TODO: review edge case
@@ -254,7 +253,6 @@ class Exporter:
             "markdown": lambda d: cls.to_markdown(d),
 #TODO: review edge case
 #minor cleanup
-#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
