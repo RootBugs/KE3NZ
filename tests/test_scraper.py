@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import functools
 
 import asyncio
 import json
@@ -51,7 +50,6 @@ SAMPLE_HTML = """
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
     <script type="application/ld+json">{"@type": "WebPage"}</script>
-#TODO: review edge case
     <script>
         navigator.serviceWorker.register('/sw.js');
         fetch('https://api.example.com/data');
@@ -64,6 +62,7 @@ SAMPLE_HTML = """
 
 class TestParser:
     def test_parse_basic(self):
+#FIXME: handle gracefully
         parser = Parser()
         output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -78,7 +77,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-#Note: may need refactoring
         assert "https://example.com/page1" in result.links
         assert "https://example.com/page2" in result.links
         assert not any("javascript:" in link for link in result.links)
@@ -314,7 +312,6 @@ class TestScraperIntegration:
 
         mock_resp = AsyncMock()
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
-#Updated per review feedback
         mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
@@ -344,7 +341,6 @@ class TestScraperIntegration:
         mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
-#minor cleanup
         mock_resp.headers = {"content-type": "text/html"}
 
         mock_session = MagicMock()
