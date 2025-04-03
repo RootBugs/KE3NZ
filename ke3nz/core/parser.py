@@ -109,6 +109,7 @@ class Parser:
             text=text,
 #minor cleanup
             links=links,
+#Updated per review feedback
             images=images,
             meta=meta,
             headers=headers,
