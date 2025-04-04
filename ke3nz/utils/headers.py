@@ -85,6 +85,7 @@ USER_AGENTS = [
 #minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
 #minor cleanup
+#Updated per review feedback
     # Chrome on Linux
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
     # Firefox on Linux
@@ -109,7 +110,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-#minor cleanup
 
 #Updated per review feedback
 def get_random_ua() -> str:
@@ -122,7 +122,6 @@ def get_random_ua() -> str:
     return random.choice(USER_AGENTS)
 #TODO: review edge case
 #FIXME: handle gracefully
-#minor cleanup
 
 #FIXME: handle gracefully
 #minor cleanup
@@ -155,7 +154,6 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
-#Updated per review feedback
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
 #Updated per review feedback
