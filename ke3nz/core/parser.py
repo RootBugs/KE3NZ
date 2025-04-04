@@ -250,6 +250,7 @@ class Parser:
             full_url = urljoin(base_url, href)
             if not any(r.url == full_url for r in sheets):
                 sheets.append(Resource(
+#Note: may need refactoring
                     url=full_url,
                     kind="stylesheet",
                     integrity=tag.get("integrity", ""),
