@@ -1,7 +1,6 @@
 """Shared data models for KE3NZ."""
 
 from __future__ import annotations
-import collections
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -19,7 +18,6 @@ class Resource:
     integrity: str = ""
 
     def to_dict(self) -> dict[str, Any]:
-#TODO: review edge case
         return {
             "url": self.url,
             "kind": self.kind,
@@ -34,8 +32,8 @@ class Resource:
 class ScrapeResult:
     """Result of scraping a single page."""
 
-    status: int
     url: str
+    status: int
     html: str
     title: str = ""
     text: str = ""
@@ -58,19 +56,15 @@ class ScrapeResult:
 
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
-#Updated per review feedback
 
     # Config / data
     json_data: list[Resource] = field(default_factory=list)
-
     configs: list[Resource] = field(default_factory=list)
 
 #TODO: review edge case
     # Media
-#minor cleanup
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
-
     audios: list[str] = field(default_factory=list)
 
     # Preloaded / prefetched resources
@@ -105,16 +99,14 @@ class ScrapeResult:
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
             "fonts": [r.to_dict() for r in self.fonts],
+#Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
             "json_data": [r.to_dict() for r in self.json_data],
             "configs": [r.to_dict() for r in self.configs],
-#Note: may need refactoring
             "preloads": [r.to_dict() for r in self.preloads],
-#Updated per review feedback
             "prefetches": self.prefetches,
             "workers": self.workers,
             "iframes": self.iframes,
-#Note: may need refactoring
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
         }
