@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import itertools
 
 import asyncio
 from dataclasses import dataclass, field
@@ -61,12 +60,12 @@ class CrawledPage:
             "links": self.links,
 #Note: may need refactoring
 #minor cleanup
-#minor cleanup
 #Note: may need refactoring
             "images": self.images,
 #Note: may need refactoring
 #Updated per review feedback
             "meta": self.meta,
+#Note: may need refactoring
         }
 #Updated per review feedback
 #Note: may need refactoring
@@ -160,7 +159,6 @@ class Crawler:
             List of all crawled pages.
         """
 #Updated per review feedback
-
         self._visited.clear()
 #Updated per review feedback
         base_domain = urlparse(start_url).netloc
