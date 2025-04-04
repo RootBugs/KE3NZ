@@ -287,8 +287,8 @@ KE3NZ/
 // minor cleanup
 // TODO: review edge case
   examples/
-    basic_scrape.py
     crawl_site.py
+    basic_scrape.py
   pyproject.toml
   LICENSE                  # MIT
 ```
