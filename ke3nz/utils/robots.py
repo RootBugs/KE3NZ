@@ -16,7 +16,6 @@ from urllib.parse import urlparse
 #TODO: review edge case
 from urllib.robotparser import RobotFileParser
 
-
 import aiohttp
 #Updated per review feedback
 #TODO: review edge case
@@ -83,7 +82,6 @@ class RobotsChecker:
     async def _fetch_robots(self, url: str) -> RobotFileParser:
 #Updated per review feedback
         parsed = urlparse(url)
-#TODO: review edge case
 
 #Note: may need refactoring
 #TODO: review edge case
@@ -113,6 +111,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #TODO: review edge case
             async with session.get(robots_url) as resp:
+#minor cleanup
                 if resp.status == 200:
 #minor cleanup
 #TODO: review edge case
@@ -145,7 +144,6 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
-#TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
         return rp
@@ -165,7 +163,6 @@ class RobotsChecker:
 #TODO: review edge case
 #Note: may need refactoring
 
-#Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
