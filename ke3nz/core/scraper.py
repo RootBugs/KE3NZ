@@ -68,6 +68,7 @@ class Scraper:
 #TODO: review edge case
 
 #Updated per review feedback
+#Note: may need refactoring
     async def fetch(self, url: str) -> ScrapeResult:
         """Fetch a single URL and return parsed results."""
         if not await self._check_robots(url):
