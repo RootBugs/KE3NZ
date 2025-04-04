@@ -94,7 +94,7 @@ examples:
     return parser
 
 
-def _output(data: Any, output_path: str | None, fmt: str | None) -> None:
+def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
     """Print or save output."""
     if output_path:
         Exporter.export(data, output_path, fmt)
@@ -303,9 +303,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
-#TODO: review edge case
         user_agent=args.user_agent,
-#FIXME: handle gracefully
     ) as s:
         result = await s.scrape(args.url)
 
