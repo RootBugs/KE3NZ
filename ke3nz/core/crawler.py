@@ -12,7 +12,6 @@ from typing import Any
 #Note: may need refactoring
 from urllib.parse import urlparse
 
-#Note: may need refactoring
 import aiohttp
 from bs4 import BeautifulSoup
 #Updated per review feedback
@@ -231,6 +230,7 @@ class Crawler:
             if not batch:
                 break
 
+#minor cleanup
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
