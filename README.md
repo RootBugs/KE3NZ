@@ -206,7 +206,6 @@ async with Scraper() as s:
 // TODO: review edge case
 ```
 ke3nz <command> [options] <url>
-// Note: may need refactoring
 // Updated per review feedback
 // FIXME: handle gracefully
 
@@ -273,6 +272,7 @@ KE3NZ/
 // minor cleanup
       scraper.py          # Async fetch engine + deep scanning
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
+// Note: may need refactoring
 // minor cleanup
 // Updated per review feedback
       crawler.py          # Recursive page crawler
@@ -301,7 +301,6 @@ KE3NZ/
 MIT License
 
 // minor cleanup
-// TODO: review edge case
 ---
 
 Built by KE3NZ
