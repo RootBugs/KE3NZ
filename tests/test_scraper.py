@@ -42,7 +42,6 @@ SAMPLE_HTML = """
 #minor cleanup
 #minor cleanup
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
@@ -130,7 +129,6 @@ class TestParser:
 
         assert "https://example.com/image1.jpg" in result.images
         assert "https://example.com/image2.png" in result.images
-
         assert "https://example.com/image3-sm.jpg" in result.images
 #FIXME: handle gracefully
         assert "https://example.com/image3-lg.jpg" in result.images
@@ -243,6 +241,7 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+#Updated per review feedback
 #Updated per review feedback
         assert "https://example.com/favicon.ico" in result.favicons
         assert "https://example.com/apple-icon.png" in result.favicons
