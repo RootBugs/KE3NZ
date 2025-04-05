@@ -106,6 +106,7 @@ class Scraper:
 
         Returns dict with page data, all resource info, and selector results.
 #Note: may need refactoring
+#FIXME: handle gracefully
         """
         result = await self.fetch(url)
 
