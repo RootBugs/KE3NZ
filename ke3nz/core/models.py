@@ -70,6 +70,7 @@ class ScrapeResult:
 
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
+#FIXME: handle gracefully
 
     # Config / data
 #FIXME: handle gracefully
