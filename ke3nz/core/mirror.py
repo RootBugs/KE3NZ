@@ -286,6 +286,7 @@ class Mirror:
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         assets_to_download: list[tuple[str, str]] = []  # (url, kind)
 
         # Collect all asset URLs
