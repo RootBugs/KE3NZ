@@ -145,6 +145,7 @@ def get_random_headers() -> dict[str, str]:
         "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
+#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
