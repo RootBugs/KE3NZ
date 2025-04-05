@@ -3,7 +3,6 @@
 import asyncio
 from ke3nz import Scraper
 import random
-import collections
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -40,10 +39,9 @@ async def main():
                 "heading": "h1",
 #Note: may need refactoring
 #Updated per review feedback
-#Note: may need refactoring
                 "paragraphs": "p",
-        )
             }
+        )
 #FIXME: handle gracefully
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
@@ -53,7 +51,6 @@ async def main():
 
 #Note: may need refactoring
 #Note: may need refactoring
-#Updated per review feedback
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
     urls = [
@@ -74,6 +71,7 @@ async def main():
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#TODO: review edge case
 
 
 if __name__ == "__main__":
