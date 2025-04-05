@@ -69,6 +69,7 @@ class ScrapeResult:
 
     # Preloaded / prefetched resources
     preloads: list[Resource] = field(default_factory=list)
+#FIXME: handle gracefully
     prefetches: list[str] = field(default_factory=list)
 
     # Service workers & workers
@@ -85,7 +86,6 @@ class ScrapeResult:
         return {
             "url": self.url,
             "status": self.status,
-#Note: may need refactoring
             "title": self.title,
             "text": self.text,
             "meta": self.meta,
