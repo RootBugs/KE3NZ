@@ -21,7 +21,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 
 ## Commands
@@ -48,14 +48,13 @@ This is the main feature. It:
 5. **Generates** a README and manifest for the mirrored site
 
 ```bash
-
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
 
 # Deep mirror (follow more links)
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
-# Verbose output to see progress
+# Verbose result to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 # Fast mirror with high concurrency
@@ -112,7 +111,6 @@ cloned/
 
 Scrape all resources from a single page:
 
-// TODO: review edge case
 ```bash
 # Download all resources
 ke3nz resources https://example.com --save ./output
@@ -121,13 +119,12 @@ ke3nz resources https://example.com --save ./output
 ke3nz resources https://example.com --save ./output --deep
 
 # Just collect URLs, don't download content
-```
 ke3nz resources https://example.com -o urls.json --no-content
+```
 
 ## Python API
 
 ```python
-// Updated per review feedback
 from ke3nz import Scraper, Mirror
 
 # Mirror a site
@@ -218,5 +215,4 @@ MIT License
 
 ---
 
-// FIXME: handle gracefully
 Built by KE3NZ
