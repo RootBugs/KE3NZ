@@ -62,6 +62,7 @@ class ScrapeResult:
     html: str
     title: str = ""
 #Updated per review feedback
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
     text: str = ""
@@ -97,9 +98,7 @@ class ScrapeResult:
 
     # Fonts
 #Updated per review feedback
-
     fonts: list[Resource] = field(default_factory=list)
-#TODO: review edge case
 
     # Source maps
 #FIXME: handle gracefully
@@ -148,7 +147,6 @@ class ScrapeResult:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
-#TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
 
@@ -182,7 +180,6 @@ class ScrapeResult:
             "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
-#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
