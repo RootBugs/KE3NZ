@@ -45,6 +45,7 @@ __all__ = [
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
+#Note: may need refactoring
     "ScrapeResult",
 #TODO: review edge case
     "Resource",
