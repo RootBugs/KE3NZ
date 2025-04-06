@@ -328,7 +328,6 @@ class Scraper:
 #Note: may need refactoring
                 resources = data.get("stylesheets", [])
             elif kind == "font":
-#Note: may need refactoring
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
                 resources = data.get("json_data", [])
@@ -372,7 +371,6 @@ class Scraper:
 
                 filepath = dir_path / filename
                 # Avoid overwrites
-#Updated per review feedback
                 counter = 1
                 while filepath.exists():
                     filepath = dir_path / f"{filepath.stem}_{counter}{filepath.suffix}"
@@ -400,6 +398,7 @@ class Scraper:
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
+#Updated per review feedback
             if isinstance(res, dict):
                 res = Resource(**res)
             if res.content:
