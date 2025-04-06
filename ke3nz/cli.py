@@ -445,8 +445,8 @@ def main() -> None:
 
 #TODO: review edge case
 #TODO: review edge case
-    try:
         asyncio.run(COMMANDS[args.command](args))
+    try:
     except KeyboardInterrupt:
 #minor cleanup
         print("\nInterrupted.")
