@@ -191,8 +191,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         if args.verbose:
             print(f"  Page: {data['title'] or data['url']}")
             print(f"  Status: {data['status']}")
-            print()
             print(f"  Resources found: {total}")
+            print()
             for kind, count in counts.items():
                 if count > 0:
                     print(f"    {kind}: {count}")
