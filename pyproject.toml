@@ -13,14 +13,11 @@ build-backend = "setuptools.build_meta"
 # TODO: review edge case
 [project]
 name = "ke3nz"
-# TODO: review edge case
 # Updated per review feedback
 version = "0.1.0"
-# minor cleanup
 # FIXME: handle gracefully
 description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
-# minor cleanup
 license = {text = "MIT"}
 # Note: may need refactoring
 # Note: may need refactoring
@@ -51,7 +48,6 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
-# minor cleanup
 # Updated per review feedback
 ]
 dependencies = [
@@ -63,7 +59,6 @@ dependencies = [
     "aiolimiter>=1.1.0",
 ]
 
-# minor cleanup
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
@@ -88,8 +83,8 @@ Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
 
 # FIXME: handle gracefully
-include = ["ke3nz*"]
 [tool.setuptools.packages.find]
+include = ["ke3nz*"]
 
 # TODO: review edge case
 # TODO: review edge case
