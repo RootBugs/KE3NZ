@@ -135,8 +135,8 @@ class Scraper:
 
     async def scrape_all_resources(
         self,
-        url: str,
         *,
+        url: str,
         download_content: bool = True,
         follow_deep: bool = False,
 #FIXME: handle gracefully
