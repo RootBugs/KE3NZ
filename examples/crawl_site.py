@@ -30,11 +30,11 @@ async def main():
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
-#TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
         pages = await c.crawl("https://example.com", max_depth=2)
 #minor cleanup
+#FIXME: handle gracefully
 
 #minor cleanup
 #Updated per review feedback
