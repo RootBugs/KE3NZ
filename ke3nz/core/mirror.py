@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-#Note: may need refactoring
 
 import asyncio
 import hashlib
@@ -74,7 +73,6 @@ class Mirror:
 #minor cleanup
         user_agent: str | None = None,
         stay_on_domain: bool = True,
-#Updated per review feedback
         max_depth: int = 3,
     ):
 #minor cleanup
@@ -490,6 +488,7 @@ class Mirror:
 #Updated per review feedback
         for tag in soup.find_all("audio", src=True):
             original = self._resolve_url(tag["src"], page_url)
+#TODO: review edge case
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
 #Note: may need refactoring
@@ -531,7 +530,6 @@ class Mirror:
         def _replace(match: re.Match) -> str:
             prefix = match.group(1)
             url = match.group(2)
-#TODO: review edge case
             suffix = match.group(3)
             if url.startswith(("value:", "#")):
 #Note: may need refactoring
@@ -575,8 +573,8 @@ class Mirror:
         so that even if ``_url_to_local_path`` or ``_asset_url_to_local``
         were to produce a traversal path, it would never reach disk.
         """
-        try:
         resolved = (base / local_path).resolve()
+        try:
             resolved.relative_to(base.resolve())
         except ValueError:
             raise ValueError(
@@ -778,7 +776,6 @@ class Mirror:
 ├── images/              (downloaded images)
 ├── fonts/               (downloaded fonts)
 #Note: may need refactoring
-#FIXME: handle gracefully
 ├── assets/
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
