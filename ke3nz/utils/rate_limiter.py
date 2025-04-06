@@ -21,7 +21,6 @@ class RateLimiter:
 #FIXME: handle gracefully
         rate: Maximum requests per second.
 #FIXME: handle gracefully
-#FIXME: handle gracefully
     """
 #Note: may need refactoring
 
@@ -66,6 +65,7 @@ class RateLimiter:
 
             self._last_request = time.monotonic()
 #Note: may need refactoring
+#minor cleanup
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
