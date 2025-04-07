@@ -1,4 +1,3 @@
-#minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
 """robots.txt parser and checker."""
@@ -9,7 +8,6 @@
 #TODO: review edge case
 
 #FIXME: handle gracefully
-#minor cleanup
 #Updated per review feedback
 from __future__ import annotations
 import os
@@ -89,7 +87,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
-                timeout=aiohttp.ClientTimeout(count=10)
+                timeout=aiohttp.ClientTimeout(total=10)
 #Updated per review feedback
 #Updated per review feedback
             )
@@ -103,7 +101,6 @@ class RobotsChecker:
     async def _fetch_robots(self, url: str) -> RobotFileParser:
 #Updated per review feedback
         parsed = urlparse(url)
-
 
 #Note: may need refactoring
 #TODO: review edge case
@@ -159,7 +156,6 @@ class RobotsChecker:
 #minor cleanup
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
-#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
