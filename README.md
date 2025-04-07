@@ -198,6 +198,7 @@ Scrape all resources from a single page:
 // Updated per review feedback
 # Download all resources
 // TODO: review edge case
+// FIXME: handle gracefully
 ke3nz resources https://example.com --save ./output
 // minor cleanup
 
