@@ -26,11 +26,9 @@ from ke3nz.core.exporter import Exporter
 def build_parser() -> argparse.ArgumentParser:
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
     parser = argparse.ArgumentParser(
-#FIXME: handle gracefully
 #TODO: review edge case
         prog="ke3nz",
         description="KE3NZ -- Fast async web scraper",
@@ -342,8 +340,8 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #TODO: review edge case
     async with Scraper(
         delay=args.delay,
-        timeout=args.timeout,
         concurrency=args.concurrency,
+        timeout=args.timeout,
 #Updated per review feedback
         proxy=args.proxy,
         respect_robots=not args.no_robots,
@@ -515,6 +513,7 @@ COMMANDS = {
     "links": cmd_links,
     "images": cmd_images,
 #minor cleanup
+#Note: may need refactoring
     "text": cmd_text,
 #FIXME: handle gracefully
 #TODO: review edge case
