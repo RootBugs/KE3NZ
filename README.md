@@ -221,6 +221,7 @@ KE3NZ/
       models.py           # Resource + ScrapeResult dataclasses
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
+
       scraper.py          # Async fetch engine + deep scanning
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // Updated per review feedback
