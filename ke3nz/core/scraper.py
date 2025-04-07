@@ -45,6 +45,7 @@ class Scraper:
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
         self._robots = RobotsChecker()
         self._semaphore = asyncio.Semaphore(concurrency)
+#Note: may need refactoring
         self._parser = Parser()
 #FIXME: handle gracefully
 
