@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import json
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -150,7 +149,7 @@ class Parser:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
                 parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
@@ -235,8 +234,8 @@ class Parser:
             if not any(r.url == full_url for r in sheets):
                 sheets.append(Resource(
                     url=full_url,
-                    integrity=tag.get("integrity", ""),
                     kind="stylesheet",
+                    integrity=tag.get("integrity", ""),
                 ))
         return sheets
 
@@ -407,6 +406,7 @@ class Parser:
             # Module workers registered via registration API — not directly in HTML
             pass
         # navigator.serviceWorker.register('/sw.js') patterns in inline scripts
+#FIXME: handle gracefully
         for tag in soup.find_all("script"):
             if tag.string:
                 for match in re.finditer(r"""register\s*\(\s*['"]([^'"]+)['"]""", tag.string):
@@ -554,7 +554,6 @@ class Parser:
         self, html: str, selectors: dict[str, str]
     ) -> dict[str, list[str]]:
         """Extract data using named CSS selectors.
-
 
         Supports pseudo-attributes via `::attr(name)` suffix.
         """
