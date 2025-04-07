@@ -62,7 +62,6 @@ examples:
 
     # mirror (THE MAIN COMMAND)
 #minor cleanup
-#minor cleanup
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
     mirror_p.add_argument("--depth", "-d", type=int, default=3, help="Max crawl depth (default: 3)")
@@ -173,6 +172,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 # ── Commands ───────────────────────────────────────────────
 
 
+#minor cleanup
 async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
     """Mirror an entire website to a local folder."""
@@ -321,7 +321,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #Updated per review feedback
         proxy=args.proxy,
         respect_robots=not args.no_robots,
-#FIXME: handle gracefully
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
