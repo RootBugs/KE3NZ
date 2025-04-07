@@ -83,6 +83,7 @@ class ScrapeResult:
     all_resource_urls: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
+#Note: may need refactoring
         return {
             "url": self.url,
             "status": self.status,
