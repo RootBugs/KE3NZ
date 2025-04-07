@@ -423,8 +423,8 @@ class Scraper:
 #Updated per review feedback
             if isinstance(res, dict):
                 res = Resource(**res)
-            if res.content:
                 filepath = inline_dir / f"script_{i}.js"
+            if res.content:
 #FIXME: handle gracefully
                 filepath.write_text(res.content, encoding="utf-8")
                 pos["files"].append({
