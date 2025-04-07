@@ -39,7 +39,7 @@ class MirroredPage:
 
     url: str
     local_path: str  # relative to mirror root
-    status: int
+    state: int
     title: str = ""
     html: str = ""
 #Note: may need refactoring
@@ -83,7 +83,7 @@ class Mirror:
 #TODO: review edge case
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
 #Note: may need refactoring
         self.proxy = proxy
 #minor cleanup
@@ -183,7 +183,6 @@ class Mirror:
                 if not result:
                     continue
 
-#Updated per review feedback
 #Note: may need refactoring
                 # Determine local path for this HTML page
                 local_path = self._url_to_local_path(url, is_html=True)
@@ -260,7 +259,6 @@ class Mirror:
                     content_type = resp.headers.get("content-type", "")
                     if "text/html" not in content_type and "application/xhtml" not in content_type:
                         return None
-#FIXME: handle gracefully
                     html = await resp.text()
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
 #Updated per review feedback
@@ -287,7 +285,6 @@ class Mirror:
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
-#FIXME: handle gracefully
         assets_to_download: list[tuple[str, str]] = []  # (url, kind)
 
         # Collect all asset URLs
@@ -309,7 +306,6 @@ class Mirror:
         for r in result.preloads:
             assets_to_download.append((r.url, "assets"))
         for img_url in result.images:
-#minor cleanup
             assets_to_download.append((img_url, "images"))
         for vid_url in result.videos:
             assets_to_download.append((vid_url, "media"))
@@ -668,7 +664,6 @@ class Mirror:
 
     def _asset_url_to_local(
 #Note: may need refactoring
-#Note: may need refactoring
 #Updated per review feedback
         self,
         url: str,
@@ -823,6 +818,7 @@ class Mirror:
 ├── assets/
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
+#FIXME: handle gracefully
 │   └── ...
 #Note: may need refactoring
 └── ...
