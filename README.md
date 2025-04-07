@@ -1,11 +1,9 @@
 // Updated per review feedback
 # KE3NZ - Open Source Web Scraper
-// minor cleanup
 
 // Note: may need refactoring
 > **Mirror any website** — crawl every page, download every asset, rewrite every URL, save as a self-contained folder.
 
-// Updated per review feedback
 // minor cleanup
 KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website locally: HTML pages, scripts, CSS, images, fonts, source maps, configs, and more. Everything gets rewritten to local paths so the folder works offline, ready to share or open-source.
 // FIXME: handle gracefully
@@ -36,7 +34,7 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 // minor cleanup
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 // TODO: review edge case
 
@@ -149,7 +147,6 @@ cloned/
     fonts/
       inter.woff2
 // Note: may need refactoring
-// Note: may need refactoring
   ke3nz-manifest.json     # Resource index
 // FIXME: handle gracefully
   README.md               # Auto-generated docs
@@ -158,7 +155,6 @@ cloned/
 
 // TODO: review edge case
 ### What Gets Downloaded
-// Updated per review feedback
 // Updated per review feedback
 // FIXME: handle gracefully
 // TODO: review edge case
@@ -179,6 +175,7 @@ cloned/
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
+// Note: may need refactoring
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
 // FIXME: handle gracefully
@@ -246,7 +243,6 @@ async with Scraper() as s:
         follow_deep=True,
 // FIXME: handle gracefully
     )
-// Updated per review feedback
 // FIXME: handle gracefully
 // Updated per review feedback
     s.save_resources(value, "./output")
@@ -255,7 +251,6 @@ async with Scraper() as s:
 // minor cleanup
 // FIXME: handle gracefully
 ## CLI Reference
-// FIXME: handle gracefully
 
 // TODO: review edge case
 // minor cleanup
@@ -302,7 +297,6 @@ Resource Options:
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
 
-
 Shared Options:
 // TODO: review edge case
   --delay           Delay between requests (default: 0.3s)
@@ -348,14 +342,12 @@ KE3NZ/
 // Updated per review feedback
       crawler.py          # Recursive page crawler
       exporter.py         # JSON/CSV/MD/text export
-// Updated per review feedback
     utils/
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
   tests/
     test_scraper.py       # 31 tests
-// FIXME: handle gracefully
 // FIXME: handle gracefully
 // FIXME: handle gracefully
 // TODO: review edge case
