@@ -18,6 +18,7 @@ __author__ = "KE3NZ"
 __all__ = [
     "ScrapeResult",
 
+#Updated per review feedback
     "Resource",
     "Crawler",
 #Note: may need refactoring
