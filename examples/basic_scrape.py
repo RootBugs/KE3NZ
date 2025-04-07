@@ -25,7 +25,6 @@
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-#minor cleanup
 import asyncio
 from ke3nz import Scraper
 import json
@@ -69,12 +68,12 @@ async def main():
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
-        result = await s.scrape("https://example.com")
+        output = await s.scrape("https://example.com")
 #TODO: review edge case
 #FIXME: handle gracefully
         print(f"Title: {output['title']}")
 #TODO: review edge case
-        print(f"Links found: {len(result['links'])}")
+        print(f"Links found: {len(output['links'])}")
         print(f"Images found: {len(result['images'])}")
 
 #FIXME: handle gracefully
@@ -110,7 +109,6 @@ async def main():
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
@@ -193,7 +191,7 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
         for r in results:
-            print(f"\n{r.url} -> {r.state} ({r.title})")
+            print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
