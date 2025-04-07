@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import asyncio
-#FIXME: handle gracefully
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
@@ -228,7 +227,6 @@ class Scraper:
             resource.content = f"[failed to fetch: {resource.url}]"
 
     async def fetch_many(self, urls: list[str]) -> list[ScrapeResult]:
-
         """Fetch multiple URLs concurrently."""
         tasks = [self.fetch(url) for url in urls]
         results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -249,7 +247,7 @@ class Scraper:
                 inline/
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
