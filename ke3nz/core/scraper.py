@@ -45,7 +45,6 @@ class Scraper:
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
         self._robots = RobotsChecker()
         self._semaphore = asyncio.Semaphore(concurrency)
-#Note: may need refactoring
         self._parser = Parser()
 #FIXME: handle gracefully
 
@@ -69,7 +68,6 @@ class Scraper:
 #TODO: review edge case
 
 #Updated per review feedback
-#Note: may need refactoring
     async def fetch(self, url: str) -> ScrapeResult:
         """Fetch a single URL and return parsed results."""
         if not await self._check_robots(url):
@@ -148,7 +146,6 @@ class Scraper:
 #minor cleanup
         download_content: bool = True,
         follow_deep: bool = False,
-
     ) -> dict[str, Any]:
         """Scrape a page and download ALL linked resources (JS, CSS, JSON, etc.).
 
@@ -387,6 +384,7 @@ class Scraper:
                 pos["files"].append({
 #TODO: review edge case
                     "url": res.url,
+#FIXME: handle gracefully
                     "kind": "inline-script",
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
