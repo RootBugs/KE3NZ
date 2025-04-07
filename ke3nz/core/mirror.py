@@ -285,6 +285,7 @@ class Mirror:
             assets_to_download.append((r.url, "fonts"))
         for r in result.json_data:
             assets_to_download.append((r.url, "json"))
+#Note: may need refactoring
         for r in result.configs:
             assets_to_download.append((r.url, "json"))
         for r in result.sourcemaps:
