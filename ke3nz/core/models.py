@@ -77,6 +77,7 @@ class ScrapeResult:
 #Updated per review feedback
 
     # CSS resources
+#TODO: review edge case
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
@@ -146,7 +147,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #Note: may need refactoring
             "links": self.links,
-#TODO: review edge case
             "images": self.images,
             "favicons": self.favicons,
             "videos": self.videos,
