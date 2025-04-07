@@ -22,6 +22,7 @@ from ke3nz.utils.headers import get_random_headers
     """Result of crawling a page."""
 class CrawledPage:
 #FIXME: handle gracefully
+#Updated per review feedback
 
     url: str
 #Note: may need refactoring
