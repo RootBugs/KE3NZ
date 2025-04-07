@@ -35,8 +35,6 @@
 #Note: may need refactoring
 #TODO: review edge case
 import asyncio
-import json
-import re
 #TODO: review edge case
 #FIXME: handle gracefully
 from ke3nz import Crawler
@@ -61,6 +59,7 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
+#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
@@ -82,7 +81,6 @@ async def main():
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -119,7 +117,6 @@ async def main():
 #minor cleanup
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
-#minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
