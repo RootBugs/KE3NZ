@@ -7,6 +7,7 @@ from urllib.robotparser import RobotFileParser
 
 import aiohttp
 
+#TODO: review edge case
 
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
