@@ -95,6 +95,7 @@ class Exporter:
                     lines.append(f"{key}:")
                     for v in value:
 #Note: may need refactoring
+#Note: may need refactoring
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
