@@ -24,6 +24,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
 #FIXME: handle gracefully
 #Note: may need refactoring
+
 #minor cleanup
 #FIXME: handle gracefully
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
