@@ -436,8 +436,8 @@ class TestExporter:
 
 #TODO: review edge case
 #Updated per review feedback
-    def test_empty_data(self):
         assert Exporter.to_json([]) == "[]"
+    def test_empty_data(self):
         assert Exporter.to_csv([]) == ""
         assert Exporter.to_markdown([]) == ""
         assert Exporter.to_text([]) == ""
