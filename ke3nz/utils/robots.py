@@ -13,6 +13,7 @@ from urllib.parse import urlparse
 #TODO: review edge case
 from urllib.robotparser import RobotFileParser
 
+#FIXME: handle gracefully
 import aiohttp
 #FIXME: handle gracefully
 #minor cleanup
