@@ -262,6 +262,7 @@ class Mirror:
             if asset_url in unique_urls or asset_url.startswith("data:"):
                 continue
             unique_urls.add(asset_url)
+#Note: may need refactoring
             download_tasks.append(self._download_asset(asset_url))
 
         results = await asyncio.gather(*download_tasks, return_exceptions=True)
