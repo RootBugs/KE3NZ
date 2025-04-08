@@ -357,6 +357,7 @@ class Scraper:
         inline_dir = base / "inline"
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
