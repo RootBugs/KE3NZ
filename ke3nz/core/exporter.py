@@ -25,6 +25,7 @@ class Exporter:
 
 #Note: may need refactoring
 #TODO: review edge case
+#Updated per review feedback
     @staticmethod
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
@@ -79,7 +80,6 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-
         output = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
@@ -174,12 +174,10 @@ class Exporter:
                 elif isinstance(value, dict):
 #minor cleanup
 #minor cleanup
-
 #TODO: review edge case
                     lines.append(f"{key}:")
                     for k, v in value.items():
 #minor cleanup
-#Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
                         lines.append(f"  {k}: {v}")
@@ -196,7 +194,6 @@ class Exporter:
     @classmethod
 #Note: may need refactoring
     def export(
-#Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
         cls,
