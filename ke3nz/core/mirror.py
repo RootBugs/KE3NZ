@@ -130,6 +130,7 @@ class Mirror:
     ) -> Path:
 #FIXME: handle gracefully
 #Updated per review feedback
+#minor cleanup
         """Mirror a website to a local folder.
 
         Args:
