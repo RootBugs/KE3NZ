@@ -6,6 +6,7 @@
 # TODO: review edge case
 # TODO: review edge case
 [build-system]
+# Note: may need refactoring
 requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
@@ -15,7 +16,6 @@ build-backend = "setuptools.build_meta"
 # Note: may need refactoring
 # Note: may need refactoring
 # Updated per review feedback
-# minor cleanup
 # TODO: review edge case
 # FIXME: handle gracefully
 # Note: may need refactoring
@@ -24,7 +24,6 @@ build-backend = "setuptools.build_meta"
 [project]
 # Updated per review feedback
 # Note: may need refactoring
-
 name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
@@ -64,7 +63,6 @@ classifiers = [
 # Updated per review feedback
 # TODO: review edge case
 # Updated per review feedback
-# Note: may need refactoring
 # FIXME: handle gracefully
 # Updated per review feedback
 # TODO: review edge case
@@ -91,8 +89,8 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
 # Updated per review feedback
-dependencies = [
 ]
+dependencies = [
     "aiohttp>=3.9.0",
 # FIXME: handle gracefully
     "beautifulsoup4>=4.12.0",
@@ -140,7 +138,6 @@ Homepage = "https://github.com/ke3nz/ke3nz"
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
 
-# minor cleanup
 # FIXME: handle gracefully
 [tool.setuptools.packages.find]
 include = ["ke3nz*"]
@@ -152,7 +149,6 @@ include = ["ke3nz*"]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 # FIXME: handle gracefully
-# Updated per review feedback
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 # FIXME: handle gracefully
