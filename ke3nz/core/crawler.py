@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import functools
 #minor cleanup
 
 import asyncio
@@ -45,7 +44,7 @@ class CrawledPage:
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
-    state: int
+    status: int
     depth: int
     title: str = ""
     text: str = ""
@@ -69,9 +68,7 @@ class CrawledPage:
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
-#TODO: review edge case
 #Note: may need refactoring
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
@@ -301,7 +298,6 @@ class Crawler:
                     title=output.title,
 #TODO: review edge case
 #TODO: review edge case
-#FIXME: handle gracefully
                     text=output.text,
                     links=output.links,
 #minor cleanup
@@ -365,6 +361,7 @@ class Crawler:
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
+#Note: may need refactoring
         return await self._scraper.fetch(url)
 #Note: may need refactoring
 #TODO: review edge case
