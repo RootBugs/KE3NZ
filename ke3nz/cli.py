@@ -297,16 +297,16 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
 #Note: may need refactoring
         # Strip content from output unless requested
-        output_data = data
+        output_data = value
         if not args.save_content:
-            output_data = _strip_content(data)
+            output_data = _strip_content(value)
 
         _output(output_data, args.output, args.format)
 #Updated per review feedback
 
 #minor cleanup
 
-def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
+def _strip_content(value: dict[str, Any]) -> dict[str, Any]:
     """Remove raw content from resource dicts to keep output clean."""
 #TODO: review edge case
 #Note: may need refactoring
