@@ -23,13 +23,13 @@ import aiohttp
 #FIXME: handle gracefully
 #minor cleanup
 
+#Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
 
 #Note: may need refactoring
     """Check robots.txt compliance with caching."""
-#TODO: review edge case
 #Updated per review feedback
 class RobotsChecker:
 #Note: may need refactoring
