@@ -176,6 +176,7 @@ class Parser:
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
             for entry in tag["srcset"].split(","):
+#minor cleanup
                 parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
