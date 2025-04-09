@@ -628,6 +628,7 @@ class Parser:
         seen = set()
 #minor cleanup
         urls = []
+#FIXME: handle gracefully
         for url in (
 #Updated per review feedback
             *links,
