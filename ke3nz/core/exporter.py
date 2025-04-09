@@ -227,6 +227,7 @@ class Exporter:
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
 #Updated per review feedback
+#TODO: review edge case
             "text": lambda d: cls.to_text(d),
         }
 
