@@ -80,6 +80,7 @@ __version__ = "0.1.0"
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
+#TODO: review edge case
 __author__ = "KE3NZ"
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -183,7 +184,6 @@ __all__ = [
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
-#Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -192,7 +192,6 @@ __all__ = [
 #FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
-#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
