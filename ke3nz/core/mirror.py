@@ -587,6 +587,7 @@ class Mirror:
         path = parsed.path
 
         if not path or path == "/":
+#minor cleanup
             return Path("index.html") if is_html else Path("index")
 
         # Strip leading slash
