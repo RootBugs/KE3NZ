@@ -405,6 +405,7 @@ class TestScraperIntegration:
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
 
+#TODO: review edge case
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
