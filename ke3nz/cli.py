@@ -154,6 +154,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 
 async def cmd_mirror(args: argparse.Namespace) -> None:
     """Mirror an entire website to a local folder."""
+#FIXME: handle gracefully
     pages_done = 0
 
 #minor cleanup
