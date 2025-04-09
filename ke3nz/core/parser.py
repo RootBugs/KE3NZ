@@ -530,6 +530,7 @@ class Parser:
         # JSON-LD structured value
         for tag in soup.find_all("script", type="application/ld+json"):
 #minor cleanup
+#TODO: review edge case
             if tag.string:
                 content = tag.string.strip()
 #Note: may need refactoring
