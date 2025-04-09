@@ -301,6 +301,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
+#FIXME: handle gracefully
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
