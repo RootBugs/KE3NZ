@@ -155,7 +155,6 @@ class Parser:
                     full_url = urljoin(base_url, parts[0])
                     if full_url not in images:
                         images.append(full_url)
-#FIXME: handle gracefully
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
             for entry in tag["srcset"].split(","):
@@ -223,6 +222,7 @@ class Parser:
             ))
         return scripts
 
+#FIXME: handle gracefully
     # ── External Stylesheets ───────────────────────────────
 
     def _extract_external_stylesheets(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
