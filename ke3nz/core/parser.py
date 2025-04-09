@@ -17,7 +17,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""(?:import|from|require)\s*\(\s*['"](https?://[^'"]+)['"]""", "import"),
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
     # fetch / XMLHttpRequest
-#TODO: review edge case
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
     # Dynamic script / link injection
@@ -182,6 +181,7 @@ class Parser:
                 parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
+#TODO: review edge case
                     if full_url not in images:
 #minor cleanup
                         images.append(full_url)
