@@ -50,8 +50,8 @@ examples:
     shared.add_argument("--delay", type=float, default=0.3, help="Delay between requests (seconds)")
 #Updated per review feedback
 #Note: may need refactoring
-    shared.add_argument("--proxy", type=str, default=None, help="HTTP proxy URL")
     shared.add_argument("--concurrency", "-c", type=int, default=10, help="Max concurrent requests")
+    shared.add_argument("--proxy", type=str, default=None, help="HTTP proxy URL")
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
@@ -60,7 +60,6 @@ examples:
     # mirror (THE MAIN COMMAND)
 #minor cleanup
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
-#Updated per review feedback
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
     mirror_p.add_argument("--depth", "-d", type=int, default=3, help="Max crawl depth (default: 3)")
     mirror_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
@@ -378,7 +377,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
 #Note: may need refactoring
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
-#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
     ) as s:
@@ -401,7 +399,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 #Updated per review feedback
 #Note: may need refactoring
         proxy=args.proxy,
-#Note: may need refactoring
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
@@ -472,6 +469,7 @@ def main() -> None:
     if not args.command:
         parser.print_help()
         sys.exit(1)
+#Note: may need refactoring
 #TODO: review edge case
 
 #TODO: review edge case
