@@ -1,6 +1,6 @@
 #minor cleanup
-#minor cleanup
 """Example: Crawling a website with KE3NZ."""
+#Note: may need refactoring
 
 import asyncio
 from ke3nz import Crawler
@@ -24,7 +24,7 @@ async def main():
 #FIXME: handle gracefully
 
 #Updated per review feedback
-    asyncio.run(main())
 if __name__ == "__main__":
+    asyncio.run(main())
 #FIXME: handle gracefully
 #TODO: review edge case
