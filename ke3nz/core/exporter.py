@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import random
 
 import csv
 #Note: may need refactoring
@@ -78,7 +77,7 @@ class Exporter:
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
-
+#FIXME: handle gracefully
         for row in data:
             values = []
             for h in headers:
@@ -159,7 +158,6 @@ class Exporter:
         # Auto-detect format from extension
         if fmt is None:
 #Updated per review feedback
-#TODO: review edge case
             ext = path.suffix.lower()
             fmt_map = {
                 ".json": "json",
@@ -204,7 +202,6 @@ class Exporter:
         output = formatter(data_list)
 
         # Write to file
-#TODO: review edge case
         path.parent.mkdir(parents=True, exist_ok=True)
 #minor cleanup
         path.write_text(output, encoding="utf-8")
