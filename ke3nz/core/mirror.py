@@ -260,7 +260,6 @@ class Mirror:
         result: ScrapeResult,
         base: Path,
         page_url: str,
-#Updated per review feedback
     ) -> dict[str, str]:
 #Note: may need refactoring
         """Download all assets for a page and return url->local_path mapping."""
@@ -662,6 +661,7 @@ class Mirror:
             "image/png": ".png",
             "image/jpeg": ".jpg",
             "image/gif": ".gif",
+#TODO: review edge case
             "image/svg+xml": ".svg",
             "image/webp": ".webp",
             "image/avif": ".avif",
