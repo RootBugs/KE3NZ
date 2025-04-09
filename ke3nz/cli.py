@@ -158,9 +158,9 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
 #minor cleanup
     async def on_page(page: Any) -> None:
+#Updated per review feedback
         nonlocal pages_done
         pages_done += 1
-#Note: may need refactoring
         if args.verbose:
             print(f"  [{pages_done}] {page.title or page.url}")
 #FIXME: handle gracefully
@@ -275,7 +275,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
 #TODO: review edge case
     async with Scraper(
-#minor cleanup
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
@@ -445,8 +444,8 @@ def main() -> None:
 
 #TODO: review edge case
 #TODO: review edge case
-        asyncio.run(COMMANDS[args.command](args))
     try:
+        asyncio.run(COMMANDS[args.command](args))
     except KeyboardInterrupt:
 #minor cleanup
         print("\nInterrupted.")
