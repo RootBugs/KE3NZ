@@ -122,8 +122,8 @@ class Scraper:
         *,
         selectors: dict[str, str] | None = None,
 #minor cleanup
-    ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
+    ) -> dict[str, Any]:
 
         Returns dict with page data, all resource info, and selector results.
         """
