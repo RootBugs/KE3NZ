@@ -110,6 +110,7 @@ class Mirror:
             output_dir: Directory to write the mirror into.
             on_page: Optional async callback(MirroredPage) for progress.
 
+#TODO: review edge case
         Returns:
             Path to the result directory.
         """
@@ -262,7 +263,6 @@ class Mirror:
             if asset_url in unique_urls or asset_url.startswith("data:"):
                 continue
             unique_urls.add(asset_url)
-#Note: may need refactoring
             download_tasks.append(self._download_asset(asset_url))
 
         results = await asyncio.gather(*download_tasks, return_exceptions=True)
@@ -293,7 +293,6 @@ class Mirror:
         return url_to_local
 
     async def _download_asset(self, url: str) -> tuple[bytes, str] | None:
-#minor cleanup
         """Download a single asset as bytes."""
         if not await self._check_robots(url):
             return None
@@ -359,7 +358,6 @@ class Mirror:
         for tag in soup.find_all("link", rel=True):
             rel = tag.get("rel", [])
             if isinstance(rel, str):
-#minor cleanup
                 rel = rel.split()
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
                 href = tag.get("href", "")
@@ -568,7 +566,6 @@ class Mirror:
         }.get(kind, "assets")
         return f"{folder}/resource_{self._asset_counter}{ext}"
 
-#Updated per review feedback
     def _guess_extension(self, content_type: str, kind: str) -> str:
         """Guess file extension from content type and kind."""
         ct = content_type.split(";")[0].strip().lower()
