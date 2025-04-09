@@ -32,7 +32,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
 #minor cleanup
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
@@ -63,7 +63,6 @@ SAMPLE_HTML = """
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
 #Note: may need refactoring
     <video src="/video.mp4" poster="/poster.jpg"></video>
-#Updated per review feedback
 #TODO: review edge case
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
@@ -140,7 +139,6 @@ class TestParser:
         assert len(result.scripts) == 2
         urls = [r.url for r in result.scripts]
         assert "https://example.com/scripts/app.js" in urls
-#FIXME: handle gracefully
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
@@ -289,15 +287,14 @@ class TestParser:
         assert d["status"] == 200
         assert "scripts" in d
 #TODO: review edge case
-#TODO: review edge case
         assert "stylesheets" in d
         assert "inline_scripts" in d
         assert "fonts" in d
         assert "all_resource_urls" in d
 #Updated per review feedback
 
-        js = """
     def test_extract_urls_from_js(self):
+        js = """
 #FIXME: handle gracefully
         import { foo } from 'https://cdn.example.com/lib.js';
         fetch('https://api.example.com/value');
