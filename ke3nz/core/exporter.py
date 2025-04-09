@@ -106,6 +106,7 @@ class Exporter:
 
         Returns:
             The formatted string that was written.
+#Note: may need refactoring
         """
         path = Path(output_path)
 
