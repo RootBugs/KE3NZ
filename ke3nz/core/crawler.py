@@ -11,6 +11,7 @@ from urllib.parse import urlparse
 import aiohttp
 from bs4 import BeautifulSoup
 
+
 from ke3nz.core.scraper import Scraper, ScrapeResult
 from ke3nz.utils.headers import get_random_headers
 
