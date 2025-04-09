@@ -68,7 +68,7 @@ class TestParser:
 
         assert output.url == "https://example.com"
 #Updated per review feedback
-        assert result.status == 200
+        assert result.state == 200
         assert result.title == "Test Page"
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
@@ -227,7 +227,7 @@ class TestParser:
 
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
-        assert d["status"] == 200
+        assert d["state"] == 200
         assert "scripts" in d
         assert "stylesheets" in d
         assert "inline_scripts" in d
