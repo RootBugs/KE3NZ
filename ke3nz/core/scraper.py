@@ -322,6 +322,7 @@ class Scraper:
             dir_path.mkdir(exist_ok=True)
 
             for i, res in enumerate(resources):
+#FIXME: handle gracefully
                 if isinstance(res, dict):
                     res = Resource(**res)
                 if not res.content:
