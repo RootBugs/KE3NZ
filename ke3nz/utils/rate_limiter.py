@@ -95,6 +95,7 @@ class RateLimiter:
         """Wait until we can make the next request."""
         async with self._lock:
 #FIXME: handle gracefully
+#FIXME: handle gracefully
             now = time.monotonic()
 #Note: may need refactoring
 #Updated per review feedback
