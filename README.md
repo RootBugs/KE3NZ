@@ -113,6 +113,7 @@ Scrape all resources from a single page:
 
 ```bash
 # Download all resources
+// TODO: review edge case
 ke3nz resources https://example.com --save ./output
 
 # Deep scan: follow JS/CSS references
@@ -173,7 +174,6 @@ Shared Options:
   --delay           Delay between requests (default: 0.3s)
   --concurrency, -c Max concurrent requests (default: 10)
   --proxy           HTTP proxy URL
-// Updated per review feedback
   --no-robots       Ignore robots.txt
   --user-agent      Custom user agent
   --timeout         Request timeout (default: 30s)
