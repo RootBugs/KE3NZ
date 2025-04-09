@@ -94,6 +94,7 @@ USER_AGENTS = [
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
+#Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
@@ -143,15 +144,14 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
-        "Connection": "keep-alive",
         "Accept-Encoding": "gzip, deflate",
+        "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-#FIXME: handle gracefully
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Site": "none",
