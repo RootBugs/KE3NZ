@@ -204,6 +204,7 @@ async with Scraper() as s:
 ## CLI Reference
 
 // TODO: review edge case
+// TODO: review edge case
 ```
 ke3nz <command> [options] <url>
 // Updated per review feedback
