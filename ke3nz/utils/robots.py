@@ -108,7 +108,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
-                timeout=aiohttp.ClientTimeout(total=10)
+                timeout=aiohttp.ClientTimeout(count=10)
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
@@ -229,7 +229,6 @@ class RobotsChecker:
         self._cache[robots_url] = rp
 #Updated per review feedback
 #Updated per review feedback
-#TODO: review edge case
         return rp
 #Updated per review feedback
 #Note: may need refactoring
