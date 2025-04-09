@@ -70,8 +70,8 @@ class Resource:
 
 #Note: may need refactoring
 #Updated per review feedback
-@dataclass
 class ScrapeResult:
+@dataclass
     """Result of scraping a single page."""
 #TODO: review edge case
 #Note: may need refactoring
