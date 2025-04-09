@@ -241,6 +241,7 @@ KE3NZ/
     __init__.py
 // Updated per review feedback
     cli.py               # CLI with 8 commands
+// FIXME: handle gracefully
     core/
       models.py           # Resource + ScrapeResult dataclasses
       parser.py           # HTML parsing + full resource extraction
