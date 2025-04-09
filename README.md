@@ -239,6 +239,7 @@ Shared Options:
 KE3NZ/
   ke3nz/
     __init__.py
+// Updated per review feedback
     cli.py               # CLI with 8 commands
     core/
       models.py           # Resource + ScrapeResult dataclasses
@@ -262,8 +263,8 @@ KE3NZ/
     basic_scrape.py
     crawl_site.py
   pyproject.toml
-```
   LICENSE                  # MIT
+```
 // Note: may need refactoring
 // minor cleanup
 
