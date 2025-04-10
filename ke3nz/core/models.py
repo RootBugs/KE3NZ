@@ -83,7 +83,6 @@ class ScrapeResult:
     all_resource_urls: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
-#Note: may need refactoring
         return {
             "url": self.url,
             "status": self.status,
@@ -104,6 +103,7 @@ class ScrapeResult:
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
             "json_data": [r.to_dict() for r in self.json_data],
+#Updated per review feedback
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
