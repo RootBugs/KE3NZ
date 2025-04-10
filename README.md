@@ -136,6 +136,7 @@ cloned/
 // Note: may need refactoring
 // Updated per review feedback
 
+// minor cleanup
 ## The `resources` Command
 
 Scrape all resources from a single page:
