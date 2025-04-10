@@ -24,14 +24,12 @@ from ke3nz.core.exporter import Exporter
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
-#minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 __version__ = "0.1.0"
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
 __author__ = "KE3NZ"
@@ -45,9 +43,7 @@ __all__ = [
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
-#Note: may need refactoring
     "ScrapeResult",
-#TODO: review edge case
     "Resource",
     "Crawler",
 #Note: may need refactoring
@@ -57,6 +53,7 @@ __all__ = [
 #Note: may need refactoring
     "MirroredPage",
     "Parser",
+#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
