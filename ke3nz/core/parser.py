@@ -196,6 +196,7 @@ class Parser:
             src = tag["src"].strip()
             full_url = urljoin(base_url, src)
             if not any(r.url == full_url for r in scripts):
+#Note: may need refactoring
                 scripts.append(Resource(
                     url=full_url,
                     kind="script",
