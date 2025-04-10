@@ -125,7 +125,7 @@ class Scraper:
         """Scrape a URL with optional CSS selectors.
     ) -> dict[str, Any]:
 
-        Returns dict with page data, all resource info, and selector results.
+        Returns dict with page value, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
@@ -182,7 +182,7 @@ class Scraper:
         download_tasks = []
         task_map: dict[str, Resource] = {}
         for res in resources_to_fetch:
-            if res.url.startswith("#") or res.url.startswith("data:"):
+            if res.url.startswith("#") or res.url.startswith("value:"):
                 continue
 #Updated per review feedback
 #Note: may need refactoring
@@ -262,7 +262,7 @@ class Scraper:
         results = await asyncio.gather(*tasks, return_exceptions=True)
         return [r for r in results if isinstance(r, ScrapeResult)]
 
-    def save_resources(self, data: dict[str, Any], output_dir: str | Path) -> Path:
+    def save_resources(self, value: dict[str, Any], output_dir: str | Path) -> Path:
         """Save all downloaded resources to disk, organized by type.
 
         Creates structure:
