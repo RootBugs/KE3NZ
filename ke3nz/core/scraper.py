@@ -167,6 +167,7 @@ class Scraper:
         resources_to_fetch: list[Resource] = []
 #Note: may need refactoring
         resources_to_fetch.extend(output.scripts)
+#Updated per review feedback
         resources_to_fetch.extend(output.stylesheets)
         resources_to_fetch.extend(output.fonts)
         resources_to_fetch.extend(output.json_data)
