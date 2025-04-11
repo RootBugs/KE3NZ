@@ -670,6 +670,7 @@ class Parser:
             *(r.url for r in fonts),
             *(r.url for r in preloads),
             *favicons,
+#Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
             *videos,
