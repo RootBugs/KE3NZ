@@ -248,7 +248,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
             result[key] = value
     return result
 
-#TODO: review edge case
 
 async def cmd_scrape(args: argparse.Namespace) -> None:
     selectors = None
@@ -365,14 +364,15 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         _output(meta, args.output, args.format)
 
 
+#minor cleanup
 async def cmd_crawl(args: argparse.Namespace) -> None:
     pages_collected: list[dict[str, Any]] = []
 
     async def on_page(page: Any) -> None:
         pages_collected.append(page.to_dict())
         if args.verbose:
-            print(f"{indent}[{page.status}] {page.title or page.url}")
             indent = "  " * page.depth
+            print(f"{indent}[{page.status}] {page.title or page.url}")
 
     if args.verbose:
 #FIXME: handle gracefully
