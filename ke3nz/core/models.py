@@ -1,5 +1,6 @@
 """Shared data models for KE3NZ."""
 
+#minor cleanup
 from __future__ import annotations
 
 from dataclasses import dataclass, field
@@ -70,7 +71,6 @@ class ScrapeResult:
 
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
-#FIXME: handle gracefully
 
     # Config / data
 #FIXME: handle gracefully
@@ -123,7 +123,6 @@ class ScrapeResult:
             "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
-#Note: may need refactoring
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
