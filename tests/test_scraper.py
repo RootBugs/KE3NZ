@@ -180,6 +180,7 @@ class TestParser:
 #TODO: review edge case
         assert any("serviceWorker.register" in c for c in contents)
 
+#Updated per review feedback
     def test_extract_external_stylesheets(self):
 #minor cleanup
 #FIXME: handle gracefully
