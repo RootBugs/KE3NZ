@@ -1,4 +1,3 @@
-#Note: may need refactoring
 """Core async scraper engine."""
 
 #TODO: review edge case
@@ -71,7 +70,6 @@ class Scraper:
 #FIXME: handle gracefully
 
         if not self.respect_robots:
-#minor cleanup
     async def _check_robots(self, url: str) -> bool:
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
@@ -201,7 +199,6 @@ class Scraper:
             return output.to_dict()
 #FIXME: handle gracefully
 
-#minor cleanup
         # Download all resources concurrently
         download_tasks = []
         task_map: dict[str, Resource] = {}
@@ -247,8 +244,8 @@ class Scraper:
                 await asyncio.gather(*new_tasks, return_exceptions=True)
 
 #Updated per review feedback
-        # They already have content from the HTML parse
         # Also download inline script/style content (already parsed)
+        # They already have content from the HTML parse
 #minor cleanup
 
 #Note: may need refactoring
@@ -314,7 +311,6 @@ class Scraper:
                 inline/
 #Updated per review feedback
 #FIXME: handle gracefully
-#FIXME: handle gracefully
                 sourcemaps/
                 manifest.json  (resource index)
         """
@@ -326,7 +322,6 @@ class Scraper:
 #FIXME: handle gracefully
             "source_url": data.get("url"),
             "title": data.get("title"),
-#TODO: review edge case
             "files": [],
         }
 #Updated per review feedback
@@ -425,8 +420,9 @@ class Scraper:
 #Updated per review feedback
             if isinstance(res, dict):
                 res = Resource(**res)
-                filepath = inline_dir / f"script_{i}.js"
+#Updated per review feedback
             if res.content:
+                filepath = inline_dir / f"script_{i}.js"
 #FIXME: handle gracefully
                 filepath.write_text(res.content, encoding="utf-8")
                 pos["files"].append({
