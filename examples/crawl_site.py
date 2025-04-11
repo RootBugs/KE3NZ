@@ -21,6 +21,7 @@ from ke3nz import Crawler
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
+#minor cleanup
 
 #Updated per review feedback
 async def main():
