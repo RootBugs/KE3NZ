@@ -39,7 +39,6 @@ examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
   ke3nz resources https://example.com --save ./result --deep
-#TODO: review edge case
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -298,16 +297,16 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
 #Note: may need refactoring
         # Strip content from output unless requested
-        output_data = value
+        output_data = data
         if not args.save_content:
-            output_data = _strip_content(value)
+            output_data = _strip_content(data)
 
         _output(output_data, args.output, args.format)
 #Updated per review feedback
 
 #minor cleanup
 
-def _strip_content(value: dict[str, Any]) -> dict[str, Any]:
+def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
     """Remove raw content from resource dicts to keep output clean."""
 #TODO: review edge case
 #Note: may need refactoring
@@ -340,8 +339,8 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
 #TODO: review edge case
     async with Scraper(
-        concurrency=args.concurrency,
         delay=args.delay,
+        concurrency=args.concurrency,
         timeout=args.timeout,
 #Updated per review feedback
         proxy=args.proxy,
@@ -427,6 +426,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
+#TODO: review edge case
         proxy=args.proxy,
 #Note: may need refactoring
         respect_robots=not args.no_robots,
