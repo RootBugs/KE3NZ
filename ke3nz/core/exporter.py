@@ -62,6 +62,7 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
+#FIXME: handle gracefully
 #Note: may need refactoring
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
