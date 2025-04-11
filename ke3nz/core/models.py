@@ -68,6 +68,7 @@ class ScrapeResult:
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
 #minor cleanup
+#minor cleanup
 
     # Script resources
 #TODO: review edge case
