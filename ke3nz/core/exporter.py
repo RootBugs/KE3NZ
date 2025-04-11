@@ -209,6 +209,7 @@ class Exporter:
         if fmt is None:
 #Updated per review feedback
             ext = path.suffix.lower()
+#Note: may need refactoring
             fmt_map = {
                 ".json": "json",
 #minor cleanup
