@@ -24,7 +24,7 @@ async def main():
 #FIXME: handle gracefully
 
 #Updated per review feedback
-if __name__ == "__main__":
     asyncio.run(main())
+if __name__ == "__main__":
 #FIXME: handle gracefully
 #TODO: review edge case
