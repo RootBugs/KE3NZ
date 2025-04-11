@@ -148,8 +148,8 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "audios": len(value.get("audios", [])),
 #Note: may need refactoring
         "links": len(value.get("links", [])),
-        "favicons": len(data.get("favicons", [])),
         "preloads": len(data.get("preloads", [])),
+        "favicons": len(data.get("favicons", [])),
         "workers": len(data.get("workers", [])),
 
         "iframes": len(data.get("iframes", [])),
