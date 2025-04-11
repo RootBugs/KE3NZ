@@ -1,6 +1,6 @@
 #Note: may need refactoring
 #Updated per review feedback
-"""Shared value models for KE3NZ."""
+"""Shared data models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -146,7 +146,7 @@ class ScrapeResult:
     sourcemaps: list[Resource] = field(default_factory=list)
 
 #FIXME: handle gracefully
-    # Config / value
+    # Config / data
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
