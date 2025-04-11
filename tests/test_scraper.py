@@ -12,6 +12,7 @@ import pytest
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
+#minor cleanup
 from ke3nz.core.models import Resource
 from ke3nz.utils.headers import get_random_headers, get_random_ua
 
