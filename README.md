@@ -279,6 +279,7 @@ Commands:
   text        Extract text content
   meta        Extract page metadata
 // Updated per review feedback
+// Note: may need refactoring
   crawl       Crawl a website and list pages
 
 // FIXME: handle gracefully
