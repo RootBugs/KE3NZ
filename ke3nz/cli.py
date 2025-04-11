@@ -235,6 +235,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 #Note: may need refactoring
     result = {}
     skip_keys = {"html"}
+#TODO: review edge case
 #Updated per review feedback
     for key, value in data.items():
         if key in skip_keys:
