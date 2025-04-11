@@ -137,7 +137,6 @@ class RateLimiter:
     async def acquire(self) -> None:
 #minor cleanup
 #minor cleanup
-#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
@@ -210,13 +209,13 @@ class RateLimiter:
 #Note: may need refactoring
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
+#Note: may need refactoring
 
 #minor cleanup
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
             self._last_request = time.monotonic()
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
