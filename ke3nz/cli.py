@@ -154,7 +154,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 
 async def cmd_mirror(args: argparse.Namespace) -> None:
     """Mirror an entire website to a local folder."""
-#FIXME: handle gracefully
     pages_done = 0
 
 #minor cleanup
@@ -208,6 +207,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
     ) as s:
         if args.verbose:
 #TODO: review edge case
+#Updated per review feedback
             print(f"Scanning {args.url}...")
 
         data = await s.scrape_all_resources(
