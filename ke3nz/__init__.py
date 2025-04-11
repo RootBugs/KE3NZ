@@ -159,6 +159,7 @@ __all__ = [
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
+#minor cleanup
     "MirroredPage",
     "Parser",
 #Note: may need refactoring
