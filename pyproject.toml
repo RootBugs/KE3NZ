@@ -37,6 +37,7 @@ build-backend = "setuptools.build_meta"
 # TODO: review edge case
 # Updated per review feedback
 # FIXME: handle gracefully
+# minor cleanup
 # Updated per review feedback
 [project]
 # FIXME: handle gracefully
