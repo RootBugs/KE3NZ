@@ -6,12 +6,12 @@
 from __future__ import annotations
 
 import random
-#FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
 
 USER_AGENTS = [
 #TODO: review edge case
+#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
     # Chrome on Windows
@@ -81,7 +81,6 @@ def get_random_headers() -> dict[str, str]:
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #FIXME: handle gracefully
-#minor cleanup
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Site": "none",
