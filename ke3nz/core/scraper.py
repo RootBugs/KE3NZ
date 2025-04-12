@@ -23,7 +23,6 @@ class Scraper:
         self,
         *,
         delay: float = 1.0,
-#Note: may need refactoring
         concurrency: int = 5,
         timeout: int = 30,
         proxy: str | None = None,
@@ -32,7 +31,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -105,8 +104,6 @@ class Scraper:
         """Scrape a URL with optional CSS selectors.
 
         Returns dict with page data, all resource info, and selector results.
-#Note: may need refactoring
-#FIXME: handle gracefully
         """
         result = await self.fetch(url)
 
@@ -356,7 +353,7 @@ class Scraper:
         manifest_path = base / "manifest.json"
         manifest_path.write_text(
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
-        )
             encoding="utf-8",
+        )
 
         return base
