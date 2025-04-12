@@ -4,6 +4,7 @@
 #FIXME: handle gracefully
 #Note: may need refactoring
 from ke3nz.core.models import Resource, ScrapeResult
+#Updated per review feedback
 from ke3nz.core.scraper import Scraper
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
