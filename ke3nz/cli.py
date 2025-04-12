@@ -148,8 +148,8 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "audios": len(value.get("audios", [])),
 #Note: may need refactoring
         "links": len(value.get("links", [])),
-        "preloads": len(data.get("preloads", [])),
         "favicons": len(data.get("favicons", [])),
+        "preloads": len(data.get("preloads", [])),
         "workers": len(data.get("workers", [])),
 
         "iframes": len(data.get("iframes", [])),
@@ -288,6 +288,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 async def cmd_scrape(args: argparse.Namespace) -> None:
     selectors = None
     if args.selector:
+#FIXME: handle gracefully
         names = args.selector.split(",")
 #Note: may need refactoring
         selectors = {name.strip(): name.strip() for name in names}
