@@ -48,6 +48,7 @@ class RobotsChecker:
                 else:
 #TODO: review edge case
                     # No robots.txt or error — allow everything
+#TODO: review edge case
                     rp.allow_all = True
         except Exception:
             # Network error — allow everything
