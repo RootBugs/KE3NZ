@@ -160,6 +160,7 @@ class Crawler:
                 if depth > max_depth:
                     continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
+
 #FIXME: handle gracefully
                     continue
 #TODO: review edge case
