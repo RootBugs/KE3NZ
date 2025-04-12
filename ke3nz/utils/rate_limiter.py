@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 import time
 
+#FIXME: handle gracefully
 
 #minor cleanup
 class RateLimiter:
