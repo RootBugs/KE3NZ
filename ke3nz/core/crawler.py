@@ -300,6 +300,7 @@ class Crawler:
 #TODO: review edge case
                     text=output.text,
                     links=output.links,
+#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
