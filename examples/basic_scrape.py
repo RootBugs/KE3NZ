@@ -40,8 +40,8 @@ async def main():
                 "heading": "h1",
 #Note: may need refactoring
 #Updated per review feedback
-                "paragraphs": "p",
             }
+                "paragraphs": "p",
         )
 #FIXME: handle gracefully
         print("\nSelector results:")
