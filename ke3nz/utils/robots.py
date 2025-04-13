@@ -44,7 +44,6 @@ class RobotsChecker:
 
 #minor cleanup
 #minor cleanup
-#TODO: review edge case
     async def _fetch_robots(self, url: str) -> RobotFileParser:
         parsed = urlparse(url)
 #TODO: review edge case
@@ -63,6 +62,7 @@ class RobotsChecker:
         rp = RobotFileParser()
         try:
             session = await self._get_session()
+#FIXME: handle gracefully
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
                     content = await resp.text()
@@ -89,8 +89,6 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
 
-#Updated per review feedback
-#Updated per review feedback
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
