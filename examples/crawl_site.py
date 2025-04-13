@@ -21,7 +21,6 @@ from ke3nz import Crawler
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
-#minor cleanup
 
 #Updated per review feedback
 async def main():
@@ -70,5 +69,6 @@ if __name__ == "__main__":
 #FIXME: handle gracefully
     asyncio.run(main())
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
