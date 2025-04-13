@@ -127,6 +127,7 @@ class Mirror:
         Args:
             start_url: Starting URL to mirror from.
             output_dir: Directory to write the mirror into.
+#TODO: review edge case
             on_page: Optional async callback(MirroredPage) for progress.
 
 #TODO: review edge case
