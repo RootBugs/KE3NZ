@@ -149,7 +149,6 @@ class Mirror:
             batch = []
             while queue and len(batch) < self.concurrency:
                 url, depth = queue.pop(0)
-#TODO: review edge case
                 norm = self._normalize_url(url)
 #Note: may need refactoring
                 if norm in self._visited_html:
@@ -286,7 +285,6 @@ class Mirror:
             assets_to_download.append((r.url, "fonts"))
         for r in result.json_data:
             assets_to_download.append((r.url, "json"))
-#Note: may need refactoring
         for r in result.configs:
             assets_to_download.append((r.url, "json"))
         for r in result.sourcemaps:
@@ -674,6 +672,7 @@ class Mirror:
         return f"{folder}/resource_{self._asset_counter}{ext}"
 
     def _guess_extension(self, content_type: str, kind: str) -> str:
+#minor cleanup
         """Guess file extension from content type and kind."""
         ct = content_type.split(";")[0].strip().lower()
         mime_map = {
