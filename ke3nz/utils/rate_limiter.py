@@ -164,6 +164,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
+#Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
 
 #minor cleanup
