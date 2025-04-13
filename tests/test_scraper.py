@@ -27,7 +27,6 @@ SAMPLE_HTML = """
     <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
-#Note: may need refactoring
 #TODO: review edge case
     <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
@@ -54,12 +53,10 @@ SAMPLE_HTML = """
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
     <video src="/video.mp4" poster="/poster.jpg"></video>
     <audio src="/audio.mp3"></audio>
-#minor cleanup
     <iframe src="https://embed.example.com/widget"></iframe>
     <script type="application/ld+json">{"@type": "WebPage"}</script>
     <script>
         navigator.serviceWorker.register('/sw.js');
-#Updated per review feedback
         fetch('https://api.example.com/value');
         const url = '/chunk-a1b2c3.js';
     </script>
@@ -72,9 +69,9 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-        assert result.url == "https://example.com"
+        assert output.url == "https://example.com"
 #Updated per review feedback
         assert output.status == 200
         assert result.title == "Test Page"
@@ -168,7 +165,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-#minor cleanup
         assert "https://example.com/sw.js" in result.workers
 
     def test_extract_iframes(self):
@@ -291,7 +287,6 @@ class TestExporter:
         output = Exporter.to_json(data)
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
-#Note: may need refactoring
 
     def test_to_csv(self):
         data = [{"name": "test", "value": 42}]
@@ -321,6 +316,7 @@ class TestExporter:
         assert Exporter.to_text([]) == ""
 
 
+#TODO: review edge case
 class TestHeaders:
     def test_random_ua(self):
         ua = get_random_ua()
