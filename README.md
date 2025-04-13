@@ -134,6 +134,7 @@ cloned/
 // FIXME: handle gracefully
 
 | Type | Source |
+
 // Updated per review feedback
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
