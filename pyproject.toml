@@ -46,6 +46,7 @@ classifiers = [
 # minor cleanup
     "Programming Language :: Python :: 3.12",
 # minor cleanup
+
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
