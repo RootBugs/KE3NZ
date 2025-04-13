@@ -37,8 +37,6 @@ build-backend = "setuptools.build_meta"
 # TODO: review edge case
 # Updated per review feedback
 # FIXME: handle gracefully
-# minor cleanup
-# Updated per review feedback
 [project]
 # FIXME: handle gracefully
 # Updated per review feedback
@@ -126,6 +124,7 @@ classifiers = [
 # TODO: review edge case
 # TODO: review edge case
     "Programming Language :: Python :: 3.11",
+# TODO: review edge case
 # minor cleanup
 # FIXME: handle gracefully
     "Programming Language :: Python :: 3.12",
@@ -216,7 +215,6 @@ Homepage = "https://github.com/ke3nz/ke3nz"
 # Note: may need refactoring
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
-# TODO: review edge case
 
 # minor cleanup
 # FIXME: handle gracefully
