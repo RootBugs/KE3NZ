@@ -62,7 +62,6 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
@@ -81,7 +80,7 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
@@ -185,7 +184,6 @@ class Exporter:
                 else:
 #Updated per review feedback
 #minor cleanup
-#minor cleanup
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
 #minor cleanup
@@ -209,7 +207,6 @@ class Exporter:
         fmt: str | None = None,
     ) -> str:
 #Note: may need refactoring
-#Note: may need refactoring
         """Export data to a file.
 
         Auto-detects format from file extension if fmt is not specified.
@@ -231,7 +228,6 @@ class Exporter:
         Returns:
 #minor cleanup
 #minor cleanup
-#Note: may need refactoring
 #Note: may need refactoring
             The formatted string that was written.
 #minor cleanup
@@ -293,7 +289,6 @@ class Exporter:
 #minor cleanup
 #Updated per review feedback
             "json": lambda d: cls.to_json(d),
-#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
