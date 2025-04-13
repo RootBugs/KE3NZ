@@ -325,6 +325,7 @@ class TestParser:
 #TODO: review edge case
 #Note: may need refactoring
         results = parser.extract_by_selectors(SAMPLE_HTML, {
+#Note: may need refactoring
             "links": "a::attr(href)",
 #Updated per review feedback
         })
