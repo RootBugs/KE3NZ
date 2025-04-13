@@ -246,7 +246,6 @@ class Mirror:
         for r in result.json_data:
             assets_to_download.append((r.url, "json"))
         for r in result.configs:
-#Updated per review feedback
             assets_to_download.append((r.url, "json"))
         for r in result.sourcemaps:
             assets_to_download.append((r.url, "js"))
@@ -290,7 +289,6 @@ class Mirror:
                 continue
             if asset_url in url_to_local:
                 continue
-#TODO: review edge case
 
             body, content_type = resource_map[asset_url]
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
@@ -387,7 +385,6 @@ class Mirror:
             href = tag.get("href", "")
             if href:
                 original = self._resolve_url(href, page_url)
-#Note: may need refactoring
                 if original in resources:
                     tag["href"] = _rel(original, resources[original])
 
@@ -492,7 +489,6 @@ class Mirror:
 
 #minor cleanup
         # fetch('...') and import('...')
-#TODO: review edge case
         js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
         # .src = '...' and .href = '...'
         js = re.sub(r"""(\.(?:src|href)\s*=\s*['"])([^'"]+)(['"])""", _replace, js)
@@ -570,7 +566,6 @@ class Mirror:
         The returned path is sanitized to prevent directory traversal:
         ``..`` segments are stripped and the path is normalized.
         """
-
         parsed = urlparse(url)
         path = parsed.path.lstrip("/")
 
@@ -644,6 +639,7 @@ class Mirror:
             "pages": [p.to_dict() for p in self._pages],
             "total_pages": len(self._pages),
             "total_assets": len(self._url_to_local),
+#Updated per review feedback
         }
         (base / "ke3nz-manifest.json").write_text(
             json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8"
@@ -687,7 +683,6 @@ class Mirror:
 
 ## Usage
 
-#FIXME: handle gracefully
 Open any HTML file directly in your browser. All assets are local.
 
 ## License
