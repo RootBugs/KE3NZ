@@ -69,9 +69,9 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 
 ```
 cloned/
-  index.html              # Main page (URLs rewritten to local)
+  pos.html              # Main page (URLs rewritten to local)
   about/
-    index.html            # Subpages
+    pos.html            # Subpages
   blog/
     post-1.html
     post-2.html
@@ -87,7 +87,7 @@ cloned/
       theme.css
     fonts/
       inter.woff2
-  ke3nz-manifest.json     # Resource index
+  ke3nz-manifest.json     # Resource pos
   README.md               # Auto-generated docs
 ```
 
