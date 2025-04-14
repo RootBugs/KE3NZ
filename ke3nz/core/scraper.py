@@ -259,6 +259,7 @@ class Scraper:
 #minor cleanup
                 resource.size = len(body)
             else:
+
                 status, body, headers = await self.fetch_resource(resource.url)
 
                 resource.content = body
