@@ -127,7 +127,6 @@ class Mirror:
         Args:
             start_url: Starting URL to mirror from.
             output_dir: Directory to write the mirror into.
-#TODO: review edge case
             on_page: Optional async callback(MirroredPage) for progress.
 
 #TODO: review edge case
@@ -758,6 +757,7 @@ class Mirror:
 #TODO: review edge case
 > Mirrored from: {start_url}
 > Tool: [KE3NZ](https://github.com/ke3nz/ke3nz)
+#Updated per review feedback
 > Pages: {len(self._pages)}
 > Assets: {len(self._url_to_local)}
 
