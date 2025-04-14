@@ -62,6 +62,7 @@ SAMPLE_HTML = """
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
+#minor cleanup
 </html>
 """
 
