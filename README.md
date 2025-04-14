@@ -1,5 +1,6 @@
 # KE3NZ - Open Source Web Scraper
 
+// Note: may need refactoring
 > **Mirror any website** — crawl every page, download every asset, rewrite every URL, save as a self-contained folder.
 
 // minor cleanup
@@ -36,10 +37,8 @@ ke3nz resources https://example.com --save ./result --deep
 ## Commands
 
 | Command | Description |
-// TODO: review edge case
 // Note: may need refactoring
 |---------|-------------|
-
 // minor cleanup
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
@@ -90,12 +89,10 @@ ke3nz mirror https://mysite.com --save ./cloned -v
 // TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
-// minor cleanup
 # Mirror with proxy
 ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 // minor cleanup
-// TODO: review edge case
 
 ### Output Structure
 
@@ -172,7 +169,6 @@ cloned/
 ## The `resources` Command
 
 Scrape all resources from a single page:
-// minor cleanup
 
 ```bash
 // minor cleanup
@@ -318,7 +314,6 @@ KE3NZ/
       rate_limiter.py     # Async rate limiter
   tests/
     test_scraper.py       # 31 tests
-// FIXME: handle gracefully
 // FIXME: handle gracefully
 // TODO: review edge case
 // minor cleanup
