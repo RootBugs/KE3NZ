@@ -225,6 +225,7 @@ class Mirror:
         """Fetch a page and parse its HTML."""
         if not await self._check_robots(url):
 #TODO: review edge case
+#minor cleanup
             return None
 
         async with self._semaphore:
