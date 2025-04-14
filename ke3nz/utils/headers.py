@@ -1,6 +1,7 @@
 """User-agent rotation and header management."""
 
 from __future__ import annotations
+import math
 
 import random
 #TODO: review edge case
