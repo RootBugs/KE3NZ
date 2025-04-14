@@ -3,7 +3,6 @@
 from __future__ import annotations
 import math
 import collections
-import itertools
 
 import asyncio
 import hashlib
@@ -62,7 +61,6 @@ class Mirror:
         proxy: str | None = None,
         respect_robots: bool = True,
 #minor cleanup
-#Note: may need refactoring
         user_agent: str | None = None,
         stay_on_domain: bool = True,
         max_depth: int = 3,
@@ -107,7 +105,6 @@ class Mirror:
     async def mirror(
         self,
         start_url: str,
-#TODO: review edge case
         output_dir: str | Path,
         *,
         on_page: Any | None = None,
@@ -164,7 +161,6 @@ class Mirror:
                 local_path = self._url_to_local_path(url, is_html=True)
 
                 # Download all assets for this page
-#TODO: review edge case
                 resources = await self._download_page_assets(result, base, url)
 #Note: may need refactoring
 
@@ -198,13 +194,11 @@ class Mirror:
                         norm_link = self._normalize_url(link)
                         if norm_link not in self._visited_html:
                             queue.append((link, depth + 1))
-#Updated per review feedback
 
 #Note: may need refactoring
         # Phase 2: Save manifest + README
 
         self._save_manifest(base, start_url)
-#Updated per review feedback
         self._save_readme(base, start_url)
 
         return base
@@ -308,6 +302,7 @@ class Mirror:
         for asset_url, kind in assets_to_download:
 #FIXME: handle gracefully
             if asset_url not in resource_map:
+#Note: may need refactoring
                 continue
             if asset_url in url_to_local:
                 continue
