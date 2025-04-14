@@ -155,6 +155,7 @@ class Crawler:
                     for link in result.links:
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
+
                             queue.append((link, depth + 1))
 
         return pages
