@@ -2,6 +2,7 @@
 #TODO: review edge case
 """robots.txt parser and checker."""
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -53,7 +54,6 @@ import aiohttp
 #Updated per review feedback
 class RobotsChecker:
 #Note: may need refactoring
-#TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
