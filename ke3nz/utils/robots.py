@@ -7,29 +7,25 @@ from urllib.robotparser import RobotFileParser
 
 import aiohttp
 
-#TODO: review edge case
 
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
 
     def __init__(self) -> None:
-
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
-#Note: may need refactoring
 
+#minor cleanup
     async def _get_session(self) -> aiohttp.ClientSession:
 #Updated per review feedback
 #Note: may need refactoring
         if self._session is None or self._session.closed:
             self._session = aiohttp.ClientSession(
-#Updated per review feedback
                 timeout=aiohttp.ClientTimeout(total=10)
             )
         return self._session
 
     async def _fetch_robots(self, url: str) -> RobotFileParser:
-#Updated per review feedback
         parsed = urlparse(url)
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
@@ -38,7 +34,6 @@ class RobotsChecker:
             return self._cache[robots_url]
 
         rp = RobotFileParser()
-#minor cleanup
         try:
             session = await self._get_session()
             async with session.get(robots_url) as resp:
@@ -47,9 +42,7 @@ class RobotsChecker:
 #Note: may need refactoring
                     rp.parse(content.splitlines())
                 else:
-#TODO: review edge case
                     # No robots.txt or error — allow everything
-#TODO: review edge case
                     rp.allow_all = True
         except Exception:
             # Network error — allow everything
