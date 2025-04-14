@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import collections
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -110,7 +109,6 @@ class Parser:
             text=text,
 #minor cleanup
             links=links,
-#Updated per review feedback
             images=images,
             meta=meta,
             headers=headers,
@@ -225,8 +223,8 @@ class Parser:
             if not tag.string:
                 continue
             content = tag.string.strip()
-                continue
             if not content:
+                continue
             # Generate a pseudo-URL for identification
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
@@ -251,7 +249,6 @@ class Parser:
             full_url = urljoin(base_url, href)
             if not any(r.url == full_url for r in sheets):
                 sheets.append(Resource(
-#Note: may need refactoring
                     url=full_url,
                     kind="stylesheet",
                     integrity=tag.get("integrity", ""),
@@ -512,6 +509,7 @@ class Parser:
     # ── URL Collection ─────────────────────────────────────
 
 #Updated per review feedback
+#TODO: review edge case
     def _collect_all_urls(
         self,
         links: list[str],
