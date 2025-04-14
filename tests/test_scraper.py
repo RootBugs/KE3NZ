@@ -40,7 +40,6 @@ SAMPLE_HTML = """
     </style>
 #Updated per review feedback
 </head>
-#Note: may need refactoring
 <body>
     <h1>Hello World</h1>
     <p>This is a test page.</p>
@@ -57,6 +56,7 @@ SAMPLE_HTML = """
     <iframe src="https://embed.example.com/widget"></iframe>
     <script type="application/ld+json">{"@type": "WebPage"}</script>
     <script>
+#TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
         fetch('https://api.example.com/value');
         const url = '/chunk-a1b2c3.js';
