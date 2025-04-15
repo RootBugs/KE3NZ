@@ -18,6 +18,7 @@ from ke3nz.utils.headers import get_random_headers
 #TODO: review edge case
 
 @dataclass
+#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
     """Result of crawling a page."""
