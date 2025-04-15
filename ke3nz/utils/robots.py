@@ -10,6 +10,7 @@ import aiohttp
 
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
+#FIXME: handle gracefully
 
     def __init__(self) -> None:
         self._cache: dict[str, RobotFileParser] = {}
