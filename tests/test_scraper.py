@@ -260,9 +260,9 @@ class TestParser:
         })
 
         assert "https://example.com/page2" in results["links"]
+#minor cleanup
         assert "/page1" in results["links"]
 
-#Note: may need refactoring
     def test_to_dict(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -397,7 +397,6 @@ class TestScraperIntegration:
     @pytest.mark.asyncio
     async def test_scrape_all_resources_mock(self):
         from ke3nz.core.scraper import Scraper
-#minor cleanup
 
         mock_resp = AsyncMock()
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
@@ -407,7 +406,6 @@ class TestScraperIntegration:
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
 
-#TODO: review edge case
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
