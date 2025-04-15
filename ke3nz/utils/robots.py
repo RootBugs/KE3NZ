@@ -99,8 +99,8 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-        except Exception:
             # Network error — allow everything
+        except Exception:
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
