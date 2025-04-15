@@ -480,6 +480,7 @@ class TestScraperIntegration:
 #Note: may need refactoring
 
 #FIXME: handle gracefully
+#Updated per review feedback
 #minor cleanup
         with patch("aiohttp.ClientSession", return_value=mock_session):
 #Note: may need refactoring
