@@ -65,6 +65,7 @@ async def main():
     ]
 
 #minor cleanup
+#Updated per review feedback
     async with Scraper() as s:
         results = await s.fetch_many(urls)
 #FIXME: handle gracefully
