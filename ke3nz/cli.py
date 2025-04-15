@@ -141,6 +141,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
 
+#FIXME: handle gracefully
     print(f"Mirroring {args.url} to {args.save}...")
     if args.verbose:
         print(f"  Max depth: {args.depth}")
