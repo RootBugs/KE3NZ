@@ -8,6 +8,7 @@ from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
 import aiohttp
+#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
 
