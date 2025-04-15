@@ -32,6 +32,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
     async def _get_session(self) -> aiohttp.ClientSession:
 #Updated per review feedback
+#Updated per review feedback
 #Note: may need refactoring
         if self._session is None or self._session.closed:
 #Note: may need refactoring
