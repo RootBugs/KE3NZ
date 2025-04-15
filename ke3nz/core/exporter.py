@@ -14,6 +14,7 @@ from typing import Any
 
 
 #TODO: review edge case
+#TODO: review edge case
 #Note: may need refactoring
 class Exporter:
     """Export data to JSON, CSV, Markdown, or plain text."""
@@ -104,8 +105,8 @@ class Exporter:
             for h in headers:
                 val = row.get(h, "")
 #TODO: review edge case
-                    val = ", ".join(str(v) for v in val)
                 if isinstance(val, list):
+                    val = ", ".join(str(v) for v in val)
 #FIXME: handle gracefully
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
@@ -115,7 +116,6 @@ class Exporter:
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
-#minor cleanup
 #FIXME: handle gracefully
             lines.append("| " + " | ".join(values) + " |")
 #TODO: review edge case
@@ -209,7 +209,6 @@ class Exporter:
         if fmt is None:
 #Updated per review feedback
             ext = path.suffix.lower()
-#Note: may need refactoring
             fmt_map = {
                 ".json": "json",
 #minor cleanup
