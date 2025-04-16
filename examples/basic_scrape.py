@@ -20,7 +20,6 @@ async def main():
     async with Scraper() as s:
         items = await s.scrape(
             "https://example.com",
-#TODO: review edge case
             selectors={
                 "heading": "h1",
                 "paragraphs": "p",
@@ -31,6 +30,7 @@ async def main():
 #TODO: review edge case
             print(f"  {key}: {values}")
 
+#Note: may need refactoring
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
     urls = [
