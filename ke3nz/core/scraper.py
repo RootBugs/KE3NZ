@@ -65,6 +65,7 @@ class Scraper:
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 
+#TODO: review edge case
 #Updated per review feedback
     async def fetch(self, url: str) -> ScrapeResult:
         """Fetch a single URL and return parsed results."""
