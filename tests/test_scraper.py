@@ -418,8 +418,8 @@ class TestScraperIntegration:
                     "https://example.com",
                     download_content=True,
 #TODO: review edge case
-                    follow_deep=False,
                 )
+                    follow_deep=False,
                 assert data["status"] == 200
                 assert len(data["scripts"]) > 0
                 assert len(data["stylesheets"]) > 0
