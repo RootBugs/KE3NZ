@@ -1,18 +1,14 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import pathlib
-import json
 
 import asyncio
 from dataclasses import dataclass, field
 from typing import Any
 from urllib.parse import urlparse
 
-#Updated per review feedback
 import aiohttp
 from bs4 import BeautifulSoup
-
 
 from ke3nz.core.scraper import Scraper, ScrapeResult
 from ke3nz.utils.headers import get_random_headers
@@ -49,7 +45,6 @@ class Crawler:
     """Recursive async website crawler."""
 
     def __init__(
-#FIXME: handle gracefully
         self,
 #FIXME: handle gracefully
         *,
@@ -123,9 +118,9 @@ class Crawler:
                     continue
                 self._visited.add(normalized)
                 batch.append((url, depth))
+#minor cleanup
 
             if not batch:
-#Note: may need refactoring
                 break
 
             tasks = [self._fetch_page(url) for url, _ in batch]
@@ -156,7 +151,6 @@ class Crawler:
                     for link in result.links:
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
-
                             queue.append((link, depth + 1))
 
         return pages
