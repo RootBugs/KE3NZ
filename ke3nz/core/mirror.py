@@ -208,6 +208,7 @@ class Mirror:
 
     async def _fetch_and_parse(self, url: str) -> ScrapeResult | None:
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         """Fetch a page and parse its HTML."""
         if not await self._check_robots(url):
 #TODO: review edge case
