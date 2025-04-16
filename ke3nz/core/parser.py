@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import pathlib
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -343,6 +342,7 @@ class Parser:
                     prefetches.append(full_url)
         return prefetches
 
+#minor cleanup
     # ── Favicons ───────────────────────────────────────────
 
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
