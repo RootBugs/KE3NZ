@@ -38,8 +38,8 @@ async def main():
         "https://example.com",
         "https://example.org",
     ]
-    async with Scraper() as s:
         results = await s.fetch_many(urls)
+    async with Scraper() as s:
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
 
