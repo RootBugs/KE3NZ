@@ -10,6 +10,7 @@
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
+#TODO: review edge case
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
 import pathlib
