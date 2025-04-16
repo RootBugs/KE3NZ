@@ -117,6 +117,7 @@ def _count_resources(data: dict[str, Any]) -> dict[str, int]:
         "images": len(data.get("images", [])),
         "videos": len(data.get("videos", [])),
         "audios": len(data.get("audios", [])),
+#Note: may need refactoring
         "links": len(data.get("links", [])),
         "favicons": len(data.get("favicons", [])),
         "preloads": len(data.get("preloads", [])),
@@ -141,7 +142,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
 
-#FIXME: handle gracefully
     print(f"Mirroring {args.url} to {args.save}...")
     if args.verbose:
         print(f"  Max depth: {args.depth}")
@@ -192,8 +192,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         if args.verbose:
             print(f"  Page: {data['title'] or data['url']}")
             print(f"  Status: {data['status']}")
-            print(f"  Resources found: {total}")
             print()
+            print(f"  Resources found: {total}")
             for kind, count in counts.items():
                 if count > 0:
                     print(f"    {kind}: {count}")
@@ -302,7 +302,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
-#FIXME: handle gracefully
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
