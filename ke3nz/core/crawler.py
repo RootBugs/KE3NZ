@@ -42,6 +42,7 @@ class CrawledPage:
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
+#minor cleanup
     status: int
     depth: int
     title: str = ""
