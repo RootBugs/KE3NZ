@@ -109,6 +109,7 @@ class Exporter:
             for key, value in entry.items():
 #minor cleanup
                 if isinstance(value, list):
+#FIXME: handle gracefully
                     lines.append(f"{key}:")
                     for v in value:
 #FIXME: handle gracefully
