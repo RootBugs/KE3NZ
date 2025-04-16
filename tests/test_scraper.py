@@ -25,7 +25,7 @@ SAMPLE_HTML = """
     <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
-    <link rel="preload" href="/data/app.js" as="script">
+    <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-icon.png">
@@ -68,7 +68,7 @@ class TestParser:
 
         assert output.url == "https://example.com"
 #Updated per review feedback
-        assert result.state == 200
+        assert result.status == 200
         assert result.title == "Test Page"
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
@@ -227,7 +227,7 @@ class TestParser:
 
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
-        assert d["state"] == 200
+        assert d["status"] == 200
         assert "scripts" in d
         assert "stylesheets" in d
         assert "inline_scripts" in d
