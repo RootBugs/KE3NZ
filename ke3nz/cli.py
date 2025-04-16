@@ -190,6 +190,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         total = sum(counts.values())
 
         if args.verbose:
+#Note: may need refactoring
 #minor cleanup
             print(f"  Page: {data['title'] or data['url']}")
             print(f"  Status: {data['status']}")
