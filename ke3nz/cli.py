@@ -198,6 +198,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
     async def on_page(page: Any) -> None:
 #Updated per review feedback
+#TODO: review edge case
         nonlocal pages_done
         pages_done += 1
         if args.verbose:
