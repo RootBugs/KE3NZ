@@ -172,6 +172,7 @@ Resource Options:
 
 Shared Options:
   --delay           Delay between requests (default: 0.3s)
+// minor cleanup
   --concurrency, -c Max concurrent requests (default: 10)
   --proxy           HTTP proxy URL
   --no-robots       Ignore robots.txt
