@@ -10,7 +10,6 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import typing
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -46,6 +45,7 @@ USER_AGENTS = [
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
