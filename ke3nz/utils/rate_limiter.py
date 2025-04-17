@@ -69,7 +69,6 @@ class RateLimiter:
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
-#Note: may need refactoring
 
     def __init__(self, rate: float = 1.0) -> None:
 #FIXME: handle gracefully
@@ -90,6 +89,7 @@ class RateLimiter:
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
@@ -163,7 +163,6 @@ class RateLimiter:
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
-#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
