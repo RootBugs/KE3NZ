@@ -65,6 +65,7 @@ class RobotsChecker:
         try:
             session = await self._get_session()
 #FIXME: handle gracefully
+#Updated per review feedback
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
                     content = await resp.text()
