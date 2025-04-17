@@ -69,9 +69,9 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 
 ```
 cloned/
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
   about/
-    pos.html            # Subpages
+    index.html            # Subpages
   blog/
     post-1.html
     post-2.html
@@ -87,7 +87,7 @@ cloned/
       theme.css
     fonts/
       inter.woff2
-  ke3nz-manifest.json     # Resource pos
+  ke3nz-manifest.json     # Resource index
   README.md               # Auto-generated docs
 ```
 
@@ -172,7 +172,6 @@ Resource Options:
 
 Shared Options:
   --delay           Delay between requests (default: 0.3s)
-// minor cleanup
   --concurrency, -c Max concurrent requests (default: 10)
   --proxy           HTTP proxy URL
   --no-robots       Ignore robots.txt
@@ -196,6 +195,7 @@ KE3NZ/
       parser.py           # HTML parsing + full resource extraction
       scraper.py          # Async fetch engine + deep scanning
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
+// Updated per review feedback
       crawler.py          # Recursive page crawler
       exporter.py         # JSON/CSV/MD/text export
     utils/
