@@ -396,6 +396,7 @@ class Parser:
 
     # ── Preloads / Prefetches ──────────────────────────────
 
+#Note: may need refactoring
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         preloads = []
         for tag in soup.find_all("link", rel="preload"):
