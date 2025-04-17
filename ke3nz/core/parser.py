@@ -467,6 +467,7 @@ class Parser:
             href = tag["href"].strip()
             if href.endswith(".json"):
                 full_url = urljoin(base_url, href)
+
                 if not any(r.url == full_url for r in json_links):
                     json_links.append(Resource(url=full_url, kind="json"))
         for tag in soup.find_all("script", src=True):
