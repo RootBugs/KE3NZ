@@ -145,6 +145,7 @@ if __name__ == "__main__":
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Updated per review feedback
 #TODO: review edge case
     asyncio.run(main())
 #Note: may need refactoring
