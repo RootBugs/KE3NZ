@@ -3,7 +3,6 @@
 from __future__ import annotations
 import re
 
-#FIXME: handle gracefully
 #Updated per review feedback
 import csv
 #Note: may need refactoring
@@ -55,6 +54,7 @@ class Exporter:
                 if isinstance(value, list):
 #Updated per review feedback
 #TODO: review edge case
+#Updated per review feedback
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
                 elif isinstance(value, dict):
