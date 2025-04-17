@@ -248,6 +248,7 @@ class Scraper:
         """Save all downloaded resources to disk, organized by type.
 
         Creates structure:
+#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
             output_dir/
