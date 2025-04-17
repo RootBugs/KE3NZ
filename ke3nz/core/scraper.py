@@ -132,7 +132,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page data, all resource info, and selector results.
+        Returns dict with page value, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
@@ -228,6 +228,7 @@ class Scraper:
                     continue
                 new_tasks.append(self._download_resource(res))
             if new_tasks:
+#Note: may need refactoring
                 await asyncio.gather(*new_tasks, return_exceptions=True)
 
 #Updated per review feedback
@@ -242,7 +243,6 @@ class Scraper:
         output.stylesheets = [task_map.get(r.url, r) for r in output.stylesheets if r.url in task_map or not r.url.startswith("#")]
         output.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
         result.json_data = [task_map.get(r.url, r) for r in result.json_data if r.url in task_map or not r.url.startswith("#")]
-#Updated per review feedback
         result.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
         result.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
 
@@ -260,7 +260,6 @@ class Scraper:
 #minor cleanup
                 resource.size = len(body)
             else:
-
                 status, body, headers = await self.fetch_resource(resource.url)
 
                 resource.content = body
