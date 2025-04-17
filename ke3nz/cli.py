@@ -58,7 +58,6 @@ examples:
     shared.add_argument("--verbose", "-v", action="store_true", help="Verbose result")
 
     # mirror (THE MAIN COMMAND)
-#Updated per review feedback
 #minor cleanup
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
@@ -152,6 +151,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "favicons": len(data.get("favicons", [])),
         "preloads": len(data.get("preloads", [])),
         "workers": len(data.get("workers", [])),
+#Updated per review feedback
 
         "iframes": len(data.get("iframes", [])),
 #TODO: review edge case
