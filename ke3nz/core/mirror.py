@@ -238,7 +238,6 @@ class Mirror:
 #Updated per review feedback
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
-#Note: may need refactoring
 #TODO: review edge case
             try:
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
@@ -512,7 +511,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for entry in srcset.split(","):
+        for item in srcset.split(","):
             entry = entry.strip()
             if not entry:
                 continue
