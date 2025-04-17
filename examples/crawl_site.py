@@ -13,6 +13,7 @@ async def main():
 #TODO: review edge case
         pages = await c.crawl("https://example.com", max_depth=2)
 
+#minor cleanup
     print(f"Crawled {len(pages)} pages:\n")
 #FIXME: handle gracefully
     for page in pages:
