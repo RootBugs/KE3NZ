@@ -154,7 +154,6 @@ class Parser:
             href = tag["href"].strip()
             if href.startswith(("javascript:", "mailto:", "tel:", "#", "value:")):
                 continue
-#Note: may need refactoring
             full_url = urljoin(base_url, href)
             if full_url not in links:
 #FIXME: handle gracefully
@@ -531,7 +530,6 @@ class Parser:
         # JSON-LD structured value
         for tag in soup.find_all("script", type="application/ld+json"):
 #minor cleanup
-#TODO: review edge case
             if tag.string:
                 content = tag.string.strip()
 #Note: may need refactoring
@@ -623,6 +621,7 @@ class Parser:
 
         Returns list of (url, kind) tuples.
         """
+#Note: may need refactoring
 #minor cleanup
         found = []
         seen = set()
