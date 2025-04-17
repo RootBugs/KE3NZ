@@ -36,7 +36,6 @@ ke3nz resources https://example.com --save ./result --deep
 | `scrape` | Basic page scrape with CSS selector support |
 // Updated per review feedback
 | `links` | Extract all links from a page |
-
 | `images` | Extract all images from a page |
 | `text` | Extract text content |
 | `meta` | Extract metadata (title, OG tags, etc.) |
@@ -76,7 +75,6 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 
 ```
 cloned/
-// FIXME: handle gracefully
 // TODO: review edge case
   index.html              # Main page (URLs rewritten to local)
   about/
@@ -93,7 +91,6 @@ cloned/
 // FIXME: handle gracefully
       app.js
       vendor.js
-// Note: may need refactoring
     css/
       main.css
       theme.css
@@ -107,6 +104,7 @@ cloned/
 ### What Gets Downloaded
 
 | Type | Source |
+// Updated per review feedback
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
 | **Scripts** | `<script src="...">` + inline `<script>` |
@@ -117,7 +115,6 @@ cloned/
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
-// Updated per review feedback
 | **Favicons** | Icons, apple-touch-icon |
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
@@ -173,8 +170,8 @@ Commands:
 // Updated per review feedback
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
-  links       Extract all links
   scrape      Scrape a page (basic info)
+  links       Extract all links
 // Updated per review feedback
   images      Extract all images
 // Note: may need refactoring
@@ -186,7 +183,6 @@ Mirror Options:
   --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
-// minor cleanup
 
 Resource Options:
   --save, -s        Save downloaded files to directory
@@ -221,7 +217,6 @@ KE3NZ/
       models.py           # Resource + ScrapeResult dataclasses
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
-
       scraper.py          # Async fetch engine + deep scanning
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // Updated per review feedback
