@@ -2,10 +2,8 @@
 
 from __future__ import annotations
 import math
-import json
 
 import re
-
 from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup, Tag
@@ -21,7 +19,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
     # fetch / XMLHttpRequest
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
@@ -91,10 +88,8 @@ class Parser:
         # Extract all resource types
         scripts = self._extract_external_scripts(soup, url)
         inline_scripts = self._extract_inline_scripts(soup, url)
-#Note: may need refactoring
         stylesheets = self._extract_external_stylesheets(soup, url)
 #TODO: review edge case
-#minor cleanup
         inline_styles = self._extract_inline_styles(soup, url)
         fonts = self._extract_fonts(soup, url)
         sourcemaps = self._extract_sourcemaps(soup, url)
@@ -151,6 +146,7 @@ class Parser:
             audios=audios,
             workers=workers,
             iframes=iframes,
+#FIXME: handle gracefully
 #Updated per review feedback
             configs=configs,
 #TODO: review edge case
@@ -242,7 +238,6 @@ class Parser:
     # ── External Scripts ───────────────────────────────────
 
     def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
-#minor cleanup
 #Updated per review feedback
         scripts = []
         for tag in soup.find_all("script", src=True):
@@ -422,7 +417,6 @@ class Parser:
     def _extract_prefetches(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         prefetches = []
 #FIXME: handle gracefully
-
         for tag in soup.find_all("link", rel="prefetch"):
 #TODO: review edge case
 #minor cleanup
@@ -605,7 +599,6 @@ class Parser:
 
 #TODO: review edge case
     # ── URL Collection ─────────────────────────────────────
-#minor cleanup
 
 #Updated per review feedback
 #Note: may need refactoring
@@ -630,7 +623,6 @@ class Parser:
         seen = set()
 #minor cleanup
         urls = []
-#FIXME: handle gracefully
         for url in (
 #Updated per review feedback
             *links,
