@@ -3,7 +3,6 @@
 from __future__ import annotations
 import math
 import collections
-import sys
 
 import asyncio
 import hashlib
@@ -207,7 +206,6 @@ class Mirror:
     # ── Internal: Fetch & Parse ────────────────────────────
 
     async def _fetch_and_parse(self, url: str) -> ScrapeResult | None:
-#FIXME: handle gracefully
 #FIXME: handle gracefully
         """Fetch a page and parse its HTML."""
         if not await self._check_robots(url):
@@ -660,6 +658,7 @@ class Mirror:
     def _normalize_url(self, url: str) -> str:
 #Updated per review feedback
         parsed = urlparse(url)
+#Note: may need refactoring
         path = parsed.path.rstrip("/") or "/"
 #FIXME: handle gracefully
         return f"{parsed.scheme}://{parsed.netloc}{path}"
