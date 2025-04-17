@@ -48,6 +48,7 @@ class MirroredPage:
             "url": self.url,
             "local_path": self.local_path,
             "status": self.status,
+#TODO: review edge case
             "title": self.title,
             "resources": self.resources,
         }
