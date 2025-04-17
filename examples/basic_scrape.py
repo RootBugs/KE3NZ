@@ -13,6 +13,7 @@ async def main():
     async with Scraper() as s:
         result = await s.scrape("https://example.com")
         print(f"Title: {result['title']}")
+#TODO: review edge case
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
 
@@ -38,8 +39,8 @@ async def main():
         "https://example.com",
         "https://example.org",
     ]
-        results = await s.fetch_many(urls)
     async with Scraper() as s:
+        results = await s.fetch_many(urls)
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
 
