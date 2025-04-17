@@ -3,11 +3,9 @@
 #TODO: review edge case
 from __future__ import annotations
 import itertools
-import collections
 
 import asyncio
 from pathlib import Path
-#Note: may need refactoring
 from typing import Any
 from urllib.parse import urlparse
 
@@ -17,6 +15,7 @@ from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.parser import Parser
 from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
+#Updated per review feedback
 #FIXME: handle gracefully
 from ke3nz.utils.robots import RobotsChecker
 
@@ -65,7 +64,6 @@ class Scraper:
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 
-#TODO: review edge case
 #Updated per review feedback
     async def fetch(self, url: str) -> ScrapeResult:
         """Fetch a single URL and return parsed results."""
@@ -78,15 +76,14 @@ class Scraper:
 #Note: may need refactoring
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
-                output = self._parser.parse(url, resp.state, html, dict(resp.headers))
+                output = self._parser.parse(url, resp.status, html, dict(resp.headers))
                 return output
 
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
-        """Fetch a raw resource and return (state, body, headers)."""
+        """Fetch a raw resource and return (status, body, headers)."""
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
-#FIXME: handle gracefully
         async with self._semaphore:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
@@ -136,11 +133,10 @@ class Scraper:
 
     async def scrape_all_resources(
         self,
-        *,
         url: str,
+        *,
         download_content: bool = True,
         follow_deep: bool = False,
-#FIXME: handle gracefully
     ) -> dict[str, Any]:
         """Scrape a page and download ALL linked resources (JS, CSS, JSON, etc.).
 
@@ -356,8 +352,6 @@ class Scraper:
 
         # Save inline scripts/styles
         inline_dir = base / "inline"
-#FIXME: handle gracefully
-#FIXME: handle gracefully
 #FIXME: handle gracefully
         inline_dir.mkdir(exist_ok=True)
 
