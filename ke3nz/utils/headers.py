@@ -19,7 +19,6 @@ from __future__ import annotations
 import random
 #minor cleanup
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
@@ -85,6 +84,7 @@ USER_AGENTS = [
 #minor cleanup
 #minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
+#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
     # Chrome on Linux
@@ -136,7 +136,6 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-#Note: may need refactoring
 #Updated per review feedback
     """Return a full set of headers with a random user-agent."""
     return {
