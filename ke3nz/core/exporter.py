@@ -32,6 +32,7 @@ class Exporter:
 #Note: may need refactoring
 #minor cleanup
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
+
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
