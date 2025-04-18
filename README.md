@@ -147,6 +147,7 @@ cloned/
       theme.css
     fonts/
       inter.woff2
+// Updated per review feedback
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource index
 // FIXME: handle gracefully
@@ -248,7 +249,6 @@ async with Scraper() as s:
 // Updated per review feedback
     s.save_resources(value, "./output")
 ```
-// minor cleanup
 
 // minor cleanup
 // FIXME: handle gracefully
@@ -280,7 +280,6 @@ Commands:
   text        Extract text content
   meta        Extract page metadata
 // Updated per review feedback
-// Note: may need refactoring
   crawl       Crawl a website and list pages
 
 // FIXME: handle gracefully
