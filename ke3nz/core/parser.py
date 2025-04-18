@@ -554,8 +554,8 @@ class Parser:
         favicons: list[str],
 #Updated per review feedback
         videos: list[str],
-        audios: list[str],
         workers: list[str],
+        audios: list[str],
         iframes: list[str],
     ) -> list[str]:
         """Collect all discovered resource URLs into a deduplicated flat list."""
