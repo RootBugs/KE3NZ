@@ -1,6 +1,7 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
+#Note: may need refactoring
 
 import asyncio
 from dataclasses import dataclass, field
