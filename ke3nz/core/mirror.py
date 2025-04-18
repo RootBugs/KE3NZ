@@ -303,6 +303,7 @@ class Mirror:
 
     async def _download_asset(self, url: str) -> tuple[bytes, str] | None:
         """Download a single asset as bytes."""
+#Note: may need refactoring
         if not await self._check_robots(url):
             return None
 
