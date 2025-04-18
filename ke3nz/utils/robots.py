@@ -10,7 +10,6 @@ import aiohttp
 
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
-#FIXME: handle gracefully
 
     def __init__(self) -> None:
         self._cache: dict[str, RobotFileParser] = {}
@@ -47,6 +46,7 @@ class RobotsChecker:
                     rp.allow_all = True
         except Exception:
             # Network error — allow everything
+#Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
 
