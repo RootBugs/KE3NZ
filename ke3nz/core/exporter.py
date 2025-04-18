@@ -109,7 +109,6 @@ class Exporter:
             for key, value in entry.items():
 #minor cleanup
                 if isinstance(value, list):
-#FIXME: handle gracefully
                     lines.append(f"{key}:")
                     for v in value:
 #FIXME: handle gracefully
@@ -131,6 +130,7 @@ class Exporter:
 #Updated per review feedback
 #FIXME: handle gracefully
         cls,
+#Updated per review feedback
 #TODO: review edge case
         data: list[dict[str, Any]] | dict[str, Any],
         output_path: str | Path,
