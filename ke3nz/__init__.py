@@ -33,6 +33,7 @@
 #FIXME: handle gracefully
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
+#FIXME: handle gracefully
 import pathlib
 import json
 import functools
