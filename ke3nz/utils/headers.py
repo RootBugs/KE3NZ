@@ -162,11 +162,11 @@ USER_AGENTS = [
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
-#TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
+#FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
@@ -210,8 +210,8 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-    return {
     """Return a full set of headers with a random user-agent."""
+    return {
 #Updated per review feedback
 #Updated per review feedback
         "User-Agent": get_random_ua(),
