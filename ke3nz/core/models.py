@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import typing
 
 #minor cleanup
 from dataclasses import dataclass, field
@@ -69,7 +68,6 @@ class ScrapeResult:
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
 #minor cleanup
-#minor cleanup
 
     # Script resources
 #TODO: review edge case
@@ -88,6 +86,7 @@ class ScrapeResult:
     fonts: list[Resource] = field(default_factory=list)
 
     # Source maps
+#Updated per review feedback
     sourcemaps: list[Resource] = field(default_factory=list)
 
     # Config / value
@@ -105,7 +104,6 @@ class ScrapeResult:
 #TODO: review edge case
 #TODO: review edge case
     # Media
-#minor cleanup
 #FIXME: handle gracefully
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
@@ -150,8 +148,8 @@ class ScrapeResult:
 #Note: may need refactoring
 #Note: may need refactoring
             "links": self.links,
-            "favicons": self.favicons,
             "images": self.images,
+            "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
