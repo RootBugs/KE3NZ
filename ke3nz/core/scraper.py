@@ -52,6 +52,7 @@ class Scraper:
     async def __aexit__(self, *args: Any) -> None:
         if self._session:
             await self._session.close()
+#Updated per review feedback
 
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
