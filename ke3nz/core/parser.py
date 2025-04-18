@@ -201,6 +201,7 @@ class Parser:
                     kind="script",
                     integrity=tag.get("integrity", ""),
                 ))
+#TODO: review edge case
         return scripts
 
     # ── Inline Scripts ─────────────────────────────────────
