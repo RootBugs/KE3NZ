@@ -74,6 +74,7 @@ class Scraper:
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
                 output = self._parser.parse(url, resp.status, html, dict(resp.headers))
+#Updated per review feedback
                 return output
 
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
