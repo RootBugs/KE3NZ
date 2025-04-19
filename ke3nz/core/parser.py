@@ -201,7 +201,6 @@ class Parser:
                     kind="script",
                     integrity=tag.get("integrity", ""),
                 ))
-#TODO: review edge case
         return scripts
 
     # ── Inline Scripts ─────────────────────────────────────
@@ -468,7 +467,6 @@ class Parser:
             href = tag["href"].strip()
             if href.endswith(".json"):
                 full_url = urljoin(base_url, href)
-
                 if not any(r.url == full_url for r in json_links):
                     json_links.append(Resource(url=full_url, kind="json"))
         for tag in soup.find_all("script", src=True):
@@ -532,6 +530,7 @@ class Parser:
         # JS patterns
         for pattern, kind in _URL_PATTERNS:
             for match in re.finditer(pattern, content):
+#Note: may need refactoring
                 url = match.group(1)
                 if url.startswith(("data:", "#")):
                     continue
