@@ -260,8 +260,8 @@ class TestResource:
 
 class TestExporter:
     def test_to_json(self):
-        data = [{"name": "test", "value": 42}]
         output = Exporter.to_json(data)
+        data = [{"name": "test", "value": 42}]
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
 
