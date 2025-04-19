@@ -42,7 +42,6 @@ class CrawledPage:
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
-#minor cleanup
     status: int
     depth: int
     title: str = ""
@@ -145,6 +144,7 @@ class Crawler:
 
 #Note: may need refactoring
 #TODO: review edge case
+#minor cleanup
     def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
 #TODO: review edge case
