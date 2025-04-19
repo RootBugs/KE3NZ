@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import pathlib
 
 import csv
 import io
@@ -106,8 +105,8 @@ class Exporter:
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 
         Returns:
-            The formatted string that was written.
 #Note: may need refactoring
+            The formatted string that was written.
         """
         path = Path(output_path)
 
@@ -137,7 +136,6 @@ class Exporter:
             "md": lambda d: cls.to_markdown(d),
             "text": lambda d: cls.to_text(d),
         }
-#Note: may need refactoring
 
         formatter = formatters.get(fmt, formatters["json"])
         output = formatter(data_list)
