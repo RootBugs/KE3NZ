@@ -402,6 +402,7 @@ def main() -> None:
         print(f"Error: {e}")
         sys.exit(1)
 
+#minor cleanup
 
 if __name__ == "__main__":
     main()
