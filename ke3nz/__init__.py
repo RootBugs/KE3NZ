@@ -33,7 +33,6 @@
 #FIXME: handle gracefully
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
-#FIXME: handle gracefully
 import pathlib
 import json
 import functools
@@ -96,7 +95,6 @@ __version__ = "0.1.0"
 #Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -140,11 +138,9 @@ __all__ = [
 #Updated per review feedback
     "Resource",
 #TODO: review edge case
-#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
     "Crawler",
@@ -161,23 +157,17 @@ __all__ = [
     "Mirror",
 #TODO: review edge case
 #Note: may need refactoring
-#FIXME: handle gracefully
-#minor cleanup
     "MirroredPage",
     "Parser",
 #Note: may need refactoring
-#TODO: review edge case
+#FIXME: handle gracefully
+#Note: may need refactoring
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
-#Note: may need refactoring
-#Note: may need refactoring
-#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
-#TODO: review edge case
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
@@ -218,7 +208,6 @@ __all__ = [
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
-#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
