@@ -121,6 +121,7 @@ class TestParser:
         assert "https://example.com/image2.png" in result.images
         assert "https://example.com/image3-sm.jpg" in result.images
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         assert "https://example.com/image3-lg.jpg" in result.images
 #Updated per review feedback
 
