@@ -322,6 +322,7 @@ class Mirror:
             if isinstance(result, Exception) or result is None:
                 continue
 #Note: may need refactoring
+#Note: may need refactoring
             resource_map[asset_url] = result
 
         # Build URL -> local path mapping
