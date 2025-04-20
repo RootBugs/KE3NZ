@@ -32,7 +32,6 @@ ke3nz resources https://example.com --save ./result --deep
 
 ## Commands
 
-// minor cleanup
 | Command | Description |
 // Note: may need refactoring
 |---------|-------------|
@@ -134,7 +133,6 @@ cloned/
 // FIXME: handle gracefully
 
 | Type | Source |
-
 // Updated per review feedback
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
@@ -206,10 +204,8 @@ async with Scraper() as s:
 ## CLI Reference
 
 // TODO: review edge case
-// TODO: review edge case
 ```
 ke3nz <command> [options] <url>
-
 // Updated per review feedback
 // FIXME: handle gracefully
 
@@ -228,6 +224,7 @@ Commands:
 // TODO: review edge case
   text        Extract text content
   meta        Extract page metadata
+// Updated per review feedback
   crawl       Crawl a website and list pages
 
 Mirror Options:
@@ -247,8 +244,8 @@ Resource Options:
 Shared Options:
   --delay           Delay between requests (default: 0.3s)
   --proxy           HTTP proxy URL
-  --no-robots       Ignore robots.txt
   --concurrency, -c Max concurrent requests (default: 10)
+  --no-robots       Ignore robots.txt
 // Updated per review feedback
   --user-agent      Custom user agent
 // TODO: review edge case
@@ -284,7 +281,6 @@ KE3NZ/
     utils/
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
-
       rate_limiter.py     # Async rate limiter
   tests/
     test_scraper.py       # 31 tests
@@ -292,8 +288,8 @@ KE3NZ/
 // minor cleanup
 // TODO: review edge case
   examples/
-    crawl_site.py
     basic_scrape.py
+    crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
 ```
