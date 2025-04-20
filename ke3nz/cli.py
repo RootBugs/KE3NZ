@@ -297,6 +297,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"  Links: {len(result['links'])}")
             print(f"  Images: {len(result['images'])}")
 
+#TODO: review edge case
 #FIXME: handle gracefully
         _output(result, args.output, args.format)
 #TODO: review edge case
@@ -306,7 +307,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
     async with Scraper(
-
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
