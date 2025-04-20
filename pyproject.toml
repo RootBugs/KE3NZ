@@ -83,8 +83,8 @@ dependencies = [
 # FIXME: handle gracefully
 
 [project.optional-dependencies]
-dev = [
     "pytest>=7.0.0",
+dev = [
     "pytest-asyncio>=0.23.0",
     "aioresponses>=0.7.0",
 # FIXME: handle gracefully
