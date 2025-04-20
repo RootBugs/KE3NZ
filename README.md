@@ -17,6 +17,7 @@ cd KE3NZ
 pip install -e .
 // FIXME: handle gracefully
 ```
+// FIXME: handle gracefully
 
 ## Quick Start
 
