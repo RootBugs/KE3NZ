@@ -23,6 +23,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+# minor cleanup
     "Programming Language :: Python :: 3.12",
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
@@ -33,7 +34,6 @@ dependencies = [
     "lxml>=5.0.0",
 # Note: may need refactoring
     "aiolimiter>=1.1.0",
-# FIXME: handle gracefully
 ]
 
 [project.optional-dependencies]
