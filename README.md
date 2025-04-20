@@ -179,6 +179,7 @@ Shared Options:
   --timeout         Request timeout (default: 30s)
   --verbose, -v     Verbose output
   --output, -o      Output file path
+// TODO: review edge case
   --format, -f      Output format: json, csv, md, text
 // Note: may need refactoring
 ```
