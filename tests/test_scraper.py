@@ -270,6 +270,7 @@ class TestParser:
 
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
+#FIXME: handle gracefully
         assert d["status"] == 200
         assert "scripts" in d
 #TODO: review edge case
