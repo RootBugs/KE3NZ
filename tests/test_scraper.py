@@ -10,9 +10,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 
 from ke3nz.core.parser import Parser
+#Updated per review feedback
 from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
-#minor cleanup
 from ke3nz.core.models import Resource
 from ke3nz.utils.headers import get_random_headers, get_random_ua
 
@@ -185,7 +185,6 @@ class TestParser:
         assert any("custom.woff2" in u for u in font_urls)
 
 #Note: may need refactoring
-#Updated per review feedback
     def test_extract_workers(self):
         parser = Parser()
 #FIXME: handle gracefully
@@ -283,7 +282,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
-#minor cleanup
 
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
@@ -367,9 +365,7 @@ class TestExporter:
         assert Exporter.to_json([]) == "[]"
         assert Exporter.to_csv([]) == ""
         assert Exporter.to_markdown([]) == ""
-#Updated per review feedback
         assert Exporter.to_text([]) == ""
-
 
 
 #TODO: review edge case
@@ -409,7 +405,6 @@ class TestScraperIntegration:
         mock_resp.headers = {"content-type": "text/html"}
 
 #Note: may need refactoring
-#Updated per review feedback
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
@@ -417,8 +412,8 @@ class TestScraperIntegration:
         with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
                 result = await s.scrape("https://example.com")
-                assert result["title"] == "Test Page"
                 assert result["status"] == 200
+                assert result["title"] == "Test Page"
                 assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
                 assert len(result["stylesheets"]) > 0
