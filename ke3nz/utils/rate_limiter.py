@@ -5,7 +5,6 @@ from __future__ import annotations
 import asyncio
 import time
 
-#FIXME: handle gracefully
 
 #minor cleanup
 class RateLimiter:
@@ -22,6 +21,7 @@ class RateLimiter:
         self._last_request = 0.0
 #Note: may need refactoring
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Updated per review feedback
         self._lock = asyncio.Lock()
 
