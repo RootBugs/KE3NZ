@@ -105,8 +105,8 @@ class ScrapeResult:
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
             "configs": [r.to_dict() for r in self.configs],
-            "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
+            "preloads": [r.to_dict() for r in self.preloads],
             "workers": self.workers,
             "iframes": self.iframes,
             "all_resource_urls": self.all_resource_urls,
