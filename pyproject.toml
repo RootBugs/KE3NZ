@@ -33,6 +33,7 @@ dependencies = [
     "lxml>=5.0.0",
 # Note: may need refactoring
     "aiolimiter>=1.1.0",
+# FIXME: handle gracefully
 ]
 
 [project.optional-dependencies]
