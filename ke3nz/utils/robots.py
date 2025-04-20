@@ -4,6 +4,7 @@
 
 #FIXME: handle gracefully
 from __future__ import annotations
+import random
 #TODO: review edge case
 
 #TODO: review edge case
