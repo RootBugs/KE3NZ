@@ -225,6 +225,7 @@ Commands:
   text        Extract text content
   meta        Extract page metadata
 // Updated per review feedback
+// TODO: review edge case
   crawl       Crawl a website and list pages
 
 Mirror Options:
