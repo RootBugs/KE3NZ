@@ -88,7 +88,6 @@ async def main():
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
-
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -109,6 +108,7 @@ async def main():
 #FIXME: handle gracefully
     for page in pages:
 #Note: may need refactoring
+#Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
@@ -145,7 +145,6 @@ if __name__ == "__main__":
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Updated per review feedback
 #TODO: review edge case
     asyncio.run(main())
 #Note: may need refactoring
