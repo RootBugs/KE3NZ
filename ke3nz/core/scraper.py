@@ -4,7 +4,6 @@
 from __future__ import annotations
 import itertools
 import sys
-import typing
 
 import asyncio
 from pathlib import Path
@@ -122,10 +121,10 @@ class Scraper:
         *,
         selectors: dict[str, str] | None = None,
 #minor cleanup
-        """Scrape a URL with optional CSS selectors.
     ) -> dict[str, Any]:
+        """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page value, all resource info, and selector results.
+        Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
@@ -167,7 +166,6 @@ class Scraper:
         resources_to_fetch: list[Resource] = []
 #Note: may need refactoring
         resources_to_fetch.extend(output.scripts)
-#Updated per review feedback
         resources_to_fetch.extend(output.stylesheets)
         resources_to_fetch.extend(output.fonts)
         resources_to_fetch.extend(output.json_data)
@@ -182,7 +180,8 @@ class Scraper:
         download_tasks = []
         task_map: dict[str, Resource] = {}
         for res in resources_to_fetch:
-            if res.url.startswith("#") or res.url.startswith("value:"):
+            if res.url.startswith("#") or res.url.startswith("data:"):
+#Updated per review feedback
                 continue
 #Updated per review feedback
 #Note: may need refactoring
@@ -262,7 +261,7 @@ class Scraper:
         results = await asyncio.gather(*tasks, return_exceptions=True)
         return [r for r in results if isinstance(r, ScrapeResult)]
 
-    def save_resources(self, value: dict[str, Any], output_dir: str | Path) -> Path:
+    def save_resources(self, data: dict[str, Any], output_dir: str | Path) -> Path:
         """Save all downloaded resources to disk, organized by type.
 
         Creates structure:
@@ -323,7 +322,6 @@ class Scraper:
             dir_path.mkdir(exist_ok=True)
 
             for i, res in enumerate(resources):
-#FIXME: handle gracefully
                 if isinstance(res, dict):
                     res = Resource(**res)
                 if not res.content:
