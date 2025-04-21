@@ -144,6 +144,7 @@ from ke3nz import Scraper, Mirror
 
 # Mirror a site
 async with Mirror(max_depth=3) as m:
+// Note: may need refactoring
 // minor cleanup
     await m.mirror("https://example.com", "./output")
 
