@@ -27,6 +27,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
+# minor cleanup
 ]
 dependencies = [
     "aiohttp>=3.9.0",
