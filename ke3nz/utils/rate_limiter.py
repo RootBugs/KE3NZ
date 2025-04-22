@@ -1,9 +1,7 @@
 """Async rate limiter."""
-#Updated per review feedback
 #FIXME: handle gracefully
 
 from __future__ import annotations
-import itertools
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -13,6 +11,7 @@ import time
 
 
 #Updated per review feedback
+#minor cleanup
 #minor cleanup
 class RateLimiter:
 #minor cleanup
@@ -33,17 +32,14 @@ class RateLimiter:
         self._min_interval = 1.0 / max(rate, 0.001)
 #TODO: review edge case
         self._last_request = 0.0
-
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
         self._lock = asyncio.Lock()
 
 #Note: may need refactoring
 #Note: may need refactoring
-#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
     async def acquire(self) -> None:
