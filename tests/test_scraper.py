@@ -167,7 +167,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-
         assert "https://example.com/favicon.ico" in result.favicons
         assert "https://example.com/apple-icon.png" in result.favicons
 
@@ -261,8 +260,8 @@ class TestResource:
 
 class TestExporter:
     def test_to_json(self):
-        output = Exporter.to_json(data)
         data = [{"name": "test", "value": 42}]
+        output = Exporter.to_json(data)
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
 
@@ -314,6 +313,7 @@ class TestScraperIntegration:
         mock_resp = AsyncMock()
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
+#Note: may need refactoring
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
