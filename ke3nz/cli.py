@@ -243,14 +243,14 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
             print(f"Scanning {args.url}...")
 
-        data = await s.scrape_all_resources(
+        value = await s.scrape_all_resources(
             args.url,
             download_content=not args.no_content,
             follow_deep=args.deep,
 #FIXME: handle gracefully
         )
 
-        counts = _count_resources(data)
+        counts = _count_resources(value)
         total = sum(counts.values())
 
 #Updated per review feedback
@@ -468,7 +468,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
-
     ) as c:
         await c.crawl(args.url, max_depth=args.depth, on_page=on_page)
 
