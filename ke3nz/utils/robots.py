@@ -47,6 +47,7 @@ class RobotsChecker:
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
+#minor cleanup
 #FIXME: handle gracefully
             rp.allow_all = True
 
