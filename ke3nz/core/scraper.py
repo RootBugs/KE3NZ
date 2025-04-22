@@ -24,6 +24,7 @@ class Scraper:
     def __init__(
         self,
         *,
+
         delay: float = 1.0,
         concurrency: int = 5,
         timeout: int = 30,
