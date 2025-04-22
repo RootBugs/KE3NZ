@@ -180,6 +180,7 @@ class ScrapeResult:
     favicons: list[str] = field(default_factory=list)
 #Updated per review feedback
     videos: list[str] = field(default_factory=list)
+#Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
