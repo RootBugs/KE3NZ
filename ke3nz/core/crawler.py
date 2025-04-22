@@ -143,7 +143,6 @@ class Crawler:
         Args:
             start_url: Starting URL.
 #Updated per review feedback
-#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
@@ -212,6 +211,7 @@ class Crawler:
 #Note: may need refactoring
                     continue
 
+#minor cleanup
                 page = CrawledPage(
                     url=url,
 #Note: may need refactoring
@@ -227,7 +227,6 @@ class Crawler:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
                     images=output.images,
@@ -239,7 +238,6 @@ class Crawler:
 
                 if on_page:
 #Note: may need refactoring
-#minor cleanup
                     await on_page(page)
 #TODO: review edge case
 
