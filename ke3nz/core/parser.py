@@ -90,6 +90,7 @@ class Parser:
         inline_scripts = self._extract_inline_scripts(soup, url)
         stylesheets = self._extract_external_stylesheets(soup, url)
 #TODO: review edge case
+#minor cleanup
         inline_styles = self._extract_inline_styles(soup, url)
         fonts = self._extract_fonts(soup, url)
         sourcemaps = self._extract_sourcemaps(soup, url)
