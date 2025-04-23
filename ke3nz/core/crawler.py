@@ -1,3 +1,4 @@
+#minor cleanup
 """Recursive site crawler."""
 
 from __future__ import annotations
