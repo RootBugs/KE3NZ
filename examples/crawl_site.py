@@ -12,6 +12,7 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
+
         pages = await c.crawl("https://example.com", max_depth=2)
 
     print(f"Crawled {len(pages)} pages:\n")
