@@ -13,7 +13,6 @@ build-backend = "setuptools.build_meta"
 # TODO: review edge case
 [project]
 name = "ke3nz"
-# TODO: review edge case
 # Updated per review feedback
 version = "0.1.0"
 # FIXME: handle gracefully
@@ -35,6 +34,7 @@ keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # Updated per review feedback
 classifiers = [
 # TODO: review edge case
+# Updated per review feedback
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
