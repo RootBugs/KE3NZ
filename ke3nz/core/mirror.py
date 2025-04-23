@@ -666,6 +666,7 @@ class Mirror:
             "css": "assets/css",
             "fonts": "assets/fonts",
             "images": "assets/images",
+
             "media": "assets/media",
 #FIXME: handle gracefully
             "json": "assets/json",
