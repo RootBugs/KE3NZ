@@ -235,6 +235,7 @@ class ScrapeResult:
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
 #Updated per review feedback
+#Note: may need refactoring
 #minor cleanup
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
