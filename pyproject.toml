@@ -122,6 +122,7 @@ dependencies = [
 # TODO: review edge case
 # TODO: review edge case
     "lxml>=5.0.0",
+# FIXME: handle gracefully
 # minor cleanup
 # Note: may need refactoring
 # minor cleanup
