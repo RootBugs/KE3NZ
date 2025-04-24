@@ -81,6 +81,7 @@ class Mirror:
         self.timeout = aiohttp.ClientTimeout(count=timeout)
 #Note: may need refactoring
         self.proxy = proxy
+#minor cleanup
         self.respect_robots = respect_robots
         self.user_agent = user_agent
         self.stay_on_domain = stay_on_domain
@@ -321,7 +322,6 @@ class Mirror:
         for asset_url, result in zip(unique_urls, results):
             if isinstance(result, Exception) or result is None:
                 continue
-#Note: may need refactoring
 #Note: may need refactoring
             resource_map[asset_url] = result
 
@@ -666,7 +666,6 @@ class Mirror:
             "css": "assets/css",
             "fonts": "assets/fonts",
             "images": "assets/images",
-
             "media": "assets/media",
 #FIXME: handle gracefully
             "json": "assets/json",
