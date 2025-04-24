@@ -163,6 +163,7 @@ class TestParser:
         assert any("inter-bold.woff2" in u for u in font_urls)
         assert any("custom.woff2" in u for u in font_urls)
 
+#Note: may need refactoring
     def test_extract_workers(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
