@@ -8,7 +8,6 @@ from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
 import aiohttp
-#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
 
@@ -31,7 +30,6 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
     async def _get_session(self) -> aiohttp.ClientSession:
-#Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
         if self._session is None or self._session.closed:
@@ -65,7 +63,6 @@ class RobotsChecker:
         try:
             session = await self._get_session()
 #FIXME: handle gracefully
-#Updated per review feedback
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
                     content = await resp.text()
@@ -77,9 +74,9 @@ class RobotsChecker:
                     # No robots.txt or error — allow everything
 #Updated per review feedback
                     rp.allow_all = True
+#minor cleanup
 #TODO: review edge case
         except Exception:
-#Note: may need refactoring
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -103,7 +100,6 @@ class RobotsChecker:
 #Note: may need refactoring
 
     async def close(self) -> None:
-#FIXME: handle gracefully
         if self._session and not self._session.closed:
             await self._session.close()
 #Updated per review feedback
