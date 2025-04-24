@@ -146,6 +146,7 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
         self._cache[robots_url] = rp
+#minor cleanup
 #Updated per review feedback
         return rp
 #Updated per review feedback
