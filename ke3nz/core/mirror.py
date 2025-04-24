@@ -48,7 +48,6 @@ class MirroredPage:
             "url": self.url,
             "local_path": self.local_path,
             "status": self.status,
-#TODO: review edge case
             "title": self.title,
             "resources": self.resources,
         }
@@ -226,7 +225,6 @@ class Mirror:
         """Fetch a page and parse its HTML."""
         if not await self._check_robots(url):
 #TODO: review edge case
-#minor cleanup
             return None
 
         async with self._semaphore:
@@ -446,6 +444,7 @@ class Mirror:
         for tag in soup.find_all("img", srcset=True):
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
+#TODO: review edge case
         # Rewrite <source srcset="...">
         for tag in soup.find_all("source", srcset=True):
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
@@ -584,13 +583,11 @@ class Mirror:
 
         The returned path is sanitized to prevent directory traversal:
         ``..`` segments are stripped and the path is normalized.
-#minor cleanup
         """
         parsed = urlparse(url)
         path = parsed.path
 
         if not path or path == "/":
-#minor cleanup
             return Path("index.html") if is_html else Path("index")
 
         # Strip leading slash
