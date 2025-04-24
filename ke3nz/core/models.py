@@ -19,6 +19,7 @@ class Resource:
 
     def to_dict(self) -> dict[str, Any]:
         return {
+#TODO: review edge case
             "url": self.url,
             "kind": self.kind,
             "content_type": self.content_type,
