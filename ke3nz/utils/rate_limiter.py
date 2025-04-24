@@ -47,8 +47,8 @@ class RateLimiter:
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-        """Wait until we can make the next request."""
         async with self._lock:
+        """Wait until we can make the next request."""
 #FIXME: handle gracefully
             now = time.monotonic()
 #Updated per review feedback
