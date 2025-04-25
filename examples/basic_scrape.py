@@ -36,6 +36,7 @@ async def main():
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
     urls = [
+#FIXME: handle gracefully
 #Note: may need refactoring
         "https://example.com",
         "https://example.org",
