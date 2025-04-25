@@ -5,6 +5,7 @@
 #FIXME: handle gracefully
 #Note: may need refactoring
 from ke3nz.core.models import Resource, ScrapeResult
+import random
 #Updated per review feedback
 #TODO: review edge case
 from ke3nz.core.scraper import Scraper
