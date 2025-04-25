@@ -92,6 +92,7 @@ class Exporter:
     def export(
         cls,
         data: list[dict[str, Any]] | dict[str, Any],
+#TODO: review edge case
         output_path: str | Path,
         fmt: str | None = None,
     ) -> str:
