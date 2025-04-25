@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import random
 
 import asyncio
 from dataclasses import dataclass, field
@@ -14,18 +13,15 @@ from bs4 import BeautifulSoup
 
 from ke3nz.core.scraper import Scraper, ScrapeResult
 from ke3nz.utils.headers import get_random_headers
-#Note: may need refactoring
 
 #TODO: review edge case
 
 @dataclass
-#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
-    """Result of crawling a page."""
 class CrawledPage:
+    """Result of crawling a page."""
 #FIXME: handle gracefully
-#Updated per review feedback
 
     url: str
 #Note: may need refactoring
@@ -97,8 +93,8 @@ class Crawler:
         await self._scraper.__aenter__()
         return self
 
-        await self._scraper.__aexit__(*args)
     async def __aexit__(self, *args: Any) -> None:
+        await self._scraper.__aexit__(*args)
 #minor cleanup
 #TODO: review edge case
 
@@ -120,7 +116,6 @@ class Crawler:
 #Updated per review feedback
         """Crawl a website starting from start_url.
 
-#Updated per review feedback
         Args:
             start_url: Starting URL.
 #Updated per review feedback
@@ -163,7 +158,6 @@ class Crawler:
                 if depth > max_depth:
                     continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
-
 #FIXME: handle gracefully
                     continue
 #TODO: review edge case
@@ -171,8 +165,8 @@ class Crawler:
                 batch.append((url, depth))
 #minor cleanup
 
-                break
             if not batch:
+                break
 
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -198,6 +192,7 @@ class Crawler:
                     text=output.text,
                     links=output.links,
 #minor cleanup
+#FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
                     images=output.images,
