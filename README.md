@@ -15,7 +15,6 @@ pip install -e .
 // FIXME: handle gracefully
 ```
 
-// Updated per review feedback
 ## Quick Start
 
 ```bash
@@ -226,7 +225,6 @@ Commands:
   text        Extract text content
   meta        Extract page metadata
 // Updated per review feedback
-// TODO: review edge case
   crawl       Crawl a website and list pages
 
 Mirror Options:
@@ -244,6 +242,7 @@ Resource Options:
   --save-content    Include raw content in JSON output
 
 Shared Options:
+// TODO: review edge case
   --delay           Delay between requests (default: 0.3s)
   --proxy           HTTP proxy URL
   --concurrency, -c Max concurrent requests (default: 10)
