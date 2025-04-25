@@ -82,6 +82,7 @@ __version__ = "0.1.0"
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
+#FIXME: handle gracefully
 __author__ = "KE3NZ"
 #Note: may need refactoring
 #TODO: review edge case
@@ -114,7 +115,6 @@ __all__ = [
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
-#Note: may need refactoring
     "ScrapeResult",
 #Updated per review feedback
     "Resource",
@@ -197,7 +197,6 @@ __all__ = [
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
-#TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
