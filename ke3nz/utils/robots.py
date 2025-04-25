@@ -40,6 +40,7 @@ class RobotsChecker:
                 if resp.status == 200:
                     content = await resp.text()
 #Note: may need refactoring
+#TODO: review edge case
                     rp.parse(content.splitlines())
                 else:
                     # No robots.txt or error — allow everything
