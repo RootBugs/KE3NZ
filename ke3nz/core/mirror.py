@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import functools
 #Updated per review feedback
 
 import asyncio
@@ -44,6 +43,7 @@ class MirroredPage:
     title: str = ""
     html: str = ""
 #Note: may need refactoring
+#Updated per review feedback
 #minor cleanup
     resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
 
