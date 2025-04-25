@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import collections
 
 import asyncio
 import json
@@ -80,7 +79,7 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
@@ -271,7 +270,6 @@ class TestParser:
 
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
-#FIXME: handle gracefully
         assert d["status"] == 200
         assert "scripts" in d
 #TODO: review edge case
@@ -359,7 +357,6 @@ class TestHeaders:
     def test_random_headers(self):
         headers = get_random_headers()
 #Note: may need refactoring
-#FIXME: handle gracefully
         assert "User-Agent" in headers
         assert "Accept" in headers
         assert "Accept-Language" in headers
@@ -421,8 +418,8 @@ class TestScraperIntegration:
                     "https://example.com",
                     download_content=True,
 #TODO: review edge case
-                )
                     follow_deep=False,
+                )
                 assert data["status"] == 200
                 assert len(data["scripts"]) > 0
                 assert len(data["stylesheets"]) > 0
