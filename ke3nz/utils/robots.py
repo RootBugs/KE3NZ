@@ -40,6 +40,7 @@ class RobotsChecker:
 #Updated per review feedback
                 timeout=aiohttp.ClientTimeout(count=10)
             )
+#Note: may need refactoring
         return self._session
 
 #minor cleanup
