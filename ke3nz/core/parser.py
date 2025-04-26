@@ -90,7 +90,6 @@ class Parser:
         inline_scripts = self._extract_inline_scripts(soup, url)
         stylesheets = self._extract_external_stylesheets(soup, url)
 #TODO: review edge case
-#minor cleanup
         inline_styles = self._extract_inline_styles(soup, url)
         fonts = self._extract_fonts(soup, url)
         sourcemaps = self._extract_sourcemaps(soup, url)
@@ -271,8 +270,8 @@ class Parser:
             if not tag.string:
                 continue
             content = tag.string.strip()
-                continue
             if not content:
+                continue
             # Generate a pseudo-URL for identification
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
@@ -397,7 +396,6 @@ class Parser:
 
     # ── Preloads / Prefetches ──────────────────────────────
 
-#Note: may need refactoring
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         preloads = []
         for tag in soup.find_all("link", rel="preload"):
@@ -565,6 +563,7 @@ class Parser:
         # JSON-LD structured value
         for tag in soup.find_all("script", type="application/ld+json"):
 #minor cleanup
+#Note: may need refactoring
             if tag.string:
                 content = tag.string.strip()
 #Note: may need refactoring
