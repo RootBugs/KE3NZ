@@ -341,6 +341,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
 
+
 #TODO: review edge case
 #FIXME: handle gracefully
         assert isinstance(d, dict)
