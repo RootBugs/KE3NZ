@@ -92,6 +92,7 @@ SAMPLE_HTML = """
 
 
 class TestParser:
+#FIXME: handle gracefully
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
