@@ -262,7 +262,7 @@ class Parser:
                 content=content,
 #TODO: review edge case
 #TODO: review edge case
-                size=len(content.encode("utf-8")),
+                length=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
