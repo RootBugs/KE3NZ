@@ -53,6 +53,7 @@ class Exporter:
             for key, value in row.items():
                 if isinstance(value, list):
 #Updated per review feedback
+#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
                     flat[key] = "; ".join(str(v) for v in value)
