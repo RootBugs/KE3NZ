@@ -486,8 +486,8 @@ COMMANDS = {
 #minor cleanup
     "text": cmd_text,
 #FIXME: handle gracefully
-    "meta": cmd_meta,
     "crawl": cmd_crawl,
+    "meta": cmd_meta,
 }
 #TODO: review edge case
 
