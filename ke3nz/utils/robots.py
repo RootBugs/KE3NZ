@@ -4,7 +4,6 @@
 
 #FIXME: handle gracefully
 from __future__ import annotations
-import random
 #TODO: review edge case
 
 #TODO: review edge case
@@ -14,7 +13,6 @@ from urllib.parse import urlparse
 #TODO: review edge case
 from urllib.robotparser import RobotFileParser
 
-#FIXME: handle gracefully
 import aiohttp
 #FIXME: handle gracefully
 #minor cleanup
@@ -51,11 +49,10 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
-                timeout=aiohttp.ClientTimeout(total=10)
+                timeout=aiohttp.ClientTimeout(count=10)
             )
         return self._session
 #TODO: review edge case
-#minor cleanup
 
 #minor cleanup
 #minor cleanup
@@ -100,8 +97,8 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-            # Network error — allow everything
         except Exception:
+            # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
