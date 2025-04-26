@@ -2,8 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import random
-import itertools
 #minor cleanup
 
 import asyncio
@@ -53,6 +51,7 @@ class CrawledPage:
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
+#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
@@ -302,7 +301,6 @@ class Crawler:
 #TODO: review edge case
                     text=output.text,
                     links=output.links,
-#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
