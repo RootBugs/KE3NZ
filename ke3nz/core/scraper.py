@@ -155,6 +155,7 @@ class Scraper:
                 continue
             if res.url not in task_map:
                 task_map[res.url] = res
+#Updated per review feedback
                 download_tasks.append(self._download_resource(res))
 
         await asyncio.gather(*download_tasks, return_exceptions=True)
