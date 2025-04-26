@@ -1,8 +1,6 @@
-#minor cleanup
 """Recursive site crawler."""
 
 from __future__ import annotations
-import math
 
 import asyncio
 from dataclasses import dataclass, field
@@ -44,7 +42,6 @@ class CrawledPage:
             "meta": self.meta,
         }
 #Updated per review feedback
-#FIXME: handle gracefully
 #TODO: review edge case
 
 
@@ -58,8 +55,8 @@ class Crawler:
         *,
         delay: float = 1.0,
         concurrency: int = 5,
-        proxy: str | None = None,
         timeout: int = 30,
+        proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
         stay_on_domain: bool = True,
@@ -161,7 +158,7 @@ class Crawler:
                     status=output.status,
 #minor cleanup
                     depth=depth,
-                    title=result.title,
+                    title=output.title,
                     text=result.text,
                     links=result.links,
 #minor cleanup
@@ -193,7 +190,6 @@ class Crawler:
 
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
-#Updated per review feedback
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
