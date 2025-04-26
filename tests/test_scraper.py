@@ -26,7 +26,6 @@ SAMPLE_HTML = """
 #Note: may need refactoring
 <head>
     <title>Test Page</title>
-#TODO: review edge case
     <meta name="description" content="A test page for KE3NZ">
     <meta property="og:title" content="OG Title">
 #TODO: review edge case
@@ -92,7 +91,6 @@ SAMPLE_HTML = """
 
 
 class TestParser:
-#FIXME: handle gracefully
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
@@ -181,8 +179,8 @@ class TestParser:
 #TODO: review edge case
         assert any("serviceWorker.register" in c for c in contents)
 
-#Updated per review feedback
     def test_extract_external_stylesheets(self):
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
         parser = Parser()
@@ -326,7 +324,6 @@ class TestParser:
 #TODO: review edge case
 #Note: may need refactoring
         results = parser.extract_by_selectors(SAMPLE_HTML, {
-#Note: may need refactoring
             "links": "a::attr(href)",
 #Updated per review feedback
         })
@@ -439,14 +436,13 @@ class TestExporter:
 
 #TODO: review edge case
 #Updated per review feedback
-        assert Exporter.to_json([]) == "[]"
     def test_empty_data(self):
+        assert Exporter.to_json([]) == "[]"
         assert Exporter.to_csv([]) == ""
         assert Exporter.to_markdown([]) == ""
         assert Exporter.to_text([]) == ""
 
 
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
