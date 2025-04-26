@@ -174,6 +174,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
             "workers": self.workers,
 #minor cleanup
+#minor cleanup
 #TODO: review edge case
             "iframes": self.iframes,
 #minor cleanup
