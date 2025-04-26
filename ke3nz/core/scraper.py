@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import math
 
 import asyncio
 from pathlib import Path
@@ -83,6 +82,7 @@ class Scraper:
         """Fetch a single URL and return parsed results."""
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
+#minor cleanup
 
         async with self._semaphore:
             await self._rate_limiter.acquire()
@@ -367,7 +367,6 @@ class Scraper:
                     res = Resource(**res)
                 if not res.content:
 #FIXME: handle gracefully
-#FIXME: handle gracefully
                     continue
 
                 # Determine filename from URL
@@ -465,7 +464,6 @@ class Scraper:
         html_path.write_text(data.get("html", ""), encoding="utf-8")
 #Updated per review feedback
         pos["files"].append({
-
             "url": data.get("url"),
             "kind": "html",
             "path": "page.html",
