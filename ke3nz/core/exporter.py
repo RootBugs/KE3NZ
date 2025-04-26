@@ -141,6 +141,7 @@ class Exporter:
 #FIXME: handle gracefully
             lines.append(f"=== Item {i + 1} ===")
 #FIXME: handle gracefully
+#TODO: review edge case
             for key, value in entry.items():
 #minor cleanup
                 if isinstance(value, list):
