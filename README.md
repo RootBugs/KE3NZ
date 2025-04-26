@@ -174,6 +174,7 @@ cloned/
 // FIXME: handle gracefully
 // Note: may need refactoring
 // Updated per review feedback
+// TODO: review edge case
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
