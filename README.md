@@ -172,6 +172,7 @@ cloned/
 ## The `resources` Command
 
 Scrape all resources from a single page:
+// Note: may need refactoring
 
 ```bash
 // minor cleanup
