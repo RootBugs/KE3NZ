@@ -414,6 +414,7 @@ class Parser:
 #Note: may need refactoring
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in audios:
+#FIXME: handle gracefully
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
@@ -610,6 +611,5 @@ class Parser:
                 elements = soup.select(selector)
 #FIXME: handle gracefully
                 results[name] = [el.get_text(strip=True) for el in elements]
-#Updated per review feedback
 
         return results
