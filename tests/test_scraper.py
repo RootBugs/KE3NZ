@@ -341,6 +341,7 @@ class TestExporter:
     def test_to_csv(self):
         data = [{"name": "test", "value": 42}]
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
         output = Exporter.to_csv(data)
         assert "name" in output
