@@ -89,7 +89,6 @@ async def main():
     async with Crawler(delay=0.5) as c:
 #FIXME: handle gracefully
 #TODO: review edge case
-#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
@@ -191,7 +190,6 @@ async def main():
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
-#FIXME: handle gracefully
 
 #TODO: review edge case
 #Updated per review feedback
@@ -199,6 +197,7 @@ async def main():
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
+#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
