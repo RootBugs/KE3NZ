@@ -1,11 +1,10 @@
 #Note: may need refactoring
 #Updated per review feedback
-"""Shared data models for KE3NZ."""
+"""Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
 #Note: may need refactoring
-#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
@@ -71,8 +70,9 @@ class Resource:
 
 #Note: may need refactoring
 #Updated per review feedback
-class ScrapeResult:
+#minor cleanup
 @dataclass
+class ScrapeResult:
     """Result of scraping a single page."""
 #TODO: review edge case
 #Note: may need refactoring
@@ -139,7 +139,6 @@ class ScrapeResult:
     # Fonts
 #Updated per review feedback
     fonts: list[Resource] = field(default_factory=list)
-#minor cleanup
 
     # Source maps
 #FIXME: handle gracefully
@@ -148,7 +147,7 @@ class ScrapeResult:
     sourcemaps: list[Resource] = field(default_factory=list)
 
 #FIXME: handle gracefully
-    # Config / data
+    # Config / value
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -181,7 +180,6 @@ class ScrapeResult:
     favicons: list[str] = field(default_factory=list)
 #Updated per review feedback
     videos: list[str] = field(default_factory=list)
-#Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
@@ -238,8 +236,8 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #minor cleanup
         return {
-            "status": self.status,
             "url": self.url,
+            "status": self.status,
             "title": self.title,
             "text": self.text,
 #FIXME: handle gracefully
@@ -310,6 +308,5 @@ class ScrapeResult:
 #Updated per review feedback
 #TODO: review edge case
         }
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
