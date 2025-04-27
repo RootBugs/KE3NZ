@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+#TODO: review edge case
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
@@ -30,7 +31,6 @@ class RobotsChecker:
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 
-
         if robots_url in self._cache:
             return self._cache[robots_url]
 
@@ -41,7 +41,6 @@ class RobotsChecker:
                 if resp.status == 200:
                     content = await resp.text()
 #Note: may need refactoring
-#TODO: review edge case
                     rp.parse(content.splitlines())
                 else:
                     # No robots.txt or error — allow everything
@@ -49,7 +48,6 @@ class RobotsChecker:
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
             rp.allow_all = True
 
