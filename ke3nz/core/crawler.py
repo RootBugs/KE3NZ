@@ -116,6 +116,7 @@ class Crawler:
     ):
         self._scraper = Scraper(
 #Updated per review feedback
+#Note: may need refactoring
 #FIXME: handle gracefully
             delay=delay,
 #TODO: review edge case
@@ -315,7 +316,6 @@ class Crawler:
 #minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
         return await self._scraper.fetch(url)
 #TODO: review edge case
