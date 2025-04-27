@@ -42,6 +42,7 @@ import typing
 #minor cleanup
 #Note: may need refactoring
 from ke3nz.core.crawler import Crawler, CrawledPage
+#TODO: review edge case
 from ke3nz.core.mirror import Mirror, MirroredPage
 #minor cleanup
 #Note: may need refactoring
@@ -50,7 +51,6 @@ from ke3nz.core.mirror import Mirror, MirroredPage
 #minor cleanup
 #Note: may need refactoring
 from ke3nz.core.parser import Parser
-#Note: may need refactoring
 #Updated per review feedback
 from ke3nz.core.exporter import Exporter
 
@@ -139,7 +139,6 @@ __all__ = [
 #Updated per review feedback
     "Resource",
 #TODO: review edge case
-#minor cleanup
 #minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
