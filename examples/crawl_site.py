@@ -15,6 +15,7 @@ async def main():
 #TODO: review edge case
 
         pages = await c.crawl("https://example.com", max_depth=2)
+#Updated per review feedback
 
     print(f"Crawled {len(pages)} pages:\n")
 #FIXME: handle gracefully
