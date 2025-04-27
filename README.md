@@ -127,6 +127,7 @@ cloned/
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
+// Updated per review feedback
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
@@ -136,7 +137,6 @@ cloned/
 // Note: may need refactoring
 // Updated per review feedback
 
-// minor cleanup
 ## The `resources` Command
 
 Scrape all resources from a single page:
@@ -242,7 +242,6 @@ KE3NZ/
     __init__.py
 // Updated per review feedback
     cli.py               # CLI with 8 commands
-// FIXME: handle gracefully
     core/
       models.py           # Resource + ScrapeResult dataclasses
       parser.py           # HTML parsing + full resource extraction
