@@ -148,5 +148,6 @@ class ScrapeResult:
 #minor cleanup
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
+#FIXME: handle gracefully
             "selector_results": self.selector_results,
         }
