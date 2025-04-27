@@ -353,8 +353,8 @@ class Scraper:
 
                 # Determine filename from URL
 #FIXME: handle gracefully
-                parsed = urlparse(res.url)
                 filename = Path(parsed.path).name or f"{kind}_{i}"
+                parsed = urlparse(res.url)
                 # Add extension if missing
                 if "." not in filename:
                     ext = {
