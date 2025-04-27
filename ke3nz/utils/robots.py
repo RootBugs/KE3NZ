@@ -40,7 +40,6 @@ class RobotsChecker:
 #Updated per review feedback
                 timeout=aiohttp.ClientTimeout(count=10)
             )
-#Note: may need refactoring
         return self._session
 
 #minor cleanup
@@ -72,6 +71,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
                     rp.parse(content.splitlines())
                 else:
+#Note: may need refactoring
                     # No robots.txt or error — allow everything
 #Updated per review feedback
                     rp.allow_all = True
