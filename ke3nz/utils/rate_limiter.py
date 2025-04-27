@@ -212,6 +212,7 @@ class RateLimiter:
 #Note: may need refactoring
 
 #minor cleanup
+#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
