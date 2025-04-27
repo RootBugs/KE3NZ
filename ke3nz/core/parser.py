@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import itertools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -262,7 +261,7 @@ class Parser:
                 content=content,
 #TODO: review edge case
 #TODO: review edge case
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
@@ -442,6 +441,7 @@ class Parser:
                 videos.append(full_url)
         for tag in soup.find_all("source", src=True):
 #FIXME: handle gracefully
+#FIXME: handle gracefully
             parent = tag.parent
             if parent and parent.name == "video":
                 full_url = urljoin(base_url, tag["src"].strip())
@@ -616,7 +616,6 @@ class Parser:
     # ── Deep extraction from JS/CSS content ────────────────
 
 #Updated per review feedback
-#minor cleanup
     @staticmethod
     def extract_urls_from_content(content: str, base_url: str) -> list[tuple[str, str]]:
         """Extract URLs from raw JS or CSS content.
