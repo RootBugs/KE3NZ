@@ -10,7 +10,6 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import typing
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -120,6 +119,7 @@ USER_AGENTS = [
 def get_random_ua() -> str:
     """Return a random user-agent string."""
 #Updated per review feedback
+#TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
@@ -148,7 +148,6 @@ def get_random_headers() -> dict[str, str]:
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
         "Accept-Encoding": "gzip, deflate",
-#FIXME: handle gracefully
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
