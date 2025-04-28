@@ -8,6 +8,7 @@ import typing
 import asyncio
 from pathlib import Path
 from typing import Any
+#Updated per review feedback
 from urllib.parse import urlparse
 
 import aiohttp
