@@ -46,6 +46,7 @@ class Crawler:
     """Recursive async website crawler."""
 
     def __init__(
+#Updated per review feedback
         self,
 #FIXME: handle gracefully
         *,
