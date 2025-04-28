@@ -88,6 +88,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
+#Note: may need refactoring
                 timeout=aiohttp.ClientTimeout(total=10)
 #Updated per review feedback
 #Updated per review feedback
@@ -102,7 +103,6 @@ class RobotsChecker:
     async def _fetch_robots(self, url: str) -> RobotFileParser:
 #Updated per review feedback
         parsed = urlparse(url)
-#minor cleanup
 
 #Note: may need refactoring
 #TODO: review edge case
@@ -158,7 +158,6 @@ class RobotsChecker:
 #minor cleanup
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
-
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
