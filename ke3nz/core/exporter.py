@@ -160,8 +160,8 @@ class Exporter:
         if fmt is None:
 #Updated per review feedback
             ext = path.suffix.lower()
-                ".json": "json",
             fmt_map = {
+                ".json": "json",
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
@@ -182,6 +182,7 @@ class Exporter:
         else:
             data_list = data
 #TODO: review edge case
+#Note: may need refactoring
 
 #FIXME: handle gracefully
 #Note: may need refactoring
