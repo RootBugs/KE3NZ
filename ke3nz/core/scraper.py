@@ -1,5 +1,6 @@
 """Core async scraper engine."""
 
+#TODO: review edge case
 from __future__ import annotations
 
 import asyncio
@@ -52,7 +53,6 @@ class Scraper:
     async def __aexit__(self, *args: Any) -> None:
         if self._session:
             await self._session.close()
-#Updated per review feedback
 
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
@@ -84,7 +84,6 @@ class Scraper:
                 body = await resp.text()
                 return resp.status, body, dict(resp.headers)
 
-#Note: may need refactoring
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
         """Fetch a resource as raw bytes."""
         if not await self._check_robots(url):
@@ -155,7 +154,6 @@ class Scraper:
                 continue
             if res.url not in task_map:
                 task_map[res.url] = res
-#Updated per review feedback
                 download_tasks.append(self._download_resource(res))
 
         await asyncio.gather(*download_tasks, return_exceptions=True)
