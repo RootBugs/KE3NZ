@@ -105,7 +105,6 @@ cloned/
   images/
     logo.png
 // Note: may need refactoring
-// Note: may need refactoring
     banner.jpg
 // Updated per review feedback
 // Note: may need refactoring
@@ -287,6 +286,7 @@ KE3NZ/
   tests/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
+// TODO: review edge case
 // minor cleanup
 // TODO: review edge case
   examples/
