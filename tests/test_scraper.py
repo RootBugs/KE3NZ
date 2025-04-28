@@ -78,6 +78,7 @@ SAMPLE_HTML = """
 class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
+#minor cleanup
         parser = Parser()
         output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
