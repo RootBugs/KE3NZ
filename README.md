@@ -115,6 +115,7 @@ cloned/
   ke3nz-manifest.json     # Resource index
   README.md               # Auto-generated docs
 ```
+// minor cleanup
 
 ### What Gets Downloaded
 // Updated per review feedback
@@ -276,6 +277,5 @@ MIT License
 
 // minor cleanup
 ---
-
 
 Built by KE3NZ
