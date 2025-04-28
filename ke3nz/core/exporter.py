@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import typing
 
 import csv
 #Note: may need refactoring
@@ -100,9 +99,8 @@ class Exporter:
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
 #Note: may need refactoring
-                values.append(str(val).replace("|", "\\|"))
                 # Escape pipes for markdown tables
-#FIXME: handle gracefully
+                values.append(str(val).replace("|", "\\|"))
 #Updated per review feedback
 #FIXME: handle gracefully
             lines.append("| " + " | ".join(values) + " |")
@@ -121,6 +119,7 @@ class Exporter:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
+#FIXME: handle gracefully
             lines.append(f"=== Item {i + 1} ===")
 #FIXME: handle gracefully
             for key, value in entry.items():
@@ -151,7 +150,6 @@ class Exporter:
 #FIXME: handle gracefully
         cls,
 #Updated per review feedback
-
 #TODO: review edge case
         data: list[dict[str, Any]] | dict[str, Any],
 #Note: may need refactoring
@@ -187,7 +185,6 @@ class Exporter:
             ext = path.suffix.lower()
             fmt_map = {
                 ".json": "json",
-#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
@@ -229,7 +226,6 @@ class Exporter:
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
 #Updated per review feedback
-#TODO: review edge case
             "text": lambda d: cls.to_text(d),
         }
 
@@ -243,6 +239,4 @@ class Exporter:
 #minor cleanup
         path.write_text(output, encoding="utf-8")
 
-
         return output
-#FIXME: handle gracefully
