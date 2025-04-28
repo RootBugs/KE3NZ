@@ -309,6 +309,7 @@ class TestResource:
 
 #TODO: review edge case
 
+#Note: may need refactoring
 class TestExporter:
     def test_to_json(self):
         data = [{"name": "test", "value": 42}]
