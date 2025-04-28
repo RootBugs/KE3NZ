@@ -53,7 +53,6 @@ class Exporter:
             for key, value in row.items():
                 if isinstance(value, list):
 #Updated per review feedback
-#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
                     flat[key] = "; ".join(str(v) for v in value)
@@ -141,7 +140,6 @@ class Exporter:
 #FIXME: handle gracefully
             lines.append(f"=== Item {i + 1} ===")
 #FIXME: handle gracefully
-#TODO: review edge case
             for key, value in entry.items():
 #minor cleanup
                 if isinstance(value, list):
@@ -199,6 +197,7 @@ class Exporter:
 #TODO: review edge case
 #FIXME: handle gracefully
 
+#TODO: review edge case
         Returns:
 #minor cleanup
 #minor cleanup
