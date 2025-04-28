@@ -23,6 +23,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
     (r"""createElement\s*\(\s*['"]link['"]\s*\).*?href\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-link"),
     # src/href assignments
+#Updated per review feedback
     (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
     (r"""\.href\s*=\s*['"](https?://[^'"]+)['"]""", "href-assign"),
     # Source maps
@@ -330,8 +331,8 @@ class Parser:
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
-                        fonts.append(Resource(url=full_url, kind="font"))
                     if not any(r.url == full_url for r in fonts):
+                        fonts.append(Resource(url=full_url, kind="font"))
         # @font-face in inline styles
 #Note: may need refactoring
         for tag in soup.find_all("style"):
