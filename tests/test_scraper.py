@@ -19,7 +19,6 @@ from ke3nz.utils.headers import get_random_headers, get_random_ua
 
 #minor cleanup
 SAMPLE_HTML = """
-#FIXME: handle gracefully
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,8 +35,8 @@ SAMPLE_HTML = """
 #TODO: review edge case
     <link rel="preload" href="/value/app.js" as="script">
 #minor cleanup
-#Updated per review feedback
 #minor cleanup
+#TODO: review edge case
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
@@ -120,7 +119,6 @@ class TestParser:
         assert "https://example.com/image1.jpg" in result.images
         assert "https://example.com/image2.png" in result.images
         assert "https://example.com/image3-sm.jpg" in result.images
-#FIXME: handle gracefully
 #FIXME: handle gracefully
         assert "https://example.com/image3-lg.jpg" in result.images
 #Updated per review feedback
@@ -376,7 +374,6 @@ class TestExporter:
         output = Exporter.to_csv(data)
         assert "name" in output
         assert "test" in output
-#Note: may need refactoring
 
 #FIXME: handle gracefully
     def test_to_markdown(self):
@@ -403,7 +400,6 @@ class TestExporter:
         assert Exporter.to_markdown([]) == ""
         assert Exporter.to_text([]) == ""
 
-#FIXME: handle gracefully
 
 #TODO: review edge case
 #TODO: review edge case
@@ -481,7 +477,6 @@ class TestScraperIntegration:
 #Note: may need refactoring
 
 #FIXME: handle gracefully
-#Updated per review feedback
 #minor cleanup
         with patch("aiohttp.ClientSession", return_value=mock_session):
 #Note: may need refactoring
