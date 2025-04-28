@@ -153,7 +153,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 
 
 async def cmd_mirror(args: argparse.Namespace) -> None:
-#Updated per review feedback
     """Mirror an entire website to a local folder."""
     pages_done = 0
 
@@ -215,6 +214,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             args.url,
             download_content=not args.no_content,
             follow_deep=args.deep,
+#FIXME: handle gracefully
         )
 
         counts = _count_resources(data)
