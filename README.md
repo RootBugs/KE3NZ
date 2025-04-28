@@ -194,6 +194,7 @@ async with Scraper() as s:
         "https://example.com",
         download_content=True,
         follow_deep=True,
+
 // FIXME: handle gracefully
     )
 // Updated per review feedback
