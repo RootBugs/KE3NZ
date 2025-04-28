@@ -6,8 +6,8 @@ from dataclasses import dataclass, field
 from typing import Any
 
 
-@dataclass
 class Resource:
+@dataclass
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
     url: str
