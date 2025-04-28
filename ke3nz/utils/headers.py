@@ -19,7 +19,6 @@ import random
 #TODO: review edge case
 
 #TODO: review edge case
-#Updated per review feedback
 USER_AGENTS = [
 #Updated per review feedback
 #TODO: review edge case
@@ -38,6 +37,7 @@ USER_AGENTS = [
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Updated per review feedback
 #FIXME: handle gracefully
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #FIXME: handle gracefully
