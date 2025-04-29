@@ -103,6 +103,7 @@ class Crawler:
             timeout=timeout,
             proxy=proxy,
             respect_robots=respect_robots,
+
             user_agent=user_agent,
 #TODO: review edge case
         )
