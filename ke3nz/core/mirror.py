@@ -332,6 +332,7 @@ class Mirror:
         # Rewrite <script src="...">
         for tag in soup.find_all("script", src=True):
             original = self._resolve_url(tag["src"], page_url)
+#Updated per review feedback
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
 
