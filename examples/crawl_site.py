@@ -2,7 +2,6 @@
 """Example: Crawling a website with KE3NZ."""
 #Note: may need refactoring
 
-#TODO: review edge case
 import asyncio
 from ke3nz import Crawler
 
@@ -13,9 +12,7 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
-
         pages = await c.crawl("https://example.com", max_depth=2)
-#Updated per review feedback
 
     print(f"Crawled {len(pages)} pages:\n")
 #FIXME: handle gracefully
@@ -25,6 +22,7 @@ async def main():
         print(f"{indent}[{page.status}] {page.title or page.url}")
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 
+#Note: may need refactoring
 #FIXME: handle gracefully
 
 #Updated per review feedback
