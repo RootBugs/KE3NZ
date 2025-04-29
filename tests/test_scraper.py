@@ -360,6 +360,7 @@ class TestHeaders:
         headers = get_random_headers()
 #Note: may need refactoring
         assert "User-Agent" in headers
+
         assert "Accept" in headers
         assert "Accept-Language" in headers
 
