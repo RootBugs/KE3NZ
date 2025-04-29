@@ -375,6 +375,7 @@ class Scraper:
 #FIXME: handle gracefully
         inline_dir.mkdir(exist_ok=True)
 
+#TODO: review edge case
         for i, res in enumerate(data.get("inline_scripts", [])):
             if isinstance(res, dict):
                 res = Resource(**res)
