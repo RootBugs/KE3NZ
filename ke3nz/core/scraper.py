@@ -309,6 +309,7 @@ class Scraper:
                         "json": ".json",
                         "json-ld": ".json",
                         "manifest": ".json",
+#TODO: review edge case
                         "sourcemap": ".map",
                     }.get(kind, ".txt")
 #Note: may need refactoring
