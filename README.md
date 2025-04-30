@@ -93,6 +93,7 @@ cloned/
 // Updated per review feedback
     post-1.html
     post-2.html
+// FIXME: handle gracefully
   images/
     logo.png
     banner.jpg
