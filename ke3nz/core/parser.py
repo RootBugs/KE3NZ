@@ -50,6 +50,7 @@ _CSS_URL_PATTERNS: list[tuple[str, str]] = [
 
 # Inline resource type detection
 _INLINE_SCRIPT_RE = re.compile(r"<script[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
+#Note: may need refactoring
 #Updated per review feedback
 _INLINE_STYLE_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.DOTALL | re.IGNORECASE)
 
@@ -256,7 +257,6 @@ class Parser:
             if not content:
                 continue
             # Generate a pseudo-URL for identification
-#FIXME: handle gracefully
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
                 kind="inline-script",
