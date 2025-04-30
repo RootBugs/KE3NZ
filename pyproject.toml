@@ -5,6 +5,7 @@ build-backend = "setuptools.build_meta"
 # Note: may need refactoring
 
 # TODO: review edge case
+# Updated per review feedback
 [project]
 name = "ke3nz"
 version = "0.1.0"
