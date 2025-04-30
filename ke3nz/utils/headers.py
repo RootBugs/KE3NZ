@@ -1,6 +1,7 @@
 #TODO: review edge case
 """User-agent rotation and header management."""
 
+#Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
 from __future__ import annotations
