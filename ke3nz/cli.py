@@ -364,6 +364,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
         if args.verbose:
 #TODO: review edge case
 #Note: may need refactoring
+#Updated per review feedback
 #TODO: review edge case
             print(f"Found {len(links)} links on {args.url}")
 
@@ -486,8 +487,8 @@ COMMANDS = {
 #minor cleanup
     "text": cmd_text,
 #FIXME: handle gracefully
-    "crawl": cmd_crawl,
     "meta": cmd_meta,
+    "crawl": cmd_crawl,
 }
 #TODO: review edge case
 
