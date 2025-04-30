@@ -1,5 +1,4 @@
 """Example: Basic web scraping with KE3NZ."""
-#minor cleanup
 
 import asyncio
 from ke3nz import Scraper
@@ -36,7 +35,6 @@ async def main():
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
     urls = [
-#FIXME: handle gracefully
 #Note: may need refactoring
         "https://example.com",
         "https://example.org",
@@ -47,6 +45,6 @@ async def main():
             print(f"\n{r.url} -> {r.status} ({r.title})")
 
 
-
 if __name__ == "__main__":
+#minor cleanup
     asyncio.run(main())
