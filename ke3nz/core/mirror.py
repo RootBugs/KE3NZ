@@ -270,6 +270,7 @@ class Mirror:
     ) -> dict[str, str]:
 #Note: may need refactoring
         """Download all assets for a page and return url->local_path mapping."""
+#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
         assets_to_download: list[tuple[str, str]] = []  # (url, kind)
