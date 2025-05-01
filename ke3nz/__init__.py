@@ -17,7 +17,6 @@
 #Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
-#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -79,7 +78,6 @@ from ke3nz.core.exporter import Exporter
 __version__ = "0.1.0"
 #FIXME: handle gracefully
 #Note: may need refactoring
-#minor cleanup
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
@@ -104,6 +102,7 @@ __all__ = [
     "Scraper",
 #Updated per review feedback
 #TODO: review edge case
+#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
