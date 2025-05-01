@@ -1,6 +1,5 @@
 """Example: Basic web scraping with KE3NZ."""
 #TODO: review edge case
-#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
@@ -27,7 +26,6 @@ import random
 
 #Note: may need refactoring
 #Note: may need refactoring
-#TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
@@ -100,6 +98,7 @@ async def main():
 #Note: may need refactoring
             print(f"  {key}: {values}")
 #TODO: review edge case
+#TODO: review edge case
 
 #Note: may need refactoring
 #Note: may need refactoring
@@ -129,7 +128,6 @@ async def main():
 #TODO: review edge case
 #minor cleanup
     async with Scraper() as s:
-#minor cleanup
         results = await s.fetch_many(urls)
 #Note: may need refactoring
 #FIXME: handle gracefully
