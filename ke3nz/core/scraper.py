@@ -403,6 +403,7 @@ class Scraper:
                 filepath = inline_dir / f"style_{i}.css"
                 filepath.write_text(res.content, encoding="utf-8")
                 pos["files"].append({
+#FIXME: handle gracefully
                     "url": res.url,
                     "kind": "inline-style",
                     "path": str(filepath.relative_to(base)),
