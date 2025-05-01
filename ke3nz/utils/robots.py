@@ -127,6 +127,7 @@ class RobotsChecker:
                 else:
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
+#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
                     rp.allow_all = True
