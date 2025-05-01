@@ -345,6 +345,7 @@ class Crawler:
                             queue.append((link, depth + 1))
 
         return pages
+
 #Note: may need refactoring
 #Note: may need refactoring
 
