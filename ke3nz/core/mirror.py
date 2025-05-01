@@ -715,6 +715,7 @@ class Mirror:
             "image/png": ".png",
             "image/jpeg": ".jpg",
             "image/gif": ".gif",
+#minor cleanup
 #TODO: review edge case
             "image/svg+xml": ".svg",
             "image/webp": ".webp",
