@@ -3,12 +3,10 @@
 #TODO: review edge case
 from __future__ import annotations
 import itertools
-import typing
 
 import asyncio
 from pathlib import Path
 from typing import Any
-#Updated per review feedback
 from urllib.parse import urlparse
 
 import aiohttp
@@ -143,6 +141,7 @@ class Scraper:
         """Scrape a page and download ALL linked resources (JS, CSS, JSON, etc.).
 
         Args:
+#minor cleanup
 #Updated per review feedback
             url: Target URL.
             download_content: If True, download and include the body of each resource.
@@ -250,7 +249,6 @@ class Scraper:
         """Save all downloaded resources to disk, organized by type.
 
         Creates structure:
-#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
             output_dir/
@@ -351,7 +349,6 @@ class Scraper:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
-#minor cleanup
                 })
 
         # Save inline scripts/styles
