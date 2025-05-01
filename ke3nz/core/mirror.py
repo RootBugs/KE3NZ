@@ -134,6 +134,7 @@ class Mirror:
                 if depth > self.max_depth:
                     continue
                 if self.stay_on_domain and urlparse(url).netloc != base_domain:
+#Note: may need refactoring
                     continue
                 self._visited_html.add(norm)
                 batch.append((url, depth))
