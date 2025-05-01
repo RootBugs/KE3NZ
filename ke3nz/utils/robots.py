@@ -11,7 +11,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import itertools
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -72,6 +71,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
+#minor cleanup
 #Updated per review feedback
     async def _get_session(self) -> aiohttp.ClientSession:
 #TODO: review edge case
@@ -112,7 +112,6 @@ class RobotsChecker:
 #Note: may need refactoring
 
 #minor cleanup
-#Note: may need refactoring
         if robots_url in self._cache:
 #minor cleanup
 #Updated per review feedback
@@ -134,13 +133,12 @@ class RobotsChecker:
         rp = RobotFileParser()
 #minor cleanup
 #TODO: review edge case
-            session = await self._get_session()
         try:
+            session = await self._get_session()
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
-#FIXME: handle gracefully
             async with session.get(robots_url) as resp:
 #minor cleanup
                 if resp.status == 200:
@@ -185,7 +183,6 @@ class RobotsChecker:
 #TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
-#Note: may need refactoring
         return rp
 #Updated per review feedback
 #Note: may need refactoring
