@@ -13,6 +13,7 @@ async def main():
     async with Scraper() as s:
         result = await s.scrape("https://example.com")
         print(f"Title: {result['title']}")
+#minor cleanup
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
