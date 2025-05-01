@@ -15,8 +15,8 @@ from typing import Any
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
-    """A single extracted resource (script, stylesheet, source map, etc.)."""
 class Resource:
+    """A single extracted resource (script, stylesheet, source map, etc.)."""
 
     url: str
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
@@ -176,6 +176,7 @@ class ScrapeResult:
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
+#Note: may need refactoring
 #Updated per review feedback
 
     # Iframes
@@ -186,7 +187,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
-#TODO: review edge case
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
 #minor cleanup
@@ -211,8 +211,8 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
             "links": self.links,
-            "favicons": self.favicons,
             "images": self.images,
+            "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
@@ -235,7 +235,6 @@ class ScrapeResult:
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
