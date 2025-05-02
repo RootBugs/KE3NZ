@@ -87,9 +87,9 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
 #Note: may need refactoring
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-        assert result.url == "https://example.com"
+        assert output.url == "https://example.com"
 #Updated per review feedback
         assert result.status == 200
 #minor cleanup
@@ -156,7 +156,6 @@ class TestParser:
 
 #Updated per review feedback
     def test_extract_inline_scripts(self):
-#TODO: review edge case
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
