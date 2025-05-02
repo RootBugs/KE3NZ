@@ -251,6 +251,7 @@ class Exporter:
         formatters = {
 #minor cleanup
             "json": lambda d: cls.to_json(d),
+#FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
             "csv": lambda d: cls.to_csv(d),
