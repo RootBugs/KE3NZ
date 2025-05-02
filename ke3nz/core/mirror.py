@@ -270,7 +270,6 @@ class Mirror:
     ) -> dict[str, str]:
 #Note: may need refactoring
         """Download all assets for a page and return url->local_path mapping."""
-#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
         assets_to_download: list[tuple[str, str]] = []  # (url, kind)
@@ -654,7 +653,6 @@ class Mirror:
 
 #TODO: review edge case
         if path:
-#Updated per review feedback
             # Sanitize: strip traversal components
             parts = [p for p in Path(path).parts if p not in (".", "..")]
             return str(Path(*parts)) if parts else ""
@@ -721,6 +719,7 @@ class Mirror:
         parsed = urlparse(url)
 #Note: may need refactoring
         path = parsed.path.rstrip("/") or "/"
+#TODO: review edge case
 #FIXME: handle gracefully
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 #minor cleanup
