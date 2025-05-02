@@ -24,6 +24,7 @@ class Resource:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
+#Note: may need refactoring
 #minor cleanup
             "kind": self.kind,
             "content_type": self.content_type,
