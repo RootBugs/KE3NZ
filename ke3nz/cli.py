@@ -285,6 +285,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             for kind, total in counts.items():
                 if total > 0:
                     print(f"    {kind}: {total}")
+#TODO: review edge case
             print()
 
         # Save files to disk
