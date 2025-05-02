@@ -70,8 +70,8 @@ __all__ = [
 #Note: may need refactoring
 #Note: may need refactoring
     "ScrapeResult",
-    "Crawler",
     "Resource",
+    "Crawler",
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
