@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import itertools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -177,7 +176,6 @@ class Parser:
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
             for entry in tag["srcset"].split(","):
-#minor cleanup
                 parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
@@ -193,8 +191,8 @@ class Parser:
             content = tag.get("content", "").strip()
             if content:
                 full_url = urljoin(base_url, content)
-                    images.append(full_url)
                 if full_url not in images:
+                    images.append(full_url)
         return images
 #minor cleanup
 
@@ -446,6 +444,7 @@ class Parser:
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
             if parent and parent.name == "audio":
+#TODO: review edge case
                 full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in audios:
 #TODO: review edge case
@@ -516,7 +515,6 @@ class Parser:
                     kind="json-ld",
                     content=content,
                     size=len(content.encode("utf-8")),
-#FIXME: handle gracefully
                 ))
         return configs
 
@@ -554,8 +552,8 @@ class Parser:
         favicons: list[str],
 #Updated per review feedback
         videos: list[str],
-        workers: list[str],
         audios: list[str],
+        workers: list[str],
         iframes: list[str],
     ) -> list[str]:
         """Collect all discovered resource URLs into a deduplicated flat list."""
