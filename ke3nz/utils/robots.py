@@ -42,6 +42,7 @@ class RobotsChecker:
 #Updated per review feedback
     def __init__(self) -> None:
 #FIXME: handle gracefully
+#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
@@ -127,7 +128,6 @@ class RobotsChecker:
                 else:
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
-#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
                     rp.allow_all = True
