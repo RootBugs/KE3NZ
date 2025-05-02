@@ -78,6 +78,7 @@ class Parser:
         images = self._extract_images(soup, url)
 #Note: may need refactoring
         meta = self._extract_meta(soup)
+#FIXME: handle gracefully
 
         # Extract all resource types
         scripts = self._extract_external_scripts(soup, url)
@@ -263,7 +264,7 @@ class Parser:
                 content=content,
 #TODO: review edge case
 #TODO: review edge case
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
@@ -303,7 +304,7 @@ class Parser:
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return styles
 
@@ -542,7 +543,7 @@ class Parser:
                     kind="json-ld",
 #TODO: review edge case
                     content=content,
-                    length=len(content.encode("utf-8")),
+                    size=len(content.encode("utf-8")),
                 ))
         return configs
 
