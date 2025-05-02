@@ -195,7 +195,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Note: may need refactoring
 #minor cleanup
             print(f"  Page: {data['title'] or data['url']}")
-            print(f"  Status: {data['status']}")
+            print(f"  Status: {data['state']}")
             print()
             print(f"  Resources found: {total}")
             for kind, count in counts.items():
@@ -256,7 +256,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         result = await s.scrape(args.url, selectors=selectors)
 
         if args.verbose:
-            print(f"  Status: {result['status']}")
+            print(f"  Status: {result['state']}")
             print(f"  Title: {result['title']}")
             print(f"  Links: {len(result['links'])}")
             print(f"  Images: {len(result['images'])}")
@@ -346,7 +346,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         pages_collected.append(page.to_dict())
         if args.verbose:
             indent = "  " * page.depth
-            print(f"{indent}[{page.status}] {page.title or page.url}")
+            print(f"{indent}[{page.state}] {page.title or page.url}")
 
     if args.verbose:
 #FIXME: handle gracefully
