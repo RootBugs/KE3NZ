@@ -114,6 +114,7 @@ class Parser:
             fonts=fonts,
             preloads=preloads,
 #FIXME: handle gracefully
+#TODO: review edge case
             favicons=favicons,
             videos=videos,
             audios=audios,
@@ -479,7 +480,6 @@ class Parser:
         for tag in soup.find_all("video", poster=True):
             full_url = urljoin(base_url, tag["poster"].strip())
             if full_url not in videos:
-#Updated per review feedback
                 videos.append(full_url)
 #FIXME: handle gracefully
         return videos
