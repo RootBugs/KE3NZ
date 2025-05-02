@@ -1,6 +1,5 @@
 """Example: Basic web scraping with KE3NZ."""
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
 
 #FIXME: handle gracefully
@@ -16,7 +15,6 @@ import random
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-#Note: may need refactoring
 #Updated per review feedback
 
 #TODO: review edge case
@@ -28,7 +26,6 @@ import random
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
-#Updated per review feedback
 #minor cleanup
 async def main():
 #Updated per review feedback
@@ -40,7 +37,7 @@ async def main():
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
-        result = await s.scrape("https://example.com")
+        output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
 #TODO: review edge case
@@ -88,11 +85,11 @@ async def main():
 #Updated per review feedback
         "https://example.com",
 #Updated per review feedback
+#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
         "https://example.org",
-#TODO: review edge case
 #Note: may need refactoring
     ]
 
@@ -109,7 +106,6 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
 
-#TODO: review edge case
 
 if __name__ == "__main__":
 #Updated per review feedback
