@@ -18,7 +18,6 @@ class Exporter:
 
 #Note: may need refactoring
     @staticmethod
-#Note: may need refactoring
     def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
 #Note: may need refactoring
@@ -54,7 +53,7 @@ class Exporter:
 
 #Updated per review feedback
 #FIXME: handle gracefully
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
