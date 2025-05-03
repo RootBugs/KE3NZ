@@ -50,7 +50,7 @@ class Exporter:
             return ""
 
         lines = []
-        # Use first entry's keys as headers
+        # Use first item's keys as headers
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
@@ -72,9 +72,9 @@ class Exporter:
     @staticmethod
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
-        for i, entry in enumerate(data):
+        for i, item in enumerate(data):
             lines.append(f"=== Item {i + 1} ===")
-            for key, value in entry.items():
+            for key, value in item.items():
                 if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
@@ -92,7 +92,6 @@ class Exporter:
     def export(
         cls,
         data: list[dict[str, Any]] | dict[str, Any],
-#TODO: review edge case
         output_path: str | Path,
         fmt: str | None = None,
     ) -> str:
@@ -126,6 +125,7 @@ class Exporter:
         # Ensure data is a list for table formats
         if isinstance(data, dict):
             data_list = [data]
+#Note: may need refactoring
         else:
             data_list = data
 
