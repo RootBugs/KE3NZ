@@ -23,7 +23,6 @@ def build_parser() -> argparse.ArgumentParser:
         epilog="""\
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
-#minor cleanup
   ke3nz mirror https://example.com --save ./site --depth 5 -v
   ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
@@ -34,7 +33,6 @@ examples:
 
     sub = parser.add_subparsers(dest="command", help="Command to run")
 
-#FIXME: handle gracefully
     # Shared options
     shared = argparse.ArgumentParser(add_help=False)
     shared.add_argument("url", help="Target URL")
@@ -192,10 +190,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         total = sum(counts.values())
 
         if args.verbose:
-#Note: may need refactoring
-#minor cleanup
             print(f"  Page: {data['title'] or data['url']}")
-            print(f"  Status: {data['state']}")
+            print(f"  Status: {data['status']}")
             print()
             print(f"  Resources found: {total}")
             for kind, count in counts.items():
@@ -227,7 +223,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
             continue
         if isinstance(value, list):
             result[key] = [
-                {k: v for k, v in item.items() if k != "content"} if isinstance(item, dict) else item
+                {k: v for k, v in entry.items() if k != "content"} if isinstance(entry, dict) else item
                 for item in value
             ]
         else:
@@ -256,7 +252,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         result = await s.scrape(args.url, selectors=selectors)
 
         if args.verbose:
-            print(f"  Status: {result['state']}")
+            print(f"  Status: {result['status']}")
             print(f"  Title: {result['title']}")
             print(f"  Links: {len(result['links'])}")
             print(f"  Images: {len(result['images'])}")
@@ -346,7 +342,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         pages_collected.append(page.to_dict())
         if args.verbose:
             indent = "  " * page.depth
-            print(f"{indent}[{page.state}] {page.title or page.url}")
+            print(f"{indent}[{page.status}] {page.title or page.url}")
 
     if args.verbose:
 #FIXME: handle gracefully
@@ -403,7 +399,6 @@ def main() -> None:
         print(f"Error: {e}")
         sys.exit(1)
 
-#minor cleanup
 
 if __name__ == "__main__":
     main()
