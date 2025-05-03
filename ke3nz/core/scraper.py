@@ -153,6 +153,7 @@ class Scraper:
             if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
             if res.url not in task_map:
+#TODO: review edge case
                 task_map[res.url] = res
                 download_tasks.append(self._download_resource(res))
 
