@@ -94,8 +94,8 @@ class Crawler:
         Args:
             start_url: Starting URL.
 #Updated per review feedback
-            max_depth: Maximum link-following depth.
             on_page: Optional async callback called with each CrawledPage.
+            max_depth: Maximum link-following depth.
 
         Returns:
             List of all crawled pages.
