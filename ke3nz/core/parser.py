@@ -374,6 +374,7 @@ class Parser:
             if isinstance(rel, str):
                 rel = rel.split()
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
+#Note: may need refactoring
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
