@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-#FIXME: handle gracefully
 import asyncio
 import hashlib
 import json
@@ -67,7 +66,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -304,7 +303,6 @@ class Mirror:
 
     async def _download_asset(self, url: str) -> tuple[bytes, str] | None:
         """Download a single asset as bytes."""
-#Note: may need refactoring
         if not await self._check_robots(url):
             return None
 
@@ -401,7 +399,6 @@ class Mirror:
         for tag in soup.find_all("img", srcset=True):
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
-
         # Rewrite <source srcset="...">
         for tag in soup.find_all("source", srcset=True):
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
@@ -413,7 +410,6 @@ class Mirror:
                 tag["src"] = _rel(original, resources[original])
 
         # Rewrite <video src="..."> and <video poster="...">
-#FIXME: handle gracefully
         for tag in soup.find_all("video"):
             if tag.get("src"):
                 original = self._resolve_url(tag["src"], page_url)
