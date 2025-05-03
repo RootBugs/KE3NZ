@@ -318,7 +318,6 @@ class Parser:
     # ── Preloads / Prefetches ──────────────────────────────
 
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
-#Updated per review feedback
         preloads = []
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
@@ -554,11 +553,11 @@ class Parser:
         return found
 
     # ── CSS Selectors ──────────────────────────────────────
+#FIXME: handle gracefully
 
     def extract_by_selectors(
         self, html: str, selectors: dict[str, str]
     ) -> dict[str, list[str]]:
-
         """Extract data using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
