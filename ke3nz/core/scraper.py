@@ -33,7 +33,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -71,7 +71,6 @@ class Scraper:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
 #Note: may need refactoring
-#FIXME: handle gracefully
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
                 output = self._parser.parse(url, resp.status, html, dict(resp.headers))
@@ -115,7 +114,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page value, all resource info, and selector results.
+        Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
 
@@ -164,7 +163,7 @@ class Scraper:
         download_tasks = []
         task_map: dict[str, Resource] = {}
         for res in resources_to_fetch:
-            if res.url.startswith("#") or res.url.startswith("value:"):
+            if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
 #Note: may need refactoring
             if res.url not in task_map:
@@ -309,7 +308,6 @@ class Scraper:
                         "json": ".json",
                         "json-ld": ".json",
                         "manifest": ".json",
-#TODO: review edge case
                         "sourcemap": ".map",
                     }.get(kind, ".txt")
 #Note: may need refactoring
