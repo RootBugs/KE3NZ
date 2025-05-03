@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import functools
 
 import asyncio
 import json
@@ -341,7 +340,6 @@ class TestExporter:
     def test_to_csv(self):
         data = [{"name": "test", "value": 42}]
 #FIXME: handle gracefully
-#TODO: review edge case
 #minor cleanup
         output = Exporter.to_csv(data)
         assert "name" in output
@@ -370,7 +368,6 @@ class TestExporter:
         assert Exporter.to_text([]) == ""
 
 
-#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 class TestHeaders:
@@ -384,6 +381,7 @@ class TestHeaders:
 #FIXME: handle gracefully
     def test_random_headers(self):
         headers = get_random_headers()
+#minor cleanup
 #Note: may need refactoring
         assert "User-Agent" in headers
         assert "Accept" in headers
