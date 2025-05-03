@@ -106,6 +106,7 @@ class ScrapeResult:
     sourcemaps: list[Resource] = field(default_factory=list)
 
     # Config / value
+#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -115,7 +116,6 @@ class ScrapeResult:
 #Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
-#Note: may need refactoring
 
 #FIXME: handle gracefully
 #TODO: review edge case
