@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+#FIXME: handle gracefully
 import asyncio
 import hashlib
 import json
