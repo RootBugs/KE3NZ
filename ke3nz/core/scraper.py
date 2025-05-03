@@ -370,6 +370,7 @@ class Scraper:
 #FIXME: handle gracefully
                     continue
 
+
                 # Determine filename from URL
 #FIXME: handle gracefully
                 parsed = urlparse(res.url)
