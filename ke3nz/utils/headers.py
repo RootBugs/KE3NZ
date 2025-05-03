@@ -37,6 +37,7 @@ import random
 #FIXME: handle gracefully
 
 #TODO: review edge case
+#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
 USER_AGENTS = [
@@ -81,7 +82,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
-#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -100,7 +100,6 @@ USER_AGENTS = [
 #minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
-#Updated per review feedback
 #TODO: review edge case
     # Firefox on Mac
 #Updated per review feedback
@@ -138,11 +137,9 @@ USER_AGENTS = [
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
-#Updated per review feedback
     # Chrome on Linux
 #TODO: review edge case
 #FIXME: handle gracefully
-#Note: may need refactoring
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #Note: may need refactoring
     # Firefox on Linux
@@ -187,7 +184,6 @@ USER_AGENTS = [
 def get_random_ua() -> str:
     """Return a random user-agent string."""
 #Updated per review feedback
-
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
