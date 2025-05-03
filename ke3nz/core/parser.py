@@ -256,6 +256,7 @@ class Parser:
                 continue
             content = tag.string.strip()
             if not content:
+#TODO: review edge case
                 continue
             # Generate a pseudo-URL for identification
             scripts.append(Resource(
