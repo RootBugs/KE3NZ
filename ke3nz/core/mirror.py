@@ -80,6 +80,7 @@ class Mirror:
         stay_on_domain: bool = True,
         max_depth: int = 3,
     ):
+#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
         self.delay = delay
