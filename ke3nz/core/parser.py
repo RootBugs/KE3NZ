@@ -318,6 +318,7 @@ class Parser:
     # ── Preloads / Prefetches ──────────────────────────────
 
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+#Updated per review feedback
         preloads = []
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
