@@ -715,7 +715,6 @@ class Mirror:
             "image/png": ".png",
             "image/jpeg": ".jpg",
             "image/gif": ".gif",
-#minor cleanup
 #TODO: review edge case
             "image/svg+xml": ".svg",
             "image/webp": ".webp",
@@ -739,6 +738,7 @@ class Mirror:
             "css": ".css",
 #Note: may need refactoring
             "fonts": ".woff2",
+#FIXME: handle gracefully
             "images": ".png",
 #minor cleanup
             "media": ".mp4",
