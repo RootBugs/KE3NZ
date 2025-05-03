@@ -50,7 +50,6 @@ examples:
 
     # mirror (THE MAIN COMMAND)
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
-#Updated per review feedback
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
     mirror_p.add_argument("--depth", "-d", type=int, default=3, help="Max crawl depth (default: 3)")
     mirror_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
@@ -236,7 +235,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 #Note: may need refactoring
     result = {}
     skip_keys = {"html"}
-#TODO: review edge case
 #Updated per review feedback
     for key, value in data.items():
         if key in skip_keys:
@@ -267,7 +265,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
-#Updated per review feedback
             print(f"Scraping {args.url}...")
 
 #TODO: review edge case
@@ -367,7 +364,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         _output(meta, args.output, args.format)
 
 
-#FIXME: handle gracefully
 #minor cleanup
 async def cmd_crawl(args: argparse.Namespace) -> None:
     pages_collected: list[dict[str, Any]] = []
@@ -376,6 +372,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         pages_collected.append(page.to_dict())
         if args.verbose:
             indent = "  " * page.depth
+#Note: may need refactoring
             print(f"{indent}[{page.status}] {page.title or page.url}")
 
     if args.verbose:
@@ -429,7 +426,6 @@ def main() -> None:
         print("\nInterrupted.")
         sys.exit(130)
     except PermissionError as e:
-#Updated per review feedback
         print(f"Permission denied: {e}")
         sys.exit(1)
     except Exception as e:
