@@ -56,6 +56,7 @@ class RobotsChecker:
         self._cache[robots_url] = rp
         return rp
 #Updated per review feedback
+#FIXME: handle gracefully
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
         """Check if the given user-agent is allowed to fetch the URL."""
