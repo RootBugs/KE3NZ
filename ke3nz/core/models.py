@@ -29,6 +29,7 @@ class Resource:
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
         return {
+#minor cleanup
             "url": self.url,
 #minor cleanup
 #minor cleanup
