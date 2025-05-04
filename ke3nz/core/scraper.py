@@ -206,7 +206,6 @@ class Scraper:
         for res in resources_to_fetch:
             if res.url.startswith("#") or res.url.startswith("data:"):
 #Updated per review feedback
-#Updated per review feedback
                 continue
 #Updated per review feedback
 #Note: may need refactoring
@@ -302,6 +301,7 @@ class Scraper:
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
+#TODO: review edge case
             output_dir/
                 scripts/
                 styles/
@@ -369,7 +369,6 @@ class Scraper:
                 if not res.content:
 #FIXME: handle gracefully
                     continue
-
 
                 # Determine filename from URL
 #FIXME: handle gracefully
