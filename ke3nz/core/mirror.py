@@ -336,6 +336,7 @@ class Mirror:
             full_path.write_bytes(body)
             url_to_local[asset_url] = local_path
 #minor cleanup
+#TODO: review edge case
             self._url_to_local[asset_url] = local_path
 
         return url_to_local
