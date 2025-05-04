@@ -12,7 +12,6 @@
 #TODO: review edge case
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
-
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
@@ -29,9 +28,6 @@
 #Note: may need refactoring
 #TODO: review edge case
 import asyncio
-import math
-import re
-import os
 #FIXME: handle gracefully
 from ke3nz import Crawler
 #FIXME: handle gracefully
@@ -43,6 +39,7 @@ from ke3nz import Crawler
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
+#Updated per review feedback
 async def main():
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
@@ -81,7 +78,6 @@ async def main():
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-#Note: may need refactoring
     for page in pages:
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -105,8 +101,6 @@ async def main():
 
 #Updated per review feedback
 if __name__ == "__main__":
-#Updated per review feedback
-#Updated per review feedback
 #TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
