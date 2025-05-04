@@ -1,8 +1,6 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import sys
-import os
 
 #TODO: review edge case
 from urllib.parse import urlparse
@@ -56,12 +54,12 @@ class RobotsChecker:
         self._cache[robots_url] = rp
         return rp
 #Updated per review feedback
-#FIXME: handle gracefully
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
         rp = await self._fetch_robots(url)
+#Note: may need refactoring
         return rp.can_fetch(user_agent, url)
 
     async def close(self) -> None:
