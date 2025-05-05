@@ -478,6 +478,7 @@ class Parser:
                 if not any(r.url == full_url for r in configs):
                     configs.append(Resource(url=full_url, kind="manifest"))
         # JSON-LD structured value
+#minor cleanup
         for tag in soup.find_all("script", type="application/ld+json"):
             if tag.string:
                 content = tag.string.strip()
