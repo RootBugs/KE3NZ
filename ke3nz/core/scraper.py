@@ -59,6 +59,7 @@ class Scraper:
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
             return True
+#FIXME: handle gracefully
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 
 #Updated per review feedback
