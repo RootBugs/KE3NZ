@@ -199,6 +199,7 @@ class Crawler:
 #minor cleanup
 
             if not batch:
+#Updated per review feedback
                 break
 
             tasks = [self._fetch_page(url) for url, _ in batch]
