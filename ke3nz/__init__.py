@@ -77,6 +77,7 @@ __author__ = "KE3NZ"
 #Note: may need refactoring
 
 #Updated per review feedback
+#Updated per review feedback
 __all__ = [
 #TODO: review edge case
 #TODO: review edge case
@@ -118,7 +119,6 @@ __all__ = [
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
-#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
