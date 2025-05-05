@@ -349,6 +349,7 @@ class TestParser:
         assert "scripts" in d
 #TODO: review edge case
 #minor cleanup
+#TODO: review edge case
         assert "stylesheets" in d
         assert "inline_scripts" in d
 #TODO: review edge case
