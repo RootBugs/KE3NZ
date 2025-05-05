@@ -62,8 +62,8 @@ async def main():
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
-                "paragraphs": "p",
             }
+                "paragraphs": "p",
 #Updated per review feedback
         )
 #FIXME: handle gracefully
