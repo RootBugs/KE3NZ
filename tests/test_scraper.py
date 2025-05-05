@@ -39,6 +39,7 @@ SAMPLE_HTML = """
 #minor cleanup
     <script src="/scripts/app.js"></script>
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
+#FIXME: handle gracefully
     <style>
 #Updated per review feedback
         body { margin: 0; }
