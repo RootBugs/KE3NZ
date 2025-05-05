@@ -167,6 +167,7 @@ class Exporter:
                     lines.append(f"{key}: {value}")
             lines.append("")
 #FIXME: handle gracefully
+#TODO: review edge case
         return "\n".join(lines)
 
     @classmethod
