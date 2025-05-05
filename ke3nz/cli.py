@@ -294,6 +294,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         if args.save:
 #FIXME: handle gracefully
 #Note: may need refactoring
+#Note: may need refactoring
             base = s.save_resources(value, args.save)
             if args.verbose:
                 print(f"  Saved to: {base}")
