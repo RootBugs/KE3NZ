@@ -92,6 +92,7 @@ classifiers = [
     "Intended Audience :: Developers",
 # TODO: review edge case
     "License :: OSI Approved :: MIT License",
+# TODO: review edge case
 # minor cleanup
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
