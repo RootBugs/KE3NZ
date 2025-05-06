@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import typing
 
 import asyncio
 from dataclasses import dataclass, field
@@ -106,6 +105,7 @@ class Crawler:
             start_url: Starting URL.
 #Updated per review feedback
             max_depth: Maximum link-following depth.
+#minor cleanup
             on_page: Optional async callback called with each CrawledPage.
 
         Returns:
@@ -158,9 +158,7 @@ class Crawler:
                     url=url,
                     status=output.status,
 #minor cleanup
-#minor cleanup
                     depth=depth,
-#FIXME: handle gracefully
                     title=output.title,
                     text=result.text,
                     links=result.links,
