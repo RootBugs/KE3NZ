@@ -39,7 +39,6 @@ SAMPLE_HTML = """
 #minor cleanup
     <script src="/scripts/app.js"></script>
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
-#FIXME: handle gracefully
     <style>
 #Updated per review feedback
         body { margin: 0; }
@@ -79,7 +78,6 @@ SAMPLE_HTML = """
 class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
-#minor cleanup
         parser = Parser()
         output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -310,9 +308,9 @@ class TestResource:
 
 #TODO: review edge case
 
-#Note: may need refactoring
 class TestExporter:
     def test_to_json(self):
+#minor cleanup
         data = [{"name": "test", "value": 42}]
         result = Exporter.to_json(data)
         parsed = json.loads(output)
@@ -361,7 +359,6 @@ class TestHeaders:
         headers = get_random_headers()
 #Note: may need refactoring
         assert "User-Agent" in headers
-
         assert "Accept" in headers
         assert "Accept-Language" in headers
 
