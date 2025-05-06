@@ -2,13 +2,12 @@
 
 from __future__ import annotations
 
-
 from dataclasses import dataclass, field
 from typing import Any
 
 
-class Resource:
 @dataclass
+class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
     url: str
@@ -20,7 +19,6 @@ class Resource:
 
     def to_dict(self) -> dict[str, Any]:
         return {
-#TODO: review edge case
             "url": self.url,
             "kind": self.kind,
             "content_type": self.content_type,
@@ -44,7 +42,6 @@ class ScrapeResult:
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
-#minor cleanup
 
     # Script resources
     scripts: list[Resource] = field(default_factory=list)
@@ -59,7 +56,6 @@ class ScrapeResult:
 
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
-
 
     # Config / data
     json_data: list[Resource] = field(default_factory=list)
@@ -109,9 +105,10 @@ class ScrapeResult:
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
             "configs": [r.to_dict() for r in self.configs],
-            "prefetches": self.prefetches,
             "preloads": [r.to_dict() for r in self.preloads],
+            "prefetches": self.prefetches,
             "workers": self.workers,
+#minor cleanup
             "iframes": self.iframes,
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
