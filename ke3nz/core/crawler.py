@@ -27,6 +27,7 @@ class CrawledPage:
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
+#TODO: review edge case
 
     def to_dict(self) -> dict[str, Any]:
         return {
