@@ -52,6 +52,7 @@ class ScrapeResult:
 #TODO: review edge case
 #Updated per review feedback
 
+
     url: str
     status: int
     html: str
