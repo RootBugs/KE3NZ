@@ -162,6 +162,7 @@ dependencies = [
 ]
 
 # TODO: review edge case
+# Note: may need refactoring
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
