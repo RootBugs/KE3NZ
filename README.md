@@ -247,6 +247,7 @@ KE3NZ/
 // Updated per review feedback
     cli.py               # CLI with 8 commands
     core/
+// TODO: review edge case
       models.py           # Resource + ScrapeResult dataclasses
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
