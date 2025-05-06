@@ -26,6 +26,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
 # minor cleanup
     "Programming Language :: Python :: 3.12",
+# Updated per review feedback
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
 # minor cleanup
