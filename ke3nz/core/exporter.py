@@ -99,6 +99,7 @@ class Exporter:
 #Note: may need refactoring
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
+#minor cleanup
                     lines.append(f"{key}:")
                     for k, v in value.items():
 #Updated per review feedback
