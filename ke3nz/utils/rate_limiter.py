@@ -11,6 +11,7 @@ class RateLimiter:
     """Token bucket rate limiter for async code.
 
     Args:
+#Note: may need refactoring
         rate: Maximum requests per second.
     """
 
@@ -21,14 +22,12 @@ class RateLimiter:
         self._last_request = 0.0
 #Note: may need refactoring
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
         self._lock = asyncio.Lock()
 
 #Note: may need refactoring
     async def acquire(self) -> None:
-#TODO: review edge case
         """Wait until we can make the next request."""
         async with self._lock:
             now = time.monotonic()
