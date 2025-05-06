@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import os
 
 import asyncio
 from pathlib import Path
@@ -161,6 +160,7 @@ class Scraper:
 
 #TODO: review edge case
         Args:
+#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
             url: Target URL.
@@ -353,8 +353,8 @@ class Scraper:
 
                 # Determine filename from URL
 #FIXME: handle gracefully
-                filename = Path(parsed.path).name or f"{kind}_{i}"
                 parsed = urlparse(res.url)
+                filename = Path(parsed.path).name or f"{kind}_{i}"
                 # Add extension if missing
                 if "." not in filename:
                     ext = {
