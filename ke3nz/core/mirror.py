@@ -78,7 +78,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
 #Note: may need refactoring
         self.proxy = proxy
 #minor cleanup
@@ -614,6 +614,7 @@ class Mirror:
 #TODO: review edge case
         path = path.lstrip("/")
 
+#Note: may need refactoring
         # Normalize to remove any ".." or "." segments that could escape
 #FIXME: handle gracefully
         # the result directory. PurePython Path.as_posix + resolve tricks
