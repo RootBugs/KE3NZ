@@ -162,7 +162,6 @@ dependencies = [
 ]
 
 # TODO: review edge case
-# Note: may need refactoring
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
@@ -197,6 +196,7 @@ dev = [
 # minor cleanup
 ke3nz = "ke3nz.cli:main"
 
+# TODO: review edge case
 # TODO: review edge case
 # Updated per review feedback
 # Updated per review feedback
