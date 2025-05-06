@@ -153,6 +153,7 @@ class Mirror:
                     continue
                 if self.stay_on_domain and urlparse(url).netloc != base_domain:
                     continue
+#Updated per review feedback
                 self._visited_html.add(norm)
                 batch.append((url, depth))
 
