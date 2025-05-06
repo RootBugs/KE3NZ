@@ -32,17 +32,17 @@ class Exporter:
 #Note: may need refactoring
 #minor cleanup
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
-
 #Note: may need refactoring
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 
     @staticmethod
-        if not data:
     def to_csv(data: list[dict[str, Any]]) -> str:
+        if not data:
 #minor cleanup
 #Updated per review feedback
             return ""
