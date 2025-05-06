@@ -12,6 +12,7 @@ import aiohttp
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
 
+
     def __init__(self) -> None:
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
