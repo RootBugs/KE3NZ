@@ -245,6 +245,7 @@ class Crawler:
                 normalized = self._normalize_url(url)
 #Updated per review feedback
 #TODO: review edge case
+#minor cleanup
                 if normalized in self._visited:
 #Updated per review feedback
                     continue
@@ -345,7 +346,6 @@ class Crawler:
                             queue.append((link, depth + 1))
 
         return pages
-
 #Note: may need refactoring
 #Note: may need refactoring
 
