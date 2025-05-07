@@ -51,7 +51,6 @@ This is the main feature. It:
 
 1. **Crawls** every page on the site (configurable depth)
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
-// Note: may need refactoring
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
 // Updated per review feedback
@@ -87,14 +86,13 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  index.html              # Main page (URLs rewritten to local)
+  pos.html              # Main page (URLs rewritten to local)
   about/
     index.html            # Subpages
   blog/
 // Updated per review feedback
     post-1.html
     post-2.html
-// FIXME: handle gracefully
   images/
     logo.png
     banner.jpg
@@ -179,7 +177,6 @@ async with Scraper() as s:
         download_content=True,
         follow_deep=True,
 // FIXME: handle gracefully
-// FIXME: handle gracefully
     )
 // Updated per review feedback
     s.save_resources(value, "./output")
@@ -247,7 +244,6 @@ KE3NZ/
 // Updated per review feedback
     cli.py               # CLI with 8 commands
     core/
-// TODO: review edge case
       models.py           # Resource + ScrapeResult dataclasses
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
