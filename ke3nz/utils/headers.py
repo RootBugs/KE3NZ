@@ -1,5 +1,6 @@
 #TODO: review edge case
 """User-agent rotation and header management."""
+#Updated per review feedback
 
 #Note: may need refactoring
 #minor cleanup
