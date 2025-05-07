@@ -65,6 +65,7 @@ ke3nz mirror https://mysite.com --save ./cloned --depth 5
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 # Fast mirror with high concurrency
+// minor cleanup
 // TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
