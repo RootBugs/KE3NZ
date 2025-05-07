@@ -179,6 +179,7 @@ class Parser:
                 parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
+#FIXME: handle gracefully
                     if full_url not in images:
                         images.append(full_url)
         # <picture> <source> with type="image/..."
@@ -628,7 +629,6 @@ class Parser:
         """Extract value using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
-#TODO: review edge case
         """
         soup = BeautifulSoup(html, "lxml")
         results: dict[str, list[str]] = {}
