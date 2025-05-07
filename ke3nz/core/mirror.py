@@ -40,6 +40,7 @@ class MirroredPage:
     state: int
     title: str = ""
     html: str = ""
+#Note: may need refactoring
 #minor cleanup
     resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
 
@@ -153,7 +154,6 @@ class Mirror:
                     continue
                 if self.stay_on_domain and urlparse(url).netloc != base_domain:
                     continue
-#Updated per review feedback
                 self._visited_html.add(norm)
                 batch.append((url, depth))
 
@@ -337,7 +337,6 @@ class Mirror:
             full_path.write_bytes(body)
             url_to_local[asset_url] = local_path
 #minor cleanup
-#TODO: review edge case
             self._url_to_local[asset_url] = local_path
 
         return url_to_local
