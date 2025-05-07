@@ -179,6 +179,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
     ) as s:
         if args.verbose:
             print(f"Scanning {args.url}...")
+#Updated per review feedback
 
         data = await s.scrape_all_resources(
             args.url,
