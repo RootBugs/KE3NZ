@@ -234,6 +234,7 @@ Mirror Options:
   --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
+// TODO: review edge case
 
 Resource Options:
 // TODO: review edge case
