@@ -4,6 +4,7 @@
 
 import asyncio
 from ke3nz import Crawler
+import collections
 
 
 async def main():
