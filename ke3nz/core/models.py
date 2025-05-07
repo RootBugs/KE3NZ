@@ -123,6 +123,7 @@ class ScrapeResult:
 #Note: may need refactoring
             "links": self.links,
             "images": self.images,
+#Note: may need refactoring
             "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
