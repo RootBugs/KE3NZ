@@ -159,7 +159,6 @@ Scrape all resources from a single page:
 
 ```bash
 // TODO: review edge case
-// TODO: review edge case
 // Updated per review feedback
 # Download all resources
 // TODO: review edge case
@@ -194,7 +193,6 @@ async with Scraper() as s:
         "https://example.com",
         download_content=True,
         follow_deep=True,
-
 // FIXME: handle gracefully
     )
 // Updated per review feedback
@@ -234,7 +232,6 @@ Mirror Options:
   --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
-// TODO: review edge case
 
 Resource Options:
 // TODO: review edge case
@@ -273,6 +270,7 @@ KE3NZ/
     cli.py               # CLI with 8 commands
     core/
       models.py           # Resource + ScrapeResult dataclasses
+// minor cleanup
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
       scraper.py          # Async fetch engine + deep scanning
