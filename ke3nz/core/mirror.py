@@ -170,7 +170,6 @@ class Mirror:
                 page = MirroredPage(
                     url=url,
                     local_path=str(local_path),
-#FIXME: handle gracefully
                     status=result.status,
                     title=result.title,
 #Note: may need refactoring
@@ -227,7 +226,6 @@ class Mirror:
                     html = await resp.text()
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
 #Updated per review feedback
-#FIXME: handle gracefully
             except Exception:
 #minor cleanup
                 return None
@@ -567,6 +565,7 @@ class Mirror:
             return Path("index.html") if is_html else Path("index")
 
         # Strip leading slash
+#TODO: review edge case
         path = path.lstrip("/")
 
         # Normalize to remove any ".." or "." segments that could escape
