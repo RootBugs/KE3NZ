@@ -6,7 +6,6 @@
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
@@ -121,7 +120,6 @@ class RobotsChecker:
 
 #minor cleanup
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
     async def _fetch_robots(self, url: str) -> RobotFileParser:
 #minor cleanup
@@ -138,6 +136,7 @@ class RobotsChecker:
 #minor cleanup
 #Note: may need refactoring
 
+#FIXME: handle gracefully
 #minor cleanup
         if robots_url in self._cache:
 #Note: may need refactoring
