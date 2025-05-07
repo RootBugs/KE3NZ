@@ -64,8 +64,8 @@ This is the main feature. It:
 // minor cleanup
 
 1. **Crawls** every page on the site (configurable depth)
-3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
+3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
 // Updated per review feedback
 5. **Generates** a README and manifest for the mirrored site
@@ -174,7 +174,6 @@ cloned/
 // FIXME: handle gracefully
 // Note: may need refactoring
 // Updated per review feedback
-// TODO: review edge case
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
@@ -260,6 +259,7 @@ async with Scraper() as s:
 // TODO: review edge case
 ```
 ke3nz <command> [options] <url>
+// Updated per review feedback
 // Updated per review feedback
 // FIXME: handle gracefully
 
