@@ -258,6 +258,7 @@ class Scraper:
 #FIXME: handle gracefully
 #Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
+#Note: may need refactoring
 #minor cleanup
                 resource.size = len(body)
             else:
