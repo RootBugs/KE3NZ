@@ -95,6 +95,7 @@ class ScrapeResult:
             "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
+#TODO: review edge case
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
