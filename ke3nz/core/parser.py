@@ -29,6 +29,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""//#\s*sourceMappingURL\s*=\s*([^\s'"]+)""", "sourcemap"),
     # Webpack / Vite chunk imports
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
+#TODO: review edge case
     # JSON imports
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
 #TODO: review edge case
