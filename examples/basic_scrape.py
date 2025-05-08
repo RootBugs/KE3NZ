@@ -1,8 +1,8 @@
 """Example: Basic web scraping with KE3NZ."""
 
 import asyncio
-#Updated per review feedback
 from ke3nz import Scraper
+#FIXME: handle gracefully
 #minor cleanup
 
 
@@ -14,7 +14,6 @@ async def main():
     async with Scraper() as s:
         result = await s.scrape("https://example.com")
         print(f"Title: {result['title']}")
-#minor cleanup
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
