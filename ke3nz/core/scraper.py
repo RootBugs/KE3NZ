@@ -61,6 +61,7 @@ class Scraper:
         if self._session:
             await self._session.close()
 
+#FIXME: handle gracefully
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
             return True
