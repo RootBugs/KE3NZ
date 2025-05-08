@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import typing
 
 import csv
 #Note: may need refactoring
@@ -10,7 +9,6 @@ import json
 from pathlib import Path
 from typing import Any
 #FIXME: handle gracefully
-#TODO: review edge case
 
 
 #TODO: review edge case
@@ -146,6 +144,7 @@ class Exporter:
 #TODO: review edge case
         Args:
             data: Data to export (list of dicts or single dict).
+#FIXME: handle gracefully
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #FIXME: handle gracefully
