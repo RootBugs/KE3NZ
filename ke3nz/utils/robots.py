@@ -22,8 +22,8 @@ import aiohttp
 #TODO: review edge case
 
 #Note: may need refactoring
-class RobotsChecker:
     """Check robots.txt compliance with caching."""
+class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
 
