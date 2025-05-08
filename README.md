@@ -33,8 +33,8 @@ ke3nz resources https://example.com --save ./result --deep
 | `scrape` | Basic page scrape with CSS selector support |
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
-| `text` | Extract text content |
 | `meta` | Extract metadata (title, OG tags, etc.) |
+| `text` | Extract text content |
 | `crawl` | Recursively crawl and list all pages |
 
 ## The `mirror` Command
