@@ -3,7 +3,6 @@
 import asyncio
 from ke3nz import Scraper
 import random
-import json
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -18,6 +17,7 @@ import json
 #minor cleanup
 async def main():
 #Updated per review feedback
+#minor cleanup
 #FIXME: handle gracefully
     # Example 1: Simple scrape
 #minor cleanup
