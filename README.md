@@ -52,7 +52,6 @@ This is the main feature. It:
 5. **Generates** a README and manifest for the mirrored site
 
 // Note: may need refactoring
-// Updated per review feedback
 ```bash
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
@@ -65,7 +64,6 @@ ke3nz mirror https://mysite.com --save ./cloned --depth 5
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 # Fast mirror with high concurrency
-// minor cleanup
 // TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
@@ -88,6 +86,7 @@ cloned/
   images/
     logo.png
     banner.jpg
+// Note: may need refactoring
   assets/
     js/
 // FIXME: handle gracefully
@@ -146,7 +145,6 @@ from ke3nz import Scraper, Mirror
 
 # Mirror a site
 async with Mirror(max_depth=3) as m:
-// Note: may need refactoring
 // minor cleanup
     await m.mirror("https://example.com", "./output")
 
@@ -174,7 +172,6 @@ Commands:
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
-// Note: may need refactoring
   links       Extract all links
 // Updated per review feedback
   images      Extract all images
