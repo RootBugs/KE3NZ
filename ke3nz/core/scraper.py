@@ -93,6 +93,7 @@ class Scraper:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
+#TODO: review edge case
                 body = await resp.read()
                 return resp.status, body, dict(resp.headers)
 
@@ -153,7 +154,6 @@ class Scraper:
             if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
             if res.url not in task_map:
-#TODO: review edge case
                 task_map[res.url] = res
                 download_tasks.append(self._download_resource(res))
 
