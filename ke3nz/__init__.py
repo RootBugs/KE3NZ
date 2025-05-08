@@ -6,6 +6,7 @@
 #Note: may need refactoring
 from ke3nz.core.models import Resource, ScrapeResult
 import random
+import os
 #Updated per review feedback
 
 #TODO: review edge case
