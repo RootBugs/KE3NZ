@@ -362,6 +362,7 @@ class TestHeaders:
         assert "Accept" in headers
         assert "Accept-Language" in headers
 
+#TODO: review edge case
 
 class TestScraperIntegration:
     """Integration tests using mocked HTTP responses."""
