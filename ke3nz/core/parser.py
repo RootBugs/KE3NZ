@@ -333,8 +333,8 @@ class Parser:
                 ))
         return preloads
 
-    def _extract_prefetches(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         prefetches = []
+    def _extract_prefetches(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         for tag in soup.find_all("link", rel="prefetch"):
             href = tag.get("href", "").strip()
             if href:
