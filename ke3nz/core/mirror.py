@@ -509,8 +509,8 @@ class Mirror:
             suffix = match.group(3)
             if url.startswith(("value:", "#")):
                 return match.group(0)
-            original = self._resolve_url(url, page_url)
             if original in resources:
+            original = self._resolve_url(url, page_url)
                 return f"{prefix}{resources[original]}{suffix}"
             return match.group(0)
 
