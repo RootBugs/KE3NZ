@@ -181,6 +181,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
 #minor cleanup
 #FIXME: handle gracefully
+#FIXME: handle gracefully
     async def on_page(page: Any) -> None:
 #Updated per review feedback
         nonlocal pages_done
@@ -367,7 +368,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
 #Updated per review feedback
 #TODO: review edge case
             print(f"Found {len(links)} links on {args.url}")
-#minor cleanup
 
         _output(links, args.output, args.format)
 
