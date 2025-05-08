@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-#Note: may need refactoring
 
 import asyncio
 from dataclasses import dataclass, field
@@ -27,7 +26,6 @@ class CrawledPage:
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
-#TODO: review edge case
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -47,7 +45,6 @@ class Crawler:
     """Recursive async website crawler."""
 
     def __init__(
-#Updated per review feedback
         self,
 #FIXME: handle gracefully
         *,
@@ -95,8 +92,8 @@ class Crawler:
         Args:
             start_url: Starting URL.
 #Updated per review feedback
-            on_page: Optional async callback called with each CrawledPage.
             max_depth: Maximum link-following depth.
+            on_page: Optional async callback called with each CrawledPage.
 
         Returns:
             List of all crawled pages.
@@ -150,6 +147,7 @@ class Crawler:
                     await on_page(page)
 
                 # Enqueue discovered links for next depth level
+#TODO: review edge case
                 if depth < max_depth:
                     for link in result.links:
                         normalized_link = self._normalize_url(link)
