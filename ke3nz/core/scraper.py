@@ -261,7 +261,7 @@ class Scraper:
                 inline/
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -290,7 +290,6 @@ class Scraper:
             elif kind == "stylesheet":
                 resources = data.get("stylesheets", [])
             elif kind == "font":
-#minor cleanup
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
                 resources = data.get("json_data", [])
