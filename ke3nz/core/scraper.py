@@ -41,7 +41,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -112,7 +112,6 @@ class Scraper:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
-#FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
@@ -259,7 +258,6 @@ class Scraper:
 #FIXME: handle gracefully
 #Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
-#Note: may need refactoring
 #minor cleanup
                 resource.size = len(body)
             else:
