@@ -22,6 +22,7 @@ async def main():
     async with Scraper() as s:
         items = await s.scrape(
             "https://example.com",
+#Updated per review feedback
             selectors={
                 "heading": "h1",
                 "paragraphs": "p",
