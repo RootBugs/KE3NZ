@@ -199,6 +199,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     prefetches: list[str] = field(default_factory=list)
+
 #Note: may need refactoring
 
 #TODO: review edge case
