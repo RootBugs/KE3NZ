@@ -158,6 +158,7 @@ class Scraper:
                 download_tasks.append(self._download_resource(res))
 
         await asyncio.gather(*download_tasks, return_exceptions=True)
+#Updated per review feedback
 
         # Deep extraction: find URLs inside downloaded JS/CSS
         if follow_deep:
