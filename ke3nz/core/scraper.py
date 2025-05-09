@@ -22,6 +22,7 @@ from ke3nz.utils.robots import RobotsChecker
 #Updated per review feedback
 
 class Scraper:
+#minor cleanup
     """Async web scraper with rate limiting, robots.txt support, and proxy."""
 
     def __init__(
