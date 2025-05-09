@@ -22,6 +22,7 @@ class Resource:
     size: int = 0
     integrity: str = ""
 
+#FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
