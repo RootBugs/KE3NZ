@@ -458,6 +458,7 @@ class Mirror:
             if tag.string:
                 tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
 
+#Updated per review feedback
         # Rewrite inline <script> fetch() / import references
         for tag in soup.find_all("script", src=False):
 #minor cleanup
@@ -509,8 +510,8 @@ class Mirror:
             suffix = match.group(3)
             if url.startswith(("value:", "#")):
                 return match.group(0)
-            if original in resources:
             original = self._resolve_url(url, page_url)
+            if original in resources:
                 return f"{prefix}{resources[original]}{suffix}"
             return match.group(0)
 
