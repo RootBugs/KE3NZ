@@ -10,7 +10,6 @@
 # TODO: review edge case
 # TODO: review edge case
 # minor cleanup
-# minor cleanup
 # TODO: review edge case
 # TODO: review edge case
 # TODO: review edge case
@@ -50,6 +49,7 @@ version = "0.1.0"
 # FIXME: handle gracefully
 # Updated per review feedback
 # FIXME: handle gracefully
+# minor cleanup
 # Note: may need refactoring
 description = "Fast async web scraping tool — extract value from any website"
 readme = "README.md"
