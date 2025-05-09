@@ -180,6 +180,7 @@ class Crawler:
         on_page: Any | None = None,
 #Updated per review feedback
     ) -> list[CrawledPage]:
+#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
