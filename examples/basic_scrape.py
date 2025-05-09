@@ -18,6 +18,7 @@
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
+#Note: may need refactoring
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
@@ -155,8 +156,8 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
-        results = await s.fetch_many(urls)
     async with Scraper() as s:
+        results = await s.fetch_many(urls)
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
