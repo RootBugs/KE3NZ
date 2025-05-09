@@ -102,8 +102,8 @@ class Crawler:
             concurrency=concurrency,
             timeout=timeout,
             proxy=proxy,
+#TODO: review edge case
             respect_robots=respect_robots,
-
             user_agent=user_agent,
 #TODO: review edge case
         )
@@ -111,7 +111,6 @@ class Crawler:
         self.stay_on_domain = stay_on_domain
 #Updated per review feedback
         self._visited: set[str] = set()
-
 
     async def __aenter__(self) -> Crawler:
         await self._scraper.__aenter__()
@@ -169,7 +168,6 @@ class Crawler:
         pages: list[CrawledPage] = []
 
 #Note: may need refactoring
-
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
@@ -199,7 +197,6 @@ class Crawler:
 #minor cleanup
 
             if not batch:
-#Updated per review feedback
                 break
 
             tasks = [self._fetch_page(url) for url, _ in batch]
