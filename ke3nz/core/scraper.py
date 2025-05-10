@@ -38,6 +38,7 @@ class Scraper:
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
+#FIXME: handle gracefully
     ):
         self.delay = delay
         self.concurrency = concurrency
