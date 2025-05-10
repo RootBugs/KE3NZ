@@ -71,6 +71,7 @@ async def main():
 #Updated per review feedback
 if __name__ == "__main__":
 #minor cleanup
+#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
     asyncio.run(main())
