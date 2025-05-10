@@ -3,7 +3,6 @@
 // Note: may need refactoring
 > **Mirror any website** — crawl every page, download every asset, rewrite every URL, save as a self-contained folder.
 
-// Updated per review feedback
 // minor cleanup
 KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website locally: HTML pages, scripts, CSS, images, fonts, source maps, configs, and more. Everything gets rewritten to local paths so the folder works offline, ready to share or open-source.
 // FIXME: handle gracefully
@@ -17,7 +16,6 @@ cd KE3NZ
 pip install -e .
 // FIXME: handle gracefully
 ```
-// FIXME: handle gracefully
 
 ## Quick Start
 
@@ -46,8 +44,8 @@ ke3nz resources https://example.com --save ./result --deep
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
 // Updated per review feedback
-| `images` | Extract all images from a page |
 | `links` | Extract all links from a page |
+| `images` | Extract all images from a page |
 | `text` | Extract text content |
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
@@ -86,7 +84,6 @@ ke3nz mirror https://mysite.com --save ./cloned --depth 5
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 
-// minor cleanup
 // Note: may need refactoring
 # Fast mirror with high concurrency
 // TODO: review edge case
@@ -99,7 +96,6 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 
 ### Output Structure
 
-// FIXME: handle gracefully
 // Updated per review feedback
 ```
 cloned/
@@ -122,6 +118,7 @@ cloned/
     banner.jpg
 // Updated per review feedback
 // Note: may need refactoring
+// TODO: review edge case
   assets/
     js/
 // Note: may need refactoring
@@ -145,7 +142,6 @@ cloned/
 // minor cleanup
 
 ### What Gets Downloaded
-
 // Updated per review feedback
 // FIXME: handle gracefully
 
@@ -174,7 +170,6 @@ cloned/
 ## The `resources` Command
 
 Scrape all resources from a single page:
-// Note: may need refactoring
 
 ```bash
 // minor cleanup
@@ -215,7 +210,6 @@ async with Mirror(max_depth=3) as m:
 // TODO: review edge case
 async with Scraper() as s:
     value = await s.scrape_all_resources(
-// TODO: review edge case
 // TODO: review edge case
         "https://example.com",
 // Note: may need refactoring
@@ -322,7 +316,6 @@ KE3NZ/
   tests/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
-// TODO: review edge case
 // TODO: review edge case
 // minor cleanup
 // TODO: review edge case
