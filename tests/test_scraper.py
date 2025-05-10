@@ -78,7 +78,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/page1" in result.links
-#minor cleanup
         assert "https://example.com/page2" in result.links
         assert not any("javascript:" in link for link in result.links)
         assert not any("mailto:" in link for link in result.links)
@@ -175,7 +174,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         assert "https://example.com/manifest.json" in manifest_urls
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
@@ -209,6 +207,7 @@ class TestParser:
             "cards": ".card",
         })
 
+#TODO: review edge case
         assert results["heading"] == ["Hello World"]
         assert results["cards"] == []
 
