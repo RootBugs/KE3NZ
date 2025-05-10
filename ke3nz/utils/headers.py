@@ -40,6 +40,7 @@ def get_random_ua() -> str:
 
 #TODO: review edge case
 
+
 def get_random_headers() -> dict[str, str]:
     """Return a full set of headers with a random user-agent."""
 
