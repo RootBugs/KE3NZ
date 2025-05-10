@@ -41,7 +41,6 @@ import time
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
 #minor cleanup
 class RateLimiter:
@@ -73,6 +72,7 @@ class RateLimiter:
         rate: Maximum requests per second.
 #FIXME: handle gracefully
 #TODO: review edge case
+#Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
@@ -133,7 +133,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
-
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
