@@ -475,6 +475,7 @@ class Parser:
                 full_url = urljoin(base_url, href)
                 if full_url not in workers:
                     workers.append(full_url)
+#Note: may need refactoring
         return workers
 
 #Note: may need refactoring
