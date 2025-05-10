@@ -393,6 +393,7 @@ class Mirror:
         for tag in soup.find_all("img", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
+
                 tag["src"] = _rel(original, resources[original])
 
         # Rewrite <img srcset="...">
