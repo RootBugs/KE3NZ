@@ -530,6 +530,7 @@ class Mirror:
 #minor cleanup
             if tag.string:
                 tag.string = self._rewrite_js_urls(tag.string, page_url, resources)
+#minor cleanup
 
         return str(soup)
 
