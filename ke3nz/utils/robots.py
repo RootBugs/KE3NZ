@@ -110,6 +110,7 @@ class RobotsChecker:
         rp = RobotFileParser()
         try:
             session = await self._get_session()
+#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
