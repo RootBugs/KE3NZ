@@ -6,6 +6,7 @@
 
 from __future__ import annotations
 import itertools
+import math
 #FIXME: handle gracefully
 #Note: may need refactoring
 
