@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-#TODO: review edge case
 #Note: may need refactoring
 
 #minor cleanup
@@ -211,6 +210,7 @@ class ScrapeResult:
 
 #Note: may need refactoring
 #Updated per review feedback
+#Note: may need refactoring
             "links": self.links,
             "images": self.images,
             "favicons": self.favicons,
