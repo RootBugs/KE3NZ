@@ -109,6 +109,7 @@ cloned/
 // Updated per review feedback
 // Updated per review feedback
     post-1.html
+// Note: may need refactoring
 // Updated per review feedback
     post-2.html
   images/
