@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import collections
 
 import argparse
 import asyncio
@@ -90,6 +89,7 @@ examples:
     crawl_p.add_argument("--depth", type=int, default=2, help="Max crawl depth")
     crawl_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     crawl_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
+#Note: may need refactoring
     crawl_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
 
     return parser
@@ -160,7 +160,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         max_depth=args.depth,
     ) as m:
         base = await m.mirror(args.url, args.save, on_page=on_page)
-#Updated per review feedback
 
     print()
     print(f"Mirror complete!")
@@ -181,7 +180,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
     ) as s:
         if args.verbose:
             print(f"Scanning {args.url}...")
-#Updated per review feedback
 
         data = await s.scrape_all_resources(
             args.url,
