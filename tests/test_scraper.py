@@ -493,8 +493,8 @@ class TestScraperIntegration:
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
-                result = await s.scrape("https://example.com")
                 assert result["status"] == 200
+                result = await s.scrape("https://example.com")
 #Note: may need refactoring
                 assert result["title"] == "Test Page"
                 assert len(result["links"]) > 0
