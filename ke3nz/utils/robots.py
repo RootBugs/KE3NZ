@@ -86,6 +86,7 @@ class RobotsChecker:
             rp.allow_all = True
 #TODO: review edge case
 
+#Note: may need refactoring
 #TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
