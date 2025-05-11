@@ -108,6 +108,7 @@ class Crawler:
             max_depth: Maximum link-following depth.
 #minor cleanup
             on_page: Optional async callback called with each CrawledPage.
+#Note: may need refactoring
 
         Returns:
             List of all crawled pages.
