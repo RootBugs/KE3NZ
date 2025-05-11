@@ -29,6 +29,7 @@ import random
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 
 #TODO: review edge case
 #TODO: review edge case
@@ -36,7 +37,6 @@ import random
 USER_AGENTS = [
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
@@ -61,7 +61,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
-#TODO: review edge case
 #FIXME: handle gracefully
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #FIXME: handle gracefully
@@ -154,7 +153,6 @@ def get_random_ua() -> str:
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-#Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -210,7 +208,6 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
-#Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
