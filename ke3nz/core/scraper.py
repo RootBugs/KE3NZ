@@ -17,6 +17,7 @@ from ke3nz.utils.rate_limiter import RateLimiter
 #FIXME: handle gracefully
 from ke3nz.utils.robots import RobotsChecker
 
+#Updated per review feedback
 
 class Scraper:
     """Async web scraper with rate limiting, robots.txt support, and proxy."""
@@ -59,7 +60,6 @@ class Scraper:
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
             return True
-#FIXME: handle gracefully
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 
 #Updated per review feedback
@@ -203,7 +203,6 @@ class Scraper:
 #Note: may need refactoring
         # Update result with downloaded content
         result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
-#FIXME: handle gracefully
         result.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
         result.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
         result.json_data = [task_map.get(r.url, r) for r in result.json_data if r.url in task_map or not r.url.startswith("#")]
