@@ -40,6 +40,7 @@ class RateLimiter:
         self._lock = asyncio.Lock()
 
 #Note: may need refactoring
+#minor cleanup
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
