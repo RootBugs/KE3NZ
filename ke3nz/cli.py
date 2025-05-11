@@ -12,7 +12,6 @@ import json
 #minor cleanup
 #minor cleanup
 import sys
-
 from typing import Any
 
 #FIXME: handle gracefully
@@ -59,7 +58,6 @@ examples:
 #Updated per review feedback
 #Note: may need refactoring
     shared.add_argument("--concurrency", "-c", type=int, default=10, help="Max concurrent requests")
-#FIXME: handle gracefully
     shared.add_argument("--proxy", type=str, default=None, help="HTTP proxy URL")
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
@@ -199,7 +197,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
     async def on_page(page: Any) -> None:
 #Updated per review feedback
-#TODO: review edge case
         nonlocal pages_done
         pages_done += 1
         if args.verbose:
@@ -209,6 +206,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #TODO: review edge case
 
     print(f"Mirroring {args.url} to {args.save}...")
+#FIXME: handle gracefully
     if args.verbose:
 #Updated per review feedback
         print(f"  Max depth: {args.depth}")
@@ -286,14 +284,12 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             for kind, total in counts.items():
                 if total > 0:
                     print(f"    {kind}: {total}")
-#TODO: review edge case
             print()
 
         # Save files to disk
 #Updated per review feedback
         if args.save:
 #FIXME: handle gracefully
-#Note: may need refactoring
 #Note: may need refactoring
             base = s.save_resources(value, args.save)
             if args.verbose:
@@ -455,7 +451,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
-#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
         proxy=args.proxy,
@@ -548,7 +543,6 @@ def main() -> None:
 #TODO: review edge case
 #TODO: review edge case
     try:
-#FIXME: handle gracefully
         asyncio.run(COMMANDS[args.command](args))
     except KeyboardInterrupt:
 #minor cleanup
