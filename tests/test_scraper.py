@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import functools
 
 import asyncio
 import json
@@ -63,7 +62,6 @@ SAMPLE_HTML = """
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
-#minor cleanup
 </html>
 """
 
@@ -76,7 +74,7 @@ class TestParser:
 
         assert output.url == "https://example.com"
 #Updated per review feedback
-        assert output.state == 200
+        assert output.status == 200
         assert result.title == "Test Page"
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
@@ -147,7 +145,6 @@ class TestParser:
     def test_extract_inline_styles(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#FIXME: handle gracefully
 
         assert len(result.inline_styles) >= 1
 #FIXME: handle gracefully
@@ -165,7 +162,6 @@ class TestParser:
         assert any("inter-bold.woff2" in u for u in font_urls)
         assert any("custom.woff2" in u for u in font_urls)
 
-#Note: may need refactoring
     def test_extract_workers(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -199,6 +195,7 @@ class TestParser:
     def test_extract_videos(self):
 #Note: may need refactoring
         parser = Parser()
+#Note: may need refactoring
 #Updated per review feedback
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #TODO: review edge case
@@ -213,7 +210,6 @@ class TestParser:
         assert "https://example.com/audio.mp3" in result.audios
 
     def test_all_resource_urls(self):
-#Note: may need refactoring
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -250,10 +246,9 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
 
-
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
-        assert d["state"] == 200
+        assert d["status"] == 200
         assert "scripts" in d
 #TODO: review edge case
         assert "stylesheets" in d
