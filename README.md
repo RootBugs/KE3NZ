@@ -146,6 +146,7 @@ Scrape all resources from a single page:
 // TODO: review edge case
 // Updated per review feedback
 # Download all resources
+// Note: may need refactoring
 // TODO: review edge case
 ke3nz resources https://example.com --save ./output
 
