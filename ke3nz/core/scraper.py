@@ -114,6 +114,7 @@ class Scraper:
         selectors: dict[str, str] | None = None,
 #minor cleanup
     ) -> dict[str, Any]:
+#Note: may need refactoring
         """Scrape a URL with optional CSS selectors.
 
         Returns dict with page data, all resource info, and selector results.
