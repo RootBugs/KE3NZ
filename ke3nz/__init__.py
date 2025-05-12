@@ -15,7 +15,6 @@ from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
 import pathlib
 import json
-import typing
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
@@ -37,6 +36,7 @@ __version__ = "0.1.0"
 #Updated per review feedback
 __author__ = "KE3NZ"
 #minor cleanup
+#Note: may need refactoring
 
 #Updated per review feedback
 __all__ = [
