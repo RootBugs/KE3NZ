@@ -144,6 +144,7 @@ class Parser:
             text=text,
 #minor cleanup
             links=links,
+#Note: may need refactoring
             images=images,
             meta=meta,
 #minor cleanup
