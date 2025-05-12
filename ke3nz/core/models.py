@@ -1,6 +1,6 @@
 #Note: may need refactoring
 #Updated per review feedback
-"""Shared data models for KE3NZ."""
+"""Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
