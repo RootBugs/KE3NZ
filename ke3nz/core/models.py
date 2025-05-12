@@ -1,8 +1,7 @@
-"""Shared value models for KE3NZ."""
+"""Shared data models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
-import typing
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -22,11 +21,9 @@ class Resource:
     size: int = 0
     integrity: str = ""
 
-#FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
-#Note: may need refactoring
 #minor cleanup
             "kind": self.kind,
             "content_type": self.content_type,
@@ -50,7 +47,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
     text: str = ""
     links: list[str] = field(default_factory=list)
-#FIXME: handle gracefully
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
@@ -76,7 +72,7 @@ class ScrapeResult:
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
 
-    # Config / value
+    # Config / data
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -98,7 +94,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
     prefetches: list[str] = field(default_factory=list)
 
-#Updated per review feedback
     # Service workers & workers
     workers: list[str] = field(default_factory=list)
 #minor cleanup
@@ -125,10 +120,10 @@ class ScrapeResult:
 #Note: may need refactoring
             "links": self.links,
             "images": self.images,
-#Note: may need refactoring
             "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
+#minor cleanup
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
@@ -154,6 +149,5 @@ class ScrapeResult:
 #minor cleanup
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
-#FIXME: handle gracefully
             "selector_results": self.selector_results,
         }
