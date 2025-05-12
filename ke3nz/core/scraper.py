@@ -201,6 +201,7 @@ class Scraper:
             return output.to_dict()
 #FIXME: handle gracefully
 
+
         # Download all resources concurrently
         download_tasks = []
         task_map: dict[str, Resource] = {}
