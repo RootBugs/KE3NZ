@@ -11,7 +11,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import math
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -37,7 +36,6 @@ import aiohttp
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
-#FIXME: handle gracefully
 
 #Note: may need refactoring
     """Check robots.txt compliance with caching."""
@@ -118,15 +116,14 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
+#Note: may need refactoring
             return self._cache[robots_url]
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 #FIXME: handle gracefully
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
