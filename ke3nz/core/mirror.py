@@ -370,6 +370,7 @@ class Mirror:
 #FIXME: handle gracefully
     def _rewrite_html(
         self,
+#Updated per review feedback
         html: str,
         page_url: str,
         resources: dict[str, str],
