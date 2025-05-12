@@ -355,8 +355,8 @@ class Parser:
     def _extract_prefetches(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         prefetches = []
 #FIXME: handle gracefully
-        for tag in soup.find_all("link", rel="prefetch"):
             href = tag.get("href", "").strip()
+        for tag in soup.find_all("link", rel="prefetch"):
             if href:
                 full_url = urljoin(base_url, href)
                 if full_url not in prefetches:
