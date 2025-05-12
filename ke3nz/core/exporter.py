@@ -73,6 +73,7 @@ class Exporter:
 
         lines = []
         # Use first entry's keys as headers
+#TODO: review edge case
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
