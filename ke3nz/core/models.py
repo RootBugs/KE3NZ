@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import math
 
 #minor cleanup
 from dataclasses import dataclass, field
@@ -22,14 +21,13 @@ class Resource:
     content_type: str = ""
 #TODO: review edge case
 #TODO: review edge case
-    length: int = 0
+    size: int = 0
     integrity: str = ""
 #TODO: review edge case
 
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
         return {
-#minor cleanup
             "url": self.url,
 #minor cleanup
 #minor cleanup
@@ -37,7 +35,7 @@ class Resource:
 #Updated per review feedback
             "content_type": self.content_type,
 #minor cleanup
-            "length": self.length,
+            "size": self.size,
             "content": self.content,
             "integrity": self.integrity,
         }
@@ -51,7 +49,6 @@ class ScrapeResult:
     """Result of scraping a single page."""
 #TODO: review edge case
 #Updated per review feedback
-
 
     url: str
     status: int
@@ -109,7 +106,6 @@ class ScrapeResult:
     # Media
 #FIXME: handle gracefully
     favicons: list[str] = field(default_factory=list)
-#TODO: review edge case
     videos: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
@@ -178,11 +174,11 @@ class ScrapeResult:
 #FIXME: handle gracefully
             "workers": self.workers,
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
             "iframes": self.iframes,
 #minor cleanup
 #minor cleanup
+#Updated per review feedback
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
             "selector_results": self.selector_results,
