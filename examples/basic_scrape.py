@@ -62,8 +62,8 @@ async def main():
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
-            }
                 "paragraphs": "p",
+            }
 #Updated per review feedback
         )
 #FIXME: handle gracefully
@@ -98,6 +98,7 @@ async def main():
 #minor cleanup
     async with Scraper() as s:
         results = await s.fetch_many(urls)
+#Note: may need refactoring
 #FIXME: handle gracefully
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
