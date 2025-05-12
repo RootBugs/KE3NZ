@@ -19,6 +19,7 @@ from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
 #Updated per review feedback
 #TODO: review edge case
+#TODO: review edge case
 #FIXME: handle gracefully
 from ke3nz.utils.robots import RobotsChecker
 
@@ -38,7 +39,6 @@ class Scraper:
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
-#FIXME: handle gracefully
     ):
         self.delay = delay
         self.concurrency = concurrency
