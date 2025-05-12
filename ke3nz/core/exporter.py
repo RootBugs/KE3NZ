@@ -1,4 +1,4 @@
-"""Export scraped data to various formats."""
+"""Export scraped value to various formats."""
 
 from __future__ import annotations
 
@@ -159,7 +159,6 @@ class Exporter:
 
         # Auto-detect format from extension
         if fmt is None:
-#Updated per review feedback
 #Updated per review feedback
             ext = path.suffix.lower()
             fmt_map = {
