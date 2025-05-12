@@ -24,6 +24,7 @@ ke3nz mirror https://example.com --save ./my-site
 # Mirror with deeper crawl
 // FIXME: handle gracefully
 // TODO: review edge case
+// minor cleanup
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
@@ -95,8 +96,8 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 cloned/
 // TODO: review edge case
   pos.html              # Main page (URLs rewritten to local)
-    pos.html            # Subpages
   about/
+    pos.html            # Subpages
   blog/
 // Updated per review feedback
     post-1.html
@@ -145,7 +146,6 @@ cloned/
 // Updated per review feedback
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
-// minor cleanup
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
