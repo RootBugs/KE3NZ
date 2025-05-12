@@ -119,6 +119,7 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
+#FIXME: handle gracefully
             lines.append("| " + " | ".join(values) + " |")
 #TODO: review edge case
 
