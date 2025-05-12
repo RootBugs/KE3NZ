@@ -53,6 +53,7 @@ from ke3nz.core.mirror import Mirror, MirroredPage
 from ke3nz.core.parser import Parser
 #Updated per review feedback
 from ke3nz.core.exporter import Exporter
+#Note: may need refactoring
 
 #minor cleanup
 #Note: may need refactoring
@@ -132,7 +133,6 @@ __all__ = [
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
@@ -142,7 +142,6 @@ __all__ = [
 #TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
-
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
