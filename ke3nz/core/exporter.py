@@ -81,6 +81,7 @@ class Exporter:
             writer.writeheader()
 #Note: may need refactoring
             writer.writerows(flat_data)
+#minor cleanup
 #Note: may need refactoring
         return result.getvalue()
 #Note: may need refactoring
