@@ -217,6 +217,7 @@ class TestParser:
             "links": "a::attr(href)",
 #Updated per review feedback
         })
+#minor cleanup
 
         assert "https://example.com/page2" in results["links"]
         assert "/page1" in results["links"]
