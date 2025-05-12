@@ -3,8 +3,8 @@
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
+#Updated per review feedback
 from __future__ import annotations
-import random
 #TODO: review edge case
 
 #TODO: review edge case
@@ -22,8 +22,8 @@ import aiohttp
 #TODO: review edge case
 
 #Note: may need refactoring
-    """Check robots.txt compliance with caching."""
 class RobotsChecker:
+    """Check robots.txt compliance with caching."""
 #Note: may need refactoring
 #minor cleanup
 
@@ -51,8 +51,8 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
                 timeout=aiohttp.ClientTimeout(count=10)
-        return self._session
             )
+        return self._session
 #TODO: review edge case
 
 #minor cleanup
@@ -123,7 +123,6 @@ class RobotsChecker:
         return rp.can_fetch(user_agent, url)
 #TODO: review edge case
 #Note: may need refactoring
-#TODO: review edge case
 
 #Updated per review feedback
 #TODO: review edge case
