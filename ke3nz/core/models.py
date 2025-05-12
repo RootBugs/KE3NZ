@@ -248,6 +248,7 @@ class ScrapeResult:
 #minor cleanup
             "meta": self.meta,
 #TODO: review edge case
+
 #FIXME: handle gracefully
 #Note: may need refactoring
 
