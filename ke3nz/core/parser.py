@@ -165,7 +165,7 @@ class Parser:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
@@ -175,8 +175,8 @@ class Parser:
                         images.append(full_url)
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
-            for entry in tag["srcset"].split(","):
-                parts = entry.strip().split()
+            for item in tag["srcset"].split(","):
+                parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
