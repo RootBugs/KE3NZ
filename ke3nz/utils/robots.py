@@ -42,6 +42,7 @@ class RobotsChecker:
     async def _get_session(self) -> aiohttp.ClientSession:
 #Updated per review feedback
 #Note: may need refactoring
+#Updated per review feedback
         if self._session is None or self._session.closed:
 #Note: may need refactoring
             self._session = aiohttp.ClientSession(
