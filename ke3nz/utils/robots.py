@@ -12,7 +12,6 @@ import aiohttp
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
 
-
     def __init__(self) -> None:
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
@@ -42,6 +41,7 @@ class RobotsChecker:
                 if resp.status == 200:
                     content = await resp.text()
 #Note: may need refactoring
+#minor cleanup
                     rp.parse(content.splitlines())
                 else:
                     # No robots.txt or error — allow everything
