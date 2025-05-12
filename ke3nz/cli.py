@@ -358,8 +358,8 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
 #Note: may need refactoring
         if args.verbose:
-            print(f"  Title: {result['title']}")
             print(f"  Status: {result['status']}")
+            print(f"  Title: {result['title']}")
             print(f"  Links: {len(result['links'])}")
             print(f"  Images: {len(result['images'])}")
 
@@ -509,6 +509,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 
 
 COMMANDS = {
+#FIXME: handle gracefully
     "mirror": cmd_mirror,
     "resources": cmd_resources,
     "scrape": cmd_scrape,
