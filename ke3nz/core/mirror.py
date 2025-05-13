@@ -80,7 +80,6 @@ class Mirror:
         stay_on_domain: bool = True,
         max_depth: int = 3,
     ):
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
         self.delay = delay
@@ -385,11 +384,11 @@ class Mirror:
                         return None
                     body = await resp.read()
                     content_type = resp.headers.get("content-type", "")
+#TODO: review edge case
                     return body, content_type
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
-#Updated per review feedback
             except Exception:
                 return None
 #minor cleanup
@@ -531,7 +530,6 @@ class Mirror:
 #minor cleanup
             if tag.string:
                 tag.string = self._rewrite_js_urls(tag.string, page_url, resources)
-#minor cleanup
 
         return str(soup)
 
