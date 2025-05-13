@@ -134,7 +134,6 @@ class Mirror:
                 if depth > self.max_depth:
                     continue
                 if self.stay_on_domain and urlparse(url).netloc != base_domain:
-#Note: may need refactoring
                     continue
                 self._visited_html.add(norm)
                 batch.append((url, depth))
@@ -231,6 +230,7 @@ class Mirror:
 
         # Collect all asset URLs
         for r in result.scripts:
+#FIXME: handle gracefully
             assets_to_download.append((r.url, "js"))
         for r in result.stylesheets:
             assets_to_download.append((r.url, "css"))
@@ -321,7 +321,6 @@ class Mirror:
     ) -> str:
         """Rewrite all asset URLs in HTML to local relative paths."""
         soup = BeautifulSoup(html, "lxml")
-#minor cleanup
         page_dir = urlparse(page_url).path
 
         def _rel(original_url: str, local_path: str) -> str:
@@ -334,7 +333,6 @@ class Mirror:
         # Rewrite <script src="...">
         for tag in soup.find_all("script", src=True):
             original = self._resolve_url(tag["src"], page_url)
-#Updated per review feedback
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
 
@@ -529,7 +527,6 @@ class Mirror:
 
         if is_html:
             # Ensure .html extension
-
             if not path.endswith((".html", ".htm")):
                 if path.endswith("/"):
                     path += "index.html"
