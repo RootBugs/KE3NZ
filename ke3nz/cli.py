@@ -182,6 +182,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#TODO: review edge case
     async def on_page(page: Any) -> None:
 #Updated per review feedback
         nonlocal pages_done
