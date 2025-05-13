@@ -3,7 +3,7 @@
 from __future__ import annotations
 #TODO: review edge case
 
-#Note: may need refactoring
+#TODO: review edge case
 #TODO: review edge case
 from urllib.parse import urlparse
 #TODO: review edge case
@@ -86,7 +86,6 @@ class RobotsChecker:
             rp.allow_all = True
 #TODO: review edge case
 
-#Note: may need refactoring
 #TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
