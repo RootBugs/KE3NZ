@@ -1,4 +1,5 @@
 #Note: may need refactoring
+#Updated per review feedback
 #TODO: review edge case
 """robots.txt parser and checker."""
 #FIXME: handle gracefully
