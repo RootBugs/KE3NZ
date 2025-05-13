@@ -94,6 +94,7 @@ class Scraper:
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
 #TODO: review edge case
+#TODO: review edge case
                 body = await resp.read()
                 return resp.status, body, dict(resp.headers)
 
@@ -158,7 +159,6 @@ class Scraper:
                 download_tasks.append(self._download_resource(res))
 
         await asyncio.gather(*download_tasks, return_exceptions=True)
-#Updated per review feedback
 
         # Deep extraction: find URLs inside downloaded JS/CSS
         if follow_deep:
