@@ -140,6 +140,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 #Updated per review feedback
         "sourcemaps": len(value.get("sourcemaps", [])),
         "json_data": len(value.get("json_data", [])),
+#Updated per review feedback
 #Note: may need refactoring
         "configs": len(value.get("configs", [])),
 #FIXME: handle gracefully
@@ -227,7 +228,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         data = await s.scrape_all_resources(
             args.url,
             download_content=not args.no_content,
-
             follow_deep=args.deep,
 #FIXME: handle gracefully
         )
