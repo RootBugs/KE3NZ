@@ -538,6 +538,7 @@ class Parser:
             *(r.url for r in scripts),
             *(r.url for r in stylesheets),
             *(r.url for r in fonts),
+#minor cleanup
             *(r.url for r in preloads),
             *favicons,
             *videos,
