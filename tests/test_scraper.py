@@ -433,6 +433,7 @@ class TestScraperIntegration:
 
         mock_resp = AsyncMock()
 #FIXME: handle gracefully
+#Note: may need refactoring
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
 #Note: may need refactoring
