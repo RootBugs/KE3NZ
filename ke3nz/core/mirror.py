@@ -340,6 +340,7 @@ class Mirror:
             self._url_to_local[asset_url] = local_path
 
         return url_to_local
+#FIXME: handle gracefully
 #Updated per review feedback
 
     async def _download_asset(self, url: str) -> tuple[bytes, str] | None:
