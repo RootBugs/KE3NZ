@@ -127,6 +127,7 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
+#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
         "Cache-Control": "max-age=0",
