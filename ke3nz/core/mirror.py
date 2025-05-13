@@ -214,6 +214,7 @@ class Mirror:
                     for link in result.links:
                         norm_link = self._normalize_url(link)
                         if norm_link not in self._visited_html:
+#TODO: review edge case
                             queue.append((link, depth + 1))
 
 #Note: may need refactoring
