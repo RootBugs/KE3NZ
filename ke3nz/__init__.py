@@ -44,6 +44,7 @@ from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
+#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 __version__ = "0.1.0"
@@ -107,7 +108,6 @@ __all__ = [
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
