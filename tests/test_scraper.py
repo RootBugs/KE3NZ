@@ -394,6 +394,7 @@ class TestExporter:
 #Updated per review feedback
 
 #TODO: review edge case
+#Updated per review feedback
     def test_empty_data(self):
         assert Exporter.to_json([]) == "[]"
         assert Exporter.to_csv([]) == ""
@@ -433,7 +434,6 @@ class TestScraperIntegration:
 
         mock_resp = AsyncMock()
 #FIXME: handle gracefully
-#Note: may need refactoring
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
 #Note: may need refactoring
