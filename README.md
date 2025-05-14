@@ -33,8 +33,8 @@ ke3nz resources https://example.com --save ./result --deep
 | `scrape` | Basic page scrape with CSS selector support |
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
-| `meta` | Extract metadata (title, OG tags, etc.) |
 | `text` | Extract text content |
+| `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
 
 ## The `mirror` Command
@@ -69,6 +69,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 
 ```
 cloned/
+// TODO: review edge case
   index.html              # Main page (URLs rewritten to local)
   about/
     index.html            # Subpages
@@ -172,7 +173,6 @@ Resource Options:
 
 Shared Options:
   --delay           Delay between requests (default: 0.3s)
-// TODO: review edge case
   --concurrency, -c Max concurrent requests (default: 10)
   --proxy           HTTP proxy URL
   --no-robots       Ignore robots.txt
