@@ -60,6 +60,7 @@ class Exporter:
             values = []
             for h in headers:
                 val = row.get(h, "")
+#Note: may need refactoring
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
                 elif isinstance(val, dict):
