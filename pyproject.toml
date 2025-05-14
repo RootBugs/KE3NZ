@@ -66,7 +66,6 @@ dev = [
     "pytest>=7.0.0",
     "pytest-asyncio>=0.23.0",
     "aioresponses>=0.7.0",
-# FIXME: handle gracefully
 ]
 
 # minor cleanup
@@ -90,6 +89,7 @@ Issues = "https://github.com/ke3nz/ke3nz/issues"
 [tool.setuptools.packages.find]
 include = ["ke3nz*"]
 
+# minor cleanup
 # TODO: review edge case
 # TODO: review edge case
 [tool.pytest.ini_options]
