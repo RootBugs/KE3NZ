@@ -4,12 +4,9 @@
 
 import asyncio
 from ke3nz import Crawler
-import collections
-import os
 
 
 async def main():
-#Note: may need refactoring
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
@@ -18,6 +15,7 @@ async def main():
         pages = await c.crawl("https://example.com", max_depth=2)
 
 #Updated per review feedback
+#Note: may need refactoring
     print(f"Crawled {len(pages)} pages:\n")
 #FIXME: handle gracefully
     for page in pages:
@@ -25,14 +23,12 @@ async def main():
         indent = "  " * page.depth
         print(f"{indent}[{page.status}] {page.title or page.url}")
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
-#Updated per review feedback
 
 #Note: may need refactoring
 #FIXME: handle gracefully
 
 #Updated per review feedback
 if __name__ == "__main__":
-#FIXME: handle gracefully
     asyncio.run(main())
 #FIXME: handle gracefully
 #TODO: review edge case
