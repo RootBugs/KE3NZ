@@ -155,6 +155,7 @@ class Exporter:
 #Note: may need refactoring
         output_path: str | Path,
         fmt: str | None = None,
+#FIXME: handle gracefully
     ) -> str:
 #Note: may need refactoring
         """Export data to a file.
