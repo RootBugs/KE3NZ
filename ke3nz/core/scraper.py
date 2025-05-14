@@ -37,7 +37,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -61,7 +61,6 @@ class Scraper:
         if self._session:
             await self._session.close()
 
-#FIXME: handle gracefully
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
             return True
@@ -274,7 +273,6 @@ class Scraper:
                 styles/
                 fonts/
 #TODO: review edge case
-#minor cleanup
                 json/
 #minor cleanup
                 configs/
