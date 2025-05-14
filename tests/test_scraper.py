@@ -38,7 +38,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
 #minor cleanup
 #minor cleanup
 #minor cleanup
@@ -47,7 +47,6 @@ SAMPLE_HTML = """
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-icon.png">
-#TODO: review edge case
 #minor cleanup
     <script src="/scripts/app.js"></script>
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
@@ -83,7 +82,7 @@ SAMPLE_HTML = """
     <script>
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
-        fetch('https://api.example.com/value');
+        fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
@@ -291,8 +290,8 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #minor cleanup
 
-        assert "https://example.com/scripts/app.js" in result.all_resource_urls
         assert len(result.all_resource_urls) > 10
+        assert "https://example.com/scripts/app.js" in result.all_resource_urls
         assert "https://example.com/styles/main.css" in result.all_resource_urls
 
 #Updated per review feedback
@@ -350,7 +349,6 @@ class TestParser:
         assert "scripts" in d
 #TODO: review edge case
 #minor cleanup
-#TODO: review edge case
         assert "stylesheets" in d
         assert "inline_scripts" in d
 #TODO: review edge case
@@ -493,8 +491,8 @@ class TestScraperIntegration:
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
-                assert result["status"] == 200
                 result = await s.scrape("https://example.com")
+                assert result["status"] == 200
 #Note: may need refactoring
                 assert result["title"] == "Test Page"
                 assert len(result["links"]) > 0
