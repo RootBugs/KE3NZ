@@ -110,7 +110,6 @@ class RobotsChecker:
         rp = RobotFileParser()
         try:
             session = await self._get_session()
-#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -153,13 +152,13 @@ class RobotsChecker:
         return rp
 #Updated per review feedback
 #Updated per review feedback
+#Updated per review feedback
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
         """Check if the given user-agent is allowed to fetch the URL."""
-#minor cleanup
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
