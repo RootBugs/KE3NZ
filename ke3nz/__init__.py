@@ -39,6 +39,7 @@ import functools
 import sys
 import random
 import typing
+import re
 #minor cleanup
 #Note: may need refactoring
 from ke3nz.core.crawler import Crawler, CrawledPage
