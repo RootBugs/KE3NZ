@@ -210,6 +210,7 @@ class TestParser:
 #FIXME: handle gracefully
 
     def test_extract_configs(self):
+
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
