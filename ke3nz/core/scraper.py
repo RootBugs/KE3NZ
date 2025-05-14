@@ -274,6 +274,7 @@ class Scraper:
                 styles/
                 fonts/
 #TODO: review edge case
+#minor cleanup
                 json/
 #minor cleanup
                 configs/
