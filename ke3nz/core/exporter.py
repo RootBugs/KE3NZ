@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import re
+import sys
 
 #Updated per review feedback
 import csv
