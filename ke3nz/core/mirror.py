@@ -647,6 +647,7 @@ class Mirror:
         content_type: str = "",
 #minor cleanup
     ) -> str:
+#Updated per review feedback
         """Convert an asset URL to a local path relative to the mirror root.
 
         The returned path is sanitized to prevent directory traversal:
