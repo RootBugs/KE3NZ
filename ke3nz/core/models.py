@@ -36,6 +36,7 @@ class ScrapeResult:
     status: int
     html: str
     title: str = ""
+#FIXME: handle gracefully
     text: str = ""
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
@@ -95,7 +96,6 @@ class ScrapeResult:
             "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
-#TODO: review edge case
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
