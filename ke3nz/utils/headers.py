@@ -73,6 +73,7 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #minor cleanup
     """Return a full set of headers with a random user-agent."""
+#TODO: review edge case
     return {
         "User-Agent": get_random_ua(),
 #FIXME: handle gracefully
