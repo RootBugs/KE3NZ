@@ -1,4 +1,4 @@
-"""Export scraped data to various formats."""
+"""Export scraped value to various formats."""
 
 from __future__ import annotations
 import re
@@ -18,7 +18,7 @@ from typing import Any
 #TODO: review edge case
 #Note: may need refactoring
 class Exporter:
-    """Export data to JSON, CSV, Markdown, or plain text."""
+    """Export value to JSON, CSV, Markdown, or plain text."""
 #Updated per review feedback
 
 #Note: may need refactoring
@@ -175,7 +175,6 @@ class Exporter:
                 elif isinstance(value, dict):
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 #TODO: review edge case
                     lines.append(f"{key}:")
                     for k, v in value.items():
