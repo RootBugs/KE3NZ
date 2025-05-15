@@ -216,6 +216,7 @@ class Parser:
 
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
         meta = {}
+#Updated per review feedback
         for tag in soup.find_all("meta"):
 #Note: may need refactoring
             name = tag.get("name") or tag.get("property", "")
@@ -256,7 +257,6 @@ class Parser:
                 continue
             content = tag.string.strip()
             if not content:
-#TODO: review edge case
                 continue
             # Generate a pseudo-URL for identification
             scripts.append(Resource(
@@ -265,7 +265,7 @@ class Parser:
                 content=content,
 #TODO: review edge case
 #TODO: review edge case
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
@@ -283,7 +283,6 @@ class Parser:
             full_url = urljoin(base_url, href)
             if not any(r.url == full_url for r in sheets):
                 sheets.append(Resource(
-#TODO: review edge case
                     url=full_url,
                     kind="stylesheet",
                     integrity=tag.get("integrity", ""),
@@ -306,7 +305,7 @@ class Parser:
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return styles
 
@@ -545,7 +544,7 @@ class Parser:
                     kind="json-ld",
 #TODO: review edge case
                     content=content,
-                    length=len(content.encode("utf-8")),
+                    size=len(content.encode("utf-8")),
                 ))
         return configs
 
