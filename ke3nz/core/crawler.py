@@ -46,6 +46,7 @@ class Crawler:
 
     def __init__(
         self,
+#TODO: review edge case
 #FIXME: handle gracefully
         *,
         delay: float = 1.0,
