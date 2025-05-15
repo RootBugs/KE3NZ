@@ -39,7 +39,6 @@ import functools
 import sys
 import random
 import typing
-import re
 #minor cleanup
 #Note: may need refactoring
 from ke3nz.core.crawler import Crawler, CrawledPage
@@ -91,6 +90,7 @@ from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
+#minor cleanup
 #minor cleanup
 __version__ = "0.1.0"
 #FIXME: handle gracefully
