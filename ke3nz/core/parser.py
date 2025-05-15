@@ -670,6 +670,7 @@ class Parser:
         for pattern, kind in _URL_PATTERNS:
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
+
 #FIXME: handle gracefully
                 url = match.group(1)
                 if url.startswith(("value:", "#")):
