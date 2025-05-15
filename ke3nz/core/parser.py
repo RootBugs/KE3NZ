@@ -84,6 +84,7 @@ class Parser:
         workers = self._extract_workers(soup, url)
         iframes = self._extract_iframes(soup, url)
         configs = self._extract_configs(soup, url)
+#Updated per review feedback
         json_data = self._extract_json_links(soup, url)
 
         # Collect all discovered resource URLs
