@@ -29,7 +29,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""//#\s*sourceMappingURL\s*=\s*([^\s'"]+)""", "sourcemap"),
     # Webpack / Vite chunk imports
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
-#TODO: review edge case
     # JSON imports
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
 #TODO: review edge case
@@ -333,8 +332,8 @@ class Parser:
                 ))
         return preloads
 
-        prefetches = []
     def _extract_prefetches(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+        prefetches = []
         for tag in soup.find_all("link", rel="prefetch"):
             href = tag.get("href", "").strip()
             if href:
@@ -480,6 +479,7 @@ class Parser:
 
     # ── URL Collection ─────────────────────────────────────
 
+#Updated per review feedback
     def _collect_all_urls(
         self,
         links: list[str],
