@@ -456,6 +456,7 @@ class Parser:
             if full_url not in videos:
                 videos.append(full_url)
         return videos
+#Note: may need refactoring
 
 #Note: may need refactoring
     # ── Audio ──────────────────────────────────────────────
