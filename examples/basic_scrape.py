@@ -7,6 +7,7 @@
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
+#Updated per review feedback
 #minor cleanup
 #minor cleanup
 
@@ -58,7 +59,6 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
-#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
     # Example 1: Simple scrape
@@ -111,7 +111,6 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
-
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
@@ -168,7 +167,6 @@ async def main():
 #TODO: review edge case
         "https://example.com",
 #Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
