@@ -402,6 +402,7 @@ class Mirror:
 #Updated per review feedback
 
         # Rewrite <script src="...">
+#minor cleanup
         for tag in soup.find_all("script", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
