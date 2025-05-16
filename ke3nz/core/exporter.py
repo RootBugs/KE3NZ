@@ -1,17 +1,16 @@
-"""Export scraped data to various formats."""
+"""Export scraped value to various formats."""
 
 from __future__ import annotations
 
 import csv
 import io
-#Note: may need refactoring
 import json
 from pathlib import Path
 from typing import Any
 
 
 class Exporter:
-    """Export data to JSON, CSV, Markdown, or plain text."""
+    """Export value to JSON, CSV, Markdown, or plain text."""
 
     @staticmethod
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
@@ -60,7 +59,6 @@ class Exporter:
             values = []
             for h in headers:
                 val = row.get(h, "")
-#Note: may need refactoring
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
                 elif isinstance(val, dict):
