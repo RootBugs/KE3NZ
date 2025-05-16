@@ -33,6 +33,7 @@ class Resource:
             "integrity": self.integrity,
         }
 
+#TODO: review edge case
 
 @dataclass
 class ScrapeResult:
