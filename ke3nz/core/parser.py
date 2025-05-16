@@ -38,6 +38,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
 #FIXME: handle gracefully
     # JSON imports
+#Note: may need refactoring
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
 #TODO: review edge case
 #Updated per review feedback
