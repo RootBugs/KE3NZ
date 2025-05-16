@@ -2,7 +2,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import typing
 
 #minor cleanup
 import argparse
@@ -183,7 +182,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#TODO: review edge case
     async def on_page(page: Any) -> None:
 #Updated per review feedback
         nonlocal pages_done
@@ -213,7 +211,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         stay_on_domain=not args.cross_domain,
         max_depth=args.depth,
     ) as m:
-#TODO: review edge case
 #FIXME: handle gracefully
         base = await m.mirror(args.url, args.save, on_page=on_page)
 
@@ -286,6 +283,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         _output(output_data, args.output, args.format)
 #Updated per review feedback
 
+#minor cleanup
 
 def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
     """Remove raw content from resource dicts to keep output clean."""
@@ -406,8 +404,8 @@ async def cmd_text(args: argparse.Namespace) -> None:
         timeout=args.timeout,
         proxy=args.proxy,
 #Note: may need refactoring
-        user_agent=args.user_agent,
         respect_robots=not args.no_robots,
+        user_agent=args.user_agent,
 #TODO: review edge case
 #FIXME: handle gracefully
     ) as s:
