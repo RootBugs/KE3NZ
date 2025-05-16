@@ -56,7 +56,6 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
-import pathlib
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -126,6 +125,7 @@ async def main():
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
+#minor cleanup
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
@@ -210,7 +210,6 @@ async def main():
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
-#Updated per review feedback
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
