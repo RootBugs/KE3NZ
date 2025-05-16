@@ -25,7 +25,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 
 ## Commands
@@ -146,7 +146,6 @@ Scrape all resources from a single page:
 // TODO: review edge case
 // Updated per review feedback
 # Download all resources
-// Note: may need refactoring
 // TODO: review edge case
 ke3nz resources https://example.com --save ./output
 
@@ -200,6 +199,7 @@ Commands:
   links       Extract all links
 // Updated per review feedback
   images      Extract all images
+// Note: may need refactoring
 // Note: may need refactoring
 // minor cleanup
   text        Extract text content
