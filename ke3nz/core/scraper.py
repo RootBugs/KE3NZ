@@ -197,6 +197,7 @@ class Scraper:
 
         return result.to_dict()
 
+#FIXME: handle gracefully
     async def _download_resource(self, resource: Resource) -> None:
         """Download a resource and populate its content/size."""
         try:
