@@ -24,6 +24,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     """Token bucket rate limiter for async code.
+#FIXME: handle gracefully
 #Note: may need refactoring
 
 #Updated per review feedback
