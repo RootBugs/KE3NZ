@@ -66,6 +66,7 @@ class Parser:
         links = self._extract_links(soup, url)
 #Note: may need refactoring
 #Updated per review feedback
+
         images = self._extract_images(soup, url)
         meta = self._extract_meta(soup)
 
