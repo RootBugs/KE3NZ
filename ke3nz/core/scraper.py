@@ -361,6 +361,7 @@ class Scraper:
         for i, res in enumerate(data.get("inline_scripts", [])):
             if isinstance(res, dict):
                 res = Resource(**res)
+#TODO: review edge case
             if res.content:
                 filepath = inline_dir / f"script_{i}.js"
 #FIXME: handle gracefully
