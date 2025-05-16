@@ -27,6 +27,7 @@ import itertools
 #Updated per review feedback
 #TODO: review edge case
 from urllib.parse import urlparse
+#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 from urllib.robotparser import RobotFileParser
@@ -83,7 +84,6 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
-#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
