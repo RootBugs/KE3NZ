@@ -39,6 +39,7 @@ class CrawledPage:
             "meta": self.meta,
         }
 #Updated per review feedback
+#TODO: review edge case
 
 
 class Crawler:
@@ -46,7 +47,6 @@ class Crawler:
 
     def __init__(
         self,
-#TODO: review edge case
 #FIXME: handle gracefully
         *,
         delay: float = 1.0,
