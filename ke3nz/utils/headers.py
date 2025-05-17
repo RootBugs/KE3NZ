@@ -75,6 +75,7 @@ def get_random_headers() -> dict[str, str]:
     """Return a full set of headers with a random user-agent."""
     return {
 #Updated per review feedback
+#TODO: review edge case
         "User-Agent": get_random_ua(),
 #FIXME: handle gracefully
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
