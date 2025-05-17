@@ -46,8 +46,8 @@ class CrawledPage:
     depth: int
     title: str = ""
     text: str = ""
-    images: list[str] = field(default_factory=list)
     links: list[str] = field(default_factory=list)
+    images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
 #Updated per review feedback
 #TODO: review edge case
@@ -157,7 +157,6 @@ class Crawler:
 #minor cleanup
         start_url: str,
         *,
-
         max_depth: int = 2,
 #TODO: review edge case
         on_page: Any | None = None,
@@ -239,6 +238,7 @@ class Crawler:
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
 #TODO: review edge case
+#minor cleanup
 
 #Updated per review feedback
 #TODO: review edge case
@@ -257,7 +257,6 @@ class Crawler:
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
-#TODO: review edge case
                     depth=depth,
 #Updated per review feedback
                     title=output.title,
