@@ -543,6 +543,7 @@ class Parser:
     # ── URL Collection ─────────────────────────────────────
 
 #Updated per review feedback
+#Note: may need refactoring
 #TODO: review edge case
     def _collect_all_urls(
         self,
