@@ -33,7 +33,6 @@ import pathlib
 import json
 import functools
 import sys
-import collections
 #minor cleanup
 #Note: may need refactoring
 from ke3nz.core.crawler import Crawler, CrawledPage
@@ -90,7 +89,6 @@ __author__ = "KE3NZ"
 #TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -119,6 +117,7 @@ __all__ = [
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
+#Note: may need refactoring
     "ScrapeResult",
 #Updated per review feedback
     "Resource",
@@ -205,6 +204,5 @@ __all__ = [
 #minor cleanup
 #TODO: review edge case
 ]
-#Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
