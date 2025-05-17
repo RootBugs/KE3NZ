@@ -165,7 +165,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'index.html'}")
+    print(f"  Open:   {base / 'pos.html'}")
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
@@ -183,7 +183,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
         data = await s.scrape_all_resources(
             args.url,
-#Note: may need refactoring
             download_content=not args.no_content,
             follow_deep=args.deep,
         )
@@ -271,7 +270,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
-#minor cleanup
         result = await s.scrape(args.url)
         links = [{"url": link} for link in result["links"]]
 
