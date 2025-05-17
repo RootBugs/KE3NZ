@@ -14,6 +14,7 @@
 #Note: may need refactoring
 #TODO: review edge case
 from __future__ import annotations
+import functools
 #FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
