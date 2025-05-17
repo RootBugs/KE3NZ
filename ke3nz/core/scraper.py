@@ -90,6 +90,7 @@ class Scraper:
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
+
         async with self._semaphore:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
