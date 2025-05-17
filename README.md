@@ -251,6 +251,7 @@ Commands:
   meta        Extract page metadata
 // Updated per review feedback
   crawl       Crawl a website and list pages
+// Note: may need refactoring
 
 Mirror Options:
   --save, -s        Output directory (required for mirror)
