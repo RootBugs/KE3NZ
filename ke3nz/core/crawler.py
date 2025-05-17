@@ -142,6 +142,7 @@ class Crawler:
         """Crawl a website starting from start_url.
 
         Args:
+
             start_url: Starting URL.
 #Updated per review feedback
 #minor cleanup
