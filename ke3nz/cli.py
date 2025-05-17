@@ -377,6 +377,7 @@ async def cmd_images(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
 #Updated per review feedback
+#minor cleanup
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
