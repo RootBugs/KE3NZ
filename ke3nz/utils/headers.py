@@ -15,7 +15,6 @@ import random
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
-#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 
@@ -31,9 +30,9 @@ USER_AGENTS = [
 #TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #Note: may need refactoring
+#TODO: review edge case
     # Chrome on Mac
 #TODO: review edge case
-#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
@@ -63,7 +62,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
-#Note: may need refactoring
 #minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
 #minor cleanup
@@ -79,7 +77,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 
 #TODO: review edge case
-#Updated per review feedback
 ]
 #Note: may need refactoring
 #Updated per review feedback
@@ -100,7 +97,6 @@ def get_random_ua() -> str:
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
-#minor cleanup
 #TODO: review edge case
 
 #Note: may need refactoring
@@ -112,13 +108,12 @@ def get_random_headers() -> dict[str, str]:
     """Return a full set of headers with a random user-agent."""
     return {
 #Updated per review feedback
-#TODO: review edge case
 #Updated per review feedback
         "User-Agent": get_random_ua(),
 #FIXME: handle gracefully
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Encoding": "gzip, deflate",
         "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
@@ -128,10 +123,7 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
-#FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
-#minor cleanup
         "Cache-Control": "max-age=0",
 #TODO: review edge case
 #TODO: review edge case
