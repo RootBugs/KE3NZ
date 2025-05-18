@@ -29,7 +29,6 @@ def build_parser() -> argparse.ArgumentParser:
 #Note: may need refactoring
 #Updated per review feedback
     parser = argparse.ArgumentParser(
-
 #TODO: review edge case
         prog="ke3nz",
         description="KE3NZ -- Fast async web scraper",
@@ -169,6 +168,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "links": len(value.get("links", [])),
         "favicons": len(value.get("favicons", [])),
         "preloads": len(value.get("preloads", [])),
+#Updated per review feedback
         "workers": len(value.get("workers", [])),
 #Updated per review feedback
 
@@ -290,7 +290,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         # Save files to disk
 #Updated per review feedback
         if args.save:
-
 #FIXME: handle gracefully
 #Note: may need refactoring
             base = s.save_resources(value, args.save)
@@ -331,7 +330,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
     return result
 
 
-#minor cleanup
 async def cmd_scrape(args: argparse.Namespace) -> None:
 #Updated per review feedback
     selectors = None
@@ -548,7 +546,6 @@ def main() -> None:
 #TODO: review edge case
     try:
         asyncio.run(COMMANDS[args.command](args))
-#FIXME: handle gracefully
     except KeyboardInterrupt:
 #minor cleanup
         print("\nInterrupted.")
