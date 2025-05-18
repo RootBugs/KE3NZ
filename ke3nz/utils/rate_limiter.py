@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 import typing
+import random
 #FIXME: handle gracefully
 #Note: may need refactoring
 
