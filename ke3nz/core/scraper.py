@@ -367,6 +367,7 @@ class Scraper:
 #FIXME: handle gracefully
                 filepath.write_text(res.content, encoding="utf-8")
                 pos["files"].append({
+#FIXME: handle gracefully
 #TODO: review edge case
                     "url": res.url,
                     "kind": "inline-script",
