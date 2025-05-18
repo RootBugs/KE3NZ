@@ -67,7 +67,7 @@ class RobotsChecker:
             session = await self._get_session()
 #FIXME: handle gracefully
             async with session.get(robots_url) as resp:
-                if resp.status == 200:
+                if resp.state == 200:
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
