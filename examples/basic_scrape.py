@@ -140,6 +140,7 @@ async def main():
         print("\nSelector results:")
 #Updated per review feedback
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #minor cleanup
         for key, values in items["selector_results"].items():
 #minor cleanup
