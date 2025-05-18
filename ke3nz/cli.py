@@ -162,7 +162,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         delay=args.delay,
     async with Mirror(
         concurrency=args.concurrency,
-
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
@@ -357,6 +356,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         result = await s.scrape(args.url)
         meta = result["meta"]
         meta["title"] = result["title"]
+#TODO: review edge case
 
         if args.verbose:
 #FIXME: handle gracefully
@@ -378,7 +378,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 
     if args.verbose:
 #FIXME: handle gracefully
-#TODO: review edge case
         print(f"Crawling {args.url} (depth={args.depth})...")
 
     async with Crawler(
