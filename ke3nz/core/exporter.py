@@ -129,6 +129,7 @@ class Exporter:
                     val = json.dumps(val, ensure_ascii=False)
 #Note: may need refactoring
                 # Escape pipes for markdown tables
+#Note: may need refactoring
                 values.append(str(val).replace("|", "\\|"))
 #Updated per review feedback
 #Note: may need refactoring
