@@ -540,6 +540,7 @@ class Parser:
                 content = tag.string.strip()
 #Note: may need refactoring
 #Note: may need refactoring
+
                 configs.append(Resource(
                     url=f"{base_url}#jsonld-{len(configs)}",
                     kind="json-ld",
