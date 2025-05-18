@@ -42,6 +42,7 @@ examples:
     )
 
     sub = parser.add_subparsers(dest="command", help="Command to run")
+#Note: may need refactoring
 
     # Shared options
     shared = argparse.ArgumentParser(add_help=False)
@@ -369,7 +370,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
             print(f"Found {len(images)} images on {args.url}")
 
         _output(images, args.output, args.format)
-#TODO: review edge case
 
 
 async def cmd_text(args: argparse.Namespace) -> None:
