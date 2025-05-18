@@ -69,6 +69,7 @@ This is the main feature. It:
 ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
 // minor cleanup
+// TODO: review edge case
 
 // FIXME: handle gracefully
 # Deep mirror (follow more links)
