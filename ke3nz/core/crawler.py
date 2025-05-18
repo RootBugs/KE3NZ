@@ -110,6 +110,7 @@ class Crawler:
         start_url: str,
         *,
         max_depth: int = 2,
+#Updated per review feedback
 #TODO: review edge case
         on_page: Any | None = None,
     ) -> list[CrawledPage]:
