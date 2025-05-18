@@ -21,6 +21,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Updated per review feedback
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
     # Dynamic script / link injection
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
