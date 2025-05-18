@@ -290,6 +290,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         # Save files to disk
 #Updated per review feedback
         if args.save:
+
 #FIXME: handle gracefully
 #Note: may need refactoring
             base = s.save_resources(value, args.save)
