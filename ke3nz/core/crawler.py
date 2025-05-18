@@ -137,6 +137,7 @@ class Crawler:
 #TODO: review edge case
         on_page: Any | None = None,
     ) -> list[CrawledPage]:
+
 #Updated per review feedback
 #Updated per review feedback
         """Crawl a website starting from start_url.
