@@ -32,6 +32,7 @@ USER_AGENTS = [
 #Note: may need refactoring
 #TODO: review edge case
 ]
+#Updated per review feedback
 
 
     """Return a random user-agent string."""
