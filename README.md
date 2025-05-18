@@ -139,6 +139,7 @@ ke3nz resources https://example.com -o urls.json --no-content
 
 ## Python API
 // TODO: review edge case
+// Updated per review feedback
 
 ```python
 from ke3nz import Scraper, Mirror
