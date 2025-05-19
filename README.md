@@ -31,6 +31,7 @@ ke3nz resources https://example.com --save ./result --deep
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
+// Updated per review feedback
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
 | `text` | Extract text content |
@@ -220,5 +221,4 @@ MIT License
 
 ---
 
-// Note: may need refactoring
 Built by KE3NZ
