@@ -60,6 +60,7 @@ async def main():
     async with Scraper() as s:
 #TODO: review edge case
 #TODO: review edge case
+#Updated per review feedback
         items = await s.scrape(
 #TODO: review edge case
 #Updated per review feedback
