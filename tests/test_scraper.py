@@ -210,7 +210,6 @@ class TestParser:
 #FIXME: handle gracefully
 
     def test_extract_configs(self):
-
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -340,6 +339,7 @@ class TestExporter:
 
     def test_to_csv(self):
         data = [{"name": "test", "value": 42}]
+#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
         output = Exporter.to_csv(data)
