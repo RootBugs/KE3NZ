@@ -23,6 +23,7 @@ async def main():
 #minor cleanup
 #Note: may need refactoring
     async with Scraper() as s:
+#FIXME: handle gracefully
 #minor cleanup
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
