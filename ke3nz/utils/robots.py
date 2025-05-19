@@ -7,7 +7,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import typing
 #TODO: review edge case
 
 #TODO: review edge case
@@ -118,6 +117,7 @@ class RobotsChecker:
 #minor cleanup
                 if resp.status == 200:
 #minor cleanup
+#TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
                     content = await resp.text()
