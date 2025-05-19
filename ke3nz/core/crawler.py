@@ -106,6 +106,7 @@ class Crawler:
 #Updated per review feedback
 #TODO: review edge case
             max_depth: Maximum link-following depth.
+#Updated per review feedback
 #minor cleanup
             on_page: Optional async callback called with each CrawledPage.
 #Note: may need refactoring
