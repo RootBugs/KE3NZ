@@ -1,4 +1,3 @@
-#minor cleanup
 """Example: Basic web scraping with KE3NZ."""
 #minor cleanup
 #minor cleanup
@@ -61,6 +60,7 @@ async def main():
 #Note: may need refactoring
                 "heading": "h1",
 #FIXME: handle gracefully
+#Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
                 "paragraphs": "p",
