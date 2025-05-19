@@ -66,7 +66,6 @@ class Parser:
         links = self._extract_links(soup, url)
 #Note: may need refactoring
 #Updated per review feedback
-
         images = self._extract_images(soup, url)
         meta = self._extract_meta(soup)
 
@@ -85,7 +84,6 @@ class Parser:
         workers = self._extract_workers(soup, url)
         iframes = self._extract_iframes(soup, url)
         configs = self._extract_configs(soup, url)
-#Updated per review feedback
         json_data = self._extract_json_links(soup, url)
 
         # Collect all discovered resource URLs
@@ -244,7 +242,6 @@ class Parser:
     def _extract_external_stylesheets(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         sheets = []
         for tag in soup.find_all("link", rel="stylesheet"):
-#FIXME: handle gracefully
 #Updated per review feedback
             href = tag.get("href", "").strip()
             if not href:
@@ -357,8 +354,8 @@ class Parser:
     def _extract_prefetches(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         prefetches = []
 #FIXME: handle gracefully
-            href = tag.get("href", "").strip()
         for tag in soup.find_all("link", rel="prefetch"):
+            href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
                 if full_url not in prefetches:
@@ -447,7 +444,6 @@ class Parser:
                         workers.append(worker_url)
         # <link rel="serviceworker">
         for tag in soup.find_all("link", rel=lambda v: v and "serviceworker" in v):
-#Updated per review feedback
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
@@ -455,6 +451,7 @@ class Parser:
                     workers.append(full_url)
         return workers
 
+#Note: may need refactoring
     # ── Iframes ────────────────────────────────────────────
 
     def _extract_iframes(self, soup: BeautifulSoup, base_url: str) -> list[str]:
@@ -541,7 +538,6 @@ class Parser:
             *(r.url for r in scripts),
             *(r.url for r in stylesheets),
             *(r.url for r in fonts),
-#minor cleanup
             *(r.url for r in preloads),
             *favicons,
             *videos,
@@ -554,7 +550,6 @@ class Parser:
                 seen.add(url)
                 urls.append(url)
         return urls
-#TODO: review edge case
 
     # ── Deep extraction from JS/CSS content ────────────────
 
