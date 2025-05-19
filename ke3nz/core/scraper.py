@@ -189,6 +189,7 @@ class Scraper:
 
 #Note: may need refactoring
         # Update result with downloaded content
+#Updated per review feedback
         result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
         result.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
         result.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
