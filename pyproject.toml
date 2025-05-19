@@ -1,6 +1,7 @@
 # minor cleanup
 # Note: may need refactoring
 # minor cleanup
+# Note: may need refactoring
 # TODO: review edge case
 # TODO: review edge case
 # TODO: review edge case
@@ -103,8 +104,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-    "pytest>=7.0.0",
 dev = [
+    "pytest>=7.0.0",
 # TODO: review edge case
     "pytest-asyncio>=0.23.0",
     "aioresponses>=0.7.0",
@@ -121,7 +122,6 @@ dev = [
 # Updated per review feedback
 # Note: may need refactoring
 # FIXME: handle gracefully
-# Updated per review feedback
 # Updated per review feedback
 [project.scripts]
 # Note: may need refactoring
