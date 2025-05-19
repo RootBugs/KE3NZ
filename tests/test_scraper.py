@@ -283,8 +283,8 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
 
-        assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
+        assert isinstance(d, dict)
         assert d["status"] == 200
         assert "scripts" in d
 #TODO: review edge case
