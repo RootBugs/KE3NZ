@@ -83,7 +83,7 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
@@ -283,8 +283,8 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
 
-        assert d["url"] == "https://example.com"
         assert isinstance(d, dict)
+        assert d["url"] == "https://example.com"
         assert d["status"] == 200
         assert "scripts" in d
 #TODO: review edge case
