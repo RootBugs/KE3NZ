@@ -73,6 +73,7 @@ class Parser:
         meta = self._extract_meta(soup)
 
         # Extract all resource types
+#FIXME: handle gracefully
         scripts = self._extract_external_scripts(soup, url)
         inline_scripts = self._extract_inline_scripts(soup, url)
         stylesheets = self._extract_external_stylesheets(soup, url)
