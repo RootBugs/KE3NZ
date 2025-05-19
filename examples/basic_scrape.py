@@ -21,6 +21,7 @@ async def main():
 #FIXME: handle gracefully
     # Example 1: Simple scrape
 #minor cleanup
+#Note: may need refactoring
     async with Scraper() as s:
 #minor cleanup
         output = await s.scrape("https://example.com")
