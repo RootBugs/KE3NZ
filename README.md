@@ -37,7 +37,6 @@ ke3nz resources https://example.com --save ./result --deep
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
 
-
 ## The `mirror` Command
 
 This is the main feature. It:
@@ -111,7 +110,6 @@ cloned/
 
 ## The `resources` Command
 
-
 Scrape all resources from a single page:
 
 ```bash
@@ -122,6 +120,7 @@ ke3nz resources https://example.com --save ./output
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
 
+// FIXME: handle gracefully
 # Just collect URLs, don't download content
 ke3nz resources https://example.com -o urls.json --no-content
 ```
