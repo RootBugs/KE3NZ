@@ -1,7 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-import itertools
 
 import asyncio
 import hashlib
@@ -173,6 +172,7 @@ class Mirror:
                 )
                 self._pages.append(page)
 
+#Note: may need refactoring
                 # Save HTML
                 html_file = Path(self._validate_path_within_base(local_path, base))
                 html_file.parent.mkdir(parents=True, exist_ok=True)
@@ -394,7 +394,6 @@ class Mirror:
         for tag in soup.find_all("img", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
-
                 tag["src"] = _rel(original, resources[original])
 
         # Rewrite <img srcset="...">
