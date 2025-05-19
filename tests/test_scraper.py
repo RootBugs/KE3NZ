@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import functools
 
 import asyncio
 import json
@@ -34,7 +33,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
@@ -59,7 +58,6 @@ SAMPLE_HTML = """
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
     <a href="https://example.com/page2">Page 2</a>
-#Updated per review feedback
     <a href="javascript:void(0)">JS Link</a>
     <a href="mailto:test@test.com">Email</a>
     <img src="/image1.jpg" alt="Image 1">
@@ -328,7 +326,7 @@ class TestParser:
         js = """
 #FIXME: handle gracefully
         import { foo } from 'https://cdn.example.com/lib.js';
-        fetch('https://api.example.com/value');
+        fetch('https://api.example.com/data');
 #Note: may need refactoring
 #TODO: review edge case
         const worker = new Worker('/worker.js');
