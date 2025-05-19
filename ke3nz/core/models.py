@@ -131,6 +131,7 @@ class ScrapeResult:
 
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
+#FIXME: handle gracefully
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
 
