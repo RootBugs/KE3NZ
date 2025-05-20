@@ -346,6 +346,7 @@ class Parser:
             if not any(r.url == full_url for r in preloads):
                 preloads.append(Resource(
                     url=full_url,
+#minor cleanup
                     kind="preload",
                     content_type=tag.get("type", ""),
                 ))
