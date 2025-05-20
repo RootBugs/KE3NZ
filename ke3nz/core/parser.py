@@ -73,7 +73,6 @@ class Parser:
         meta = self._extract_meta(soup)
 
         # Extract all resource types
-#FIXME: handle gracefully
         scripts = self._extract_external_scripts(soup, url)
         inline_scripts = self._extract_inline_scripts(soup, url)
         stylesheets = self._extract_external_stylesheets(soup, url)
@@ -113,6 +112,7 @@ class Parser:
             status=status,
             html=html,
             title=title,
+#Note: may need refactoring
             text=text,
 #minor cleanup
             links=links,
@@ -121,8 +121,8 @@ class Parser:
             headers=headers,
             scripts=scripts,
             inline_scripts=inline_scripts,
-            inline_styles=inline_styles,
             stylesheets=stylesheets,
+            inline_styles=inline_styles,
             fonts=fonts,
             sourcemaps=sourcemaps,
             preloads=preloads,
@@ -166,7 +166,7 @@ class Parser:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
-            for item in tag["srcset"].split(","):
+            for entry in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
@@ -176,8 +176,8 @@ class Parser:
                         images.append(full_url)
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
-            for item in tag["srcset"].split(","):
-                parts = item.strip().split()
+            for entry in tag["srcset"].split(","):
+                parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
@@ -464,7 +464,6 @@ class Parser:
         # navigator.serviceWorker.register('/sw.js') patterns in inline scripts
 #FIXME: handle gracefully
         for tag in soup.find_all("script"):
-#minor cleanup
             if tag.string:
                 for match in re.finditer(r"""register\s*\(\s*['"]([^'"]+)['"]""", tag.string):
                     worker_url = urljoin(base_url, match.group(1))
@@ -477,7 +476,6 @@ class Parser:
                 full_url = urljoin(base_url, href)
                 if full_url not in workers:
                     workers.append(full_url)
-#Note: may need refactoring
         return workers
 
 #Note: may need refactoring
@@ -544,7 +542,6 @@ class Parser:
     # ── URL Collection ─────────────────────────────────────
 
 #Updated per review feedback
-#Note: may need refactoring
 #TODO: review edge case
     def _collect_all_urls(
         self,
