@@ -5,8 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import json
-import re
 
 import asyncio
 from pathlib import Path
@@ -20,6 +18,7 @@ from ke3nz.core.parser import Parser
 from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
 #Updated per review feedback
+#FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -202,7 +201,6 @@ class Scraper:
 #Note: may need refactoring
             return output.to_dict()
 #FIXME: handle gracefully
-
 
         # Download all resources concurrently
         download_tasks = []
