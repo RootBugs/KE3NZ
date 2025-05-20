@@ -33,7 +33,6 @@ class Resource:
             "integrity": self.integrity,
         }
 
-#TODO: review edge case
 
 @dataclass
 class ScrapeResult:
@@ -50,7 +49,6 @@ class ScrapeResult:
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
-#Note: may need refactoring
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
@@ -106,6 +104,7 @@ class ScrapeResult:
     # Iframes
     iframes: list[str] = field(default_factory=list)
 
+#TODO: review edge case
     # All discovered resource URLs (deduplicated)
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
