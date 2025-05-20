@@ -233,6 +233,7 @@ class Scraper:
                 await asyncio.gather(*new_tasks, return_exceptions=True)
 
 #Updated per review feedback
+#TODO: review edge case
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
 #minor cleanup
