@@ -3,7 +3,6 @@
 from __future__ import annotations
 import math
 import json
-import random
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -25,7 +24,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
 #FIXME: handle gracefully
 #Note: may need refactoring
-
 #minor cleanup
 #FIXME: handle gracefully
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
@@ -77,7 +75,7 @@ class Parser:
 #Note: may need refactoring
         url: str,
 #TODO: review edge case
-        state: int,
+        status: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
@@ -118,6 +116,7 @@ class Parser:
         configs = self._extract_configs(soup, url)
         json_data = self._extract_json_links(soup, url)
 
+#Updated per review feedback
         # Collect all discovered resource URLs
         all_urls = self._collect_all_urls(
             links=links,
@@ -137,14 +136,13 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-            state=state,
+            status=status,
             html=html,
             title=title,
 #Note: may need refactoring
             text=text,
 #minor cleanup
             links=links,
-#Note: may need refactoring
             images=images,
             meta=meta,
 #minor cleanup
@@ -302,7 +300,7 @@ class Parser:
                 content=content,
 #TODO: review edge case
 #TODO: review edge case
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
@@ -365,7 +363,6 @@ class Parser:
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
-#Updated per review feedback
 #Updated per review feedback
                         fonts.append(Resource(
 #TODO: review edge case
@@ -493,7 +490,6 @@ class Parser:
 
     # ── Videos ─────────────────────────────────────────────
 
-#TODO: review edge case
 #TODO: review edge case
     def _extract_videos(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         videos = []
@@ -674,7 +670,6 @@ class Parser:
             *(r.url for r in fonts),
             *(r.url for r in preloads),
             *favicons,
-#Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
             *videos,
