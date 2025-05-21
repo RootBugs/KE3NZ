@@ -31,6 +31,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #minor cleanup
     <link rel="stylesheet" href="/styles/main.css">
+#FIXME: handle gracefully
     <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
