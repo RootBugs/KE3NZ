@@ -207,6 +207,7 @@ class Parser:
 #TODO: review edge case
             src = tag["src"].strip()
 #Updated per review feedback
+#minor cleanup
             full_url = urljoin(base_url, src)
             if not any(r.url == full_url for r in scripts):
                 scripts.append(Resource(
