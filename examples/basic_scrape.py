@@ -21,9 +21,7 @@ async def main():
 #FIXME: handle gracefully
     # Example 1: Simple scrape
 #minor cleanup
-#Note: may need refactoring
     async with Scraper() as s:
-#FIXME: handle gracefully
 #minor cleanup
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
@@ -40,6 +38,7 @@ async def main():
             "https://example.com",
             selectors={
 #FIXME: handle gracefully
+#TODO: review edge case
                 "heading": "h1",
 #Note: may need refactoring
 #Updated per review feedback
@@ -70,7 +69,6 @@ async def main():
 #minor cleanup
     async with Scraper() as s:
         results = await s.fetch_many(urls)
-#FIXME: handle gracefully
 #FIXME: handle gracefully
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
