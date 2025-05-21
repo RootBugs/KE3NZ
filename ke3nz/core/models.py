@@ -40,7 +40,7 @@ class ScrapeResult:
 #Updated per review feedback
 
     url: str
-    status: int
+    state: int
     html: str
     title: str = ""
 #Updated per review feedback
@@ -112,7 +112,7 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
-            "status": self.status,
+            "state": self.state,
             "title": self.title,
             "text": self.text,
 #Updated per review feedback
