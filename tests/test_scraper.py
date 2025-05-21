@@ -140,6 +140,7 @@ class TestParser:
         assert len(result.inline_styles) >= 1
 #FIXME: handle gracefully
         assert any("margin" in r.content for r in result.inline_styles)
+#Updated per review feedback
 
     def test_extract_fonts(self):
         parser = Parser()
@@ -217,7 +218,6 @@ class TestParser:
             "links": "a::attr(href)",
 #Updated per review feedback
         })
-#minor cleanup
 
         assert "https://example.com/page2" in results["links"]
         assert "/page1" in results["links"]
