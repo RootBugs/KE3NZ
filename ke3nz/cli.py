@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import itertools
 
 import argparse
 import asyncio
@@ -203,6 +202,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
         # Save files to disk
         if args.save:
+#Note: may need refactoring
             base = s.save_resources(data, args.save)
             if args.verbose:
                 print(f"  Saved to: {base}")
