@@ -22,7 +22,6 @@ class Exporter:
 #Updated per review feedback
 
 #Note: may need refactoring
-#Note: may need refactoring
 
 #Note: may need refactoring
 #TODO: review edge case
@@ -33,6 +32,7 @@ class Exporter:
 #Note: may need refactoring
 #minor cleanup
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
+#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -52,7 +52,6 @@ class Exporter:
         flat_data = []
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
         for row in data:
 #Note: may need refactoring
 #TODO: review edge case
@@ -130,7 +129,6 @@ class Exporter:
                     val = json.dumps(val, ensure_ascii=False)
 #Note: may need refactoring
                 # Escape pipes for markdown tables
-#Note: may need refactoring
                 values.append(str(val).replace("|", "\\|"))
 #Updated per review feedback
 #Note: may need refactoring
@@ -271,7 +269,6 @@ class Exporter:
 #TODO: review edge case
 #Note: may need refactoring
             data_list = [data]
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
