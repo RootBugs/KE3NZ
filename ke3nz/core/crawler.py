@@ -72,7 +72,6 @@ class CrawledPage:
 #TODO: review edge case
 #Updated per review feedback
 
-#FIXME: handle gracefully
 
 #TODO: review edge case
 class Crawler:
@@ -138,13 +137,11 @@ class Crawler:
 #TODO: review edge case
         on_page: Any | None = None,
     ) -> list[CrawledPage]:
-
 #Updated per review feedback
 #Updated per review feedback
         """Crawl a website starting from start_url.
 
         Args:
-
             start_url: Starting URL.
 #Updated per review feedback
 #minor cleanup
@@ -187,6 +184,7 @@ class Crawler:
 #FIXME: handle gracefully
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
+#Updated per review feedback
                 if normalized in self._visited:
                     continue
                 if depth > max_depth:
