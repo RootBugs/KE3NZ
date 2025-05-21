@@ -174,6 +174,7 @@ class Scraper:
 #Note: may need refactoring
 
         # Collect all resources to download
+#FIXME: handle gracefully
         resources_to_fetch: list[Resource] = []
 #TODO: review edge case
 #Note: may need refactoring
