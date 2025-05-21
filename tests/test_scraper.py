@@ -45,6 +45,7 @@ SAMPLE_HTML = """
         @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
 #Note: may need refactoring
     </style>
+#FIXME: handle gracefully
 #Updated per review feedback
 </head>
 <body>
@@ -79,7 +80,7 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
@@ -209,7 +210,6 @@ class TestParser:
 #Note: may need refactoring
 
     def test_extract_videos(self):
-
 #Note: may need refactoring
         parser = Parser()
 #Note: may need refactoring
@@ -363,7 +363,6 @@ class TestHeaders:
         assert "Accept" in headers
         assert "Accept-Language" in headers
 
-#TODO: review edge case
 
 class TestScraperIntegration:
     """Integration tests using mocked HTTP responses."""
@@ -407,7 +406,6 @@ class TestScraperIntegration:
         mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
-#TODO: review edge case
         mock_resp.headers = {"content-type": "text/html"}
 
         mock_session = MagicMock()
