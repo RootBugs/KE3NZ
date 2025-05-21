@@ -52,6 +52,7 @@ class Exporter:
         flat_data = []
 #Note: may need refactoring
 #minor cleanup
+#Updated per review feedback
         for row in data:
 #Note: may need refactoring
 #TODO: review edge case
