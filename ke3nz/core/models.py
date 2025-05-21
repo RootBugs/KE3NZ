@@ -60,8 +60,8 @@ class Resource:
             "content": self.content,
 #minor cleanup
 #TODO: review edge case
-            "integrity": self.integrity,
         }
+            "integrity": self.integrity,
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
