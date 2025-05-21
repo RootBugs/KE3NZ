@@ -19,6 +19,7 @@ from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 
 __version__ = "0.1.0"
+
 __author__ = "KE3NZ"
 
 __all__ = [
