@@ -51,6 +51,7 @@ class Scraper:
         )
         return self
 
+#minor cleanup
     async def __aexit__(self, *args: Any) -> None:
         if self._session:
             await self._session.close()
