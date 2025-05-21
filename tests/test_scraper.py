@@ -212,6 +212,7 @@ class TestParser:
     def test_all_resource_urls(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#TODO: review edge case
 
         assert len(result.all_resource_urls) > 10
         assert "https://example.com/scripts/app.js" in result.all_resource_urls
