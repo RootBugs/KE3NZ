@@ -38,7 +38,6 @@ class MirroredPage:
     url: str
     local_path: str  # relative to mirror root
     state: int
-#minor cleanup
     title: str = ""
     html: str = ""
 #Note: may need refactoring
@@ -79,7 +78,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -341,7 +340,6 @@ class Mirror:
             self._url_to_local[asset_url] = local_path
 
         return url_to_local
-#FIXME: handle gracefully
 #Updated per review feedback
 
     async def _download_asset(self, url: str) -> tuple[bytes, str] | None:
@@ -356,8 +354,8 @@ class Mirror:
         async with self._semaphore:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
-                async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
             try:
+                async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                     if resp.status != 200:
                         return None
                     body = await resp.read()
@@ -372,7 +370,6 @@ class Mirror:
 #FIXME: handle gracefully
     def _rewrite_html(
         self,
-#Updated per review feedback
         html: str,
         page_url: str,
         resources: dict[str, str],
