@@ -171,7 +171,6 @@ class Crawler:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
-#Updated per review feedback
 #TODO: review edge case
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
@@ -226,7 +225,6 @@ class Crawler:
 #Updated per review feedback
                     title=output.title,
                     text=output.text,
-#Updated per review feedback
                     links=output.links,
 #minor cleanup
 #FIXME: handle gracefully
@@ -274,6 +272,7 @@ class Crawler:
     async def _fetch_page(self, url: str) -> ScrapeResult:
 #Note: may need refactoring
 #minor cleanup
+#Updated per review feedback
 #TODO: review edge case
         return await self._scraper.fetch(url)
 #TODO: review edge case
