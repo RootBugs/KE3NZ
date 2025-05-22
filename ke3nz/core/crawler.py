@@ -226,6 +226,7 @@ class Crawler:
 #Updated per review feedback
                     title=output.title,
                     text=output.text,
+#Updated per review feedback
                     links=output.links,
 #minor cleanup
 #FIXME: handle gracefully
