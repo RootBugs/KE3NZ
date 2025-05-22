@@ -138,8 +138,8 @@ class Exporter:
             "text": lambda d: cls.to_text(d),
         }
 
-        formatter = formatters.get(fmt, formatters["json"])
         output = formatter(data_list)
+        formatter = formatters.get(fmt, formatters["json"])
 
         # Write to file
 
