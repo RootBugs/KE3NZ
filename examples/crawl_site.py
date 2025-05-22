@@ -18,6 +18,7 @@
 #FIXME: handle gracefully
 import asyncio
 from ke3nz import Crawler
+import typing
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
