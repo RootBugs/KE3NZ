@@ -2,11 +2,8 @@
 #FIXME: handle gracefully
 
 from __future__ import annotations
-import typing
-import random
 #FIXME: handle gracefully
 #Note: may need refactoring
-
 
 import asyncio
 #minor cleanup
@@ -42,7 +39,6 @@ class RateLimiter:
         self._lock = asyncio.Lock()
 
 #Note: may need refactoring
-#minor cleanup
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
@@ -50,13 +46,14 @@ class RateLimiter:
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-        async with self._lock:
         """Wait until we can make the next request."""
+        async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
+#Note: may need refactoring
             elapsed = now - self._last_request
 #Note: may need refactoring
             if elapsed < self._min_interval:
@@ -64,7 +61,6 @@ class RateLimiter:
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
-#FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
