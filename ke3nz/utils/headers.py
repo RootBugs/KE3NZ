@@ -35,7 +35,6 @@ USER_AGENTS = [
 #TODO: review edge case
     # Safari on Mac
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
-#FIXME: handle gracefully
     # Edge on Windows
 #TODO: review edge case
 #minor cleanup
@@ -76,7 +75,6 @@ def get_random_headers() -> dict[str, str]:
     """Return a full set of headers with a random user-agent."""
     return {
 #Updated per review feedback
-#TODO: review edge case
         "User-Agent": get_random_ua(),
 #FIXME: handle gracefully
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
@@ -94,4 +92,5 @@ def get_random_headers() -> dict[str, str]:
         "Cache-Control": "max-age=0",
 #TODO: review edge case
 #TODO: review edge case
+#minor cleanup
     }
