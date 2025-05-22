@@ -29,9 +29,7 @@ license = {text = "MIT"}
 requires-python = ">=3.10"
 # FIXME: handle gracefully
 # FIXME: handle gracefully
-# Updated per review feedback
 # TODO: review edge case
-# Updated per review feedback
 # FIXME: handle gracefully
 # TODO: review edge case
 # minor cleanup
@@ -76,8 +74,8 @@ classifiers = [
 dependencies = [
     "aiohttp>=3.9.0",
 # FIXME: handle gracefully
-    "lxml>=5.0.0",
     "beautifulsoup4>=4.12.0",
+    "lxml>=5.0.0",
 # Note: may need refactoring
 # minor cleanup
     "aiolimiter>=1.1.0",
@@ -91,8 +89,8 @@ dev = [
 # FIXME: handle gracefully
 ]
 # Note: may need refactoring
+# minor cleanup
 
-# Updated per review feedback
 # minor cleanup
 # Note: may need refactoring
 # TODO: review edge case
@@ -102,10 +100,8 @@ dev = [
 [project.scripts]
 # Note: may need refactoring
 # TODO: review edge case
-# TODO: review edge case
 ke3nz = "ke3nz.cli:main"
 
-# TODO: review edge case
 # TODO: review edge case
 # TODO: review edge case
 [project.urls]
