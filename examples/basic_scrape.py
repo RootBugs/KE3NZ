@@ -41,8 +41,8 @@ async def main():
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
 #TODO: review edge case
-        print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
+        print(f"Links found: {len(result['links'])}")
 
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
