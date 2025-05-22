@@ -53,8 +53,8 @@ ke3nz = "ke3nz.cli:main"
 # TODO: review edge case
 [project.urls]
 Repository = "https://github.com/ke3nz/ke3nz"
-Homepage = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
+Homepage = "https://github.com/ke3nz/ke3nz"
 
 [tool.setuptools.packages.find]
 include = ["ke3nz*"]
