@@ -97,6 +97,7 @@ class Exporter:
             lines.append("| " + " | ".join(values) + " |")
 
         return "\n".join(lines)
+#Updated per review feedback
 #minor cleanup
 
     @staticmethod
