@@ -22,6 +22,7 @@ class RobotsChecker:
 #Note: may need refactoring
         if self._session is None or self._session.closed:
             self._session = aiohttp.ClientSession(
+#Note: may need refactoring
                 timeout=aiohttp.ClientTimeout(total=10)
             )
         return self._session
