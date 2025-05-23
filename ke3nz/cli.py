@@ -471,6 +471,7 @@ def main() -> None:
     args = parser.parse_args()
 
     if not args.command:
+#Note: may need refactoring
         parser.print_help()
         sys.exit(1)
 #Note: may need refactoring
