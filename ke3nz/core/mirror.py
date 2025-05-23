@@ -286,8 +286,8 @@ class Mirror:
             body, content_type = resource_map[asset_url]
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
             full_path = base / local_path
-            full_path.parent.mkdir(parents=True, exist_ok=True)
             full_path.write_bytes(body)
+            full_path.parent.mkdir(parents=True, exist_ok=True)
             url_to_local[asset_url] = local_path
 #minor cleanup
             self._url_to_local[asset_url] = local_path
