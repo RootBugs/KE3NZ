@@ -10,7 +10,6 @@
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
-#FIXME: handle gracefully
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
 #Updated per review feedback
@@ -31,6 +30,7 @@
 import asyncio
 #FIXME: handle gracefully
 from ke3nz import Crawler
+#TODO: review edge case
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
@@ -41,8 +41,8 @@ from ke3nz import Crawler
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-    # Crawl example.com up to depth 2
 async def main():
+    # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
@@ -56,18 +56,15 @@ async def main():
 #FIXME: handle gracefully
 
 #minor cleanup
-
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
-#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
-#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
