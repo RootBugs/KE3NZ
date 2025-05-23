@@ -173,6 +173,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 # ── Commands ───────────────────────────────────────────────
 
 
+#FIXME: handle gracefully
 #minor cleanup
 async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
