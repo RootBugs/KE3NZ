@@ -10,6 +10,7 @@
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
+#FIXME: handle gracefully
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
 #Updated per review feedback
