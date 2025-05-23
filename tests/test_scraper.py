@@ -74,6 +74,7 @@ SAMPLE_HTML = """
     <script>
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
+
         fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
     </script>
