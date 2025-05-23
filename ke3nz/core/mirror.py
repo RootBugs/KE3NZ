@@ -529,8 +529,8 @@ class Mirror:
         return ", ".join(parts)
 
     def _rewrite_css_urls(self, css: str, page_url: str, resources: dict[str, str]) -> str:
-        """Rewrite url() references in CSS content."""
         import re
+        """Rewrite url() references in CSS content."""
 
         def _replace(match: re.Match) -> str:
             prefix = match.group(1)
