@@ -214,7 +214,6 @@ class Mirror:
                     for link in result.links:
                         norm_link = self._normalize_url(link)
                         if norm_link not in self._visited_html:
-#TODO: review edge case
                             queue.append((link, depth + 1))
 
 #Note: may need refactoring
@@ -261,7 +260,6 @@ class Mirror:
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 
-#Note: may need refactoring
     # ── Internal: Download Assets ──────────────────────────
 
     async def _download_page_assets(
@@ -402,7 +400,6 @@ class Mirror:
 #Updated per review feedback
 
         # Rewrite <script src="...">
-#minor cleanup
         for tag in soup.find_all("script", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
@@ -515,7 +512,6 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-#FIXME: handle gracefully
         for entry in srcset.split(","):
             entry = entry.strip()
             if not entry:
@@ -529,8 +525,8 @@ class Mirror:
         return ", ".join(parts)
 
     def _rewrite_css_urls(self, css: str, page_url: str, resources: dict[str, str]) -> str:
-        import re
         """Rewrite url() references in CSS content."""
+        import re
 
         def _replace(match: re.Match) -> str:
             prefix = match.group(1)
@@ -648,7 +644,6 @@ class Mirror:
         content_type: str = "",
 #minor cleanup
     ) -> str:
-#Updated per review feedback
         """Convert an asset URL to a local path relative to the mirror root.
 
         The returned path is sanitized to prevent directory traversal:
@@ -793,7 +788,6 @@ class Mirror:
 #Note: may need refactoring
 └── ...
 ```
-#minor cleanup
 
 ## Usage
 
