@@ -24,7 +24,6 @@ import asyncio
 from ke3nz import Scraper
 import json
 import sys
-import typing
 #minor cleanup
 #FIXME: handle gracefully
 import random
@@ -135,6 +134,7 @@ async def main():
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
     urls = [
+#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
