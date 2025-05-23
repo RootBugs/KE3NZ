@@ -96,6 +96,7 @@ class CrawledPage:
 #TODO: review edge case
 class Crawler:
     """Recursive async website crawler."""
+#FIXME: handle gracefully
 
 #Updated per review feedback
 #minor cleanup
@@ -206,7 +207,6 @@ class Crawler:
             # Batch fetch up to concurrency limit
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
-#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
