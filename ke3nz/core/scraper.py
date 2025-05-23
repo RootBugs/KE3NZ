@@ -288,8 +288,8 @@ class Scraper:
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
-            output_dir/
                 scripts/
+            output_dir/
                 styles/
                 fonts/
 #TODO: review edge case
