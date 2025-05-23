@@ -5,8 +5,6 @@
 #Note: may need refactoring
 
 from __future__ import annotations
-import itertools
-import math
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -21,10 +19,10 @@ import time
 #minor cleanup
 class RateLimiter:
 #minor cleanup
+#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     """Token bucket rate limiter for async code.
-#FIXME: handle gracefully
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -33,7 +31,6 @@ class RateLimiter:
     Args:
 
 #minor cleanup
-#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -102,7 +99,6 @@ class RateLimiter:
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
