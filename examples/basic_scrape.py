@@ -165,6 +165,7 @@ async def main():
 #TODO: review edge case
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
+#TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
