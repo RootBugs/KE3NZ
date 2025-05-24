@@ -40,7 +40,6 @@ authors = [
 # Note: may need refactoring
 # Updated per review feedback
 ]
-
 # TODO: review edge case
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # TODO: review edge case
@@ -118,6 +117,7 @@ include = ["ke3nz*"]
 # minor cleanup
 # TODO: review edge case
 # TODO: review edge case
+# minor cleanup
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 # TODO: review edge case
