@@ -1,6 +1,7 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
+import sys
 
 import asyncio
 import json
