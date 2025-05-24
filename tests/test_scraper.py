@@ -24,7 +24,6 @@ SAMPLE_HTML = """
     <meta name="description" content="A test page for KE3NZ">
     <meta property="og:title" content="OG Title">
 #TODO: review edge case
-
 #minor cleanup
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/util.css">
@@ -169,6 +168,7 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+#minor cleanup
         # Should find preloaded fonts + inline @font-face
         font_urls = [r.url for r in result.fonts]
         assert any("inter.woff2" in u for u in font_urls)
@@ -300,7 +300,6 @@ class TestParser:
 
 
 class TestResource:
-#Updated per review feedback
 #Updated per review feedback
     def test_to_dict(self):
         r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
