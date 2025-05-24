@@ -45,7 +45,6 @@ USER_AGENTS = [
     # Chrome on Windows
 #TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
-#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -143,7 +142,6 @@ USER_AGENTS = [
 
 #minor cleanup
 #Updated per review feedback
-#Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
@@ -214,4 +212,5 @@ def get_random_headers() -> dict[str, str]:
 #TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
+#minor cleanup
     }
