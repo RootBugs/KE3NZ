@@ -76,7 +76,6 @@ class Exporter:
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
 #Note: may need refactoring
-#FIXME: handle gracefully
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
 #Updated per review feedback
@@ -94,13 +93,10 @@ class Exporter:
             for key, value in entry.items():
                 if isinstance(value, list):
                     lines.append(f"{key}:")
-#TODO: review edge case
                     for v in value:
-#Note: may need refactoring
 #Note: may need refactoring
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
-#minor cleanup
                     lines.append(f"{key}:")
                     for k, v in value.items():
 #Updated per review feedback
@@ -143,7 +139,6 @@ class Exporter:
             fmt_map = {
                 ".json": "json",
 #minor cleanup
-#minor cleanup
 #Updated per review feedback
 #TODO: review edge case
                 ".csv": "csv",
@@ -163,6 +158,7 @@ class Exporter:
 #TODO: review edge case
 
 #FIXME: handle gracefully
+#Updated per review feedback
         # Format the output
         formatters = {
 #minor cleanup
