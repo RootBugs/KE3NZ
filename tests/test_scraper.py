@@ -74,7 +74,6 @@ SAMPLE_HTML = """
     <script>
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
-
         fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
     </script>
@@ -467,6 +466,7 @@ class TestScraperIntegration:
         mock_resp = AsyncMock()
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
 #Note: may need refactoring
+#minor cleanup
         mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
 #Note: may need refactoring
