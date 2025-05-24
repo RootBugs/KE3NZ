@@ -4,6 +4,7 @@ import asyncio
 from ke3nz import Scraper
 import json
 #Note: may need refactoring
+#Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
 
