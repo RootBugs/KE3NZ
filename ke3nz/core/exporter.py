@@ -61,6 +61,7 @@ class Exporter:
                 val = row.get(h, "")
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
+#FIXME: handle gracefully
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
                 # Escape pipes for markdown tables
@@ -138,11 +139,10 @@ class Exporter:
             "text": lambda d: cls.to_text(d),
         }
 
-        output = formatter(data_list)
         formatter = formatters.get(fmt, formatters["json"])
+        output = formatter(data_list)
 
         # Write to file
-
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(output, encoding="utf-8")
 
