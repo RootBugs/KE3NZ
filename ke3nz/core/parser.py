@@ -298,6 +298,7 @@ class Parser:
             if not tag.string:
                 continue
             content = tag.string.strip()
+#Note: may need refactoring
             if not content:
                 continue
             styles.append(Resource(
@@ -456,7 +457,6 @@ class Parser:
             if full_url not in videos:
                 videos.append(full_url)
         return videos
-#Note: may need refactoring
 
 #Note: may need refactoring
     # ── Audio ──────────────────────────────────────────────
@@ -540,7 +540,6 @@ class Parser:
                 content = tag.string.strip()
 #Note: may need refactoring
 #Note: may need refactoring
-
                 configs.append(Resource(
                     url=f"{base_url}#jsonld-{len(configs)}",
                     kind="json-ld",
