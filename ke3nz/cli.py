@@ -13,7 +13,6 @@ from ke3nz.core.crawler import Crawler
 from ke3nz.core.mirror import Mirror
 from ke3nz.core.exporter import Exporter
 
-#minor cleanup
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -333,6 +332,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         meta["title"] = result["title"]
 
         if args.verbose:
+#FIXME: handle gracefully
             print(f"Found {len(meta)} meta tags on {args.url}")
 
         _output(meta, args.output, args.format)
