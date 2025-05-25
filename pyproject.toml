@@ -1,7 +1,6 @@
 # TODO: review edge case
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
-
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
 
@@ -39,29 +38,25 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-# TODO: review edge case
 dev = [
     "pytest>=7.0.0",
     "pytest-asyncio>=0.23.0",
     "aioresponses>=0.7.0",
 ]
-# Note: may need refactoring
 
+# minor cleanup
 [project.scripts]
 ke3nz = "ke3nz.cli:main"
 
 # TODO: review edge case
 [project.urls]
+Homepage = "https://github.com/ke3nz/ke3nz"
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
-Homepage = "https://github.com/ke3nz/ke3nz"
 
 [tool.setuptools.packages.find]
 include = ["ke3nz*"]
 
-# FIXME: handle gracefully
-
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
-# minor cleanup
