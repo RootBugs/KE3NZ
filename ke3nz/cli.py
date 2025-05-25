@@ -509,6 +509,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
     _output(pages_collected, args.output, args.format)
 
 
+
 COMMANDS = {
 #FIXME: handle gracefully
     "mirror": cmd_mirror,
