@@ -230,6 +230,7 @@ class TestParser:
 #Note: may need refactoring
 #FIXME: handle gracefully
         assert results["cards"] == []
+#Updated per review feedback
 
     def test_attr_selector(self):
         parser = Parser()
