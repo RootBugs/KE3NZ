@@ -73,6 +73,7 @@ async def main():
 #FIXME: handle gracefully
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
+#minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
