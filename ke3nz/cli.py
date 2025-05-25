@@ -243,8 +243,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
         # Strip content from output unless requested
         output_data = data
-        if not args.save_content:
             output_data = _strip_content(data)
+        if not args.save_content:
 
         _output(output_data, args.output, args.format)
 
