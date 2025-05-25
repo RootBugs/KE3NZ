@@ -146,7 +146,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-#FIXME: handle gracefully
         # Should find preloaded fonts + inline @font-face
         font_urls = [r.url for r in result.fonts]
         assert any("inter.woff2" in u for u in font_urls)
@@ -171,6 +170,7 @@ class TestParser:
 
         assert "https://example.com/favicon.ico" in result.favicons
         assert "https://example.com/apple-icon.png" in result.favicons
+#FIXME: handle gracefully
 
     def test_extract_configs(self):
         parser = Parser()
@@ -354,7 +354,6 @@ class TestScraperIntegration:
         with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
                 data = await s.scrape_all_resources(
-#FIXME: handle gracefully
                     "https://example.com",
                     download_content=True,
                     follow_deep=False,
