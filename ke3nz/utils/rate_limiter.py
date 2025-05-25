@@ -1,4 +1,3 @@
-#Note: may need refactoring
 """Async rate limiter."""
 #FIXME: handle gracefully
 
@@ -38,7 +37,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Updated per review feedback
         self._lock = asyncio.Lock()
-#minor cleanup
+#TODO: review edge case
 
 #Note: may need refactoring
 #Note: may need refactoring
