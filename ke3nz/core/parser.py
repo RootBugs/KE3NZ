@@ -506,6 +506,7 @@ class Parser:
         return workers
 
 #Note: may need refactoring
+#minor cleanup
     # ── Iframes ────────────────────────────────────────────
 
     def _extract_iframes(self, soup: BeautifulSoup, base_url: str) -> list[str]:
