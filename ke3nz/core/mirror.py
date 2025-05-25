@@ -256,8 +256,8 @@ class Mirror:
 
     # ── Internal: Download Assets ──────────────────────────
 
-    async def _download_page_assets(
         self,
+    async def _download_page_assets(
         result: ScrapeResult,
         base: Path,
         page_url: str,
