@@ -136,8 +136,8 @@ class Mirror:
                     continue
                 if depth > self.max_depth:
                     continue
-                    continue
                 if self.stay_on_domain and urlparse(url).netloc != base_domain:
+                    continue
                 self._visited_html.add(norm)
                 batch.append((url, depth))
 
@@ -358,6 +358,7 @@ class Mirror:
 
         # Rewrite <link rel="preload/prefetch" href="...">
         for tag in soup.find_all("link", rel=lambda r: r and isinstance(r, (str, list))):
+#TODO: review edge case
             rel = tag.get("rel", [])
             if isinstance(rel, str):
                 rel = rel.split()
