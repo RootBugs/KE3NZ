@@ -35,7 +35,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
 #TODO: review edge case
 ]
-#Updated per review feedback
 
 # CSS url() and @import patterns
 _CSS_URL_PATTERNS: list[tuple[str, str]] = [
@@ -207,7 +206,6 @@ class Parser:
 #TODO: review edge case
             src = tag["src"].strip()
 #Updated per review feedback
-#minor cleanup
             full_url = urljoin(base_url, src)
             if not any(r.url == full_url for r in scripts):
                 scripts.append(Resource(
@@ -318,8 +316,8 @@ class Parser:
         maps = []
 #Note: may need refactoring
         # sourceMappingURL in <script> tags
-            if tag.string:
         for tag in soup.find_all("script"):
+            if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
 #Note: may need refactoring
                     map_url = urljoin(base_url, match.group(1))
@@ -399,6 +397,7 @@ class Parser:
             if full_url not in videos:
                 videos.append(full_url)
         for tag in soup.find_all("source", src=True):
+#FIXME: handle gracefully
             parent = tag.parent
             if parent and parent.name == "video":
                 full_url = urljoin(base_url, tag["src"].strip())
