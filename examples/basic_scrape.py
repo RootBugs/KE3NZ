@@ -28,6 +28,7 @@ async def main():
         items = await s.scrape(
             "https://example.com",
 #Updated per review feedback
+
             selectors={
                 "heading": "h1",
                 "paragraphs": "p",
