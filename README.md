@@ -141,6 +141,7 @@ cloned/
   README.md               # Auto-generated docs
 ```
 // minor cleanup
+// TODO: review edge case
 
 ### What Gets Downloaded
 // Updated per review feedback
