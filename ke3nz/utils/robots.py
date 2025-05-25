@@ -22,7 +22,6 @@ class RobotsChecker:
 #Note: may need refactoring
         if self._session is None or self._session.closed:
             self._session = aiohttp.ClientSession(
-#Note: may need refactoring
                 timeout=aiohttp.ClientTimeout(total=10)
             )
         return self._session
@@ -34,6 +33,7 @@ class RobotsChecker:
 
         if robots_url in self._cache:
             return self._cache[robots_url]
+#FIXME: handle gracefully
 
         rp = RobotFileParser()
         try:
@@ -52,13 +52,11 @@ class RobotsChecker:
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
-#Updated per review feedback
 
         self._cache[robots_url] = rp
         return rp
 #Updated per review feedback
 
-#Updated per review feedback
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
