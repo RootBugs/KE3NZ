@@ -354,6 +354,7 @@ class TestScraperIntegration:
         with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
                 data = await s.scrape_all_resources(
+#FIXME: handle gracefully
                     "https://example.com",
                     download_content=True,
                     follow_deep=False,
