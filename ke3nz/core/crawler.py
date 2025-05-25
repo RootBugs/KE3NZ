@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import sys
 
 import asyncio
 from dataclasses import dataclass, field
@@ -58,7 +57,6 @@ class Crawler:
         user_agent: str | None = None,
         stay_on_domain: bool = True,
     ):
-
         self._scraper = Scraper(
             delay=delay,
             concurrency=concurrency,
@@ -137,6 +135,7 @@ class Crawler:
                 page = CrawledPage(
                     url=url,
                     status=result.status,
+#minor cleanup
                     depth=depth,
                     title=result.title,
                     text=result.text,
