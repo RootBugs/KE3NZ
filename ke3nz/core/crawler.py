@@ -54,7 +54,6 @@ class CrawledPage:
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
-#Updated per review feedback
 #FIXME: handle gracefully
 
     def to_dict(self) -> dict[str, Any]:
@@ -184,7 +183,6 @@ class Crawler:
 
         Returns:
 #FIXME: handle gracefully
-#minor cleanup
 #TODO: review edge case
             List of all crawled pages.
         """
@@ -220,6 +218,7 @@ class Crawler:
                 if normalized in self._visited:
                     continue
 #FIXME: handle gracefully
+#Note: may need refactoring
                 if depth > max_depth:
                     continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
