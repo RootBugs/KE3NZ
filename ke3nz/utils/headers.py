@@ -77,6 +77,7 @@ USER_AGENTS = [
     # Firefox on Windows
 #minor cleanup
 #Updated per review feedback
+#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
