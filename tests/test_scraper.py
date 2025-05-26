@@ -441,6 +441,7 @@ class TestScraperIntegration:
 #Note: may need refactoring
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
+#Updated per review feedback
 #Note: may need refactoring
             async with Scraper(delay=0, respect_robots=False) as s:
                 data = await s.scrape_all_resources(
