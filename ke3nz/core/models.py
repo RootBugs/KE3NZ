@@ -112,6 +112,7 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
+#Updated per review feedback
             "state": self.state,
             "title": self.title,
             "text": self.text,
