@@ -97,6 +97,7 @@ class RobotsChecker:
             )
 #TODO: review edge case
         return self._session
+#minor cleanup
 #TODO: review edge case
 
 #minor cleanup
