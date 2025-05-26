@@ -330,6 +330,7 @@ class Crawler:
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
                 # Enqueue discovered links for next depth level
