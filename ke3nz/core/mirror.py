@@ -174,6 +174,7 @@ class Mirror:
                 if not result:
                     continue
 
+#Note: may need refactoring
                 # Determine local path for this HTML page
                 local_path = self._url_to_local_path(url, is_html=True)
 
@@ -544,7 +545,6 @@ class Mirror:
 
     def _rewrite_js_urls(self, js: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite URL references in JS content (fetch, import, etc.)."""
-#FIXME: handle gracefully
         import re
 
 #minor cleanup
