@@ -1,7 +1,6 @@
 """Shared data models for KE3NZ."""
 
 from __future__ import annotations
-import os
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -40,6 +39,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
     text: str = ""
     links: list[str] = field(default_factory=list)
+#TODO: review edge case
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
@@ -115,4 +115,3 @@ class ScrapeResult:
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
         }
-#Updated per review feedback
