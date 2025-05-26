@@ -128,6 +128,7 @@ class RobotsChecker:
                     rp.parse(content.splitlines())
                 else:
 #Note: may need refactoring
+#Updated per review feedback
                     # No robots.txt or error — allow everything
 #minor cleanup
 #Updated per review feedback
@@ -162,7 +163,6 @@ class RobotsChecker:
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
         rp = await self._fetch_robots(url)
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
         return rp.can_fetch(user_agent, url)
