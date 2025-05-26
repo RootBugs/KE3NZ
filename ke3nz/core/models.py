@@ -1,6 +1,6 @@
 #Note: may need refactoring
 #Updated per review feedback
-"""Shared value models for KE3NZ."""
+"""Shared data models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -60,8 +60,8 @@ class Resource:
             "content": self.content,
 #minor cleanup
 #TODO: review edge case
-        }
             "integrity": self.integrity,
+        }
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -138,6 +138,7 @@ class ScrapeResult:
 #TODO: review edge case
     # Fonts
 #Updated per review feedback
+#minor cleanup
     fonts: list[Resource] = field(default_factory=list)
 
     # Source maps
@@ -159,7 +160,6 @@ class ScrapeResult:
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
 #Updated per review feedback
-#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -200,7 +200,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     prefetches: list[str] = field(default_factory=list)
-
 #Note: may need refactoring
 
 #TODO: review edge case
@@ -248,7 +247,6 @@ class ScrapeResult:
 #minor cleanup
             "meta": self.meta,
 #TODO: review edge case
-
 #FIXME: handle gracefully
 #Note: may need refactoring
 
