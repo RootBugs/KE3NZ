@@ -111,6 +111,7 @@ class Crawler:
     def __init__(
         self,
 #FIXME: handle gracefully
+#Note: may need refactoring
         delay: float = 1.0,
         *,
 #TODO: review edge case
