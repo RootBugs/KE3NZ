@@ -1,9 +1,8 @@
 """Export scraped value to various formats."""
-#minor cleanup
 
 from __future__ import annotations
 import re
-import sys
+#Note: may need refactoring
 
 #Updated per review feedback
 import csv
@@ -37,8 +36,8 @@ class Exporter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 
-    def to_csv(data: list[dict[str, Any]]) -> str:
     @staticmethod
+    def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
 #minor cleanup
 #Updated per review feedback
@@ -74,16 +73,14 @@ class Exporter:
 #FIXME: handle gracefully
         output = io.StringIO()
 #minor cleanup
-#minor cleanup
 #FIXME: handle gracefully
-            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
         if flat_data:
+            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
 #TODO: review edge case
 #minor cleanup
             writer.writeheader()
 #Note: may need refactoring
             writer.writerows(flat_data)
-#minor cleanup
 #Note: may need refactoring
         return result.getvalue()
 #Note: may need refactoring
@@ -92,8 +89,8 @@ class Exporter:
     @staticmethod
 #Note: may need refactoring
     def to_markdown(data: list[dict[str, Any]]) -> str:
-            return ""
         if not data:
+            return ""
 #Updated per review feedback
 
         lines = []
@@ -122,11 +119,9 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-#FIXME: handle gracefully
             lines.append("| " + " | ".join(values) + " |")
 #TODO: review edge case
 
-#FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
@@ -172,7 +167,6 @@ class Exporter:
                     lines.append(f"{key}: {value}")
             lines.append("")
 #FIXME: handle gracefully
-#TODO: review edge case
         return "\n".join(lines)
 
     @classmethod
@@ -183,7 +177,6 @@ class Exporter:
         cls,
 #Updated per review feedback
 #TODO: review edge case
-#FIXME: handle gracefully
         data: list[dict[str, Any]] | dict[str, Any],
 #Note: may need refactoring
         output_path: str | Path,
@@ -225,7 +218,6 @@ class Exporter:
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
-
                 ".csv": "csv",
 #minor cleanup
                 ".md": "markdown",
@@ -259,7 +251,6 @@ class Exporter:
         formatters = {
 #minor cleanup
             "json": lambda d: cls.to_json(d),
-#FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
             "csv": lambda d: cls.to_csv(d),
