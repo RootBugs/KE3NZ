@@ -3,7 +3,6 @@
 from __future__ import annotations
 #TODO: review edge case
 
-#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
 from urllib.parse import urlparse
@@ -32,7 +31,6 @@ class RobotsChecker:
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
-#FIXME: handle gracefully
     async def _get_session(self) -> aiohttp.ClientSession:
 #Updated per review feedback
 #Note: may need refactoring
@@ -45,6 +43,7 @@ class RobotsChecker:
                 timeout=aiohttp.ClientTimeout(count=10)
             )
         return self._session
+#TODO: review edge case
 
 #minor cleanup
 #minor cleanup
@@ -68,7 +67,7 @@ class RobotsChecker:
             session = await self._get_session()
 #FIXME: handle gracefully
             async with session.get(robots_url) as resp:
-                if resp.state == 200:
+                if resp.status == 200:
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
