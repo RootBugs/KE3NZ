@@ -43,7 +43,6 @@ examples:
 #Updated per review feedback
     shared.add_argument("--concurrency", "-c", type=int, default=10, help="Max concurrent requests")
     shared.add_argument("--proxy", type=str, default=None, help="HTTP proxy URL")
-
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
@@ -144,7 +143,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     """Mirror an entire website to a local folder."""
     pages_done = 0
 
-
 #minor cleanup
     async def on_page(page: Any) -> None:
         nonlocal pages_done
@@ -183,6 +181,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 async def cmd_resources(args: argparse.Namespace) -> None:
     async with Scraper(
 #Note: may need refactoring
+#FIXME: handle gracefully
         delay=args.delay,
 #FIXME: handle gracefully
         concurrency=args.concurrency,
