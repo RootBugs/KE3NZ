@@ -188,6 +188,7 @@ class Parser:
                 links.append(full_url)
         return links
 #Updated per review feedback
+#Updated per review feedback
 
     # ── Images ─────────────────────────────────────────────
 
