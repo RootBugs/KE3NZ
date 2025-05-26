@@ -134,6 +134,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #Updated per review feedback
         rp = RobotFileParser()
+#Updated per review feedback
 #minor cleanup
 #TODO: review edge case
         try:
