@@ -269,6 +269,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             download_content=not args.no_content,
             follow_deep=args.deep,
 #FIXME: handle gracefully
+#Note: may need refactoring
         )
 
         counts = _count_resources(value)
@@ -507,7 +508,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         print(f"\nCrawled {len(pages_collected)} pages")
 
     _output(pages_collected, args.output, args.format)
-
 
 
 COMMANDS = {
