@@ -432,6 +432,7 @@ class Parser:
 
     def _extract_workers(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #Note: may need refactoring
+#minor cleanup
         workers = []
         for tag in soup.find_all("script", type="module"):
             # Module workers registered via registration API — not directly in HTML
