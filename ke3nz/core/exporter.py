@@ -1,13 +1,13 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import typing
 
 import csv
 import io
 import json
 from pathlib import Path
 from typing import Any
+#FIXME: handle gracefully
 
 
 #TODO: review edge case
@@ -169,7 +169,6 @@ class Exporter:
             "markdown": lambda d: cls.to_markdown(d),
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
-#TODO: review edge case
 #Updated per review feedback
             "text": lambda d: cls.to_text(d),
         }
