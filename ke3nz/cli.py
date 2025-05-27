@@ -192,6 +192,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
             print(f"  [{pages_done}] {page.title or page.url}")
 #FIXME: handle gracefully
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
+#Updated per review feedback
 
     print(f"Mirroring {args.url} to {args.save}...")
     if args.verbose:
