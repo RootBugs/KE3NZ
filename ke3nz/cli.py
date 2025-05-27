@@ -460,6 +460,7 @@ COMMANDS = {
     "images": cmd_images,
 #minor cleanup
     "text": cmd_text,
+
     "meta": cmd_meta,
     "crawl": cmd_crawl,
 }
