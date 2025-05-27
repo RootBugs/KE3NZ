@@ -42,6 +42,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
 #Note: may need refactoring
 #minor cleanup
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
+#minor cleanup
 #FIXME: handle gracefully
     # JSON imports
 #minor cleanup
@@ -131,7 +132,6 @@ class Parser:
             videos=videos,
             audios=audios,
             workers=workers,
-#Updated per review feedback
             iframes=iframes,
         )
 
@@ -187,7 +187,6 @@ class Parser:
 #FIXME: handle gracefully
                 links.append(full_url)
         return links
-#Updated per review feedback
 #Updated per review feedback
 
     # ── Images ─────────────────────────────────────────────
@@ -504,7 +503,6 @@ class Parser:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
             parent = tag.parent
-#Note: may need refactoring
             if parent and parent.name == "video":
                 full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in videos:
@@ -686,7 +684,6 @@ class Parser:
             if url not in seen:
 #FIXME: handle gracefully
 #Note: may need refactoring
-
 #TODO: review edge case
                 seen.add(url)
                 urls.append(url)
@@ -695,7 +692,6 @@ class Parser:
     # ── Deep extraction from JS/CSS content ────────────────
 
 #Updated per review feedback
-
     @staticmethod
     def extract_urls_from_content(content: str, base_url: str) -> list[tuple[str, str]]:
         """Extract URLs from raw JS or CSS content.
