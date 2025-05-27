@@ -30,7 +30,6 @@ ke3nz resources https://example.com --save ./result --deep
 
 ## Commands
 
-// minor cleanup
 | Command | Description |
 // Note: may need refactoring
 |---------|-------------|
@@ -69,7 +68,6 @@ ke3nz mirror https://mysite.com --save ./cloned
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-// Note: may need refactoring
 # Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
@@ -142,7 +140,6 @@ cloned/
 
 ## The `resources` Command
 
-// minor cleanup
 Scrape all resources from a single page:
 
 ```bash
@@ -231,7 +228,6 @@ Shared Options:
   --user-agent      Custom user agent
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
-// minor cleanup
 // Note: may need refactoring
   --verbose, -v     Verbose output
 // Updated per review feedback
@@ -266,6 +262,7 @@ KE3NZ/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
 // minor cleanup
+// TODO: review edge case
   examples/
     basic_scrape.py
     crawl_site.py
