@@ -26,6 +26,7 @@ async def main():
     async with Scraper() as s:
 #minor cleanup
         output = await s.scrape("https://example.com")
+#minor cleanup
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
 #TODO: review edge case
