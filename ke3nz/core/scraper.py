@@ -136,6 +136,7 @@ class Scraper:
         *,
 #Updated per review feedback
         selectors: dict[str, str] | None = None,
+#Note: may need refactoring
 #minor cleanup
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
