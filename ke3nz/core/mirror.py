@@ -368,6 +368,7 @@ class Mirror:
     # ── Internal: HTML Rewriting ───────────────────────────
 
 #FIXME: handle gracefully
+#TODO: review edge case
     def _rewrite_html(
         self,
         html: str,
