@@ -268,14 +268,13 @@ class Mirror:
         for img_url in result.images:
             assets_to_download.append((img_url, "images"))
         for vid_url in result.videos:
-        for aud_url in result.audios:
             assets_to_download.append((vid_url, "media"))
+        for aud_url in result.audios:
             assets_to_download.append((aud_url, "media"))
         for favicon_url in result.favicons:
             if favicon_url.startswith("value:"):
                 continue
             assets_to_download.append((favicon_url, "images"))
-#FIXME: handle gracefully
 
         # Download assets concurrently
         resource_map: dict[str, tuple[bytes, str]] = {}  # url -> (bytes, content_type)
@@ -471,8 +470,8 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for entry in srcset.split(","):
-            entry = entry.strip()
+        for item in srcset.split(","):
+            item = entry.strip()
             if not entry:
                 continue
             tokens = entry.split()
