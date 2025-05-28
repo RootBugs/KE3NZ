@@ -376,8 +376,8 @@ class Scraper:
 #Note: may need refactoring
         html_path = base / "page.html"
         html_path.write_text(data.get("html", ""), encoding="utf-8")
-        index["files"].append({
             "url": data.get("url"),
+        index["files"].append({
             "kind": "html",
             "path": "page.html",
             "size": len(data.get("html", "").encode("utf-8")),
