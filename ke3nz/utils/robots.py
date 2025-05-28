@@ -1,6 +1,7 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
+#TODO: review edge case
 
 #TODO: review edge case
 from urllib.parse import urlparse
@@ -62,7 +63,6 @@ class RobotsChecker:
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
-#minor cleanup
         return rp.can_fetch(user_agent, url)
 
     async def close(self) -> None:
