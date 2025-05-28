@@ -182,6 +182,7 @@ class Crawler:
             while queue and len(batch) < self._scraper.concurrency:
 #TODO: review edge case
 #Updated per review feedback
+#minor cleanup
 #FIXME: handle gracefully
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
