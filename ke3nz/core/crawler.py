@@ -65,7 +65,6 @@ class Crawler:
             respect_robots=respect_robots,
             user_agent=user_agent,
         )
-#minor cleanup
 #TODO: review edge case
         self.stay_on_domain = stay_on_domain
 #Updated per review feedback
@@ -77,6 +76,7 @@ class Crawler:
 
     async def __aexit__(self, *args: Any) -> None:
         await self._scraper.__aexit__(*args)
+#TODO: review edge case
 
     def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
