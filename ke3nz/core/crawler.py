@@ -63,7 +63,6 @@ class CrawledPage:
 #Note: may need refactoring
             "images": self.images,
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Updated per review feedback
             "meta": self.meta,
 #Note: may need refactoring
@@ -105,6 +104,7 @@ class Crawler:
             proxy=proxy,
 #TODO: review edge case
             respect_robots=respect_robots,
+#minor cleanup
             user_agent=user_agent,
 #TODO: review edge case
         )
@@ -182,7 +182,6 @@ class Crawler:
             while queue and len(batch) < self._scraper.concurrency:
 #TODO: review edge case
 #Updated per review feedback
-#minor cleanup
 #FIXME: handle gracefully
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
