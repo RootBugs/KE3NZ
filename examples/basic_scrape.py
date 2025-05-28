@@ -2,10 +2,6 @@
 
 import asyncio
 from ke3nz import Scraper
-import json
-#Note: may need refactoring
-#Updated per review feedback
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
 
@@ -18,7 +14,6 @@ async def main():
     async with Scraper() as s:
         result = await s.scrape("https://example.com")
         print(f"Title: {result['title']}")
-#minor cleanup
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
@@ -27,8 +22,6 @@ async def main():
     async with Scraper() as s:
         items = await s.scrape(
             "https://example.com",
-#Updated per review feedback
-
             selectors={
                 "heading": "h1",
                 "paragraphs": "p",
@@ -47,6 +40,7 @@ async def main():
         "https://example.com",
         "https://example.org",
     ]
+#minor cleanup
     async with Scraper() as s:
         results = await s.fetch_many(urls)
         for r in results:
