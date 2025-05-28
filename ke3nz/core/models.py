@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-
 #Note: may need refactoring
 
 #minor cleanup
@@ -27,7 +26,6 @@ class Resource:
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
-#FIXME: handle gracefully
 #TODO: review edge case
     size: int = 0
     integrity: str = ""
@@ -249,6 +247,7 @@ class ScrapeResult:
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
+#Note: may need refactoring
             "iframes": self.iframes,
 #minor cleanup
 #minor cleanup
