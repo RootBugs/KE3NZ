@@ -1,4 +1,4 @@
-"""Export scraped value to various formats."""
+"""Export scraped data to various formats."""
 
 from __future__ import annotations
 import re
@@ -101,7 +101,6 @@ class Exporter:
     @staticmethod
 #Note: may need refactoring
     def to_markdown(data: list[dict[str, Any]]) -> str:
-#FIXME: handle gracefully
         if not data:
             return ""
 #Updated per review feedback
