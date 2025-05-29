@@ -22,7 +22,6 @@ pip install -e .
 ## Quick Start
 
 ```bash
-// FIXME: handle gracefully
 # Mirror an entire website to a local folder
 ke3nz mirror https://example.com --save ./my-site
 // minor cleanup
@@ -40,6 +39,7 @@ ke3nz resources https://example.com --save ./result --deep
 ```
 // TODO: review edge case
 
+// minor cleanup
 ## Commands
 // Note: may need refactoring
 
@@ -135,11 +135,10 @@ cloned/
   assets/
     js/
 // Note: may need refactoring
-// Note: may need refactoring
 // FIXME: handle gracefully
 // FIXME: handle gracefully
-      vendor.js
       app.js
+      vendor.js
 // Updated per review feedback
 // FIXME: handle gracefully
     css/
@@ -218,7 +217,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 ```
 
 // minor cleanup
-// Updated per review feedback
 ## Python API
 // TODO: review edge case
 
@@ -264,7 +262,6 @@ async with Scraper() as s:
 ke3nz <command> [options] <url>
 // Updated per review feedback
 // Updated per review feedback
-// Note: may need refactoring
 // FIXME: handle gracefully
 
 Commands:
@@ -331,7 +328,6 @@ Shared Options:
 KE3NZ/
   ke3nz/
     __init__.py
-// Updated per review feedback
 // Updated per review feedback
 // minor cleanup
     cli.py               # CLI with 8 commands
