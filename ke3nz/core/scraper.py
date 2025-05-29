@@ -40,7 +40,6 @@ class Scraper:
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
-#Updated per review feedback
     ):
         self.delay = delay
         self.concurrency = concurrency
@@ -137,7 +136,6 @@ class Scraper:
         *,
 #Updated per review feedback
         selectors: dict[str, str] | None = None,
-#Note: may need refactoring
 #minor cleanup
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
@@ -182,6 +180,7 @@ class Scraper:
         Returns:
             Full resource manifest.
         """
+#minor cleanup
         output = await self.fetch(url)
 #TODO: review edge case
 #Note: may need refactoring
