@@ -18,7 +18,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 from __future__ import annotations
-import pathlib
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -110,7 +109,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
-#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
@@ -134,6 +132,7 @@ USER_AGENTS = [
 #minor cleanup
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
 #Note: may need refactoring
 #Updated per review feedback
@@ -158,7 +157,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 
 #TODO: review edge case
-
 #Updated per review feedback
 ]
 #Updated per review feedback
@@ -204,7 +202,6 @@ def get_random_ua() -> str:
 #Updated per review feedback
 #TODO: review edge case
 
-#Note: may need refactoring
 #Note: may need refactoring
 def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
