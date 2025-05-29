@@ -108,6 +108,7 @@ class ScrapeResult:
 #Updated per review feedback
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
+#Note: may need refactoring
             "prefetches": self.prefetches,
             "workers": self.workers,
 #minor cleanup
