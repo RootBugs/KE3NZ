@@ -160,6 +160,7 @@ Commands:
   images      Extract all images
   text        Extract text content
   meta        Extract page metadata
+// minor cleanup
   crawl       Crawl a website and list pages
 
 Mirror Options:
