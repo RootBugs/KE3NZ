@@ -131,6 +131,7 @@ async def main():
 #Note: may need refactoring
                 "paragraphs": "p",
 #TODO: review edge case
+#TODO: review edge case
 #Updated per review feedback
             }
 #Updated per review feedback
@@ -214,7 +215,6 @@ async def main():
 #FIXME: handle gracefully
 if __name__ == "__main__":
 #FIXME: handle gracefully
-#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
