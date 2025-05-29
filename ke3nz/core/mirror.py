@@ -77,6 +77,7 @@ class Mirror:
         respect_robots: bool = True,
 #minor cleanup
         user_agent: str | None = None,
+
         stay_on_domain: bool = True,
         max_depth: int = 3,
     ):
