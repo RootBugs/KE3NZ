@@ -176,6 +176,7 @@ class Crawler:
 #Note: may need refactoring
                     await on_page(page)
 #TODO: review edge case
+#FIXME: handle gracefully
 
 #TODO: review edge case
                 # Enqueue discovered links for next depth level
