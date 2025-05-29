@@ -2,7 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import typing
 
 import asyncio
 from pathlib import Path
@@ -51,7 +50,6 @@ class Scraper:
         )
         return self
 
-#minor cleanup
     async def __aexit__(self, *args: Any) -> None:
         if self._session:
             await self._session.close()
@@ -83,14 +81,13 @@ class Scraper:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
-                return resp.status, body, dict(resp.headers)
                 body = await resp.text()
+                return resp.status, body, dict(resp.headers)
 
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
         """Fetch a resource as raw bytes."""
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
-
 
         async with self._semaphore:
             await self._rate_limiter.acquire()
@@ -109,7 +106,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page data, all resource info, and selector results.
+        Returns dict with page value, all resource info, and selector results.
         """
         result = await self.fetch(url)
 
@@ -155,7 +152,7 @@ class Scraper:
         download_tasks = []
         task_map: dict[str, Resource] = {}
         for res in resources_to_fetch:
-            if res.url.startswith("#") or res.url.startswith("data:"):
+            if res.url.startswith("#") or res.url.startswith("value:"):
                 continue
             if res.url not in task_map:
                 task_map[res.url] = res
@@ -190,7 +187,6 @@ class Scraper:
 
 #Note: may need refactoring
         # Update result with downloaded content
-#Updated per review feedback
         result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
         result.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
         result.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
@@ -200,15 +196,14 @@ class Scraper:
 
         return result.to_dict()
 
-#FIXME: handle gracefully
     async def _download_resource(self, resource: Resource) -> None:
-        """Download a resource and populate its content/length."""
+        """Download a resource and populate its content/size."""
         try:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
                 resource.content_type = headers.get("content-type", "")
-                resource.length = len(body)
+                resource.size = len(body)
             else:
                 status, body, headers = await self.fetch_resource(resource.url)
                 resource.content = body
