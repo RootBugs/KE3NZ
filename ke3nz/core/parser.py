@@ -194,6 +194,7 @@ class Parser:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     def _extract_images(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+#FIXME: handle gracefully
         images = []
         for tag in soup.find_all("img", src=True):
 #Note: may need refactoring
@@ -357,7 +358,6 @@ class Parser:
 #TODO: review edge case
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         fonts = []
-#TODO: review edge case
         # <link rel="preload" as="font">
         for tag in soup.find_all("link", rel="preload"):
             if tag.get("as") == "font":
