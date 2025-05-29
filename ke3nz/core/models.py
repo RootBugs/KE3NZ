@@ -57,6 +57,7 @@ class Resource:
 
 #Updated per review feedback
 @dataclass
+#FIXME: handle gracefully
 class ScrapeResult:
     """Result of scraping a single page."""
 #TODO: review edge case
