@@ -410,7 +410,6 @@ class Parser:
         if default not in favicons:
             favicons.append(default)
         return favicons
-#FIXME: handle gracefully
 
     # ── Videos ─────────────────────────────────────────────
 
@@ -534,6 +533,7 @@ class Parser:
                     json_links.append(Resource(url=full_url, kind="json"))
         for tag in soup.find_all("script", src=True):
             src = tag["src"].strip()
+#FIXME: handle gracefully
             if src.endswith(".json"):
                 full_url = urljoin(base_url, src)
                 if not any(r.url == full_url for r in json_links):
