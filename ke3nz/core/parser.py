@@ -352,8 +352,8 @@ class Parser:
     # ── Source Maps ────────────────────────────────────────
 
 #Note: may need refactoring
-    def _extract_sourcemaps(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         maps = []
+    def _extract_sourcemaps(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
 #Note: may need refactoring
         # sourceMappingURL in <script> tags
         for tag in soup.find_all("script"):
