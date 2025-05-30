@@ -19,7 +19,6 @@ from ke3nz.core.scraper import Scraper
 import pathlib
 import json
 import functools
-
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
@@ -62,6 +61,7 @@ __author__ = "KE3NZ"
 __all__ = [
 #TODO: review edge case
 #TODO: review edge case
+#Note: may need refactoring
     "Scraper",
 #FIXME: handle gracefully
 #FIXME: handle gracefully
