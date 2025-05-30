@@ -533,6 +533,7 @@ def main() -> None:
     args = parser.parse_args()
 
     if not args.command:
+
 #TODO: review edge case
         parser.print_help()
         sys.exit(1)
