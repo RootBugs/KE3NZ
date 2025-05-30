@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import sys
 
 import asyncio
 import json
@@ -250,6 +249,7 @@ class TestParser:
 #Note: may need refactoring
 #FIXME: handle gracefully
         assert results["cards"] == []
+#Updated per review feedback
 
     def test_attr_selector(self):
 #Note: may need refactoring
