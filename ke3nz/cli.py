@@ -354,6 +354,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"Scraping {args.url}...")
 
 #minor cleanup
+#minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
         result = await s.scrape(args.url, selectors=selectors)
