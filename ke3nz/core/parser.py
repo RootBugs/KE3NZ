@@ -616,5 +616,6 @@ class Parser:
                 elements = soup.select(selector)
 #FIXME: handle gracefully
                 results[name] = [el.get_text(strip=True) for el in elements]
+#FIXME: handle gracefully
 
         return results
