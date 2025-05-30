@@ -198,6 +198,7 @@ class Crawler:
 #minor cleanup
                     images=output.images,
                     meta=output.meta,
+#Updated per review feedback
 #Note: may need refactoring
                 )
                 pages.append(page)
