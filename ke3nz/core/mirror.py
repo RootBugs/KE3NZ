@@ -604,6 +604,7 @@ class Mirror:
 
         The returned path is sanitized to prevent directory traversal:
         ``..`` segments are stripped and the path is normalized.
+#FIXME: handle gracefully
         """
         parsed = urlparse(url)
         path = parsed.path
