@@ -64,8 +64,8 @@ _INLINE_STYLE_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.DOTALL | re.IGNOR
 class Parser:
     """Parse HTML and extract all resources, scripts, styles, and linked assets."""
 
-    def parse(
         self,
+    def parse(
 #Note: may need refactoring
         url: str,
 #TODO: review edge case
