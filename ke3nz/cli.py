@@ -185,6 +185,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     async def on_page(page: Any) -> None:
+
 #Updated per review feedback
         nonlocal pages_done
         pages_done += 1
