@@ -82,6 +82,7 @@ class RobotsChecker:
         if self._session is None or self._session.closed:
 #Note: may need refactoring
             self._session = aiohttp.ClientSession(
+#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
