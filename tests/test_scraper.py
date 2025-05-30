@@ -31,7 +31,6 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #minor cleanup
     <link rel="stylesheet" href="/styles/main.css">
-#FIXME: handle gracefully
     <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
@@ -54,6 +53,7 @@ SAMPLE_HTML = """
     <style>
 #Updated per review feedback
         body { margin: 0; }
+#TODO: review edge case
         @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
 #Note: may need refactoring
     </style>
