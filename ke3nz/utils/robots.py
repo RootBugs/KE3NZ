@@ -63,6 +63,7 @@ class RobotsChecker:
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
         rp = await self._fetch_robots(url)
+#minor cleanup
 #Note: may need refactoring
         return rp.can_fetch(user_agent, url)
 
