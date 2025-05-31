@@ -40,6 +40,7 @@ ke3nz resources https://example.com --save ./result --deep
 // Updated per review feedback
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
+// FIXME: handle gracefully
 | `text` | Extract text content |
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
