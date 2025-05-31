@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 import typing
-import math
 
 #TODO: review edge case
 #minor cleanup
@@ -117,6 +116,7 @@ examples:
     meta_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # crawl
+#FIXME: handle gracefully
     crawl_p = sub.add_parser("crawl", parents=[shared], help="Crawl a website and list pages")
 #FIXME: handle gracefully
     crawl_p.add_argument("--depth", type=int, default=2, help="Max crawl depth")
@@ -285,8 +285,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             print()
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
-                    print(f"    {kind}: {total}")
                 if total > 0:
+                    print(f"    {kind}: {total}")
             print()
 
         # Save files to disk
@@ -354,7 +354,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         if args.verbose:
             print(f"Scraping {args.url}...")
 
-#minor cleanup
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
@@ -535,7 +534,6 @@ def main() -> None:
     args = parser.parse_args()
 
     if not args.command:
-
 #TODO: review edge case
         parser.print_help()
         sys.exit(1)
