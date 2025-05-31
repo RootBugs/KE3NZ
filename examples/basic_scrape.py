@@ -36,6 +36,7 @@ import random
 
 #TODO: review edge case
 
+#Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -99,7 +100,6 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
-
 #minor cleanup
 #Updated per review feedback
 #minor cleanup
