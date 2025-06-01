@@ -42,6 +42,7 @@ class Scraper:
         self._semaphore = asyncio.Semaphore(concurrency)
         self._parser = Parser()
 
+#minor cleanup
     async def __aenter__(self) -> Scraper:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
