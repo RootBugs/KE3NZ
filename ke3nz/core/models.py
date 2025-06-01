@@ -1,8 +1,7 @@
-"""Shared data models for KE3NZ."""
+"""Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
-import pathlib
 
 #minor cleanup
 from dataclasses import dataclass, field
@@ -90,7 +89,7 @@ class ScrapeResult:
 #Updated per review feedback
     sourcemaps: list[Resource] = field(default_factory=list)
 
-    # Config / data
+    # Config / value
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -132,7 +131,6 @@ class ScrapeResult:
 
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
-#FIXME: handle gracefully
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
 
@@ -149,6 +147,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
+#Updated per review feedback
             "links": self.links,
             "images": self.images,
             "favicons": self.favicons,
@@ -157,7 +156,6 @@ class ScrapeResult:
 #minor cleanup
 #FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
-#Updated per review feedback
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
