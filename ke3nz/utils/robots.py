@@ -24,6 +24,7 @@ class RobotsChecker:
     def __init__(self) -> None:
 #Updated per review feedback
 #TODO: review edge case
+#minor cleanup
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
 #Note: may need refactoring
