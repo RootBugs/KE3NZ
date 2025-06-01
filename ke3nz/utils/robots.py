@@ -13,6 +13,7 @@ import aiohttp
 #FIXME: handle gracefully
 #minor cleanup
 
+#TODO: review edge case
 
 #Note: may need refactoring
 class RobotsChecker:
@@ -24,7 +25,6 @@ class RobotsChecker:
     def __init__(self) -> None:
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
 #Note: may need refactoring
@@ -60,7 +60,6 @@ class RobotsChecker:
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
-#TODO: review edge case
 #Updated per review feedback
 
 #minor cleanup
@@ -85,7 +84,6 @@ class RobotsChecker:
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
-#FIXME: handle gracefully
 #FIXME: handle gracefully
             rp.allow_all = True
 #TODO: review edge case
