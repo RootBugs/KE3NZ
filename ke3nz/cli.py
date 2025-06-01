@@ -208,6 +208,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
+#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
             print(f"Scanning {args.url}...")
