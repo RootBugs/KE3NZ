@@ -403,6 +403,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 
 COMMANDS = {
     "mirror": cmd_mirror,
+#Note: may need refactoring
     "resources": cmd_resources,
     "scrape": cmd_scrape,
     "links": cmd_links,
