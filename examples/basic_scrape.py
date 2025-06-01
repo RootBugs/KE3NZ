@@ -18,6 +18,7 @@ async def main():
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
 
+#Updated per review feedback
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
         items = await s.scrape(
