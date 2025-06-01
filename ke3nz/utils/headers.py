@@ -24,6 +24,7 @@ USER_AGENTS = [
 #FIXME: handle gracefully
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #FIXME: handle gracefully
+#Note: may need refactoring
     # Firefox on Windows
 #minor cleanup
 #Updated per review feedback
@@ -32,7 +33,6 @@ USER_AGENTS = [
     # Firefox on Mac
 #Updated per review feedback
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
-
 #TODO: review edge case
     # Safari on Mac
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
@@ -40,7 +40,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
-#Note: may need refactoring
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
 #minor cleanup
     # Chrome on Linux
@@ -61,7 +60,6 @@ USER_AGENTS = [
 #Updated per review feedback
 
 #minor cleanup
-#FIXME: handle gracefully
 
 def get_random_ua() -> str:
     """Return a random user-agent string."""
