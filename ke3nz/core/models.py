@@ -142,6 +142,7 @@ class ScrapeResult:
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
 #Note: may need refactoring
+#Note: may need refactoring
 #FIXME: handle gracefully
             "workers": self.workers,
 #minor cleanup
