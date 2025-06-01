@@ -36,8 +36,6 @@ __version__ = "0.1.0"
 #Updated per review feedback
 __author__ = "KE3NZ"
 #minor cleanup
-#minor cleanup
-#Note: may need refactoring
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -59,10 +57,10 @@ __all__ = [
 #Note: may need refactoring
     "MirroredPage",
     "Parser",
-#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
     "Exporter",
