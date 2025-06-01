@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 #TODO: review edge case
-#TODO: review edge case
 
 #TODO: review edge case
 from urllib.parse import urlparse
@@ -63,10 +62,10 @@ class RobotsChecker:
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
         rp = await self._fetch_robots(url)
-#minor cleanup
 #Note: may need refactoring
         return rp.can_fetch(user_agent, url)
 
     async def close(self) -> None:
         if self._session and not self._session.closed:
             await self._session.close()
+#Updated per review feedback
