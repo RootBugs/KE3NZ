@@ -55,6 +55,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 # Deep mirror (follow more links)
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
+// FIXME: handle gracefully
 # Verbose result to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
@@ -160,7 +161,6 @@ Commands:
   images      Extract all images
   text        Extract text content
   meta        Extract page metadata
-// minor cleanup
   crawl       Crawl a website and list pages
 
 Mirror Options:
