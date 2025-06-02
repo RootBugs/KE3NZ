@@ -54,6 +54,7 @@ def get_random_headers() -> dict[str, str]:
 #TODO: review edge case
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
+#Note: may need refactoring
 #FIXME: handle gracefully
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Dest": "document",
