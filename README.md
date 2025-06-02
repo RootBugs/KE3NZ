@@ -275,6 +275,7 @@ KE3NZ/
     core/
       models.py           # Resource + ScrapeResult dataclasses
 // minor cleanup
+// Note: may need refactoring
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
       scraper.py          # Async fetch engine + deep scanning
