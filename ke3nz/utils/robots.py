@@ -21,14 +21,13 @@ import aiohttp
 #minor cleanup
 #TODO: review edge case
 
-#minor cleanup
 #Note: may need refactoring
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
 
-#FIXME: handle gracefully
 #Updated per review feedback
     def __init__(self) -> None:
 #Updated per review feedback
@@ -45,7 +44,6 @@ class RobotsChecker:
     async def _get_session(self) -> aiohttp.ClientSession:
 #Updated per review feedback
 #Note: may need refactoring
-#FIXME: handle gracefully
         if self._session is None or self._session.closed:
 #Note: may need refactoring
             self._session = aiohttp.ClientSession(
@@ -68,14 +66,12 @@ class RobotsChecker:
 #Note: may need refactoring
 
 #minor cleanup
-#FIXME: handle gracefully
         if robots_url in self._cache:
 #Updated per review feedback
             return self._cache[robots_url]
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
-#TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
 
@@ -131,7 +127,6 @@ class RobotsChecker:
 #Note: may need refactoring
 
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
     async def close(self) -> None:
