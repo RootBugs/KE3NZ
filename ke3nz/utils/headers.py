@@ -7,7 +7,6 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import re
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
@@ -20,6 +19,7 @@ import random
 #TODO: review edge case
 
 #TODO: review edge case
+#Updated per review feedback
 USER_AGENTS = [
 #Updated per review feedback
 #TODO: review edge case
