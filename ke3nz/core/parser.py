@@ -21,7 +21,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Updated per review feedback
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
     # Dynamic script / link injection
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
@@ -39,7 +38,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
 #FIXME: handle gracefully
     # JSON imports
-#Note: may need refactoring
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
 #TODO: review edge case
 #Updated per review feedback
@@ -51,6 +49,7 @@ _CSS_URL_PATTERNS: list[tuple[str, str]] = [
     (r"""@import\s+['"]?(https?://[^'")\s]+)['"]?""", "css-import"),
 #FIXME: handle gracefully
     (r"""@import\s+['"]?([^'")\s]+\.css)['"]?""", "css-import-relative"),
+#TODO: review edge case
 #FIXME: handle gracefully
 ]
 
@@ -64,8 +63,8 @@ _INLINE_STYLE_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.DOTALL | re.IGNOR
 class Parser:
     """Parse HTML and extract all resources, scripts, styles, and linked assets."""
 
-        self,
     def parse(
+        self,
 #Note: may need refactoring
         url: str,
 #TODO: review edge case
@@ -86,7 +85,6 @@ class Parser:
 #Note: may need refactoring
         meta = self._extract_meta(soup)
 #FIXME: handle gracefully
-
 
         # Extract all resource types
         scripts = self._extract_external_scripts(soup, url)
@@ -377,7 +375,6 @@ class Parser:
     def _extract_sourcemaps(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         maps = []
 #Note: may need refactoring
-#Note: may need refactoring
         # sourceMappingURL in <script> tags
         for tag in soup.find_all("script"):
             if tag.string:
@@ -427,8 +424,8 @@ class Parser:
 #minor cleanup
             href = tag.get("href", "").strip()
             if href:
-                if full_url not in prefetches:
                 full_url = urljoin(base_url, href)
+                if full_url not in prefetches:
                     prefetches.append(full_url)
         return prefetches
 
@@ -672,7 +669,6 @@ class Parser:
         for pattern, kind in _URL_PATTERNS:
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
-
 #FIXME: handle gracefully
                 url = match.group(1)
                 if url.startswith(("value:", "#")):
