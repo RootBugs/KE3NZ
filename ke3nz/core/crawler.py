@@ -109,6 +109,7 @@ class Crawler:
 #minor cleanup
             on_page: Optional async callback called with each CrawledPage.
 
+#minor cleanup
         Returns:
             List of all crawled pages.
         """
