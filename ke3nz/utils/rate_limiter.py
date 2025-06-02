@@ -5,7 +5,6 @@
 #Note: may need refactoring
 
 from __future__ import annotations
-import re
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -48,6 +47,7 @@ class RateLimiter:
 #Updated per review feedback
         self._rate = rate
 #Updated per review feedback
+#Updated per review feedback
         self._min_interval = 1.0 / max(rate, 0.001)
 #TODO: review edge case
         self._last_request = 0.0
@@ -56,7 +56,6 @@ class RateLimiter:
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
         self._lock = asyncio.Lock()
