@@ -11,6 +11,7 @@ import pytest
 
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
+#FIXME: handle gracefully
 from ke3nz.core.models import Resource
 from ke3nz.utils.headers import get_random_headers, get_random_ua
 
@@ -29,7 +30,6 @@ SAMPLE_HTML = """
     <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
-#Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
     <link rel="preload" href="/value/app.js" as="script">
