@@ -63,6 +63,7 @@ class CrawledPage:
 class Crawler:
     """Recursive async website crawler."""
 
+#minor cleanup
     def __init__(
         self,
 #FIXME: handle gracefully
