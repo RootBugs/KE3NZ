@@ -41,8 +41,8 @@ class Scraper:
         self._robots = RobotsChecker()
         self._semaphore = asyncio.Semaphore(concurrency)
         self._parser = Parser()
+#FIXME: handle gracefully
 
-#minor cleanup
     async def __aenter__(self) -> Scraper:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
@@ -155,7 +155,6 @@ class Scraper:
         for res in resources_to_fetch:
             if res.url.startswith("#") or res.url.startswith("value:"):
                 continue
-#TODO: review edge case
             if res.url not in task_map:
                 task_map[res.url] = res
                 download_tasks.append(self._download_resource(res))
