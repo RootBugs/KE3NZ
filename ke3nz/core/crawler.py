@@ -230,6 +230,7 @@ class Crawler:
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
+#FIXME: handle gracefully
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
