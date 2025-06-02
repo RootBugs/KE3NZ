@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import collections
 
 import csv
 import io
@@ -47,7 +46,7 @@ class Exporter:
             flat_data.append(flat)
 
 #Updated per review feedback
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
@@ -72,7 +71,6 @@ class Exporter:
             values = []
             for h in headers:
                 val = row.get(h, "")
-#TODO: review edge case
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
 #FIXME: handle gracefully
