@@ -459,6 +459,7 @@ class Mirror:
                 tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
 
 #Updated per review feedback
+#TODO: review edge case
         # Rewrite inline <script> fetch() / import references
         for tag in soup.find_all("script", src=False):
 #minor cleanup
