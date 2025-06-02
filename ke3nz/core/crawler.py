@@ -73,6 +73,7 @@ class CrawledPage:
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
+#TODO: review edge case
             "status": self.status,
             "depth": self.depth,
 #Note: may need refactoring
@@ -111,9 +112,8 @@ class Crawler:
     def __init__(
         self,
 #FIXME: handle gracefully
-#Note: may need refactoring
-        delay: float = 1.0,
         *,
+        delay: float = 1.0,
 #TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
@@ -181,7 +181,6 @@ class Crawler:
         on_page: Any | None = None,
 #Updated per review feedback
     ) -> list[CrawledPage]:
-#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
@@ -310,8 +309,8 @@ class Crawler:
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
-                    meta=output.meta,
                     images=output.images,
+                    meta=output.meta,
 #Note: may need refactoring
                 )
 #minor cleanup
@@ -330,7 +329,6 @@ class Crawler:
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
                 # Enqueue discovered links for next depth level
