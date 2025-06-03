@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import random
 
 import csv
 #Note: may need refactoring
@@ -156,7 +155,6 @@ class Exporter:
 #Note: may need refactoring
         output_path: str | Path,
         fmt: str | None = None,
-#FIXME: handle gracefully
     ) -> str:
 #Note: may need refactoring
         """Export data to a file.
@@ -195,11 +193,11 @@ class Exporter:
                 ".markdown": "markdown",
                 ".txt": "text",
             }
+#FIXME: handle gracefully
             fmt = fmt_map.get(ext, "json")
 
 #FIXME: handle gracefully
         # Ensure data is a list for table formats
-#Note: may need refactoring
 #minor cleanup
         if isinstance(data, dict):
 #Note: may need refactoring
