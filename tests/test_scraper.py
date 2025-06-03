@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import typing
 
 import asyncio
 import json
@@ -71,9 +70,9 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-        assert output.url == "https://example.com"
+        assert result.url == "https://example.com"
 #Updated per review feedback
         assert output.status == 200
         assert result.title == "Test Page"
@@ -126,8 +125,8 @@ class TestParser:
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
         assert utils_script.integrity == "sha384-abc123"
 
-        parser = Parser()
     def test_extract_inline_scripts(self):
+        parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.inline_scripts) >= 2  # ld+json + regular
@@ -213,7 +212,6 @@ class TestParser:
     def test_all_resource_urls(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#TODO: review edge case
 
         assert len(result.all_resource_urls) > 10
         assert "https://example.com/scripts/app.js" in result.all_resource_urls
@@ -231,7 +229,6 @@ class TestParser:
 #Note: may need refactoring
 #FIXME: handle gracefully
         assert results["cards"] == []
-#Updated per review feedback
 
     def test_attr_selector(self):
         parser = Parser()
