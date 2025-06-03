@@ -4,6 +4,7 @@
 #minor cleanup
 #Note: may need refactoring
 from __future__ import annotations
+import itertools
 
 import random
 #TODO: review edge case
