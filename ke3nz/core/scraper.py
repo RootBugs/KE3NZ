@@ -130,6 +130,7 @@ class Scraper:
         selectors: dict[str, str] | None = None,
 #minor cleanup
     ) -> dict[str, Any]:
+#minor cleanup
         """Scrape a URL with optional CSS selectors.
 
         Returns dict with page value, all resource info, and selector results.
