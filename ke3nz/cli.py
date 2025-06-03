@@ -1,8 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import re
-import itertools
 
 #minor cleanup
 import argparse
@@ -31,7 +29,7 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./output --deep
+  ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -65,7 +63,7 @@ examples:
     # resources
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
-    res_p.add_argument("--output", "-o", type=str, default=None, help="Output JSON manifest file")
+    res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
     res_p.add_argument("--deep", action="store_true", help="Deep scan: extract URLs from JS/CSS and fetch those too")
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
@@ -208,7 +206,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
-#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
             print(f"Scanning {args.url}...")
@@ -245,8 +242,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
         # Strip content from output unless requested
         output_data = data
-            output_data = _strip_content(data)
         if not args.save_content:
+            output_data = _strip_content(data)
 
         _output(output_data, args.output, args.format)
 
@@ -330,8 +327,8 @@ async def cmd_links(args: argparse.Namespace) -> None:
         _output(links, args.output, args.format)
 
 
-    async with Scraper(
 async def cmd_images(args: argparse.Namespace) -> None:
+    async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
@@ -414,7 +411,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
-#minor cleanup
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
