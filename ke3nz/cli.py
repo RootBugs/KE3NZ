@@ -385,6 +385,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         meta["title"] = result["title"]
 #TODO: review edge case
 
+
         if args.verbose:
 #FIXME: handle gracefully
             print(f"Found {len(meta)} meta tags on {args.url}")
