@@ -12,7 +12,6 @@ import mimetypes
 #TODO: review edge case
 from dataclasses import dataclass, field
 from pathlib import Path
-#FIXME: handle gracefully
 from typing import Any
 #FIXME: handle gracefully
 from urllib.parse import urljoin, urlparse, urlunparse
@@ -139,7 +138,6 @@ class Mirror:
         self._visited_assets.clear()
         self._pages.clear()
 
-
         base_domain = urlparse(start_url).netloc
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
@@ -258,8 +256,8 @@ class Mirror:
 
     # ── Internal: Download Assets ──────────────────────────
 
-        self,
     async def _download_page_assets(
+        self,
         result: ScrapeResult,
         base: Path,
         page_url: str,
@@ -370,7 +368,6 @@ class Mirror:
     # ── Internal: HTML Rewriting ───────────────────────────
 
 #FIXME: handle gracefully
-#TODO: review edge case
     def _rewrite_html(
         self,
         html: str,
@@ -572,6 +569,7 @@ class Mirror:
 #TODO: review edge case
 
     def _resolve_url(self, href: str, base_url: str) -> str:
+#Note: may need refactoring
         """Resolve a possibly-relative URL against a base URL."""
         href = href.strip()
 #TODO: review edge case
