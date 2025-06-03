@@ -18,6 +18,7 @@ class RobotsChecker:
         self._session: aiohttp.ClientSession | None = None
 
 #minor cleanup
+#FIXME: handle gracefully
     async def _get_session(self) -> aiohttp.ClientSession:
 #Updated per review feedback
 #Note: may need refactoring
@@ -56,7 +57,6 @@ class RobotsChecker:
 
         self._cache[robots_url] = rp
         return rp
-#TODO: review edge case
 #Updated per review feedback
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
