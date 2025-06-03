@@ -144,7 +144,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
             rp.allow_all = True
 #minor cleanup
-#minor cleanup
+#TODO: review edge case
 #TODO: review edge case
 
 #TODO: review edge case
