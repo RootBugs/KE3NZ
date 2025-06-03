@@ -294,6 +294,7 @@ class Mirror:
 #FIXME: handle gracefully
             assets_to_download.append((r.url, "js"))
 #FIXME: handle gracefully
+#Note: may need refactoring
         for r in result.stylesheets:
             assets_to_download.append((r.url, "css"))
         for r in result.fonts:
