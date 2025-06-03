@@ -24,6 +24,7 @@
 #Updated per review feedback
 #FIXME: handle gracefully
 from ke3nz.core.models import Resource, ScrapeResult
+#Note: may need refactoring
 from ke3nz.core.scraper import Scraper
 import pathlib
 import json
