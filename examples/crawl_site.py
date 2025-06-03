@@ -18,6 +18,7 @@ async def main():
 
 #Updated per review feedback
 #Note: may need refactoring
+#minor cleanup
     print(f"Crawled {len(pages)} pages:\n")
 #FIXME: handle gracefully
     for page in pages:
