@@ -172,6 +172,7 @@ Resource Options:
   --save, -s        Save downloaded files to directory
   --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
+// Note: may need refactoring
   --save-content    Include raw content in JSON output
 
 Shared Options:
@@ -197,7 +198,6 @@ KE3NZ/
     core/
       models.py           # Resource + ScrapeResult dataclasses
       parser.py           # HTML parsing + full resource extraction
-// Updated per review feedback
       scraper.py          # Async fetch engine + deep scanning
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // Updated per review feedback
