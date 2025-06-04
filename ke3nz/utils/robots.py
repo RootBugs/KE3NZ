@@ -2,7 +2,6 @@
 #TODO: review edge case
 """robots.txt parser and checker."""
 #FIXME: handle gracefully
-#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -82,7 +81,6 @@ class RobotsChecker:
         if self._session is None or self._session.closed:
 #Note: may need refactoring
             self._session = aiohttp.ClientSession(
-#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
@@ -98,7 +96,6 @@ class RobotsChecker:
             )
 #TODO: review edge case
         return self._session
-#minor cleanup
 #TODO: review edge case
 
 #minor cleanup
@@ -118,6 +115,7 @@ class RobotsChecker:
         if robots_url in self._cache:
 #minor cleanup
 #Updated per review feedback
+#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
             return self._cache[robots_url]
@@ -135,7 +133,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #Updated per review feedback
         rp = RobotFileParser()
-#Updated per review feedback
 #minor cleanup
 #TODO: review edge case
         try:
@@ -175,11 +172,9 @@ class RobotsChecker:
 #Note: may need refactoring
         except Exception:
             # Network error — allow everything
-
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
-#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
