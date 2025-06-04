@@ -51,6 +51,7 @@ _CSS_URL_PATTERNS: list[tuple[str, str]] = [
     (r"""@import\s+['"]?([^'")\s]+\.css)['"]?""", "css-import-relative"),
 #TODO: review edge case
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 ]
 
 # Inline resource type detection
