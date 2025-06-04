@@ -80,6 +80,7 @@ class Exporter:
                 if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
+#minor cleanup
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
