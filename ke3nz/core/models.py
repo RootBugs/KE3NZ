@@ -181,8 +181,8 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
             "links": self.links,
-            "images": self.images,
             "favicons": self.favicons,
+            "images": self.images,
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
