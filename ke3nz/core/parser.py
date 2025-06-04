@@ -551,6 +551,7 @@ class Parser:
 #FIXME: handle gracefully
             if url not in seen:
                 seen.add(url)
+#minor cleanup
                 urls.append(url)
         return urls
 
