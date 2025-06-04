@@ -280,7 +280,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -316,7 +316,6 @@ class Scraper:
                 resources = data.get("json_data", [])
             elif kind == "manifest":
                 resources = data.get("configs", [])
-#TODO: review edge case
             elif kind == "sourcemap":
                 resources = data.get("sourcemaps", [])
             elif kind == "preload":
