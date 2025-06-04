@@ -57,7 +57,6 @@ async def main():
 #Note: may need refactoring
     # Example 1: Simple scrape
 #minor cleanup
-#minor cleanup
 #FIXME: handle gracefully
     async with Scraper() as s:
 #minor cleanup
@@ -109,6 +108,7 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
                 "paragraphs": "p",
