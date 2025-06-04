@@ -46,6 +46,7 @@ dev = [
 ]
 
 # minor cleanup
+
 [project.scripts]
 ke3nz = "ke3nz.cli:main"
 
