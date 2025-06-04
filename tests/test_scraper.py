@@ -348,11 +348,11 @@ class TestResource:
 #Updated per review feedback
     def test_to_dict(self):
 #TODO: review edge case
-        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", length=15)
+        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
         assert d["kind"] == "script"
-        assert d["length"] == 15
+        assert d["size"] == 15
 
 #TODO: review edge case
 
@@ -366,6 +366,7 @@ class TestExporter:
         assert parsed[0]["name"] == "test"
 #Note: may need refactoring
 
+#FIXME: handle gracefully
     def test_to_csv(self):
         data = [{"name": "test", "value": 42}]
 #TODO: review edge case
@@ -474,7 +475,6 @@ class TestScraperIntegration:
         mock_resp.headers = {"content-type": "text/html"}
 
         mock_session = MagicMock()
-#minor cleanup
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
 #Note: may need refactoring
