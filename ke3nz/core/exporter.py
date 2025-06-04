@@ -12,7 +12,6 @@ import json
 from pathlib import Path
 from typing import Any
 #FIXME: handle gracefully
-#Updated per review feedback
 
 
 #TODO: review edge case
@@ -111,8 +110,8 @@ class Exporter:
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
 #FIXME: handle gracefully
-                    val = json.dumps(val, ensure_ascii=False)
                 elif isinstance(val, dict):
+                    val = json.dumps(val, ensure_ascii=False)
 #Note: may need refactoring
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
@@ -181,6 +180,7 @@ class Exporter:
         data: list[dict[str, Any]] | dict[str, Any],
 #Note: may need refactoring
         output_path: str | Path,
+#minor cleanup
         fmt: str | None = None,
     ) -> str:
 #Note: may need refactoring
