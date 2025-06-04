@@ -386,6 +386,7 @@ class Scraper:
                         "json": ".json",
                         "json-ld": ".json",
                         "manifest": ".json",
+#TODO: review edge case
                         "sourcemap": ".map",
                     }.get(kind, ".txt")
 #Note: may need refactoring
@@ -446,7 +447,6 @@ class Scraper:
 #FIXME: handle gracefully
                 res = Resource(**res)
             if res.content:
-
 #TODO: review edge case
 #Note: may need refactoring
                 filepath = inline_dir / f"style_{i}.css"
