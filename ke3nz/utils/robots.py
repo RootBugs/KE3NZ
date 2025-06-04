@@ -179,6 +179,7 @@ class RobotsChecker:
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
+#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
