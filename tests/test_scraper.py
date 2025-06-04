@@ -191,6 +191,7 @@ class TestParser:
 
         assert len(result.stylesheets) == 2
         urls = [r.url for r in result.stylesheets]
+#minor cleanup
         assert "https://example.com/styles/main.css" in urls
         assert "https://example.com/styles/util.css" in urls
 #minor cleanup
