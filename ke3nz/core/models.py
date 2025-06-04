@@ -54,7 +54,6 @@ class ScrapeResult:
     """Result of scraping a single page."""
 #TODO: review edge case
 #Note: may need refactoring
-#Note: may need refactoring
 #Updated per review feedback
 
     url: str
@@ -93,7 +92,6 @@ class ScrapeResult:
 #TODO: review edge case
 #Updated per review feedback
     stylesheets: list[Resource] = field(default_factory=list)
-
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 #minor cleanup
@@ -112,7 +110,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
-#FIXME: handle gracefully
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
@@ -133,6 +130,7 @@ class ScrapeResult:
     audios: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
 
+#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
     # Preloaded / prefetched resources
@@ -148,7 +146,6 @@ class ScrapeResult:
     workers: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
 #minor cleanup
-#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
@@ -181,8 +178,8 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
             "links": self.links,
-            "favicons": self.favicons,
             "images": self.images,
+            "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
@@ -207,7 +204,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
-#FIXME: handle gracefully
             "workers": self.workers,
 #minor cleanup
 #TODO: review edge case
