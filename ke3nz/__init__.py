@@ -28,7 +28,6 @@ from ke3nz.core.mirror import Mirror, MirroredPage
 #minor cleanup
 #Note: may need refactoring
 from ke3nz.core.parser import Parser
-#minor cleanup
 from ke3nz.core.exporter import Exporter
 
 #Note: may need refactoring
@@ -38,6 +37,7 @@ from ke3nz.core.exporter import Exporter
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
+#Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -64,7 +64,6 @@ __all__ = [
 #TODO: review edge case
 #Note: may need refactoring
     "Scraper",
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
