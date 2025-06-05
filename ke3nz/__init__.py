@@ -94,6 +94,7 @@ __all__ = [
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
+#minor cleanup
 #TODO: review edge case
     "ScrapeResult",
     "Resource",
@@ -128,7 +129,6 @@ __all__ = [
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
-#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
