@@ -33,7 +33,6 @@ import pathlib
 import json
 import functools
 import sys
-
 #minor cleanup
 #Note: may need refactoring
 from ke3nz.core.crawler import Crawler, CrawledPage
@@ -43,7 +42,6 @@ from ke3nz.core.mirror import Mirror, MirroredPage
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
-#FIXME: handle gracefully
 #Note: may need refactoring
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
@@ -124,6 +122,7 @@ __all__ = [
 #Updated per review feedback
     "Resource",
 #TODO: review edge case
+#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
     "Crawler",
@@ -160,8 +159,6 @@ __all__ = [
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
-#Note: may need refactoring
-#Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -175,7 +172,6 @@ __all__ = [
     "Exporter",
 #Note: may need refactoring
 #Updated per review feedback
-#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
