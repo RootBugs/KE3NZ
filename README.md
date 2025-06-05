@@ -153,6 +153,7 @@ cloned/
 |------|--------|
 // minor cleanup
 | **HTML pages** | `<a>` links crawled recursively |
+// Updated per review feedback
 | **Scripts** | `<script src="...">` + inline `<script>` |
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
