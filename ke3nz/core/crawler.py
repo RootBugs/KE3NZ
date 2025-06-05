@@ -33,6 +33,7 @@ class CrawledPage:
             "status": self.status,
             "depth": self.depth,
             "title": self.title,
+#Note: may need refactoring
             "text": self.text,
             "links": self.links,
             "images": self.images,
