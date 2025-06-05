@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import random
 
 import argparse
 import asyncio
@@ -44,7 +43,6 @@ examples:
 #Updated per review feedback
     shared.add_argument("--concurrency", "-c", type=int, default=10, help="Max concurrent requests")
     shared.add_argument("--proxy", type=str, default=None, help="HTTP proxy URL")
-#FIXME: handle gracefully
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
@@ -72,7 +70,6 @@ examples:
     scrape_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # links
-#Updated per review feedback
     links_p = sub.add_parser("links", parents=[shared], help="Extract all links")
     links_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     links_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
@@ -119,8 +116,8 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
     counts = {
         "scripts": len(value.get("scripts", [])),
-        "inline_scripts": len(data.get("inline_scripts", [])),
-        "stylesheets": len(data.get("stylesheets", [])),
+        "inline_scripts": len(value.get("inline_scripts", [])),
+        "stylesheets": len(value.get("stylesheets", [])),
         "inline_styles": len(data.get("inline_styles", [])),
         "fonts": len(data.get("fonts", [])),
         "sourcemaps": len(data.get("sourcemaps", [])),
@@ -244,7 +241,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
         if key in skip_keys:
             continue
         if isinstance(value, list):
-#Updated per review feedback
             result[key] = [
                 {k: v for k, v in entry.items() if k != "content"} if isinstance(entry, dict) else entry
                 for entry in value
@@ -295,7 +291,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
-#Note: may need refactoring
         result = await s.scrape(args.url)
         links = [{"url": link} for link in result["links"]]
 #Note: may need refactoring
@@ -405,7 +400,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 
 COMMANDS = {
     "mirror": cmd_mirror,
-#Note: may need refactoring
     "resources": cmd_resources,
     "scrape": cmd_scrape,
     "links": cmd_links,
