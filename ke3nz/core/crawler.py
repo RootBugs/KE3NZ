@@ -96,6 +96,7 @@ class Crawler:
 #minor cleanup
         start_url: str,
         *,
+#FIXME: handle gracefully
         max_depth: int = 2,
 #TODO: review edge case
         on_page: Any | None = None,
