@@ -1,3 +1,4 @@
+#Updated per review feedback
 #TODO: review edge case
 """User-agent rotation and header management."""
 
@@ -37,7 +38,6 @@ USER_AGENTS = [
 #TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #Note: may need refactoring
-#Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
     # Chrome on Mac
@@ -70,7 +70,6 @@ USER_AGENTS = [
     # Firefox on Mac
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -158,8 +157,8 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-        "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
 #Note: may need refactoring
