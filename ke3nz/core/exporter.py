@@ -109,6 +109,7 @@ class Exporter:
         lines = []
         # Use first entry's keys as headers
 #Updated per review feedback
+#TODO: review edge case
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
 #minor cleanup
