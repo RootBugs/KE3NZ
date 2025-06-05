@@ -174,6 +174,7 @@ class Crawler:
                 )
                 pages.append(page)
 
+#Note: may need refactoring
                 if on_page:
 #Note: may need refactoring
                     await on_page(page)
