@@ -138,6 +138,7 @@ class Exporter:
 #Updated per review feedback
             ext = path.suffix.lower()
             fmt_map = {
+#Note: may need refactoring
                 ".json": "json",
 #minor cleanup
 #Updated per review feedback
