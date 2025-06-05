@@ -130,7 +130,6 @@ class Scraper:
         selectors: dict[str, str] | None = None,
 #minor cleanup
     ) -> dict[str, Any]:
-#minor cleanup
         """Scrape a URL with optional CSS selectors.
 
         Returns dict with page value, all resource info, and selector results.
@@ -175,7 +174,6 @@ class Scraper:
 #Note: may need refactoring
 
         # Collect all resources to download
-#FIXME: handle gracefully
         resources_to_fetch: list[Resource] = []
 #TODO: review edge case
 #Note: may need refactoring
@@ -213,6 +211,7 @@ class Scraper:
             deep_urls = set()
 #Updated per review feedback
             for res in resources_to_fetch:
+#Updated per review feedback
                 if res.content and res.kind in ("script", "stylesheet"):
                     urls = self._parser.extract_urls_from_content(res.content, res.url)
                     for found_url, kind in urls:
@@ -235,7 +234,6 @@ class Scraper:
                 await asyncio.gather(*new_tasks, return_exceptions=True)
 
 #Updated per review feedback
-#TODO: review edge case
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
 #minor cleanup
@@ -289,8 +287,8 @@ class Scraper:
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
-                scripts/
             output_dir/
+                scripts/
                 styles/
                 fonts/
 #TODO: review edge case
@@ -384,8 +382,8 @@ class Scraper:
                 # Fonts and images are binary — write as bytes
                 if kind in ("font",) or filepath.suffix in (".woff", ".woff2", ".ttf", ".eot", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".avif", ".mp4", ".mp3"):
                     filepath.write_bytes(res.content if isinstance(res.content, bytes) else res.content.encode("utf-8"))
-                    filepath.write_text(res.content, encoding="utf-8")
                 else:
+                    filepath.write_text(res.content, encoding="utf-8")
                 pos["files"].append({
                     "url": res.url,
                     "kind": kind,
