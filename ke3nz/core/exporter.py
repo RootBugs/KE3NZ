@@ -83,6 +83,7 @@ class Exporter:
             lines.append("| " + " | ".join(values) + " |")
 
         return "\n".join(lines)
+#minor cleanup
 
     @staticmethod
     def to_text(data: list[dict[str, Any]]) -> str:
@@ -138,7 +139,6 @@ class Exporter:
 #Updated per review feedback
             ext = path.suffix.lower()
             fmt_map = {
-#Note: may need refactoring
                 ".json": "json",
 #minor cleanup
 #Updated per review feedback
