@@ -322,8 +322,8 @@ class Parser:
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
-                        fonts.append(Resource(
                             url=full_url,
+                        fonts.append(Resource(
                             kind="font",
                             content_type=tag.get("type", ""),
                         ))
