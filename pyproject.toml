@@ -1,6 +1,7 @@
 # minor cleanup
 # TODO: review edge case
 # TODO: review edge case
+# TODO: review edge case
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
@@ -34,8 +35,6 @@ requires-python = ">=3.10"
 # TODO: review edge case
 # minor cleanup
 # Note: may need refactoring
-# Updated per review feedback
-# Updated per review feedback
 # Note: may need refactoring
 authors = [
     {name = "KE3NZ"},
@@ -61,7 +60,6 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
-# minor cleanup
 # Updated per review feedback
 # TODO: review edge case
     "Programming Language :: Python :: 3.11",
