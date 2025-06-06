@@ -44,6 +44,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
 # FIXME: handle gracefully
+
 # TODO: review edge case
     "Programming Language :: Python :: 3.11",
 # minor cleanup
