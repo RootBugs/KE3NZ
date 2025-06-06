@@ -270,6 +270,7 @@ class RobotsChecker:
     async def close(self) -> None:
         if self._session and not self._session.closed:
 #TODO: review edge case
+#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
