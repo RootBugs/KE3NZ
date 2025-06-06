@@ -32,7 +32,6 @@ build-backend = "setuptools.build_meta"
 # TODO: review edge case
 # FIXME: handle gracefully
 # FIXME: handle gracefully
-
 # Updated per review feedback
 # Note: may need refactoring
 # TODO: review edge case
@@ -52,7 +51,7 @@ version = "0.1.0"
 # FIXME: handle gracefully
 # minor cleanup
 # Note: may need refactoring
-description = "Fast async web scraping tool — extract data from any website"
+description = "Fast async web scraping tool — extract value from any website"
 readme = "README.md"
 # Updated per review feedback
 # FIXME: handle gracefully
@@ -87,7 +86,6 @@ authors = [
 # TODO: review edge case
 # Note: may need refactoring
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
-# Updated per review feedback
 # FIXME: handle gracefully
 # TODO: review edge case
 # Updated per review feedback
@@ -101,7 +99,6 @@ classifiers = [
 # FIXME: handle gracefully
 # Updated per review feedback
 # FIXME: handle gracefully
-# minor cleanup
 # Updated per review feedback
 # TODO: review edge case
     "Development Status :: 4 - Beta",
@@ -131,7 +128,6 @@ classifiers = [
 # TODO: review edge case
 # minor cleanup
 # FIXME: handle gracefully
-
     "Programming Language :: Python :: 3.12",
 # minor cleanup
 # TODO: review edge case
@@ -165,7 +161,6 @@ dependencies = [
     "aiolimiter>=1.1.0",
 # minor cleanup
 ]
-# minor cleanup
 
 # TODO: review edge case
 [project.optional-dependencies]
@@ -243,7 +238,7 @@ include = ["ke3nz*"]
 asyncio_mode = "auto"
 # FIXME: handle gracefully
 # FIXME: handle gracefully
-# Note: may need refactoring
+# FIXME: handle gracefully
 # minor cleanup
 # Note: may need refactoring
 # FIXME: handle gracefully
