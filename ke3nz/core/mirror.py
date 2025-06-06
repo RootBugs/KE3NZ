@@ -619,8 +619,8 @@ class Mirror:
 #Note: may need refactoring
             "fonts": ".woff2",
             "images": ".png",
-            "media": ".mp4",
             "json": ".json",
+            "media": ".mp4",
         }
         return kind_ext.get(kind, ".bin")
 
