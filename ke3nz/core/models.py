@@ -1,7 +1,6 @@
 """Shared data models for KE3NZ."""
 
 from __future__ import annotations
-import random
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -102,6 +101,7 @@ class ScrapeResult:
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
+#FIXME: handle gracefully
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
@@ -109,7 +109,6 @@ class ScrapeResult:
 #Updated per review feedback
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
-#Note: may need refactoring
             "prefetches": self.prefetches,
             "workers": self.workers,
 #minor cleanup
