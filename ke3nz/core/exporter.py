@@ -40,6 +40,7 @@ class Exporter:
 #minor cleanup
         for row in data:
 #FIXME: handle gracefully
+#TODO: review edge case
             flat = {}
             for key, value in row.items():
                 if isinstance(value, list):
