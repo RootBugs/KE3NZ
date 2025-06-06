@@ -124,6 +124,7 @@ class TestParser:
         contents = [r.content for r in result.inline_scripts]
         assert any("serviceWorker.register" in c for c in contents)
 
+#TODO: review edge case
     def test_extract_external_stylesheets(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
