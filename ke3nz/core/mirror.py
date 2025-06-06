@@ -294,7 +294,6 @@ class Mirror:
 #FIXME: handle gracefully
             assets_to_download.append((r.url, "js"))
 #FIXME: handle gracefully
-#Note: may need refactoring
         for r in result.stylesheets:
             assets_to_download.append((r.url, "css"))
         for r in result.fonts:
@@ -645,6 +644,7 @@ class Mirror:
 
 #Note: may need refactoring
         # Normalize to remove any ".." or "." segments that could escape
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
         # the result directory. PurePython Path.as_posix + resolve tricks
