@@ -82,6 +82,7 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
         output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#minor cleanup
 
         assert result.url == "https://example.com"
 #Updated per review feedback
