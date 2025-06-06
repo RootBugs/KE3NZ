@@ -38,7 +38,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
-#TODO: review edge case
 
 #Updated per review feedback
     def __init__(self) -> None:
@@ -144,6 +143,7 @@ class RobotsChecker:
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
+#Updated per review feedback
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
