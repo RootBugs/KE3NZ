@@ -68,6 +68,7 @@ class RateLimiter:
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
+#FIXME: handle gracefully
     async def acquire(self) -> None:
 #FIXME: handle gracefully
 #TODO: review edge case
