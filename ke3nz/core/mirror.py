@@ -68,7 +68,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -459,7 +459,6 @@ class Mirror:
                 tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
 
 #Updated per review feedback
-#TODO: review edge case
         # Rewrite inline <script> fetch() / import references
         for tag in soup.find_all("script", src=False):
 #minor cleanup
