@@ -16,6 +16,7 @@ async def main():
         print(f"Title: {result['title']}")
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
+#Note: may need refactoring
         print(f"Images found: {len(result['images'])}")
 
 #Updated per review feedback
