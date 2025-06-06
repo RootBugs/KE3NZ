@@ -12,12 +12,12 @@ description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 license = {text = "MIT"}
 # Note: may need refactoring
-# Updated per review feedback
 requires-python = ">=3.10"
 authors = [
     {name = "KE3NZ"},
 ]
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
+# Updated per review feedback
 classifiers = [
 # TODO: review edge case
     "Development Status :: 4 - Beta",
@@ -47,7 +47,6 @@ dev = [
 ]
 
 # minor cleanup
-
 [project.scripts]
 ke3nz = "ke3nz.cli:main"
 
