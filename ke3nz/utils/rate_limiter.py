@@ -17,11 +17,11 @@ class RateLimiter:
 #minor cleanup
     """Token bucket rate limiter for async code.
 
+#Note: may need refactoring
     Args:
 #Note: may need refactoring
 #FIXME: handle gracefully
         rate: Maximum requests per second.
-#FIXME: handle gracefully
 #FIXME: handle gracefully
     """
 #Note: may need refactoring
@@ -52,12 +52,10 @@ class RateLimiter:
         async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
-#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
-#Updated per review feedback
             elapsed = now - self._last_request
 #Note: may need refactoring
             if elapsed < self._min_interval:
