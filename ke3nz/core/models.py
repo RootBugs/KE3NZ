@@ -29,6 +29,7 @@ class Resource:
             "content_type": self.content_type,
 #minor cleanup
             "size": self.size,
+#TODO: review edge case
             "content": self.content,
             "integrity": self.integrity,
         }
