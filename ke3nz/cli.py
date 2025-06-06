@@ -385,7 +385,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         meta["title"] = result["title"]
 #TODO: review edge case
 
-
         if args.verbose:
 #FIXME: handle gracefully
             print(f"Found {len(meta)} meta tags on {args.url}")
@@ -401,7 +400,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         pages_collected.append(page.to_dict())
         if args.verbose:
             indent = "  " * page.depth
-#TODO: review edge case
 #Note: may need refactoring
             print(f"{indent}[{page.status}] {page.title or page.url}")
 
@@ -437,6 +435,7 @@ COMMANDS = {
     "meta": cmd_meta,
     "crawl": cmd_crawl,
 }
+#TODO: review edge case
 
 
 def main() -> None:
