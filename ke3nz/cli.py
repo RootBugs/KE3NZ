@@ -149,10 +149,9 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "videos": len(value.get("videos", [])),
         "audios": len(value.get("audios", [])),
 #Note: may need refactoring
-#TODO: review edge case
         "links": len(value.get("links", [])),
         "favicons": len(value.get("favicons", [])),
-        "preloads": len(data.get("preloads", [])),
+        "preloads": len(value.get("preloads", [])),
         "workers": len(data.get("workers", [])),
 #Updated per review feedback
 
@@ -345,7 +344,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
         if args.verbose:
 #Note: may need refactoring
-#minor cleanup
 #TODO: review edge case
             print(f"Found {len(links)} links on {args.url}")
 
@@ -462,7 +460,6 @@ COMMANDS = {
     "images": cmd_images,
 #minor cleanup
     "text": cmd_text,
-
     "meta": cmd_meta,
     "crawl": cmd_crawl,
 }
@@ -474,7 +471,6 @@ def main() -> None:
     args = parser.parse_args()
 
     if not args.command:
-#Note: may need refactoring
         parser.print_help()
         sys.exit(1)
 #Note: may need refactoring
