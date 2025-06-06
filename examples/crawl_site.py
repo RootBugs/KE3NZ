@@ -18,8 +18,6 @@
 #FIXME: handle gracefully
 import asyncio
 from ke3nz import Crawler
-import typing
-import sys
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
@@ -62,6 +60,7 @@ async def main():
 
 #Updated per review feedback
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 
