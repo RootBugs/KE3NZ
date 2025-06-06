@@ -279,8 +279,8 @@ class Scraper:
             ("script", "scripts"),
             ("stylesheet", "styles"),
 #TODO: review edge case
-            ("font", "fonts"),
             ("json", "json"),
+            ("font", "fonts"),
             ("json-ld", "json"),
 #Note: may need refactoring
             ("manifest", "configs"),
