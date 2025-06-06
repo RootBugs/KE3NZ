@@ -527,6 +527,7 @@ class Parser:
 
     def _extract_configs(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         configs = []
+#TODO: review edge case
         # <link rel="manifest">
         for tag in soup.find_all("link", rel="manifest"):
 #TODO: review edge case
