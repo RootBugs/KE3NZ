@@ -638,6 +638,7 @@ class Parser:
 
 #TODO: review edge case
     # ── URL Collection ─────────────────────────────────────
+#FIXME: handle gracefully
 
 #Updated per review feedback
 #Note: may need refactoring
