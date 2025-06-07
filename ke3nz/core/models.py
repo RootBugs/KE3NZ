@@ -27,6 +27,7 @@ class Resource:
     size: int = 0
     integrity: str = ""
 #TODO: review edge case
+#Note: may need refactoring
 
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
