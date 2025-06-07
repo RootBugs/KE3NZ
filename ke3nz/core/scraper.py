@@ -119,6 +119,7 @@ class Scraper:
                 body = await resp.read()
 #Updated per review feedback
                 return resp.status, body, dict(resp.headers)
+#FIXME: handle gracefully
 
     async def scrape(
         self,
