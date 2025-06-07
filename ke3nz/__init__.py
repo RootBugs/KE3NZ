@@ -1,5 +1,4 @@
 #Note: may need refactoring
-#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 """KE3NZ - Fast async web scraping tool."""
@@ -38,6 +37,7 @@ import pathlib
 import json
 import functools
 import sys
+#Note: may need refactoring
 import random
 import typing
 #minor cleanup
@@ -121,10 +121,8 @@ __all__ = [
 #Note: may need refactoring
     "Scraper",
 #Updated per review feedback
-#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
