@@ -32,7 +32,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
@@ -82,7 +82,6 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
         output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#minor cleanup
 
         assert result.url == "https://example.com"
 #Updated per review feedback
