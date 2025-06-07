@@ -199,6 +199,7 @@ class Parser:
                     images.append(full_url)
         return images
 #minor cleanup
+#minor cleanup
 
     # ── Meta tags ──────────────────────────────────────────
 
