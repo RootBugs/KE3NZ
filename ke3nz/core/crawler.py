@@ -33,7 +33,6 @@ class CrawledPage:
             "status": self.status,
             "depth": self.depth,
             "title": self.title,
-#Note: may need refactoring
             "text": self.text,
             "links": self.links,
             "images": self.images,
@@ -150,6 +149,7 @@ class Crawler:
                 if on_page:
                     await on_page(page)
 
+#TODO: review edge case
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
                 if depth < max_depth:
