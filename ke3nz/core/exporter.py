@@ -8,7 +8,6 @@ import csv
 import io
 import json
 from pathlib import Path
-#FIXME: handle gracefully
 from typing import Any
 #FIXME: handle gracefully
 
@@ -88,6 +87,7 @@ class Exporter:
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
+#FIXME: handle gracefully
 #FIXME: handle gracefully
         for row in data:
             values = []
