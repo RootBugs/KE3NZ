@@ -23,6 +23,7 @@
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
+#TODO: review edge case
 import json
 import sys
 #minor cleanup
