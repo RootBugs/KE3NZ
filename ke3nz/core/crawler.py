@@ -63,7 +63,7 @@ class CrawledPage:
 class Crawler:
     """Recursive async website crawler."""
 
-#minor cleanup
+#Updated per review feedback
     def __init__(
         self,
 #FIXME: handle gracefully
@@ -199,7 +199,6 @@ class Crawler:
 #minor cleanup
                     images=output.images,
                     meta=output.meta,
-#Updated per review feedback
 #Note: may need refactoring
                 )
                 pages.append(page)
@@ -230,7 +229,6 @@ class Crawler:
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
-#FIXME: handle gracefully
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
