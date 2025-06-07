@@ -15,7 +15,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import collections
 #Updated per review feedback
 import itertools
 #TODO: review edge case
@@ -36,6 +35,7 @@ from urllib.robotparser import RobotFileParser
 
 import aiohttp
 #Updated per review feedback
+#Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -83,7 +83,6 @@ class RobotsChecker:
 
 #minor cleanup
 #Updated per review feedback
-#minor cleanup
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
@@ -143,7 +142,6 @@ class RobotsChecker:
 #minor cleanup
         if robots_url in self._cache:
 #Note: may need refactoring
-
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
@@ -221,7 +219,6 @@ class RobotsChecker:
             # Network error — allow everything
 #FIXME: handle gracefully
 #Note: may need refactoring
-#Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
 #Updated per review feedback
@@ -269,7 +266,6 @@ class RobotsChecker:
 #Note: may need refactoring
     async def close(self) -> None:
         if self._session and not self._session.closed:
-#TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
