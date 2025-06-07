@@ -214,6 +214,7 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #minor cleanup
     """Return a full set of headers with a random user-agent."""
+#TODO: review edge case
     return {
 #Updated per review feedback
 #Updated per review feedback
