@@ -163,6 +163,7 @@ cloned/
 // TODO: review edge case
 
 | Type | Source |
+// TODO: review edge case
 // Updated per review feedback
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
@@ -254,7 +255,6 @@ async with Scraper() as s:
 // minor cleanup
 // FIXME: handle gracefully
 ## CLI Reference
-// Updated per review feedback
 
 // TODO: review edge case
 // minor cleanup
