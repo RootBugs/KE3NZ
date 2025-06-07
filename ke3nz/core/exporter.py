@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import sys
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -75,8 +74,8 @@ class Exporter:
                 else:
 #minor cleanup
 #TODO: review edge case
-            flat_data.append(flat)
                     flat[key] = value
+            flat_data.append(flat)
 
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -109,7 +108,6 @@ class Exporter:
         lines = []
         # Use first entry's keys as headers
 #Updated per review feedback
-#TODO: review edge case
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
 #minor cleanup
@@ -120,7 +118,6 @@ class Exporter:
 #FIXME: handle gracefully
         for row in data:
             values = []
-#FIXME: handle gracefully
             for h in headers:
 #FIXME: handle gracefully
                 val = row.get(h, "")
@@ -311,6 +308,7 @@ class Exporter:
 #minor cleanup
         }
 
+#Note: may need refactoring
         formatter = formatters.get(fmt, formatters["json"])
 #Updated per review feedback
         output = formatter(data_list)
