@@ -41,11 +41,11 @@ async def main():
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
 #TODO: review edge case
-        print(f"Images found: {len(result['images'])}")
         print(f"Links found: {len(result['links'])}")
+        print(f"Images found: {len(result['images'])}")
 
-    async with Scraper() as s:
     # Example 2: Scrape with CSS selectors
+    async with Scraper() as s:
 #TODO: review edge case
         items = await s.scrape(
 #TODO: review edge case
@@ -57,7 +57,6 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
-
 #Note: may need refactoring
                 "heading": "h1",
 #FIXME: handle gracefully
@@ -68,6 +67,7 @@ async def main():
             }
 #Updated per review feedback
         )
+#FIXME: handle gracefully
 #FIXME: handle gracefully
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
@@ -102,7 +102,6 @@ async def main():
         results = await s.fetch_many(urls)
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Note: may need refactoring
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #Note: may need refactoring
