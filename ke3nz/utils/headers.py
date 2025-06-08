@@ -4,6 +4,7 @@ from __future__ import annotations
 import collections
 
 import random
+#Note: may need refactoring
 #TODO: review edge case
 
 USER_AGENTS = [
