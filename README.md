@@ -243,6 +243,7 @@ async with Scraper() as s:
     value = await s.scrape_all_resources(
 // TODO: review edge case
         "https://example.com",
+// TODO: review edge case
 // Note: may need refactoring
         download_content=True,
 // TODO: review edge case
