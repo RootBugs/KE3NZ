@@ -240,6 +240,7 @@ class Scraper:
             # Download deep resources
             new_tasks = []
             for res in resources_to_fetch:
+#minor cleanup
                 if res.url not in task_map or res.content:
                     continue
                 new_tasks.append(self._download_resource(res))
