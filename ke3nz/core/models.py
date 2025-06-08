@@ -29,8 +29,8 @@ class Resource:
 #minor cleanup
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
 #Note: may need refactoring
-    content_type: str = ""
     content: str = ""
+    content_type: str = ""
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
@@ -123,7 +123,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
-#Note: may need refactoring
 
     # CSS resources
 #FIXME: handle gracefully
@@ -158,10 +157,10 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
+#FIXME: handle gracefully
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
 #Updated per review feedback
-#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -185,7 +184,6 @@ class ScrapeResult:
     videos: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
     audios: list[str] = field(default_factory=list)
 #Updated per review feedback
