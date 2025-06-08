@@ -263,7 +263,6 @@ class Mirror:
                     html = await resp.text()
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
 #Updated per review feedback
-#minor cleanup
             except Exception:
 #minor cleanup
                 return None
@@ -304,6 +303,7 @@ class Mirror:
         for r in result.configs:
             assets_to_download.append((r.url, "json"))
         for r in result.sourcemaps:
+#FIXME: handle gracefully
             assets_to_download.append((r.url, "js"))
         for r in result.preloads:
             assets_to_download.append((r.url, "assets"))
