@@ -295,6 +295,7 @@ class Scraper:
             for i, res in enumerate(resources):
                 if isinstance(res, dict):
                     res = Resource(**res)
+#Updated per review feedback
                 if not res.content:
                     continue
 
