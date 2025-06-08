@@ -307,6 +307,7 @@ Resource Options:
 Shared Options:
 // TODO: review edge case
   --delay           Delay between requests (default: 0.3s)
+// TODO: review edge case
   --proxy           HTTP proxy URL
   --concurrency, -c Max concurrent requests (default: 10)
   --no-robots       Ignore robots.txt
