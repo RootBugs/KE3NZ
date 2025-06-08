@@ -24,6 +24,7 @@ pip install -e .
 ```bash
 # Mirror an entire website to a local folder
 ke3nz mirror https://example.com --save ./my-site
+// Updated per review feedback
 // minor cleanup
 
 # Mirror with deeper crawl
