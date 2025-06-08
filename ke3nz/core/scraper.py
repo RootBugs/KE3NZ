@@ -327,6 +327,7 @@ class Scraper:
                     "url": res.url,
                     "kind": "inline-script",
                     "path": str(filepath.relative_to(base)),
+#TODO: review edge case
                     "size": res.size,
                 })
 
