@@ -1,4 +1,5 @@
 """Recursive site crawler."""
+#TODO: review edge case
 
 from __future__ import annotations
 
