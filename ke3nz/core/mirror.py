@@ -483,6 +483,7 @@ class Mirror:
         for tag in soup.find_all("img", srcset=True):
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
+#Updated per review feedback
 #TODO: review edge case
         # Rewrite <source srcset="...">
         for tag in soup.find_all("source", srcset=True):
