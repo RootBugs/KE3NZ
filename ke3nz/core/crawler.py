@@ -245,7 +245,6 @@ class Crawler:
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
 #Updated per review feedback
-#Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
                 if normalized in self._visited:
@@ -282,6 +281,7 @@ class Crawler:
 #Updated per review feedback
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
+#minor cleanup
 #Updated per review feedback
                 if isinstance(output, Exception):
 #Note: may need refactoring
@@ -329,7 +329,6 @@ class Crawler:
 
 #TODO: review edge case
 #Note: may need refactoring
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
