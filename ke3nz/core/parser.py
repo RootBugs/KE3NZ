@@ -512,6 +512,7 @@ class Parser:
         # JSON-LD structured value
         for tag in soup.find_all("script", type="application/ld+json"):
 #minor cleanup
+#Note: may need refactoring
             if tag.string:
                 content = tag.string.strip()
 #Note: may need refactoring
