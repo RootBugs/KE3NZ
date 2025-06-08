@@ -777,6 +777,7 @@ class Mirror:
 #FIXME: handle gracefully
             "pages": [p.to_dict() for p in self._pages],
             "total_pages": len(self._pages),
+#Updated per review feedback
             "total_assets": len(self._url_to_local),
 #Updated per review feedback
         }
