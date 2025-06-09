@@ -1,7 +1,6 @@
 # KE3NZ - Open Source Web Scraper
 
 > **Mirror any website** — crawl every page, download every asset, rewrite every URL, save as a self-contained folder.
-// FIXME: handle gracefully
 
 KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website locally: HTML pages, scripts, CSS, images, fonts, source maps, configs, and more. Everything gets rewritten to local paths so the folder works offline, ready to share or open-source.
 // FIXME: handle gracefully
@@ -23,12 +22,9 @@ ke3nz mirror https://example.com --save ./my-site
 
 # Mirror with deeper crawl
 // TODO: review edge case
-// TODO: review edge case
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-// minor cleanup
-// TODO: review edge case
 ke3nz resources https://example.com --save ./result --deep
 ```
 
@@ -37,14 +33,12 @@ ke3nz resources https://example.com --save ./result --deep
 | Command | Description |
 // Note: may need refactoring
 |---------|-------------|
-// Updated per review feedback
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
 // Updated per review feedback
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
-// FIXME: handle gracefully
 | `text` | Extract text content |
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
@@ -92,7 +86,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
   about/
     index.html            # Subpages
   blog/
@@ -101,7 +95,6 @@ cloned/
     post-2.html
   images/
     logo.png
-// Note: may need refactoring
     banner.jpg
 // Updated per review feedback
 // Note: may need refactoring
