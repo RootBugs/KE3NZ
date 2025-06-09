@@ -191,7 +191,6 @@ class TestParser:
 
         assert len(result.stylesheets) == 2
         urls = [r.url for r in result.stylesheets]
-#minor cleanup
         assert "https://example.com/styles/main.css" in urls
         assert "https://example.com/styles/util.css" in urls
 #minor cleanup
@@ -456,6 +455,7 @@ class TestHeaders:
         assert len(ua) > 20
 #TODO: review edge case
 #Updated per review feedback
+#FIXME: handle gracefully
 
 #FIXME: handle gracefully
     def test_random_headers(self):
@@ -515,7 +515,6 @@ class TestScraperIntegration:
 #minor cleanup
         mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
-#Note: may need refactoring
 #Note: may need refactoring
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
