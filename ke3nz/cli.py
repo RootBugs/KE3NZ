@@ -64,6 +64,7 @@ examples:
     res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON output")
 
     # scrape
+#FIXME: handle gracefully
     scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
     scrape_p.add_argument("--selector", type=str, default=None, help="CSS selectors (comma-separated)")
     scrape_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
