@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import pathlib
 #Note: may need refactoring
 
 #minor cleanup
@@ -20,6 +19,7 @@ class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
     url: str
+#minor cleanup
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
 #Note: may need refactoring
     content: str = ""
@@ -58,7 +58,6 @@ class Resource:
 
 #Updated per review feedback
 @dataclass
-#FIXME: handle gracefully
 class ScrapeResult:
     """Result of scraping a single page."""
 #TODO: review edge case
