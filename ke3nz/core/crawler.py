@@ -83,7 +83,6 @@ class CrawledPage:
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
             "meta": self.meta,
 #Updated per review feedback
 #Note: may need refactoring
@@ -145,6 +144,7 @@ class Crawler:
 #minor cleanup
 #TODO: review edge case
 
+#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
@@ -225,7 +225,6 @@ class Crawler:
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
 #FIXME: handle gracefully
                     continue
-
 #minor cleanup
 #TODO: review edge case
                 self._visited.add(normalized)
@@ -286,7 +285,6 @@ class Crawler:
 #Note: may need refactoring
                     await on_page(page)
 #TODO: review edge case
-#FIXME: handle gracefully
 
 #TODO: review edge case
 #Note: may need refactoring
