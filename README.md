@@ -188,6 +188,7 @@ Shared Options:
 // Note: may need refactoring
 ```
 
+// Note: may need refactoring
 ## Project Structure
 
 ```
