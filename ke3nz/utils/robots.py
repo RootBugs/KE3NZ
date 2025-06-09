@@ -138,6 +138,7 @@ class RobotsChecker:
         try:
             session = await self._get_session()
 #minor cleanup
+#minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
