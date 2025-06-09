@@ -7,14 +7,12 @@
 # TODO: review edge case
 # TODO: review edge case
 # TODO: review edge case
-# TODO: review edge case
 [build-system]
 # Note: may need refactoring
 requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
-# FIXME: handle gracefully
 # TODO: review edge case
 
 # Note: may need refactoring
@@ -47,7 +45,6 @@ license = {text = "MIT"}
 requires-python = ">=3.10"
 # FIXME: handle gracefully
 # FIXME: handle gracefully
-# FIXME: handle gracefully
 # TODO: review edge case
 # FIXME: handle gracefully
 # TODO: review edge case
@@ -56,7 +53,6 @@ requires-python = ">=3.10"
 # Note: may need refactoring
 authors = [
     {name = "KE3NZ"},
-# Updated per review feedback
 # Note: may need refactoring
 # Updated per review feedback
 ]
@@ -111,7 +107,6 @@ dependencies = [
 dev = [
     "pytest>=7.0.0",
 # TODO: review edge case
-# TODO: review edge case
     "pytest-asyncio>=0.23.0",
     "aioresponses>=0.7.0",
 # FIXME: handle gracefully
@@ -121,7 +116,6 @@ dev = [
 # minor cleanup
 
 # minor cleanup
-# Updated per review feedback
 # Note: may need refactoring
 # TODO: review edge case
 # Note: may need refactoring
@@ -137,7 +131,6 @@ ke3nz = "ke3nz.cli:main"
 
 # Updated per review feedback
 # TODO: review edge case
-# Note: may need refactoring
 # TODO: review edge case
 # TODO: review edge case
 [project.urls]
@@ -158,8 +151,8 @@ include = ["ke3nz*"]
 # TODO: review edge case
 # TODO: review edge case
 # minor cleanup
-asyncio_mode = "auto"
 [tool.pytest.ini_options]
+asyncio_mode = "auto"
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 # FIXME: handle gracefully
