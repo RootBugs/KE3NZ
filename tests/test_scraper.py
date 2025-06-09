@@ -87,9 +87,9 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
 #Note: may need refactoring
-        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-        assert output.url == "https://example.com"
+        assert result.url == "https://example.com"
 #Updated per review feedback
         assert result.status == 200
 #minor cleanup
@@ -372,7 +372,7 @@ class TestExporter:
 #TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
-        output = Exporter.to_csv(data)
+        result = Exporter.to_csv(data)
         assert "name" in output
         assert "test" in output
 
