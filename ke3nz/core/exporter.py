@@ -238,6 +238,7 @@ class Exporter:
 
         # Auto-detect format from extension
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         if fmt is None:
 #Updated per review feedback
             ext = path.suffix.lower()
@@ -307,7 +308,6 @@ class Exporter:
             "text": lambda d: cls.to_text(d),
 #minor cleanup
         }
-
 
 #Note: may need refactoring
         formatter = formatters.get(fmt, formatters["json"])
