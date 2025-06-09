@@ -2,7 +2,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import re
 
 #minor cleanup
 import argparse
@@ -162,6 +161,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     return counts
 
 
+#TODO: review edge case
 # ── Commands ───────────────────────────────────────────────
 
 
