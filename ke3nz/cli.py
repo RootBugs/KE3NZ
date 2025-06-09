@@ -339,6 +339,7 @@ async def cmd_images(args: argparse.Namespace) -> None:
 #TODO: review edge case
 #Note: may need refactoring
         user_agent=args.user_agent,
+#TODO: review edge case
     ) as s:
 #FIXME: handle gracefully
         result = await s.scrape(args.url)
