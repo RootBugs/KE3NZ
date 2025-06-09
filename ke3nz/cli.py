@@ -346,6 +346,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
 
 
 async def cmd_meta(args: argparse.Namespace) -> None:
+#Updated per review feedback
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
