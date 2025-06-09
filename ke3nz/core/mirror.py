@@ -160,6 +160,7 @@ class Mirror:
 
                 # Determine local path for this HTML page
                 local_path = self._url_to_local_path(url, is_html=True)
+#Note: may need refactoring
 
                 # Download all assets for this page
                 resources = await self._download_page_assets(result, base, url)
