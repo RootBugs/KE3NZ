@@ -519,8 +519,8 @@ class Mirror:
             if not entry:
                 continue
             tokens = entry.split()
-            url = tokens[0]
             original = self._resolve_url(url, page_url)
+            url = tokens[0]
             if original in resources:
                 tokens[0] = resources[original]
             parts.append(" ".join(tokens))
