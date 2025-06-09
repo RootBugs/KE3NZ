@@ -29,6 +29,7 @@ examples:
   ke3nz mirror https://example.com --save ./site --depth 5 -v
   ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
+#TODO: review edge case
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
 """,
@@ -64,7 +65,6 @@ examples:
     res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON output")
 
     # scrape
-#FIXME: handle gracefully
     scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
     scrape_p.add_argument("--selector", type=str, default=None, help="CSS selectors (comma-separated)")
     scrape_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
@@ -378,7 +378,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 #Note: may need refactoring
             print(f"{indent}[{page.status}] {page.title or page.url}")
 
-#minor cleanup
     if args.verbose:
 #FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
