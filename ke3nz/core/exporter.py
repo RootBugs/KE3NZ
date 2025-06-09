@@ -308,6 +308,7 @@ class Exporter:
 #minor cleanup
         }
 
+
 #Note: may need refactoring
         formatter = formatters.get(fmt, formatters["json"])
 #Updated per review feedback
