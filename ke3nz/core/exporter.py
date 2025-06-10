@@ -230,6 +230,7 @@ class Exporter:
 
 #FIXME: handle gracefully
         # Ensure data is a list for table formats
+#TODO: review edge case
 #minor cleanup
         if isinstance(data, dict):
 #Note: may need refactoring
