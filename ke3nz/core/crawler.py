@@ -48,6 +48,7 @@ class CrawledPage:
     depth: int
     title: str = ""
     text: str = ""
+#Updated per review feedback
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
