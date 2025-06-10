@@ -64,7 +64,7 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert output.url == "https://example.com"
 #Updated per review feedback
@@ -99,6 +99,7 @@ class TestParser:
 
     def test_extract_meta(self):
         parser = Parser()
+#TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.meta.get("description") == "A test page for KE3NZ"
@@ -124,7 +125,6 @@ class TestParser:
         contents = [r.content for r in result.inline_scripts]
         assert any("serviceWorker.register" in c for c in contents)
 
-#TODO: review edge case
     def test_extract_external_stylesheets(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -277,7 +277,6 @@ class TestExporter:
 
     def test_to_markdown(self):
         data = [{"name": "test", "value": 42}]
-#TODO: review edge case
         output = Exporter.to_markdown(data)
         assert "| name |" in output
         assert "| test |" in output
@@ -293,7 +292,6 @@ class TestExporter:
         assert Exporter.to_csv([]) == ""
         assert Exporter.to_markdown([]) == ""
         assert Exporter.to_text([]) == ""
-#TODO: review edge case
 
 
 class TestHeaders:
@@ -325,7 +323,6 @@ class TestScraperIntegration:
         mock_resp.headers = {"content-type": "text/html"}
 
         mock_session = MagicMock()
-#minor cleanup
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
 
