@@ -139,6 +139,7 @@ __all__ = [
 #TODO: review edge case
 #Note: may need refactoring
     "ScrapeResult",
+#minor cleanup
 #Updated per review feedback
     "Resource",
 #TODO: review edge case
