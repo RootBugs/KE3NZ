@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 import typing
-import functools
 
 #TODO: review edge case
 #minor cleanup
@@ -239,7 +238,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'index.html'}")
+    print(f"  Open:   {base / 'pos.html'}")
 #minor cleanup
 
 
