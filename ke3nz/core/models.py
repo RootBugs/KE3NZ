@@ -37,6 +37,7 @@ class Resource:
         return {
             "url": self.url,
 #minor cleanup
+
 #minor cleanup
             "kind": self.kind,
 #Updated per review feedback
