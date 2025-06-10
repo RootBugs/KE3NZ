@@ -24,7 +24,6 @@ pip install -e .
 ```bash
 # Mirror an entire website to a local folder
 ke3nz mirror https://example.com --save ./my-site
-// Updated per review feedback
 // minor cleanup
 
 # Mirror with deeper crawl
@@ -33,11 +32,10 @@ ke3nz mirror https://example.com --save ./my-site
 // TODO: review edge case
 // minor cleanup
 ke3nz mirror https://example.com --save ./site --depth 5 -v
-// minor cleanup
 
 // minor cleanup
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./result --deep
+ke3nz resources https://example.com --save ./output --deep
 ```
 // TODO: review edge case
 
@@ -243,7 +241,6 @@ async with Scraper() as s:
     value = await s.scrape_all_resources(
 // TODO: review edge case
         "https://example.com",
-// TODO: review edge case
 // Note: may need refactoring
         download_content=True,
 // TODO: review edge case
@@ -309,7 +306,6 @@ Resource Options:
 Shared Options:
 // TODO: review edge case
   --delay           Delay between requests (default: 0.3s)
-// TODO: review edge case
   --proxy           HTTP proxy URL
   --concurrency, -c Max concurrent requests (default: 10)
   --no-robots       Ignore robots.txt
