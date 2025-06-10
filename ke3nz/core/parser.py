@@ -190,6 +190,7 @@ class Parser:
 #Updated per review feedback
 
     # ── Images ─────────────────────────────────────────────
+#Updated per review feedback
 
 #FIXME: handle gracefully
 #FIXME: handle gracefully
