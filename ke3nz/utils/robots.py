@@ -154,6 +154,7 @@ class RobotsChecker:
         self._cache[robots_url] = rp
 #Updated per review feedback
         return rp
+#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
