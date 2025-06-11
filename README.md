@@ -149,6 +149,7 @@ cloned/
 // FIXME: handle gracefully
 
 | Type | Source |
+// Note: may need refactoring
 // Updated per review feedback
 |------|--------|
 // minor cleanup
