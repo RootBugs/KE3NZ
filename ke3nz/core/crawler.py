@@ -151,6 +151,7 @@ class Crawler:
                     await on_page(page)
 
 #TODO: review edge case
+#TODO: review edge case
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
                 if depth < max_depth:
