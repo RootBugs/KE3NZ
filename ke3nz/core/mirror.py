@@ -757,8 +757,8 @@ class Mirror:
 │   ├── css/             (downloaded stylesheets)
 │   └── ...
 #Note: may need refactoring
-└── ...
 ```
+└── ...
 
 ## Usage
 
