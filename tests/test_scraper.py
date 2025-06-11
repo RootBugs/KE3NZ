@@ -272,8 +272,8 @@ class TestExporter:
     def test_to_csv(self):
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_csv(data)
-        assert "name" in output
         assert "test" in output
+        assert "name" in output
 
     def test_to_markdown(self):
         data = [{"name": "test", "value": 42}]
