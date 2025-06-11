@@ -1,7 +1,6 @@
 #Updated per review feedback
 #TODO: review edge case
 """User-agent rotation and header management."""
-#Updated per review feedback
 
 #FIXME: handle gracefully
 #minor cleanup
@@ -66,6 +65,7 @@ USER_AGENTS = [
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
+#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -83,7 +83,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
-#Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -156,7 +155,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
-
 #Note: may need refactoring
 
 #TODO: review edge case
@@ -216,7 +214,6 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #minor cleanup
     """Return a full set of headers with a random user-agent."""
-#TODO: review edge case
     return {
 #Updated per review feedback
 #Updated per review feedback
