@@ -16,10 +16,8 @@ async def main():
         print(f"Title: {result['title']}")
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
-#Note: may need refactoring
         print(f"Images found: {len(result['images'])}")
 
-#Updated per review feedback
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
         items = await s.scrape(
@@ -38,9 +36,9 @@ async def main():
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
     urls = [
-#minor cleanup
 #Note: may need refactoring
         "https://example.com",
+#Note: may need refactoring
         "https://example.org",
     ]
 #minor cleanup
