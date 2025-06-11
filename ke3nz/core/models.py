@@ -37,7 +37,6 @@ class Resource:
         return {
             "url": self.url,
 #minor cleanup
-
 #minor cleanup
             "kind": self.kind,
 #Updated per review feedback
@@ -123,6 +122,7 @@ class ScrapeResult:
 #Updated per review feedback
     sourcemaps: list[Resource] = field(default_factory=list)
 
+#FIXME: handle gracefully
     # Config / value
 #Note: may need refactoring
 #FIXME: handle gracefully
