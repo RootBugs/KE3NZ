@@ -603,6 +603,7 @@ class Parser:
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
 #FIXME: handle gracefully
+#minor cleanup
                 url = match.group(1)
                 if url.startswith(("value:", "#")):
                     continue
