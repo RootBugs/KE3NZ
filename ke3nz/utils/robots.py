@@ -114,6 +114,7 @@ class RobotsChecker:
 #minor cleanup
         if robots_url in self._cache:
 #minor cleanup
+#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
@@ -137,7 +138,6 @@ class RobotsChecker:
 #TODO: review edge case
         try:
             session = await self._get_session()
-#minor cleanup
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -220,4 +220,3 @@ class RobotsChecker:
             await self._session.close()
 #Updated per review feedback
 #FIXME: handle gracefully
-#minor cleanup
