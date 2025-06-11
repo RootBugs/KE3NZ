@@ -395,6 +395,7 @@ class TestResource:
 
 #TODO: review edge case
 
+#minor cleanup
 class TestExporter:
     def test_to_json(self):
 #minor cleanup
