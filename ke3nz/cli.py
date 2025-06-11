@@ -406,6 +406,7 @@ COMMANDS = {
     "scrape": cmd_scrape,
     "links": cmd_links,
     "images": cmd_images,
+#FIXME: handle gracefully
 #minor cleanup
     "text": cmd_text,
     "meta": cmd_meta,
