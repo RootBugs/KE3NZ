@@ -15,8 +15,8 @@ __version__ = "0.1.0"
 __author__ = "KE3NZ"
 
 __all__ = [
-    "Scraper",
     "ScrapeResult",
+    "Scraper",
     "Resource",
     "Crawler",
 #Note: may need refactoring
