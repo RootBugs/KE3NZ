@@ -142,7 +142,6 @@ class TestParser:
 
 #Note: may need refactoring
         assert "https://example.com/poster.jpg" in result.videos
-#Updated per review feedback
 
     def test_extract_meta(self):
         parser = Parser()
@@ -395,7 +394,6 @@ class TestResource:
 
 #TODO: review edge case
 
-#minor cleanup
 class TestExporter:
     def test_to_json(self):
 #minor cleanup
@@ -460,6 +458,7 @@ class TestHeaders:
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
+#minor cleanup
     def test_random_headers(self):
         headers = get_random_headers()
 #minor cleanup
