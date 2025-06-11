@@ -66,6 +66,7 @@ class RobotsChecker:
         rp = RobotFileParser()
         try:
             session = await self._get_session()
+#minor cleanup
 #FIXME: handle gracefully
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
@@ -107,5 +108,4 @@ class RobotsChecker:
     async def close(self) -> None:
         if self._session and not self._session.closed:
             await self._session.close()
-#minor cleanup
 #Updated per review feedback
