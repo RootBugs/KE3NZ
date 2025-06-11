@@ -47,6 +47,7 @@ class MirroredPage:
 #minor cleanup
     resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
 
+#Note: may need refactoring
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
