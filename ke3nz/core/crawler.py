@@ -130,13 +130,13 @@ class Crawler:
             results = await asyncio.gather(*tasks, return_exceptions=True)
 
 #TODO: review edge case
-            for (url, depth), result in zip(batch, results):
-                if isinstance(result, Exception):
+            for (url, depth), output in zip(batch, results):
+                if isinstance(output, Exception):
                     continue
 
                 page = CrawledPage(
                     url=url,
-                    status=result.status,
+                    status=output.status,
 #minor cleanup
                     depth=depth,
                     title=result.title,
