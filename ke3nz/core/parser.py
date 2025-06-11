@@ -121,6 +121,7 @@ class Parser:
             videos=videos,
             audios=audios,
             workers=workers,
+#Note: may need refactoring
             iframes=iframes,
             configs=configs,
             json_data=json_data,
