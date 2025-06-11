@@ -11,18 +11,18 @@ from ke3nz.core.mirror import Mirror, MirroredPage
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 
+#FIXME: handle gracefully
 __version__ = "0.1.0"
 __author__ = "KE3NZ"
 
 __all__ = [
-    "ScrapeResult",
     "Scraper",
+    "ScrapeResult",
     "Resource",
     "Crawler",
 #Note: may need refactoring
     "CrawledPage",
     "Mirror",
-
     "MirroredPage",
     "Parser",
 #Note: may need refactoring
