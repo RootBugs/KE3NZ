@@ -5,12 +5,10 @@
 KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website locally: HTML pages, scripts, CSS, images, fonts, source maps, configs, and more. Everything gets rewritten to local paths so the folder works offline, ready to share or open-source.
 // FIXME: handle gracefully
 
-
 // minor cleanup
 ## Install
 
 // TODO: review edge case
-// minor cleanup
 ```bash
 cd KE3NZ
 pip install -e .
@@ -70,7 +68,6 @@ This is the main feature. It:
 ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
 // minor cleanup
-// TODO: review edge case
 
 // FIXME: handle gracefully
 # Deep mirror (follow more links)
@@ -109,6 +106,7 @@ cloned/
   images/
     logo.png
 // Note: may need refactoring
+// FIXME: handle gracefully
     banner.jpg
 // Updated per review feedback
 // Note: may need refactoring
@@ -188,7 +186,6 @@ from ke3nz import Scraper, Mirror
 async with Mirror(max_depth=3) as m:
 // minor cleanup
     await m.mirror("https://example.com", "./output")
-// minor cleanup
 // Updated per review feedback
 // minor cleanup
 
@@ -276,7 +273,6 @@ KE3NZ/
     core/
       models.py           # Resource + ScrapeResult dataclasses
 // minor cleanup
-// Note: may need refactoring
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
       scraper.py          # Async fetch engine + deep scanning
