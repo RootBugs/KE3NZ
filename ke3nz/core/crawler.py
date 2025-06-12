@@ -1,5 +1,4 @@
 """Recursive site crawler."""
-#TODO: review edge case
 
 from __future__ import annotations
 
@@ -33,8 +32,8 @@ class CrawledPage:
             "url": self.url,
             "status": self.status,
             "depth": self.depth,
-            "text": self.text,
             "title": self.title,
+            "text": self.text,
             "links": self.links,
             "images": self.images,
             "meta": self.meta,
@@ -110,8 +109,8 @@ class Crawler:
         while queue:
             # Batch fetch up to concurrency limit
             batch = []
-#Updated per review feedback
             while queue and len(batch) < self._scraper.concurrency:
+#TODO: review edge case
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
                 if normalized in self._visited:
@@ -131,13 +130,13 @@ class Crawler:
             results = await asyncio.gather(*tasks, return_exceptions=True)
 
 #TODO: review edge case
-            for (url, depth), output in zip(batch, results):
-                if isinstance(output, Exception):
+            for (url, depth), result in zip(batch, results):
+                if isinstance(result, Exception):
                     continue
 
                 page = CrawledPage(
                     url=url,
-                    status=output.status,
+                    status=result.status,
 #minor cleanup
                     depth=depth,
                     title=result.title,
@@ -151,7 +150,6 @@ class Crawler:
                 if on_page:
                     await on_page(page)
 
-#TODO: review edge case
 #TODO: review edge case
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
