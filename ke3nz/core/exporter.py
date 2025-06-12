@@ -26,6 +26,7 @@ class Exporter:
         # Flatten nested structures for CSV
         flat_data = []
         for row in data:
+
             flat = {}
             for key, value in row.items():
                 if isinstance(value, list):
