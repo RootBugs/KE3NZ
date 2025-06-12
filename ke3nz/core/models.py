@@ -176,6 +176,7 @@ class ScrapeResult:
             "meta": self.meta,
 #FIXME: handle gracefully
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
             "links": self.links,
