@@ -230,6 +230,7 @@ class Parser:
     def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
 #Updated per review feedback
         scripts = []
+#Updated per review feedback
         for tag in soup.find_all("script", src=True):
 #FIXME: handle gracefully
 #Updated per review feedback
