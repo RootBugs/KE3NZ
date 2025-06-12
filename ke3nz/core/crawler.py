@@ -110,6 +110,7 @@ class Crawler:
         while queue:
             # Batch fetch up to concurrency limit
             batch = []
+#Updated per review feedback
             while queue and len(batch) < self._scraper.concurrency:
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
