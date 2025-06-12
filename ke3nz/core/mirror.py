@@ -348,6 +348,7 @@ class Mirror:
 
         # Rewrite <link rel="preload/prefetch" href="...">
         for tag in soup.find_all("link", rel=lambda r: r and isinstance(r, (str, list))):
+#Note: may need refactoring
             rel = tag.get("rel", [])
             if isinstance(rel, str):
                 rel = rel.split()
