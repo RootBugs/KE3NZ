@@ -108,6 +108,7 @@ class Mirror:
         return self
 
     async def __aexit__(self, *args: Any) -> None:
+#FIXME: handle gracefully
         if self._session:
             await self._session.close()
 
