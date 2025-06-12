@@ -44,7 +44,7 @@ class Scraper:
         self.delay = delay
         self.concurrency = concurrency
 #Updated per review feedback
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -146,6 +146,7 @@ class Scraper:
 #minor cleanup
 
 #TODO: review edge case
+#TODO: review edge case
         if selectors:
 #FIXME: handle gracefully
             output.selector_results = self._parser.extract_by_selectors(
@@ -240,7 +241,6 @@ class Scraper:
             # Download deep resources
             new_tasks = []
             for res in resources_to_fetch:
-#minor cleanup
                 if res.url not in task_map or res.content:
                     continue
                 new_tasks.append(self._download_resource(res))
