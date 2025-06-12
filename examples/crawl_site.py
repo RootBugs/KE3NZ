@@ -20,7 +20,6 @@
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
-#minor cleanup
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
 #Note: may need refactoring
@@ -57,7 +56,6 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
-import functools
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -83,6 +81,7 @@ from ke3nz import Crawler
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
+#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
@@ -113,7 +112,6 @@ async def main():
         pages = await c.crawl("https://example.com", max_depth=2)
 #minor cleanup
 #FIXME: handle gracefully
-#Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
 
@@ -173,20 +171,17 @@ async def main():
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
         indent = "  " * page.depth
-#Note: may need refactoring
 #TODO: review edge case
         print(f"{indent}[{page.status}] {page.title or page.url}")
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
-#FIXME: handle gracefully
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -204,13 +199,11 @@ async def main():
 #Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
-#Updated per review feedback
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
