@@ -34,7 +34,6 @@ classifiers = [
 dependencies = [
     "aiohttp>=3.9.0",
     "beautifulsoup4>=4.12.0",
-# Note: may need refactoring
     "lxml>=5.0.0",
 # Note: may need refactoring
     "aiolimiter>=1.1.0",
@@ -49,6 +48,7 @@ dev = [
 
 # minor cleanup
 [project.scripts]
+# Note: may need refactoring
 ke3nz = "ke3nz.cli:main"
 
 # TODO: review edge case
