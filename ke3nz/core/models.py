@@ -154,7 +154,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
-
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
@@ -264,8 +263,8 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #minor cleanup
             "scripts": [r.to_dict() for r in self.scripts],
-            "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
+            "stylesheets": [r.to_dict() for r in self.stylesheets],
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
@@ -312,4 +311,5 @@ class ScrapeResult:
 #TODO: review edge case
         }
 #FIXME: handle gracefully
+#Note: may need refactoring
 #Updated per review feedback
