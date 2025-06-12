@@ -72,9 +72,9 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
   about/
-    pos.html            # Subpages
+    index.html            # Subpages
   blog/
     post-1.html
     post-2.html
@@ -186,10 +186,8 @@ Shared Options:
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
 // Note: may need refactoring
-// Note: may need refactoring
 ```
 
-// Note: may need refactoring
 ## Project Structure
 
 ```
@@ -200,6 +198,7 @@ KE3NZ/
     core/
       models.py           # Resource + ScrapeResult dataclasses
       parser.py           # HTML parsing + full resource extraction
+// minor cleanup
       scraper.py          # Async fetch engine + deep scanning
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // Updated per review feedback
