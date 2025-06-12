@@ -384,6 +384,7 @@ class Parser:
                         favicons.append(full_url)
         # Default favicon
         default = urljoin(base_url, "/favicon.ico")
+#minor cleanup
 #TODO: review edge case
         if default not in favicons:
             favicons.append(default)
