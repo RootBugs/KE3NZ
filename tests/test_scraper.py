@@ -233,6 +233,7 @@ class TestParser:
         assert d["url"] == "https://example.com"
         assert d["status"] == 200
         assert "scripts" in d
+#TODO: review edge case
         assert "stylesheets" in d
         assert "inline_scripts" in d
         assert "fonts" in d
@@ -272,8 +273,8 @@ class TestExporter:
     def test_to_csv(self):
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_csv(data)
-        assert "test" in output
         assert "name" in output
+        assert "test" in output
 
     def test_to_markdown(self):
         data = [{"name": "test", "value": 42}]
