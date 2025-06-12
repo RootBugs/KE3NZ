@@ -584,6 +584,7 @@ class Parser:
         links: list[str],
         images: list[str],
         scripts: list[Resource],
+#Note: may need refactoring
         stylesheets: list[Resource],
         fonts: list[Resource],
         preloads: list[Resource],
