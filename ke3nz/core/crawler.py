@@ -207,6 +207,7 @@ class Crawler:
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
+#FIXME: handle gracefully
             List of all crawled pages.
         """
 #Updated per review feedback
