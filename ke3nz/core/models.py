@@ -67,8 +67,8 @@ class ScrapeResult:
 #FIXME: handle gracefully
     url: str
 #minor cleanup
-    status: int
     html: str
+    status: int
     title: str = ""
 #Updated per review feedback
 #Note: may need refactoring
