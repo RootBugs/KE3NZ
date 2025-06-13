@@ -411,6 +411,7 @@ class Parser:
 #minor cleanup
     # ── Favicons ───────────────────────────────────────────
 
+#TODO: review edge case
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
 #Note: may need refactoring
