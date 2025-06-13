@@ -137,6 +137,7 @@ cloned/
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
 // Updated per review feedback
+// Updated per review feedback
 
 ## The `resources` Command
 
