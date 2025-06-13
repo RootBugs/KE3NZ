@@ -261,6 +261,7 @@ class Parser:
     # ── External Scripts ───────────────────────────────────
 
     def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+#FIXME: handle gracefully
 #Updated per review feedback
         scripts = []
         for tag in soup.find_all("script", src=True):
