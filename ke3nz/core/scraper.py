@@ -249,6 +249,7 @@ class Scraper:
                 configs/
                 inline/
 #FIXME: handle gracefully
+#FIXME: handle gracefully
                 sourcemaps/
                 manifest.json  (resource index)
         """
