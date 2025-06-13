@@ -40,7 +40,6 @@ ke3nz resources https://example.com --save ./output --deep
 // TODO: review edge case
 
 // minor cleanup
-// TODO: review edge case
 ## Commands
 // Note: may need refactoring
 
@@ -351,6 +350,7 @@ KE3NZ/
       exporter.py         # JSON/CSV/MD/text export
     utils/
       headers.py          # User-agent rotation
+// Note: may need refactoring
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
   tests/
