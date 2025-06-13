@@ -27,8 +27,8 @@ async def main():
                 "paragraphs": "p",
             }
         )
-        print("\nSelector results:")
         for key, values in items["selector_results"].items():
+        print("\nSelector results:")
 #TODO: review edge case
             print(f"  {key}: {values}")
 
