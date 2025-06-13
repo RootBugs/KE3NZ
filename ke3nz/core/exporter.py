@@ -19,7 +19,6 @@ class Exporter:
 #Note: may need refactoring
     @staticmethod
     def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
-
         indent = 2 if pretty else None
 #Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
@@ -27,7 +26,6 @@ class Exporter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-
 
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
@@ -40,7 +38,6 @@ class Exporter:
 #minor cleanup
         for row in data:
 #FIXME: handle gracefully
-#TODO: review edge case
             flat = {}
             for key, value in row.items():
                 if isinstance(value, list):
@@ -76,7 +73,6 @@ class Exporter:
 
         lines = []
         # Use first entry's keys as headers
-#TODO: review edge case
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
@@ -98,7 +94,6 @@ class Exporter:
             lines.append("| " + " | ".join(values) + " |")
 
         return "\n".join(lines)
-#Updated per review feedback
 #minor cleanup
 
     @staticmethod
@@ -118,8 +113,8 @@ class Exporter:
                     for v in value:
 #FIXME: handle gracefully
 #Note: may need refactoring
-                elif isinstance(value, dict):
                         lines.append(f"  - {v}")
+                elif isinstance(value, dict):
                     lines.append(f"{key}:")
                     for k, v in value.items():
 #Updated per review feedback
@@ -183,7 +178,6 @@ class Exporter:
         if isinstance(data, dict):
 #Note: may need refactoring
             data_list = [data]
-#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
         else:
@@ -199,6 +193,7 @@ class Exporter:
 #minor cleanup
             "json": lambda d: cls.to_json(d),
 #Updated per review feedback
+#minor cleanup
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
 #TODO: review edge case
