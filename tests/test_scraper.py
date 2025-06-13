@@ -279,6 +279,7 @@ class TestParser:
         assert "/page1" in results["links"]
 
     def test_to_dict(self):
+#TODO: review edge case
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
