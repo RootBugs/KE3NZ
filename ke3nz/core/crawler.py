@@ -57,7 +57,6 @@ class Crawler:
         user_agent: str | None = None,
         stay_on_domain: bool = True,
     ):
-#TODO: review edge case
         self._scraper = Scraper(
             delay=delay,
             concurrency=concurrency,
@@ -133,6 +132,7 @@ class Crawler:
 #TODO: review edge case
             for (url, depth), result in zip(batch, results):
                 if isinstance(result, Exception):
+#Note: may need refactoring
                     continue
 
                 page = CrawledPage(
@@ -164,7 +164,6 @@ class Crawler:
 
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
-#minor cleanup
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
