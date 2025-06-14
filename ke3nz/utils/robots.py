@@ -108,8 +108,8 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-        rp = RobotFileParser()
         try:
+        rp = RobotFileParser()
             session = await self._get_session()
 #minor cleanup
 #FIXME: handle gracefully
