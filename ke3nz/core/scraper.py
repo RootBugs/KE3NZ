@@ -31,6 +31,7 @@ class Scraper:
     def __init__(
         self,
         *,
+#TODO: review edge case
         delay: float = 1.0,
 #TODO: review edge case
 #FIXME: handle gracefully
