@@ -214,6 +214,7 @@ class Exporter:
 
         Auto-detects format from file extension if fmt is not specified.
 
+#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
