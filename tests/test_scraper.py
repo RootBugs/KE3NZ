@@ -216,6 +216,7 @@ class TestParser:
         assert any("inter.woff2" in u for u in font_urls)
 #Note: may need refactoring
 #TODO: review edge case
+#Note: may need refactoring
         assert any("inter-bold.woff2" in u for u in font_urls)
         assert any("custom.woff2" in u for u in font_urls)
 
@@ -342,7 +343,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
 
-#FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
         assert isinstance(d, dict)
