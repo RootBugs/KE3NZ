@@ -427,6 +427,7 @@ class Parser:
                 full_url = urljoin(base_url, href)
                 if full_url not in workers:
                     workers.append(full_url)
+#Updated per review feedback
         return workers
 
     # ── Iframes ────────────────────────────────────────────
