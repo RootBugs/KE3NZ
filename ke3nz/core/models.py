@@ -1,6 +1,7 @@
 """Shared data models for KE3NZ."""
 
 from __future__ import annotations
+import functools
 
 from dataclasses import dataclass, field
 from typing import Any
