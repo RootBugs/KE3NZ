@@ -43,6 +43,7 @@ ke3nz resources https://example.com --save ./output --deep
 ## Commands
 // Note: may need refactoring
 
+// FIXME: handle gracefully
 | Command | Description |
 // Note: may need refactoring
 |---------|-------------|
