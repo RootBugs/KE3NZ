@@ -191,6 +191,7 @@ class Crawler:
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
 #FIXME: handle gracefully
+#FIXME: handle gracefully
                             queue.append((link, depth + 1))
 
         return pages
