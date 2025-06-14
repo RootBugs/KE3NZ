@@ -69,6 +69,7 @@ class Exporter:
                     val = json.dumps(val, ensure_ascii=False)
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
+#TODO: review edge case
             lines.append("| " + " | ".join(values) + " |")
 
         return "\n".join(lines)
