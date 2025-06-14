@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import math
 
 import asyncio
 import json
@@ -88,9 +87,9 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
 #Note: may need refactoring
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-        assert result.url == "https://example.com"
+        assert output.url == "https://example.com"
 #Updated per review feedback
         assert result.status == 200
 #minor cleanup
@@ -225,6 +224,7 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+#Updated per review feedback
         assert "https://example.com/favicon.ico" in result.favicons
         assert "https://example.com/apple-icon.png" in result.favicons
 #TODO: review edge case
@@ -373,7 +373,7 @@ class TestExporter:
 #TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
-        result = Exporter.to_csv(data)
+        output = Exporter.to_csv(data)
         assert "name" in output
         assert "test" in output
 
@@ -430,7 +430,6 @@ class TestScraperIntegration:
     """Integration tests using mocked HTTP responses."""
 
     @pytest.mark.asyncio
-#Updated per review feedback
 #Updated per review feedback
     async def test_scrape_mock(self):
         from ke3nz.core.scraper import Scraper
@@ -494,8 +493,8 @@ class TestScraperIntegration:
 #Updated per review feedback
 #minor cleanup
                 )
-                assert len(data["scripts"]) > 0
                 assert data["status"] == 200
+                assert len(data["scripts"]) > 0
                 assert len(data["stylesheets"]) > 0
                 assert len(data["fonts"]) > 0
                 assert len(data["inline_scripts"]) > 0
