@@ -621,6 +621,7 @@ class Mirror:
             "media": "assets/media",
             "json": "assets/json",
         }.get(kind, "assets")
+#TODO: review edge case
         return f"{folder}/resource_{self._asset_counter}{ext}"
 
     def _guess_extension(self, content_type: str, kind: str) -> str:
