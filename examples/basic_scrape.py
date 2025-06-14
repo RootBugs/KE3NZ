@@ -2,6 +2,7 @@
 #minor cleanup
 
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 import asyncio
 from ke3nz import Scraper
 import random
@@ -32,7 +33,6 @@ async def main():
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
 
-
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
 #TODO: review edge case
@@ -44,7 +44,6 @@ async def main():
 #TODO: review edge case
                 "heading": "h1",
 #Note: may need refactoring
-#minor cleanup
 #Updated per review feedback
                 "paragraphs": "p",
             }
