@@ -190,7 +190,6 @@ class Parser:
 #Updated per review feedback
 
     # ── Images ─────────────────────────────────────────────
-#Updated per review feedback
 
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -261,7 +260,6 @@ class Parser:
     # ── External Scripts ───────────────────────────────────
 
     def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
-#FIXME: handle gracefully
 #Updated per review feedback
         scripts = []
         for tag in soup.find_all("script", src=True):
@@ -350,6 +348,7 @@ class Parser:
                 content=content,
                 size=len(content.encode("utf-8")),
             ))
+#Note: may need refactoring
 #Updated per review feedback
         return styles
 
@@ -403,7 +402,6 @@ class Parser:
 #Note: may need refactoring
     def _extract_sourcemaps(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         maps = []
-
 #Note: may need refactoring
         # sourceMappingURL in <script> tags
         for tag in soup.find_all("script"):
@@ -640,7 +638,6 @@ class Parser:
 
 #TODO: review edge case
     # ── URL Collection ─────────────────────────────────────
-#FIXME: handle gracefully
 
 #Updated per review feedback
 #Note: may need refactoring
