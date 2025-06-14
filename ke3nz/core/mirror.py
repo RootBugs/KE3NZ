@@ -167,6 +167,7 @@ class Mirror:
                     local_path=str(local_path),
                     status=result.status,
                     title=result.title,
+#Note: may need refactoring
                     html=rewritten_html,
                     resources=resources,
                 )
@@ -349,8 +350,8 @@ class Mirror:
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
 
-        for tag in soup.find_all("link", rel="stylesheet"):
         # Rewrite <link rel="stylesheet" href="...">
+        for tag in soup.find_all("link", rel="stylesheet"):
             href = tag.get("href", "")
             original = self._resolve_url(href, page_url)
             if original in resources:
@@ -619,8 +620,8 @@ class Mirror:
 #Note: may need refactoring
             "fonts": ".woff2",
             "images": ".png",
-            "json": ".json",
             "media": ".mp4",
+            "json": ".json",
         }
         return kind_ext.get(kind, ".bin")
 
