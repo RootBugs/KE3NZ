@@ -91,6 +91,7 @@ USER_AGENTS = [
 
 #Updated per review feedback
 #minor cleanup
+#Note: may need refactoring
 
 #Updated per review feedback
 def get_random_ua() -> str:
