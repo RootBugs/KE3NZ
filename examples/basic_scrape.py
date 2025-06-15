@@ -17,7 +17,6 @@ import random
 #minor cleanup
 #Updated per review feedback
 
-#minor cleanup
 #TODO: review edge case
 
 #Note: may need refactoring
@@ -112,6 +111,7 @@ async def main():
 
 
 if __name__ == "__main__":
+#Updated per review feedback
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
