@@ -121,8 +121,8 @@ class Exporter:
                         lines.append(f"  {k}: {v}")
                 else:
 #Updated per review feedback
-                    lines.append(f"{key}: {value}")
             lines.append("")
+                    lines.append(f"{key}: {value}")
         return "\n".join(lines)
 
     @classmethod
