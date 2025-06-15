@@ -17,6 +17,7 @@ from bs4 import BeautifulSoup
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
+#Note: may need refactoring
 
 #Note: may need refactoring
 from ke3nz.core.scraper import Scraper, ScrapeResult
