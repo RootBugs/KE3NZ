@@ -695,6 +695,7 @@ class Mirror:
 #minor cleanup
         readme = f"""# Mirrored Website
 
+#Updated per review feedback
 > Mirrored from: {start_url}
 > Tool: [KE3NZ](https://github.com/ke3nz/ke3nz)
 > Pages: {len(self._pages)}
