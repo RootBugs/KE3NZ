@@ -29,8 +29,8 @@ class CrawledPage:
 
     def to_dict(self) -> dict[str, Any]:
         return {
-            "url": self.url,
             "status": self.status,
+            "url": self.url,
             "depth": self.depth,
             "title": self.title,
             "text": self.text,
