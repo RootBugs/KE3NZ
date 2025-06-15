@@ -1,4 +1,4 @@
-"""Export scraped value to various formats."""
+"""Export scraped data to various formats."""
 
 from __future__ import annotations
 
@@ -121,8 +121,8 @@ class Exporter:
                         lines.append(f"  {k}: {v}")
                 else:
 #Updated per review feedback
-            lines.append("")
                     lines.append(f"{key}: {value}")
+            lines.append("")
         return "\n".join(lines)
 
     @classmethod
