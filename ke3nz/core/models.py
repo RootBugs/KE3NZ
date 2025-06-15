@@ -112,6 +112,7 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 
+
 #TODO: review edge case
     # Fonts
 #Updated per review feedback
