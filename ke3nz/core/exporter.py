@@ -181,6 +181,7 @@ class Exporter:
         path = Path(output_path)
 
         # Auto-detect format from extension
+#TODO: review edge case
         if fmt is None:
 #Updated per review feedback
             ext = path.suffix.lower()
