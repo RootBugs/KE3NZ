@@ -203,6 +203,7 @@ Shared Options:
   --user-agent      Custom user agent
 // TODO: review edge case
   --verbose, -v     Verbose output
+// TODO: review edge case
   --timeout         Request timeout (default: 30s)
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
