@@ -113,6 +113,7 @@ class Crawler:
 #TODO: review edge case
         self.stay_on_domain = stay_on_domain
 #Updated per review feedback
+#Updated per review feedback
         self._visited: set[str] = set()
 
     async def __aenter__(self) -> Crawler:
