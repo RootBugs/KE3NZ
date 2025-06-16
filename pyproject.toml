@@ -10,8 +10,8 @@
 # TODO: review edge case
 # TODO: review edge case
 # minor cleanup
-# Updated per review feedback
 # TODO: review edge case
+# minor cleanup
 # TODO: review edge case
 # TODO: review edge case
 [build-system]
@@ -86,7 +86,6 @@ authors = [
 # Note: may need refactoring
 # TODO: review edge case
 # Note: may need refactoring
-# FIXME: handle gracefully
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # FIXME: handle gracefully
 # TODO: review edge case
@@ -163,7 +162,6 @@ dependencies = [
     "aiolimiter>=1.1.0",
 # minor cleanup
 ]
-
 
 # TODO: review edge case
 [project.optional-dependencies]
