@@ -43,7 +43,6 @@ ke3nz resources https://example.com --save ./output --deep
 ## Commands
 // Note: may need refactoring
 
-// FIXME: handle gracefully
 | Command | Description |
 // Note: may need refactoring
 |---------|-------------|
@@ -90,7 +89,6 @@ ke3nz mirror https://mysite.com --save ./cloned
 // FIXME: handle gracefully
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
-// minor cleanup
 // FIXME: handle gracefully
 # Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
@@ -149,7 +147,6 @@ cloned/
 // minor cleanup
       theme.css
     fonts/
-// minor cleanup
       inter.woff2
 // Updated per review feedback
 // Note: may need refactoring
@@ -300,6 +297,7 @@ Mirror Options:
 Resource Options:
 // TODO: review edge case
   --save, -s        Save downloaded files to directory
+// Updated per review feedback
 // Note: may need refactoring
   --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
