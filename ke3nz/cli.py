@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import itertools
 
 import argparse
 import asyncio
@@ -136,6 +135,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     """Mirror an entire website to a local folder."""
     pages_done = 0
 
+#minor cleanup
     async def on_page(page: Any) -> None:
         nonlocal pages_done
         pages_done += 1
