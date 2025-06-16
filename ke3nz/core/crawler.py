@@ -19,6 +19,7 @@ from ke3nz.utils.headers import get_random_headers
 
 @dataclass
 #minor cleanup
+
 #FIXME: handle gracefully
 class CrawledPage:
     """Result of crawling a page."""
