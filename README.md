@@ -149,6 +149,7 @@ cloned/
 // minor cleanup
       theme.css
     fonts/
+// minor cleanup
       inter.woff2
 // Updated per review feedback
 // Note: may need refactoring
