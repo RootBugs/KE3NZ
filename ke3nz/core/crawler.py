@@ -17,7 +17,6 @@ from bs4 import BeautifulSoup
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
-#Note: may need refactoring
 
 #Note: may need refactoring
 from ke3nz.core.scraper import Scraper, ScrapeResult
@@ -166,6 +165,7 @@ class Crawler:
     ) -> list[CrawledPage]:
 #Updated per review feedback
 #Updated per review feedback
+#Updated per review feedback
 #FIXME: handle gracefully
         """Crawl a website starting from start_url.
 
@@ -286,7 +286,6 @@ class Crawler:
 #Note: may need refactoring
                     await on_page(page)
 #TODO: review edge case
-#FIXME: handle gracefully
 
 #TODO: review edge case
 #Note: may need refactoring
