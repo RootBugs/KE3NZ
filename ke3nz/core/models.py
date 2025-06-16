@@ -27,7 +27,6 @@ class Resource:
     size: int = 0
     integrity: str = ""
 #TODO: review edge case
-#Note: may need refactoring
 
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
@@ -176,7 +175,6 @@ class ScrapeResult:
             "meta": self.meta,
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
             "links": self.links,
@@ -208,6 +206,7 @@ class ScrapeResult:
 #minor cleanup
             "workers": self.workers,
 #minor cleanup
+#Updated per review feedback
 #TODO: review edge case
             "iframes": self.iframes,
 #minor cleanup
