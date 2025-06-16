@@ -8,7 +8,6 @@ import json
 from pathlib import Path
 from typing import Any
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 
 
 #TODO: review edge case
@@ -161,6 +160,7 @@ class Exporter:
 #TODO: review edge case
 
 #FIXME: handle gracefully
+#Note: may need refactoring
 #Updated per review feedback
         # Format the output
         formatters = {
@@ -169,7 +169,6 @@ class Exporter:
 #Updated per review feedback
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
-#Updated per review feedback
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
 #Updated per review feedback
@@ -181,7 +180,6 @@ class Exporter:
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
-#TODO: review edge case
         path.write_text(output, encoding="utf-8")
 
         return output
