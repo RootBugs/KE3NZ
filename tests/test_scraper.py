@@ -381,6 +381,7 @@ class TestHeaders:
         assert isinstance(ua, str)
 #minor cleanup
         assert len(ua) > 20
+
 #Updated per review feedback
 
 #FIXME: handle gracefully
