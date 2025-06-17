@@ -361,6 +361,7 @@ class TestScraperIntegration:
                 result = await s.scrape("https://example.com")
                 assert result["title"] == "Test Page"
                 assert result["status"] == 200
+
                 assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
                 assert len(result["stylesheets"]) > 0
