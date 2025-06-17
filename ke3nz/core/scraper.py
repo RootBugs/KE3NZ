@@ -440,6 +440,7 @@ class Scraper:
 #minor cleanup
                 })
 
+#FIXME: handle gracefully
         # Save HTML
 #Note: may need refactoring
 #FIXME: handle gracefully
