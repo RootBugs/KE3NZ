@@ -95,6 +95,7 @@ USER_AGENTS = [
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
+#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -235,7 +236,6 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
-#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
