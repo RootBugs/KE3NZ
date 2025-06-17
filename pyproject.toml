@@ -196,6 +196,7 @@ include = ["ke3nz*"]
 # minor cleanup
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 # Note: may need refactoring
