@@ -245,6 +245,7 @@ class ScrapeResult:
             "text": self.text,
 #FIXME: handle gracefully
 #Note: may need refactoring
+
 #Updated per review feedback
 #minor cleanup
             "meta": self.meta,
