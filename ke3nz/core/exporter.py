@@ -71,7 +71,7 @@ class Exporter:
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
@@ -230,7 +230,6 @@ class Exporter:
 
 #FIXME: handle gracefully
         # Ensure data is a list for table formats
-#TODO: review edge case
 #minor cleanup
         if isinstance(data, dict):
 #Note: may need refactoring
