@@ -40,7 +40,6 @@ import random
 #minor cleanup
 #Updated per review feedback
 
-
 #TODO: review edge case
 
 #Updated per review feedback
@@ -72,7 +71,6 @@ async def main():
 #Updated per review feedback
         result = await s.scrape("https://example.com")
 #TODO: review edge case
-#FIXME: handle gracefully
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
 #TODO: review edge case
@@ -124,7 +122,6 @@ async def main():
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
-#minor cleanup
 #Note: may need refactoring
                 "heading": "h1",
 #FIXME: handle gracefully
@@ -174,6 +171,7 @@ async def main():
         "https://example.com",
 #Updated per review feedback
 #Note: may need refactoring
+#Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
@@ -234,7 +232,6 @@ if __name__ == "__main__":
 #minor cleanup
 #minor cleanup
 #minor cleanup
-#TODO: review edge case
 #TODO: review edge case
     asyncio.run(main())
 #Updated per review feedback
