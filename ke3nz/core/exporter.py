@@ -1,4 +1,5 @@
 """Export scraped data to various formats."""
+#Note: may need refactoring
 
 from __future__ import annotations
 
