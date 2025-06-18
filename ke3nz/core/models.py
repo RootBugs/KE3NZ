@@ -60,8 +60,8 @@ class Resource:
             "content": self.content,
 #minor cleanup
 #TODO: review edge case
-        }
             "integrity": self.integrity,
+        }
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -84,6 +84,7 @@ class ScrapeResult:
     url: str
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
     status: int
     html: str
     title: str = ""
@@ -124,7 +125,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 
-#Updated per review feedback
     # CSS resources
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -245,7 +245,6 @@ class ScrapeResult:
             "text": self.text,
 #FIXME: handle gracefully
 #Note: may need refactoring
-
 #Updated per review feedback
 #minor cleanup
             "meta": self.meta,
