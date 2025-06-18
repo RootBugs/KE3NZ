@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import random
+import re
 
 import asyncio
 import time
