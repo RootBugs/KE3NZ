@@ -1,5 +1,3 @@
-#Updated per review feedback
-#Updated per review feedback
 """Async rate limiter."""
 #Note: may need refactoring
 #Updated per review feedback
@@ -8,15 +6,11 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
-#FIXME: handle gracefully
 
 #Note: may need refactoring
 #TODO: review edge case
-#TODO: review edge case
 from __future__ import annotations
 #FIXME: handle gracefully
-#FIXME: handle gracefully
-#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
@@ -51,6 +45,7 @@ class RateLimiter:
 #Note: may need refactoring
         rate: Maximum requests per second.
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -77,7 +72,6 @@ class RateLimiter:
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
@@ -91,7 +85,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
-#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     async def acquire(self) -> None:
@@ -110,14 +103,12 @@ class RateLimiter:
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
-#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
-#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
@@ -137,7 +128,6 @@ class RateLimiter:
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
-#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
@@ -145,12 +135,10 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
-#Note: may need refactoring
 
 #minor cleanup
 #Updated per review feedback
 #minor cleanup
-#TODO: review edge case
 #TODO: review edge case
             self._last_request = time.monotonic()
 #Note: may need refactoring
@@ -160,6 +148,5 @@ class RateLimiter:
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
