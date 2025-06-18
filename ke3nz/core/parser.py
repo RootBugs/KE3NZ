@@ -230,7 +230,6 @@ class Parser:
     def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
 #Updated per review feedback
         scripts = []
-#Updated per review feedback
         for tag in soup.find_all("script", src=True):
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -295,6 +294,7 @@ class Parser:
 
     def _extract_inline_styles(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         styles = []
+#FIXME: handle gracefully
         for tag in soup.find_all("style"):
             if not tag.string:
                 continue
@@ -323,8 +323,8 @@ class Parser:
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
-                            url=full_url,
                         fonts.append(Resource(
+                            url=full_url,
                             kind="font",
                             content_type=tag.get("type", ""),
                         ))
@@ -353,8 +353,8 @@ class Parser:
     # ── Source Maps ────────────────────────────────────────
 
 #Note: may need refactoring
-        maps = []
     def _extract_sourcemaps(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+        maps = []
 #Note: may need refactoring
         # sourceMappingURL in <script> tags
         for tag in soup.find_all("script"):
@@ -411,11 +411,9 @@ class Parser:
 #minor cleanup
     # ── Favicons ───────────────────────────────────────────
 
-#TODO: review edge case
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
 #Note: may need refactoring
-#FIXME: handle gracefully
         for tag in soup.find_all("link", rel=True):
 #Note: may need refactoring
 #Note: may need refactoring
@@ -466,7 +464,6 @@ class Parser:
 
     def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #Updated per review feedback
-#TODO: review edge case
         audios = []
         for tag in soup.find_all("audio", src=True):
 #Note: may need refactoring
@@ -510,7 +507,6 @@ class Parser:
         return workers
 
 #Note: may need refactoring
-#minor cleanup
     # ── Iframes ────────────────────────────────────────────
 
     def _extract_iframes(self, soup: BeautifulSoup, base_url: str) -> list[str]:
@@ -530,7 +526,6 @@ class Parser:
 
     def _extract_configs(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         configs = []
-#TODO: review edge case
         # <link rel="manifest">
         for tag in soup.find_all("link", rel="manifest"):
 #TODO: review edge case
@@ -586,7 +581,6 @@ class Parser:
         links: list[str],
         images: list[str],
         scripts: list[Resource],
-#Note: may need refactoring
         stylesheets: list[Resource],
         fonts: list[Resource],
         preloads: list[Resource],
