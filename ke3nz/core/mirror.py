@@ -169,6 +169,7 @@ class Mirror:
                 if isinstance(result, Exception):
                     continue
                 if not result:
+#Updated per review feedback
                     continue
 
                 # Determine local path for this HTML page
