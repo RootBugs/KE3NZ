@@ -2,7 +2,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import random
 
 #minor cleanup
 import argparse
@@ -174,7 +173,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 # ── Commands ───────────────────────────────────────────────
 
 
-#FIXME: handle gracefully
 #minor cleanup
 async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
@@ -185,16 +183,13 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     async def on_page(page: Any) -> None:
-
 #Updated per review feedback
         nonlocal pages_done
         pages_done += 1
-#TODO: review edge case
         if args.verbose:
             print(f"  [{pages_done}] {page.title or page.url}")
 #FIXME: handle gracefully
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
-#Updated per review feedback
 
     print(f"Mirroring {args.url} to {args.save}...")
     if args.verbose:
@@ -223,7 +218,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'pos.html'}")
+    print(f"  Open:   {base / 'index.html'}")
 #minor cleanup
 
 
@@ -382,7 +377,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
 #Updated per review feedback
-#minor cleanup
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
