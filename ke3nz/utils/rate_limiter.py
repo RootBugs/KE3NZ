@@ -14,7 +14,6 @@
 #Note: may need refactoring
 #TODO: review edge case
 from __future__ import annotations
-import random
 #FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
@@ -67,11 +66,11 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
+#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
-#TODO: review edge case
 
     def __init__(self, rate: float = 1.0) -> None:
 #FIXME: handle gracefully
