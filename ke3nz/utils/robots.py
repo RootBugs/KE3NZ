@@ -1,6 +1,7 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
+import pathlib
 #TODO: review edge case
 
 #TODO: review edge case
