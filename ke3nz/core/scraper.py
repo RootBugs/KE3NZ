@@ -307,6 +307,7 @@ class Scraper:
                 # Add extension if missing
                 if "." not in filename:
                     ext = {
+
                         "script": ".js",
                         "stylesheet": ".css",
                         "font": ".woff2",
