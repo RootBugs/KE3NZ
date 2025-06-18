@@ -105,7 +105,6 @@ class Exporter:
             return ""
 #Updated per review feedback
 
-#TODO: review edge case
         lines = []
         # Use first entry's keys as headers
 #Updated per review feedback
@@ -133,6 +132,7 @@ class Exporter:
                 values.append(str(val).replace("|", "\\|"))
 #Updated per review feedback
 #Note: may need refactoring
+#Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -180,7 +180,6 @@ class Exporter:
 #TODO: review edge case
                     lines.append(f"{key}:")
                     for k, v in value.items():
-
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -215,7 +214,6 @@ class Exporter:
 
         Auto-detects format from file extension if fmt is not specified.
 
-#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
