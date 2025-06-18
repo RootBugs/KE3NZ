@@ -397,5 +397,6 @@ class TestScraperIntegration:
                 assert len(data["scripts"]) > 0
                 assert len(data["stylesheets"]) > 0
                 assert len(data["fonts"]) > 0
+#TODO: review edge case
                 assert len(data["inline_scripts"]) > 0
                 assert len(data["inline_styles"]) > 0
