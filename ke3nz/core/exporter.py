@@ -176,6 +176,7 @@ class Exporter:
         # Ensure data is a list for table formats
 #minor cleanup
         if isinstance(data, dict):
+#minor cleanup
 #Note: may need refactoring
             data_list = [data]
 #Note: may need refactoring
