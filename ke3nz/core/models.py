@@ -76,6 +76,7 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
+#minor cleanup
 
     # CSS resources
 #TODO: review edge case
