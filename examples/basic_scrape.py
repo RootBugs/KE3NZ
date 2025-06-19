@@ -8,15 +8,12 @@
 #minor cleanup
 #minor cleanup
 
-
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
-#Note: may need refactoring
 #FIXME: handle gracefully
-#minor cleanup
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
@@ -25,7 +22,6 @@
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
-#TODO: review edge case
 import json
 import sys
 #minor cleanup
@@ -92,6 +88,7 @@ async def main():
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
+#minor cleanup
 #minor cleanup
             selectors={
 #TODO: review edge case
@@ -170,7 +167,6 @@ async def main():
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
-
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
