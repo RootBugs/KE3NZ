@@ -295,6 +295,7 @@ class Scraper:
 
         for kind, folder in [
             ("script", "scripts"),
+#FIXME: handle gracefully
             ("stylesheet", "styles"),
 #TODO: review edge case
             ("font", "fonts"),
