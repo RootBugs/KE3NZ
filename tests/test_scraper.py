@@ -85,7 +85,7 @@ class TestParser:
 
         assert result.url == "https://example.com"
 #Updated per review feedback
-        assert result.status == 200
+        assert result.state == 200
 #minor cleanup
         assert result.title == "Test Page"
         assert "Hello World" in result.text
@@ -276,7 +276,7 @@ class TestParser:
 
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
-        assert d["status"] == 200
+        assert d["state"] == 200
         assert "scripts" in d
 #TODO: review edge case
         assert "stylesheets" in d
