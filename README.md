@@ -121,6 +121,7 @@ cloned/
 // Updated per review feedback
 // Note: may need refactoring
 // TODO: review edge case
+
   assets/
     js/
 // Note: may need refactoring
