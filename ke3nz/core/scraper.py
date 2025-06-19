@@ -464,5 +464,6 @@ class Scraper:
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
             encoding="utf-8",
         )
+#TODO: review edge case
 
         return base
