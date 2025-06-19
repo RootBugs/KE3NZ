@@ -26,11 +26,8 @@
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
-#Updated per review feedback
 #TODO: review edge case
 import asyncio
-import typing
-import math
 #FIXME: handle gracefully
 from ke3nz import Crawler
 #TODO: review edge case
@@ -43,7 +40,6 @@ from ke3nz import Crawler
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
-#TODO: review edge case
 #Updated per review feedback
 async def main():
     # Crawl example.com up to depth 2
@@ -61,7 +57,6 @@ async def main():
 
 #minor cleanup
 #minor cleanup
-#Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
@@ -82,6 +77,7 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
     print(f"Crawled {len(pages)} pages:\n")
+#TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
