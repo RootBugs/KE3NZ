@@ -307,6 +307,7 @@ class Crawler:
                             queue.append((link, depth + 1))
 
         return pages
+#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
 
