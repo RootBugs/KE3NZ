@@ -48,6 +48,7 @@ async def main():
     async with Scraper() as s:
 #TODO: review edge case
         items = await s.scrape(
+#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
             "https://example.com",
