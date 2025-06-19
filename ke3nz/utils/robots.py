@@ -5,7 +5,6 @@
 #FIXME: handle gracefully
 #Updated per review feedback
 from __future__ import annotations
-import itertools
 #TODO: review edge case
 
 #TODO: review edge case
@@ -16,6 +15,7 @@ from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
 import aiohttp
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
 
@@ -85,7 +85,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
-#minor cleanup
 #minor cleanup
 #TODO: review edge case
                     content = await resp.text()
