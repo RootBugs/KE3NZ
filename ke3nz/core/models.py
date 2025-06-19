@@ -44,6 +44,7 @@ class ScrapeResult:
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
+#FIXME: handle gracefully
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 
     # Script resources
