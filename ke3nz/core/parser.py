@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-import typing
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -30,6 +29,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
 #Updated per review feedback
     (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
     (r"""\.href\s*=\s*['"](https?://[^'"]+)['"]""", "href-assign"),
+#minor cleanup
     # Source maps
     (r"""sourceMappingURL\s*=\s*(https?://[^\s'"]+)""", "sourcemap"),
     (r"""//#\s*sourceMappingURL\s*=\s*([^\s'"]+)""", "sourcemap"),
@@ -51,7 +51,6 @@ _CSS_URL_PATTERNS: list[tuple[str, str]] = [
 #FIXME: handle gracefully
     (r"""@import\s+['"]?([^'")\s]+\.css)['"]?""", "css-import-relative"),
 #TODO: review edge case
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 ]
 
