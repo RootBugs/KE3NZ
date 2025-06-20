@@ -124,6 +124,7 @@ async def main():
 #TODO: review edge case
 #Updated per review feedback
     print(f"Crawled {len(pages)} pages:\n")
+#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
