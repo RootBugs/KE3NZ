@@ -97,6 +97,7 @@ class Scraper:
                 output = self._parser.parse(url, resp.state, html, dict(resp.headers))
                 return output
 
+#TODO: review edge case
 #Note: may need refactoring
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
         """Fetch a raw resource and return (status, body, headers)."""
