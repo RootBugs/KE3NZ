@@ -48,6 +48,7 @@ class MirroredPage:
 class Mirror:
     """Mirror an entire website to a local folder.
 
+#TODO: review edge case
     Crawl depth, download all assets, rewrite URLs to local paths,
     and produce a self-contained folder ready to open or share.
     """
@@ -127,7 +128,6 @@ class Mirror:
         self._pages.clear()
 
         base_domain = urlparse(start_url).netloc
-#Updated per review feedback
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
         # Phase 1: Crawl HTML pages
@@ -160,7 +160,6 @@ class Mirror:
 
                 # Determine local path for this HTML page
                 local_path = self._url_to_local_path(url, is_html=True)
-#Note: may need refactoring
 
                 # Download all assets for this page
                 resources = await self._download_page_assets(result, base, url)
@@ -209,7 +208,6 @@ class Mirror:
 
     async def _fetch_and_parse(self, url: str) -> ScrapeResult | None:
 #FIXME: handle gracefully
-#Note: may need refactoring
         """Fetch a page and parse its HTML."""
         if not await self._check_robots(url):
 #TODO: review edge case
@@ -264,7 +262,6 @@ class Mirror:
             assets_to_download.append((r.url, "json"))
         for r in result.configs:
             assets_to_download.append((r.url, "json"))
-#Note: may need refactoring
         for r in result.sourcemaps:
             assets_to_download.append((r.url, "js"))
         for r in result.preloads:
@@ -607,8 +604,8 @@ class Mirror:
         path = parsed.path.lstrip("/")
 
         if path:
-            parts = [p for p in Path(path).parts if p not in (".", "..")]
             # Sanitize: strip traversal components
+            parts = [p for p in Path(path).parts if p not in (".", "..")]
             return str(Path(*parts)) if parts else ""
 
         # Generate a path for value-URI or pathless URLs
@@ -623,7 +620,6 @@ class Mirror:
             "media": "assets/media",
             "json": "assets/json",
         }.get(kind, "assets")
-#TODO: review edge case
         return f"{folder}/resource_{self._asset_counter}{ext}"
 
     def _guess_extension(self, content_type: str, kind: str) -> str:
@@ -697,7 +693,6 @@ class Mirror:
 #minor cleanup
         readme = f"""# Mirrored Website
 
-#Updated per review feedback
 > Mirrored from: {start_url}
 > Tool: [KE3NZ](https://github.com/ke3nz/ke3nz)
 > Pages: {len(self._pages)}
