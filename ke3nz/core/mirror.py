@@ -170,6 +170,7 @@ class Mirror:
 
                 page = MirroredPage(
                     url=url,
+#Note: may need refactoring
                     local_path=str(local_path),
                     status=result.status,
                     title=result.title,
