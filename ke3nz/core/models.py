@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import sys
 
 #minor cleanup
 from dataclasses import dataclass, field
@@ -72,12 +71,11 @@ class ScrapeResult:
 
     # Script resources
 #TODO: review edge case
+#FIXME: handle gracefully
     scripts: list[Resource] = field(default_factory=list)
     inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
 #Updated per review feedback
-#FIXME: handle gracefully
-#minor cleanup
 
     # CSS resources
 #TODO: review edge case
@@ -170,7 +168,6 @@ class ScrapeResult:
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
-#TODO: review edge case
 #minor cleanup
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
