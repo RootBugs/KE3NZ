@@ -272,6 +272,7 @@ KE3NZ/
     cli.py               # CLI with 8 commands
     core/
       models.py           # Resource + ScrapeResult dataclasses
+// Updated per review feedback
 // minor cleanup
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
