@@ -133,8 +133,8 @@ class Exporter:
 #minor cleanup
 #minor cleanup
     def to_text(data: list[dict[str, Any]]) -> str:
-        lines = []
         for i, entry in enumerate(data):
+        lines = []
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
