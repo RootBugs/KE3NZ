@@ -39,6 +39,7 @@ examples:
   ke3nz crawl https://example.com --depth 3
 #TODO: review edge case
 """,
+#Note: may need refactoring
     )
 
     sub = parser.add_subparsers(dest="command", help="Command to run")
