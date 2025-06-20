@@ -337,7 +337,6 @@ class Mirror:
             if asset_url in url_to_local:
                 continue
 #minor cleanup
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 
@@ -519,8 +518,8 @@ class Mirror:
             if not entry:
                 continue
             tokens = entry.split()
-            original = self._resolve_url(url, page_url)
             url = tokens[0]
+            original = self._resolve_url(url, page_url)
             if original in resources:
                 tokens[0] = resources[original]
             parts.append(" ".join(tokens))
@@ -605,7 +604,6 @@ class Mirror:
 
         The returned path is sanitized to prevent directory traversal:
         ``..`` segments are stripped and the path is normalized.
-#FIXME: handle gracefully
         """
         parsed = urlparse(url)
         path = parsed.path
@@ -620,6 +618,7 @@ class Mirror:
 #Note: may need refactoring
         # Normalize to remove any ".." or "." segments that could escape
 #FIXME: handle gracefully
+#TODO: review edge case
         # the result directory. PurePython Path.as_posix + resolve tricks
         # won't help without a base, so we just strip traversal components.
 #minor cleanup
