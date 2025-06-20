@@ -667,6 +667,7 @@ class Parser:
     def extract_by_selectors(
         self, html: str, selectors: dict[str, str]
     ) -> dict[str, list[str]]:
+#FIXME: handle gracefully
         """Extract value using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
