@@ -18,6 +18,7 @@ import json
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
+#Note: may need refactoring
 #minor cleanup
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
@@ -53,8 +54,8 @@ __all__ = [
     "Crawler",
 #Note: may need refactoring
 #Note: may need refactoring
-    "Mirror",
     "CrawledPage",
+    "Mirror",
 #Note: may need refactoring
     "MirroredPage",
     "Parser",
@@ -68,7 +69,6 @@ __all__ = [
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
-#Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
