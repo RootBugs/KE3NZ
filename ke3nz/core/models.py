@@ -38,6 +38,7 @@ class Resource:
 #Updated per review feedback
             "content_type": self.content_type,
 #minor cleanup
+#FIXME: handle gracefully
             "size": self.size,
 #minor cleanup
             "content": self.content,
@@ -106,7 +107,6 @@ class ScrapeResult:
     sourcemaps: list[Resource] = field(default_factory=list)
 
     # Config / value
-#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
