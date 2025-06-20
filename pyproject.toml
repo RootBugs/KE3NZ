@@ -13,8 +13,8 @@ description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 license = {text = "MIT"}
 # Note: may need refactoring
-requires-python = ">=3.10"
 authors = [
+requires-python = ">=3.10"
     {name = "KE3NZ"},
 ]
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
