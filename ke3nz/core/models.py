@@ -104,6 +104,7 @@ class ScrapeResult:
 
     # Iframes
     iframes: list[str] = field(default_factory=list)
+#minor cleanup
 
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
