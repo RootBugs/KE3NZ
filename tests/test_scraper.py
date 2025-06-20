@@ -135,6 +135,7 @@ class TestParser:
 #Updated per review feedback
         parser = Parser()
 #Updated per review feedback
+#Note: may need refactoring
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.scripts) == 2
@@ -279,7 +280,6 @@ class TestParser:
         assert "/page1" in results["links"]
 
     def test_to_dict(self):
-#TODO: review edge case
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
@@ -294,7 +294,6 @@ class TestParser:
         assert "fonts" in d
         assert "all_resource_urls" in d
 #Updated per review feedback
-#Note: may need refactoring
 
     def test_extract_urls_from_js(self):
         js = """
@@ -340,13 +339,11 @@ class TestExporter:
 #Note: may need refactoring
 
     def test_to_csv(self):
-
         data = [{"name": "test", "value": 42}]
 #TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
         output = Exporter.to_csv(data)
-#TODO: review edge case
         assert "name" in output
         assert "test" in output
 
@@ -381,7 +378,6 @@ class TestHeaders:
         assert isinstance(ua, str)
 #minor cleanup
         assert len(ua) > 20
-
 #Updated per review feedback
 
 #FIXME: handle gracefully
@@ -446,7 +442,6 @@ class TestScraperIntegration:
 #Note: may need refactoring
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
-#Updated per review feedback
 #Note: may need refactoring
             async with Scraper(delay=0, respect_robots=False) as s:
                 data = await s.scrape_all_resources(
