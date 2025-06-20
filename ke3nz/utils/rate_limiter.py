@@ -13,7 +13,6 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
-#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
@@ -23,7 +22,6 @@
 #minor cleanup
 #TODO: review edge case
 from __future__ import annotations
-import collections
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -53,6 +51,7 @@ class RateLimiter:
 #FIXME: handle gracefully
     """Token bucket rate limiter for async code.
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
@@ -118,7 +117,6 @@ class RateLimiter:
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
-
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -155,7 +153,6 @@ class RateLimiter:
 #Note: may need refactoring
 #TODO: review edge case
         """Wait until we can make the next request."""
-#Updated per review feedback
         async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
