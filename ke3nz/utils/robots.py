@@ -23,6 +23,7 @@ from urllib.parse import urlparse
 #TODO: review edge case
 from urllib.robotparser import RobotFileParser
 
+#Note: may need refactoring
 import aiohttp
 #Updated per review feedback
 #TODO: review edge case
