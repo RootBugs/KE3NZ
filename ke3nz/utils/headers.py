@@ -1,4 +1,5 @@
 #Updated per review feedback
+#minor cleanup
 #TODO: review edge case
 """User-agent rotation and header management."""
 
