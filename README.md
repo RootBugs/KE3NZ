@@ -91,11 +91,11 @@ ke3nz mirror https://mysite.com --save ./cloned -c 20
 
 # Mirror with proxy
 ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
+// Updated per review feedback
 ```
 // minor cleanup
 
 ### Output Structure
-// Updated per review feedback
 
 // Updated per review feedback
 ```
@@ -110,7 +110,6 @@ cloned/
 // Updated per review feedback
 // Updated per review feedback
     post-1.html
-// Note: may need refactoring
 // Updated per review feedback
     post-2.html
   images/
@@ -121,7 +120,6 @@ cloned/
 // Updated per review feedback
 // Note: may need refactoring
 // TODO: review edge case
-
   assets/
     js/
 // Note: may need refactoring
@@ -143,19 +141,15 @@ cloned/
   README.md               # Auto-generated docs
 ```
 // minor cleanup
-// TODO: review edge case
 
 ### What Gets Downloaded
 // Updated per review feedback
 // FIXME: handle gracefully
 
 | Type | Source |
-// Note: may need refactoring
 // Updated per review feedback
 |------|--------|
-// minor cleanup
 | **HTML pages** | `<a>` links crawled recursively |
-// Updated per review feedback
 | **Scripts** | `<script src="...">` + inline `<script>` |
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
@@ -172,7 +166,6 @@ cloned/
 // Note: may need refactoring
 // Updated per review feedback
 
-// TODO: review edge case
 // Note: may need refactoring
 // Note: may need refactoring
 ## The `resources` Command
@@ -258,7 +251,6 @@ Commands:
   meta        Extract page metadata
 // Updated per review feedback
   crawl       Crawl a website and list pages
-// Note: may need refactoring
 
 Mirror Options:
   --save, -s        Output directory (required for mirror)
@@ -336,7 +328,6 @@ KE3NZ/
 ```
 // Note: may need refactoring
 // minor cleanup
-// Note: may need refactoring
 
 ## License
 
