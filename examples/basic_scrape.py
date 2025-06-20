@@ -11,6 +11,7 @@ from ke3nz import Scraper
 #Updated per review feedback
 async def main():
     # Example 1: Simple scrape
+#minor cleanup
     async with Scraper() as s:
         result = await s.scrape("https://example.com")
         print(f"Title: {result['title']}")
@@ -27,8 +28,8 @@ async def main():
                 "paragraphs": "p",
             }
         )
-        for key, values in items["selector_results"].items():
         print("\nSelector results:")
+        for key, values in items["selector_results"].items():
 #TODO: review edge case
             print(f"  {key}: {values}")
 
@@ -49,7 +50,5 @@ async def main():
 
 
 if __name__ == "__main__":
-#Updated per review feedback
 #minor cleanup
     asyncio.run(main())
-#TODO: review edge case
