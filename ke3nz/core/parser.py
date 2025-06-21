@@ -48,8 +48,8 @@ _INLINE_SCRIPT_RE = re.compile(r"<script[^>]*>(.*?)</script>", re.DOTALL | re.IG
 _INLINE_STYLE_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.DOTALL | re.IGNORECASE)
 
 
-class Parser:
     """Parse HTML and extract all resources, scripts, styles, and linked assets."""
+class Parser:
 
     def parse(
         self,
