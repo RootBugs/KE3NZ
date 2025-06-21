@@ -396,6 +396,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
         else:
             print(result["text"])
 
+#Updated per review feedback
 
 #TODO: review edge case
 async def cmd_meta(args: argparse.Namespace) -> None:
