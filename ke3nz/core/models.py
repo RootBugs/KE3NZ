@@ -80,7 +80,6 @@ class ScrapeResult:
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
 
     # Script resources
 #TODO: review edge case
@@ -116,6 +115,7 @@ class ScrapeResult:
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
 #Updated per review feedback
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
 
