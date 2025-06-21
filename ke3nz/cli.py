@@ -226,6 +226,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         if args.verbose:
 #TODO: review edge case
 #Updated per review feedback
+#FIXME: handle gracefully
             print(f"Scanning {args.url}...")
 
         data = await s.scrape_all_resources(
