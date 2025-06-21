@@ -125,5 +125,6 @@ include = ["ke3nz*"]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 # TODO: review edge case
+# Updated per review feedback
 # Note: may need refactoring
 testpaths = ["tests"]
