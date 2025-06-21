@@ -5,6 +5,7 @@
 #minor cleanup
 #minor cleanup
 
+#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
@@ -13,7 +14,6 @@
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
-import re
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -89,7 +89,6 @@ async def main():
                 "paragraphs": "p",
             }
 #Updated per review feedback
-#TODO: review edge case
         )
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -112,7 +111,6 @@ async def main():
     urls = [
 #Note: may need refactoring
 #Updated per review feedback
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
         "https://example.com",
@@ -125,7 +123,6 @@ async def main():
 #FIXME: handle gracefully
         "https://example.org",
 #Note: may need refactoring
-#Note: may need refactoring
     ]
 
 #TODO: review edge case
@@ -136,13 +133,11 @@ async def main():
     async with Scraper() as s:
         results = await s.fetch_many(urls)
 #Note: may need refactoring
-#Note: may need refactoring
 #FIXME: handle gracefully
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
 #Note: may need refactoring
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -161,9 +156,7 @@ if __name__ == "__main__":
 #minor cleanup
 #minor cleanup
 #minor cleanup
-#TODO: review edge case
     asyncio.run(main())
 #Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
