@@ -47,6 +47,7 @@ async def main():
 #Updated per review feedback
                 "paragraphs": "p",
             }
+#Updated per review feedback
         )
 #FIXME: handle gracefully
         print("\nSelector results:")
@@ -85,4 +86,3 @@ if __name__ == "__main__":
 #minor cleanup
 #minor cleanup
     asyncio.run(main())
-#Updated per review feedback
