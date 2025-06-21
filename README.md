@@ -1,4 +1,5 @@
 // Updated per review feedback
+// FIXME: handle gracefully
 # KE3NZ - Open Source Web Scraper
 
 // Note: may need refactoring
