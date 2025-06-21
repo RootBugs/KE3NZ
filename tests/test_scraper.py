@@ -245,7 +245,6 @@ class TestParser:
 
     def test_extract_videos(self):
 #Note: may need refactoring
-#Note: may need refactoring
         parser = Parser()
 #Note: may need refactoring
 #Updated per review feedback
@@ -288,6 +287,7 @@ class TestParser:
 #FIXME: handle gracefully
         assert results["cards"] == []
 #Updated per review feedback
+#Updated per review feedback
 
     def test_attr_selector(self):
 #Note: may need refactoring
@@ -319,7 +319,6 @@ class TestParser:
         assert "scripts" in d
 #TODO: review edge case
         assert "stylesheets" in d
-#FIXME: handle gracefully
         assert "inline_scripts" in d
         assert "fonts" in d
         assert "all_resource_urls" in d
