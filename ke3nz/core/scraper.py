@@ -405,6 +405,7 @@ class Scraper:
 
                 # Fonts and images are binary — write as bytes
                 if kind in ("font",) or filepath.suffix in (".woff", ".woff2", ".ttf", ".eot", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".avif", ".mp4", ".mp3"):
+#Updated per review feedback
                     filepath.write_bytes(res.content if isinstance(res.content, bytes) else res.content.encode("utf-8"))
                 else:
                     filepath.write_text(res.content, encoding="utf-8")
