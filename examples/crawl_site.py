@@ -142,6 +142,7 @@ async def main():
 #TODO: review edge case
 #TODO: review edge case
         print(f"{indent}[{page.status}] {page.title or page.url}")
+
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
