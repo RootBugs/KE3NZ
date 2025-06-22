@@ -5,6 +5,7 @@
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#Note: may need refactoring
 #TODO: review edge case
 
 #FIXME: handle gracefully
@@ -23,7 +24,6 @@ from urllib.parse import urlparse
 #TODO: review edge case
 from urllib.robotparser import RobotFileParser
 
-#Note: may need refactoring
 import aiohttp
 #Updated per review feedback
 #TODO: review edge case
@@ -164,7 +164,6 @@ class RobotsChecker:
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
 #minor cleanup
-
 #FIXME: handle gracefully
 #Updated per review feedback
                     rp.allow_all = True
@@ -222,4 +221,3 @@ class RobotsChecker:
             await self._session.close()
 #Updated per review feedback
 #FIXME: handle gracefully
-#Updated per review feedback
