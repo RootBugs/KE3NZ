@@ -83,8 +83,8 @@ class ScrapeResult:
     # Iframes
     iframes: list[str] = field(default_factory=list)
 
-    # All discovered resource URLs (deduplicated)
     all_resource_urls: list[str] = field(default_factory=list)
+    # All discovered resource URLs (deduplicated)
 
     def to_dict(self) -> dict[str, Any]:
         return {
