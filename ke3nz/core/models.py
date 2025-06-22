@@ -1,5 +1,5 @@
 #Note: may need refactoring
-"""Shared value models for KE3NZ."""
+"""Shared data models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -67,8 +67,8 @@ class ScrapeResult:
 #FIXME: handle gracefully
     url: str
 #minor cleanup
-    html: str
     status: int
+    html: str
     title: str = ""
 #Updated per review feedback
 #Note: may need refactoring
@@ -112,8 +112,6 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 
-
-#TODO: review edge case
 #TODO: review edge case
     # Fonts
 #Updated per review feedback
