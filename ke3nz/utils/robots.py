@@ -8,6 +8,7 @@ from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
 import aiohttp
+#Updated per review feedback
 
 
 class RobotsChecker:
