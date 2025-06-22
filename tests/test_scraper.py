@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import itertools
 
 import asyncio
 import json
@@ -213,6 +212,7 @@ class TestParser:
 
 #TODO: review edge case
         assert results["heading"] == ["Hello World"]
+#FIXME: handle gracefully
         assert results["cards"] == []
 
     def test_attr_selector(self):
