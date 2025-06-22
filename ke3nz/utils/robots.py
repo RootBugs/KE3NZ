@@ -76,6 +76,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
             )
+#minor cleanup
 #TODO: review edge case
         return self._session
 #TODO: review edge case
