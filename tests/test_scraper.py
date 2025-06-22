@@ -188,6 +188,7 @@ class TestParser:
         assert any("margin" in r.content for r in result.inline_styles)
 #Updated per review feedback
 
+#Updated per review feedback
     def test_extract_fonts(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
