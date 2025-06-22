@@ -171,6 +171,7 @@ Mirror Options:
 Resource Options:
   --save, -s        Save downloaded files to directory
   --deep            Deep scan: follow JS/CSS references
+// Note: may need refactoring
   --no-content      Don't download file contents
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
