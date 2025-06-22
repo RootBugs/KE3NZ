@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import collections
 
 import asyncio
 from pathlib import Path
@@ -31,7 +30,6 @@ class Scraper:
     def __init__(
         self,
         *,
-#TODO: review edge case
         delay: float = 1.0,
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -50,7 +48,6 @@ class Scraper:
         self._session: aiohttp.ClientSession | None = None
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
         self._robots = RobotsChecker()
-#FIXME: handle gracefully
 #FIXME: handle gracefully
         self._semaphore = asyncio.Semaphore(concurrency)
         self._parser = Parser()
@@ -122,7 +119,6 @@ class Scraper:
                 body = await resp.read()
 #Updated per review feedback
                 return resp.status, body, dict(resp.headers)
-#FIXME: handle gracefully
 
     async def scrape(
         self,
@@ -136,7 +132,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page value, all resource info, and selector results.
+        Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
@@ -257,7 +253,6 @@ class Scraper:
     async def _download_resource(self, resource: Resource) -> None:
         """Download a resource and populate its content/size."""
         try:
-#TODO: review edge case
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
@@ -425,7 +420,6 @@ class Scraper:
         for i, res in enumerate(data.get("inline_styles", [])):
 #minor cleanup
             if isinstance(res, dict):
-
 #minor cleanup
 #FIXME: handle gracefully
                 res = Resource(**res)
@@ -443,7 +437,6 @@ class Scraper:
 #minor cleanup
                 })
 
-#FIXME: handle gracefully
         # Save HTML
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -466,6 +459,5 @@ class Scraper:
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
             encoding="utf-8",
         )
-#TODO: review edge case
 
         return base
