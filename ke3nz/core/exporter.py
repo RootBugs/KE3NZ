@@ -1,4 +1,4 @@
-"""Export scraped value to various formats."""
+"""Export scraped data to various formats."""
 
 from __future__ import annotations
 import re
@@ -133,8 +133,8 @@ class Exporter:
 #minor cleanup
 #minor cleanup
     def to_text(data: list[dict[str, Any]]) -> str:
-        for i, entry in enumerate(data):
         lines = []
+        for i, entry in enumerate(data):
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
