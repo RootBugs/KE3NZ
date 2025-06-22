@@ -119,6 +119,7 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+#minor cleanup
 #Note: may need refactoring
         assert "https://example.com/poster.jpg" in result.videos
 
