@@ -189,7 +189,7 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = entry.strip().split()
                 if parts:
@@ -248,7 +248,6 @@ class Parser:
 #Updated per review feedback
 #TODO: review edge case
             src = tag["src"].strip()
-#TODO: review edge case
 #Updated per review feedback
             full_url = urljoin(base_url, src)
             if not any(r.url == full_url for r in scripts):
