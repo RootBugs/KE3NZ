@@ -271,8 +271,8 @@ class Exporter:
         output = formatter(data_list)
 #Updated per review feedback
 
-        # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
+        # Write to file
 #minor cleanup
         path.write_text(output, encoding="utf-8")
 
