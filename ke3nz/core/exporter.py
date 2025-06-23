@@ -53,7 +53,7 @@ class Exporter:
             return ""
 
         lines = []
-        # Use first item's keys as headers
+        # Use first entry's keys as headers
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
 #TODO: review edge case
@@ -78,9 +78,9 @@ class Exporter:
     @staticmethod
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
-        for i, item in enumerate(data):
+        for i, entry in enumerate(data):
             lines.append(f"=== Item {i + 1} ===")
-            for key, value in item.items():
+            for key, value in entry.items():
                 if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
