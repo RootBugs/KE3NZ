@@ -232,6 +232,7 @@ class Scraper:
             if new_tasks:
 #Note: may need refactoring
                 await asyncio.gather(*new_tasks, return_exceptions=True)
+#TODO: review edge case
 
 #Updated per review feedback
         # Also download inline script/style content (already parsed)
