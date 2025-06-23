@@ -380,6 +380,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
+
 #Note: may need refactoring
         timeout=args.timeout,
         proxy=args.proxy,
