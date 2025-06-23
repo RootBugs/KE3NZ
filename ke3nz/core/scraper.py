@@ -153,6 +153,7 @@ class Scraper:
         url: str,
         *,
 #minor cleanup
+#minor cleanup
         download_content: bool = True,
         follow_deep: bool = False,
     ) -> dict[str, Any]:
