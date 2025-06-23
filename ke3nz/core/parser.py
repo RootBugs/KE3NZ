@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import functools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -42,19 +41,18 @@ _CSS_URL_PATTERNS: list[tuple[str, str]] = [
     (r"""@import\s+['"]?([^'")\s]+\.css)['"]?""", "css-import-relative"),
 ]
 
-#Updated per review feedback
 # Inline resource type detection
 _INLINE_SCRIPT_RE = re.compile(r"<script[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
 _INLINE_STYLE_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.DOTALL | re.IGNORECASE)
 
 
-    """Parse HTML and extract all resources, scripts, styles, and linked assets."""
 class Parser:
+    """Parse HTML and extract all resources, scripts, styles, and linked assets."""
 
     def parse(
         self,
         url: str,
-        state: int,
+        status: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
@@ -121,7 +119,6 @@ class Parser:
             videos=videos,
             audios=audios,
             workers=workers,
-#Note: may need refactoring
             iframes=iframes,
             configs=configs,
             json_data=json_data,
@@ -376,7 +373,6 @@ class Parser:
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in videos:
                 videos.append(full_url)
-#FIXME: handle gracefully
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
             if parent and parent.name == "video":
@@ -408,6 +404,7 @@ class Parser:
     # ── Workers ────────────────────────────────────────────
 
     def _extract_workers(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+#Note: may need refactoring
         workers = []
         for tag in soup.find_all("script", type="module"):
             # Module workers registered via registration API — not directly in HTML
@@ -427,7 +424,6 @@ class Parser:
                 full_url = urljoin(base_url, href)
                 if full_url not in workers:
                     workers.append(full_url)
-#Updated per review feedback
         return workers
 
     # ── Iframes ────────────────────────────────────────────
@@ -442,7 +438,6 @@ class Parser:
                     iframes.append(full_url)
         return iframes
 
-#Updated per review feedback
     # ── Config / Manifest / JSON-LD ────────────────────────
 
     def _extract_configs(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
@@ -450,7 +445,6 @@ class Parser:
         # <link rel="manifest">
         for tag in soup.find_all("link", rel="manifest"):
             href = tag.get("href", "").strip()
-#TODO: review edge case
             if href:
                 full_url = urljoin(base_url, href)
                 if not any(r.url == full_url for r in configs):
