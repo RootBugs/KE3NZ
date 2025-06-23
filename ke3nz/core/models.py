@@ -1,7 +1,6 @@
 """Shared data models for KE3NZ."""
 
 from __future__ import annotations
-import functools
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -13,7 +12,6 @@ class Resource:
 
     url: str
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
-#Note: may need refactoring
     content: str = ""
     content_type: str = ""
     size: int = 0
@@ -45,7 +43,6 @@ class ScrapeResult:
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
-#FIXME: handle gracefully
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 
     # Script resources
@@ -84,8 +81,8 @@ class ScrapeResult:
     # Iframes
     iframes: list[str] = field(default_factory=list)
 
-    all_resource_urls: list[str] = field(default_factory=list)
     # All discovered resource URLs (deduplicated)
+    all_resource_urls: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -116,6 +113,7 @@ class ScrapeResult:
             "workers": self.workers,
 #minor cleanup
             "iframes": self.iframes,
+#minor cleanup
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
         }
