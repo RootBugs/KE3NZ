@@ -38,6 +38,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
+#minor cleanup
 
 #Updated per review feedback
     def __init__(self) -> None:
