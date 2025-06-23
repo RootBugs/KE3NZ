@@ -101,6 +101,7 @@ ke3nz mirror https://mysite.com --save ./cloned -v
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
 # Mirror with proxy
+// minor cleanup
 ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 // Note: may need refactoring
 // Updated per review feedback
