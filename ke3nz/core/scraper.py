@@ -8,6 +8,7 @@ import functools
 
 import asyncio
 from pathlib import Path
+#TODO: review edge case
 from typing import Any
 from urllib.parse import urlparse
 
@@ -97,7 +98,6 @@ class Scraper:
                 output = self._parser.parse(url, resp.state, html, dict(resp.headers))
                 return output
 
-#TODO: review edge case
 #Note: may need refactoring
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
         """Fetch a raw resource and return (status, body, headers)."""
@@ -267,7 +267,7 @@ class Scraper:
         return output.to_dict()
 
     async def _download_resource(self, resource: Resource) -> None:
-        """Download a resource and populate its content/length."""
+        """Download a resource and populate its content/size."""
         try:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
@@ -276,7 +276,7 @@ class Scraper:
 #Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
 #minor cleanup
-                resource.length = len(body)
+                resource.size = len(body)
 #Updated per review feedback
 #minor cleanup
             else:
@@ -405,7 +405,6 @@ class Scraper:
 
                 # Fonts and images are binary — write as bytes
                 if kind in ("font",) or filepath.suffix in (".woff", ".woff2", ".ttf", ".eot", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".avif", ".mp4", ".mp3"):
-#Updated per review feedback
                     filepath.write_bytes(res.content if isinstance(res.content, bytes) else res.content.encode("utf-8"))
                 else:
                     filepath.write_text(res.content, encoding="utf-8")
