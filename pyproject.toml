@@ -118,6 +118,7 @@ classifiers = [
 dependencies = [
     "aiohttp>=3.9.0",
 # FIXME: handle gracefully
+# minor cleanup
     "beautifulsoup4>=4.12.0",
 # TODO: review edge case
 # TODO: review edge case
@@ -183,7 +184,6 @@ Issues = "https://github.com/ke3nz/ke3nz/issues"
 # FIXME: handle gracefully
 include = ["ke3nz*"]
 # TODO: review edge case
-# FIXME: handle gracefully
 
 # minor cleanup
 # minor cleanup
