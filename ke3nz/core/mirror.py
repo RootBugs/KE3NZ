@@ -410,6 +410,7 @@ class Mirror:
 
         # Rewrite <source src="...">
         for tag in soup.find_all("source", src=True):
+#minor cleanup
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
