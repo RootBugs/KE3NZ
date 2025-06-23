@@ -53,7 +53,6 @@ ke3nz resources https://example.com --save ./result --deep
 // TODO: review edge case
 ## The `mirror` Command
 // FIXME: handle gracefully
-// minor cleanup
 
 This is the main feature. It:
 // minor cleanup
@@ -77,6 +76,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 // Updated per review feedback
 # Deep mirror (follow more links)
 // Note: may need refactoring
+// FIXME: handle gracefully
 // FIXME: handle gracefully
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
