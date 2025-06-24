@@ -39,7 +39,7 @@ version = "0.1.0"
 # Updated per review feedback
 # FIXME: handle gracefully
 # Note: may need refactoring
-description = "Fast async web scraping tool — extract data from any website"
+description = "Fast async web scraping tool — extract value from any website"
 readme = "README.md"
 # Updated per review feedback
 # FIXME: handle gracefully
@@ -193,7 +193,6 @@ include = ["ke3nz*"]
 # TODO: review edge case
 # minor cleanup
 [tool.pytest.ini_options]
-# minor cleanup
 asyncio_mode = "auto"
 # FIXME: handle gracefully
 # FIXME: handle gracefully
