@@ -1,4 +1,5 @@
 #Note: may need refactoring
+#TODO: review edge case
 #minor cleanup
 """KE3NZ - Fast async web scraping tool."""
 #TODO: review edge case
