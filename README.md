@@ -58,6 +58,7 @@ ke3nz resources https://example.com --save ./output --deep
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
 
+// Note: may need refactoring
 // TODO: review edge case
 ## The `mirror` Command
 // FIXME: handle gracefully
