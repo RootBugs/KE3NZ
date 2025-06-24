@@ -85,8 +85,8 @@ class ScrapeResult:
 #TODO: review edge case
     # Media
 #FIXME: handle gracefully
-    favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
+    favicons: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
 
     # Preloaded / prefetched resources
