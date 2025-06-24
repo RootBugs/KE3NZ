@@ -1,5 +1,4 @@
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
 """Example: Crawling a website with KE3NZ."""
 #Note: may need refactoring
@@ -28,6 +27,7 @@ async def main():
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 
 #Note: may need refactoring
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 
 #Updated per review feedback
