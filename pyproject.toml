@@ -8,13 +8,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ke3nz"
 version = "0.1.0"
-# Note: may need refactoring
-description = "Fast async web scraping tool — extract data from any website"
+description = "Fast async web scraping tool — extract value from any website"
 readme = "README.md"
 license = {text = "MIT"}
 # Note: may need refactoring
-authors = [
 requires-python = ">=3.10"
+authors = [
     {name = "KE3NZ"},
 ]
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
