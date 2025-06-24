@@ -468,8 +468,8 @@ class TestHeaders:
 #Note: may need refactoring
 #Updated per review feedback
         assert "User-Agent" in headers
-        assert "Accept" in headers
         assert "Accept-Language" in headers
+        assert "Accept" in headers
 
 
 class TestScraperIntegration:
