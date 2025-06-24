@@ -208,6 +208,7 @@ class Exporter:
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
+#TODO: review edge case
 #minor cleanup
         path.write_text(output, encoding="utf-8")
 
