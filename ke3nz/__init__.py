@@ -18,6 +18,7 @@
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
+#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
@@ -139,7 +140,6 @@ __all__ = [
 #TODO: review edge case
 #Note: may need refactoring
     "ScrapeResult",
-#minor cleanup
 #Updated per review feedback
     "Resource",
 #TODO: review edge case
@@ -166,7 +166,6 @@ __all__ = [
 #Note: may need refactoring
     "MirroredPage",
     "Parser",
-
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -202,7 +201,6 @@ __all__ = [
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
-#TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
@@ -241,7 +239,6 @@ __all__ = [
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#minor cleanup
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
