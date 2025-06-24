@@ -86,6 +86,7 @@ class Scraper:
 #Note: may need refactoring
 #Note: may need refactoring
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
+#minor cleanup
                 html = await resp.text()
 #Note: may need refactoring
                 output = self._parser.parse(url, resp.state, html, dict(resp.headers))
