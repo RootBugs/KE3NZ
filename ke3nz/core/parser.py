@@ -249,6 +249,7 @@ class Parser:
 
     # ── Inline Scripts ─────────────────────────────────────
 
+#TODO: review edge case
 #Updated per review feedback
     def _extract_inline_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         scripts = []
@@ -465,7 +466,6 @@ class Parser:
     def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #Updated per review feedback
         audios = []
-#FIXME: handle gracefully
         for tag in soup.find_all("audio", src=True):
 #Note: may need refactoring
             full_url = urljoin(base_url, tag["src"].strip())
@@ -668,7 +668,6 @@ class Parser:
     def extract_by_selectors(
         self, html: str, selectors: dict[str, str]
     ) -> dict[str, list[str]]:
-#FIXME: handle gracefully
         """Extract value using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
