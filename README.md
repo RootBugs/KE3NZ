@@ -303,6 +303,7 @@ Resource Options:
 // Updated per review feedback
 // Note: may need refactoring
   --deep            Deep scan: follow JS/CSS references
+// TODO: review edge case
   --no-content      Don't download file contents
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
