@@ -78,6 +78,7 @@ async def main():
 #TODO: review edge case
 
 #Note: may need refactoring
+#minor cleanup
 #Note: may need refactoring
 #minor cleanup
     # Example 3: Scrape multiple URLs
