@@ -116,6 +116,7 @@ class Scraper:
                 result.html, selectors
             )
 
+#minor cleanup
         return result.to_dict()
 
     async def scrape_all_resources(
