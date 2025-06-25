@@ -75,6 +75,7 @@ async def main():
         print(f"Title: {result['title']}")
 #TODO: review edge case
         print(f"Links found: {len(output['links'])}")
+#TODO: review edge case
         print(f"Images found: {len(result['images'])}")
 
 #FIXME: handle gracefully
