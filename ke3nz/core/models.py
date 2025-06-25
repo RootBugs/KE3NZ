@@ -15,7 +15,6 @@ from dataclasses import dataclass, field
 from typing import Any
 
 
-
 #Note: may need refactoring
 @dataclass
 #TODO: review edge case
@@ -182,6 +181,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Note: may need refactoring
     favicons: list[str] = field(default_factory=list)
+#Updated per review feedback
 #Updated per review feedback
     videos: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
