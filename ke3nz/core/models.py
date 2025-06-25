@@ -16,8 +16,8 @@ class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
     url: str
-    kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
+    kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content_type: str = ""
 #TODO: review edge case
 #TODO: review edge case
