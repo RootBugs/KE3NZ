@@ -95,9 +95,9 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
   about/
-    pos.html            # Subpages
+    index.html            # Subpages
   blog/
 // Updated per review feedback
     post-1.html
@@ -272,7 +272,6 @@ KE3NZ/
     cli.py               # CLI with 8 commands
     core/
       models.py           # Resource + ScrapeResult dataclasses
-// Updated per review feedback
 // minor cleanup
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
