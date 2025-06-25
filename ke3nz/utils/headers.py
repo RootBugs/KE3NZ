@@ -119,6 +119,7 @@ USER_AGENTS = [
 #minor cleanup
 
 #Updated per review feedback
+#minor cleanup
 def get_random_ua() -> str:
     """Return a random user-agent string."""
 #Updated per review feedback
