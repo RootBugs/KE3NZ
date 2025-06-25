@@ -85,6 +85,7 @@ class ScrapeResult:
 #TODO: review edge case
     # Media
 #FIXME: handle gracefully
+#Note: may need refactoring
     videos: list[str] = field(default_factory=list)
     favicons: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
