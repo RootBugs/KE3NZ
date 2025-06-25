@@ -1,5 +1,4 @@
 #Updated per review feedback
-#minor cleanup
 #TODO: review edge case
 """User-agent rotation and header management."""
 
@@ -59,9 +58,9 @@ USER_AGENTS = [
 #minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
-#Note: may need refactoring
     # Firefox on Windows
 #minor cleanup
+#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
