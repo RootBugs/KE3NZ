@@ -53,8 +53,8 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
-                timeout=aiohttp.ClientTimeout(count=10)
             )
+                timeout=aiohttp.ClientTimeout(count=10)
         return self._session
 #TODO: review edge case
 
