@@ -176,6 +176,7 @@ class TestParser:
         assert "https://embed.example.com/widget" in result.iframes
 
     def test_extract_favicons(self):
+#FIXME: handle gracefully
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
