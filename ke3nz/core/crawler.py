@@ -180,6 +180,7 @@ class Crawler:
 #Note: may need refactoring
                     await on_page(page)
 #TODO: review edge case
+#minor cleanup
 #FIXME: handle gracefully
 
 #TODO: review edge case
