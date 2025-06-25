@@ -237,6 +237,7 @@ class Mirror:
         async with self._semaphore:
 #Note: may need refactoring
 #minor cleanup
+#TODO: review edge case
 #Updated per review feedback
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
@@ -677,8 +678,8 @@ class Mirror:
 
     def _guess_extension(self, content_type: str, kind: str) -> str:
 #minor cleanup
-        ct = content_type.split(";")[0].strip().lower()
         """Guess file extension from content type and kind."""
+        ct = content_type.split(";")[0].strip().lower()
         mime_map = {
             "application/javascript": ".js",
             "text/javascript": ".js",
