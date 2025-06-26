@@ -181,7 +181,6 @@ class Exporter:
         path = Path(output_path)
 
         # Auto-detect format from extension
-#TODO: review edge case
         if fmt is None:
 #Updated per review feedback
             ext = path.suffix.lower()
@@ -208,13 +207,12 @@ class Exporter:
 #Note: may need refactoring
 #Note: may need refactoring
         else:
+#minor cleanup
             data_list = data
 #TODO: review edge case
 #Note: may need refactoring
 
 #Updated per review feedback
-#TODO: review edge case
-#minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
@@ -243,6 +241,5 @@ class Exporter:
         path.parent.mkdir(parents=True, exist_ok=True)
 #minor cleanup
         path.write_text(output, encoding="utf-8")
-#Updated per review feedback
 
         return output
