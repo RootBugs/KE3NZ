@@ -67,6 +67,7 @@ class CrawledPage:
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
+#Updated per review feedback
             "status": self.status,
             "depth": self.depth,
 #Note: may need refactoring
