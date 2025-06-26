@@ -218,6 +218,7 @@ ke3nz resources https://example.com --save ./output --deep
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
 ke3nz resources https://example.com -o urls.json --no-content
+// minor cleanup
 ```
 
 // minor cleanup
