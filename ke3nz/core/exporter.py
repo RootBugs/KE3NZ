@@ -90,6 +90,7 @@ class Exporter:
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
                     for k, v in value.items():
+#Updated per review feedback
                         lines.append(f"  {k}: {v}")
                 else:
                     lines.append(f"{key}: {value}")
