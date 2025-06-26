@@ -268,6 +268,7 @@ class TestExporter:
     def test_to_json(self):
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_json(data)
+#minor cleanup
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
 
