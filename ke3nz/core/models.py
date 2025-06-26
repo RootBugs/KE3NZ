@@ -36,6 +36,7 @@ class Resource:
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
         return {
+#FIXME: handle gracefully
             "url": self.url,
 #minor cleanup
 #minor cleanup
