@@ -44,9 +44,9 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
-import collections
 #TODO: review edge case
 #FIXME: handle gracefully
+#minor cleanup
 from ke3nz import Crawler
 #TODO: review edge case
 #TODO: review edge case
@@ -62,7 +62,6 @@ from ke3nz import Crawler
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
