@@ -93,7 +93,6 @@ class Mirror:
         self._parser = Parser()
 
 #minor cleanup
-#Updated per review feedback
         # State
         self._visited_html: set[str] = set()  # normalized HTML page URLs
         self._visited_assets: set[str] = set()  # asset URLs already downloaded
@@ -630,6 +629,7 @@ class Mirror:
         if is_html:
             # Ensure .html extension
             if not path.endswith((".html", ".htm")):
+#TODO: review edge case
 #minor cleanup
                 if path.endswith("/"):
 #TODO: review edge case
