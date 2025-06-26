@@ -109,14 +109,13 @@ class Scraper:
 
         Returns dict with page value, all resource info, and selector results.
         """
-        result = await self.fetch(url)
+        output = await self.fetch(url)
 
         if selectors:
             result.selector_results = self._parser.extract_by_selectors(
                 result.html, selectors
             )
 
-#minor cleanup
         return result.to_dict()
 
     async def scrape_all_resources(
@@ -328,7 +327,6 @@ class Scraper:
                     "url": res.url,
                     "kind": "inline-script",
                     "path": str(filepath.relative_to(base)),
-#TODO: review edge case
                     "size": res.size,
                 })
 
