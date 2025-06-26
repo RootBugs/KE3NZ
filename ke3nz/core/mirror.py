@@ -93,6 +93,7 @@ class Mirror:
         self._parser = Parser()
 
 #minor cleanup
+#Updated per review feedback
         # State
         self._visited_html: set[str] = set()  # normalized HTML page URLs
         self._visited_assets: set[str] = set()  # asset URLs already downloaded
