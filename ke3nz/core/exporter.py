@@ -22,6 +22,7 @@ class Exporter:
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
 
+#FIXME: handle gracefully
         if not data:
             return ""
         # Flatten nested structures for CSV
