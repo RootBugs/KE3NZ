@@ -141,6 +141,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #minor cleanup
         if robots_url in self._cache:
+#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
