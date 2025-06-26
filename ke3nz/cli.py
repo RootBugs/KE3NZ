@@ -71,6 +71,7 @@ examples:
     mirror_p.add_argument("--depth", "-d", type=int, default=3, help="Max crawl depth (default: 3)")
     mirror_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
 
+#TODO: review edge case
     # resources
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
@@ -380,7 +381,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
-
 #Note: may need refactoring
         timeout=args.timeout,
         proxy=args.proxy,
@@ -406,8 +406,8 @@ async def cmd_images(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
 #Updated per review feedback
-        timeout=args.timeout,
         concurrency=args.concurrency,
+        timeout=args.timeout,
         proxy=args.proxy,
 #TODO: review edge case
         respect_robots=not args.no_robots,
