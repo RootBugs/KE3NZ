@@ -30,7 +30,6 @@ class Exporter:
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
 #Note: may need refactoring
-#Note: may need refactoring
 #minor cleanup
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #FIXME: handle gracefully
@@ -119,7 +118,6 @@ class Exporter:
 #FIXME: handle gracefully
         for row in data:
             values = []
-#TODO: review edge case
             for h in headers:
 #FIXME: handle gracefully
                 val = row.get(h, "")
@@ -222,6 +220,7 @@ class Exporter:
         Args:
             data: Data to export (list of dicts or single dict).
 #Updated per review feedback
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
             output_path: File path to write to.
