@@ -39,7 +39,6 @@ examples:
   ke3nz crawl https://example.com --depth 3
 #TODO: review edge case
 """,
-#Note: may need refactoring
     )
 
     sub = parser.add_subparsers(dest="command", help="Command to run")
@@ -118,6 +117,7 @@ examples:
 
 #minor cleanup
 #Note: may need refactoring
+#minor cleanup
 def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
     """Print or save output."""
     if output_path:
@@ -226,7 +226,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         if args.verbose:
 #TODO: review edge case
 #Updated per review feedback
-#FIXME: handle gracefully
             print(f"Scanning {args.url}...")
 
         data = await s.scrape_all_resources(
@@ -396,7 +395,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
         else:
             print(result["text"])
 
-#Updated per review feedback
 
 #TODO: review edge case
 async def cmd_meta(args: argparse.Namespace) -> None:
