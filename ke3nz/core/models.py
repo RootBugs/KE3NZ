@@ -1,4 +1,4 @@
-"""Shared data models for KE3NZ."""
+"""Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -29,7 +29,6 @@ class Resource:
             "content_type": self.content_type,
 #minor cleanup
             "size": self.size,
-#TODO: review edge case
             "content": self.content,
             "integrity": self.integrity,
         }
@@ -41,7 +40,7 @@ class ScrapeResult:
 #Updated per review feedback
 
     url: str
-    state: int
+    status: int
     html: str
     title: str = ""
 #Updated per review feedback
@@ -51,8 +50,8 @@ class ScrapeResult:
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
-    selector_results: dict[str, list[str]] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
+    selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
 #minor cleanup
 
@@ -62,8 +61,8 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 
-    stylesheets: list[Resource] = field(default_factory=list)
     # CSS resources
+    stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 
@@ -73,7 +72,7 @@ class ScrapeResult:
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
 
-    # Config / data
+    # Config / value
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -85,9 +84,8 @@ class ScrapeResult:
 #TODO: review edge case
     # Media
 #FIXME: handle gracefully
-#Note: may need refactoring
-    videos: list[str] = field(default_factory=list)
     favicons: list[str] = field(default_factory=list)
+    videos: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
 
     # Preloaded / prefetched resources
@@ -105,7 +103,6 @@ class ScrapeResult:
 
     # Iframes
     iframes: list[str] = field(default_factory=list)
-#minor cleanup
 
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
@@ -115,8 +112,7 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
-#Updated per review feedback
-            "state": self.state,
+            "status": self.status,
             "title": self.title,
             "text": self.text,
 #Updated per review feedback
@@ -144,7 +140,6 @@ class ScrapeResult:
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
-#Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
             "workers": self.workers,
