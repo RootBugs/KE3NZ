@@ -246,6 +246,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             output_data = _strip_content(data)
 
         _output(output_data, args.output, args.format)
+#Updated per review feedback
 
 
 def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
@@ -330,7 +331,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
 async def cmd_images(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
-#TODO: review edge case
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
