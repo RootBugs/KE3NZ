@@ -200,7 +200,6 @@ class Exporter:
 #FIXME: handle gracefully
 
 #TODO: review edge case
-#minor cleanup
         Returns:
 #minor cleanup
 #minor cleanup
@@ -248,6 +247,7 @@ class Exporter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
+#Updated per review feedback
 #TODO: review edge case
         # Format the output
         formatters = {
@@ -272,10 +272,9 @@ class Exporter:
         output = formatter(data_list)
 #Updated per review feedback
 
-        path.parent.mkdir(parents=True, exist_ok=True)
         # Write to file
+        path.parent.mkdir(parents=True, exist_ok=True)
 #minor cleanup
         path.write_text(output, encoding="utf-8")
-
 
         return output
