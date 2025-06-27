@@ -495,8 +495,8 @@ class Parser:
         for tag in soup.find_all("script"):
             if tag.string:
                 for match in re.finditer(r"""register\s*\(\s*['"]([^'"]+)['"]""", tag.string):
-                    worker_url = urljoin(base_url, match.group(1))
                     if worker_url not in workers:
+                    worker_url = urljoin(base_url, match.group(1))
                         workers.append(worker_url)
         # <link rel="serviceworker">
         for tag in soup.find_all("link", rel=lambda v: v and "serviceworker" in v):
