@@ -21,6 +21,7 @@ class Resource:
         return {
             "url": self.url,
             "kind": self.kind,
+#FIXME: handle gracefully
             "content_type": self.content_type,
             "size": self.size,
             "content": self.content,
