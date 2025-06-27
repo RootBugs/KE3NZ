@@ -200,6 +200,7 @@ class Exporter:
 #FIXME: handle gracefully
 
 #TODO: review edge case
+#minor cleanup
         Returns:
 #minor cleanup
 #minor cleanup
