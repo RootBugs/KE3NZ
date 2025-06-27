@@ -323,6 +323,7 @@ Shared Options:
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
 // Note: may need refactoring
+// Updated per review feedback
   --verbose, -v     Verbose output
 // Updated per review feedback
   --output, -o      Output file path
