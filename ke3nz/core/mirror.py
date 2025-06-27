@@ -100,7 +100,6 @@ class Mirror:
     # ── Public API ─────────────────────────────────────────
 
     async def mirror(
-#Updated per review feedback
         self,
         start_url: str,
         output_dir: str | Path,
@@ -114,7 +113,6 @@ class Mirror:
             output_dir: Directory to write the mirror into.
             on_page: Optional async callback(MirroredPage) for progress.
 
-#FIXME: handle gracefully
 #TODO: review edge case
         Returns:
             Path to the result directory.
@@ -410,7 +408,6 @@ class Mirror:
 
         # Rewrite <source src="...">
         for tag in soup.find_all("source", src=True):
-#minor cleanup
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
@@ -584,6 +581,7 @@ class Mirror:
         ext = self._guess_extension(content_type, kind)
         self._asset_counter += 1
         folder = {
+#FIXME: handle gracefully
             "js": "assets/js",
             "css": "assets/css",
             "fonts": "assets/fonts",
@@ -621,7 +619,6 @@ class Mirror:
 #TODO: review edge case
             "css": ".css",
 #Note: may need refactoring
-#TODO: review edge case
             "fonts": ".woff2",
             "images": ".png",
             "media": ".mp4",
