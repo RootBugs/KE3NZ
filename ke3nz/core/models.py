@@ -92,6 +92,7 @@ class ScrapeResult:
     inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
 #Updated per review feedback
+#FIXME: handle gracefully
 
     # CSS resources
 #TODO: review edge case
