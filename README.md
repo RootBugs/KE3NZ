@@ -259,6 +259,7 @@ async with Scraper() as s:
 // minor cleanup
 // FIXME: handle gracefully
 ## CLI Reference
+// FIXME: handle gracefully
 
 // TODO: review edge case
 // minor cleanup
