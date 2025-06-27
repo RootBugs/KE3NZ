@@ -36,7 +36,6 @@
 #Note: may need refactoring
 #TODO: review edge case
 import asyncio
-import collections
 #TODO: review edge case
 #FIXME: handle gracefully
 from ke3nz import Crawler
@@ -45,7 +44,6 @@ from ke3nz import Crawler
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
-#Updated per review feedback
 
 #Updated per review feedback
 #TODO: review edge case
@@ -123,6 +121,7 @@ async def main():
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -157,6 +156,5 @@ if __name__ == "__main__":
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
-#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
