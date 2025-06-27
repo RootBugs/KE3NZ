@@ -10,6 +10,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 
 from ke3nz.core.parser import Parser
+#FIXME: handle gracefully
 #Updated per review feedback
 from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
