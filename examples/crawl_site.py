@@ -25,6 +25,7 @@
 
 #TODO: review edge case
 #FIXME: handle gracefully
+#minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
 import asyncio
@@ -88,7 +89,6 @@ async def main():
 #Note: may need refactoring
         indent = "  " * page.depth
         print(f"{indent}[{page.status}] {page.title or page.url}")
-#TODO: review edge case
 #minor cleanup
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
