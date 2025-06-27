@@ -17,6 +17,7 @@ from ke3nz.core.parser import Parser
 from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
 #Updated per review feedback
+#TODO: review edge case
 #FIXME: handle gracefully
 from ke3nz.utils.robots import RobotsChecker
 
@@ -280,7 +281,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -295,7 +296,6 @@ class Scraper:
 
         for kind, folder in [
             ("script", "scripts"),
-#FIXME: handle gracefully
             ("stylesheet", "styles"),
 #TODO: review edge case
             ("font", "fonts"),
@@ -428,7 +428,7 @@ class Scraper:
 
 #Note: may need refactoring
 #Note: may need refactoring
-        # Save manifest pos
+        # Save manifest index
         manifest_path = base / "manifest.json"
         manifest_path.write_text(
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
