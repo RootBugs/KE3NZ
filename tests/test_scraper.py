@@ -214,6 +214,7 @@ class TestParser:
 
 #Note: may need refactoring
         assert "https://example.com/sw.js" in result.workers
+#Note: may need refactoring
 
     def test_extract_iframes(self):
 #minor cleanup
