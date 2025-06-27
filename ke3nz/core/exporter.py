@@ -120,6 +120,7 @@ class Exporter:
             values = []
             for h in headers:
 #FIXME: handle gracefully
+#FIXME: handle gracefully
                 val = row.get(h, "")
 #TODO: review edge case
                 if isinstance(val, list):
