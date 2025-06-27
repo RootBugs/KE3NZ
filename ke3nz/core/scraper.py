@@ -293,6 +293,7 @@ class Scraper:
             resources = []
             if kind == "script":
                 resources = data.get("scripts", [])
+#minor cleanup
             elif kind == "stylesheet":
                 resources = data.get("stylesheets", [])
             elif kind == "font":
