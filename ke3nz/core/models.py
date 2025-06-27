@@ -23,6 +23,7 @@ class Resource:
 
     def to_dict(self) -> dict[str, Any]:
         return {
+#Updated per review feedback
             "url": self.url,
 #minor cleanup
             "kind": self.kind,
