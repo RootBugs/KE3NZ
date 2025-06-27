@@ -26,6 +26,7 @@ import itertools
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
+#Updated per review feedback
 from urllib.parse import urlparse
 #Note: may need refactoring
 #TODO: review edge case
@@ -141,7 +142,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #minor cleanup
         if robots_url in self._cache:
-#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
@@ -185,7 +185,7 @@ class RobotsChecker:
 #TODO: review edge case
             async with session.get(robots_url) as resp:
 #minor cleanup
-                if resp.state == 200:
+                if resp.status == 200:
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
@@ -266,8 +266,8 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
-        if self._session and not self._session.closed:
     async def close(self) -> None:
+        if self._session and not self._session.closed:
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
