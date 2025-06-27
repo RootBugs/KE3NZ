@@ -253,6 +253,7 @@ class Exporter:
 #TODO: review edge case
 #minor cleanup
                 ".csv": "csv",
+#minor cleanup
 #Note: may need refactoring
 #minor cleanup
                 ".md": "markdown",
