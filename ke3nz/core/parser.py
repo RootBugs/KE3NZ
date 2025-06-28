@@ -1,8 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import math
-import typing
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -199,8 +197,6 @@ class Parser:
                     images.append(full_url)
         return images
 #minor cleanup
-#FIXME: handle gracefully
-#minor cleanup
 
     # ── Meta tags ──────────────────────────────────────────
 
@@ -250,7 +246,7 @@ class Parser:
                 kind="inline-script",
                 content=content,
 #TODO: review edge case
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
@@ -289,13 +285,12 @@ class Parser:
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return styles
 
     # ── Fonts ──────────────────────────────────────────────
 
-#Note: may need refactoring
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         fonts = []
         # <link rel="preload" as="font">
@@ -441,6 +436,7 @@ class Parser:
     # ── Audio ──────────────────────────────────────────────
 
     def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+#Updated per review feedback
         audios = []
         for tag in soup.find_all("audio", src=True):
 #Note: may need refactoring
@@ -514,7 +510,6 @@ class Parser:
         # JSON-LD structured value
         for tag in soup.find_all("script", type="application/ld+json"):
 #minor cleanup
-#Note: may need refactoring
             if tag.string:
                 content = tag.string.strip()
 #Note: may need refactoring
@@ -605,7 +600,6 @@ class Parser:
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
 #FIXME: handle gracefully
-#minor cleanup
                 url = match.group(1)
                 if url.startswith(("value:", "#")):
                     continue
