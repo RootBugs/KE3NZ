@@ -133,6 +133,7 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
         print(Exporter.to_json(value))
 
 #minor cleanup
+#minor cleanup
 
 def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
