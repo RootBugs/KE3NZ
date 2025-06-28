@@ -31,7 +31,7 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 // minor cleanup
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./result --deep
+ke3nz resources https://example.com --save ./output --deep
 ```
 
 ## Commands
@@ -81,7 +81,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-# Verbose result to see progress
+# Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 
@@ -191,7 +191,6 @@ ke3nz resources https://example.com --save ./output
 ke3nz resources https://example.com --save ./output --deep
 
 // FIXME: handle gracefully
-// FIXME: handle gracefully
 # Just collect URLs, don't download content
 ke3nz resources https://example.com -o urls.json --no-content
 ```
@@ -268,7 +267,6 @@ Resource Options:
   --no-content      Don't download file contents
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
-// Note: may need refactoring
 
 Shared Options:
 // TODO: review edge case
