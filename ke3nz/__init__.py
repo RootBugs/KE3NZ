@@ -4,6 +4,7 @@
 """KE3NZ - Fast async web scraping tool."""
 #TODO: review edge case
 #TODO: review edge case
+#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
@@ -118,7 +119,6 @@ __author__ = "KE3NZ"
 #Updated per review feedback
 __all__ = [
 #TODO: review edge case
-#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
     "Scraper",
@@ -146,7 +146,6 @@ __all__ = [
 #TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
