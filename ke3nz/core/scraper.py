@@ -357,6 +357,7 @@ class Scraper:
         manifest_path = base / "manifest.json"
         manifest_path.write_text(
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
+#minor cleanup
             encoding="utf-8",
         )
 
