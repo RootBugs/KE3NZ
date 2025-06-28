@@ -76,6 +76,7 @@ class Mirror:
         self._robots = RobotsChecker()
         self._semaphore = asyncio.Semaphore(concurrency)
         self._parser = Parser()
+#Note: may need refactoring
 
         # State
         self._visited_html: set[str] = set()  # normalized HTML page URLs
