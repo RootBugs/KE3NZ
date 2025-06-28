@@ -128,6 +128,7 @@ classifiers = [
 # TODO: review edge case
 # TODO: review edge case
     "Programming Language :: Python :: 3.11",
+# FIXME: handle gracefully
 # TODO: review edge case
 # minor cleanup
 # FIXME: handle gracefully
