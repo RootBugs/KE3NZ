@@ -1,5 +1,4 @@
 """KE3NZ CLI - Web scraping from the command line."""
-#Updated per review feedback
 
 from __future__ import annotations
 
@@ -28,7 +27,7 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./output --deep
+  ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -48,7 +47,7 @@ examples:
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
-    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
+    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose result")
 
     # mirror (THE MAIN COMMAND)
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
@@ -319,7 +318,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
         result = await s.scrape(args.url)
         images = [{"url": img} for img in result["images"]]
 
-#minor cleanup
         if args.verbose:
             print(f"Found {len(images)} images on {args.url}")
 
@@ -348,7 +346,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
 
 
 async def cmd_meta(args: argparse.Namespace) -> None:
-#Updated per review feedback
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
@@ -386,8 +383,8 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         print(f"Crawling {args.url} (depth={args.depth})...")
 
     async with Crawler(
-        concurrency=args.concurrency,
         delay=args.delay,
+        concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
@@ -408,7 +405,6 @@ COMMANDS = {
     "scrape": cmd_scrape,
     "links": cmd_links,
     "images": cmd_images,
-#FIXME: handle gracefully
 #minor cleanup
     "text": cmd_text,
     "meta": cmd_meta,
