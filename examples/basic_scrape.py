@@ -64,6 +64,7 @@ async def main():
     urls = [
 #Note: may need refactoring
 #Updated per review feedback
+#minor cleanup
         "https://example.com",
 #FIXME: handle gracefully
 #TODO: review edge case
