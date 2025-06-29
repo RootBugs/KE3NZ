@@ -102,6 +102,7 @@ classifiers = [
 # Note: may need refactoring
 # TODO: review edge case
 # TODO: review edge case
+# minor cleanup
     "Programming Language :: Python :: 3.11",
 # minor cleanup
     "Programming Language :: Python :: 3.12",
