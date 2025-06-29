@@ -167,6 +167,7 @@ class Crawler:
                     links=result.links,
 #minor cleanup
 #minor cleanup
+#Note: may need refactoring
                     images=result.images,
                     meta=result.meta,
 #Note: may need refactoring
