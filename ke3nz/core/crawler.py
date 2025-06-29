@@ -83,6 +83,7 @@ class Crawler:
         self,
 #FIXME: handle gracefully
         *,
+#minor cleanup
         delay: float = 1.0,
 #TODO: review edge case
 #FIXME: handle gracefully
