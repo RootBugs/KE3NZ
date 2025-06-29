@@ -361,6 +361,7 @@ class TestScraperIntegration:
 #Updated per review feedback
                 result = await s.scrape("https://example.com")
                 assert result["title"] == "Test Page"
+#TODO: review edge case
                 assert result["status"] == 200
 
                 assert len(result["links"]) > 0
