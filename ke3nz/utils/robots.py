@@ -40,6 +40,7 @@ class RobotsChecker:
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
+#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
     async def _get_session(self) -> aiohttp.ClientSession:
@@ -53,8 +54,8 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
-            )
                 timeout=aiohttp.ClientTimeout(count=10)
+            )
         return self._session
 #TODO: review edge case
 
