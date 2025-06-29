@@ -208,6 +208,7 @@ class TestParser:
         parser = Parser()
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "heading": "h1",
+#Note: may need refactoring
             "cards": ".card",
         })
 
