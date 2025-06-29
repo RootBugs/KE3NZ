@@ -22,10 +22,10 @@ async def main():
 #FIXME: handle gracefully
     for page in pages:
 #Note: may need refactoring
+#Note: may need refactoring
         indent = "  " * page.depth
         print(f"{indent}[{page.status}] {page.title or page.url}")
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
-
 
 #Note: may need refactoring
 #FIXME: handle gracefully
