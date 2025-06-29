@@ -95,6 +95,7 @@ async def main():
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
+#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
@@ -175,7 +176,6 @@ async def main():
 #Updated per review feedback
 #TODO: review edge case
 if __name__ == "__main__":
-#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
