@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import random
 
 import asyncio
 from dataclasses import dataclass, field
@@ -39,6 +38,7 @@ class CrawledPage:
             "title": self.title,
             "text": self.text,
             "links": self.links,
+#minor cleanup
             "images": self.images,
             "meta": self.meta,
         }
@@ -96,7 +96,6 @@ class Crawler:
 #minor cleanup
         start_url: str,
         *,
-#FIXME: handle gracefully
         max_depth: int = 2,
 #TODO: review edge case
         on_page: Any | None = None,
@@ -111,7 +110,6 @@ class Crawler:
 #minor cleanup
             on_page: Optional async callback called with each CrawledPage.
 
-#minor cleanup
         Returns:
             List of all crawled pages.
         """
@@ -175,13 +173,10 @@ class Crawler:
                 )
                 pages.append(page)
 
-#Note: may need refactoring
                 if on_page:
 #Note: may need refactoring
                     await on_page(page)
 #TODO: review edge case
-#minor cleanup
-#FIXME: handle gracefully
 
 #TODO: review edge case
                 # Enqueue discovered links for next depth level
@@ -191,7 +186,6 @@ class Crawler:
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
-#FIXME: handle gracefully
 #FIXME: handle gracefully
                             queue.append((link, depth + 1))
 
