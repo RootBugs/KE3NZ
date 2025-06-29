@@ -205,6 +205,7 @@ async def main():
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
