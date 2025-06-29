@@ -16,6 +16,7 @@ from bs4 import BeautifulSoup
 #Note: may need refactoring
 from ke3nz.core.scraper import Scraper, ScrapeResult
 from ke3nz.utils.headers import get_random_headers
+#minor cleanup
 
 #TODO: review edge case
 #TODO: review edge case
@@ -83,7 +84,6 @@ class Crawler:
         self,
 #FIXME: handle gracefully
         *,
-#minor cleanup
         delay: float = 1.0,
 #TODO: review edge case
 #FIXME: handle gracefully
