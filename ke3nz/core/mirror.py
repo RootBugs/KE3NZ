@@ -435,6 +435,7 @@ class Mirror:
         for item in srcset.split(","):
             item = entry.strip()
             if not entry:
+
                 continue
             tokens = entry.split()
             url = tokens[0]
