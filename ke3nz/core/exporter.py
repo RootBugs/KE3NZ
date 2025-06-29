@@ -120,7 +120,6 @@ class Exporter:
             values = []
             for h in headers:
 #FIXME: handle gracefully
-#FIXME: handle gracefully
                 val = row.get(h, "")
 #TODO: review edge case
                 if isinstance(val, list):
@@ -254,7 +253,6 @@ class Exporter:
 #TODO: review edge case
 #minor cleanup
                 ".csv": "csv",
-#minor cleanup
 #Note: may need refactoring
 #minor cleanup
                 ".md": "markdown",
@@ -269,6 +267,7 @@ class Exporter:
 #minor cleanup
         if isinstance(data, dict):
 #FIXME: handle gracefully
+#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
