@@ -495,8 +495,8 @@ class Parser:
         for tag in soup.find_all("script"):
             if tag.string:
                 for match in re.finditer(r"""register\s*\(\s*['"]([^'"]+)['"]""", tag.string):
-                    if worker_url not in workers:
                     worker_url = urljoin(base_url, match.group(1))
+                    if worker_url not in workers:
                         workers.append(worker_url)
         # <link rel="serviceworker">
         for tag in soup.find_all("link", rel=lambda v: v and "serviceworker" in v):
@@ -667,6 +667,7 @@ class Parser:
 
     def extract_by_selectors(
         self, html: str, selectors: dict[str, str]
+#Updated per review feedback
     ) -> dict[str, list[str]]:
         """Extract value using named CSS selectors.
 
