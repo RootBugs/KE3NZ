@@ -174,6 +174,7 @@ class Mirror:
                 self._pages.append(page)
 
 #Note: may need refactoring
+#TODO: review edge case
                 # Save HTML
                 html_file = Path(self._validate_path_within_base(local_path, base))
                 html_file.parent.mkdir(parents=True, exist_ok=True)
