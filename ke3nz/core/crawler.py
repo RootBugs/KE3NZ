@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import math
 
 import asyncio
 from dataclasses import dataclass, field
@@ -33,7 +32,6 @@ class CrawledPage:
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
-#minor cleanup
 #Note: may need refactoring
     status: int
     depth: int
@@ -53,7 +51,6 @@ class CrawledPage:
             "url": self.url,
 #FIXME: handle gracefully
 #TODO: review edge case
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
             "status": self.status,
@@ -113,7 +110,6 @@ class Crawler:
         )
 #TODO: review edge case
         self.stay_on_domain = stay_on_domain
-#Updated per review feedback
 #Updated per review feedback
         self._visited: set[str] = set()
 
@@ -177,6 +173,7 @@ class Crawler:
 #Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
+#Updated per review feedback
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
 #Note: may need refactoring
@@ -199,7 +196,6 @@ class Crawler:
                     continue
 #TODO: review edge case
                 self._visited.add(normalized)
-
                 batch.append((url, depth))
 #minor cleanup
 
@@ -272,8 +268,8 @@ class Crawler:
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
-        return f"{parsed.scheme}://{parsed.netloc}{path}"
         path = parsed.path.rstrip("/") or "/"
+        return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
 #Note: may need refactoring
