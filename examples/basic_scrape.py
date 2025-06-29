@@ -163,7 +163,6 @@ async def main():
 #TODO: review edge case
 #minor cleanup
     async with Scraper() as s:
-#minor cleanup
         results = await s.fetch_many(urls)
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -201,6 +200,7 @@ if __name__ == "__main__":
 #TODO: review edge case
     asyncio.run(main())
 #Updated per review feedback
+#minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
