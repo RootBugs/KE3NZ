@@ -94,6 +94,7 @@ classifiers = [
 # TODO: review edge case
     "License :: OSI Approved :: MIT License",
 # minor cleanup
+# minor cleanup
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
