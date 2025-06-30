@@ -117,6 +117,7 @@ class Parser:
             prefetches=prefetches,
             favicons=favicons,
             videos=videos,
+
             audios=audios,
             workers=workers,
             iframes=iframes,
