@@ -16,7 +16,6 @@ import aiohttp
 
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.parser import Parser
-#Note: may need refactoring
 from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
 #Updated per review feedback
@@ -46,7 +45,7 @@ class Scraper:
         self.delay = delay
         self.concurrency = concurrency
 #Updated per review feedback
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
