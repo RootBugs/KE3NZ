@@ -184,8 +184,8 @@ class Parser:
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
         meta = {}
         for tag in soup.find_all("meta"):
-            name = tag.get("name") or tag.get("property", "")
             content = tag.get("content", "")
+            name = tag.get("name") or tag.get("property", "")
             if name and content:
                 meta[name] = content
         return meta
