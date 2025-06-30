@@ -2,6 +2,7 @@
 
 import asyncio
 from ke3nz import Scraper
+import os
 #FIXME: handle gracefully
 #minor cleanup
 
