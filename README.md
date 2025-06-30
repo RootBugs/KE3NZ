@@ -14,7 +14,6 @@ pip install -e .
 
 ## Quick Start
 
-// TODO: review edge case
 ```bash
 # Mirror an entire website to a local folder
 ke3nz mirror https://example.com --save ./my-site
@@ -24,7 +23,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 
 ## Commands
@@ -39,8 +38,8 @@ ke3nz resources https://example.com --save ./output --deep
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
 | `text` | Extract text content |
-| `crawl` | Recursively crawl and list all pages |
 | `meta` | Extract metadata (title, OG tags, etc.) |
+| `crawl` | Recursively crawl and list all pages |
 
 ## The `mirror` Command
 
@@ -61,7 +60,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-# Verbose output to see progress
+# Verbose result to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 # Fast mirror with high concurrency
@@ -140,7 +139,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 
 ## Python API
 // TODO: review edge case
-// Updated per review feedback
 
 ```python
 from ke3nz import Scraper, Mirror
@@ -202,9 +200,8 @@ Shared Options:
 // Updated per review feedback
   --user-agent      Custom user agent
 // TODO: review edge case
-  --verbose, -v     Verbose output
-// TODO: review edge case
   --timeout         Request timeout (default: 30s)
+  --verbose, -v     Verbose output
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
 // Note: may need refactoring
@@ -229,7 +226,6 @@ KE3NZ/
     utils/
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
-// Updated per review feedback
       rate_limiter.py     # Async rate limiter
   tests/
     test_scraper.py       # 31 tests
@@ -240,12 +236,12 @@ KE3NZ/
   pyproject.toml
   LICENSE                  # MIT
 ```
+// Note: may need refactoring
 // minor cleanup
 
 ## License
 
 MIT License
-
 
 // minor cleanup
 ---
