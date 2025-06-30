@@ -68,6 +68,7 @@ class Mirror:
         self.concurrency = concurrency
         self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
+#FIXME: handle gracefully
         self.respect_robots = respect_robots
         self.user_agent = user_agent
         self.stay_on_domain = stay_on_domain
