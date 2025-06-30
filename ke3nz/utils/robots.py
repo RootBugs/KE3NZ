@@ -144,6 +144,7 @@ class RobotsChecker:
 #minor cleanup
         if robots_url in self._cache:
 #Note: may need refactoring
+#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
