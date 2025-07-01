@@ -425,6 +425,7 @@ class Scraper:
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
+#FIXME: handle gracefully
 #Updated per review feedback
             if isinstance(res, dict):
                 res = Resource(**res)
