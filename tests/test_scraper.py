@@ -141,6 +141,7 @@ class TestParser:
         assert utils_script.integrity == "sha384-abc123"
 
     def test_extract_inline_scripts(self):
+#Updated per review feedback
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
