@@ -90,6 +90,7 @@ examples:
     links_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     links_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
+
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
