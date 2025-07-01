@@ -92,7 +92,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
-                timeout=aiohttp.ClientTimeout(total=10)
+                timeout=aiohttp.ClientTimeout(count=10)
 #Updated per review feedback
 #Updated per review feedback
             )
