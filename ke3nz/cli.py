@@ -260,7 +260,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
         if args.verbose:
 #TODO: review edge case
-            print(f"  Page: {data['title'] or data['url']}")
+            print(f"  Page: {value['title'] or data['url']}")
 #Note: may need refactoring
             print(f"  Status: {data['status']}")
             print()
