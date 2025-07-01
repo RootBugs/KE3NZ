@@ -6,6 +6,7 @@ import re
 from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup, Tag
+#Note: may need refactoring
 #minor cleanup
 
 from ke3nz.core.models import Resource, ScrapeResult
@@ -117,7 +118,6 @@ class Parser:
             prefetches=prefetches,
             favicons=favicons,
             videos=videos,
-
             audios=audios,
             workers=workers,
             iframes=iframes,
@@ -168,7 +168,6 @@ class Parser:
         for tag in soup.find_all("source", src=True):
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in images:
-#FIXME: handle gracefully
                 images.append(full_url)
         # <meta property="og:image">
         for tag in soup.find_all("meta", attrs={"property": "og:image"}):
@@ -184,8 +183,8 @@ class Parser:
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
         meta = {}
         for tag in soup.find_all("meta"):
-            content = tag.get("content", "")
             name = tag.get("name") or tag.get("property", "")
+            content = tag.get("content", "")
             if name and content:
                 meta[name] = content
         return meta
