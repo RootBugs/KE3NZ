@@ -22,7 +22,6 @@ import random
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
-#Updated per review feedback
 
 #TODO: review edge case
 
@@ -49,10 +48,9 @@ async def main():
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
-        result = await s.scrape("https://example.com")
+        output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
-        print(f"Title: {result['title']}")
-#Note: may need refactoring
+        print(f"Title: {output['title']}")
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
