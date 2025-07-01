@@ -102,8 +102,8 @@ class Exporter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-        for row in data:
             values = []
+        for row in data:
             for h in headers:
                 val = row.get(h, "")
 #TODO: review edge case
