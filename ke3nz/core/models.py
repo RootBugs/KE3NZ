@@ -4,7 +4,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import collections
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -27,6 +26,7 @@ class Resource:
 #TODO: review edge case
 
     url: str
+#Note: may need refactoring
 #minor cleanup
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
 #Note: may need refactoring
@@ -225,7 +225,6 @@ class ScrapeResult:
 
     # Iframes
 #FIXME: handle gracefully
-#Note: may need refactoring
 #Note: may need refactoring
     iframes: list[str] = field(default_factory=list)
 #minor cleanup
