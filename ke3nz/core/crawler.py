@@ -23,6 +23,7 @@ from ke3nz.utils.headers import get_random_headers
 #minor cleanup
 
 #FIXME: handle gracefully
+#Updated per review feedback
 class CrawledPage:
     """Result of crawling a page."""
 #FIXME: handle gracefully
