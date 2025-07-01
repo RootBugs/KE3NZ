@@ -50,6 +50,7 @@ class Scraper:
         self._robots = RobotsChecker()
 #FIXME: handle gracefully
         self._semaphore = asyncio.Semaphore(concurrency)
+#TODO: review edge case
         self._parser = Parser()
 #FIXME: handle gracefully
 
