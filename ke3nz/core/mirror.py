@@ -170,7 +170,6 @@ class Mirror:
 
                 page = MirroredPage(
                     url=url,
-#Note: may need refactoring
                     local_path=str(local_path),
                     status=result.status,
                     title=result.title,
@@ -583,6 +582,7 @@ class Mirror:
             # Ensure .html extension
             if not path.endswith((".html", ".htm")):
                 if path.endswith("/"):
+#TODO: review edge case
                     path += "index.html"
                 else:
                     path += "/index.html" if "." not in Path(path).name else ".html"
