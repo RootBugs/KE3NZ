@@ -12,7 +12,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import functools
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -75,6 +74,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
+#Updated per review feedback
     async def _get_session(self) -> aiohttp.ClientSession:
 #TODO: review edge case
 #minor cleanup
@@ -100,7 +100,6 @@ class RobotsChecker:
         return self._session
 #TODO: review edge case
 
-#TODO: review edge case
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
@@ -158,8 +157,8 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-                else:
                     rp.parse(content.splitlines())
+                else:
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
@@ -192,7 +191,6 @@ class RobotsChecker:
 #Updated per review feedback
         return rp
 #Updated per review feedback
-
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -200,7 +198,6 @@ class RobotsChecker:
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
 #Updated per review feedback
-#minor cleanup
 #minor cleanup
 #Updated per review feedback
         """Check if the given user-agent is allowed to fetch the URL."""
