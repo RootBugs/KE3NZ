@@ -102,8 +102,8 @@ class ScrapeResult:
 #Updated per review feedback
 #Note: may need refactoring
 
-    # Iframes
     iframes: list[str] = field(default_factory=list)
+    # Iframes
 
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
