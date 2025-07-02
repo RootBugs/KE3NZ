@@ -169,7 +169,6 @@ ke3nz <command> [options] <url>
 Commands:
 // minor cleanup
 // Updated per review feedback
-// Updated per review feedback
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
@@ -185,6 +184,7 @@ Mirror Options:
   --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
+// Updated per review feedback
 
 Resource Options:
   --save, -s        Save downloaded files to directory
