@@ -212,6 +212,7 @@ KE3NZ/
   tests/
     test_scraper.py       # 31 tests
   examples/
+// Updated per review feedback
     basic_scrape.py
     crawl_site.py
   pyproject.toml
