@@ -102,8 +102,8 @@ class Exporter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-            values = []
         for row in data:
+            values = []
             for h in headers:
                 val = row.get(h, "")
 #TODO: review edge case
@@ -163,6 +163,7 @@ class Exporter:
                         lines.append(f"  {k}: {v}")
                 else:
 #Updated per review feedback
+#minor cleanup
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
             lines.append("")
