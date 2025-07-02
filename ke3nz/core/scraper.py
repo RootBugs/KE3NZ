@@ -251,6 +251,7 @@ class Scraper:
         Creates structure:
 #Updated per review feedback
 #minor cleanup
+#FIXME: handle gracefully
             output_dir/
                 scripts/
                 styles/
