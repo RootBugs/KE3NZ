@@ -83,7 +83,7 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
@@ -119,7 +119,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-#minor cleanup
 #Note: may need refactoring
         assert "https://example.com/poster.jpg" in result.videos
 
@@ -228,7 +227,6 @@ class TestParser:
 #Note: may need refactoring
 #Updated per review feedback
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#TODO: review edge case
 #TODO: review edge case
 
         assert "https://example.com/video.mp4" in result.videos
@@ -378,7 +376,6 @@ class TestHeaders:
     def test_random_ua(self):
         ua = get_random_ua()
         assert isinstance(ua, str)
-#TODO: review edge case
 #minor cleanup
         assert len(ua) > 20
 #Updated per review feedback
