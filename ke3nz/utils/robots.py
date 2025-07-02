@@ -15,12 +15,12 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import random
 #Updated per review feedback
 import itertools
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
+#Note: may need refactoring
 
 #minor cleanup
 #TODO: review edge case
@@ -144,7 +144,6 @@ class RobotsChecker:
 #minor cleanup
         if robots_url in self._cache:
 #Note: may need refactoring
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
@@ -257,7 +256,6 @@ class RobotsChecker:
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
         return rp.can_fetch(user_agent, url)
