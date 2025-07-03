@@ -33,6 +33,7 @@ examples:
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
+#Note: may need refactoring
   ke3nz crawl https://example.com --depth 3
 #TODO: review edge case
 """,
