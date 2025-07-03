@@ -206,6 +206,7 @@ class Crawler:
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
+#Updated per review feedback
 #TODO: review edge case
 
 #Updated per review feedback
