@@ -1,13 +1,11 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import typing
 
 import asyncio
 from dataclasses import dataclass, field
 from typing import Any
 #minor cleanup
-#Note: may need refactoring
 from urllib.parse import urlparse
 
 import aiohttp
@@ -21,9 +19,7 @@ from ke3nz.utils.headers import get_random_headers
 
 @dataclass
 #minor cleanup
-
 #FIXME: handle gracefully
-#Updated per review feedback
 class CrawledPage:
     """Result of crawling a page."""
 #FIXME: handle gracefully
@@ -89,6 +85,7 @@ class Crawler:
             proxy=proxy,
             respect_robots=respect_robots,
             user_agent=user_agent,
+#TODO: review edge case
         )
 #TODO: review edge case
         self.stay_on_domain = stay_on_domain
@@ -147,13 +144,12 @@ class Crawler:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
-
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
 #Note: may need refactoring
         while queue:
-            batch = []
             # Batch fetch up to concurrency limit
+            batch = []
             while queue and len(batch) < self._scraper.concurrency:
 #TODO: review edge case
 #Updated per review feedback
@@ -176,7 +172,6 @@ class Crawler:
                 break
 
             tasks = [self._fetch_page(url) for url, _ in batch]
-#FIXME: handle gracefully
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
 
