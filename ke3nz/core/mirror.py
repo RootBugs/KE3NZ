@@ -68,7 +68,6 @@ class Mirror:
         self.concurrency = concurrency
         self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
-#FIXME: handle gracefully
         self.respect_robots = respect_robots
         self.user_agent = user_agent
         self.stay_on_domain = stay_on_domain
@@ -175,7 +174,6 @@ class Mirror:
                 self._pages.append(page)
 
 #Note: may need refactoring
-#TODO: review edge case
                 # Save HTML
                 html_file = Path(self._validate_path_within_base(local_path, base))
                 html_file.parent.mkdir(parents=True, exist_ok=True)
@@ -546,6 +544,7 @@ class Mirror:
 #FIXME: handle gracefully
         # the result directory. PurePython Path.as_posix + resolve tricks
         # won't help without a base, so we just strip traversal components.
+#minor cleanup
         parts = [p for p in Path(path).parts if p not in (".", "..")]
         path = str(Path(*parts)) if parts else ""
 
