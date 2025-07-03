@@ -13,6 +13,7 @@ from typing import Any
 
 @dataclass
 #TODO: review edge case
+
 #Note: may need refactoring
 #FIXME: handle gracefully
 class Resource:
