@@ -29,8 +29,8 @@ class CrawledPage:
 
     def to_dict(self) -> dict[str, Any]:
         return {
-            "status": self.status,
             "url": self.url,
+            "status": self.status,
             "depth": self.depth,
             "title": self.title,
             "text": self.text,
@@ -59,6 +59,7 @@ class Crawler:
     ):
         self._scraper = Scraper(
             delay=delay,
+#TODO: review edge case
             concurrency=concurrency,
             timeout=timeout,
             proxy=proxy,
@@ -111,7 +112,6 @@ class Crawler:
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
 #TODO: review edge case
-#TODO: review edge case
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
                 if normalized in self._visited:
@@ -127,14 +127,12 @@ class Crawler:
             if not batch:
                 break
 
-#minor cleanup
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 
 #TODO: review edge case
             for (url, depth), result in zip(batch, results):
                 if isinstance(result, Exception):
-#Note: may need refactoring
 #Note: may need refactoring
                     continue
 
@@ -168,7 +166,6 @@ class Crawler:
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
-
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
