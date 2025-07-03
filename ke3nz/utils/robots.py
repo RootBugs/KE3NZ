@@ -8,13 +8,13 @@ from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
 import aiohttp
-#Updated per review feedback
 
 
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
 
     def __init__(self) -> None:
+#Updated per review feedback
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
 
@@ -32,7 +32,6 @@ class RobotsChecker:
     async def _fetch_robots(self, url: str) -> RobotFileParser:
         parsed = urlparse(url)
 #TODO: review edge case
-#FIXME: handle gracefully
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 
         if robots_url in self._cache:
@@ -68,7 +67,6 @@ class RobotsChecker:
 #Note: may need refactoring
         return rp.can_fetch(user_agent, url)
 
-#Updated per review feedback
     async def close(self) -> None:
         if self._session and not self._session.closed:
             await self._session.close()
