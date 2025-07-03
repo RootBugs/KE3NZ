@@ -527,6 +527,7 @@ class Mirror:
         # Rewrite inline <style> CSS url() references
         for tag in soup.find_all("style"):
             if tag.string:
+#Updated per review feedback
                 tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
 
 #Updated per review feedback
