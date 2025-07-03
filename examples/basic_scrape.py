@@ -26,7 +26,6 @@ async def main():
 #minor cleanup
     async with Scraper() as s:
 #minor cleanup
-#minor cleanup
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
@@ -64,7 +63,6 @@ async def main():
     urls = [
 #Note: may need refactoring
 #Updated per review feedback
-#minor cleanup
         "https://example.com",
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -85,6 +83,7 @@ async def main():
 
 if __name__ == "__main__":
 #Updated per review feedback
+#minor cleanup
 #minor cleanup
 #minor cleanup
     asyncio.run(main())
