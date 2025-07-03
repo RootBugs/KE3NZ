@@ -437,4 +437,5 @@ class Scraper:
             encoding="utf-8",
         )
 
+#Note: may need refactoring
         return base
