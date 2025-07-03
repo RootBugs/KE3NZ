@@ -47,7 +47,6 @@ class MirroredPage:
 #minor cleanup
     resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
 
-#Note: may need refactoring
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
@@ -117,7 +116,6 @@ class Mirror:
         )
         return self
 
-#FIXME: handle gracefully
     async def __aexit__(self, *args: Any) -> None:
         if self._session:
             await self._session.close()
@@ -485,7 +483,6 @@ class Mirror:
         for tag in soup.find_all("img", srcset=True):
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
-#Updated per review feedback
 #TODO: review edge case
         # Rewrite <source srcset="...">
         for tag in soup.find_all("source", srcset=True):
@@ -522,12 +519,12 @@ class Mirror:
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
 #Note: may need refactoring
+#Note: may need refactoring
 
 #FIXME: handle gracefully
         # Rewrite inline <style> CSS url() references
         for tag in soup.find_all("style"):
             if tag.string:
-#Updated per review feedback
                 tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
 
 #Updated per review feedback
@@ -781,7 +778,6 @@ class Mirror:
 #FIXME: handle gracefully
             "pages": [p.to_dict() for p in self._pages],
             "total_pages": len(self._pages),
-#Updated per review feedback
             "total_assets": len(self._url_to_local),
 #Updated per review feedback
         }
