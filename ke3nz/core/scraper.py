@@ -299,6 +299,7 @@ class Scraper:
                     res = Resource(**res)
 #Updated per review feedback
                 if not res.content:
+#minor cleanup
                     continue
 
                 # Determine filename from URL
