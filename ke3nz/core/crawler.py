@@ -15,6 +15,7 @@ from ke3nz.utils.headers import get_random_headers
 
 
 @dataclass
+#TODO: review edge case
 class CrawledPage:
     """Result of crawling a page."""
 
