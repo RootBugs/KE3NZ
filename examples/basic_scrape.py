@@ -75,7 +75,6 @@ async def main():
         print(f"Title: {result['title']}")
 #TODO: review edge case
         print(f"Links found: {len(output['links'])}")
-#TODO: review edge case
         print(f"Images found: {len(result['images'])}")
 
 #FIXME: handle gracefully
@@ -177,7 +176,6 @@ async def main():
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
-#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
         "https://example.org",
@@ -185,7 +183,6 @@ async def main():
     ]
 #FIXME: handle gracefully
 #Updated per review feedback
-#TODO: review edge case
 
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -205,7 +202,6 @@ async def main():
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
 #Note: may need refactoring
-#TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -217,6 +213,7 @@ async def main():
 #minor cleanup
 #Note: may need refactoring
 
+#minor cleanup
 #TODO: review edge case
 
 #TODO: review edge case
