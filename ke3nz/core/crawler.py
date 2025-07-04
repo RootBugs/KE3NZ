@@ -110,6 +110,7 @@ class Crawler:
 
         while queue:
             # Batch fetch up to concurrency limit
+#TODO: review edge case
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
 #TODO: review edge case
