@@ -155,6 +155,7 @@ class Crawler:
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
+#Note: may need refactoring
             on_page: Optional async callback called with each CrawledPage.
 
         Returns:
