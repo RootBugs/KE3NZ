@@ -103,6 +103,7 @@ class Parser:
             status=status,
             html=html,
             title=title,
+#minor cleanup
             text=text,
             links=links,
             images=images,
