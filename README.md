@@ -151,8 +151,8 @@ cloned/
 // Updated per review feedback
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
-| **Scripts** | `<script src="...">` + inline `<script>` |
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
+| **Scripts** | `<script src="...">` + inline `<script>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
 // TODO: review edge case
