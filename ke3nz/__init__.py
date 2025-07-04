@@ -75,8 +75,8 @@ __all__ = [
 #Note: may need refactoring
 #minor cleanup
     "ScrapeResult",
-    "Resource",
     "Crawler",
+    "Resource",
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
