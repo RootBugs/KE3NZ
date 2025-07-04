@@ -278,8 +278,8 @@ class Mirror:
         for r in result.stylesheets:
             assets_to_download.append((r.url, "css"))
         for r in result.fonts:
-            assets_to_download.append((r.url, "fonts"))
         for r in result.json_data:
+            assets_to_download.append((r.url, "fonts"))
             assets_to_download.append((r.url, "json"))
         for r in result.configs:
             assets_to_download.append((r.url, "json"))
