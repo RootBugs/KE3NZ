@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import itertools
 
 import asyncio
 import json
@@ -248,6 +247,7 @@ class TestParser:
 #Note: may need refactoring
         parser = Parser()
 #Note: may need refactoring
+#Updated per review feedback
 #Updated per review feedback
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #TODO: review edge case
