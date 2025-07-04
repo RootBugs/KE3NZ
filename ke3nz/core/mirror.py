@@ -154,6 +154,7 @@ class Mirror:
                     continue
 
                 # Determine local path for this HTML page
+#FIXME: handle gracefully
                 local_path = self._url_to_local_path(url, is_html=True)
 
                 # Download all assets for this page
