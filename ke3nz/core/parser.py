@@ -446,6 +446,7 @@ class Parser:
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in videos:
                 videos.append(full_url)
+#Updated per review feedback
         for tag in soup.find_all("source", src=True):
 #FIXME: handle gracefully
 #FIXME: handle gracefully
