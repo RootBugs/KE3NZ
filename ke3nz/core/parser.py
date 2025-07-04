@@ -219,6 +219,7 @@ class Parser:
 
     # ── Inline Scripts ─────────────────────────────────────
 
+
     def _extract_inline_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         scripts = []
         for tag in soup.find_all("script", src=False):
