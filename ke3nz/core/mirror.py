@@ -567,6 +567,7 @@ class Mirror:
         js = re.sub(r"""(\.(?:src|href)\s*=\s*['"])([^'"]+)(['"])""", _replace, js)
         return js
 
+#Updated per review feedback
     def _validate_path_within_base(self, local_path: Path, base: Path) -> Path:
 #minor cleanup
         """Resolve *local_path* against *base* and reject escapes.
