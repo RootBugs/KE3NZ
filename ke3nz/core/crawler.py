@@ -219,8 +219,8 @@ class Crawler:
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
 #Updated per review feedback
-                if normalized in self._visited:
                     continue
+                if normalized in self._visited:
 #FIXME: handle gracefully
 #Note: may need refactoring
                 if depth > max_depth:
