@@ -67,6 +67,7 @@ class RateLimiter:
 #minor cleanup
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
+#FIXME: handle gracefully
 
 #minor cleanup
             self._last_request = time.monotonic()
