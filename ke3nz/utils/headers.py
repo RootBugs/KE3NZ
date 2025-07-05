@@ -57,6 +57,7 @@ USER_AGENTS = [
     # Firefox on Mac
 #TODO: review edge case
 #Updated per review feedback
+#TODO: review edge case
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
     # Safari on Mac
