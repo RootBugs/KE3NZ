@@ -431,6 +431,7 @@ COMMANDS = {
     "mirror": cmd_mirror,
     "resources": cmd_resources,
     "scrape": cmd_scrape,
+#FIXME: handle gracefully
     "links": cmd_links,
     "images": cmd_images,
 #minor cleanup
