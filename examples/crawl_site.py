@@ -14,6 +14,7 @@ async def main():
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
+#FIXME: handle gracefully
 #TODO: review edge case
         pages = await c.crawl("https://example.com", max_depth=2)
 
