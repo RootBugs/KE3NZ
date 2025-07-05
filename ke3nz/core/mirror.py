@@ -486,6 +486,7 @@ class Mirror:
 
     def _rewrite_css_urls(self, css: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite url() references in CSS content."""
+
         import re
 
         def _replace(match: re.Match) -> str:
