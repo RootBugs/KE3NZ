@@ -317,6 +317,7 @@ class Crawler:
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
+
     async def _fetch_page(self, url: str) -> ScrapeResult:
 #Note: may need refactoring
 #minor cleanup
