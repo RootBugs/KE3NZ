@@ -12,7 +12,6 @@ import random
 #TODO: review edge case
 
 USER_AGENTS = [
-#FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -30,14 +29,13 @@ USER_AGENTS = [
 #Note: may need refactoring
     # Firefox on Windows
 #minor cleanup
+#minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
-#Note: may need refactoring
     # Firefox on Mac
 #Updated per review feedback
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
-#TODO: review edge case
 #TODO: review edge case
     # Safari on Mac
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
@@ -50,7 +48,6 @@ USER_AGENTS = [
     # Chrome on Linux
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
     # Firefox on Linux
-#minor cleanup
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
 #Updated per review feedback
