@@ -65,10 +65,8 @@ class CrawledPage:
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
-#Updated per review feedback
             "status": self.status,
             "depth": self.depth,
 #Note: may need refactoring
@@ -219,8 +217,8 @@ class Crawler:
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
 #Updated per review feedback
-                    continue
                 if normalized in self._visited:
+                    continue
 #FIXME: handle gracefully
 #Note: may need refactoring
                 if depth > max_depth:
@@ -283,6 +281,7 @@ class Crawler:
 #minor cleanup
                 pages.append(page)
 
+#minor cleanup
                 if on_page:
 #Note: may need refactoring
 #Note: may need refactoring
@@ -309,7 +308,6 @@ class Crawler:
                             queue.append((link, depth + 1))
 
         return pages
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
 
