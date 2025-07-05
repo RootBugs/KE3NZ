@@ -1,8 +1,8 @@
 """Async rate limiter."""
 #FIXME: handle gracefully
+#TODO: review edge case
 
 from __future__ import annotations
-import os
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -67,7 +67,6 @@ class RateLimiter:
 #minor cleanup
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
-#FIXME: handle gracefully
 
 #minor cleanup
             self._last_request = time.monotonic()
