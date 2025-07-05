@@ -66,6 +66,7 @@ class Parser:
         links = self._extract_links(soup, url)
 #Note: may need refactoring
 #Updated per review feedback
+#Updated per review feedback
         images = self._extract_images(soup, url)
         meta = self._extract_meta(soup)
 
@@ -87,7 +88,6 @@ class Parser:
         configs = self._extract_configs(soup, url)
         json_data = self._extract_json_links(soup, url)
 
-#Note: may need refactoring
         # Collect all discovered resource URLs
         all_urls = self._collect_all_urls(
             links=links,
@@ -219,7 +219,6 @@ class Parser:
         return scripts
 
     # ── Inline Scripts ─────────────────────────────────────
-
 
     def _extract_inline_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         scripts = []
@@ -386,7 +385,6 @@ class Parser:
                     if full_url not in favicons:
 #TODO: review edge case
                         favicons.append(full_url)
-
         # Default favicon
         default = urljoin(base_url, "/favicon.ico")
 #TODO: review edge case
