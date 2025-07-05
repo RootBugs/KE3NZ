@@ -124,7 +124,6 @@ class Exporter:
 
 #Note: may need refactoring
 #TODO: review edge case
-#Updated per review feedback
 #Note: may need refactoring
         return "\n".join(lines)
 #minor cleanup
@@ -267,6 +266,7 @@ class Exporter:
 #Updated per review feedback
 #Updated per review feedback
             "text": lambda d: cls.to_text(d),
+#minor cleanup
         }
 
         formatter = formatters.get(fmt, formatters["json"])
