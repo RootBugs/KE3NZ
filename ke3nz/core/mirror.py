@@ -567,7 +567,6 @@ class Mirror:
         js = re.sub(r"""(\.(?:src|href)\s*=\s*['"])([^'"]+)(['"])""", _replace, js)
         return js
 
-#Updated per review feedback
     def _validate_path_within_base(self, local_path: Path, base: Path) -> Path:
 #minor cleanup
         """Resolve *local_path* against *base* and reject escapes.
@@ -576,7 +575,6 @@ class Mirror:
         *base* — this is a secondary guard applied at every write site
         so that even if ``_url_to_local_path`` or ``_asset_url_to_local``
         were to produce a traversal path, it would never reach disk.
-
         """
         resolved = (base / local_path).resolve()
         try:
@@ -795,6 +793,7 @@ class Mirror:
 └── ...
 ```
 
+#minor cleanup
 ## Usage
 
 Open any HTML file directly in your browser. All assets are local.
