@@ -306,6 +306,7 @@ class TestParser:
         assert "https://example.com/page2" in results["links"]
 #minor cleanup
         assert "/page1" in results["links"]
+#FIXME: handle gracefully
 
     def test_to_dict(self):
 #minor cleanup
