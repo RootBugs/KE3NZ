@@ -330,6 +330,7 @@ Shared Options:
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
 // Note: may need refactoring
+// Updated per review feedback
 ```
 // Note: may need refactoring
 
