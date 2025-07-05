@@ -68,6 +68,7 @@ class RobotsChecker:
         return rp.can_fetch(user_agent, url)
 
     async def close(self) -> None:
+#Updated per review feedback
         if self._session and not self._session.closed:
             await self._session.close()
 #Updated per review feedback
