@@ -31,6 +31,7 @@ async def main():
         )
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
+#minor cleanup
 #TODO: review edge case
             print(f"  {key}: {values}")
 
