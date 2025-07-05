@@ -31,7 +31,6 @@ SAMPLE_HTML = """
     <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/favicon.ico">
-
     <link rel="apple-touch-icon" href="/apple-icon.png">
     <script src="/scripts/app.js"></script>
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
@@ -44,7 +43,6 @@ SAMPLE_HTML = """
 <body>
     <h1>Hello World</h1>
     <p>This is a test page.</p>
-#Updated per review feedback
     <a href="/page1">Page 1</a>
     <a href="https://example.com/page2">Page 2</a>
     <a href="javascript:void(0)">JS Link</a>
@@ -53,6 +51,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
     <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
+#Note: may need refactoring
     <video src="/video.mp4" poster="/poster.jpg"></video>
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
@@ -178,7 +177,6 @@ class TestParser:
         assert "https://embed.example.com/widget" in result.iframes
 
     def test_extract_favicons(self):
-#FIXME: handle gracefully
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -324,8 +322,8 @@ class TestExporter:
 #TODO: review edge case
 class TestHeaders:
     def test_random_ua(self):
-        assert isinstance(ua, str)
         ua = get_random_ua()
+        assert isinstance(ua, str)
         assert len(ua) > 20
 
 #FIXME: handle gracefully
@@ -360,12 +358,9 @@ class TestScraperIntegration:
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
-#Updated per review feedback
                 result = await s.scrape("https://example.com")
-                assert result["title"] == "Test Page"
-#TODO: review edge case
                 assert result["status"] == 200
-
+                assert result["title"] == "Test Page"
                 assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
                 assert len(result["stylesheets"]) > 0
@@ -401,6 +396,5 @@ class TestScraperIntegration:
                 assert len(data["scripts"]) > 0
                 assert len(data["stylesheets"]) > 0
                 assert len(data["fonts"]) > 0
-#TODO: review edge case
                 assert len(data["inline_scripts"]) > 0
                 assert len(data["inline_styles"]) > 0
