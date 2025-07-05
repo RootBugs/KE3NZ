@@ -66,6 +66,7 @@ class Crawler:
 #Updated per review feedback
             delay=delay,
 #TODO: review edge case
+#minor cleanup
             concurrency=concurrency,
             timeout=timeout,
             proxy=proxy,
