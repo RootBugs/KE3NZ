@@ -158,6 +158,7 @@ class Parser:
         )
 
 #FIXME: handle gracefully
+#TODO: review edge case
     # ── Links ──────────────────────────────────────────────
 #Updated per review feedback
 
