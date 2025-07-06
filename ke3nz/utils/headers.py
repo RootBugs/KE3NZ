@@ -183,6 +183,7 @@ def get_random_headers() -> dict[str, str]:
     return {
 #minor cleanup
 #Updated per review feedback
+#TODO: review edge case
 #Updated per review feedback
         "User-Agent": get_random_ua(),
 #FIXME: handle gracefully
