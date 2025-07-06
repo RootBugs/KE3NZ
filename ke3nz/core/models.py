@@ -28,6 +28,7 @@ class Resource:
 #TODO: review edge case
 #TODO: review edge case
     size: int = 0
+#Note: may need refactoring
     integrity: str = ""
 #TODO: review edge case
 
