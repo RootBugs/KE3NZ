@@ -32,6 +32,7 @@ USER_AGENTS = [
     # Firefox on Windows
 #minor cleanup
 #minor cleanup
+#Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
