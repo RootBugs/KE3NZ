@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import typing
 
 import asyncio
 import json
@@ -142,7 +141,6 @@ class TestParser:
         assert len(result.inline_styles) >= 1
 #FIXME: handle gracefully
         assert any("margin" in r.content for r in result.inline_styles)
-#FIXME: handle gracefully
 #Updated per review feedback
 
     def test_extract_fonts(self):
@@ -209,7 +207,6 @@ class TestParser:
         parser = Parser()
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "heading": "h1",
-#Note: may need refactoring
             "cards": ".card",
         })
 
@@ -271,7 +268,6 @@ class TestExporter:
     def test_to_json(self):
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_json(data)
-#minor cleanup
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
 
@@ -281,6 +277,7 @@ class TestExporter:
         assert "name" in output
         assert "test" in output
 
+#FIXME: handle gracefully
     def test_to_markdown(self):
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_markdown(data)
