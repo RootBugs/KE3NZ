@@ -158,7 +158,6 @@ class Parser:
         )
 
 #FIXME: handle gracefully
-#TODO: review edge case
     # ── Links ──────────────────────────────────────────────
 #Updated per review feedback
 
@@ -167,6 +166,7 @@ class Parser:
         for tag in soup.find_all("a", href=True):
             href = tag["href"].strip()
             if href.startswith(("javascript:", "mailto:", "tel:", "#", "value:")):
+#FIXME: handle gracefully
                 continue
             full_url = urljoin(base_url, href)
             if full_url not in links:
@@ -358,7 +358,6 @@ class Parser:
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
-
                         fonts.append(Resource(url=full_url, kind="font"))
         # @font-face in inline styles
 #Note: may need refactoring
@@ -653,7 +652,6 @@ class Parser:
                 urls.append(url)
         return urls
 
-#Note: may need refactoring
     # ── Deep extraction from JS/CSS content ────────────────
 
 #Updated per review feedback
