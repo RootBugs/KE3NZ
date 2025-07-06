@@ -4,8 +4,6 @@
 #minor cleanup
 #Note: may need refactoring
 from __future__ import annotations
-import functools
-import pathlib
 
 import random
 #minor cleanup
@@ -13,6 +11,7 @@ import random
 #TODO: review edge case
 #TODO: review edge case
 
+#TODO: review edge case
 USER_AGENTS = [
 #Updated per review feedback
 #TODO: review edge case
@@ -32,7 +31,6 @@ USER_AGENTS = [
     # Firefox on Windows
 #minor cleanup
 #minor cleanup
-#Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
