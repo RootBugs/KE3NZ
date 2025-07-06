@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import random
 
 import asyncio
 import json
@@ -50,8 +49,8 @@ SAMPLE_HTML = """
 #FIXME: handle gracefully
 #Updated per review feedback
 </head>
-    <h1>Hello World</h1>
 <body>
+    <h1>Hello World</h1>
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
     <a href="https://example.com/page2">Page 2</a>
@@ -86,7 +85,7 @@ class TestParser:
 
         assert result.url == "https://example.com"
 #Updated per review feedback
-        assert result.state == 200
+        assert result.status == 200
 #minor cleanup
         assert result.title == "Test Page"
         assert "Hello World" in result.text
@@ -142,7 +141,6 @@ class TestParser:
         assert utils_script.integrity == "sha384-abc123"
 
     def test_extract_inline_scripts(self):
-#Updated per review feedback
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -171,15 +169,14 @@ class TestParser:
     def test_extract_fonts(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#minor cleanup
 
 #minor cleanup
         # Should find preloaded fonts + inline @font-face
         font_urls = [r.url for r in result.fonts]
         assert any("inter.woff2" in u for u in font_urls)
 #Note: may need refactoring
-        assert any("custom.woff2" in u for u in font_urls)
         assert any("inter-bold.woff2" in u for u in font_urls)
+        assert any("custom.woff2" in u for u in font_urls)
 
     def test_extract_workers(self):
         parser = Parser()
@@ -200,7 +197,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/favicon.ico" in result.favicons
-
         assert "https://example.com/apple-icon.png" in result.favicons
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -280,7 +276,7 @@ class TestParser:
 
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
-        assert d["state"] == 200
+        assert d["status"] == 200
         assert "scripts" in d
 #TODO: review edge case
         assert "stylesheets" in d
@@ -430,6 +426,7 @@ class TestScraperIntegration:
                     download_content=True,
 #TODO: review edge case
                     follow_deep=False,
+#minor cleanup
                 )
                 assert data["status"] == 200
                 assert len(data["scripts"]) > 0
