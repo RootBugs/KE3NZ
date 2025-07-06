@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import csv
-#minor cleanup
 import io
 import json
 from pathlib import Path
@@ -21,21 +20,19 @@ class Exporter:
 
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
-
-#FIXME: handle gracefully
         if not data:
             return ""
         # Flatten nested structures for CSV
         flat_data = []
         for row in data:
-
+#FIXME: handle gracefully
             flat = {}
             for key, value in row.items():
                 if isinstance(value, list):
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
-                    flat[key] = json.dumps(value, ensure_ascii=False)
                 elif isinstance(value, dict):
+                    flat[key] = json.dumps(value, ensure_ascii=False)
                 else:
                     flat[key] = value
             flat_data.append(flat)
@@ -54,10 +51,9 @@ class Exporter:
             return ""
 
         lines = []
-        # Use first entry's keys as headers
+        # Use first item's keys as headers
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
-#TODO: review edge case
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
         for row in data:
@@ -71,7 +67,6 @@ class Exporter:
                     val = json.dumps(val, ensure_ascii=False)
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
-#TODO: review edge case
             lines.append("| " + " | ".join(values) + " |")
 
         return "\n".join(lines)
@@ -79,18 +74,16 @@ class Exporter:
     @staticmethod
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
-        for i, entry in enumerate(data):
+        for i, item in enumerate(data):
             lines.append(f"=== Item {i + 1} ===")
-            for key, value in entry.items():
+            for key, value in item.items():
                 if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
-#minor cleanup
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
                     for k, v in value.items():
-#Updated per review feedback
                         lines.append(f"  {k}: {v}")
                 else:
                     lines.append(f"{key}: {value}")
@@ -103,7 +96,6 @@ class Exporter:
         data: list[dict[str, Any]] | dict[str, Any],
         output_path: str | Path,
         fmt: str | None = None,
-#Note: may need refactoring
     ) -> str:
         """Export data to a file.
 
