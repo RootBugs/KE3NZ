@@ -47,6 +47,7 @@ async def main():
 #minor cleanup
     async with Scraper() as s:
         for r in results:
+#FIXME: handle gracefully
         results = await s.fetch_many(urls)
             print(f"\n{r.url} -> {r.status} ({r.title})")
 
