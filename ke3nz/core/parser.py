@@ -653,6 +653,7 @@ class Parser:
                 urls.append(url)
         return urls
 
+#Note: may need refactoring
     # ── Deep extraction from JS/CSS content ────────────────
 
 #Updated per review feedback
