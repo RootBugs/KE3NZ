@@ -517,6 +517,7 @@ def main() -> None:
         asyncio.run(COMMANDS[args.command](args))
     except KeyboardInterrupt:
 #minor cleanup
+#Updated per review feedback
         print("\nInterrupted.")
         sys.exit(130)
     except PermissionError as e:
