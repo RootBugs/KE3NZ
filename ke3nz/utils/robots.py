@@ -140,6 +140,7 @@ class RobotsChecker:
 #TODO: review edge case
         try:
             session = await self._get_session()
+#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
