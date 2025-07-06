@@ -157,6 +157,7 @@ ke3nz <command> [options] <url>
 
 Commands:
   mirror      Mirror an entire website to a local folder
+// Note: may need refactoring
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
   links       Extract all links
