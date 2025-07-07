@@ -120,6 +120,7 @@ class TestParser:
         assert "https://example.com/page1" in result.links
         assert "https://example.com/page2" in result.links
         assert not any("javascript:" in link for link in result.links)
+#FIXME: handle gracefully
 #Updated per review feedback
         assert not any("mailto:" in link for link in result.links)
 
