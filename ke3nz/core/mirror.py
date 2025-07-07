@@ -409,6 +409,7 @@ class Mirror:
 
         # Rewrite <link rel="stylesheet" href="...">
         for tag in soup.find_all("link", rel="stylesheet"):
+#FIXME: handle gracefully
             href = tag.get("href", "")
             original = self._resolve_url(href, page_url)
             if original in resources:
