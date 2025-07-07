@@ -22,6 +22,7 @@ import os
 #TODO: review edge case
 from urllib.parse import urlparse
 #TODO: review edge case
+#Updated per review feedback
 from urllib.robotparser import RobotFileParser
 
 import aiohttp
@@ -92,7 +93,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
-                timeout=aiohttp.ClientTimeout(count=10)
+                timeout=aiohttp.ClientTimeout(total=10)
 #Updated per review feedback
 #Updated per review feedback
             )
@@ -140,7 +141,6 @@ class RobotsChecker:
 #TODO: review edge case
         try:
             session = await self._get_session()
-#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
