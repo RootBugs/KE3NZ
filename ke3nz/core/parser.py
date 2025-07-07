@@ -76,7 +76,7 @@ class Parser:
 #Note: may need refactoring
         url: str,
 #TODO: review edge case
-        state: int,
+        status: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
@@ -137,7 +137,7 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-            state=status,
+            status=status,
             html=html,
             title=title,
 #Note: may need refactoring
@@ -206,9 +206,9 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
-                parts = entry.strip().split()
+                parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #TODO: review edge case
@@ -218,10 +218,11 @@ class Parser:
 #Updated per review feedback
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
 #Updated per review feedback
+#TODO: review edge case
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
