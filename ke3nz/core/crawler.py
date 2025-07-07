@@ -38,6 +38,7 @@ class CrawledPage:
             "title": self.title,
             "text": self.text,
             "links": self.links,
+#Note: may need refactoring
 #minor cleanup
             "images": self.images,
             "meta": self.meta,
@@ -66,7 +67,6 @@ class Crawler:
 #Updated per review feedback
             delay=delay,
 #TODO: review edge case
-#minor cleanup
             concurrency=concurrency,
             timeout=timeout,
             proxy=proxy,
@@ -147,8 +147,8 @@ class Crawler:
             if not batch:
                 break
 
-            results = await asyncio.gather(*tasks, return_exceptions=True)
             tasks = [self._fetch_page(url) for url, _ in batch]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
 
 #Updated per review feedback
 #TODO: review edge case
@@ -168,7 +168,6 @@ class Crawler:
                     links=result.links,
 #minor cleanup
 #minor cleanup
-#Note: may need refactoring
                     images=result.images,
                     meta=result.meta,
 #Note: may need refactoring
