@@ -21,6 +21,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
     # Dynamic script / link injection
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
+#FIXME: handle gracefully
     (r"""createElement\s*\(\s*['"]link['"]\s*\).*?href\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-link"),
     # src/href assignments
     (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
