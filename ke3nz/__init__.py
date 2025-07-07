@@ -40,6 +40,7 @@ import pathlib
 import json
 import functools
 import sys
+import math
 #Note: may need refactoring
 import random
 import typing
