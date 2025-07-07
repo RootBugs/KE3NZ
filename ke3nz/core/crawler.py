@@ -253,6 +253,7 @@ class Crawler:
 #minor cleanup
                 if normalized in self._visited:
 #Updated per review feedback
+#Note: may need refactoring
                     continue
 #FIXME: handle gracefully
 #Note: may need refactoring
