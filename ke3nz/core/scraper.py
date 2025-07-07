@@ -2,7 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import functools
 
 import asyncio
 from pathlib import Path
@@ -100,6 +99,7 @@ class Scraper:
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
 #minor cleanup
+#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
                 body = await resp.read()
@@ -114,16 +114,15 @@ class Scraper:
         selectors: dict[str, str] | None = None,
 #minor cleanup
     ) -> dict[str, Any]:
-#Note: may need refactoring
         """Scrape a URL with optional CSS selectors.
 
         Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
 
-                output.html, selectors
         if selectors:
             output.selector_results = self._parser.extract_by_selectors(
+                output.html, selectors
             )
 
         return output.to_dict()
@@ -133,7 +132,6 @@ class Scraper:
         url: str,
         *,
         download_content: bool = True,
-#FIXME: handle gracefully
         follow_deep: bool = False,
     ) -> dict[str, Any]:
         """Scrape a page and download ALL linked resources (JS, CSS, JSON, etc.).
@@ -250,7 +248,6 @@ class Scraper:
                 configs/
                 inline/
 #FIXME: handle gracefully
-#FIXME: handle gracefully
                 sourcemaps/
                 manifest.json  (resource index)
         """
@@ -297,9 +294,7 @@ class Scraper:
             for i, res in enumerate(resources):
                 if isinstance(res, dict):
                     res = Resource(**res)
-#Updated per review feedback
                 if not res.content:
-#minor cleanup
                     continue
 
                 # Determine filename from URL
@@ -309,7 +304,6 @@ class Scraper:
                 # Add extension if missing
                 if "." not in filename:
                     ext = {
-
                         "script": ".js",
                         "stylesheet": ".css",
                         "font": ".woff2",
@@ -317,7 +311,6 @@ class Scraper:
                         "json-ld": ".json",
                         "manifest": ".json",
                         "sourcemap": ".map",
-#TODO: review edge case
                     }.get(kind, ".txt")
 #Note: may need refactoring
 #Note: may need refactoring
@@ -330,7 +323,6 @@ class Scraper:
                     filepath = dir_path / f"{filepath.stem}_{counter}{filepath.suffix}"
                     counter += 1
 
-#minor cleanup
                 # Fonts and images are binary — write as bytes
                 if kind in ("font",) or filepath.suffix in (".woff", ".woff2", ".ttf", ".eot", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".avif", ".mp4", ".mp3"):
                     filepath.write_bytes(res.content if isinstance(res.content, bytes) else res.content.encode("utf-8"))
@@ -382,8 +374,8 @@ class Scraper:
 #Note: may need refactoring
         html_path = base / "page.html"
         html_path.write_text(data.get("html", ""), encoding="utf-8")
-            "url": data.get("url"),
         index["files"].append({
+            "url": data.get("url"),
             "kind": "html",
             "path": "page.html",
             "size": len(data.get("html", "").encode("utf-8")),
