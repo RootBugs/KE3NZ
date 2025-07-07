@@ -63,7 +63,6 @@ examples:
     # mirror (THE MAIN COMMAND)
 #minor cleanup
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
-
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
     mirror_p.add_argument("--depth", "-d", type=int, default=3, help="Max crawl depth (default: 3)")
     mirror_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
@@ -89,7 +88,6 @@ examples:
     links_p = sub.add_parser("links", parents=[shared], help="Extract all links")
     links_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     links_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
-
 
 #Updated per review feedback
 #Updated per review feedback
@@ -135,7 +133,6 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
         print(Exporter.to_json(value))
 
 #minor cleanup
-#minor cleanup
 
 def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
@@ -176,6 +173,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 # ── Commands ───────────────────────────────────────────────
 
 
+#TODO: review edge case
 #minor cleanup
 async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
@@ -260,7 +258,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
         if args.verbose:
 #TODO: review edge case
-            print(f"  Page: {value['title'] or data['url']}")
+            print(f"  Page: {data['title'] or data['url']}")
 #Note: may need refactoring
             print(f"  Status: {data['status']}")
             print()
@@ -517,7 +515,6 @@ def main() -> None:
         asyncio.run(COMMANDS[args.command](args))
     except KeyboardInterrupt:
 #minor cleanup
-#Updated per review feedback
         print("\nInterrupted.")
         sys.exit(130)
     except PermissionError as e:
@@ -528,5 +525,5 @@ def main() -> None:
         sys.exit(1)
 
 
-    main()
 if __name__ == "__main__":
+    main()
