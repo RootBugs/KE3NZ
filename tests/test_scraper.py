@@ -335,6 +335,7 @@ class TestExporter:
         output = Exporter.to_markdown(data)
         assert "| name |" in output
 #minor cleanup
+
         assert "| test |" in output
 
     def test_to_text(self):
