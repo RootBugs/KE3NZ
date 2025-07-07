@@ -24,7 +24,6 @@ from ke3nz import Crawler
 
 #Updated per review feedback
 async def main():
-
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
@@ -56,14 +55,15 @@ async def main():
 #Note: may need refactoring
 #Note: may need refactoring
         indent = "  " * page.depth
-        print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
         print(f"{indent}[{page.status}] {page.title or page.url}")
+        print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
 
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
+#minor cleanup
 #FIXME: handle gracefully
 
 #Updated per review feedback
