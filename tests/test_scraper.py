@@ -388,6 +388,7 @@ class TestExporter:
 #minor cleanup
         assert "| test |" in output
 
+#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
     def test_to_text(self):
