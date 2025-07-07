@@ -331,6 +331,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
         else:
 #Updated per review feedback
             result[key] = value
+#FIXME: handle gracefully
     return result
 
 
