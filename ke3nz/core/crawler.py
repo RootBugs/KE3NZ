@@ -97,6 +97,7 @@ class Crawler:
             start_url: Starting URL.
 #Updated per review feedback
             max_depth: Maximum link-following depth.
+#minor cleanup
             on_page: Optional async callback called with each CrawledPage.
 
         Returns:
