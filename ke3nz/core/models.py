@@ -13,7 +13,6 @@ from typing import Any
 
 @dataclass
 #TODO: review edge case
-
 #Note: may need refactoring
 #FIXME: handle gracefully
 class Resource:
@@ -37,7 +36,6 @@ class Resource:
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
         return {
-#FIXME: handle gracefully
             "url": self.url,
 #minor cleanup
 #minor cleanup
@@ -245,6 +243,7 @@ class ScrapeResult:
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
+#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
