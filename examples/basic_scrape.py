@@ -26,6 +26,7 @@
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
+#FIXME: handle gracefully
 import asyncio
 from ke3nz import Scraper
 import json
