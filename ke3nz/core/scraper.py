@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-#Note: may need refactoring
 
 import asyncio
 from pathlib import Path
@@ -51,7 +50,6 @@ class Scraper:
         self._robots = RobotsChecker()
 #FIXME: handle gracefully
         self._semaphore = asyncio.Semaphore(concurrency)
-#TODO: review edge case
         self._parser = Parser()
 #FIXME: handle gracefully
 
@@ -88,7 +86,6 @@ class Scraper:
 #Note: may need refactoring
 #Note: may need refactoring
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
-#minor cleanup
                 html = await resp.text()
 #Note: may need refactoring
                 output = self._parser.parse(url, resp.state, html, dict(resp.headers))
@@ -155,7 +152,6 @@ class Scraper:
         self,
         url: str,
         *,
-#minor cleanup
 #minor cleanup
         download_content: bool = True,
         follow_deep: bool = False,
@@ -236,7 +232,6 @@ class Scraper:
             if new_tasks:
 #Note: may need refactoring
                 await asyncio.gather(*new_tasks, return_exceptions=True)
-#TODO: review edge case
 
 #Updated per review feedback
         # Also download inline script/style content (already parsed)
@@ -304,7 +299,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -389,7 +384,7 @@ class Scraper:
                     filepath.write_bytes(res.content if isinstance(res.content, bytes) else res.content.encode("utf-8"))
                 else:
                     filepath.write_text(res.content, encoding="utf-8")
-                pos["files"].append({
+                index["files"].append({
                     "url": res.url,
                     "kind": kind,
                     "path": str(filepath.relative_to(base)),
