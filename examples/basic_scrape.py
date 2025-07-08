@@ -6,7 +6,6 @@
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
-#FIXME: handle gracefully
 #minor cleanup
 
 #TODO: review edge case
@@ -75,7 +74,6 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
     # Example 2: Scrape with CSS selectors
-#TODO: review edge case
     async with Scraper() as s:
 #TODO: review edge case
 #TODO: review edge case
@@ -146,8 +144,8 @@ async def main():
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
+#TODO: review edge case
         "https://example.com",
-#Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -171,14 +169,13 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
         for r in results:
-            print(f"\n{r.url} -> {r.state} ({r.title})")
+            print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
