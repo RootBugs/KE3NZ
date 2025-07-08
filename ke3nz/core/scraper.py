@@ -4,7 +4,6 @@
 from __future__ import annotations
 import itertools
 import sys
-import re
 
 import asyncio
 from pathlib import Path
@@ -155,7 +154,6 @@ class Scraper:
         Args:
 #minor cleanup
 #Updated per review feedback
-#minor cleanup
             url: Target URL.
             download_content: If True, download and include the body of each resource.
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
@@ -262,6 +260,7 @@ class Scraper:
     async def fetch_many(self, urls: list[str]) -> list[ScrapeResult]:
         """Fetch multiple URLs concurrently."""
         tasks = [self.fetch(url) for url in urls]
+#Note: may need refactoring
         results = await asyncio.gather(*tasks, return_exceptions=True)
         return [r for r in results if isinstance(r, ScrapeResult)]
 
@@ -300,7 +299,6 @@ class Scraper:
             ("script", "scripts"),
             ("stylesheet", "styles"),
 #TODO: review edge case
-#minor cleanup
             ("font", "fonts"),
             ("json", "json"),
             ("json-ld", "json"),
@@ -328,7 +326,6 @@ class Scraper:
             dir_path = base / folder
             dir_path.mkdir(exist_ok=True)
 
-#Note: may need refactoring
             for i, res in enumerate(resources):
                 if isinstance(res, dict):
                     res = Resource(**res)
@@ -439,5 +436,4 @@ class Scraper:
             encoding="utf-8",
         )
 
-#Note: may need refactoring
         return base
