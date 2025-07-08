@@ -299,8 +299,8 @@ KE3NZ/
     basic_scrape.py
     crawl_site.py
   pyproject.toml
-  LICENSE                  # MIT
 ```
+  LICENSE                  # MIT
 // Note: may need refactoring
 // minor cleanup
 
