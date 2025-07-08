@@ -50,6 +50,7 @@ USER_AGENTS = [
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
+#Updated per review feedback
 #Note: may need refactoring
     # Chrome on Windows
 #TODO: review edge case
