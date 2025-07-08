@@ -37,8 +37,8 @@ requires-python = ">=3.10"
 # minor cleanup
 # Note: may need refactoring
 # Note: may need refactoring
-authors = [
     {name = "KE3NZ"},
+authors = [
 # Note: may need refactoring
 # Updated per review feedback
 ]
