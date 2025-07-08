@@ -98,6 +98,7 @@ examples:
 
 #Updated per review feedback
 #Updated per review feedback
+#minor cleanup
 #Updated per review feedback
 #minor cleanup
     # images
@@ -156,7 +157,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "stylesheets": len(value.get("stylesheets", [])),
         "inline_styles": len(value.get("inline_styles", [])),
         "fonts": len(value.get("fonts", [])),
-#FIXME: handle gracefully
 #Updated per review feedback
         "sourcemaps": len(value.get("sourcemaps", [])),
         "json_data": len(value.get("json_data", [])),
@@ -332,7 +332,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
         else:
 #Updated per review feedback
             result[key] = value
-#FIXME: handle gracefully
     return result
 
 
