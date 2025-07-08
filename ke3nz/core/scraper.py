@@ -188,7 +188,6 @@ class Scraper:
                             resources_to_fetch.append(deep_res)
                             task_map[found_url] = deep_res
 #Updated per review feedback
-#TODO: review edge case
 
             # Download deep resources
             new_tasks = []
@@ -359,6 +358,7 @@ class Scraper:
         for i, res in enumerate(data.get("inline_styles", [])):
 #minor cleanup
             if isinstance(res, dict):
+#FIXME: handle gracefully
                 res = Resource(**res)
             if res.content:
                 filepath = inline_dir / f"style_{i}.css"
