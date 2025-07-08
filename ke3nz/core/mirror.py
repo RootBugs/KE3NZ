@@ -347,6 +347,7 @@ class Mirror:
 #FIXME: handle gracefully
             if asset_url not in resource_map:
 #Note: may need refactoring
+#minor cleanup
                 continue
             if asset_url in url_to_local:
                 continue
