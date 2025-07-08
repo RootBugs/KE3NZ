@@ -188,8 +188,8 @@ Mirror Options:
 // Updated per review feedback
 
 Resource Options:
-  --save, -s        Save downloaded files to directory
   --deep            Deep scan: follow JS/CSS references
+  --save, -s        Save downloaded files to directory
   --no-content      Don't download file contents
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
