@@ -188,6 +188,7 @@ class Scraper:
                             resources_to_fetch.append(deep_res)
                             task_map[found_url] = deep_res
 #Updated per review feedback
+#TODO: review edge case
 
             # Download deep resources
             new_tasks = []
