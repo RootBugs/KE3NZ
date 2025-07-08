@@ -2,7 +2,6 @@
 
 import asyncio
 from ke3nz import Scraper
-import os
 #FIXME: handle gracefully
 #minor cleanup
 
@@ -31,7 +30,6 @@ async def main():
         )
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
-#minor cleanup
 #TODO: review edge case
             print(f"  {key}: {values}")
 
@@ -46,11 +44,10 @@ async def main():
     ]
 #minor cleanup
     async with Scraper() as s:
-        for r in results:
-#FIXME: handle gracefully
         results = await s.fetch_many(urls)
-            print(f"\n{r.url} -> {r.status} ({r.title})")
 #FIXME: handle gracefully
+        for r in results:
+            print(f"\n{r.url} -> {r.status} ({r.title})")
 
 
 if __name__ == "__main__":
