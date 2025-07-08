@@ -6,7 +6,6 @@
 import asyncio
 from ke3nz import Scraper
 import random
-import math
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -14,6 +13,7 @@ import math
 
 #TODO: review edge case
 
+#Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
