@@ -22,9 +22,8 @@ class Resource:
     integrity: str = ""
 
     def to_dict(self) -> dict[str, Any]:
-        return {
 #minor cleanup
-#Updated per review feedback
+        return {
             "url": self.url,
 #minor cleanup
             "kind": self.kind,
@@ -103,8 +102,8 @@ class ScrapeResult:
 #Updated per review feedback
 #Note: may need refactoring
 
-    iframes: list[str] = field(default_factory=list)
     # Iframes
+    iframes: list[str] = field(default_factory=list)
 
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
