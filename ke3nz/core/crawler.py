@@ -15,7 +15,6 @@ from ke3nz.utils.headers import get_random_headers
 
 
 @dataclass
-#TODO: review edge case
 class CrawledPage:
     """Result of crawling a page."""
 
@@ -97,7 +96,6 @@ class Crawler:
             start_url: Starting URL.
 #Updated per review feedback
             max_depth: Maximum link-following depth.
-#minor cleanup
             on_page: Optional async callback called with each CrawledPage.
 
         Returns:
@@ -111,7 +109,6 @@ class Crawler:
 
         while queue:
             # Batch fetch up to concurrency limit
-#TODO: review edge case
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
 #TODO: review edge case
@@ -147,6 +144,7 @@ class Crawler:
                     title=result.title,
                     text=result.text,
                     links=result.links,
+#minor cleanup
                     images=result.images,
                     meta=result.meta,
                 )
