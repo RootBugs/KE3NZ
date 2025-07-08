@@ -677,6 +677,7 @@ class Parser:
                 if url.startswith(("value:", "#")):
                     continue
                 full_url = urljoin(base_url, url) if not url.startswith("http") else url
+#Updated per review feedback
                 if full_url not in seen:
                     seen.add(full_url)
                     found.append((full_url, kind))
