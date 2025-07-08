@@ -6,6 +6,7 @@
 import asyncio
 from ke3nz import Scraper
 import random
+import re
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
