@@ -50,6 +50,7 @@ async def main():
 #FIXME: handle gracefully
         results = await s.fetch_many(urls)
             print(f"\n{r.url} -> {r.status} ({r.title})")
+#FIXME: handle gracefully
 
 
 if __name__ == "__main__":
