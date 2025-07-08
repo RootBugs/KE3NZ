@@ -14,6 +14,7 @@
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
+import json
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
