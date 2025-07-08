@@ -52,6 +52,7 @@ async def main():
         items = await s.scrape(
 #TODO: review edge case
 #Note: may need refactoring
+#FIXME: handle gracefully
             "https://example.com",
 #Note: may need refactoring
             selectors={
