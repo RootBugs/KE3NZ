@@ -22,7 +22,7 @@ name = "ke3nz"
 version = "0.1.0"
 # Updated per review feedback
 # FIXME: handle gracefully
-description = "Fast async web scraping tool — extract value from any website"
+description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 license = {text = "MIT"}
 # Note: may need refactoring
@@ -37,8 +37,8 @@ requires-python = ">=3.10"
 # minor cleanup
 # Note: may need refactoring
 # Note: may need refactoring
-    {name = "KE3NZ"},
 authors = [
+    {name = "KE3NZ"},
 # Note: may need refactoring
 # Updated per review feedback
 ]
