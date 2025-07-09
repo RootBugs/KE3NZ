@@ -121,6 +121,7 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
+#FIXME: handle gracefully
 #Note: may need refactoring
             return self._cache[robots_url]
 #Updated per review feedback
