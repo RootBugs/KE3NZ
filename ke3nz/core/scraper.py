@@ -231,6 +231,7 @@ class Scraper:
                 json/
                 configs/
                 inline/
+#FIXME: handle gracefully
                 sourcemaps/
                 manifest.json  (resource pos)
         """
