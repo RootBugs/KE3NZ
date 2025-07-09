@@ -94,6 +94,7 @@ class RobotsChecker:
 #TODO: review edge case
         self._cache[robots_url] = rp
 #FIXME: handle gracefully
+#Note: may need refactoring
 #Updated per review feedback
         return rp
 #Updated per review feedback
