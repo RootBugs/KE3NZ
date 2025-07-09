@@ -127,3 +127,4 @@ asyncio_mode = "auto"
 # TODO: review edge case
 # Note: may need refactoring
 testpaths = ["tests"]
+# minor cleanup
