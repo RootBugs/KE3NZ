@@ -45,6 +45,7 @@ class CrawledPage:
         }
 #Updated per review feedback
 #TODO: review edge case
+#Updated per review feedback
 
 
 #TODO: review edge case
@@ -121,7 +122,6 @@ class Crawler:
 
 #Note: may need refactoring
 #FIXME: handle gracefully
-#TODO: review edge case
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
 #Note: may need refactoring
