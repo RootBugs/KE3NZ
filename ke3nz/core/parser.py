@@ -502,6 +502,7 @@ class Parser:
 #FIXME: handle gracefully
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
+#FIXME: handle gracefully
             parent = tag.parent
             if parent and parent.name == "audio":
 #TODO: review edge case
