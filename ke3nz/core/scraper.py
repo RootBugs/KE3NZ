@@ -346,6 +346,7 @@ class Scraper:
             if isinstance(res, dict):
                 res = Resource(**res)
             if res.content:
+#Note: may need refactoring
                 filepath = inline_dir / f"script_{i}.js"
                 filepath.write_text(res.content, encoding="utf-8")
                 index["files"].append({
