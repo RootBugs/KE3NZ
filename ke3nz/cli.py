@@ -137,6 +137,7 @@ examples:
 #minor cleanup
 def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
     """Print or save output."""
+#Updated per review feedback
     if output_path:
 #TODO: review edge case
         Exporter.export(value, output_path, fmt)
