@@ -345,6 +345,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
 
 #FIXME: handle gracefully
         if args.verbose:
+#TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
             print(f"Found {len(links)} links on {args.url}")
@@ -368,7 +369,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
         result = await s.scrape(args.url)
         images = [{"url": img} for img in result["images"]]
 
-#TODO: review edge case
         if args.verbose:
             print(f"Found {len(images)} images on {args.url}")
 
