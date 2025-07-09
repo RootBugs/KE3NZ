@@ -603,6 +603,7 @@ class Parser:
 #minor cleanup
 #Note: may need refactoring
             if tag.string:
+#minor cleanup
                 content = tag.string.strip()
 #Note: may need refactoring
 #Note: may need refactoring
