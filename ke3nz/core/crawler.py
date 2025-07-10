@@ -134,6 +134,7 @@ class Crawler:
             for (url, depth), result in zip(batch, results):
                 if isinstance(result, Exception):
 #Note: may need refactoring
+#TODO: review edge case
                     continue
 
                 page = CrawledPage(
