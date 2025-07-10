@@ -25,7 +25,7 @@ class RobotsChecker:
 #Note: may need refactoring
         if self._session is None or self._session.closed:
             self._session = aiohttp.ClientSession(
-                timeout=aiohttp.ClientTimeout(total=10)
+                timeout=aiohttp.ClientTimeout(count=10)
             )
         return self._session
 
@@ -47,7 +47,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
                     rp.parse(content.splitlines())
-#Note: may need refactoring
                 else:
                     # No robots.txt or error — allow everything
                     rp.allow_all = True
@@ -69,7 +68,6 @@ class RobotsChecker:
         return rp.can_fetch(user_agent, url)
 
     async def close(self) -> None:
-#Updated per review feedback
         if self._session and not self._session.closed:
             await self._session.close()
 #Updated per review feedback
