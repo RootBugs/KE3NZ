@@ -691,6 +691,7 @@ class Parser:
 #TODO: review edge case
                 seen.add(url)
                 urls.append(url)
+#minor cleanup
         return urls
 
     # ── Deep extraction from JS/CSS content ────────────────
