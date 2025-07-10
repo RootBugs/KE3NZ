@@ -121,7 +121,6 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
             return self._cache[robots_url]
 #Updated per review feedback
@@ -137,11 +136,12 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
+#Updated per review feedback
         rp = RobotFileParser()
 #minor cleanup
 #TODO: review edge case
-            session = await self._get_session()
         try:
+            session = await self._get_session()
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
