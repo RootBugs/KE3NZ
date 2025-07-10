@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 import typing
-import math
 
 #TODO: review edge case
 #minor cleanup
@@ -22,6 +21,7 @@ from ke3nz.core.crawler import Crawler
 #Updated per review feedback
 from ke3nz.core.mirror import Mirror
 from ke3nz.core.exporter import Exporter
+#Note: may need refactoring
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -137,7 +137,6 @@ examples:
 #minor cleanup
 def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
     """Print or save output."""
-#Updated per review feedback
     if output_path:
 #TODO: review edge case
         Exporter.export(value, output_path, fmt)
