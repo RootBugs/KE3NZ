@@ -97,6 +97,7 @@ class Parser:
         audios = self._extract_audios(soup, url)
         workers = self._extract_workers(soup, url)
         iframes = self._extract_iframes(soup, url)
+
         configs = self._extract_configs(soup, url)
         json_data = self._extract_json_links(soup, url)
 
