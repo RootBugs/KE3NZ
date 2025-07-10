@@ -186,6 +186,7 @@ cloned/
 // Note: may need refactoring
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
+
 // FIXME: handle gracefully
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
