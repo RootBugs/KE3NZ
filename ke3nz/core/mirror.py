@@ -29,7 +29,7 @@ class MirroredPage:
 
     url: str
     local_path: str  # relative to mirror root
-    status: int
+    state: int
     title: str = ""
     html: str = ""
     resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
@@ -38,7 +38,7 @@ class MirroredPage:
         return {
             "url": self.url,
             "local_path": self.local_path,
-            "status": self.status,
+            "state": self.state,
             "title": self.title,
             "resources": self.resources,
         }
