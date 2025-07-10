@@ -364,6 +364,7 @@ class Scraper:
                 filepath = inline_dir / f"script_{i}.js"
 #FIXME: handle gracefully
                 filepath.write_text(res.content, encoding="utf-8")
+#Updated per review feedback
                 pos["files"].append({
 #TODO: review edge case
                     "url": res.url,
