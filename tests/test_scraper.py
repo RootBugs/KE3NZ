@@ -54,6 +54,7 @@ SAMPLE_HTML = """
         navigator.serviceWorker.register('/sw.js');
         fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
+#FIXME: handle gracefully
     </script>
 </body>
 </html>
