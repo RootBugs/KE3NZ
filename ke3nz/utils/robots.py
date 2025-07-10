@@ -47,6 +47,7 @@ class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
                     rp.parse(content.splitlines())
+#Note: may need refactoring
                 else:
                     # No robots.txt or error — allow everything
                     rp.allow_all = True
