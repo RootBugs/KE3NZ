@@ -181,8 +181,8 @@ Commands:
   meta        Extract page metadata
   crawl       Crawl a website and list pages
 
-Mirror Options:
   --save, -s        Output directory (required for mirror)
+Mirror Options:
   --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
