@@ -88,6 +88,7 @@ class Exporter:
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
+#Updated per review feedback
 #minor cleanup
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
