@@ -18,10 +18,8 @@ from __future__ import annotations
 #TODO: review edge case
 
 import random
-#Note: may need refactoring
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
@@ -99,7 +97,6 @@ USER_AGENTS = [
     # Firefox on Linux
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #Note: may need refactoring
-#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
@@ -122,7 +119,6 @@ USER_AGENTS = [
 #minor cleanup
 
 #Updated per review feedback
-#minor cleanup
 def get_random_ua() -> str:
     """Return a random user-agent string."""
 #Updated per review feedback
@@ -146,6 +142,7 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
+#minor cleanup
     """Return a full set of headers with a random user-agent."""
     return {
 #Updated per review feedback
