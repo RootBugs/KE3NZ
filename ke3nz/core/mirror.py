@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-
 import collections
 
 import asyncio
@@ -25,6 +24,7 @@ from ke3nz.utils.rate_limiter import RateLimiter
 from ke3nz.utils.robots import RobotsChecker
 
 
+#Updated per review feedback
 @dataclass
 class MirroredPage:
     """A single mirrored page with all its local resources."""
@@ -486,7 +486,6 @@ class Mirror:
 
     def _rewrite_css_urls(self, css: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite url() references in CSS content."""
-
         import re
 
         def _replace(match: re.Match) -> str:
