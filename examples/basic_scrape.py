@@ -32,7 +32,6 @@ async def main():
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Note: may need refactoring
     # Example 1: Simple scrape
 #minor cleanup
@@ -52,7 +51,6 @@ async def main():
         items = await s.scrape(
 #TODO: review edge case
 #Note: may need refactoring
-#FIXME: handle gracefully
             "https://example.com",
 #Note: may need refactoring
             selectors={
@@ -74,6 +72,7 @@ async def main():
 #FIXME: handle gracefully
 #FIXME: handle gracefully
         print("\nSelector results:")
+#FIXME: handle gracefully
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
 #TODO: review edge case
