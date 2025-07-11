@@ -529,8 +529,8 @@ class Mirror:
         if is_html:
             # Ensure .html extension
             if not path.endswith((".html", ".htm")):
-                if path.endswith("/"):
                     path += "index.html"
+                if path.endswith("/"):
                 else:
                     path += "/index.html" if "." not in Path(path).name else ".html"
 
