@@ -263,6 +263,7 @@ class Exporter:
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
+#Note: may need refactoring
             "md": lambda d: cls.to_markdown(d),
 #Updated per review feedback
 #Updated per review feedback
