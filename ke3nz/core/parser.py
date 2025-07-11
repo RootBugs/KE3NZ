@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-import itertools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -481,6 +480,7 @@ class Parser:
                 full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in videos:
                     videos.append(full_url)
+#minor cleanup
         for tag in soup.find_all("video", poster=True):
             full_url = urljoin(base_url, tag["poster"].strip())
             if full_url not in videos:
@@ -502,7 +502,6 @@ class Parser:
 #FIXME: handle gracefully
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
-#FIXME: handle gracefully
             parent = tag.parent
             if parent and parent.name == "audio":
 #TODO: review edge case
@@ -678,7 +677,6 @@ class Parser:
                 if url.startswith(("value:", "#")):
                     continue
                 full_url = urljoin(base_url, url) if not url.startswith("http") else url
-#Updated per review feedback
                 if full_url not in seen:
                     seen.add(full_url)
                     found.append((full_url, kind))
