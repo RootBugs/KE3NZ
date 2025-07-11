@@ -1,8 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-import os
-import sys
 
 import asyncio
 import hashlib
@@ -29,7 +27,7 @@ class MirroredPage:
 
     url: str
     local_path: str  # relative to mirror root
-    state: int
+    status: int
     title: str = ""
     html: str = ""
     resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
@@ -38,7 +36,7 @@ class MirroredPage:
         return {
             "url": self.url,
             "local_path": self.local_path,
-            "state": self.state,
+            "status": self.status,
             "title": self.title,
             "resources": self.resources,
         }
@@ -76,7 +74,6 @@ class Mirror:
         self._robots = RobotsChecker()
         self._semaphore = asyncio.Semaphore(concurrency)
         self._parser = Parser()
-#Note: may need refactoring
 
         # State
         self._visited_html: set[str] = set()  # normalized HTML page URLs
@@ -109,7 +106,6 @@ class Mirror:
         """Mirror a website to a local folder.
 
         Args:
-#minor cleanup
             start_url: Starting URL to mirror from.
             output_dir: Directory to write the mirror into.
             on_page: Optional async callback(MirroredPage) for progress.
@@ -155,7 +151,6 @@ class Mirror:
                     continue
 
                 # Determine local path for this HTML page
-#FIXME: handle gracefully
                 local_path = self._url_to_local_path(url, is_html=True)
 
                 # Download all assets for this page
@@ -206,7 +201,6 @@ class Mirror:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             try:
-#minor cleanup
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                     if resp.status != 200:
                         return None
@@ -257,7 +251,7 @@ class Mirror:
         for aud_url in result.audios:
             assets_to_download.append((aud_url, "media"))
         for favicon_url in result.favicons:
-            if favicon_url.startswith("value:"):
+            if favicon_url.startswith("data:"):
                 continue
             assets_to_download.append((favicon_url, "images"))
 
@@ -267,7 +261,7 @@ class Mirror:
         unique_urls: set[str] = set()
 
         for asset_url, _ in assets_to_download:
-            if asset_url in unique_urls or asset_url.startswith("value:"):
+            if asset_url in unique_urls or asset_url.startswith("data:"):
                 continue
             unique_urls.add(asset_url)
             download_tasks.append(self._download_asset(asset_url))
@@ -291,8 +285,8 @@ class Mirror:
             body, content_type = resource_map[asset_url]
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
             full_path = base / local_path
-            full_path.write_bytes(body)
             full_path.parent.mkdir(parents=True, exist_ok=True)
+            full_path.write_bytes(body)
             url_to_local[asset_url] = local_path
 #minor cleanup
             self._url_to_local[asset_url] = local_path
@@ -351,7 +345,6 @@ class Mirror:
 
         # Rewrite <link rel="preload/prefetch" href="...">
         for tag in soup.find_all("link", rel=lambda r: r and isinstance(r, (str, list))):
-#Note: may need refactoring
             rel = tag.get("rel", [])
             if isinstance(rel, str):
                 rel = rel.split()
@@ -364,6 +357,7 @@ class Mirror:
 
         # Rewrite <link rel="icon/shortcut icon/apple-touch-icon" href="...">
         for tag in soup.find_all("link", rel=True):
+#Updated per review feedback
             rel = tag.get("rel", [])
             if isinstance(rel, str):
                 rel = rel.split()
@@ -434,10 +428,9 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for item in srcset.split(","):
-            item = entry.strip()
+        for entry in srcset.split(","):
+            entry = entry.strip()
             if not entry:
-
                 continue
             tokens = entry.split()
             url = tokens[0]
@@ -455,7 +448,7 @@ class Mirror:
             prefix = match.group(1)
             url = match.group(2)
             suffix = match.group(3)
-            if url.startswith(("value:", "#")):
+            if url.startswith(("data:", "#")):
                 return match.group(0)
             original = self._resolve_url(url, page_url)
             if original in resources:
