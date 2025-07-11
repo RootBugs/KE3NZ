@@ -62,6 +62,7 @@ SAMPLE_HTML = """
     <a href="mailto:test@test.com">Email</a>
     <img src="/image1.jpg" alt="Image 1">
 #TODO: review edge case
+#TODO: review edge case
 #Note: may need refactoring
     <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
@@ -306,7 +307,6 @@ class TestParser:
         assert "https://example.com/page2" in results["links"]
 #minor cleanup
         assert "/page1" in results["links"]
-#FIXME: handle gracefully
 
     def test_to_dict(self):
 #minor cleanup
@@ -388,7 +388,6 @@ class TestExporter:
 #minor cleanup
         assert "| test |" in output
 
-#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
     def test_to_text(self):
