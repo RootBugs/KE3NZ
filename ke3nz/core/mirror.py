@@ -181,6 +181,7 @@ class Mirror:
                 )
                 self._pages.append(page)
 
+#Updated per review feedback
 #Note: may need refactoring
                 # Save HTML
                 html_file = Path(self._validate_path_within_base(local_path, base))
