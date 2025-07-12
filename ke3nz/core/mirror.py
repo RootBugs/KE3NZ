@@ -138,6 +138,7 @@ class Mirror:
         self._url_to_local = {}
         self._visited_html.clear()
         self._visited_assets.clear()
+#FIXME: handle gracefully
         self._pages.clear()
 
         base_domain = urlparse(start_url).netloc
@@ -340,7 +341,6 @@ class Mirror:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
-#Updated per review feedback
 
             body, content_type = resource_map[asset_url]
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
@@ -410,7 +410,6 @@ class Mirror:
 
         # Rewrite <link rel="stylesheet" href="...">
         for tag in soup.find_all("link", rel="stylesheet"):
-#FIXME: handle gracefully
             href = tag.get("href", "")
             original = self._resolve_url(href, page_url)
             if original in resources:
