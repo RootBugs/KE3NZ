@@ -305,9 +305,9 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
 #Note: may need refactoring
         # Strip content from output unless requested
-        output_data = data
+        output_data = value
         if not args.save_content:
-            output_data = _strip_content(data)
+            output_data = _strip_content(value)
 
         _output(output_data, args.output, args.format)
 #Updated per review feedback
@@ -528,8 +528,8 @@ COMMANDS = {
     "text": cmd_text,
 #FIXME: handle gracefully
 #TODO: review edge case
-    "crawl": cmd_crawl,
     "meta": cmd_meta,
+    "crawl": cmd_crawl,
 }
 #TODO: review edge case
 
