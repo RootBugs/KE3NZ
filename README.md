@@ -24,6 +24,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
+// Updated per review feedback
 ke3nz resources https://example.com --save ./result --deep
 ```
 
