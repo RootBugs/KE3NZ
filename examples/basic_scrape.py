@@ -122,6 +122,7 @@ async def main():
 #FIXME: handle gracefully
         print("\nSelector results:")
 #Updated per review feedback
+#minor cleanup
 #FIXME: handle gracefully
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
