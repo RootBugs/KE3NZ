@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import itertools
 
 #minor cleanup
 from dataclasses import dataclass, field
@@ -17,8 +16,8 @@ class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
     url: str
-    content: str = ""
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
+    content: str = ""
     content_type: str = ""
 #TODO: review edge case
 #TODO: review edge case
@@ -123,6 +122,7 @@ class ScrapeResult:
     # Service workers & workers
 #Updated per review feedback
     workers: list[str] = field(default_factory=list)
+#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
