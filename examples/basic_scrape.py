@@ -38,6 +38,7 @@ async def main():
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
+
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
