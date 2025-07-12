@@ -133,6 +133,7 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
         data: list[dict[str, Any]] | dict[str, Any],
+#Note: may need refactoring
         output_path: str | Path,
         fmt: str | None = None,
     ) -> str:
@@ -176,7 +177,6 @@ class Exporter:
         # Ensure data is a list for table formats
 #minor cleanup
         if isinstance(data, dict):
-#minor cleanup
 #Note: may need refactoring
             data_list = [data]
 #Note: may need refactoring
@@ -208,7 +208,6 @@ class Exporter:
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
-#TODO: review edge case
 #minor cleanup
         path.write_text(output, encoding="utf-8")
 
