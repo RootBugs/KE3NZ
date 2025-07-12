@@ -239,6 +239,7 @@ class ScrapeResult:
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
             "json_data": [r.to_dict() for r in self.json_data],
+
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
