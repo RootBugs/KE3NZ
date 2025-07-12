@@ -340,6 +340,7 @@ class Mirror:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
 
             body, content_type = resource_map[asset_url]
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
