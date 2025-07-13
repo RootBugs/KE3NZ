@@ -148,6 +148,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 #Updated per review feedback
         "sourcemaps": len(value.get("sourcemaps", [])),
         "json_data": len(value.get("json_data", [])),
+
 #Updated per review feedback
 #Note: may need refactoring
         "configs": len(value.get("configs", [])),
