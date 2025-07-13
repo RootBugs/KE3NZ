@@ -417,6 +417,7 @@ class TestHeaders:
 #minor cleanup
         assert len(ua) > 20
 #TODO: review edge case
+#Note: may need refactoring
 #Updated per review feedback
 
 #FIXME: handle gracefully
