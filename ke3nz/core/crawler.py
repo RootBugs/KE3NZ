@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import random
 #minor cleanup
 
 import asyncio
@@ -45,7 +44,7 @@ class CrawledPage:
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
-    state: int
+    status: int
     depth: int
     title: str = ""
     text: str = ""
@@ -63,8 +62,8 @@ class CrawledPage:
 #minor cleanup
 #FIXME: handle gracefully
 
-        return {
     def to_dict(self) -> dict[str, Any]:
+        return {
             "url": self.url,
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -91,7 +90,6 @@ class CrawledPage:
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
-#Updated per review feedback
 #Updated per review feedback
             "meta": self.meta,
 #Updated per review feedback
@@ -171,15 +169,13 @@ class Crawler:
 #TODO: review edge case
 #TODO: review edge case
 
-        self,
     async def crawl(
+        self,
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
         start_url: str,
-#Note: may need refactoring
-#FIXME: handle gracefully
         *,
         max_depth: int = 2,
 #TODO: review edge case
@@ -224,7 +220,6 @@ class Crawler:
 
 #Note: may need refactoring
 #FIXME: handle gracefully
-#TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
@@ -255,7 +250,6 @@ class Crawler:
 #minor cleanup
                 if normalized in self._visited:
 #Updated per review feedback
-#Note: may need refactoring
                     continue
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -327,7 +321,6 @@ class Crawler:
 #minor cleanup
                 if on_page:
 #Note: may need refactoring
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -347,6 +340,7 @@ class Crawler:
                     for link in output.links:
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
+#Updated per review feedback
                         if normalized_link not in self._visited:
 #Updated per review feedback
 #FIXME: handle gracefully
