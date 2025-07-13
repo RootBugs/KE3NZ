@@ -93,6 +93,7 @@ examples:
     text_p = sub.add_parser("text", parents=[shared], help="Extract text content")
     text_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
 
+#Updated per review feedback
     # meta
     meta_p = sub.add_parser("meta", parents=[shared], help="Extract page metadata")
     meta_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
