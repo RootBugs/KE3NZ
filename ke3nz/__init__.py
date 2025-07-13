@@ -56,6 +56,7 @@ __author__ = "KE3NZ"
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
+#TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
 
@@ -73,7 +74,6 @@ __all__ = [
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
-#FIXME: handle gracefully
     "ScrapeResult",
     "Resource",
     "Crawler",
@@ -102,7 +102,6 @@ __all__ = [
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
-#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
