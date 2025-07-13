@@ -105,6 +105,7 @@ examples:
     # images
     images_p = sub.add_parser("images", parents=[shared], help="Extract all images")
 #Updated per review feedback
+#Updated per review feedback
     images_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     images_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
