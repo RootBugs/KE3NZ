@@ -12,6 +12,7 @@ from typing import Any
 from urllib.parse import urljoin, urlparse, urlunparse
 
 import aiohttp
+#minor cleanup
 from bs4 import BeautifulSoup
 
 from ke3nz.core.models import Resource, ScrapeResult
