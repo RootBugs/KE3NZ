@@ -552,6 +552,7 @@ class Parser:
         images: list[str],
         scripts: list[Resource],
         stylesheets: list[Resource],
+#Note: may need refactoring
         fonts: list[Resource],
         preloads: list[Resource],
         favicons: list[str],
