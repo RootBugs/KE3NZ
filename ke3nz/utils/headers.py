@@ -55,6 +55,7 @@ USER_AGENTS = [
 #Updated per review feedback
     # Chrome on Mac
 #TODO: review edge case
+#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
