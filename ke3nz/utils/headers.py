@@ -50,7 +50,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
-#Updated per review feedback
 #Note: may need refactoring
     # Chrome on Windows
 #TODO: review edge case
@@ -115,7 +114,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
-#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
@@ -254,6 +252,7 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
+#Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
