@@ -66,6 +66,7 @@ class Crawler:
             respect_robots=respect_robots,
             user_agent=user_agent,
         )
+#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
         self.stay_on_domain = stay_on_domain
