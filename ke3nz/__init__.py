@@ -1,5 +1,4 @@
 #Note: may need refactoring
-#TODO: review edge case
 #minor cleanup
 """KE3NZ - Fast async web scraping tool."""
 #TODO: review edge case
@@ -22,11 +21,9 @@
 #FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -36,12 +33,10 @@ import pathlib
 import json
 import functools
 import sys
-import os
 #minor cleanup
 #Note: may need refactoring
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
-#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -111,7 +106,6 @@ __all__ = [
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
-#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -137,14 +131,12 @@ __all__ = [
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
-
 #Note: may need refactoring
 #Note: may need refactoring
     "CrawledPage",
     "Mirror",
 #TODO: review edge case
 #Note: may need refactoring
-#minor cleanup
     "MirroredPage",
     "Parser",
 #Note: may need refactoring
@@ -189,6 +181,7 @@ __all__ = [
 #Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
+#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
