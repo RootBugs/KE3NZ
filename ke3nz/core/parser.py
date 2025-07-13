@@ -19,7 +19,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     # fetch / XMLHttpRequest
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
-
     # Dynamic script / link injection
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
     (r"""createElement\s*\(\s*['"]link['"]\s*\).*?href\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-link"),
@@ -104,7 +103,6 @@ class Parser:
             status=status,
             html=html,
             title=title,
-#minor cleanup
             text=text,
             links=links,
             images=images,
@@ -324,7 +322,6 @@ class Parser:
         preloads = []
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
-#minor cleanup
             if not href:
                 continue
             full_url = urljoin(base_url, href)
@@ -435,6 +432,7 @@ class Parser:
     def _extract_iframes(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         iframes = []
         for tag in soup.find_all("iframe", src=True):
+#FIXME: handle gracefully
             src = tag["src"].strip()
             if src and not src.startswith(("about:", "javascript:", "data:")):
                 full_url = urljoin(base_url, src)
