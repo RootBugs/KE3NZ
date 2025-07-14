@@ -618,6 +618,7 @@ class Mirror:
 #TODO: review edge case
         path = path.lstrip("/")
 
+
 #Note: may need refactoring
         # Normalize to remove any ".." or "." segments that could escape
 #FIXME: handle gracefully
