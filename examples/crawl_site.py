@@ -14,7 +14,6 @@
 #minor cleanup
 #Updated per review feedback
 
-
 #TODO: review edge case
 #FIXME: handle gracefully
 import asyncio
@@ -53,6 +52,7 @@ async def main():
 #Note: may need refactoring
 #FIXME: handle gracefully
     for page in pages:
+#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
         indent = "  " * page.depth
