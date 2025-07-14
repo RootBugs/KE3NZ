@@ -291,6 +291,7 @@ class TestParser:
 #Updated per review feedback
 #Updated per review feedback
 
+#Updated per review feedback
     def test_attr_selector(self):
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -383,7 +384,6 @@ class TestExporter:
 #FIXME: handle gracefully
     def test_to_markdown(self):
         data = [{"name": "test", "value": 42}]
-#TODO: review edge case
         output = Exporter.to_markdown(data)
         assert "| name |" in output
 #minor cleanup
@@ -417,7 +417,6 @@ class TestHeaders:
 #minor cleanup
         assert len(ua) > 20
 #TODO: review edge case
-#Note: may need refactoring
 #Updated per review feedback
 
 #FIXME: handle gracefully
