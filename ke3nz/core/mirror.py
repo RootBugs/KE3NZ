@@ -85,6 +85,7 @@ class Mirror:
         self._asset_counter = 0
         self._pages: list[MirroredPage] = []
 
+#minor cleanup
     async def __aenter__(self) -> Mirror:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
