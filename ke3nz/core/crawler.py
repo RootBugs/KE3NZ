@@ -33,6 +33,7 @@ class CrawledPage:
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
+#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -53,7 +54,6 @@ class CrawledPage:
 #Updated per review feedback
             "meta": self.meta,
         }
-#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
