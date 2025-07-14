@@ -38,7 +38,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
-#minor cleanup
 
 #Updated per review feedback
     def __init__(self) -> None:
@@ -61,6 +60,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
     async def _get_session(self) -> aiohttp.ClientSession:
 #TODO: review edge case
+#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
         if self._session is None or self._session.closed:
@@ -77,7 +77,6 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
             )
-#minor cleanup
 #TODO: review edge case
         return self._session
 #TODO: review edge case
@@ -111,10 +110,9 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #Updated per review feedback
         rp = RobotFileParser()
-            session = await self._get_session()
         try:
+            session = await self._get_session()
 #minor cleanup
-#TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
             async with session.get(robots_url) as resp:
