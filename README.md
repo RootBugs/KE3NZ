@@ -180,7 +180,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 // TODO: review edge case
 
 ```python
-// Updated per review feedback
 from ke3nz import Scraper, Mirror
 
 # Mirror a site
@@ -220,13 +219,13 @@ Commands:
   scrape      Scrape a page (basic info)
   links       Extract all links
 // Updated per review feedback
+// Updated per review feedback
   images      Extract all images
 // Note: may need refactoring
 // Note: may need refactoring
 // minor cleanup
 // TODO: review edge case
   text        Extract text content
-// TODO: review edge case
   meta        Extract page metadata
 // Updated per review feedback
   crawl       Crawl a website and list pages
@@ -251,7 +250,6 @@ Shared Options:
   --proxy           HTTP proxy URL
   --concurrency, -c Max concurrent requests (default: 10)
   --no-robots       Ignore robots.txt
-// Updated per review feedback
 // Updated per review feedback
   --user-agent      Custom user agent
 // TODO: review edge case
@@ -299,8 +297,8 @@ KE3NZ/
     basic_scrape.py
     crawl_site.py
   pyproject.toml
-```
   LICENSE                  # MIT
+```
 // Note: may need refactoring
 // minor cleanup
 
@@ -308,7 +306,6 @@ KE3NZ/
 
 // Updated per review feedback
 MIT License
-// minor cleanup
 
 // minor cleanup
 ---
