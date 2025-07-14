@@ -25,6 +25,7 @@ from ke3nz.utils.robots import RobotsChecker
 @dataclass
 class MirroredPage:
     """A single mirrored page with all its local resources."""
+#Note: may need refactoring
 
     url: str
     local_path: str  # relative to mirror root
