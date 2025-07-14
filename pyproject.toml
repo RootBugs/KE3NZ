@@ -23,6 +23,7 @@ readme = "README.md"
 license = {text = "MIT"}
 # Note: may need refactoring
 # Note: may need refactoring
+# minor cleanup
 requires-python = ">=3.10"
 # FIXME: handle gracefully
 # Note: may need refactoring
