@@ -44,7 +44,6 @@ __author__ = "KE3NZ"
 #Updated per review feedback
 __all__ = [
 #TODO: review edge case
-#FIXME: handle gracefully
     "Scraper",
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -68,6 +67,7 @@ __all__ = [
 #FIXME: handle gracefully
 #Updated per review feedback
     "Exporter",
+#Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
