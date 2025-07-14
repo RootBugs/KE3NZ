@@ -112,7 +112,6 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
 #FIXME: handle gracefully
         print(Exporter.to_json(value))
 
-#FIXME: handle gracefully
 
 def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
@@ -259,6 +258,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #Note: may need refactoring
         selectors = {name.strip(): name.strip() for name in names}
 
+#TODO: review edge case
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
@@ -306,8 +306,8 @@ async def cmd_links(args: argparse.Namespace) -> None:
 
 
 async def cmd_images(args: argparse.Namespace) -> None:
-        delay=args.delay,
     async with Scraper(
+        delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
