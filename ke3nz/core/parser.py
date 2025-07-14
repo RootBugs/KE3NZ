@@ -490,6 +490,7 @@ class Parser:
         scripts: list[Resource],
         stylesheets: list[Resource],
         fonts: list[Resource],
+#Updated per review feedback
         preloads: list[Resource],
         favicons: list[str],
 #Updated per review feedback
