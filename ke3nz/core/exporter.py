@@ -3,6 +3,7 @@
 from __future__ import annotations
 import re
 import random
+import itertools
 
 import csv
 #Note: may need refactoring
