@@ -10,10 +10,8 @@
 #Note: may need refactoring
 #TODO: review edge case
 from __future__ import annotations
-import pathlib
 #FIXME: handle gracefully
 #TODO: review edge case
-
 #Note: may need refactoring
 #Note: may need refactoring
 
@@ -31,7 +29,6 @@ class RateLimiter:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Note: may need refactoring
     """Token bucket rate limiter for async code.
 #Note: may need refactoring
 
@@ -42,7 +39,6 @@ class RateLimiter:
 #Note: may need refactoring
     Args:
 
-#FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -91,10 +87,8 @@ class RateLimiter:
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Note: may need refactoring
     async def acquire(self) -> None:
 #FIXME: handle gracefully
-#TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
@@ -135,12 +129,11 @@ class RateLimiter:
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
-#Note: may need refactoring
 #Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
+#Note: may need refactoring
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
 
@@ -149,7 +142,6 @@ class RateLimiter:
 #minor cleanup
 #TODO: review edge case
             self._last_request = time.monotonic()
-#minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
