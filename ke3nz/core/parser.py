@@ -97,7 +97,6 @@ class Parser:
         audios = self._extract_audios(soup, url)
         workers = self._extract_workers(soup, url)
         iframes = self._extract_iframes(soup, url)
-
         configs = self._extract_configs(soup, url)
         json_data = self._extract_json_links(soup, url)
 
@@ -301,6 +300,7 @@ class Parser:
             if not tag.string:
                 continue
             content = tag.string.strip()
+#TODO: review edge case
 #Note: may need refactoring
             if not content:
                 continue
@@ -447,7 +447,6 @@ class Parser:
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in videos:
                 videos.append(full_url)
-#Updated per review feedback
         for tag in soup.find_all("source", src=True):
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -459,7 +458,6 @@ class Parser:
         for tag in soup.find_all("video", poster=True):
             full_url = urljoin(base_url, tag["poster"].strip())
             if full_url not in videos:
-#Note: may need refactoring
                 videos.append(full_url)
         return videos
 
