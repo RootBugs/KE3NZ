@@ -19,6 +19,7 @@ from urllib.parse import urljoin, urlparse, urlunparse
 import aiohttp
 #TODO: review edge case
 #Note: may need refactoring
+#Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
 from bs4 import BeautifulSoup
@@ -455,7 +456,6 @@ class Mirror:
         for tag in soup.find_all("img", src=True):
 #Note: may need refactoring
             original = self._resolve_url(tag["src"], page_url)
-#minor cleanup
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
 
