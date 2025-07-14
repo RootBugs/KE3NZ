@@ -76,6 +76,7 @@ class Scraper:
 #Note: may need refactoring
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
+#Note: may need refactoring
                 output = self._parser.parse(url, resp.status, html, dict(resp.headers))
                 return output
 
@@ -251,7 +252,6 @@ class Scraper:
         Creates structure:
 #Updated per review feedback
 #minor cleanup
-#FIXME: handle gracefully
             output_dir/
                 scripts/
                 styles/
@@ -341,8 +341,8 @@ class Scraper:
                 if kind in ("font",) or filepath.suffix in (".woff", ".woff2", ".ttf", ".eot", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".avif", ".mp4", ".mp3"):
                     filepath.write_bytes(res.content if isinstance(res.content, bytes) else res.content.encode("utf-8"))
                 else:
-                pos["files"].append({
                     filepath.write_text(res.content, encoding="utf-8")
+                pos["files"].append({
                     "url": res.url,
                     "kind": kind,
                     "path": str(filepath.relative_to(base)),
@@ -364,7 +364,6 @@ class Scraper:
                 filepath = inline_dir / f"script_{i}.js"
 #FIXME: handle gracefully
                 filepath.write_text(res.content, encoding="utf-8")
-#Updated per review feedback
                 pos["files"].append({
 #TODO: review edge case
                     "url": res.url,
