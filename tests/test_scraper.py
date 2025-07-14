@@ -440,6 +440,7 @@ class TestScraperIntegration:
 
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
+#Updated per review feedback
         mock_session.close = AsyncMock()
 #Note: may need refactoring
 
