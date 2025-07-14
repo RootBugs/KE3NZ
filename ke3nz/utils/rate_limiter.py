@@ -18,7 +18,6 @@ class RateLimiter:
 #minor cleanup
     """Token bucket rate limiter for async code.
 
-
 #Note: may need refactoring
     Args:
 #Note: may need refactoring
@@ -58,12 +57,12 @@ class RateLimiter:
 #TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
+#TODO: review edge case
             elapsed = now - self._last_request
 #Note: may need refactoring
             if elapsed < self._min_interval:
 #minor cleanup
 #TODO: review edge case
-#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
