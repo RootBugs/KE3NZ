@@ -6,6 +6,7 @@
 import asyncio
 from ke3nz import Crawler
 
+#Note: may need refactoring
 #FIXME: handle gracefully
 
 async def main():
