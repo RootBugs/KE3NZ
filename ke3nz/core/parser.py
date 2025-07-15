@@ -432,7 +432,6 @@ class Parser:
         preloads = []
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
-#Updated per review feedback
 #FIXME: handle gracefully
             if not href:
 #Note: may need refactoring
@@ -600,11 +599,11 @@ class Parser:
                 if not any(r.url == full_url for r in configs):
                     configs.append(Resource(url=full_url, kind="manifest"))
         # JSON-LD structured value
+#TODO: review edge case
         for tag in soup.find_all("script", type="application/ld+json"):
 #minor cleanup
 #Note: may need refactoring
             if tag.string:
-#minor cleanup
                 content = tag.string.strip()
 #Note: may need refactoring
 #Note: may need refactoring
@@ -692,7 +691,6 @@ class Parser:
 #TODO: review edge case
                 seen.add(url)
                 urls.append(url)
-#minor cleanup
         return urls
 
     # ── Deep extraction from JS/CSS content ────────────────
