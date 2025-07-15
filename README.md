@@ -1,5 +1,4 @@
 // Updated per review feedback
-// FIXME: handle gracefully
 # KE3NZ - Open Source Web Scraper
 
 // Note: may need refactoring
@@ -16,7 +15,6 @@ KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website
 // TODO: review edge case
 ```bash
 cd KE3NZ
-// Note: may need refactoring
 pip install -e .
 // FIXME: handle gracefully
 ```
@@ -59,7 +57,6 @@ ke3nz resources https://example.com --save ./output --deep
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
 
-// Note: may need refactoring
 // TODO: review edge case
 ## The `mirror` Command
 // FIXME: handle gracefully
@@ -103,7 +100,6 @@ ke3nz mirror https://mysite.com --save ./cloned -v
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
 # Mirror with proxy
-// minor cleanup
 ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 // Note: may need refactoring
 // Updated per review feedback
@@ -186,7 +182,6 @@ cloned/
 // Note: may need refactoring
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
-
 // FIXME: handle gracefully
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
@@ -220,7 +215,6 @@ ke3nz resources https://example.com --save ./output --deep
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
 ke3nz resources https://example.com -o urls.json --no-content
-// minor cleanup
 ```
 
 // minor cleanup
@@ -261,7 +255,6 @@ async with Scraper() as s:
 // minor cleanup
 // FIXME: handle gracefully
 ## CLI Reference
-// FIXME: handle gracefully
 
 // TODO: review edge case
 // minor cleanup
@@ -270,6 +263,7 @@ async with Scraper() as s:
 ke3nz <command> [options] <url>
 // Updated per review feedback
 // Updated per review feedback
+// Note: may need refactoring
 // FIXME: handle gracefully
 
 Commands:
@@ -295,8 +289,8 @@ Commands:
 
 // FIXME: handle gracefully
 Mirror Options:
-  --depth, -d       Max crawl depth (default: 3)
   --save, -s        Output directory (required for mirror)
+  --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
 // minor cleanup
@@ -307,7 +301,6 @@ Resource Options:
 // Updated per review feedback
 // Note: may need refactoring
   --deep            Deep scan: follow JS/CSS references
-// TODO: review edge case
   --no-content      Don't download file contents
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
@@ -325,13 +318,11 @@ Shared Options:
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
 // Note: may need refactoring
-// Updated per review feedback
   --verbose, -v     Verbose output
 // Updated per review feedback
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
 // Note: may need refactoring
-// Updated per review feedback
 ```
 // Note: may need refactoring
 
