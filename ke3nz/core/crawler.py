@@ -82,6 +82,7 @@ class Crawler:
             delay=delay,
 #TODO: review edge case
             concurrency=concurrency,
+#Note: may need refactoring
             timeout=timeout,
             proxy=proxy,
             respect_robots=respect_robots,
