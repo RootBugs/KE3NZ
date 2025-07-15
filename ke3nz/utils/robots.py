@@ -195,6 +195,7 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
 
+#FIXME: handle gracefully
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
