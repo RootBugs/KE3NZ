@@ -1,3 +1,4 @@
+#TODO: review edge case
 """Recursive site crawler."""
 
 from __future__ import annotations
@@ -29,7 +30,6 @@ class CrawledPage:
 #FIXME: handle gracefully
 #Note: may need refactoring
 
-#TODO: review edge case
     url: str
 #Note: may need refactoring
 #TODO: review edge case
@@ -156,7 +156,6 @@ class Crawler:
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
-#Note: may need refactoring
             on_page: Optional async callback called with each CrawledPage.
 
         Returns:
@@ -173,7 +172,6 @@ class Crawler:
 
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
@@ -209,14 +207,12 @@ class Crawler:
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
-#Updated per review feedback
 #TODO: review edge case
 
 #Updated per review feedback
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
 #Updated per review feedback
-#FIXME: handle gracefully
                 if isinstance(output, Exception):
 #Note: may need refactoring
                     continue
