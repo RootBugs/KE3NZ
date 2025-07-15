@@ -51,6 +51,7 @@ This is the main feature. It:
 
 ```bash
 # Basic mirror
+// FIXME: handle gracefully
 ke3nz mirror https://mysite.com --save ./cloned
 
 # Deep mirror (follow more links)
