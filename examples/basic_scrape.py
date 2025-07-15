@@ -73,6 +73,7 @@ async def main():
         "https://example.org",
     ]
 
+#TODO: review edge case
 #minor cleanup
     async with Scraper() as s:
         results = await s.fetch_many(urls)
