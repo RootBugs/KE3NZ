@@ -183,6 +183,7 @@ class Crawler:
 #TODO: review edge case
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
+#Note: may need refactoring
                 if depth < max_depth:
                     for link in result.links:
 #Note: may need refactoring
