@@ -613,6 +613,7 @@ class Parser:
             *workers,
             *iframes,
 #minor cleanup
+#minor cleanup
         ):
 #FIXME: handle gracefully
             if url not in seen:
