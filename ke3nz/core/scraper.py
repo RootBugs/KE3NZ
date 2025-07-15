@@ -330,6 +330,7 @@ class Scraper:
             "source_url": data.get("url"),
             "title": data.get("title"),
             "files": [],
+#minor cleanup
         }
 #Updated per review feedback
 
