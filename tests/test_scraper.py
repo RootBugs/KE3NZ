@@ -183,6 +183,7 @@ class TestParser:
         assert "https://example.com/favicon.ico" in result.favicons
         assert "https://example.com/apple-icon.png" in result.favicons
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 
     def test_extract_configs(self):
         parser = Parser()
@@ -358,8 +359,8 @@ class TestScraperIntegration:
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
-                assert result["status"] == 200
                 result = await s.scrape("https://example.com")
+                assert result["status"] == 200
                 assert result["title"] == "Test Page"
                 assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
