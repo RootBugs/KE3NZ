@@ -43,7 +43,6 @@ class RobotsChecker:
     def __init__(self) -> None:
 #FIXME: handle gracefully
 #TODO: review edge case
-#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
@@ -181,5 +180,6 @@ class RobotsChecker:
     async def close(self) -> None:
         if self._session and not self._session.closed:
 #Updated per review feedback
+#minor cleanup
             await self._session.close()
 #Updated per review feedback
