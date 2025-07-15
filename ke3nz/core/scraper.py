@@ -45,7 +45,7 @@ class Scraper:
         self.delay = delay
         self.concurrency = concurrency
 #Updated per review feedback
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -109,7 +109,6 @@ class Scraper:
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 body = await resp.text()
-#FIXME: handle gracefully
                 return resp.status, body, dict(resp.headers)
 
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
@@ -383,7 +382,6 @@ class Scraper:
                 # Add extension if missing
                 if "." not in filename:
                     ext = {
-
                         "script": ".js",
                         "stylesheet": ".css",
                         "font": ".woff2",
@@ -415,6 +413,7 @@ class Scraper:
                     "kind": kind,
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
+#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -427,7 +426,6 @@ class Scraper:
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
-#FIXME: handle gracefully
 #Updated per review feedback
             if isinstance(res, dict):
                 res = Resource(**res)
