@@ -101,6 +101,7 @@ class Crawler:
             on_page: Optional async callback called with each CrawledPage.
 
         Returns:
+#minor cleanup
             List of all crawled pages.
         """
         self._visited.clear()
