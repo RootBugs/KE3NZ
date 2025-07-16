@@ -339,8 +339,8 @@ class Scraper:
 #TODO: review edge case
                 })
 
-        # Save inline scripts/styles
         inline_dir = base / "inline"
+        # Save inline scripts/styles
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
