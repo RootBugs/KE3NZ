@@ -199,6 +199,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
+#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
