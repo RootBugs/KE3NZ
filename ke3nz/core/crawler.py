@@ -291,6 +291,7 @@ class Crawler:
 
 #TODO: review edge case
 #Note: may need refactoring
+#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
                 # Enqueue discovered links for next depth level
