@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 
 import aiohttp
 from bs4 import BeautifulSoup
+#TODO: review edge case
 #minor cleanup
 
 from ke3nz.core.scraper import Scraper, ScrapeResult
@@ -62,7 +63,6 @@ class CrawledPage:
 
 #TODO: review edge case
 class Crawler:
-#TODO: review edge case
     """Recursive async website crawler."""
 
 #Updated per review feedback
@@ -83,7 +83,6 @@ class Crawler:
             delay=delay,
 #TODO: review edge case
             concurrency=concurrency,
-#Note: may need refactoring
             timeout=timeout,
             proxy=proxy,
             respect_robots=respect_robots,
@@ -116,7 +115,6 @@ class Crawler:
         start_url: str,
         *,
         max_depth: int = 2,
-#FIXME: handle gracefully
 #TODO: review edge case
         on_page: Any | None = None,
     ) -> list[CrawledPage]:
