@@ -189,6 +189,7 @@ class ScrapeResult:
             "links": self.links,
             "images": self.images,
             "favicons": self.favicons,
+#TODO: review edge case
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
