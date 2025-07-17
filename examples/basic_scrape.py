@@ -26,7 +26,6 @@
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-#FIXME: handle gracefully
 import asyncio
 from ke3nz import Scraper
 import json
@@ -128,7 +127,6 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
@@ -155,6 +153,7 @@ async def main():
 #TODO: review edge case
 #TODO: review edge case
 
+#Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
