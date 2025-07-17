@@ -108,6 +108,7 @@ cloned/
 | **Fonts** | Preloaded fonts, `@font-face` |
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
+// Updated per review feedback
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
