@@ -74,6 +74,7 @@ USER_AGENTS = [
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
+#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
