@@ -85,7 +85,6 @@ class Mirror:
         self._asset_counter = 0
         self._pages: list[MirroredPage] = []
 
-#minor cleanup
     async def __aenter__(self) -> Mirror:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
@@ -285,7 +284,6 @@ class Mirror:
             resource_map[asset_url] = result
 
         # Build URL -> local path mapping
-#TODO: review edge case
 #Note: may need refactoring
         url_to_local: dict[str, str] = {}
         for asset_url, kind in assets_to_download:
@@ -427,6 +425,7 @@ class Mirror:
 #Updated per review feedback
 
         # Rewrite <audio src="...">
+#Updated per review feedback
         for tag in soup.find_all("audio", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
