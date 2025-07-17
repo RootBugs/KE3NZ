@@ -106,6 +106,7 @@ class Scraper:
 #TODO: review edge case
 #TODO: review edge case
                 body = await resp.read()
+#Note: may need refactoring
                 return resp.status, body, dict(resp.headers)
 
     async def scrape(
