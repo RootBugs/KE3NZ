@@ -308,8 +308,8 @@ class Mirror:
             assets_to_download.append((r.url, "js"))
         for r in result.preloads:
             assets_to_download.append((r.url, "assets"))
-        for img_url in result.images:
             assets_to_download.append((img_url, "images"))
+        for img_url in result.images:
         for vid_url in result.videos:
             assets_to_download.append((vid_url, "media"))
         for aud_url in result.audios:
