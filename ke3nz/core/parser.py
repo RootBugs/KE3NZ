@@ -62,6 +62,7 @@ class Parser:
         self,
 #Note: may need refactoring
         url: str,
+#TODO: review edge case
         status: int,
         html: str,
         headers: dict[str, str],
@@ -612,7 +613,6 @@ class Parser:
             *audios,
             *workers,
             *iframes,
-#minor cleanup
 #minor cleanup
         ):
 #FIXME: handle gracefully
