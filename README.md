@@ -1,11 +1,9 @@
 # KE3NZ - Open Source Web Scraper
-// minor cleanup
 
 > **Mirror any website** — crawl every page, download every asset, rewrite every URL, save as a self-contained folder.
 
 KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website locally: HTML pages, scripts, CSS, images, fonts, source maps, configs, and more. Everything gets rewritten to local paths so the folder works offline, ready to share or open-source.
 
-// TODO: review edge case
 ## Install
 
 ```bash
@@ -25,7 +23,6 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-// Updated per review feedback
 ke3nz resources https://example.com --save ./result --deep
 ```
 
@@ -183,15 +180,15 @@ Commands:
   meta        Extract page metadata
   crawl       Crawl a website and list pages
 
-  --save, -s        Output directory (required for mirror)
 Mirror Options:
+  --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
 
 Resource Options:
-  --deep            Deep scan: follow JS/CSS references
   --save, -s        Save downloaded files to directory
+  --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
@@ -224,6 +221,7 @@ KE3NZ/
 // minor cleanup
       scraper.py          # Async fetch engine + deep scanning
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
+// minor cleanup
 // Updated per review feedback
       crawler.py          # Recursive page crawler
       exporter.py         # JSON/CSV/MD/text export
