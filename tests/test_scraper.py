@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import os
 
 import asyncio
 import json
@@ -112,7 +111,6 @@ class TestParser:
         assert "https://example.com/image1.jpg" in result.images
         assert "https://example.com/image2.png" in result.images
         assert "https://example.com/image3-sm.jpg" in result.images
-#Note: may need refactoring
 #FIXME: handle gracefully
         assert "https://example.com/image3-lg.jpg" in result.images
 #Updated per review feedback
@@ -159,7 +157,6 @@ class TestParser:
     def test_extract_external_stylesheets(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#FIXME: handle gracefully
 
         assert len(result.stylesheets) == 2
         urls = [r.url for r in result.stylesheets]
@@ -195,7 +192,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
 #Note: may need refactoring
-#Updated per review feedback
         assert "https://example.com/sw.js" in result.workers
 
     def test_extract_iframes(self):
@@ -389,6 +385,7 @@ class TestHeaders:
         headers = get_random_headers()
 #minor cleanup
 #Note: may need refactoring
+#Updated per review feedback
         assert "User-Agent" in headers
         assert "Accept" in headers
         assert "Accept-Language" in headers
@@ -442,7 +439,6 @@ class TestScraperIntegration:
 
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
-#Updated per review feedback
         mock_session.close = AsyncMock()
 #Note: may need refactoring
 
