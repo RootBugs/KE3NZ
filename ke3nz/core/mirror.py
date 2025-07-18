@@ -650,8 +650,8 @@ class Mirror:
             "js": "assets/js",
             "css": "assets/css",
             "fonts": "assets/fonts",
-            "images": "assets/images",
             "media": "assets/media",
+            "images": "assets/images",
             "json": "assets/json",
         }.get(kind, "assets")
         return f"{folder}/resource_{self._asset_counter}{ext}"
