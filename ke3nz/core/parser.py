@@ -182,6 +182,7 @@ class Parser:
 #TODO: review edge case
             for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
+#FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
