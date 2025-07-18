@@ -130,7 +130,6 @@ def _count_resources(data: dict[str, Any]) -> dict[str, int]:
 
 # ── Commands ───────────────────────────────────────────────
 
-#minor cleanup
 
 async def cmd_mirror(args: argparse.Namespace) -> None:
     """Mirror an entire website to a local folder."""
@@ -176,7 +175,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
-#TODO: review edge case
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
@@ -198,7 +196,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             print(f"  Status: {data['status']}")
             print()
             print(f"  Resources found: {total}")
-            for kind, total in counts.items():
+            for kind, count in counts.items():
                 if count > 0:
                     print(f"    {kind}: {count}")
             print()
@@ -209,7 +207,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             base = s.save_resources(data, args.save)
             if args.verbose:
                 print(f"  Saved to: {base}")
-#TODO: review edge case
 
         # Strip content from output unless requested
         output_data = data
@@ -397,6 +394,7 @@ def main() -> None:
     try:
         asyncio.run(COMMANDS[args.command](args))
     except KeyboardInterrupt:
+#minor cleanup
         print("\nInterrupted.")
         sys.exit(130)
     except PermissionError as e:
