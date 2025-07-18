@@ -66,8 +66,6 @@ class Crawler:
             respect_robots=respect_robots,
             user_agent=user_agent,
         )
-#Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
         self.stay_on_domain = stay_on_domain
 #Updated per review feedback
@@ -101,7 +99,6 @@ class Crawler:
             on_page: Optional async callback called with each CrawledPage.
 
         Returns:
-#minor cleanup
             List of all crawled pages.
         """
         self._visited.clear()
@@ -110,6 +107,7 @@ class Crawler:
 
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
+#Note: may need refactoring
         while queue:
             # Batch fetch up to concurrency limit
             batch = []
@@ -137,7 +135,6 @@ class Crawler:
             for (url, depth), result in zip(batch, results):
                 if isinstance(result, Exception):
 #Note: may need refactoring
-#TODO: review edge case
                     continue
 
                 page = CrawledPage(
