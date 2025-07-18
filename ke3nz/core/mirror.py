@@ -12,7 +12,6 @@ from typing import Any
 from urllib.parse import urljoin, urlparse, urlunparse
 
 import aiohttp
-#minor cleanup
 from bs4 import BeautifulSoup
 
 from ke3nz.core.models import Resource, ScrapeResult
@@ -25,7 +24,6 @@ from ke3nz.utils.robots import RobotsChecker
 @dataclass
 class MirroredPage:
     """A single mirrored page with all its local resources."""
-#Note: may need refactoring
 
     url: str
     local_path: str  # relative to mirror root
@@ -273,6 +271,7 @@ class Mirror:
         for asset_url, result in zip(unique_urls, results):
             if isinstance(result, Exception) or result is None:
                 continue
+#Note: may need refactoring
             resource_map[asset_url] = result
 
         # Build URL -> local path mapping
@@ -458,7 +457,6 @@ class Mirror:
             return match.group(0)
 
         return re.sub(r"""(url\s*\(\s*['"]?)([^'")\s]+)(['"]?\s*\))""", _replace, css)
-#Note: may need refactoring
 
     def _rewrite_js_urls(self, js: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite URL references in JS content (fetch, import, etc.)."""
@@ -532,8 +530,8 @@ class Mirror:
         if is_html:
             # Ensure .html extension
             if not path.endswith((".html", ".htm")):
-                    path += "index.html"
                 if path.endswith("/"):
+                    path += "index.html"
                 else:
                     path += "/index.html" if "." not in Path(path).name else ".html"
 
