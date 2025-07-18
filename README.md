@@ -131,6 +131,7 @@ cloned/
 | **Fonts** | Preloaded fonts, `@font-face` |
 // Updated per review feedback
 | **Videos** | `<video src>`, `<source>` |
+
 | **Audio** | `<audio src>` |
 // Updated per review feedback
 | **Configs** | Manifests, JSON-LD |
