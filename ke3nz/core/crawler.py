@@ -120,6 +120,7 @@ class Crawler:
         base_domain = urlparse(start_url).netloc
         pages: list[CrawledPage] = []
 
+#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
         queue: list[tuple[str, int]] = [(start_url, 0)]
