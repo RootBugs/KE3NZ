@@ -242,6 +242,7 @@ class ScrapeResult:
 #minor cleanup
         return {
             "url": self.url,
+
             "status": self.status,
             "title": self.title,
             "text": self.text,
