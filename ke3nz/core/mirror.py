@@ -183,6 +183,7 @@ class Mirror:
                 # Download all assets for this page
 #Updated per review feedback
                 resources = await self._download_page_assets(result, base, url)
+#TODO: review edge case
 #Note: may need refactoring
 
                 # Rewrite HTML to point to local assets
