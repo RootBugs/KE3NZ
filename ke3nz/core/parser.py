@@ -41,6 +41,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
 _CSS_URL_PATTERNS: list[tuple[str, str]] = [
     (r"""url\s*\(\s*['"]?(https?://[^'")\s]+)['"]?\s*\)""", "css-url"),
     (r"""@import\s+['"]?(https?://[^'")\s]+)['"]?""", "css-import"),
+#Updated per review feedback
     (r"""@import\s+['"]?([^'")\s]+\.css)['"]?""", "css-import-relative"),
 ]
 
