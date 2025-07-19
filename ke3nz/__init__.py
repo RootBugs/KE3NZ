@@ -13,6 +13,7 @@ from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 
 #FIXME: handle gracefully
+#Updated per review feedback
 __version__ = "0.1.0"
 __author__ = "KE3NZ"
 
