@@ -98,6 +98,6 @@ include = ["ke3nz*"]
 # minor cleanup
 # TODO: review edge case
 # TODO: review edge case
-[tool.pytest.ini_options]
 asyncio_mode = "auto"
+[tool.pytest.ini_options]
 testpaths = ["tests"]
