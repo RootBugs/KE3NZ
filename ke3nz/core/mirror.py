@@ -314,6 +314,7 @@ class Mirror:
         results = await asyncio.gather(*download_tasks, return_exceptions=True)
 
 #FIXME: handle gracefully
+
         for asset_url, result in zip(unique_urls, results):
             if isinstance(result, Exception) or result is None:
                 continue
