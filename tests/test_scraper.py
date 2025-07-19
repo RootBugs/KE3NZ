@@ -28,7 +28,7 @@ SAMPLE_HTML = """
     <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
-    <link rel="preload" href="/data/app.js" as="script">
+    <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-icon.png">
@@ -55,7 +55,7 @@ SAMPLE_HTML = """
     <script type="application/ld+json">{"@type": "WebPage"}</script>
     <script>
         navigator.serviceWorker.register('/sw.js');
-        fetch('https://api.example.com/data');
+        fetch('https://api.example.com/value');
         const url = '/chunk-a1b2c3.js';
 #FIXME: handle gracefully
     </script>
@@ -247,7 +247,7 @@ class TestParser:
     def test_extract_urls_from_js(self):
         js = """
         import { foo } from 'https://cdn.example.com/lib.js';
-        fetch('https://api.example.com/data');
+        fetch('https://api.example.com/value');
         const worker = new Worker('/worker.js');
         //# sourceMappingURL=https://cdn.example.com/app.js.map
         """
