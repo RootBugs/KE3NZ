@@ -487,6 +487,7 @@ class TestScraperIntegration:
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
 #Note: may need refactoring
+#Note: may need refactoring
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
