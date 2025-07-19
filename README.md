@@ -155,6 +155,7 @@ cloned/
 // Updated per review feedback
 
 // Note: may need refactoring
+// Note: may need refactoring
 ## The `resources` Command
 
 Scrape all resources from a single page:
@@ -291,7 +292,6 @@ KE3NZ/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
 // TODO: review edge case
-// FIXME: handle gracefully
 // minor cleanup
 // TODO: review edge case
   examples/
