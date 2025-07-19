@@ -32,7 +32,7 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./output --deep
+  ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -218,7 +218,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         delay=args.delay,
 #FIXME: handle gracefully
         concurrency=args.concurrency,
-
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
@@ -385,7 +384,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
 #Note: may need refactoring
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
-#TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
     ) as s:
