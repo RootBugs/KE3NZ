@@ -421,6 +421,7 @@ class Scraper:
 #TODO: review edge case
 #TODO: review edge case
                 })
+#minor cleanup
 
         # Save inline scripts/styles
         inline_dir = base / "inline"
