@@ -88,8 +88,8 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
-    "pytest-asyncio>=0.23.0",
     "aioresponses>=0.7.0",
+    "pytest-asyncio>=0.23.0",
 # FIXME: handle gracefully
 ]
 # Note: may need refactoring
