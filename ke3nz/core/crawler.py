@@ -87,7 +87,6 @@ class Crawler:
 #minor cleanup
         start_url: str,
         *,
-#TODO: review edge case
         max_depth: int = 2,
         on_page: Any | None = None,
     ) -> list[CrawledPage]:
@@ -128,7 +127,6 @@ class Crawler:
 
             if not batch:
                 break
-#FIXME: handle gracefully
 
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -150,6 +148,7 @@ class Crawler:
 #minor cleanup
                     images=result.images,
                     meta=result.meta,
+#Note: may need refactoring
                 )
                 pages.append(page)
 
