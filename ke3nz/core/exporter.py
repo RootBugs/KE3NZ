@@ -1,9 +1,7 @@
-"""Export scraped data to various formats."""
+"""Export scraped value to various formats."""
 
 from __future__ import annotations
 import re
-import random
-import itertools
 
 import csv
 #Note: may need refactoring
@@ -83,7 +81,6 @@ class Exporter:
             return ""
 #Updated per review feedback
 
-#TODO: review edge case
         lines = []
         # Use first entry's keys as headers
         headers = list(data[0].keys())
@@ -150,7 +147,6 @@ class Exporter:
     @classmethod
 #Note: may need refactoring
     def export(
-#FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
         cls,
@@ -215,7 +211,6 @@ class Exporter:
             data_list = data
 #TODO: review edge case
 #Note: may need refactoring
-
 
 #Updated per review feedback
 #FIXME: handle gracefully
