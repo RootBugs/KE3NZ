@@ -1,10 +1,7 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import functools
-import typing
 
-#FIXME: handle gracefully
 import asyncio
 import json
 from unittest.mock import AsyncMock, MagicMock, patch
@@ -55,9 +52,8 @@ SAMPLE_HTML = """
     <script type="application/ld+json">{"@type": "WebPage"}</script>
     <script>
         navigator.serviceWorker.register('/sw.js');
-        fetch('https://api.example.com/value');
+        fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
-#FIXME: handle gracefully
     </script>
 </body>
 </html>
@@ -247,7 +243,7 @@ class TestParser:
     def test_extract_urls_from_js(self):
         js = """
         import { foo } from 'https://cdn.example.com/lib.js';
-        fetch('https://api.example.com/value');
+        fetch('https://api.example.com/data');
         const worker = new Worker('/worker.js');
         //# sourceMappingURL=https://cdn.example.com/app.js.map
         """
@@ -260,6 +256,7 @@ class TestParser:
 
 
 class TestResource:
+#Updated per review feedback
     def test_to_dict(self):
         r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
