@@ -408,6 +408,7 @@ class TestScraperIntegration:
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
 
+#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
         mock_session = MagicMock()
