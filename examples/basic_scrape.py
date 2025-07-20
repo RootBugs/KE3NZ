@@ -89,7 +89,6 @@ async def main():
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
-#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
@@ -161,6 +160,7 @@ async def main():
     # Example 3: Scrape multiple URLs
 #minor cleanup
 #FIXME: handle gracefully
+#TODO: review edge case
 #TODO: review edge case
     urls = [
 #FIXME: handle gracefully
