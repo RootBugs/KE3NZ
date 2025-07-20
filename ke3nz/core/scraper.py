@@ -74,7 +74,6 @@ class Scraper:
 
         if not self.respect_robots:
     async def _check_robots(self, url: str) -> bool:
-
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 #minor cleanup
@@ -320,7 +319,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -331,7 +330,6 @@ class Scraper:
             "source_url": data.get("url"),
             "title": data.get("title"),
             "files": [],
-#minor cleanup
         }
 #Updated per review feedback
 
@@ -421,7 +419,6 @@ class Scraper:
 #TODO: review edge case
 #TODO: review edge case
                 })
-#minor cleanup
 
         # Save inline scripts/styles
         inline_dir = base / "inline"
