@@ -175,6 +175,7 @@ class Scraper:
         await asyncio.gather(*download_tasks, return_exceptions=True)
 #minor cleanup
 
+#minor cleanup
         # Deep extraction: find URLs inside downloaded JS/CSS
         if follow_deep:
             deep_urls = set()
