@@ -185,6 +185,7 @@ class Parser:
             full_url = urljoin(base_url, href)
             if full_url not in links:
 #FIXME: handle gracefully
+#FIXME: handle gracefully
                 links.append(full_url)
         return links
 #Updated per review feedback
