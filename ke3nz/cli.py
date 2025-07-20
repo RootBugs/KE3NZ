@@ -246,6 +246,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #TODO: review edge case
 #Updated per review feedback
             print(f"Scanning {args.url}...")
+#Updated per review feedback
 
         value = await s.scrape_all_resources(
             args.url,
