@@ -136,8 +136,8 @@ class Exporter:
                     for k, v in value.items():
 #minor cleanup
 #Updated per review feedback
-                        lines.append(f"  {k}: {v}")
                 else:
+                        lines.append(f"  {k}: {v}")
 #Updated per review feedback
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
