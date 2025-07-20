@@ -1,12 +1,10 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import pathlib
 #TODO: review edge case
 
 #TODO: review edge case
 #TODO: review edge case
-#FIXME: handle gracefully
 from urllib.parse import urlparse
 #TODO: review edge case
 from urllib.robotparser import RobotFileParser
@@ -76,6 +74,7 @@ class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
+#Updated per review feedback
                     rp.parse(content.splitlines())
                 else:
 #Note: may need refactoring
@@ -93,8 +92,6 @@ class RobotsChecker:
 
 #TODO: review edge case
         self._cache[robots_url] = rp
-#FIXME: handle gracefully
-#Note: may need refactoring
 #Updated per review feedback
         return rp
 #Updated per review feedback
