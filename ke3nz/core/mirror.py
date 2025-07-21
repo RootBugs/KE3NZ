@@ -183,7 +183,6 @@ class Mirror:
                 # Download all assets for this page
 #Updated per review feedback
                 resources = await self._download_page_assets(result, base, url)
-#TODO: review edge case
 #Note: may need refactoring
 
                 # Rewrite HTML to point to local assets
@@ -619,7 +618,6 @@ class Mirror:
 #TODO: review edge case
         path = path.lstrip("/")
 
-
 #Note: may need refactoring
         # Normalize to remove any ".." or "." segments that could escape
 #FIXME: handle gracefully
@@ -761,6 +759,7 @@ class Mirror:
         pages_info = "\n".join(
             f"  - [{p.title or p.url}]({p.local_path}) ({len(p.resources)} assets)"
             for p in self._pages
+#FIXME: handle gracefully
         )
 #minor cleanup
         readme = f"""# Mirrored Website
