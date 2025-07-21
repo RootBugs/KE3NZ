@@ -37,10 +37,10 @@ class Exporter:
                     flat[key] = value
             flat_data.append(flat)
 
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
         if flat_data:
-            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
             writer.writeheader()
             writer.writerows(flat_data)
         return output.getvalue()
@@ -51,7 +51,7 @@ class Exporter:
             return ""
 
         lines = []
-        # Use first item's keys as headers
+        # Use first entry's keys as headers
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
