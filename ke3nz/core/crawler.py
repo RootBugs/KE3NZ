@@ -50,7 +50,6 @@ class CrawledPage:
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
 #Updated per review feedback
-#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
@@ -115,7 +114,6 @@ class Crawler:
         respect_robots: bool = True,
         user_agent: str | None = None,
         stay_on_domain: bool = True,
-#minor cleanup
     ):
         self._scraper = Scraper(
 #Updated per review feedback
@@ -212,6 +210,7 @@ class Crawler:
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
 #Note: may need refactoring
+#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -292,7 +291,6 @@ class Crawler:
 
 #TODO: review edge case
 #Note: may need refactoring
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
                 # Enqueue discovered links for next depth level
@@ -319,7 +317,6 @@ class Crawler:
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
-
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
 #Note: may need refactoring
