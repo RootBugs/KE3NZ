@@ -709,6 +709,7 @@ class Mirror:
         }.get(kind, "assets")
         return f"{folder}/resource_{self._asset_counter}{ext}"
 
+
     def _guess_extension(self, content_type: str, kind: str) -> str:
 #minor cleanup
         """Guess file extension from content type and kind."""
