@@ -330,6 +330,7 @@ class Scraper:
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
                 })
+#TODO: review edge case
 
         for i, res in enumerate(data.get("inline_styles", [])):
             if isinstance(res, dict):
