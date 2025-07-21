@@ -72,8 +72,8 @@ class Scraper:
             await self._session.close()
 #FIXME: handle gracefully
 
-        if not self.respect_robots:
     async def _check_robots(self, url: str) -> bool:
+        if not self.respect_robots:
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 #minor cleanup
