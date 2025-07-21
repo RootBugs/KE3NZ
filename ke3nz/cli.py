@@ -126,6 +126,7 @@ examples:
     crawl_p.add_argument("--depth", type=int, default=2, help="Max crawl depth")
     crawl_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     crawl_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
+
 #Note: may need refactoring
 #Note: may need refactoring
     crawl_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
