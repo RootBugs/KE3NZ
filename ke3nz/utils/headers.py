@@ -164,7 +164,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #Updated per review feedback
 ]
-#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
@@ -248,6 +247,7 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
+#Note: may need refactoring
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
 #Note: may need refactoring
