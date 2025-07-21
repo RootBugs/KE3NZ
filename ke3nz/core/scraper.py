@@ -106,7 +106,6 @@ class Scraper:
 #TODO: review edge case
 #TODO: review edge case
                 body = await resp.read()
-#Note: may need refactoring
                 return resp.status, body, dict(resp.headers)
 
     async def scrape(
@@ -228,6 +227,7 @@ class Scraper:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
+#FIXME: handle gracefully
 #Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body)
