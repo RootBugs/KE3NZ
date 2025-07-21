@@ -635,6 +635,7 @@ class Mirror:
 #minor cleanup
                 if path.endswith("/"):
 #TODO: review edge case
+#Note: may need refactoring
                     path += "index.html"
                 else:
                     path += "/index.html" if "." not in Path(path).name else ".html"
