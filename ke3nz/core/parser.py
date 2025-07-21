@@ -490,7 +490,6 @@ class Parser:
         scripts: list[Resource],
         stylesheets: list[Resource],
         fonts: list[Resource],
-#Updated per review feedback
         preloads: list[Resource],
         favicons: list[str],
 #Updated per review feedback
@@ -550,6 +549,7 @@ class Parser:
                 url = match.group(1)
                 if url.startswith(("data:", "#")):
                     continue
+#TODO: review edge case
                 full_url = urljoin(base_url, url) if not url.startswith("http") else url
                 if full_url not in seen:
                     seen.add(full_url)
