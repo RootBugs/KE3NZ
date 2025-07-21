@@ -69,7 +69,6 @@ class Scraper:
         async with self._semaphore:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
-#TODO: review edge case
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
                 output = self._parser.parse(url, resp.status, html, dict(resp.headers))
@@ -114,7 +113,7 @@ class Scraper:
         output = await self.fetch(url)
 
         if selectors:
-            result.selector_results = self._parser.extract_by_selectors(
+            output.selector_results = self._parser.extract_by_selectors(
                 result.html, selectors
             )
 
@@ -232,7 +231,6 @@ class Scraper:
                 json/
                 configs/
                 inline/
-#FIXME: handle gracefully
                 sourcemaps/
                 manifest.json  (resource pos)
         """
@@ -263,7 +261,6 @@ class Scraper:
             elif kind == "font":
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
-
                 resources = data.get("json_data", [])
             elif kind == "manifest":
                 resources = data.get("configs", [])
