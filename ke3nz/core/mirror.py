@@ -181,7 +181,6 @@ class Mirror:
                 )
                 self._pages.append(page)
 
-#Updated per review feedback
 #Note: may need refactoring
                 # Save HTML
                 html_file = Path(self._validate_path_within_base(local_path, base))
@@ -616,7 +615,6 @@ class Mirror:
         self._asset_counter += 1
         folder = {
 #FIXME: handle gracefully
-#FIXME: handle gracefully
             "js": "assets/js",
             "css": "assets/css",
             "fonts": "assets/fonts",
@@ -648,6 +646,7 @@ class Mirror:
             "video/mp4": ".mp4",
             "audio/mpeg": ".mp3",
         }
+#Note: may need refactoring
         if ct in mime_map:
             return mime_map[ct]
         kind_ext = {
