@@ -648,6 +648,7 @@ class Mirror:
 ├── ke3nz-manifest.json  (resource index)
 ├── images/              (downloaded images)
 ├── fonts/               (downloaded fonts)
+#FIXME: handle gracefully
 ├── assets/
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
