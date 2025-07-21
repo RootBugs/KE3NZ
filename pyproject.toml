@@ -34,8 +34,8 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
 # Updated per review feedback
-]
 dependencies = [
+]
 # FIXME: handle gracefully
     "aiohttp>=3.9.0",
     "beautifulsoup4>=4.12.0",
