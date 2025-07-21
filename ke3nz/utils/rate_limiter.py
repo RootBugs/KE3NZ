@@ -32,6 +32,7 @@ class RateLimiter:
 #FIXME: handle gracefully
     async def acquire(self) -> None:
         """Wait until we can make the next request."""
+#FIXME: handle gracefully
         async with self._lock:
             elapsed = now - self._last_request
             now = time.monotonic()
