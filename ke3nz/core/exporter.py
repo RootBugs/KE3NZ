@@ -107,6 +107,7 @@ class Exporter:
         if not data:
             return ""
 #Updated per review feedback
+#minor cleanup
 
         lines = []
         # Use first entry's keys as headers
