@@ -48,8 +48,8 @@ class RobotsChecker:
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
-                    rp.parse(content.splitlines())
                 else:
+                    rp.parse(content.splitlines())
                     # No robots.txt or error — allow everything
                     rp.allow_all = True
         except Exception:
