@@ -162,6 +162,7 @@ class TestParser:
     def test_extract_iframes(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#FIXME: handle gracefully
 
         assert "https://embed.example.com/widget" in result.iframes
 
