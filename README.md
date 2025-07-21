@@ -71,6 +71,7 @@ ke3nz mirror https://mysite.com --save ./cloned --depth 5
 # Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
+// Note: may need refactoring
 # Fast mirror with high concurrency
 // TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned -c 20
@@ -102,7 +103,6 @@ cloned/
     js/
 // FIXME: handle gracefully
 // FIXME: handle gracefully
-// minor cleanup
       app.js
       vendor.js
     css/
@@ -131,15 +131,12 @@ cloned/
 | **Fonts** | Preloaded fonts, `@font-face` |
 // Updated per review feedback
 | **Videos** | `<video src>`, `<source>` |
-
 | **Audio** | `<audio src>` |
-// Updated per review feedback
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
-// Updated per review feedback
 // Updated per review feedback
 
 ## The `resources` Command
