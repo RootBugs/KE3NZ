@@ -63,6 +63,7 @@ class Exporter:
         if not data:
             return ""
 
+#FIXME: handle gracefully
         lines = []
         # Use first entry's keys as headers
         headers = list(data[0].keys())
