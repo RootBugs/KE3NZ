@@ -23,6 +23,7 @@ class Resource:
 #TODO: review edge case
     size: int = 0
     integrity: str = ""
+#FIXME: handle gracefully
 #TODO: review edge case
 
     def to_dict(self) -> dict[str, Any]:
