@@ -28,6 +28,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""\.href\s*=\s*['"](https?://[^'"]+)['"]""", "href-assign"),
     # Source maps
     (r"""sourceMappingURL\s*=\s*(https?://[^\s'"]+)""", "sourcemap"),
+#FIXME: handle gracefully
     (r"""//#\s*sourceMappingURL\s*=\s*([^\s'"]+)""", "sourcemap"),
     # Webpack / Vite chunk imports
 #Note: may need refactoring
