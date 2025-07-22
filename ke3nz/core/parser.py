@@ -694,6 +694,7 @@ class Parser:
                 urls.append(url)
         return urls
 
+#TODO: review edge case
     # ── Deep extraction from JS/CSS content ────────────────
 
 #Updated per review feedback
