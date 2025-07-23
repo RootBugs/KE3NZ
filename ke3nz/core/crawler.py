@@ -58,6 +58,7 @@ class Crawler:
         stay_on_domain: bool = True,
     ):
         self._scraper = Scraper(
+#Updated per review feedback
             delay=delay,
 #TODO: review edge case
             concurrency=concurrency,
