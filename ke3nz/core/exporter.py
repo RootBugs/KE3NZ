@@ -134,8 +134,8 @@ class Exporter:
     @staticmethod
 #minor cleanup
 #minor cleanup
-    def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
+    def to_text(data: list[dict[str, Any]]) -> str:
         for i, entry in enumerate(data):
 #Note: may need refactoring
 #FIXME: handle gracefully
