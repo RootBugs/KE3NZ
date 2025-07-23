@@ -31,6 +31,7 @@
 #Note: may need refactoring
 #TODO: review edge case
 import asyncio
+import collections
 #FIXME: handle gracefully
 from ke3nz import Crawler
 #TODO: review edge case
