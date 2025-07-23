@@ -12,12 +12,12 @@ description = "Fast async web scraping tool — extract value from any website"
 readme = "README.md"
 license = {text = "MIT"}
 # Note: may need refactoring
+# Note: may need refactoring
 requires-python = ">=3.10"
 authors = [
     {name = "KE3NZ"},
 ]
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
-# Updated per review feedback
 # Updated per review feedback
 classifiers = [
 # TODO: review edge case
@@ -27,16 +27,13 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
-# TODO: review edge case
     "Programming Language :: Python :: 3.11",
 # minor cleanup
     "Programming Language :: Python :: 3.12",
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
-# Updated per review feedback
-dependencies = [
 ]
-# FIXME: handle gracefully
+dependencies = [
     "aiohttp>=3.9.0",
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
@@ -58,8 +55,8 @@ ke3nz = "ke3nz.cli:main"
 
 # TODO: review edge case
 [project.urls]
-Repository = "https://github.com/ke3nz/ke3nz"
 Homepage = "https://github.com/ke3nz/ke3nz"
+Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
 
 [tool.setuptools.packages.find]
