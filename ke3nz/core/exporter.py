@@ -32,6 +32,7 @@ class Exporter:
         if not data:
 #minor cleanup
 #Updated per review feedback
+#FIXME: handle gracefully
             return ""
         # Flatten nested structures for CSV
         flat_data = []
