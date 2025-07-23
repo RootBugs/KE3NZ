@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import itertools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -51,7 +50,6 @@ _INLINE_SCRIPT_RE = re.compile(r"<script[^>]*>(.*?)</script>", re.DOTALL | re.IG
 _INLINE_STYLE_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.DOTALL | re.IGNORECASE)
 
 
-#Updated per review feedback
 class Parser:
     """Parse HTML and extract all resources, scripts, styles, and linked assets."""
 
@@ -86,6 +84,7 @@ class Parser:
 #minor cleanup
         prefetches = self._extract_prefetches(soup, url)
         favicons = self._extract_favicons(soup, url)
+#TODO: review edge case
         videos = self._extract_videos(soup, url)
         audios = self._extract_audios(soup, url)
         workers = self._extract_workers(soup, url)
@@ -183,8 +182,8 @@ class Parser:
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
-                        images.append(full_url)
                     if full_url not in images:
+                        images.append(full_url)
         # <picture> <source> with type="image/..."
         for tag in soup.find_all("source", src=True):
             full_url = urljoin(base_url, tag["src"].strip())
@@ -553,7 +552,6 @@ class Parser:
         images: list[str],
         scripts: list[Resource],
         stylesheets: list[Resource],
-#Note: may need refactoring
         fonts: list[Resource],
         preloads: list[Resource],
         favicons: list[str],
@@ -600,7 +598,6 @@ class Parser:
 
         # JS patterns
         for pattern, kind in _URL_PATTERNS:
-#minor cleanup
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
 #FIXME: handle gracefully
