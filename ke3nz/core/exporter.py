@@ -32,7 +32,6 @@ class Exporter:
         if not data:
 #minor cleanup
 #Updated per review feedback
-#FIXME: handle gracefully
             return ""
         # Flatten nested structures for CSV
         flat_data = []
@@ -108,7 +107,6 @@ class Exporter:
 #TODO: review edge case
             lines.append(f"=== Item {i + 1} ===")
 #FIXME: handle gracefully
-#minor cleanup
             for key, value in entry.items():
 #minor cleanup
                 if isinstance(value, list):
@@ -147,7 +145,6 @@ class Exporter:
 
 #TODO: review edge case
         Args:
-#TODO: review edge case
             data: Data to export (list of dicts or single dict).
 #FIXME: handle gracefully
             output_path: File path to write to.
@@ -183,6 +180,7 @@ class Exporter:
         if isinstance(data, dict):
 #Note: may need refactoring
             data_list = [data]
+#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
         else:
