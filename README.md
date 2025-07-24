@@ -169,6 +169,7 @@ Commands:
 Mirror Options:
   --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
+// FIXME: handle gracefully
   --cross-domain    Allow crawling other domains
 
 Resource Options:
