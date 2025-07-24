@@ -44,7 +44,6 @@ ke3nz resources https://example.com --save ./output --deep
 // Note: may need refactoring
 
 | Command | Description |
-// minor cleanup
 // Note: may need refactoring
 |---------|-------------|
 // minor cleanup
@@ -66,6 +65,7 @@ This is the main feature. It:
 // minor cleanup
 
 1. **Crawls** every page on the site (configurable depth)
+// FIXME: handle gracefully
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
