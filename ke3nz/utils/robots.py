@@ -38,6 +38,7 @@ class RobotsChecker:
 
         if robots_url in self._cache:
             return self._cache[robots_url]
+#minor cleanup
 #FIXME: handle gracefully
 
         rp = RobotFileParser()
