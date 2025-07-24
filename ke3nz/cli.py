@@ -105,7 +105,6 @@ examples:
     # images
     images_p = sub.add_parser("images", parents=[shared], help="Extract all images")
 #Updated per review feedback
-#Updated per review feedback
     images_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     images_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
@@ -126,7 +125,6 @@ examples:
     crawl_p.add_argument("--depth", type=int, default=2, help="Max crawl depth")
     crawl_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     crawl_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
-
 #Note: may need refactoring
 #Note: may need refactoring
     crawl_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
@@ -522,6 +520,7 @@ COMMANDS = {
 #FIXME: handle gracefully
     "mirror": cmd_mirror,
     "resources": cmd_resources,
+#TODO: review edge case
     "scrape": cmd_scrape,
     "links": cmd_links,
     "images": cmd_images,
