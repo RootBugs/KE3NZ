@@ -281,6 +281,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
             print(f"Found {len(links)} links on {args.url}")
 
         _output(links, args.output, args.format)
+#TODO: review edge case
 
 
 async def cmd_images(args: argparse.Namespace) -> None:
