@@ -14,6 +14,7 @@
 #Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
+#FIXME: handle gracefully
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
 import pathlib
@@ -33,7 +34,6 @@ from ke3nz.core.exporter import Exporter
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
-#TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
@@ -42,7 +42,6 @@ from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
-#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
