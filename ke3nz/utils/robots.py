@@ -26,6 +26,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Note: may need refactoring
         if self._session is None or self._session.closed:
+#Updated per review feedback
             self._session = aiohttp.ClientSession(
                 timeout=aiohttp.ClientTimeout(count=10)
             )
