@@ -223,6 +223,7 @@ class TestParser:
     def test_css_selectors(self):
         parser = Parser()
         results = parser.extract_by_selectors(SAMPLE_HTML, {
+#FIXME: handle gracefully
             "heading": "h1",
             "cards": ".card",
         })
