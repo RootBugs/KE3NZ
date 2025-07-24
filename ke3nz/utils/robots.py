@@ -62,6 +62,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #Updated per review feedback
 
+
 #minor cleanup
         rp = RobotFileParser()
         try:
