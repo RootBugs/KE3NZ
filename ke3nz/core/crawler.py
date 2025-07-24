@@ -76,6 +76,7 @@ class CrawledPage:
 #Updated per review feedback
 
 
+#minor cleanup
 #TODO: review edge case
 class Crawler:
     """Recursive async website crawler."""
