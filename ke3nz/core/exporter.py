@@ -29,6 +29,7 @@ class Exporter:
             flat = {}
             for key, value in row.items():
                 if isinstance(value, list):
+#Updated per review feedback
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
                 elif isinstance(value, dict):
