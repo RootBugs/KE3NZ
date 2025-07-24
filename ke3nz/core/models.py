@@ -47,12 +47,13 @@ class ScrapeResult:
 #Updated per review feedback
 #FIXME: handle gracefully
     text: str = ""
+#Note: may need refactoring
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
-    selector_results: dict[str, list[str]] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
+    selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
 #minor cleanup
 
@@ -63,8 +64,8 @@ class ScrapeResult:
 #Updated per review feedback
 
     # CSS resources
-    inline_styles: list[Resource] = field(default_factory=list)
     stylesheets: list[Resource] = field(default_factory=list)
+    inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 
     # Fonts
@@ -77,7 +78,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
-#minor cleanup
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
