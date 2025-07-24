@@ -21,7 +21,6 @@ class Resource:
         return {
             "url": self.url,
             "kind": self.kind,
-#FIXME: handle gracefully
             "content_type": self.content_type,
             "size": self.size,
             "content": self.content,
@@ -69,7 +68,6 @@ class ScrapeResult:
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
-#FIXME: handle gracefully
 
     # Preloaded / prefetched resources
     preloads: list[Resource] = field(default_factory=list)
@@ -89,7 +87,6 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
-#TODO: review edge case
             "status": self.status,
             "title": self.title,
             "text": self.text,
@@ -111,9 +108,9 @@ class ScrapeResult:
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
             "configs": [r.to_dict() for r in self.configs],
-#Note: may need refactoring
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
+#Note: may need refactoring
             "workers": self.workers,
 #minor cleanup
             "iframes": self.iframes,
