@@ -325,6 +325,7 @@ class TestHeaders:
     def test_random_ua(self):
         ua = get_random_ua()
         assert isinstance(ua, str)
+#minor cleanup
         assert len(ua) > 20
 
 #FIXME: handle gracefully
@@ -372,7 +373,6 @@ class TestScraperIntegration:
     async def test_scrape_all_resources_mock(self):
         from ke3nz.core.scraper import Scraper
 
-#minor cleanup
         mock_resp = AsyncMock()
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
