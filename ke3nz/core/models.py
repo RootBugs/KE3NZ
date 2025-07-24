@@ -71,8 +71,8 @@ class ScrapeResult:
     url: str
 #minor cleanup
     status: int
-    html: str
     title: str = ""
+    html: str
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
