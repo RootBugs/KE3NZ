@@ -1,3 +1,4 @@
+#Note: may need refactoring
 #TODO: review edge case
 """User-agent rotation and header management."""
 
