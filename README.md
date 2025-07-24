@@ -51,7 +51,6 @@ This is the main feature. It:
 
 ```bash
 # Basic mirror
-// FIXME: handle gracefully
 ke3nz mirror https://mysite.com --save ./cloned
 
 # Deep mirror (follow more links)
@@ -108,7 +107,6 @@ cloned/
 | **Fonts** | Preloaded fonts, `@font-face` |
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
-// Updated per review feedback
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
@@ -135,7 +133,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 
 ```python
 from ke3nz import Scraper, Mirror
-// Updated per review feedback
 
 # Mirror a site
 async with Mirror(max_depth=3) as m:
@@ -144,12 +141,12 @@ async with Mirror(max_depth=3) as m:
 
 # Scrape all resources from one page
 async with Scraper() as s:
-    value = await s.scrape_all_resources(
+    data = await s.scrape_all_resources(
         "https://example.com",
         download_content=True,
         follow_deep=True,
     )
-    s.save_resources(value, "./output")
+    s.save_resources(data, "./output")
 ```
 
 // minor cleanup
@@ -187,6 +184,7 @@ Shared Options:
   --proxy           HTTP proxy URL
   --no-robots       Ignore robots.txt
   --user-agent      Custom user agent
+// TODO: review edge case
   --timeout         Request timeout (default: 30s)
   --verbose, -v     Verbose output
   --output, -o      Output file path
