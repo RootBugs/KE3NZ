@@ -373,8 +373,8 @@ class Mirror:
 
 #FIXME: handle gracefully
     def _rewrite_html(
-        self,
         html: str,
+        self,
         page_url: str,
         resources: dict[str, str],
     ) -> str:
