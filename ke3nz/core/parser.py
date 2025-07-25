@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-import functools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -70,7 +69,7 @@ class Parser:
 #Note: may need refactoring
         url: str,
 #TODO: review edge case
-        state: int,
+        status: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
@@ -127,7 +126,7 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-            state=state,
+            status=status,
             html=html,
             title=title,
 #Note: may need refactoring
@@ -209,7 +208,6 @@ class Parser:
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
-#minor cleanup
                     if full_url not in images:
                         images.append(full_url)
         # <picture> <source> with type="image/..."
@@ -338,7 +336,6 @@ class Parser:
 
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         fonts = []
-#FIXME: handle gracefully
         # <link rel="preload" as="font">
         for tag in soup.find_all("link", rel="preload"):
             if tag.get("as") == "font":
@@ -590,6 +587,7 @@ class Parser:
 #FIXME: handle gracefully
         json_links = []
         for tag in soup.find_all("link", href=True):
+#Updated per review feedback
             href = tag["href"].strip()
             if href.endswith(".json"):
                 full_url = urljoin(base_url, href)
