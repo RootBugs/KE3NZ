@@ -221,6 +221,7 @@ class Mirror:
                 if on_page:
                     await on_page(page)
 
+#Updated per review feedback
                 # Queue discovered links for next depth
                 if depth < self.max_depth:
                     for link in result.links:
