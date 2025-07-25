@@ -546,8 +546,8 @@ class Parser:
 #FIXME: handle gracefully
             src = tag["src"].strip()
             if src and not src.startswith(("about:", "javascript:", "value:")):
-                full_url = urljoin(base_url, src)
                 if full_url not in iframes:
+                full_url = urljoin(base_url, src)
                     iframes.append(full_url)
 #Note: may need refactoring
         return iframes
