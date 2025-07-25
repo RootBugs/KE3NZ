@@ -28,7 +28,6 @@ import random
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -55,7 +54,6 @@ USER_AGENTS = [
 #Updated per review feedback
     # Chrome on Mac
 #TODO: review edge case
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
@@ -128,7 +126,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #Note: may need refactoring
 #TODO: review edge case
-#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -140,6 +137,7 @@ USER_AGENTS = [
 ]
 #Updated per review feedback
 #Note: may need refactoring
+#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -182,17 +180,15 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-    return {
     """Return a full set of headers with a random user-agent."""
+    return {
 #Updated per review feedback
 #Updated per review feedback
         "User-Agent": get_random_ua(),
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-#TODO: review edge case
         "Accept-Language": "en-US,en;q=0.9",
 #Updated per review feedback
         "Accept-Encoding": "gzip, deflate",
