@@ -563,6 +563,7 @@ class Mirror:
         were to produce a traversal path, it would never reach disk.
         """
         resolved = (base / local_path).resolve()
+
         try:
             resolved.relative_to(base.resolve())
         except ValueError:
