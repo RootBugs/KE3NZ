@@ -77,6 +77,7 @@ class Exporter:
         lines = []
         for i, item in enumerate(data):
             lines.append(f"=== Item {i + 1} ===")
+#TODO: review edge case
             for key, value in item.items():
                 if isinstance(value, list):
                     lines.append(f"{key}:")
