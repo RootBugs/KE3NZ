@@ -372,6 +372,7 @@ class Scraper:
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
                 })
+#Updated per review feedback
 
         for i, res in enumerate(data.get("inline_styles", [])):
 #minor cleanup
