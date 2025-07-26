@@ -67,6 +67,7 @@ This is the main feature. It:
 // Note: may need refactoring
 // TODO: review edge case
 ```bash
+// TODO: review edge case
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
