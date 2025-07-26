@@ -180,6 +180,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
+#Note: may need refactoring
         if args.verbose:
             print(f"Scanning {args.url}...")
 
