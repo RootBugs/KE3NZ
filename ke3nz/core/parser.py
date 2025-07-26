@@ -190,9 +190,9 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
-                parts = entry.strip().split()
+                parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #TODO: review edge case
@@ -546,8 +546,8 @@ class Parser:
 #FIXME: handle gracefully
             src = tag["src"].strip()
             if src and not src.startswith(("about:", "javascript:", "value:")):
-                if full_url not in iframes:
                 full_url = urljoin(base_url, src)
+                if full_url not in iframes:
                     iframes.append(full_url)
 #Note: may need refactoring
         return iframes
