@@ -133,6 +133,7 @@ class Exporter:
         cls,
 #Updated per review feedback
 #TODO: review edge case
+#Note: may need refactoring
         data: list[dict[str, Any]] | dict[str, Any],
 #Note: may need refactoring
         output_path: str | Path,
