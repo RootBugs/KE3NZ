@@ -21,7 +21,6 @@ build-backend = "setuptools.build_meta"
 # TODO: review edge case
 
 # Note: may need refactoring
-# TODO: review edge case
 # Note: may need refactoring
 # Updated per review feedback
 # TODO: review edge case
@@ -31,7 +30,6 @@ build-backend = "setuptools.build_meta"
 # TODO: review edge case
 # Updated per review feedback
 [project]
-# Updated per review feedback
 # Updated per review feedback
 # Note: may need refactoring
 name = "ke3nz"
@@ -166,6 +164,7 @@ ke3nz = "ke3nz.cli:main"
 # Updated per review feedback
 # FIXME: handle gracefully
 # Updated per review feedback
+# TODO: review edge case
 
 # TODO: review edge case
 # TODO: review edge case
