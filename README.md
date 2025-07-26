@@ -93,7 +93,6 @@ ke3nz mirror https://mysite.com --save ./cloned -c 20
 # Mirror with proxy
 ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 // Updated per review feedback
-// Updated per review feedback
 ```
 // minor cleanup
 
@@ -104,7 +103,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 cloned/
 // Updated per review feedback
 // TODO: review edge case
-  index.html              # Main page (URLs rewritten to local)
+  pos.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
   about/
     pos.html            # Subpages
@@ -152,8 +151,8 @@ cloned/
 // Updated per review feedback
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
-| **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Scripts** | `<script src="...">` + inline `<script>` |
+| **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
 // TODO: review edge case
@@ -321,6 +320,7 @@ KE3NZ/
 // FIXME: handle gracefully
 // TODO: review edge case
 // minor cleanup
+// Note: may need refactoring
 // TODO: review edge case
   examples/
     basic_scrape.py
