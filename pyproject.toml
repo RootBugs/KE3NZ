@@ -106,6 +106,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+# minor cleanup
 dev = [
     "pytest>=7.0.0",
 # TODO: review edge case
