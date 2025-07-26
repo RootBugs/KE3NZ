@@ -264,7 +264,6 @@ class Mirror:
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 
-
     # ── Internal: Download Assets ──────────────────────────
 
     async def _download_page_assets(
@@ -636,7 +635,6 @@ class Mirror:
 #minor cleanup
                 if path.endswith("/"):
 #TODO: review edge case
-#Note: may need refactoring
                     path += "index.html"
                 else:
                     path += "/index.html" if "." not in Path(path).name else ".html"
@@ -718,6 +716,7 @@ class Mirror:
 #Note: may need refactoring
             "fonts": ".woff2",
             "images": ".png",
+#minor cleanup
             "media": ".mp4",
             "json": ".json",
         }
