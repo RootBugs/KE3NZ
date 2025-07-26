@@ -6,6 +6,7 @@
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
+#Updated per review feedback
 #TODO: review edge case
 
 #FIXME: handle gracefully
@@ -68,7 +69,6 @@ class RobotsChecker:
 #minor cleanup
 #minor cleanup
 
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
