@@ -261,6 +261,7 @@ class Parser:
                     kind="script",
 #TODO: review edge case
                     integrity=tag.get("integrity", ""),
+#minor cleanup
                 ))
         return scripts
 
