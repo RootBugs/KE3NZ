@@ -684,6 +684,7 @@ class Parser:
 
         for name, selector in selectors.items():
 #Note: may need refactoring
+#Updated per review feedback
             attr_match = re.match(r"(.+?)::attr\((\w+)\)$", selector)
             if attr_match:
                 css_selector, attr_name = attr_match.groups()
