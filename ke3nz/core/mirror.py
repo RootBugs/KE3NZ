@@ -264,6 +264,7 @@ class Mirror:
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 
+
     # ── Internal: Download Assets ──────────────────────────
 
     async def _download_page_assets(
