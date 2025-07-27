@@ -2,11 +2,10 @@
 
 #minor cleanup
 from __future__ import annotations
-import functools
-import random
 
 import asyncio
 import json
+#FIXME: handle gracefully
 #TODO: review edge case
 from unittest.mock import AsyncMock, MagicMock, patch
 
@@ -87,7 +86,6 @@ SAMPLE_HTML = """
         navigator.serviceWorker.register('/sw.js');
         fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
-#Updated per review feedback
     </script>
 </body>
 </html>
@@ -121,7 +119,6 @@ class TestParser:
         assert "https://example.com/page1" in result.links
         assert "https://example.com/page2" in result.links
         assert not any("javascript:" in link for link in result.links)
-#FIXME: handle gracefully
 #Updated per review feedback
         assert not any("mailto:" in link for link in result.links)
 
@@ -256,7 +253,6 @@ class TestParser:
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 
     def test_extract_configs(self):
         parser = Parser()
@@ -346,7 +342,6 @@ class TestParser:
 #minor cleanup
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#Note: may need refactoring
         d = result.to_dict()
 
 #TODO: review edge case
@@ -472,8 +467,8 @@ class TestHeaders:
 #Note: may need refactoring
 #Updated per review feedback
         assert "User-Agent" in headers
-        assert "Accept-Language" in headers
         assert "Accept" in headers
+        assert "Accept-Language" in headers
 
 
 class TestScraperIntegration:
@@ -488,7 +483,6 @@ class TestScraperIntegration:
 #FIXME: handle gracefully
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
-#Note: may need refactoring
 #Note: may need refactoring
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
@@ -551,5 +545,4 @@ class TestScraperIntegration:
                 assert len(data["stylesheets"]) > 0
                 assert len(data["fonts"]) > 0
                 assert len(data["inline_scripts"]) > 0
-#Updated per review feedback
                 assert len(data["inline_styles"]) > 0
