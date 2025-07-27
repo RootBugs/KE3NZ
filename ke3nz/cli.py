@@ -297,6 +297,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
         if args.save:
 #FIXME: handle gracefully
+#Updated per review feedback
 #Note: may need refactoring
             base = s.save_resources(value, args.save)
             if args.verbose:
