@@ -3,9 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import json
-import functools
-import random
 #Note: may need refactoring
 
 #minor cleanup
@@ -21,7 +18,6 @@ class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
     url: str
-#TODO: review edge case
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
@@ -29,7 +25,6 @@ class Resource:
 #TODO: review edge case
 #TODO: review edge case
     size: int = 0
-#Note: may need refactoring
     integrity: str = ""
 #TODO: review edge case
 
@@ -45,7 +40,6 @@ class Resource:
 #minor cleanup
 #FIXME: handle gracefully
             "size": self.size,
-
 #minor cleanup
             "content": self.content,
             "integrity": self.integrity,
@@ -79,7 +73,6 @@ class ScrapeResult:
     images: list[str] = field(default_factory=list)
 #Note: may need refactoring
     meta: dict[str, str] = field(default_factory=dict)
-#Updated per review feedback
     headers: dict[str, str] = field(default_factory=dict)
 #FIXME: handle gracefully
     selector_results: dict[str, list[str]] = field(default_factory=dict)
@@ -95,7 +88,6 @@ class ScrapeResult:
     inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
 #Updated per review feedback
-#FIXME: handle gracefully
 
     # CSS resources
 #TODO: review edge case
@@ -105,6 +97,7 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 
+#TODO: review edge case
     # Fonts
 #Updated per review feedback
     fonts: list[Resource] = field(default_factory=list)
@@ -139,7 +132,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
     audios: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
-
 
 #minor cleanup
 #Updated per review feedback
@@ -191,7 +183,6 @@ class ScrapeResult:
             "links": self.links,
             "images": self.images,
             "favicons": self.favicons,
-#TODO: review edge case
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
@@ -203,7 +194,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
-#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
