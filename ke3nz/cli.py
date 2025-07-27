@@ -35,7 +35,6 @@ examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
   ke3nz resources https://example.com --save ./output --deep
-#TODO: review edge case
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -86,8 +85,8 @@ examples:
     scrape_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # links
-    links_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     links_p = sub.add_parser("links", parents=[shared], help="Extract all links")
+    links_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     links_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
 #Updated per review feedback
@@ -138,7 +137,6 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
 def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
 #Note: may need refactoring
-#minor cleanup
     counts = {
 #Note: may need refactoring
         "scripts": len(value.get("scripts", [])),
@@ -246,7 +244,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #TODO: review edge case
 #Updated per review feedback
             print(f"Scanning {args.url}...")
-#Updated per review feedback
 
         value = await s.scrape_all_resources(
             args.url,
@@ -329,7 +326,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #Updated per review feedback
         proxy=args.proxy,
         respect_robots=not args.no_robots,
-#Note: may need refactoring
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
@@ -429,7 +425,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
 async def cmd_meta(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
-#TODO: review edge case
         concurrency=args.concurrency,
         timeout=args.timeout,
 #Updated per review feedback
@@ -474,9 +469,8 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
-#TODO: review edge case
-        respect_robots=not args.no_robots,
         proxy=args.proxy,
+        respect_robots=not args.no_robots,
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
     ) as c:
@@ -510,6 +504,7 @@ def main() -> None:
     if not args.command:
         parser.print_help()
         sys.exit(1)
+#minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
 
