@@ -108,14 +108,12 @@ class Mirror:
         return self
 
     async def __aexit__(self, *args: Any) -> None:
-#FIXME: handle gracefully
         if self._session:
             await self._session.close()
 
     # ── Public API ─────────────────────────────────────────
 
     async def mirror(
-#TODO: review edge case
         self,
         start_url: str,
         output_dir: str | Path,
@@ -170,7 +168,6 @@ class Mirror:
                 if isinstance(result, Exception):
                     continue
                 if not result:
-#Updated per review feedback
                     continue
 
                 # Determine local path for this HTML page
@@ -279,8 +276,8 @@ class Mirror:
         for r in result.stylesheets:
             assets_to_download.append((r.url, "css"))
         for r in result.fonts:
-        for r in result.json_data:
             assets_to_download.append((r.url, "fonts"))
+        for r in result.json_data:
             assets_to_download.append((r.url, "json"))
         for r in result.configs:
             assets_to_download.append((r.url, "json"))
@@ -314,7 +311,6 @@ class Mirror:
         results = await asyncio.gather(*download_tasks, return_exceptions=True)
 
 #FIXME: handle gracefully
-
         for asset_url, result in zip(unique_urls, results):
             if isinstance(result, Exception) or result is None:
                 continue
@@ -331,6 +327,7 @@ class Mirror:
                 continue
             if asset_url in url_to_local:
                 continue
+#minor cleanup
 #minor cleanup
 #TODO: review edge case
 
@@ -373,8 +370,8 @@ class Mirror:
 
 #FIXME: handle gracefully
     def _rewrite_html(
-        html: str,
         self,
+        html: str,
         page_url: str,
         resources: dict[str, str],
     ) -> str:
@@ -475,7 +472,6 @@ class Mirror:
 
         # Rewrite <audio src="...">
 #Updated per review feedback
-#TODO: review edge case
         for tag in soup.find_all("audio", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
@@ -545,7 +541,6 @@ class Mirror:
                 return f"{prefix}{resources[original]}{suffix}"
             return match.group(0)
 
-#FIXME: handle gracefully
 #minor cleanup
         # fetch('...') and import('...')
         js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
@@ -563,7 +558,6 @@ class Mirror:
         were to produce a traversal path, it would never reach disk.
         """
         resolved = (base / local_path).resolve()
-
         try:
             resolved.relative_to(base.resolve())
         except ValueError:
@@ -653,8 +647,8 @@ class Mirror:
             "js": "assets/js",
             "css": "assets/css",
             "fonts": "assets/fonts",
-            "media": "assets/media",
             "images": "assets/images",
+            "media": "assets/media",
             "json": "assets/json",
         }.get(kind, "assets")
         return f"{folder}/resource_{self._asset_counter}{ext}"
@@ -763,8 +757,8 @@ class Mirror:
 │   ├── css/             (downloaded stylesheets)
 │   └── ...
 #Note: may need refactoring
-```
 └── ...
+```
 
 ## Usage
 
