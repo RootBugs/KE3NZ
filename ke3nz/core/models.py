@@ -17,6 +17,7 @@ class Resource:
     size: int = 0
     integrity: str = ""
 
+#TODO: review edge case
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
