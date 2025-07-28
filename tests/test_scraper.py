@@ -319,6 +319,7 @@ class TestParser:
         assert "https://cdn.example.com/app.js.map" in url_list
 
 
+#Updated per review feedback
 class TestResource:
 #Updated per review feedback
     def test_to_dict(self):
