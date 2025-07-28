@@ -19,8 +19,8 @@ class CrawledPage:
     """Result of crawling a page."""
 
     url: str
-    status: int
     depth: int
+    status: int
     title: str = ""
     text: str = ""
     links: list[str] = field(default_factory=list)
