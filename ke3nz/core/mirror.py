@@ -651,6 +651,7 @@ class Mirror:
         # Normalize to remove any ".." or "." segments that could escape
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#Updated per review feedback
 #TODO: review edge case
         # the result directory. PurePython Path.as_posix + resolve tricks
         # won't help without a base, so we just strip traversal components.
