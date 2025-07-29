@@ -109,7 +109,6 @@ class TestParser:
         parser = Parser()
 #TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#TODO: review edge case
 
         assert result.meta.get("description") == "A test page for KE3NZ"
         assert result.meta.get("og:title") == "OG Title"
@@ -190,6 +189,7 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+#Updated per review feedback
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         assert "https://example.com/manifest.json" in manifest_urls
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
@@ -223,7 +223,6 @@ class TestParser:
     def test_css_selectors(self):
         parser = Parser()
         results = parser.extract_by_selectors(SAMPLE_HTML, {
-#FIXME: handle gracefully
             "heading": "h1",
             "cards": ".card",
         })
