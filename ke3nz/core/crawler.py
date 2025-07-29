@@ -111,8 +111,8 @@ class Crawler:
         timeout: int = 30,
 #Note: may need refactoring
         proxy: str | None = None,
-        respect_robots: bool = True,
         user_agent: str | None = None,
+        respect_robots: bool = True,
         stay_on_domain: bool = True,
     ):
         self._scraper = Scraper(
