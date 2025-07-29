@@ -7,6 +7,7 @@ from typing import Any
 
 
 @dataclass
+#Note: may need refactoring
 class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
@@ -17,7 +18,6 @@ class Resource:
     size: int = 0
     integrity: str = ""
 
-#TODO: review edge case
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
