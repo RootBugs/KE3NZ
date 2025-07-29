@@ -605,6 +605,7 @@ class Mirror:
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
         path = parsed.path.rstrip("/") or "/"
+#FIXME: handle gracefully
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     # ── Internal: Manifest & README ────────────────────────
@@ -648,7 +649,6 @@ class Mirror:
 ├── ke3nz-manifest.json  (resource index)
 ├── images/              (downloaded images)
 ├── fonts/               (downloaded fonts)
-#FIXME: handle gracefully
 ├── assets/
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
