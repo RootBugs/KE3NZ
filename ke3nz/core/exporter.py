@@ -15,6 +15,7 @@ class Exporter:
     @staticmethod
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
+#Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #FIXME: handle gracefully
 
@@ -29,7 +30,6 @@ class Exporter:
             flat = {}
             for key, value in row.items():
                 if isinstance(value, list):
-#Updated per review feedback
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
                 elif isinstance(value, dict):
@@ -77,7 +77,6 @@ class Exporter:
         lines = []
         for i, item in enumerate(data):
             lines.append(f"=== Item {i + 1} ===")
-#TODO: review edge case
             for key, value in item.items():
                 if isinstance(value, list):
                     lines.append(f"{key}:")
@@ -88,7 +87,6 @@ class Exporter:
                     for k, v in value.items():
                         lines.append(f"  {k}: {v}")
                 else:
-
                     lines.append(f"{key}: {value}")
             lines.append("")
         return "\n".join(lines)
