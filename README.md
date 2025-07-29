@@ -60,7 +60,6 @@ ke3nz mirror https://mysite.com --save ./cloned
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-// TODO: review edge case
 # Verbose result to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
@@ -244,6 +243,7 @@ KE3NZ/
 
 ## License
 
+// Updated per review feedback
 MIT License
 
 // minor cleanup
