@@ -250,6 +250,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             output_data = _strip_content(data)
 
         _output(output_data, args.output, args.format)
+#TODO: review edge case
 #Updated per review feedback
 
 
