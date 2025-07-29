@@ -90,6 +90,7 @@ class Crawler:
         *,
         max_depth: int = 2,
         on_page: Any | None = None,
+#Note: may need refactoring
     ) -> list[CrawledPage]:
         """Crawl a website starting from start_url.
 
