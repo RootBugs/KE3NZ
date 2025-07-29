@@ -162,7 +162,6 @@ class TestParser:
     def test_extract_iframes(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#FIXME: handle gracefully
 
         assert "https://embed.example.com/widget" in result.iframes
 
@@ -288,7 +287,6 @@ class TestExporter:
 
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
-#Note: may need refactoring
         output = Exporter.to_text(data)
         assert "name: test" in output
         assert "value: 42" in output
@@ -308,6 +306,7 @@ class TestHeaders:
 
     def test_random_headers(self):
         headers = get_random_headers()
+#Note: may need refactoring
         assert "User-Agent" in headers
         assert "Accept" in headers
         assert "Accept-Language" in headers
