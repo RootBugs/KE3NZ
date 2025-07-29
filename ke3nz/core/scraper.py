@@ -33,7 +33,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -85,7 +85,6 @@ class Scraper:
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 body = await resp.text()
                 return resp.status, body, dict(resp.headers)
-
 
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
         """Fetch a resource as raw bytes."""
@@ -263,7 +262,6 @@ class Scraper:
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
                 resources = data.get("json_data", [])
-#Updated per review feedback
             elif kind == "manifest":
                 resources = data.get("configs", [])
             elif kind == "sourcemap":
@@ -332,7 +330,6 @@ class Scraper:
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
                 })
-#TODO: review edge case
 
         for i, res in enumerate(data.get("inline_styles", [])):
             if isinstance(res, dict):
