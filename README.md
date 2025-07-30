@@ -168,6 +168,7 @@ cloned/
 | Type | Source |
 // TODO: review edge case
 // Updated per review feedback
+// Updated per review feedback
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
 // TODO: review edge case
