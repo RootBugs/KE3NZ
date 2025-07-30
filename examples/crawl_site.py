@@ -169,6 +169,7 @@ async def main():
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
+#minor cleanup
     for page in pages:
 #Note: may need refactoring
 #Updated per review feedback
