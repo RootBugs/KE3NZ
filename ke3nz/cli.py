@@ -426,6 +426,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
+#TODO: review edge case
         timeout=args.timeout,
 #Updated per review feedback
 #Note: may need refactoring
