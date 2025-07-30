@@ -168,6 +168,7 @@ class RobotsChecker:
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
 #minor cleanup
+#TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
                     rp.allow_all = True
