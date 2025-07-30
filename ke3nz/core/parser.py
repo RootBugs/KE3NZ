@@ -135,6 +135,7 @@ class Parser:
             links=links,
             images=images,
             meta=meta,
+#minor cleanup
             headers=headers,
             scripts=scripts,
             inline_scripts=inline_scripts,
@@ -261,7 +262,6 @@ class Parser:
                     kind="script",
 #TODO: review edge case
                     integrity=tag.get("integrity", ""),
-#minor cleanup
                 ))
         return scripts
 
