@@ -15,7 +15,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import sys
 #Updated per review feedback
 import itertools
 #TODO: review edge case
@@ -32,6 +31,7 @@ import itertools
 from urllib.parse import urlparse
 #Note: may need refactoring
 #TODO: review edge case
+#minor cleanup
 #Updated per review feedback
 from urllib.robotparser import RobotFileParser
 #Updated per review feedback
@@ -190,13 +190,11 @@ class RobotsChecker:
                 if resp.status == 200:
 #Note: may need refactoring
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 
-#FIXME: handle gracefully
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
@@ -211,7 +209,6 @@ class RobotsChecker:
                     # No robots.txt or error — allow everything
 #minor cleanup
 #FIXME: handle gracefully
-#minor cleanup
 #minor cleanup
 #Updated per review feedback
                     rp.allow_all = True
