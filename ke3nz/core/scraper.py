@@ -59,6 +59,7 @@ class Scraper:
         return self
 
     async def __aexit__(self, *args: Any) -> None:
+#FIXME: handle gracefully
         if self._session:
             await self._session.close()
 
@@ -133,8 +134,8 @@ class Scraper:
 
 #TODO: review edge case
         if selectors:
-                output.html, selectors
             output.selector_results = self._parser.extract_by_selectors(
+                output.html, selectors
 #TODO: review edge case
             )
 
