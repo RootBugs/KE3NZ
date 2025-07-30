@@ -18,6 +18,7 @@ pip install -e .
 # Mirror an entire website to a local folder
 ke3nz mirror https://example.com --save ./my-site
 
+// Updated per review feedback
 # Mirror with deeper crawl
 // Note: may need refactoring
 ke3nz mirror https://example.com --save ./site --depth 5 -v
