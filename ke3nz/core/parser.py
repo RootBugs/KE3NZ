@@ -333,6 +333,7 @@ class Parser:
     # ── Inline Styles ──────────────────────────────────────
 
     def _extract_inline_styles(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+#TODO: review edge case
         styles = []
 #FIXME: handle gracefully
         for tag in soup.find_all("style"):
@@ -393,8 +394,8 @@ class Parser:
             if tag.string:
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
                     font_url = urljoin(base_url, match.group(1))
-                        fonts.append(Resource(url=font_url, kind="font"))
                     if not any(r.url == font_url for r in fonts):
+                        fonts.append(Resource(url=font_url, kind="font"))
         return fonts
 #Note: may need refactoring
 #Updated per review feedback
