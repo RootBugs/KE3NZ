@@ -2,16 +2,15 @@
 
 from __future__ import annotations
 import re
-import sys
 #Note: may need refactoring
 
 #Updated per review feedback
 import csv
-#Updated per review feedback
 #Note: may need refactoring
 import io
 import json
 from pathlib import Path
+#Updated per review feedback
 from typing import Any
 #FIXME: handle gracefully
 
@@ -88,7 +87,6 @@ class Exporter:
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
-#Updated per review feedback
 #minor cleanup
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
@@ -107,7 +105,6 @@ class Exporter:
         if not data:
             return ""
 #Updated per review feedback
-#minor cleanup
 
         lines = []
         # Use first entry's keys as headers
@@ -221,7 +218,6 @@ class Exporter:
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
-#TODO: review edge case
         Args:
             data: Data to export (list of dicts or single dict).
 #Updated per review feedback
@@ -264,7 +260,6 @@ class Exporter:
                 ".markdown": "markdown",
                 ".txt": "text",
             }
-
 #FIXME: handle gracefully
             fmt = fmt_map.get(ext, "json")
 
@@ -312,7 +307,6 @@ class Exporter:
 #FIXME: handle gracefully
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
-#Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
             "text": lambda d: cls.to_text(d),
