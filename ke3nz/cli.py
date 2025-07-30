@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import random
 
 import argparse
 import asyncio
@@ -41,6 +40,7 @@ examples:
     # Shared options
     shared = argparse.ArgumentParser(add_help=False)
     shared.add_argument("url", help="Target URL")
+#FIXME: handle gracefully
     shared.add_argument("--delay", type=float, default=0.3, help="Delay between requests (seconds)")
 #Updated per review feedback
     shared.add_argument("--concurrency", "-c", type=int, default=10, help="Max concurrent requests")
@@ -162,7 +162,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
 #TODO: review edge case
         delay=args.delay,
-#FIXME: handle gracefully
     async with Mirror(
         concurrency=args.concurrency,
         timeout=args.timeout,
@@ -309,7 +308,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
 
 async def cmd_images(args: argparse.Namespace) -> None:
     async with Scraper(
-#TODO: review edge case
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
