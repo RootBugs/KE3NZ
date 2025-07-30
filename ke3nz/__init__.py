@@ -13,7 +13,6 @@
 #minor cleanup
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
-#Updated per review feedback
 import pathlib
 import json
 #minor cleanup
@@ -44,6 +43,7 @@ __author__ = "KE3NZ"
 
 #Updated per review feedback
 __all__ = [
+#TODO: review edge case
 #TODO: review edge case
     "Scraper",
 #FIXME: handle gracefully
@@ -80,6 +80,5 @@ __all__ = [
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
-
 #minor cleanup
 ]
