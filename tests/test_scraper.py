@@ -239,6 +239,7 @@ class TestParser:
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
 #Updated per review feedback
+#FIXME: handle gracefully
         })
 
         assert "https://example.com/page2" in results["links"]
