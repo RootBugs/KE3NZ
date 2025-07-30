@@ -552,6 +552,7 @@ class Mirror:
         if is_html:
             # Ensure .html extension
             if not path.endswith((".html", ".htm")):
+#FIXME: handle gracefully
                 if path.endswith("/"):
                     path += "index.html"
                 else:
