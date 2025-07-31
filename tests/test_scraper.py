@@ -503,8 +503,8 @@ class TestScraperIntegration:
                 assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
                 assert len(result["stylesheets"]) > 0
-                assert len(result["inline_scripts"]) > 0
                 assert len(result["fonts"]) > 0
+                assert len(result["inline_scripts"]) > 0
 
 #FIXME: handle gracefully
 #Updated per review feedback
