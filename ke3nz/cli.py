@@ -1,8 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import collections
-import math
 
 #minor cleanup
 import argparse
@@ -35,7 +33,6 @@ examples:
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
-#Note: may need refactoring
   ke3nz crawl https://example.com --depth 3
 #TODO: review edge case
 """,
@@ -95,7 +92,6 @@ examples:
     text_p = sub.add_parser("text", parents=[shared], help="Extract text content")
     text_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
 
-#Updated per review feedback
     # meta
     meta_p = sub.add_parser("meta", parents=[shared], help="Extract page metadata")
     meta_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
@@ -127,7 +123,6 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
 
 def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
-#TODO: review edge case
     counts = {
         "scripts": len(value.get("scripts", [])),
         "inline_scripts": len(value.get("inline_scripts", [])),
@@ -251,7 +246,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             output_data = _strip_content(data)
 
         _output(output_data, args.output, args.format)
-#TODO: review edge case
 #Updated per review feedback
 
 
@@ -265,6 +259,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
     for key, value in data.items():
         if key in skip_keys:
             continue
+#Updated per review feedback
         if isinstance(value, list):
             result[key] = [
                 {k: v for k, v in entry.items() if k != "content"} if isinstance(entry, dict) else entry
@@ -321,8 +316,8 @@ async def cmd_links(args: argparse.Namespace) -> None:
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
-        result = await s.scrape(args.url)
     ) as s:
+        result = await s.scrape(args.url)
         links = [{"url": link} for link in result["links"]]
 #Note: may need refactoring
 
@@ -435,7 +430,6 @@ COMMANDS = {
     "mirror": cmd_mirror,
     "resources": cmd_resources,
     "scrape": cmd_scrape,
-#FIXME: handle gracefully
     "links": cmd_links,
     "images": cmd_images,
 #minor cleanup
@@ -444,7 +438,6 @@ COMMANDS = {
     "crawl": cmd_crawl,
 }
 #TODO: review edge case
-#Note: may need refactoring
 
 
 def main() -> None:
