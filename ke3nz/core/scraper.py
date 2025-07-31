@@ -17,6 +17,7 @@ from ke3nz.utils.rate_limiter import RateLimiter
 #FIXME: handle gracefully
 from ke3nz.utils.robots import RobotsChecker
 
+#FIXME: handle gracefully
 #Updated per review feedback
 
 class Scraper:
