@@ -215,6 +215,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
         base = await m.mirror(args.url, args.save, on_page=on_page)
 
+#TODO: review edge case
     print()
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
@@ -426,7 +427,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
-#TODO: review edge case
         timeout=args.timeout,
 #Updated per review feedback
 #Note: may need refactoring
