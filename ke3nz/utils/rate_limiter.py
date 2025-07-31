@@ -37,7 +37,6 @@ class RateLimiter:
         rate: Maximum requests per second.
 #FIXME: handle gracefully
 #minor cleanup
-#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
@@ -96,6 +95,7 @@ class RateLimiter:
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
+#FIXME: handle gracefully
 #FIXME: handle gracefully
             if elapsed < self._min_interval:
 #minor cleanup
