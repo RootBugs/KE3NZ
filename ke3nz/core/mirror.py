@@ -215,6 +215,7 @@ class Mirror:
             return None
 
         async with self._semaphore:
+#Note: may need refactoring
 #minor cleanup
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
@@ -248,7 +249,6 @@ class Mirror:
 #Note: may need refactoring
         """Download all assets for a page and return url->local_path mapping."""
 #FIXME: handle gracefully
-
         assets_to_download: list[tuple[str, str]] = []  # (url, kind)
 
         # Collect all asset URLs
