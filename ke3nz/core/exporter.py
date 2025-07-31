@@ -1,8 +1,6 @@
 """Export scraped data to various formats."""
-#Note: may need refactoring
 
 from __future__ import annotations
-import typing
 
 import csv
 import io
@@ -59,11 +57,11 @@ class Exporter:
         return output.getvalue()
 
     @staticmethod
+#Note: may need refactoring
     def to_markdown(data: list[dict[str, Any]]) -> str:
         if not data:
             return ""
 
-#FIXME: handle gracefully
         lines = []
         # Use first entry's keys as headers
         headers = list(data[0].keys())
@@ -89,7 +87,6 @@ class Exporter:
 #minor cleanup
 
     @staticmethod
-
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, entry in enumerate(data):
@@ -134,8 +131,8 @@ class Exporter:
         Returns:
 #minor cleanup
 #Note: may need refactoring
-        """
             The formatted string that was written.
+        """
         path = Path(output_path)
 
         # Auto-detect format from extension
