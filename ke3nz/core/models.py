@@ -122,6 +122,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Note: may need refactoring
             "links": self.links,
+#Updated per review feedback
             "images": self.images,
             "favicons": self.favicons,
             "videos": self.videos,
