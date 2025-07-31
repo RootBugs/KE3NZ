@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import sys
 #Note: may need refactoring
 
 #minor cleanup
@@ -68,13 +67,12 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 
-#TODO: review edge case
 #FIXME: handle gracefully
     url: str
 #minor cleanup
     status: int
-    title: str = ""
     html: str
+    title: str = ""
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -105,7 +103,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
     scripts: list[Resource] = field(default_factory=list)
     inline_scripts: list[Resource] = field(default_factory=list)
-#Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
 
@@ -270,3 +267,4 @@ class ScrapeResult:
 #TODO: review edge case
         }
 #FIXME: handle gracefully
+#Updated per review feedback
