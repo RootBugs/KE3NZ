@@ -66,7 +66,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -291,6 +291,7 @@ class Mirror:
                 continue
             if asset_url in url_to_local:
                 continue
+#minor cleanup
 
             body, content_type = resource_map[asset_url]
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
@@ -552,7 +553,6 @@ class Mirror:
         if is_html:
             # Ensure .html extension
             if not path.endswith((".html", ".htm")):
-#FIXME: handle gracefully
                 if path.endswith("/"):
                     path += "index.html"
                 else:
