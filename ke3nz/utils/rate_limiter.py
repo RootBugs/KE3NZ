@@ -1,7 +1,7 @@
-#Note: may need refactoring
 """Async rate limiter."""
 
 from __future__ import annotations
+#FIXME: handle gracefully
 
 import asyncio
 import time
@@ -28,14 +28,12 @@ class RateLimiter:
         self._lock = asyncio.Lock()
 
 #Note: may need refactoring
-#Note: may need refactoring
 #FIXME: handle gracefully
     async def acquire(self) -> None:
         """Wait until we can make the next request."""
-#FIXME: handle gracefully
         async with self._lock:
-            elapsed = now - self._last_request
             now = time.monotonic()
+            elapsed = now - self._last_request
             if elapsed < self._min_interval:
                 await asyncio.sleep(self._min_interval - elapsed)
             self._last_request = time.monotonic()
