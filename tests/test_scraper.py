@@ -303,6 +303,7 @@ class TestExporter:
 
 #FIXME: handle gracefully
     def test_to_markdown(self):
+#FIXME: handle gracefully
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_markdown(data)
         assert "| name |" in output
