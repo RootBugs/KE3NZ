@@ -53,6 +53,7 @@ SAMPLE_HTML = """
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
 #Note: may need refactoring
     <video src="/video.mp4" poster="/poster.jpg"></video>
+#TODO: review edge case
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
     <script type="application/ld+json">{"@type": "WebPage"}</script>
@@ -239,7 +240,6 @@ class TestParser:
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
 #Updated per review feedback
-#FIXME: handle gracefully
         })
 
         assert "https://example.com/page2" in results["links"]
@@ -303,7 +303,6 @@ class TestExporter:
 
 #FIXME: handle gracefully
     def test_to_markdown(self):
-#FIXME: handle gracefully
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_markdown(data)
         assert "| name |" in output
@@ -349,7 +348,6 @@ class TestScraperIntegration:
         from ke3nz.core.scraper import Scraper
 
         mock_resp = AsyncMock()
-#Updated per review feedback
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
 #Note: may need refactoring
