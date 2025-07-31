@@ -143,6 +143,7 @@ async def main():
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
         for key, values in items["selector_results"].items():
 #minor cleanup
@@ -232,7 +233,6 @@ if __name__ == "__main__":
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
