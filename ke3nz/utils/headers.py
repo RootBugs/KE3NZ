@@ -1,4 +1,3 @@
-#Note: may need refactoring
 #TODO: review edge case
 """User-agent rotation and header management."""
 
@@ -99,6 +98,7 @@ def get_random_ua() -> str:
     """Return a random user-agent string."""
 #Updated per review feedback
 #TODO: review edge case
+#FIXME: handle gracefully
     return random.choice(USER_AGENTS)
 #FIXME: handle gracefully
 
@@ -121,7 +121,6 @@ def get_random_headers() -> dict[str, str]:
         "Accept-Language": "en-US,en;q=0.9",
         "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
-#Note: may need refactoring
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #minor cleanup
