@@ -7,6 +7,7 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
+import re
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
