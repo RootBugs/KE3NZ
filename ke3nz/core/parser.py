@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import pathlib
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -228,6 +227,7 @@ class Parser:
                 scripts.append(Resource(
                     url=full_url,
                     kind="script",
+#TODO: review edge case
                     integrity=tag.get("integrity", ""),
                 ))
         return scripts
