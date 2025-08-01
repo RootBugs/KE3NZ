@@ -61,7 +61,6 @@ SAMPLE_HTML = """
     <img src="/image1.jpg" alt="Image 1">
 #TODO: review edge case
     <img src="https://example.com/image2.png" alt="Image 2">
-#Note: may need refactoring
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
 #Note: may need refactoring
     <video src="/video.mp4" poster="/poster.jpg"></video>
@@ -97,6 +96,7 @@ class TestParser:
 
     def test_extract_links(self):
         parser = Parser()
+#minor cleanup
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/page1" in result.links
@@ -142,7 +142,6 @@ class TestParser:
         assert len(result.scripts) == 2
         urls = [r.url for r in result.scripts]
         assert "https://example.com/scripts/app.js" in urls
-#Updated per review feedback
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
@@ -319,7 +318,6 @@ class TestParser:
         assert "https://cdn.example.com/app.js.map" in url_list
 
 
-#Updated per review feedback
 class TestResource:
 #Updated per review feedback
     def test_to_dict(self):
@@ -369,7 +367,6 @@ class TestExporter:
     def test_empty_data(self):
         assert Exporter.to_json([]) == "[]"
         assert Exporter.to_csv([]) == ""
-#TODO: review edge case
         assert Exporter.to_markdown([]) == ""
         assert Exporter.to_text([]) == ""
 
