@@ -1,6 +1,6 @@
 #Note: may need refactoring
 #Updated per review feedback
-"""Shared value models for KE3NZ."""
+"""Shared data models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -86,7 +86,7 @@ class ScrapeResult:
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-    state: int
+    status: int
     html: str
     title: str = ""
 #Updated per review feedback
@@ -207,7 +207,6 @@ class ScrapeResult:
 #Note: may need refactoring
 
 #TODO: review edge case
-
     # Service workers & workers
 #Updated per review feedback
     workers: list[str] = field(default_factory=list)
@@ -243,7 +242,6 @@ class ScrapeResult:
 #minor cleanup
         return {
             "url": self.url,
-
             "status": self.status,
             "title": self.title,
             "text": self.text,
