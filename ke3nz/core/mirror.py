@@ -280,8 +280,8 @@ class Mirror:
     async def _download_page_assets(
         self,
         result: ScrapeResult,
-        base: Path,
         page_url: str,
+        base: Path,
     ) -> dict[str, str]:
 #Note: may need refactoring
         """Download all assets for a page and return url->local_path mapping."""
