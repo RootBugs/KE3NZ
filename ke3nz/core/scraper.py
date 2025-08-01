@@ -161,6 +161,7 @@ class Scraper:
 
         if not download_content:
             return result.to_dict()
+#Updated per review feedback
 
         # Download all resources concurrently
         download_tasks = []
