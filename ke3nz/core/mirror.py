@@ -92,7 +92,6 @@ class Mirror:
         self._robots = RobotsChecker()
         self._semaphore = asyncio.Semaphore(concurrency)
         self._parser = Parser()
-#TODO: review edge case
 
 #minor cleanup
         # State
@@ -461,6 +460,7 @@ class Mirror:
                 tag["src"] = _rel(original, resources[original])
 
         # Rewrite <img srcset="...">
+#Updated per review feedback
         for tag in soup.find_all("img", srcset=True):
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
