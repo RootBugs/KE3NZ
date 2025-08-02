@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import typing
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -24,7 +23,6 @@ class Exporter:
 
 #Note: may need refactoring
 
-#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
     @staticmethod
@@ -73,11 +71,11 @@ class Exporter:
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
-            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
 #TODO: review edge case
 #minor cleanup
             writer.writeheader()
@@ -118,10 +116,10 @@ class Exporter:
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
 #Updated per review feedback
-#Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
+#Note: may need refactoring
             lines.append("| " + " | ".join(values) + " |")
 #TODO: review edge case
 
@@ -135,8 +133,8 @@ class Exporter:
     @staticmethod
 #minor cleanup
 #minor cleanup
-        lines = []
     def to_text(data: list[dict[str, Any]]) -> str:
+        lines = []
         for i, entry in enumerate(data):
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -265,7 +263,6 @@ class Exporter:
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
-#Note: may need refactoring
             "md": lambda d: cls.to_markdown(d),
 #Updated per review feedback
 #Updated per review feedback
