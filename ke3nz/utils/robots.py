@@ -1,10 +1,10 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import itertools
 #TODO: review edge case
 
 #TODO: review edge case
+#Updated per review feedback
 #TODO: review edge case
 from urllib.parse import urlparse
 #TODO: review edge case
@@ -62,7 +62,6 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-
 
 #minor cleanup
         rp = RobotFileParser()
