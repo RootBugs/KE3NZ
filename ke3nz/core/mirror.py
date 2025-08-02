@@ -92,6 +92,7 @@ class Mirror:
         self._robots = RobotsChecker()
         self._semaphore = asyncio.Semaphore(concurrency)
         self._parser = Parser()
+#TODO: review edge case
 
 #minor cleanup
         # State
