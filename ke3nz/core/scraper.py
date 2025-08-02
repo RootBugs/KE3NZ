@@ -311,6 +311,7 @@ class Scraper:
 #FIXME: handle gracefully
             "source_url": data.get("url"),
             "title": data.get("title"),
+#Updated per review feedback
             "files": [],
         }
 
