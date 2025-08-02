@@ -1,5 +1,4 @@
 # KE3NZ - Open Source Web Scraper
-// Updated per review feedback
 
 // Note: may need refactoring
 > **Mirror any website** — crawl every page, download every asset, rewrite every URL, save as a self-contained folder.
@@ -68,7 +67,6 @@ This is the main feature. It:
 // Note: may need refactoring
 // TODO: review edge case
 ```bash
-// TODO: review edge case
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
@@ -85,7 +83,6 @@ ke3nz mirror https://mysite.com --save ./cloned --depth 5
 // FIXME: handle gracefully
 # Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
-
 
 
 // Note: may need refactoring
@@ -154,6 +151,7 @@ cloned/
 // Updated per review feedback
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
+// TODO: review edge case
 | **Scripts** | `<script src="...">` + inline `<script>` |
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
@@ -236,7 +234,6 @@ ke3nz <command> [options] <url>
 // Updated per review feedback
 // FIXME: handle gracefully
 
-// Updated per review feedback
 Commands:
 // minor cleanup
 // Updated per review feedback
