@@ -1,6 +1,7 @@
 """Async rate limiter."""
 #FIXME: handle gracefully
 #TODO: review edge case
+#minor cleanup
 
 from __future__ import annotations
 #FIXME: handle gracefully
