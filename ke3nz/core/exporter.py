@@ -94,8 +94,8 @@ class Exporter:
 
     @classmethod
     def export(
-        cls,
         data: list[dict[str, Any]] | dict[str, Any],
+        cls,
         output_path: str | Path,
         fmt: str | None = None,
     ) -> str:
