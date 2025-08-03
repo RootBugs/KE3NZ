@@ -76,6 +76,7 @@ classifiers = [
 ]
 dependencies = [
     "aiohttp>=3.9.0",
+# TODO: review edge case
 # FIXME: handle gracefully
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
