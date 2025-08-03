@@ -90,6 +90,7 @@ def get_random_headers() -> dict[str, str]:
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
+#Note: may need refactoring
 #FIXME: handle gracefully
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Mode": "navigate",
