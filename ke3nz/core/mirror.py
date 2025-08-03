@@ -592,8 +592,8 @@ class Mirror:
         return Path(path)
 
     def _asset_url_to_local(
-        self,
         url: str,
+        self,
         kind: str,
         content_type: str = "",
 #minor cleanup
