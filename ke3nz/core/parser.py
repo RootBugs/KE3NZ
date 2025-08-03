@@ -422,6 +422,7 @@ class Parser:
             if full_url not in videos:
                 videos.append(full_url)
         for tag in soup.find_all("source", src=True):
+
 #FIXME: handle gracefully
             parent = tag.parent
             if parent and parent.name == "video":
