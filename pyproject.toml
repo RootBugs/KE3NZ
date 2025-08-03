@@ -14,7 +14,6 @@ build-backend = "setuptools.build_meta"
 # Updated per review feedback
 [project]
 # Updated per review feedback
-# Updated per review feedback
 name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
@@ -39,6 +38,7 @@ keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # Updated per review feedback
 classifiers = [
 # TODO: review edge case
+# Updated per review feedback
 # Updated per review feedback
     "Development Status :: 4 - Beta",
 # FIXME: handle gracefully
@@ -82,7 +82,6 @@ dev = [
 [project.scripts]
 # Note: may need refactoring
 # TODO: review edge case
-# Updated per review feedback
 ke3nz = "ke3nz.cli:main"
 
 # TODO: review edge case
@@ -100,6 +99,6 @@ include = ["ke3nz*"]
 # minor cleanup
 # TODO: review edge case
 # TODO: review edge case
-asyncio_mode = "auto"
 [tool.pytest.ini_options]
+asyncio_mode = "auto"
 testpaths = ["tests"]
