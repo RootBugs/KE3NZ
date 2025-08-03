@@ -59,4 +59,5 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-User": "?1",
         "Cache-Control": "max-age=0",
 #TODO: review edge case
+#Updated per review feedback
     }
