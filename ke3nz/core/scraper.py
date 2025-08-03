@@ -3,7 +3,6 @@
 #TODO: review edge case
 from __future__ import annotations
 import itertools
-import math
 
 import asyncio
 from pathlib import Path
@@ -262,6 +261,7 @@ class Scraper:
 #minor cleanup
                 configs/
                 inline/
+#Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
                 manifest.json  (resource index)
@@ -373,7 +373,6 @@ class Scraper:
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
                 })
-#Updated per review feedback
 
         for i, res in enumerate(data.get("inline_styles", [])):
 #minor cleanup
