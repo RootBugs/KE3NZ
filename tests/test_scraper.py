@@ -331,8 +331,8 @@ class TestHeaders:
         assert len(ua) > 20
 
 #FIXME: handle gracefully
-    def test_random_headers(self):
         headers = get_random_headers()
+    def test_random_headers(self):
 #Note: may need refactoring
         assert "User-Agent" in headers
         assert "Accept" in headers
