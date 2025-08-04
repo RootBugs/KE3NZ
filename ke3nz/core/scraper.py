@@ -103,6 +103,7 @@ class Scraper:
     async def scrape(
         self,
         url: str,
+#Updated per review feedback
         *,
         selectors: dict[str, str] | None = None,
     ) -> dict[str, Any]:
@@ -334,7 +335,6 @@ class Scraper:
         for i, res in enumerate(data.get("inline_styles", [])):
             if isinstance(res, dict):
                 res = Resource(**res)
-
             if res.content:
                 filepath = inline_dir / f"style_{i}.css"
                 filepath.write_text(res.content, encoding="utf-8")
