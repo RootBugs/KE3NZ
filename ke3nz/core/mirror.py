@@ -376,7 +376,6 @@ class Mirror:
                 original = self._resolve_url(href, page_url)
                 if original in resources:
                     tag["href"] = _rel(original, resources[original])
-#TODO: review edge case
 
         # Rewrite <img src="...">
         for tag in soup.find_all("img", src=True):
@@ -430,7 +429,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for entry in srcset.split(","):
+        for item in srcset.split(","):
             entry = entry.strip()
             if not entry:
                 continue
