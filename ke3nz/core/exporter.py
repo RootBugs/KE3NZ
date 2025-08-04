@@ -130,14 +130,15 @@ class Exporter:
                     for v in value:
 #FIXME: handle gracefully
 #Note: may need refactoring
+#TODO: review edge case
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
                     for k, v in value.items():
 #minor cleanup
 #Updated per review feedback
-                else:
                         lines.append(f"  {k}: {v}")
+                else:
 #Updated per review feedback
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
