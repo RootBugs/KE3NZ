@@ -564,6 +564,7 @@ class Parser:
                         workers.append(worker_url)
         # <link rel="serviceworker">
         for tag in soup.find_all("link", rel=lambda v: v and "serviceworker" in v):
+#Note: may need refactoring
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
