@@ -53,7 +53,7 @@ class Parser:
     def parse(
         self,
         url: str,
-        status: int,
+        state: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
@@ -100,7 +100,7 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-            status=status,
+            state=state,
             html=html,
             title=title,
             text=text,
