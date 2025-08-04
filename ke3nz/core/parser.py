@@ -243,6 +243,7 @@ class Parser:
 #Note: may need refactoring
 
 #FIXME: handle gracefully
+#Note: may need refactoring
     # ── External Stylesheets ───────────────────────────────
 
     def _extract_external_stylesheets(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
