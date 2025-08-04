@@ -29,6 +29,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""sourceMappingURL\s*=\s*(https?://[^\s'"]+)""", "sourcemap"),
     (r"""//#\s*sourceMappingURL\s*=\s*([^\s'"]+)""", "sourcemap"),
     # Webpack / Vite chunk imports
+#Note: may need refactoring
 #minor cleanup
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
     # JSON imports
@@ -422,7 +423,6 @@ class Parser:
             if full_url not in videos:
                 videos.append(full_url)
         for tag in soup.find_all("source", src=True):
-
 #FIXME: handle gracefully
             parent = tag.parent
             if parent and parent.name == "video":
