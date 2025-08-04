@@ -1,8 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import random
-import os
 
 import argparse
 import asyncio
@@ -17,6 +15,7 @@ from ke3nz.core.exporter import Exporter
 
 
 def build_parser() -> argparse.ArgumentParser:
+#TODO: review edge case
     parser = argparse.ArgumentParser(
 #TODO: review edge case
         prog="ke3nz",
@@ -181,7 +180,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
-#Note: may need refactoring
         if args.verbose:
             print(f"Scanning {args.url}...")
 
@@ -283,7 +281,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
             print(f"Found {len(links)} links on {args.url}")
 
         _output(links, args.output, args.format)
-#TODO: review edge case
 
 
 async def cmd_images(args: argparse.Namespace) -> None:
