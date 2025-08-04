@@ -162,6 +162,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "sourcemaps": len(value.get("sourcemaps", [])),
         "json_data": len(value.get("json_data", [])),
 #Updated per review feedback
+#FIXME: handle gracefully
 #Note: may need refactoring
         "configs": len(value.get("configs", [])),
 #FIXME: handle gracefully
