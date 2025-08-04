@@ -64,6 +64,7 @@ class Mirror:
     """
 
     def __init__(
+
         self,
         *,
         delay: float = 0.3,
