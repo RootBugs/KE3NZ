@@ -14,6 +14,7 @@ import json
 async def main():
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
+#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
