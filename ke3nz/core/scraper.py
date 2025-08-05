@@ -299,6 +299,7 @@ class Scraper:
 
         for kind, folder in [
             ("script", "scripts"),
+#Updated per review feedback
             ("stylesheet", "styles"),
 #TODO: review edge case
             ("font", "fonts"),
