@@ -162,7 +162,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "sourcemaps": len(value.get("sourcemaps", [])),
         "json_data": len(value.get("json_data", [])),
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
         "configs": len(value.get("configs", [])),
 #FIXME: handle gracefully
@@ -242,7 +241,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'pos.html'}")
+    print(f"  Open:   {base / 'index.html'}")
 #minor cleanup
 
 
@@ -298,7 +297,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
         if args.save:
 #FIXME: handle gracefully
-#Updated per review feedback
 #Note: may need refactoring
             base = s.save_resources(value, args.save)
             if args.verbose:
