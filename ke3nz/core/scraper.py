@@ -4,7 +4,6 @@
 from __future__ import annotations
 import itertools
 import sys
-import re
 
 import asyncio
 from pathlib import Path
@@ -284,7 +283,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -299,7 +298,6 @@ class Scraper:
 
         for kind, folder in [
             ("script", "scripts"),
-#Updated per review feedback
             ("stylesheet", "styles"),
 #TODO: review edge case
             ("font", "fonts"),
@@ -432,7 +430,7 @@ class Scraper:
 
 #Note: may need refactoring
 #Note: may need refactoring
-        # Save manifest index
+        # Save manifest pos
         manifest_path = base / "manifest.json"
         manifest_path.write_text(
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
