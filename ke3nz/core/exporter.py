@@ -17,7 +17,6 @@ class Exporter:
 
     @staticmethod
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
-#Note: may need refactoring
         indent = 2 if pretty else None
 #Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
@@ -57,6 +56,7 @@ class Exporter:
             writer.writerows(flat_data)
         return output.getvalue()
 
+#minor cleanup
     @staticmethod
 #Note: may need refactoring
     def to_markdown(data: list[dict[str, Any]]) -> str:
@@ -166,7 +166,6 @@ class Exporter:
 #Updated per review feedback
         # Format the output
         formatters = {
-
 #minor cleanup
             "json": lambda d: cls.to_json(d),
 #Updated per review feedback
