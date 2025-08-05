@@ -31,7 +31,6 @@ class Resource:
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
 #Note: may need refactoring
     content: str = ""
-#Updated per review feedback
     content_type: str = ""
 #minor cleanup
 #Updated per review feedback
@@ -113,6 +112,7 @@ class ScrapeResult:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
+#Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
