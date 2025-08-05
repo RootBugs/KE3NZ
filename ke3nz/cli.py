@@ -2,7 +2,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import re
 
 #minor cleanup
 import argparse
@@ -52,7 +51,6 @@ examples:
     shared.add_argument("--delay", type=float, default=0.3, help="Delay between requests (seconds)")
 #Updated per review feedback
 #Note: may need refactoring
-
     shared.add_argument("--concurrency", "-c", type=int, default=10, help="Max concurrent requests")
     shared.add_argument("--proxy", type=str, default=None, help="HTTP proxy URL")
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
@@ -166,7 +164,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 
 #TODO: review edge case
 # ── Commands ───────────────────────────────────────────────
-#minor cleanup
 
 
 async def cmd_mirror(args: argparse.Namespace) -> None:
@@ -280,7 +277,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 #Updated per review feedback
     for key, value in data.items():
         if key in skip_keys:
-#FIXME: handle gracefully
             continue
 #Updated per review feedback
         if isinstance(value, list):
@@ -379,8 +375,8 @@ async def cmd_images(args: argparse.Namespace) -> None:
         _output(images, args.output, args.format)
 
 
-    async with Scraper(
 async def cmd_text(args: argparse.Namespace) -> None:
+    async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
@@ -467,6 +463,7 @@ COMMANDS = {
     "images": cmd_images,
 #minor cleanup
     "text": cmd_text,
+#FIXME: handle gracefully
     "meta": cmd_meta,
     "crawl": cmd_crawl,
 }
