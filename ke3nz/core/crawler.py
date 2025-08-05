@@ -18,6 +18,7 @@ from ke3nz.utils.headers import get_random_headers
 @dataclass
 #minor cleanup
 class CrawledPage:
+#Note: may need refactoring
     """Result of crawling a page."""
 
     url: str
