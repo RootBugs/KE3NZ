@@ -23,6 +23,7 @@ from ke3nz import Crawler
 
 #FIXME: handle gracefully
 
+#minor cleanup
 #Updated per review feedback
 async def main():
     # Crawl example.com up to depth 2
