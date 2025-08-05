@@ -72,6 +72,7 @@ SAMPLE_HTML = """
     <img src="/image1.jpg" alt="Image 1">
 #TODO: review edge case
 #TODO: review edge case
+#Updated per review feedback
 #Note: may need refactoring
     <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
@@ -503,8 +504,8 @@ class TestScraperIntegration:
                 assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
                 assert len(result["stylesheets"]) > 0
-                assert len(result["fonts"]) > 0
                 assert len(result["inline_scripts"]) > 0
+                assert len(result["fonts"]) > 0
 
 #FIXME: handle gracefully
 #Updated per review feedback
