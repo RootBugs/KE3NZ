@@ -30,6 +30,7 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #Note: may need refactoring
     # Firefox on Windows
+
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
