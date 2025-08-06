@@ -18,7 +18,6 @@
 #minor cleanup
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
-#Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
@@ -117,7 +116,6 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -129,7 +127,6 @@ async def main():
     print(f"Crawled {len(pages)} pages:\n")
 #TODO: review edge case
 #Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -170,6 +167,7 @@ async def main():
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
+#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
