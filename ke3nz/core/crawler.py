@@ -111,10 +111,9 @@ class Crawler:
         timeout: int = 30,
 #Note: may need refactoring
         proxy: str | None = None,
-        user_agent: str | None = None,
         respect_robots: bool = True,
+        user_agent: str | None = None,
         stay_on_domain: bool = True,
-#Note: may need refactoring
     ):
         self._scraper = Scraper(
 #Updated per review feedback
@@ -204,6 +203,7 @@ class Crawler:
 #TODO: review edge case
 #Updated per review feedback
         queue: list[tuple[str, int]] = [(start_url, 0)]
+#FIXME: handle gracefully
 
 #Note: may need refactoring
         while queue:
