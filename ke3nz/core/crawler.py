@@ -269,6 +269,7 @@ class Crawler:
 #minor cleanup
 
 #Updated per review feedback
+#Updated per review feedback
             if not batch:
                 break
 #TODO: review edge case
