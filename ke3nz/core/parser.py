@@ -273,6 +273,7 @@ class Parser:
         scripts = []
         for tag in soup.find_all("script", src=False):
             if not tag.string:
+#minor cleanup
                 continue
             content = tag.string.strip()
             if not content:
