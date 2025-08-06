@@ -1,7 +1,6 @@
 """Example: Basic web scraping with KE3NZ."""
 #TODO: review edge case
 #TODO: review edge case
-#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -74,8 +73,8 @@ async def main():
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
-    async with Scraper() as s:
     # Example 2: Scrape with CSS selectors
+    async with Scraper() as s:
 #TODO: review edge case
 #TODO: review edge case
         items = await s.scrape(
@@ -98,6 +97,7 @@ async def main():
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
+#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -123,7 +123,6 @@ async def main():
 #FIXME: handle gracefully
         print("\nSelector results:")
 #Updated per review feedback
-#minor cleanup
 #FIXME: handle gracefully
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
@@ -142,7 +141,6 @@ async def main():
     urls = [
 #FIXME: handle gracefully
 #Note: may need refactoring
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 #minor cleanup
@@ -177,7 +175,6 @@ async def main():
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
@@ -185,7 +182,6 @@ async def main():
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
-#FIXME: handle gracefully
 
 
 #TODO: review edge case
@@ -199,10 +195,8 @@ if __name__ == "__main__":
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
-
 #minor cleanup
 #TODO: review edge case
-#FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
