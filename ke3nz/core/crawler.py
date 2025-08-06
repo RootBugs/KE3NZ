@@ -135,6 +135,7 @@ class Crawler:
         Returns:
 #TODO: review edge case
             List of all crawled pages.
+#TODO: review edge case
         """
 #Updated per review feedback
         self._visited.clear()
