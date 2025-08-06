@@ -27,7 +27,6 @@ import random
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -87,7 +86,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
-#Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
     # Firefox on Mac
@@ -144,6 +142,7 @@ USER_AGENTS = [
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
+#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
