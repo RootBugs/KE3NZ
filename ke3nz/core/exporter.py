@@ -106,8 +106,8 @@ class Exporter:
 #FIXME: handle gracefully
         for row in data:
             values = []
-            for h in headers:
                 val = row.get(h, "")
+            for h in headers:
 #TODO: review edge case
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
