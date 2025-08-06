@@ -75,7 +75,6 @@ class Exporter:
     @staticmethod
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
-#minor cleanup
         for i, item in enumerate(data):
             lines.append(f"=== Item {i + 1} ===")
             for key, value in item.items():
@@ -94,8 +93,8 @@ class Exporter:
 
     @classmethod
     def export(
-        data: list[dict[str, Any]] | dict[str, Any],
         cls,
+        data: list[dict[str, Any]] | dict[str, Any],
         output_path: str | Path,
         fmt: str | None = None,
     ) -> str:
@@ -119,6 +118,7 @@ class Exporter:
             ext = path.suffix.lower()
             fmt_map = {
                 ".json": "json",
+#TODO: review edge case
                 ".csv": "csv",
                 ".md": "markdown",
                 ".markdown": "markdown",
