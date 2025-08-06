@@ -51,6 +51,7 @@ async def main():
             print(f"\n{r.url} -> {r.status} ({r.title})")
 
 
+
 if __name__ == "__main__":
 #minor cleanup
     asyncio.run(main())
