@@ -7,6 +7,7 @@ from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
+#Updated per review feedback
 from ke3nz.core.mirror import Mirror, MirroredPage
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
