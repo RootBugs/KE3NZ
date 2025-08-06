@@ -34,6 +34,7 @@ SAMPLE_HTML = """
     <style>
         body { margin: 0; }
         @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
+
     </style>
 </head>
 <body>
