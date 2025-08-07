@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import pathlib
 
 import asyncio
 import json
@@ -277,6 +276,7 @@ class TestParser:
 #Updated per review feedback
         })
 
+#FIXME: handle gracefully
         assert "https://example.com/page2" in results["links"]
 #minor cleanup
         assert "/page1" in results["links"]
