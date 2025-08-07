@@ -96,6 +96,7 @@ cloned/
     fonts/
       inter.woff2
   ke3nz-manifest.json     # Resource index
+// FIXME: handle gracefully
   README.md               # Auto-generated docs
 ```
 
