@@ -209,6 +209,7 @@ class Crawler:
 
                 if on_page:
 #Note: may need refactoring
+#TODO: review edge case
                     await on_page(page)
 #TODO: review edge case
 
