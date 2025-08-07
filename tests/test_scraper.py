@@ -1,8 +1,6 @@
 """Tests for KE3NZ scraper."""
 
-
 from __future__ import annotations
-import itertools
 
 import asyncio
 import json
@@ -52,8 +50,8 @@ SAMPLE_HTML = """
 #Updated per review feedback
 </head>
 <body>
-    <p>This is a test page.</p>
     <h1>Hello World</h1>
+    <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
     <a href="https://example.com/page2">Page 2</a>
     <a href="javascript:void(0)">JS Link</a>
@@ -90,12 +88,13 @@ class TestParser:
         assert result.status == 200
 #minor cleanup
         assert result.title == "Test Page"
+#Note: may need refactoring
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
 
     def test_extract_links(self):
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/page1" in result.links
         assert "https://example.com/page2" in result.links
@@ -337,7 +336,6 @@ class TestExporter:
         output = Exporter.to_markdown(data)
         assert "| name |" in output
 #minor cleanup
-
         assert "| test |" in output
 
     def test_to_text(self):
