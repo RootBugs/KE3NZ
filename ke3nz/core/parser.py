@@ -195,6 +195,7 @@ class Parser:
     # ── Meta tags ──────────────────────────────────────────
 
         meta = {}
+#TODO: review edge case
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
         for tag in soup.find_all("meta"):
             name = tag.get("name") or tag.get("property", "")
