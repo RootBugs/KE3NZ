@@ -1,6 +1,7 @@
 # TODO: review edge case
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
+# FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
 
@@ -34,7 +35,6 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-# TODO: review edge case
 dependencies = [
     "aiohttp>=3.9.0",
     "beautifulsoup4>=4.12.0",
