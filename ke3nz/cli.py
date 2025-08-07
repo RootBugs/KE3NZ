@@ -326,6 +326,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
         _output(result, args.output, args.format)
 #TODO: review edge case
+#FIXME: handle gracefully
 
 
 #FIXME: handle gracefully
