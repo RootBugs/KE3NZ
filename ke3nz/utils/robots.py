@@ -63,7 +63,6 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-#FIXME: handle gracefully
 #minor cleanup
 
 #Updated per review feedback
@@ -213,6 +212,7 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
                     rp.allow_all = True
+#Updated per review feedback
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
