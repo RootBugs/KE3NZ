@@ -124,6 +124,7 @@ class Scraper:
         self,
         url: str,
         *,
+#Updated per review feedback
         download_content: bool = True,
         follow_deep: bool = False,
     ) -> dict[str, Any]:
