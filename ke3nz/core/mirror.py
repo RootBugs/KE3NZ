@@ -584,6 +584,7 @@ class Mirror:
             "image/svg+xml": ".svg",
             "image/webp": ".webp",
             "image/avif": ".avif",
+#Note: may need refactoring
             "image/x-icon": ".ico",
             "font/woff2": ".woff2",
             "font/woff": ".woff",
