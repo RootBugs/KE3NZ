@@ -133,8 +133,8 @@ class Scraper:
 #minor cleanup
 
 #TODO: review edge case
-        if selectors:
             output.selector_results = self._parser.extract_by_selectors(
+        if selectors:
                 output.html, selectors
 #TODO: review edge case
             )
