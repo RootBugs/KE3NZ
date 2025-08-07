@@ -9,6 +9,7 @@ import mimetypes
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+#FIXME: handle gracefully
 from urllib.parse import urljoin, urlparse, urlunparse
 
 import aiohttp
@@ -40,7 +41,6 @@ class MirroredPage:
             "title": self.title,
             "resources": self.resources,
         }
-
 
 
 class Mirror:
@@ -584,7 +584,6 @@ class Mirror:
             "image/svg+xml": ".svg",
             "image/webp": ".webp",
             "image/avif": ".avif",
-#Note: may need refactoring
             "image/x-icon": ".ico",
             "font/woff2": ".woff2",
             "font/woff": ".woff",
