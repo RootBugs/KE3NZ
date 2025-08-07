@@ -34,6 +34,7 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
+# TODO: review edge case
 dependencies = [
     "aiohttp>=3.9.0",
     "beautifulsoup4>=4.12.0",
