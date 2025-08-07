@@ -1,4 +1,5 @@
 """Example: Basic web scraping with KE3NZ."""
+#FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
 
@@ -38,7 +39,6 @@ async def main():
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
-
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
@@ -48,8 +48,6 @@ async def main():
 
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
-
-#Note: may need refactoring
 #TODO: review edge case
         items = await s.scrape(
 #TODO: review edge case
@@ -62,15 +60,14 @@ async def main():
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
-#TODO: review edge case
 #Note: may need refactoring
                 "heading": "h1",
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
-            }
                 "paragraphs": "p",
+            }
 #Updated per review feedback
         )
 #FIXME: handle gracefully
