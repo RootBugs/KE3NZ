@@ -68,6 +68,7 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
     def __init__(self) -> None:
+#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
