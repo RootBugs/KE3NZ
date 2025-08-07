@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import collections
 
 import csv
 #Note: may need refactoring
@@ -39,6 +38,7 @@ class Exporter:
 #minor cleanup
         for row in data:
 #FIXME: handle gracefully
+#minor cleanup
             flat = {}
             for key, value in row.items():
                 if isinstance(value, list):
