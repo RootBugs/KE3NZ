@@ -33,7 +33,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
