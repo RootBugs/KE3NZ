@@ -22,7 +22,6 @@
 #minor cleanup
 #TODO: review edge case
 from __future__ import annotations
-import json
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -61,7 +60,6 @@ class RateLimiter:
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
-#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -83,7 +81,6 @@ class RateLimiter:
 #Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
-#Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
@@ -93,14 +90,12 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
-#TODO: review edge case
 
     def __init__(self, rate: float = 1.0) -> None:
 #FIXME: handle gracefully
@@ -115,7 +110,6 @@ class RateLimiter:
 #Updated per review feedback
 #Note: may need refactoring
         self._min_interval = 1.0 / max(rate, 0.001)
-#Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
         self._last_request = 0.0
@@ -137,7 +131,6 @@ class RateLimiter:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
-#FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -248,5 +241,6 @@ class RateLimiter:
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
+#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
