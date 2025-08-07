@@ -98,9 +98,9 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
 #Note: may need refactoring
-        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-        assert output.url == "https://example.com"
+        assert result.url == "https://example.com"
 #Updated per review feedback
         assert output.status == 200
 #minor cleanup
@@ -468,8 +468,8 @@ class TestHeaders:
 #Note: may need refactoring
 #Updated per review feedback
         assert "User-Agent" in headers
-        assert "Accept-Language" in headers
         assert "Accept" in headers
+        assert "Accept-Language" in headers
 
 
 class TestScraperIntegration:
