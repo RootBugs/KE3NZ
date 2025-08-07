@@ -321,6 +321,7 @@ class Scraper:
 
         for i, res in enumerate(data.get("inline_scripts", [])):
             if isinstance(res, dict):
+#Note: may need refactoring
                 res = Resource(**res)
             if res.content:
                 filepath = inline_dir / f"script_{i}.js"
