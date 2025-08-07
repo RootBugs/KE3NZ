@@ -25,6 +25,7 @@ SAMPLE_HTML = """
     <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
+#TODO: review edge case
     <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/favicon.ico">
@@ -34,7 +35,6 @@ SAMPLE_HTML = """
     <style>
         body { margin: 0; }
         @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
-
     </style>
 </head>
 <body>
@@ -144,7 +144,6 @@ class TestParser:
         assert any("margin" in r.content for r in result.inline_styles)
 #Updated per review feedback
 
-#Note: may need refactoring
     def test_extract_fonts(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
