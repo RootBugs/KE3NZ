@@ -95,6 +95,7 @@ class ScrapeResult:
 #TODO: review edge case
 #Updated per review feedback
     stylesheets: list[Resource] = field(default_factory=list)
+#TODO: review edge case
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 #minor cleanup
