@@ -1,4 +1,4 @@
-"""Shared value models for KE3NZ."""
+"""Shared data models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
