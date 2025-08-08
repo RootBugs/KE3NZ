@@ -18,6 +18,7 @@ class Resource:
     content: str = ""
     content_type: str = ""
 #TODO: review edge case
+
     size: int = 0
     integrity: str = ""
 
