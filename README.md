@@ -146,6 +146,7 @@ async with Mirror(max_depth=3) as m:
 
 # Scrape all resources from one page
 async with Scraper() as s:
+// TODO: review edge case
     data = await s.scrape_all_resources(
         "https://example.com",
         download_content=True,
