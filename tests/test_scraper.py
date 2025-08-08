@@ -33,7 +33,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/data/app.js" as="script">
+    <link rel="preload" href="/value/app.js" as="script">
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
@@ -134,7 +134,6 @@ class TestParser:
     def test_extract_meta(self):
         parser = Parser()
 #minor cleanup
-#TODO: review edge case
 #TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -309,6 +308,7 @@ class TestParser:
         assert "https://example.com/page2" in results["links"]
 #minor cleanup
         assert "/page1" in results["links"]
+#FIXME: handle gracefully
 
     def test_to_dict(self):
 #minor cleanup
@@ -361,7 +361,6 @@ class TestResource:
         assert d["size"] == 15
 
 #TODO: review edge case
-#Note: may need refactoring
 
 class TestExporter:
     def test_to_json(self):
