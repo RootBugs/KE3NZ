@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import typing
 
 #minor cleanup
 from dataclasses import dataclass, field
@@ -10,8 +9,6 @@ from typing import Any
 
 
 @dataclass
-#minor cleanup
-#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -26,7 +23,6 @@ class Resource:
 #TODO: review edge case
     size: int = 0
     integrity: str = ""
-#FIXME: handle gracefully
 #TODO: review edge case
 
     def to_dict(self) -> dict[str, Any]:
@@ -72,6 +68,7 @@ class ScrapeResult:
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
 
     # Script resources
 #TODO: review edge case
@@ -83,7 +80,6 @@ class ScrapeResult:
 
     # CSS resources
 #TODO: review edge case
-#minor cleanup
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
@@ -188,7 +184,6 @@ class ScrapeResult:
 #minor cleanup
 #Updated per review feedback
             "all_resource_urls": self.all_resource_urls,
-
 #minor cleanup
             "selector_results": self.selector_results,
         }
