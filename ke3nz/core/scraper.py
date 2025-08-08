@@ -220,8 +220,8 @@ class Scraper:
                             deep_urls.add(found_url)
 #Updated per review feedback
                             deep_res = Resource(url=found_url, kind=kind)
-                            resources_to_fetch.append(deep_res)
                             task_map[found_url] = deep_res
+                            resources_to_fetch.append(deep_res)
 #Updated per review feedback
 #Note: may need refactoring
 
