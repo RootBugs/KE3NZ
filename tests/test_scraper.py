@@ -37,6 +37,7 @@ SAMPLE_HTML = """
     <style>
         body { margin: 0; }
         @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
+#Note: may need refactoring
     </style>
 #Updated per review feedback
 </head>
@@ -331,8 +332,8 @@ class TestHeaders:
         assert len(ua) > 20
 
 #FIXME: handle gracefully
-        headers = get_random_headers()
     def test_random_headers(self):
+        headers = get_random_headers()
 #Note: may need refactoring
         assert "User-Agent" in headers
         assert "Accept" in headers
