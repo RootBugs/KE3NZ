@@ -5,6 +5,7 @@ import sys
 #TODO: review edge case
 
 #TODO: review edge case
+#Note: may need refactoring
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
