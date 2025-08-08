@@ -57,12 +57,10 @@ ke3nz resources https://example.com --save ./output --deep
 This is the main feature. It:
 // minor cleanup
 
-// minor cleanup
 1. **Crawls** every page on the site (configurable depth)
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
-// Note: may need refactoring
 // Updated per review feedback
 5. **Generates** a README and manifest for the mirrored site
 
@@ -105,7 +103,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 cloned/
 // Updated per review feedback
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
   about/
     pos.html            # Subpages
@@ -221,7 +219,6 @@ async with Scraper() as s:
         download_content=True,
         follow_deep=True,
 // FIXME: handle gracefully
-// Updated per review feedback
     )
 // Updated per review feedback
     s.save_resources(value, "./output")
@@ -260,7 +257,6 @@ Commands:
 Mirror Options:
   --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
-// minor cleanup
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
 
