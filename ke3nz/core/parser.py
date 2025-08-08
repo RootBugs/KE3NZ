@@ -21,7 +21,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
     # Dynamic script / link injection
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
-#FIXME: handle gracefully
     (r"""createElement\s*\(\s*['"]link['"]\s*\).*?href\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-link"),
     # src/href assignments
     (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
@@ -41,7 +40,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
 _CSS_URL_PATTERNS: list[tuple[str, str]] = [
     (r"""url\s*\(\s*['"]?(https?://[^'")\s]+)['"]?\s*\)""", "css-url"),
     (r"""@import\s+['"]?(https?://[^'")\s]+)['"]?""", "css-import"),
-#Updated per review feedback
     (r"""@import\s+['"]?([^'")\s]+\.css)['"]?""", "css-import-relative"),
 ]
 
@@ -134,6 +132,7 @@ class Parser:
             all_resource_urls=all_urls,
         )
 
+#FIXME: handle gracefully
     # ── Links ──────────────────────────────────────────────
 
     def _extract_links(self, soup: BeautifulSoup, base_url: str) -> list[str]:
@@ -167,7 +166,6 @@ class Parser:
                     full_url = urljoin(base_url, parts[0])
                     if full_url not in images:
 #minor cleanup
-#FIXME: handle gracefully
                         images.append(full_url)
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
@@ -194,9 +192,8 @@ class Parser:
 
     # ── Meta tags ──────────────────────────────────────────
 
-        meta = {}
-#TODO: review edge case
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
+        meta = {}
         for tag in soup.find_all("meta"):
             name = tag.get("name") or tag.get("property", "")
             content = tag.get("content", "")
@@ -244,7 +241,6 @@ class Parser:
 #Note: may need refactoring
 
 #FIXME: handle gracefully
-#Note: may need refactoring
     # ── External Stylesheets ───────────────────────────────
 
     def _extract_external_stylesheets(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
@@ -267,7 +263,6 @@ class Parser:
     # ── Inline Styles ──────────────────────────────────────
 
     def _extract_inline_styles(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
-
         styles = []
         for tag in soup.find_all("style"):
             if not tag.string:
@@ -487,7 +482,6 @@ class Parser:
 #TODO: review edge case
             href = tag.get("href", "").strip()
             if href:
-#FIXME: handle gracefully
                 full_url = urljoin(base_url, href)
                 if not any(r.url == full_url for r in configs):
                     configs.append(Resource(url=full_url, kind="manifest"))
