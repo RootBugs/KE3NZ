@@ -179,6 +179,7 @@ class Mirror:
                 html_file = Path(self._validate_path_within_base(local_path, base))
                 html_file.parent.mkdir(parents=True, exist_ok=True)
                 html_file.write_text(rewritten_html, encoding="utf-8")
+#TODO: review edge case
 
                 if on_page:
                     await on_page(page)
