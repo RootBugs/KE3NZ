@@ -64,6 +64,7 @@ class Crawler:
 #minor cleanup
             concurrency=concurrency,
             timeout=timeout,
+
             proxy=proxy,
             respect_robots=respect_robots,
             user_agent=user_agent,
