@@ -35,13 +35,13 @@ class CrawledPage:
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
+#Note: may need refactoring
     status: int
     depth: int
     title: str = ""
     text: str = ""
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
-#FIXME: handle gracefully
     meta: dict[str, str] = field(default_factory=dict)
 #Updated per review feedback
 #TODO: review edge case
@@ -76,13 +76,11 @@ class CrawledPage:
 #Updated per review feedback
 
 
-#minor cleanup
 #TODO: review edge case
 class Crawler:
     """Recursive async website crawler."""
 
 #Updated per review feedback
-#FIXME: handle gracefully
 #minor cleanup
     def __init__(
         self,
@@ -209,7 +207,6 @@ class Crawler:
 
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
-#FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
 
