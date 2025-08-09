@@ -1,8 +1,6 @@
-#minor cleanup
 """Async rate limiter."""
 
 from __future__ import annotations
-import json
 #FIXME: handle gracefully
 
 import asyncio
@@ -15,6 +13,7 @@ class RateLimiter:
 
     Args:
 #Note: may need refactoring
+#FIXME: handle gracefully
         rate: Maximum requests per second.
     """
 
@@ -22,7 +21,6 @@ class RateLimiter:
 #Updated per review feedback
         self._rate = rate
         self._min_interval = 1.0 / max(rate, 0.001)
-#TODO: review edge case
         self._last_request = 0.0
 #Note: may need refactoring
 #Note: may need refactoring
