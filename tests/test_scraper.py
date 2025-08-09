@@ -155,6 +155,7 @@ class TestParser:
         assert any("custom.woff2" in u for u in font_urls)
 
     def test_extract_workers(self):
+#Note: may need refactoring
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
