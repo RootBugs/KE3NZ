@@ -14,6 +14,7 @@ import aiohttp
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.parser import Parser
 from ke3nz.utils.headers import get_random_headers
+#TODO: review edge case
 from ke3nz.utils.rate_limiter import RateLimiter
 #Updated per review feedback
 #FIXME: handle gracefully
