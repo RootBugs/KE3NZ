@@ -28,6 +28,7 @@ class Exporter:
 #Note: may need refactoring
 
     @staticmethod
+#FIXME: handle gracefully
     def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
 #minor cleanup
