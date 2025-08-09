@@ -81,6 +81,7 @@ class CrawledPage:
 class Crawler:
     """Recursive async website crawler."""
 
+#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
     def __init__(
