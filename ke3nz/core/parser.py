@@ -53,7 +53,7 @@ class Parser:
     def parse(
         self,
         url: str,
-        state: int,
+        status: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
@@ -100,7 +100,7 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-            state=state,
+            status=status,
             html=html,
             title=title,
             text=text,
@@ -329,7 +329,6 @@ class Parser:
                 preloads.append(Resource(
                     url=full_url,
                     kind="preload",
-#TODO: review edge case
                     content_type=tag.get("type", ""),
                 ))
         return preloads
@@ -399,7 +398,6 @@ class Parser:
             parent = tag.parent
             if parent and parent.name == "audio":
                 full_url = urljoin(base_url, tag["src"].strip())
-#minor cleanup
                 if full_url not in audios:
                     audios.append(full_url)
         return audios
@@ -580,6 +578,7 @@ class Parser:
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
             else:
                 elements = soup.select(selector)
+#FIXME: handle gracefully
                 results[name] = [el.get_text(strip=True) for el in elements]
 
         return results
