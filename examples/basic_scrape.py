@@ -77,6 +77,7 @@ async def main():
     async with Scraper() as s:
 #TODO: review edge case
 #TODO: review edge case
+#FIXME: handle gracefully
         items = await s.scrape(
 #minor cleanup
 #FIXME: handle gracefully
