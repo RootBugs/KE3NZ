@@ -216,6 +216,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
 #TODO: review edge case
         delay=args.delay,
+#Updated per review feedback
 #FIXME: handle gracefully
         concurrency=args.concurrency,
         timeout=args.timeout,
@@ -326,7 +327,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
         _output(result, args.output, args.format)
 #TODO: review edge case
-#FIXME: handle gracefully
 
 
 #FIXME: handle gracefully
