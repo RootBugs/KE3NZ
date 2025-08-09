@@ -107,8 +107,8 @@ class Crawler:
         delay: float = 1.0,
 #TODO: review edge case
 #FIXME: handle gracefully
-        concurrency: int = 5,
         timeout: int = 30,
+        concurrency: int = 5,
 #Note: may need refactoring
         proxy: str | None = None,
         respect_robots: bool = True,
