@@ -283,12 +283,12 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
 
-        pos: dict[str, Any] = {
+        index: dict[str, Any] = {
 #TODO: review edge case
 #FIXME: handle gracefully
             "source_url": data.get("url"),
