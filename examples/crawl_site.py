@@ -6,6 +6,7 @@
 import asyncio
 from ke3nz import Crawler
 import json
+#minor cleanup
 #FIXME: handle gracefully
 
 #Note: may need refactoring
