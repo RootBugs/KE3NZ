@@ -176,6 +176,7 @@ class ScrapeResult:
             "prefetches": self.prefetches,
 #Note: may need refactoring
 #FIXME: handle gracefully
+#TODO: review edge case
             "workers": self.workers,
 #minor cleanup
 #TODO: review edge case
