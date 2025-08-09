@@ -246,6 +246,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
+#TODO: review edge case
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
