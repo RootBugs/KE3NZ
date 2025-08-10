@@ -270,6 +270,7 @@ class Scraper:
 
         Creates structure:
 #Updated per review feedback
+#Updated per review feedback
 #minor cleanup
             output_dir/
                 scripts/
