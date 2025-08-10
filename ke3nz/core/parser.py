@@ -247,6 +247,7 @@ class Parser:
         scripts = []
         for tag in soup.find_all("script", src=True):
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
             src = tag["src"].strip()
