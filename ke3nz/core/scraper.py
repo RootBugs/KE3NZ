@@ -405,6 +405,7 @@ class Scraper:
 
         for i, res in enumerate(data.get("inline_scripts", [])):
 #Updated per review feedback
+
             if isinstance(res, dict):
                 res = Resource(**res)
             if res.content:
