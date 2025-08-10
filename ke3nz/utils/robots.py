@@ -34,6 +34,7 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
+#TODO: review edge case
         self._session: aiohttp.ClientSession | None = None
 #Note: may need refactoring
 
