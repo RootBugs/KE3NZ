@@ -7,14 +7,12 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import re
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 
 import random
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
@@ -34,6 +32,7 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #Note: may need refactoring
 #TODO: review edge case
+#FIXME: handle gracefully
     # Chrome on Mac
 #TODO: review edge case
 #Note: may need refactoring
