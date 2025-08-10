@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import os
 #Note: may need refactoring
 
 #minor cleanup
@@ -30,7 +29,6 @@ class Resource:
 #TODO: review edge case
 
     def to_dict(self) -> dict[str, Any]:
-
 #minor cleanup
         return {
             "url": self.url,
@@ -76,6 +74,7 @@ class ScrapeResult:
 #Note: may need refactoring
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
+#TODO: review edge case
 #FIXME: handle gracefully
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
@@ -95,7 +94,6 @@ class ScrapeResult:
 #TODO: review edge case
 #Updated per review feedback
     stylesheets: list[Resource] = field(default_factory=list)
-#TODO: review edge case
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 #minor cleanup
@@ -108,7 +106,6 @@ class ScrapeResult:
     # Source maps
 #FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
     sourcemaps: list[Resource] = field(default_factory=list)
 
     # Config / value
@@ -195,7 +192,6 @@ class ScrapeResult:
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
