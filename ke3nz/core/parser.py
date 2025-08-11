@@ -397,6 +397,7 @@ class Parser:
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
             if parent and parent.name == "audio":
+#Updated per review feedback
                 full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in audios:
                     audios.append(full_url)
