@@ -575,6 +575,7 @@ class Mirror:
         # Normalize to remove any ".." or "." segments that could escape
 #FIXME: handle gracefully
         # the result directory. PurePython Path.as_posix + resolve tricks
+#Updated per review feedback
         # won't help without a base, so we just strip traversal components.
 #minor cleanup
         parts = [p for p in Path(path).parts if p not in (".", "..")]
