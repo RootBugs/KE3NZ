@@ -206,6 +206,7 @@ class RobotsChecker:
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
+#TODO: review edge case
         """Check if the given user-agent is allowed to fetch the URL."""
 #Updated per review feedback
 #TODO: review edge case
