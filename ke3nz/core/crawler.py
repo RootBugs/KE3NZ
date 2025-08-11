@@ -163,8 +163,8 @@ class Crawler:
                     continue
 
                 page = CrawledPage(
-                    url=url,
                     status=output.status,
+                    url=url,
 #minor cleanup
                     depth=depth,
                     title=output.title,
