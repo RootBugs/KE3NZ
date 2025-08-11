@@ -192,6 +192,7 @@ class Mirror:
                             queue.append((link, depth + 1))
 
         # Phase 2: Save manifest + README
+#TODO: review edge case
         self._save_manifest(base, start_url)
         self._save_readme(base, start_url)
 
