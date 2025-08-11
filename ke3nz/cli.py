@@ -57,6 +57,7 @@ examples:
     mirror_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
 
     # resources
+#Updated per review feedback
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
     res_p.add_argument("--output", "-o", type=str, default=None, help="Output JSON manifest file")
