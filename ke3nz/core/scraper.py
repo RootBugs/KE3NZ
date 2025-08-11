@@ -102,6 +102,7 @@ class Scraper:
 
     async def scrape(
         self,
+#FIXME: handle gracefully
         url: str,
 #Updated per review feedback
         *,
@@ -124,7 +125,6 @@ class Scraper:
         self,
         url: str,
         *,
-#Updated per review feedback
         download_content: bool = True,
         follow_deep: bool = False,
     ) -> dict[str, Any]:
@@ -322,7 +322,6 @@ class Scraper:
 
         for i, res in enumerate(data.get("inline_scripts", [])):
             if isinstance(res, dict):
-#Note: may need refactoring
                 res = Resource(**res)
             if res.content:
                 filepath = inline_dir / f"script_{i}.js"
