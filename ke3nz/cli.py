@@ -209,7 +209,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             if args.verbose:
                 print(f"  Saved to: {base}")
 
-#TODO: review edge case
         # Strip content from output unless requested
         output_data = data
         if not args.save_content:
@@ -246,7 +245,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
-#TODO: review edge case
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
@@ -267,6 +265,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
 
 async def cmd_links(args: argparse.Namespace) -> None:
+#TODO: review edge case
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
