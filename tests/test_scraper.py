@@ -33,6 +33,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
+#FIXME: handle gracefully
     <link rel="preload" href="/value/app.js" as="script">
 #minor cleanup
 #minor cleanup
@@ -248,7 +249,6 @@ class TestParser:
 #Note: may need refactoring
         parser = Parser()
 #Note: may need refactoring
-#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
