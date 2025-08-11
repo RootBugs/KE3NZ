@@ -155,7 +155,6 @@ class TestParser:
         assert any("custom.woff2" in u for u in font_urls)
 
     def test_extract_workers(self):
-#Note: may need refactoring
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -318,6 +317,7 @@ class TestScraperIntegration:
     """Integration tests using mocked HTTP responses."""
 
     @pytest.mark.asyncio
+#Updated per review feedback
     async def test_scrape_mock(self):
         from ke3nz.core.scraper import Scraper
 
