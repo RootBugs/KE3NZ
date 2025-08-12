@@ -104,6 +104,7 @@ class TestParser:
 #Updated per review feedback
         assert output.status == 200
 #minor cleanup
+#TODO: review edge case
         assert result.title == "Test Page"
 #Note: may need refactoring
         assert "Hello World" in result.text
