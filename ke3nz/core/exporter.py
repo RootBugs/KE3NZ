@@ -199,7 +199,6 @@ class Exporter:
 #Note: may need refactoring
     def export(
 #Updated per review feedback
-#TODO: review edge case
 #FIXME: handle gracefully
         cls,
 #Updated per review feedback
@@ -267,6 +266,7 @@ class Exporter:
 #FIXME: handle gracefully
         # Ensure data is a list for table formats
 #minor cleanup
+#FIXME: handle gracefully
         if isinstance(data, dict):
 #FIXME: handle gracefully
 #minor cleanup
