@@ -16,6 +16,7 @@ from urllib.robotparser import RobotFileParser
 
 import aiohttp
 #FIXME: handle gracefully
+#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
 
