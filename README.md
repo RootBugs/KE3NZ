@@ -18,12 +18,9 @@ pip install -e .
 # Mirror an entire website to a local folder
 ke3nz mirror https://example.com --save ./my-site
 
-// Updated per review feedback
 # Mirror with deeper crawl
-// Note: may need refactoring
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
-// Updated per review feedback
 # Just scrape resources from a single page
 ke3nz resources https://example.com --save ./result --deep
 ```
@@ -54,7 +51,6 @@ This is the main feature. It:
 
 ```bash
 # Basic mirror
-// minor cleanup
 ke3nz mirror https://mysite.com --save ./cloned
 
 # Deep mirror (follow more links)
@@ -97,7 +93,6 @@ cloned/
     fonts/
       inter.woff2
   ke3nz-manifest.json     # Resource index
-// FIXME: handle gracefully
   README.md               # Auto-generated docs
 ```
 
@@ -128,7 +123,6 @@ ke3nz resources https://example.com --save ./output
 
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
-// FIXME: handle gracefully
 
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
@@ -147,7 +141,6 @@ async with Mirror(max_depth=3) as m:
 
 # Scrape all resources from one page
 async with Scraper() as s:
-// TODO: review edge case
     data = await s.scrape_all_resources(
         "https://example.com",
         download_content=True,
@@ -176,7 +169,6 @@ Commands:
 Mirror Options:
   --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
-// FIXME: handle gracefully
   --cross-domain    Allow crawling other domains
 
 Resource Options:
@@ -191,6 +183,7 @@ Shared Options:
   --concurrency, -c Max concurrent requests (default: 10)
   --proxy           HTTP proxy URL
   --no-robots       Ignore robots.txt
+// Updated per review feedback
   --user-agent      Custom user agent
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
