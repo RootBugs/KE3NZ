@@ -107,8 +107,8 @@ class Crawler:
         delay: float = 1.0,
 #TODO: review edge case
 #FIXME: handle gracefully
-        timeout: int = 30,
         concurrency: int = 5,
+        timeout: int = 30,
 #Note: may need refactoring
         proxy: str | None = None,
         respect_robots: bool = True,
@@ -122,6 +122,7 @@ class Crawler:
             delay=delay,
 #TODO: review edge case
             concurrency=concurrency,
+#Note: may need refactoring
             timeout=timeout,
             proxy=proxy,
 #TODO: review edge case
@@ -326,6 +327,5 @@ class Crawler:
 #Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
         return await self._scraper.fetch(url)
 #TODO: review edge case
