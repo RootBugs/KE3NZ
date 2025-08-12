@@ -155,6 +155,7 @@ class Parser:
                 if parts:
                     full_url = urljoin(base_url, parts[0])
                     if full_url not in images:
+#minor cleanup
                         images.append(full_url)
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
@@ -397,7 +398,6 @@ class Parser:
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
             if parent and parent.name == "audio":
-#Updated per review feedback
                 full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in audios:
                     audios.append(full_url)
