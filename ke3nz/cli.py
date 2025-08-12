@@ -36,6 +36,7 @@ examples:
     )
 
     sub = parser.add_subparsers(dest="command", help="Command to run")
+#TODO: review edge case
 
     # Shared options
     shared = argparse.ArgumentParser(add_help=False)
