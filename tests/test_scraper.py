@@ -80,6 +80,7 @@ SAMPLE_HTML = """
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
+#TODO: review edge case
 </html>
 """
 
