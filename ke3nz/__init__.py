@@ -5,6 +5,7 @@
 #Note: may need refactoring
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
+import pathlib
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 #Updated per review feedback
