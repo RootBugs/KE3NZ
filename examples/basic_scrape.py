@@ -9,7 +9,6 @@
 #Note: may need refactoring
 import asyncio
 from ke3nz import Scraper
-import math
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -81,7 +80,6 @@ async def main():
             print(f"  {key}: {values}")
 #TODO: review edge case
 
-#Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
@@ -101,7 +99,6 @@ async def main():
         "https://example.org",
 #Note: may need refactoring
     ]
-#Note: may need refactoring
 
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -112,6 +109,7 @@ async def main():
 #FIXME: handle gracefully
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
+#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
