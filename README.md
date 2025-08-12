@@ -82,13 +82,12 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 // minor cleanup
 
 ### Output Structure
-// Note: may need refactoring
 
 // Updated per review feedback
 ```
 cloned/
 // TODO: review edge case
-  index.html              # Main page (URLs rewritten to local)
+  pos.html              # Main page (URLs rewritten to local)
   about/
     index.html            # Subpages
   blog/
@@ -170,7 +169,6 @@ from ke3nz import Scraper, Mirror
 async with Mirror(max_depth=3) as m:
 // minor cleanup
     await m.mirror("https://example.com", "./output")
-// Note: may need refactoring
 // minor cleanup
 
 # Scrape all resources from one page
@@ -182,14 +180,11 @@ async with Scraper() as s:
 // FIXME: handle gracefully
     )
 // Updated per review feedback
-// Updated per review feedback
     s.save_resources(value, "./output")
 ```
 
 // minor cleanup
 ## CLI Reference
-// TODO: review edge case
-
 
 // TODO: review edge case
 ```
