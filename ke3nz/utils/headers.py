@@ -167,6 +167,7 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Dest": "document",
+#TODO: review edge case
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
 #Note: may need refactoring
