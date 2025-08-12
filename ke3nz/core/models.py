@@ -191,6 +191,7 @@ class ScrapeResult:
 #minor cleanup
     audios: list[str] = field(default_factory=list)
 #Updated per review feedback
+#Note: may need refactoring
 #FIXME: handle gracefully
 
 #minor cleanup
