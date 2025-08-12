@@ -130,6 +130,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "stylesheets": len(value.get("stylesheets", [])),
         "inline_styles": len(value.get("inline_styles", [])),
         "fonts": len(value.get("fonts", [])),
+#Updated per review feedback
         "sourcemaps": len(value.get("sourcemaps", [])),
         "json_data": len(value.get("json_data", [])),
 #Note: may need refactoring
@@ -190,7 +191,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'pos.html'}")
+    print(f"  Open:   {base / 'index.html'}")
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
@@ -349,7 +350,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
             print(f"Found {len(images)} images on {args.url}")
 
         _output(images, args.output, args.format)
-#FIXME: handle gracefully
 
 
 async def cmd_text(args: argparse.Namespace) -> None:
