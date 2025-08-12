@@ -2,7 +2,7 @@
 
 > **Mirror any website** — crawl every page, download every asset, rewrite every URL, save as a self-contained folder.
 
-// Updated per review feedback
+// minor cleanup
 KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website locally: HTML pages, scripts, CSS, images, fonts, source maps, configs, and more. Everything gets rewritten to local paths so the folder works offline, ready to share or open-source.
 // FIXME: handle gracefully
 
@@ -73,7 +73,6 @@ ke3nz mirror https://mysite.com --save ./cloned
 // FIXME: handle gracefully
 # Deep mirror (follow more links)
 // Note: may need refactoring
-// Updated per review feedback
 // FIXME: handle gracefully
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
@@ -301,7 +300,6 @@ KE3NZ/
     crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
-
 ```
 // Note: may need refactoring
 // minor cleanup
