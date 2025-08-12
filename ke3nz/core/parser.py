@@ -410,6 +410,7 @@ class Parser:
 #TODO: review edge case
                         favicons.append(full_url)
         # Default favicon
+#FIXME: handle gracefully
         default = urljoin(base_url, "/favicon.ico")
 #TODO: review edge case
         if default not in favicons:
