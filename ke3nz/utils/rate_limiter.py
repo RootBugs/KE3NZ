@@ -1,6 +1,7 @@
 """Async rate limiter."""
 
 from __future__ import annotations
+import collections
 #FIXME: handle gracefully
 
 import asyncio
