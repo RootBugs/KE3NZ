@@ -100,6 +100,7 @@ class Exporter:
     ) -> str:
         """Export data to a file.
 
+#minor cleanup
         Auto-detects format from file extension if fmt is not specified.
 
         Args:
