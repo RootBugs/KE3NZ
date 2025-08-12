@@ -74,7 +74,6 @@ class CrawledPage:
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
-#TODO: review edge case
             "status": self.status,
             "depth": self.depth,
 #Note: may need refactoring
@@ -269,7 +268,6 @@ class Crawler:
 #minor cleanup
 
 #Updated per review feedback
-#Updated per review feedback
             if not batch:
                 break
 #TODO: review edge case
@@ -283,6 +281,7 @@ class Crawler:
 
 #Updated per review feedback
 #TODO: review edge case
+#Note: may need refactoring
             for (url, depth), output in zip(batch, results):
 #minor cleanup
 #Updated per review feedback
