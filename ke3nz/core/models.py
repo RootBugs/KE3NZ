@@ -117,6 +117,7 @@ class ScrapeResult:
 #minor cleanup
             "iframes": self.iframes,
 #minor cleanup
+#minor cleanup
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
         }
