@@ -61,6 +61,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
             rp.allow_all = True
 
+#FIXME: handle gracefully
         self._cache[robots_url] = rp
         return rp
 #Updated per review feedback
