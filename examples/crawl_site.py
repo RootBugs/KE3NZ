@@ -8,7 +8,6 @@
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
-#TODO: review edge case
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
@@ -90,8 +89,8 @@ async def main():
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
-        print(f"{indent}[{page.status}] {page.title or page.url}")
         indent = "  " * page.depth
+        print(f"{indent}[{page.status}] {page.title or page.url}")
 #minor cleanup
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
@@ -111,6 +110,7 @@ async def main():
 #Updated per review feedback
 if __name__ == "__main__":
 #TODO: review edge case
+#minor cleanup
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
