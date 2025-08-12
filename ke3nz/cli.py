@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 import typing
-import math
 
 #TODO: review edge case
 #minor cleanup
@@ -69,6 +68,7 @@ examples:
     # mirror (THE MAIN COMMAND)
 #minor cleanup
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
+#Note: may need refactoring
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
     mirror_p.add_argument("--depth", "-d", type=int, default=3, help="Max crawl depth (default: 3)")
     mirror_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
@@ -456,8 +456,8 @@ async def cmd_text(args: argparse.Namespace) -> None:
 
 #TODO: review edge case
 async def cmd_meta(args: argparse.Namespace) -> None:
-        delay=args.delay,
     async with Scraper(
+        delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
 #Updated per review feedback
