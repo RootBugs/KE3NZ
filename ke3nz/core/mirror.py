@@ -1,7 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-import os
 
 import asyncio
 import hashlib
@@ -67,7 +66,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -179,7 +178,6 @@ class Mirror:
                 html_file = Path(self._validate_path_within_base(local_path, base))
                 html_file.parent.mkdir(parents=True, exist_ok=True)
                 html_file.write_text(rewritten_html, encoding="utf-8")
-#TODO: review edge case
 
                 if on_page:
                     await on_page(page)
@@ -192,7 +190,6 @@ class Mirror:
                             queue.append((link, depth + 1))
 
         # Phase 2: Save manifest + README
-#TODO: review edge case
         self._save_manifest(base, start_url)
         self._save_readme(base, start_url)
 
@@ -472,6 +469,7 @@ class Mirror:
             url = match.group(2)
             suffix = match.group(3)
             if url.startswith(("value:", "#")):
+#Note: may need refactoring
                 return match.group(0)
             original = self._resolve_url(url, page_url)
             if original in resources:
