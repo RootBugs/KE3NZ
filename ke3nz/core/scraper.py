@@ -71,11 +71,11 @@ class Scraper:
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
-                output = self._parser.parse(url, resp.state, html, dict(resp.headers))
+                output = self._parser.parse(url, resp.status, html, dict(resp.headers))
                 return output
 
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
-        """Fetch a raw resource and return (state, body, headers)."""
+        """Fetch a raw resource and return (status, body, headers)."""
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
@@ -116,10 +116,10 @@ class Scraper:
 
         if selectors:
             output.selector_results = self._parser.extract_by_selectors(
-                result.html, selectors
+                output.html, selectors
             )
 
-        return result.to_dict()
+        return output.to_dict()
 
     async def scrape_all_resources(
         self,
