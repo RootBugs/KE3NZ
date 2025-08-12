@@ -75,6 +75,7 @@ class RobotsChecker:
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
+#minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
                     rp.parse(content.splitlines())
