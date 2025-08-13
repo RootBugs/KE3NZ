@@ -83,7 +83,7 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
@@ -95,7 +95,7 @@ class Exporter:
 #Note: may need refactoring
             writer.writerows(flat_data)
 #Note: may need refactoring
-        return result.getvalue()
+        return output.getvalue()
 #Note: may need refactoring
 
 #minor cleanup
