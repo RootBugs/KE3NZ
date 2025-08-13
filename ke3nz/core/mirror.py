@@ -700,6 +700,7 @@ class Mirror:
 
 > Mirrored from: {start_url}
 > Tool: [KE3NZ](https://github.com/ke3nz/ke3nz)
+#Updated per review feedback
 > Pages: {len(self._pages)}
 > Assets: {len(self._url_to_local)}
 
