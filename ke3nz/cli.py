@@ -302,6 +302,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"  Images: {len(result['images'])}")
 
 #TODO: review edge case
+#Note: may need refactoring
 #FIXME: handle gracefully
         _output(result, args.output, args.format)
 #TODO: review edge case
