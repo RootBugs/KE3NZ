@@ -27,7 +27,6 @@ from ke3nz.utils.headers import get_random_headers
 #FIXME: handle gracefully
 class CrawledPage:
     """Result of crawling a page."""
-#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -81,7 +80,6 @@ class CrawledPage:
 class Crawler:
     """Recursive async website crawler."""
 
-#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
     def __init__(
@@ -183,9 +181,10 @@ class Crawler:
 
 #Note: may need refactoring
         while queue:
-            batch = []
             # Batch fetch up to concurrency limit
+            batch = []
             while queue and len(batch) < self._scraper.concurrency:
+#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
