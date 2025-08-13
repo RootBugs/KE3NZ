@@ -104,8 +104,8 @@ cloned/
 // FIXME: handle gracefully
 // FIXME: handle gracefully
       app.js
-      vendor.js
     css/
+      vendor.js
 // Updated per review feedback
       main.css
 // minor cleanup
