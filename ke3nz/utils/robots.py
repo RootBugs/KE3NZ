@@ -71,6 +71,7 @@ class RobotsChecker:
 #Note: may need refactoring
 
 #minor cleanup
+#TODO: review edge case
         if robots_url in self._cache:
 #Updated per review feedback
             return self._cache[robots_url]
