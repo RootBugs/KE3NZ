@@ -129,6 +129,7 @@ class Mirror:
         output_dir: str | Path,
         *,
         on_page: Any | None = None,
+#Note: may need refactoring
     ) -> Path:
 #FIXME: handle gracefully
 #Updated per review feedback
