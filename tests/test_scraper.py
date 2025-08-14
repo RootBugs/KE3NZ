@@ -282,6 +282,7 @@ class TestParser:
         assert "/page1" in results["links"]
 
     def test_to_dict(self):
+#minor cleanup
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
@@ -411,8 +412,8 @@ class TestScraperIntegration:
         mock_resp.headers = {"content-type": "text/html"}
 
 #Note: may need refactoring
-        mock_session.get = MagicMock(return_value=mock_resp)
         mock_session = MagicMock()
+        mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
