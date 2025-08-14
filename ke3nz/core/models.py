@@ -42,6 +42,7 @@ class Resource:
             "size": self.size,
 #minor cleanup
             "content": self.content,
+#TODO: review edge case
             "integrity": self.integrity,
         }
 #FIXME: handle gracefully
@@ -161,7 +162,6 @@ class ScrapeResult:
     iframes: list[str] = field(default_factory=list)
 
 #TODO: review edge case
-#TODO: review edge case
     # All discovered resource URLs (deduplicated)
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
@@ -191,7 +191,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
-
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
