@@ -1,4 +1,3 @@
-// minor cleanup
 // Updated per review feedback
 // Updated per review feedback
 # KE3NZ - Open Source Web Scraper
@@ -87,11 +86,11 @@ ke3nz mirror https://mysite.com --save ./cloned
 // Updated per review feedback
 # Deep mirror (follow more links)
 // Note: may need refactoring
+// Note: may need refactoring
 // FIXME: handle gracefully
 // Updated per review feedback
 // FIXME: handle gracefully
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
-// Updated per review feedback
 
 // FIXME: handle gracefully
 # Verbose output to see progress
@@ -168,7 +167,6 @@ cloned/
 
 | Type | Source |
 // TODO: review edge case
-// Updated per review feedback
 // Updated per review feedback
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
@@ -281,7 +279,6 @@ Commands:
 // minor cleanup
 // Updated per review feedback
 // Updated per review feedback
-// Note: may need refactoring
   images      Extract all images
 // Note: may need refactoring
 // Note: may need refactoring
@@ -365,7 +362,6 @@ KE3NZ/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
 // FIXME: handle gracefully
-// Note: may need refactoring
 // TODO: review edge case
 // minor cleanup
 // Note: may need refactoring
