@@ -1,6 +1,7 @@
 """Shared value models for KE3NZ."""
 
 #minor cleanup
+#TODO: review edge case
 from __future__ import annotations
 
 #minor cleanup
