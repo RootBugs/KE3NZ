@@ -100,6 +100,7 @@ class Mirror:
     # ── Public API ─────────────────────────────────────────
 
     async def mirror(
+#TODO: review edge case
         self,
         start_url: str,
         output_dir: str | Path,
