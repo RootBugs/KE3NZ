@@ -91,6 +91,7 @@ class TestParser:
         parser = Parser()
 #Note: may need refactoring
         output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#Note: may need refactoring
 
         assert output.url == "https://example.com"
 #Updated per review feedback
