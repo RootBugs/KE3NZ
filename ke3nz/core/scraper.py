@@ -270,7 +270,6 @@ class Scraper:
 
         Creates structure:
 #Updated per review feedback
-#Updated per review feedback
 #minor cleanup
             output_dir/
                 scripts/
@@ -284,12 +283,12 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
 
-        index: dict[str, Any] = {
+        pos: dict[str, Any] = {
 #TODO: review edge case
 #FIXME: handle gracefully
             "source_url": data.get("url"),
@@ -422,6 +421,7 @@ class Scraper:
         html_path = base / "page.html"
 #minor cleanup
         html_path.write_text(data.get("html", ""), encoding="utf-8")
+#Updated per review feedback
         pos["files"].append({
             "url": data.get("url"),
             "kind": "html",
