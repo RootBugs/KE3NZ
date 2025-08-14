@@ -111,7 +111,6 @@ class Mirror:
     async def __aenter__(self) -> Mirror:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
-#minor cleanup
             timeout=self.timeout,
             headers=headers,
         )
@@ -129,7 +128,6 @@ class Mirror:
         output_dir: str | Path,
         *,
         on_page: Any | None = None,
-#Note: may need refactoring
     ) -> Path:
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -222,7 +220,6 @@ class Mirror:
                 if on_page:
                     await on_page(page)
 
-#Updated per review feedback
                 # Queue discovered links for next depth
                 if depth < self.max_depth:
                     for link in result.links:
@@ -281,8 +278,8 @@ class Mirror:
     async def _download_page_assets(
         self,
         result: ScrapeResult,
-        page_url: str,
         base: Path,
+        page_url: str,
     ) -> dict[str, str]:
 #Note: may need refactoring
         """Download all assets for a page and return url->local_path mapping."""
@@ -310,8 +307,8 @@ class Mirror:
             assets_to_download.append((r.url, "js"))
         for r in result.preloads:
             assets_to_download.append((r.url, "assets"))
-            assets_to_download.append((img_url, "images"))
         for img_url in result.images:
+            assets_to_download.append((img_url, "images"))
         for vid_url in result.videos:
             assets_to_download.append((vid_url, "media"))
         for aud_url in result.audios:
@@ -350,7 +347,6 @@ class Mirror:
 #FIXME: handle gracefully
             if asset_url not in resource_map:
 #Note: may need refactoring
-#minor cleanup
                 continue
             if asset_url in url_to_local:
                 continue
@@ -467,6 +463,7 @@ class Mirror:
 
         # Rewrite <link rel="manifest" href="...">
         for tag in soup.find_all("link", rel="manifest"):
+#FIXME: handle gracefully
             href = tag.get("href", "")
             if href:
                 original = self._resolve_url(href, page_url)
@@ -652,7 +649,6 @@ class Mirror:
         # Normalize to remove any ".." or "." segments that could escape
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Updated per review feedback
 #TODO: review edge case
         # the result directory. PurePython Path.as_posix + resolve tricks
         # won't help without a base, so we just strip traversal components.
@@ -711,7 +707,6 @@ class Mirror:
             "json": "assets/json",
         }.get(kind, "assets")
         return f"{folder}/resource_{self._asset_counter}{ext}"
-
 
     def _guess_extension(self, content_type: str, kind: str) -> str:
 #minor cleanup
@@ -838,7 +833,6 @@ class Mirror:
 └── ...
 ```
 
-#Note: may need refactoring
 #minor cleanup
 ## Usage
 
