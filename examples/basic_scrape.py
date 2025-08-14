@@ -98,6 +98,7 @@ async def main():
 #Updated per review feedback
         )
 #FIXME: handle gracefully
+
 #FIXME: handle gracefully
         print("\nSelector results:")
 #Updated per review feedback
