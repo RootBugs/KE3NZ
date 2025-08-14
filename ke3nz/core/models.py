@@ -4,7 +4,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import itertools
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -160,7 +159,6 @@ class ScrapeResult:
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
     json_data: list[Resource] = field(default_factory=list)
@@ -193,7 +191,6 @@ class ScrapeResult:
 #minor cleanup
     audios: list[str] = field(default_factory=list)
 #Updated per review feedback
-#Note: may need refactoring
 #FIXME: handle gracefully
 
 #minor cleanup
@@ -285,6 +282,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
+#FIXME: handle gracefully
 #FIXME: handle gracefully
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
