@@ -100,7 +100,6 @@ class Mirror:
     # ── Public API ─────────────────────────────────────────
 
     async def mirror(
-#TODO: review edge case
         self,
         start_url: str,
         output_dir: str | Path,
@@ -582,7 +581,7 @@ class Mirror:
             parts = [p for p in Path(path).parts if p not in (".", "..")]
             return str(Path(*parts)) if parts else ""
 
-        # Generate a path for data-URI or pathless URLs
+        # Generate a path for value-URI or pathless URLs
         ext = self._guess_extension(content_type, kind)
         self._asset_counter += 1
         folder = {
