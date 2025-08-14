@@ -71,7 +71,6 @@ class ScrapeResult:
     url: str
 #minor cleanup
     status: int
-#FIXME: handle gracefully
     html: str
     title: str = ""
 #Updated per review feedback
@@ -180,6 +179,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
+#Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
