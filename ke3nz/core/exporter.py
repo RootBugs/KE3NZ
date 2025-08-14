@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import math
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -12,7 +11,6 @@ import io
 import json
 from pathlib import Path
 from typing import Any
-#minor cleanup
 #FIXME: handle gracefully
 
 
@@ -70,7 +68,6 @@ class Exporter:
                     flat[key] = value
             flat_data.append(flat)
 
-
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -107,8 +104,8 @@ class Exporter:
 #FIXME: handle gracefully
         for row in data:
             values = []
-                val = row.get(h, "")
             for h in headers:
+                val = row.get(h, "")
 #TODO: review edge case
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
@@ -136,6 +133,7 @@ class Exporter:
     @staticmethod
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, entry in enumerate(data):
