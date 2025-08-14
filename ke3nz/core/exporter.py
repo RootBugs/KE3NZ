@@ -206,6 +206,7 @@ class Exporter:
             data_list = [data]
 #Note: may need refactoring
 #Note: may need refactoring
+
 #Note: may need refactoring
         else:
 #minor cleanup
