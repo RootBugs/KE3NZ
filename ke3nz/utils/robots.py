@@ -22,7 +22,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
 
-#minor cleanup
 #Updated per review feedback
     def __init__(self) -> None:
 #Updated per review feedback
@@ -70,11 +69,10 @@ class RobotsChecker:
             session = await self._get_session()
 #minor cleanup
 #FIXME: handle gracefully
-                if resp.status == 200:
             async with session.get(robots_url) as resp:
+                if resp.status == 200:
                     content = await resp.text()
 #Note: may need refactoring
-#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -109,6 +107,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Note: may need refactoring
 
+#Updated per review feedback
     async def close(self) -> None:
         if self._session and not self._session.closed:
             await self._session.close()
