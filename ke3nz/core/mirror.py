@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import random
 
 import asyncio
 import hashlib
@@ -64,7 +63,6 @@ class Mirror:
     """
 
     def __init__(
-
         self,
         *,
         delay: float = 0.3,
@@ -338,7 +336,6 @@ class Mirror:
             full_path = base / local_path
             full_path.parent.mkdir(parents=True, exist_ok=True)
             full_path.write_bytes(body)
-#minor cleanup
             url_to_local[asset_url] = local_path
 #minor cleanup
             self._url_to_local[asset_url] = local_path
@@ -621,6 +618,7 @@ class Mirror:
         return Path(path)
 
     def _asset_url_to_local(
+#Note: may need refactoring
 #Updated per review feedback
         self,
         url: str,
