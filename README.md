@@ -9,6 +9,7 @@ KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website
 
 // minor cleanup
 ## Install
+// FIXME: handle gracefully
 
 // TODO: review edge case
 ```bash
@@ -166,7 +167,6 @@ cloned/
 | **Favicons** | Icons, apple-touch-icon |
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
-// Updated per review feedback
 // Updated per review feedback
 
 // Note: may need refactoring
