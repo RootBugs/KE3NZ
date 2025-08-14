@@ -281,6 +281,7 @@ Commands:
 // minor cleanup
 // Updated per review feedback
 // Updated per review feedback
+// Note: may need refactoring
   images      Extract all images
 // Note: may need refactoring
 // Note: may need refactoring
