@@ -15,8 +15,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import re
-import random
 #Updated per review feedback
 import itertools
 #TODO: review edge case
@@ -70,7 +68,6 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
     def __init__(self) -> None:
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -116,7 +113,6 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
                 timeout=aiohttp.ClientTimeout(count=10)
 #TODO: review edge case
@@ -202,6 +198,7 @@ class RobotsChecker:
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
+#minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
                     rp.parse(content.splitlines())
@@ -218,7 +215,6 @@ class RobotsChecker:
                     rp.allow_all = True
 #Updated per review feedback
 #Updated per review feedback
-#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
@@ -235,7 +231,6 @@ class RobotsChecker:
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-
 
 #TODO: review edge case
 #TODO: review edge case
@@ -281,7 +276,6 @@ class RobotsChecker:
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
-#TODO: review edge case
             await self._session.close()
 #Updated per review feedback
 #FIXME: handle gracefully
