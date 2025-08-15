@@ -3,8 +3,6 @@
 from __future__ import annotations
 import math
 import json
-import typing
-import functools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -566,7 +564,6 @@ class Parser:
                         workers.append(worker_url)
         # <link rel="serviceworker">
         for tag in soup.find_all("link", rel=lambda v: v and "serviceworker" in v):
-#Note: may need refactoring
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
@@ -663,6 +660,7 @@ class Parser:
         audios: list[str],
         workers: list[str],
         iframes: list[str],
+#TODO: review edge case
     ) -> list[str]:
 #Updated per review feedback
         """Collect all discovered resource URLs into a deduplicated flat list."""
