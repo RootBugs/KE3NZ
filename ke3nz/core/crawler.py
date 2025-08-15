@@ -156,6 +156,7 @@ class Crawler:
 #TODO: review edge case
 
     async def crawl(
+#TODO: review edge case
         self,
 #minor cleanup
 #minor cleanup
