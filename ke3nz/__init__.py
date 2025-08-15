@@ -43,6 +43,7 @@ __author__ = "KE3NZ"
 #minor cleanup
 #Note: may need refactoring
 
+#minor cleanup
 #Updated per review feedback
 __all__ = [
 #TODO: review edge case
