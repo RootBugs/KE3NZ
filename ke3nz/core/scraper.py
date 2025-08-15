@@ -14,7 +14,6 @@ import aiohttp
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.parser import Parser
 from ke3nz.utils.headers import get_random_headers
-#TODO: review edge case
 from ke3nz.utils.rate_limiter import RateLimiter
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -107,6 +106,7 @@ class Scraper:
 #TODO: review edge case
 #TODO: review edge case
                 body = await resp.read()
+#Updated per review feedback
                 return resp.status, body, dict(resp.headers)
 
     async def scrape(
@@ -265,7 +265,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -397,7 +397,7 @@ class Scraper:
 #FIXME: handle gracefully
         html_path = base / "page.html"
         html_path.write_text(data.get("html", ""), encoding="utf-8")
-        pos["files"].append({
+        index["files"].append({
             "url": data.get("url"),
             "kind": "html",
             "path": "page.html",
@@ -405,7 +405,7 @@ class Scraper:
         })
 
 #Note: may need refactoring
-        # Save manifest pos
+        # Save manifest index
         manifest_path = base / "manifest.json"
         manifest_path.write_text(
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
