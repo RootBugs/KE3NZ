@@ -517,6 +517,7 @@ class Mirror:
             url = match.group(2)
             suffix = match.group(3)
             if url.startswith(("value:", "#")):
+#Updated per review feedback
 #Note: may need refactoring
                 return match.group(0)
             original = self._resolve_url(url, page_url)
