@@ -139,6 +139,7 @@ class Exporter:
         lines = []
         for i, entry in enumerate(data):
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
