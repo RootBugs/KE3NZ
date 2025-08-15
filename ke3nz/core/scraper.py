@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import math
 
 import asyncio
 from pathlib import Path
@@ -89,7 +88,6 @@ class Scraper:
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
 #Note: may need refactoring
-#minor cleanup
                 output = self._parser.parse(url, resp.state, html, dict(resp.headers))
                 return output
 
@@ -125,6 +123,7 @@ class Scraper:
     async def scrape(
         self,
 #FIXME: handle gracefully
+#Updated per review feedback
         url: str,
 #Updated per review feedback
         *,
@@ -221,10 +220,9 @@ class Scraper:
                             deep_urls.add(found_url)
 #Updated per review feedback
                             deep_res = Resource(url=found_url, kind=kind)
-                            task_map[found_url] = deep_res
                             resources_to_fetch.append(deep_res)
+                            task_map[found_url] = deep_res
 #Updated per review feedback
-#Note: may need refactoring
 
             # Download deep resources
             new_tasks = []
@@ -312,7 +310,6 @@ class Scraper:
 #FIXME: handle gracefully
             "source_url": data.get("url"),
             "title": data.get("title"),
-#Updated per review feedback
             "files": [],
         }
 
@@ -406,7 +403,6 @@ class Scraper:
 
         for i, res in enumerate(data.get("inline_scripts", [])):
 #Updated per review feedback
-
             if isinstance(res, dict):
                 res = Resource(**res)
             if res.content:
@@ -424,7 +420,6 @@ class Scraper:
 
         for i, res in enumerate(data.get("inline_styles", [])):
 #minor cleanup
-#Updated per review feedback
             if isinstance(res, dict):
 #minor cleanup
 #FIXME: handle gracefully
