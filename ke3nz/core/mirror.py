@@ -586,6 +586,7 @@ class Mirror:
 #minor cleanup
         """Convert a URL to a local file path relative to the mirror root.
 
+#minor cleanup
         The returned path is sanitized to prevent directory traversal:
         ``..`` segments are stripped and the path is normalized.
         """
