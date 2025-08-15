@@ -55,7 +55,6 @@ class Exporter:
         # Use first entry's keys as headers
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
-#FIXME: handle gracefully
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
         for row in data:
@@ -101,7 +100,6 @@ class Exporter:
     ) -> str:
         """Export data to a file.
 
-#minor cleanup
         Auto-detects format from file extension if fmt is not specified.
 
         Args:
@@ -110,6 +108,7 @@ class Exporter:
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 
         Returns:
+#minor cleanup
 #Note: may need refactoring
             The formatted string that was written.
         """
