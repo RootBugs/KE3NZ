@@ -2,7 +2,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import itertools
 
 #minor cleanup
 import argparse
@@ -461,7 +460,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         if args.verbose:
             indent = "  " * page.depth
 #Note: may need refactoring
-#Note: may need refactoring
             print(f"{indent}[{page.status}] {page.title or page.url}")
 
     if args.verbose:
@@ -513,6 +511,7 @@ def main() -> None:
 
 #TODO: review edge case
 #Note: may need refactoring
+#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
     try:
