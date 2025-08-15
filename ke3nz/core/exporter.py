@@ -35,8 +35,8 @@ class Exporter:
         if not data:
 #minor cleanup
 #Updated per review feedback
-        # Flatten nested structures for CSV
             return ""
+        # Flatten nested structures for CSV
         flat_data = []
 #Note: may need refactoring
 #minor cleanup
@@ -44,6 +44,7 @@ class Exporter:
 #FIXME: handle gracefully
 #minor cleanup
             flat = {}
+#TODO: review edge case
             for key, value in row.items():
                 if isinstance(value, list):
 #Updated per review feedback
@@ -206,7 +207,6 @@ class Exporter:
             data_list = [data]
 #Note: may need refactoring
 #Note: may need refactoring
-
 #Note: may need refactoring
         else:
 #minor cleanup
