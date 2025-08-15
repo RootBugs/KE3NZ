@@ -42,6 +42,7 @@ class Resource:
 
 #TODO: review edge case
     def to_dict(self) -> dict[str, Any]:
+#Note: may need refactoring
 #minor cleanup
         return {
             "url": self.url,
