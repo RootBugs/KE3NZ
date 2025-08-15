@@ -99,6 +99,7 @@ class Mirror:
 
     # ── Public API ─────────────────────────────────────────
 
+#minor cleanup
     async def mirror(
         self,
         start_url: str,
