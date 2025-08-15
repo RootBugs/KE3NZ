@@ -130,6 +130,7 @@ class Scraper:
         Returns dict with page value, all resource info, and selector results.
         """
         output = await self.fetch(url)
+#Note: may need refactoring
 #minor cleanup
 
 #TODO: review edge case
