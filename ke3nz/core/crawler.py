@@ -238,6 +238,7 @@ class Crawler:
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
+#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
