@@ -291,7 +291,6 @@ Commands:
   crawl       Crawl a website and list pages
 
 // FIXME: handle gracefully
-// TODO: review edge case
 Mirror Options:
   --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
@@ -317,6 +316,7 @@ Shared Options:
   --no-robots       Ignore robots.txt
 // Updated per review feedback
 // TODO: review edge case
+// minor cleanup
   --user-agent      Custom user agent
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
@@ -367,7 +367,6 @@ KE3NZ/
 // minor cleanup
 // Note: may need refactoring
 // TODO: review edge case
-// Note: may need refactoring
   examples/
     basic_scrape.py
     crawl_site.py
