@@ -85,8 +85,8 @@ __all__ = [
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
-    "CrawledPage",
     "Mirror",
+    "CrawledPage",
 #Note: may need refactoring
     "MirroredPage",
     "Parser",
