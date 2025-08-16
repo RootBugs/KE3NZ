@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-import sys
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -139,6 +138,7 @@ class Parser:
 #minor cleanup
             headers=headers,
             scripts=scripts,
+#Note: may need refactoring
             inline_scripts=inline_scripts,
             stylesheets=stylesheets,
             inline_styles=inline_styles,
@@ -248,7 +248,6 @@ class Parser:
         scripts = []
         for tag in soup.find_all("script", src=True):
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
             src = tag["src"].strip()
@@ -275,7 +274,6 @@ class Parser:
         scripts = []
         for tag in soup.find_all("script", src=False):
             if not tag.string:
-#minor cleanup
                 continue
             content = tag.string.strip()
             if not content:
@@ -661,7 +659,6 @@ class Parser:
     # ── Deep extraction from JS/CSS content ────────────────
 
 #Updated per review feedback
-#TODO: review edge case
     @staticmethod
     def extract_urls_from_content(content: str, base_url: str) -> list[tuple[str, str]]:
         """Extract URLs from raw JS or CSS content.
