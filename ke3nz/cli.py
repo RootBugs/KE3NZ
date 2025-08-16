@@ -46,6 +46,7 @@ examples:
 #FIXME: handle gracefully
     shared.add_argument("--delay", type=float, default=0.3, help="Delay between requests (seconds)")
 #Updated per review feedback
+#Note: may need refactoring
     shared.add_argument("--concurrency", "-c", type=int, default=10, help="Max concurrent requests")
     shared.add_argument("--proxy", type=str, default=None, help="HTTP proxy URL")
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
@@ -287,7 +288,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
-#Updated per review feedback
     ) as s:
         if args.verbose:
             print(f"Scraping {args.url}...")
@@ -303,7 +303,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"  Images: {len(result['images'])}")
 
 #TODO: review edge case
-#Note: may need refactoring
 #FIXME: handle gracefully
         _output(result, args.output, args.format)
 #TODO: review edge case
