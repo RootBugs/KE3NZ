@@ -200,6 +200,7 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+#Updated per review feedback
         assert len(result.all_resource_urls) > 10
         assert "https://example.com/scripts/app.js" in result.all_resource_urls
         assert "https://example.com/styles/main.css" in result.all_resource_urls
