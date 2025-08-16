@@ -135,7 +135,6 @@ class Crawler:
         Returns:
 #TODO: review edge case
             List of all crawled pages.
-#TODO: review edge case
         """
 #Updated per review feedback
         self._visited.clear()
@@ -205,11 +204,11 @@ class Crawler:
                     meta=output.meta,
 #Note: may need refactoring
                 )
+#minor cleanup
                 pages.append(page)
 
                 if on_page:
 #Note: may need refactoring
-#TODO: review edge case
                     await on_page(page)
 #TODO: review edge case
 
@@ -238,7 +237,6 @@ class Crawler:
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
-#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
