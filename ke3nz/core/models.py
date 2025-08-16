@@ -1,7 +1,6 @@
-"""Shared value models for KE3NZ."""
+"""Shared data models for KE3NZ."""
 
 #minor cleanup
-#TODO: review edge case
 from __future__ import annotations
 
 #minor cleanup
@@ -92,7 +91,7 @@ class ScrapeResult:
 #Updated per review feedback
     sourcemaps: list[Resource] = field(default_factory=list)
 
-    # Config / value
+    # Config / data
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -177,7 +176,6 @@ class ScrapeResult:
             "prefetches": self.prefetches,
 #Note: may need refactoring
 #FIXME: handle gracefully
-#TODO: review edge case
             "workers": self.workers,
 #minor cleanup
 #TODO: review edge case
