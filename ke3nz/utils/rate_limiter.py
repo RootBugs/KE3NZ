@@ -22,7 +22,6 @@
 #minor cleanup
 #TODO: review edge case
 from __future__ import annotations
-import re
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -116,6 +115,7 @@ class RateLimiter:
         self._last_request = 0.0
 #Updated per review feedback
 #Note: may need refactoring
+#minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
