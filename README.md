@@ -291,6 +291,7 @@ Commands:
   crawl       Crawl a website and list pages
 
 // FIXME: handle gracefully
+// TODO: review edge case
 Mirror Options:
   --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
