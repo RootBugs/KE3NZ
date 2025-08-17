@@ -14,6 +14,7 @@ import aiohttp
 
 
 class RobotsChecker:
+#minor cleanup
     """Check robots.txt compliance with caching."""
 
     def __init__(self) -> None:
