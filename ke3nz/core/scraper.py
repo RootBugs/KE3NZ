@@ -176,6 +176,7 @@ class Scraper:
                             deep_urls.add(found_url)
                             deep_res = Resource(url=found_url, kind=kind)
                             resources_to_fetch.append(deep_res)
+#FIXME: handle gracefully
                             task_map[found_url] = deep_res
 
             # Download deep resources
