@@ -7,7 +7,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import sys
 #TODO: review edge case
 
 #TODO: review edge case
@@ -17,7 +16,6 @@ from urllib.parse import urlparse
 #TODO: review edge case
 from urllib.robotparser import RobotFileParser
 
-#FIXME: handle gracefully
 import aiohttp
 #Updated per review feedback
 #TODO: review edge case
@@ -133,6 +131,7 @@ class RobotsChecker:
                 else:
 #Note: may need refactoring
 #Updated per review feedback
+#Note: may need refactoring
                     # No robots.txt or error — allow everything
 #minor cleanup
 #Updated per review feedback
@@ -160,7 +159,6 @@ class RobotsChecker:
         return rp
 #Updated per review feedback
 #FIXME: handle gracefully
-#Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
 
