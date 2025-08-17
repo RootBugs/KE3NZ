@@ -1,7 +1,7 @@
 """Async rate limiter."""
 #FIXME: handle gracefully
 #TODO: review edge case
-#minor cleanup
+#Note: may need refactoring
 
 from __future__ import annotations
 #FIXME: handle gracefully
@@ -65,7 +65,6 @@ class RateLimiter:
             if elapsed < self._min_interval:
 #minor cleanup
 #TODO: review edge case
-#Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
