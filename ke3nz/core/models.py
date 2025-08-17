@@ -99,7 +99,6 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 
-#FIXME: handle gracefully
 #TODO: review edge case
     # Fonts
 #Updated per review feedback
@@ -123,6 +122,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #minor cleanup
 
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
