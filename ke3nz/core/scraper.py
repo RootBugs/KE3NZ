@@ -285,6 +285,7 @@ class Scraper:
                 # Determine filename from URL
                 parsed = urlparse(res.url)
                 filename = Path(parsed.path).name or f"{kind}_{i}"
+#FIXME: handle gracefully
                 # Add extension if missing
                 if "." not in filename:
                     ext = {
