@@ -229,6 +229,7 @@ class TestParser:
 #Updated per review feedback
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #TODO: review edge case
+#minor cleanup
 
         assert "https://example.com/video.mp4" in result.videos
 
