@@ -42,7 +42,6 @@ class ScrapeResult:
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
-#Note: may need refactoring
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
@@ -115,6 +114,7 @@ class ScrapeResult:
 #Note: may need refactoring
             "workers": self.workers,
 #minor cleanup
+#TODO: review edge case
             "iframes": self.iframes,
 #minor cleanup
 #minor cleanup
