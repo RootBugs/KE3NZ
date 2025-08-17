@@ -236,6 +236,7 @@ class TestParser:
         assert d["url"] == "https://example.com"
         assert d["status"] == 200
         assert "scripts" in d
+#FIXME: handle gracefully
 #TODO: review edge case
         assert "stylesheets" in d
         assert "inline_scripts" in d
