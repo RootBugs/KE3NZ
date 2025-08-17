@@ -17,7 +17,6 @@ from ke3nz.utils.rate_limiter import RateLimiter
 #FIXME: handle gracefully
 from ke3nz.utils.robots import RobotsChecker
 
-#FIXME: handle gracefully
 #Updated per review feedback
 
 class Scraper:
@@ -156,12 +155,11 @@ class Scraper:
         resources_to_fetch.extend(output.stylesheets)
         resources_to_fetch.extend(output.fonts)
         resources_to_fetch.extend(output.json_data)
-        resources_to_fetch.extend(output.configs)
-        resources_to_fetch.extend(output.sourcemaps)
+        resources_to_fetch.extend(result.configs)
+        resources_to_fetch.extend(result.sourcemaps)
 
         if not download_content:
             return result.to_dict()
-#Updated per review feedback
 
         # Download all resources concurrently
         download_tasks = []
@@ -177,7 +175,6 @@ class Scraper:
         await asyncio.gather(*download_tasks, return_exceptions=True)
 #minor cleanup
 
-#minor cleanup
         # Deep extraction: find URLs inside downloaded JS/CSS
         if follow_deep:
             deep_urls = set()
@@ -204,7 +201,6 @@ class Scraper:
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
 
-#minor cleanup
 #Note: may need refactoring
         # Update result with downloaded content
         result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
@@ -253,7 +249,7 @@ class Scraper:
                 inline/
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -332,7 +328,7 @@ class Scraper:
                     filepath.write_bytes(res.content if isinstance(res.content, bytes) else res.content.encode("utf-8"))
                 else:
                     filepath.write_text(res.content, encoding="utf-8")
-                index["files"].append({
+                pos["files"].append({
                     "url": res.url,
                     "kind": kind,
                     "path": str(filepath.relative_to(base)),
@@ -342,15 +338,14 @@ class Scraper:
 #TODO: review edge case
                 })
 
-        inline_dir = base / "inline"
         # Save inline scripts/styles
+        inline_dir = base / "inline"
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
             if isinstance(res, dict):
                 res = Resource(**res)
             if res.content:
-#Note: may need refactoring
                 filepath = inline_dir / f"script_{i}.js"
                 filepath.write_text(res.content, encoding="utf-8")
                 index["files"].append({
@@ -395,4 +390,3 @@ class Scraper:
         )
 
         return base
-#FIXME: handle gracefully
