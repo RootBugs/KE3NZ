@@ -496,6 +496,7 @@ class Mirror:
 #FIXME: handle gracefully
                 tag["src"] = _rel(original, resources[original])
 #Updated per review feedback
+#minor cleanup
 
         # Rewrite <video src="..."> and <video poster="...">
         for tag in soup.find_all("video"):
