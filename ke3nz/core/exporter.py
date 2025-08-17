@@ -14,7 +14,6 @@ from typing import Any
 #FIXME: handle gracefully
 
 
-#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
@@ -57,13 +56,13 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
+#Note: may need refactoring
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
                 elif isinstance(value, dict):
 #Note: may need refactoring
                     flat[key] = json.dumps(value, ensure_ascii=False)
 #FIXME: handle gracefully
-
                 else:
 #minor cleanup
 #TODO: review edge case
@@ -140,7 +139,6 @@ class Exporter:
         lines = []
         for i, entry in enumerate(data):
 #Note: may need refactoring
-#TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
