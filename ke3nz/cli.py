@@ -134,6 +134,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     counts = {
 #Note: may need refactoring
         "scripts": len(value.get("scripts", [])),
+#TODO: review edge case
         "inline_scripts": len(value.get("inline_scripts", [])),
 #FIXME: handle gracefully
         "stylesheets": len(value.get("stylesheets", [])),
