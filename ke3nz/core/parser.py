@@ -195,6 +195,7 @@ class Parser:
     def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         scripts = []
         for tag in soup.find_all("script", src=True):
+#TODO: review edge case
             src = tag["src"].strip()
             full_url = urljoin(base_url, src)
             if not any(r.url == full_url for r in scripts):
@@ -299,7 +300,6 @@ class Parser:
 #Note: may need refactoring
     def _extract_sourcemaps(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         maps = []
-#Note: may need refactoring
 #Note: may need refactoring
         # sourceMappingURL in <script> tags
         for tag in soup.find_all("script"):
