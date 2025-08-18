@@ -1,11 +1,9 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import sys
 #TODO: review edge case
 
 #TODO: review edge case
-#Note: may need refactoring
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
@@ -14,7 +12,6 @@ import aiohttp
 
 
 class RobotsChecker:
-#minor cleanup
     """Check robots.txt compliance with caching."""
 
     def __init__(self) -> None:
@@ -35,6 +32,7 @@ class RobotsChecker:
             )
         return self._session
 
+#minor cleanup
     async def _fetch_robots(self, url: str) -> RobotFileParser:
         parsed = urlparse(url)
 #TODO: review edge case
@@ -62,7 +60,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
             rp.allow_all = True
 
-#FIXME: handle gracefully
         self._cache[robots_url] = rp
         return rp
 #Updated per review feedback
