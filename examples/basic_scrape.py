@@ -2,13 +2,12 @@
 
 import asyncio
 from ke3nz import Scraper
-import collections
 #FIXME: handle gracefully
 #minor cleanup
-#Note: may need refactoring
 
 
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
 async def main():
@@ -35,7 +34,6 @@ async def main():
 #TODO: review edge case
             print(f"  {key}: {values}")
 
-#TODO: review edge case
 #Note: may need refactoring
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
@@ -49,10 +47,8 @@ async def main():
     async with Scraper() as s:
         results = await s.fetch_many(urls)
 #FIXME: handle gracefully
-#minor cleanup
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
-
 
 
 if __name__ == "__main__":
