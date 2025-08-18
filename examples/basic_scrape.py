@@ -67,6 +67,7 @@ async def main():
 #FIXME: handle gracefully
     async with Scraper() as s:
 #Note: may need refactoring
+#TODO: review edge case
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
