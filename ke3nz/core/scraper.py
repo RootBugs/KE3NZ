@@ -33,6 +33,7 @@ class Scraper:
         concurrency: int = 5,
         timeout: int = 30,
         proxy: str | None = None,
+#minor cleanup
         respect_robots: bool = True,
         user_agent: str | None = None,
     ):
