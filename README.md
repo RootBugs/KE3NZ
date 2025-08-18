@@ -6,7 +6,6 @@ KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website
 
 ## Install
 
-// FIXME: handle gracefully
 ```bash
 cd KE3NZ
 pip install -e .
@@ -23,7 +22,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./result --deep
+ke3nz resources https://example.com --save ./output --deep
 ```
 
 ## Commands
@@ -58,7 +57,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-# Verbose result to see progress
+# Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 # Fast mirror with high concurrency
@@ -160,8 +159,8 @@ ke3nz <command> [options] <url>
 Commands:
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
-  links       Extract all links
   scrape      Scrape a page (basic info)
+  links       Extract all links
   images      Extract all images
   text        Extract text content
   meta        Extract page metadata
