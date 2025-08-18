@@ -13,7 +13,6 @@ import asyncio
 import time
 
 
-
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
@@ -32,7 +31,6 @@ class RateLimiter:
     Args:
 
 #minor cleanup
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -101,13 +99,13 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
             if elapsed < self._min_interval:
+#Updated per review feedback
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
-#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
