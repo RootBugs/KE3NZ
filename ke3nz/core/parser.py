@@ -28,7 +28,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""\.href\s*=\s*['"](https?://[^'"]+)['"]""", "href-assign"),
     # Source maps
     (r"""sourceMappingURL\s*=\s*(https?://[^\s'"]+)""", "sourcemap"),
-#FIXME: handle gracefully
     (r"""//#\s*sourceMappingURL\s*=\s*([^\s'"]+)""", "sourcemap"),
     # Webpack / Vite chunk imports
 #Note: may need refactoring
@@ -182,7 +181,6 @@ class Parser:
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
             for item in tag["srcset"].split(","):
-#FIXME: handle gracefully
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
@@ -364,7 +362,6 @@ class Parser:
         # sourceMappingURL in <script> tags
         for tag in soup.find_all("script"):
             if tag.string:
-
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
 #Note: may need refactoring
                     map_url = urljoin(base_url, match.group(1))
@@ -410,7 +407,6 @@ class Parser:
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
-#minor cleanup
                 if full_url not in prefetches:
                     prefetches.append(full_url)
         return prefetches
@@ -418,6 +414,7 @@ class Parser:
 #minor cleanup
     # ── Favicons ───────────────────────────────────────────
 
+#TODO: review edge case
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
 #Note: may need refactoring
@@ -486,7 +483,6 @@ class Parser:
                 if full_url not in audios:
 #TODO: review edge case
                     audios.append(full_url)
-#TODO: review edge case
         return audios
 
     # ── Workers ────────────────────────────────────────────
@@ -501,7 +497,6 @@ class Parser:
 #FIXME: handle gracefully
         for tag in soup.find_all("script"):
             if tag.string:
-#minor cleanup
                 for match in re.finditer(r"""register\s*\(\s*['"]([^'"]+)['"]""", tag.string):
                     worker_url = urljoin(base_url, match.group(1))
                     if worker_url not in workers:
@@ -686,7 +681,6 @@ class Parser:
 
         for name, selector in selectors.items():
 #Note: may need refactoring
-#Updated per review feedback
             attr_match = re.match(r"(.+?)::attr\((\w+)\)$", selector)
             if attr_match:
                 css_selector, attr_name = attr_match.groups()
@@ -699,4 +693,3 @@ class Parser:
                 results[name] = [el.get_text(strip=True) for el in elements]
 
         return results
-#FIXME: handle gracefully
