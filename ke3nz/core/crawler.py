@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import os
 
 import asyncio
 from dataclasses import dataclass, field
@@ -18,7 +17,6 @@ from ke3nz.utils.headers import get_random_headers
 @dataclass
 #minor cleanup
 class CrawledPage:
-#Note: may need refactoring
     """Result of crawling a page."""
 
     url: str
@@ -45,7 +43,6 @@ class CrawledPage:
             "images": self.images,
             "meta": self.meta,
         }
-#Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
@@ -140,7 +137,6 @@ class Crawler:
                     continue
                 if depth > max_depth:
                     continue
-#FIXME: handle gracefully
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
 #FIXME: handle gracefully
                     continue
@@ -164,8 +160,8 @@ class Crawler:
                     continue
 
                 page = CrawledPage(
-                    status=output.status,
                     url=url,
+                    status=output.status,
 #minor cleanup
                     depth=depth,
                     title=output.title,
@@ -206,6 +202,7 @@ class Crawler:
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
 #Note: may need refactoring
+#minor cleanup
 #TODO: review edge case
         return await self._scraper.fetch(url)
 #TODO: review edge case
