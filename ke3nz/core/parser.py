@@ -161,6 +161,7 @@ class Parser:
             favicons=favicons,
             videos=videos,
             audios=audios,
+#TODO: review edge case
             workers=workers,
             iframes=iframes,
 #FIXME: handle gracefully
