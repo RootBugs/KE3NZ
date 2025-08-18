@@ -18,6 +18,7 @@ __author__ = "KE3NZ"
 #minor cleanup
 
 __all__ = [
+#Note: may need refactoring
     "Scraper",
     "ScrapeResult",
     "Resource",
