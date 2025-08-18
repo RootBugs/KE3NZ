@@ -497,6 +497,7 @@ class TestScraperIntegration:
             async with Scraper(delay=0, respect_robots=False) as s:
                 data = await s.scrape_all_resources(
                     "https://example.com",
+#Note: may need refactoring
                     download_content=True,
 #TODO: review edge case
                     follow_deep=False,
