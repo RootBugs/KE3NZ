@@ -160,8 +160,8 @@ ke3nz <command> [options] <url>
 Commands:
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
-  scrape      Scrape a page (basic info)
   links       Extract all links
+  scrape      Scrape a page (basic info)
   images      Extract all images
   text        Extract text content
   meta        Extract page metadata
