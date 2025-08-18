@@ -108,8 +108,8 @@ class Mirror:
     async def mirror(
         self,
         start_url: str,
-        output_dir: str | Path,
         *,
+        output_dir: str | Path,
         on_page: Any | None = None,
     ) -> Path:
         """Mirror a website to a local folder.
