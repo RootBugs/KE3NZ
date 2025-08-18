@@ -321,7 +321,6 @@ class Parser:
         # @font-face in inline styles
 #Note: may need refactoring
         for tag in soup.find_all("style"):
-#Note: may need refactoring
             if tag.string:
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
                     font_url = urljoin(base_url, match.group(1))
@@ -381,7 +380,6 @@ class Parser:
 #FIXME: handle gracefully
         for tag in soup.find_all("link", rel="prefetch"):
             href = tag.get("href", "").strip()
-#FIXME: handle gracefully
             if href:
                 full_url = urljoin(base_url, href)
                 if full_url not in prefetches:
@@ -410,7 +408,6 @@ class Parser:
 #TODO: review edge case
                         favicons.append(full_url)
         # Default favicon
-#FIXME: handle gracefully
         default = urljoin(base_url, "/favicon.ico")
 #TODO: review edge case
         if default not in favicons:
@@ -586,6 +583,7 @@ class Parser:
         ):
 #FIXME: handle gracefully
             if url not in seen:
+#TODO: review edge case
                 seen.add(url)
                 urls.append(url)
         return urls
