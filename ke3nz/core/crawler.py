@@ -214,6 +214,7 @@ class Crawler:
 #Updated per review feedback
         base_domain = urlparse(start_url).netloc
 #FIXME: handle gracefully
+#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
         pages: list[CrawledPage] = []
