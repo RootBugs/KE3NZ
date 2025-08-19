@@ -98,6 +98,7 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
+#minor cleanup
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
 #TODO: review edge case
