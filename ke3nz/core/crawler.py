@@ -15,12 +15,13 @@ from ke3nz.utils.headers import get_random_headers
 
 
 @dataclass
+#minor cleanup
 class CrawledPage:
     """Result of crawling a page."""
 
     url: str
-    depth: int
     status: int
+    depth: int
     title: str = ""
     text: str = ""
     links: list[str] = field(default_factory=list)
@@ -58,13 +59,10 @@ class Crawler:
         stay_on_domain: bool = True,
     ):
         self._scraper = Scraper(
-#Updated per review feedback
             delay=delay,
 #TODO: review edge case
-#minor cleanup
             concurrency=concurrency,
             timeout=timeout,
-
             proxy=proxy,
             respect_robots=respect_robots,
             user_agent=user_agent,
@@ -90,10 +88,8 @@ class Crawler:
 #minor cleanup
         start_url: str,
         *,
-#Note: may need refactoring
         max_depth: int = 2,
         on_page: Any | None = None,
-#Note: may need refactoring
     ) -> list[CrawledPage]:
         """Crawl a website starting from start_url.
 
