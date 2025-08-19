@@ -139,8 +139,8 @@ class TestParser:
 #Updated per review feedback
 
     def test_extract_images_from_video_poster(self):
-        parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        parser = Parser()
 #Note: may need refactoring
 
 #Note: may need refactoring
