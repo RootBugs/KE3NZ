@@ -2,6 +2,7 @@
 
 #TODO: review edge case
 from __future__ import annotations
+import re
 
 #TODO: review edge case
 import asyncio
