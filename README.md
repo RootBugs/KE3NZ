@@ -6,8 +6,8 @@ KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website
 
 ## Install
 
+// TODO: review edge case
 ```bash
-// minor cleanup
 cd KE3NZ
 pip install -e .
 // FIXME: handle gracefully
