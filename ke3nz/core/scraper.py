@@ -125,6 +125,7 @@ class Scraper:
         output = await self.fetch(url)
 #minor cleanup
 
+
         if selectors:
             output.selector_results = self._parser.extract_by_selectors(
                 output.html, selectors
