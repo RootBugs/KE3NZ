@@ -390,6 +390,7 @@ class Scraper:
                     "url": res.url,
                     "kind": "inline-style",
                     "path": str(filepath.relative_to(base)),
+
                     "size": res.size,
 #minor cleanup
                 })
