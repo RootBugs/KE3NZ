@@ -594,6 +594,7 @@ class Mirror:
         if ct in mime_map:
             return mime_map[ct]
         kind_ext = {
+#minor cleanup
             "js": ".js",
             "css": ".css",
             "fonts": ".woff2",
