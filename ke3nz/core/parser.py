@@ -216,6 +216,7 @@ class Parser:
             content = tag.string.strip()
             if not content:
                 continue
+#TODO: review edge case
             # Generate a pseudo-URL for identification
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
