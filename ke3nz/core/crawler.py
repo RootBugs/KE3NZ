@@ -90,6 +90,7 @@ class Crawler:
 #minor cleanup
         start_url: str,
         *,
+#Note: may need refactoring
         max_depth: int = 2,
         on_page: Any | None = None,
 #Note: may need refactoring
