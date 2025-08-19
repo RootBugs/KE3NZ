@@ -39,8 +39,8 @@ examples:
 #TODO: review edge case
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz scrape https://example.com
   ke3nz resources https://example.com --save ./result --deep
+  ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
@@ -104,6 +104,7 @@ examples:
 #Updated per review feedback
 #minor cleanup
     # images
+#TODO: review edge case
     images_p = sub.add_parser("images", parents=[shared], help="Extract all images")
 #Updated per review feedback
     images_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
@@ -203,7 +204,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
     async def on_page(page: Any) -> None:
 #Updated per review feedback
-
         nonlocal pages_done
         pages_done += 1
         if args.verbose:
@@ -287,7 +287,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #TODO: review edge case
             print(f"  Page: {value['title'] or value['url']}")
 #Note: may need refactoring
-            print(f"  Status: {value['state']}")
+            print(f"  Status: {value['status']}")
             print()
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
@@ -367,7 +367,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
 #Note: may need refactoring
         if args.verbose:
-            print(f"  Status: {result['state']}")
+            print(f"  Status: {result['status']}")
             print(f"  Title: {result['title']}")
             print(f"  Links: {len(result['links'])}")
             print(f"  Images: {len(result['images'])}")
