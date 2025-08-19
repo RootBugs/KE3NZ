@@ -39,7 +39,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
 #minor cleanup
 #minor cleanup
 #minor cleanup
@@ -85,7 +85,7 @@ SAMPLE_HTML = """
     <script>
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
-        fetch('https://api.example.com/value');
+        fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
@@ -104,7 +104,6 @@ class TestParser:
 #Updated per review feedback
         assert output.status == 200
 #minor cleanup
-#TODO: review edge case
         assert result.title == "Test Page"
 #Note: may need refactoring
         assert "Hello World" in result.text
@@ -139,8 +138,8 @@ class TestParser:
 #Updated per review feedback
 
     def test_extract_images_from_video_poster(self):
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #Note: may need refactoring
 
 #Note: may need refactoring
@@ -276,6 +275,7 @@ class TestParser:
 #Updated per review feedback
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #TODO: review edge case
+#TODO: review edge case
 #minor cleanup
 
         assert "https://example.com/video.mp4" in result.videos
@@ -365,7 +365,7 @@ class TestParser:
         js = """
 #FIXME: handle gracefully
         import { foo } from 'https://cdn.example.com/lib.js';
-        fetch('https://api.example.com/value');
+        fetch('https://api.example.com/data');
 #Note: may need refactoring
 #TODO: review edge case
         const worker = new Worker('/worker.js');
