@@ -17,20 +17,16 @@
 #TODO: review edge case
 #FIXME: handle gracefully
 import asyncio
-import pathlib
-#TODO: review edge case
 from ke3nz import Crawler
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
 
-#minor cleanup
 #Updated per review feedback
 async def main():
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
@@ -61,13 +57,13 @@ async def main():
 #Note: may need refactoring
         indent = "  " * page.depth
         print(f"{indent}[{page.status}] {page.title or page.url}")
+#minor cleanup
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
 
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
-#Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
