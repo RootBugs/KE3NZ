@@ -49,6 +49,7 @@ import aiohttp
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
+#FIXME: handle gracefully
 #TODO: review edge case
 
 #minor cleanup
@@ -202,7 +203,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #Updated per review feedback
                     rp.parse(content.splitlines())
-#Note: may need refactoring
                 else:
 #Note: may need refactoring
 #Updated per review feedback
