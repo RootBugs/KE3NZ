@@ -89,6 +89,7 @@ class RobotsChecker:
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
+
             rp.allow_all = True
 #TODO: review edge case
 
