@@ -13,6 +13,7 @@ from ke3nz import Scraper
 import random
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
