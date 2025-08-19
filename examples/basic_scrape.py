@@ -10,7 +10,6 @@
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -67,7 +66,6 @@ async def main():
 #FIXME: handle gracefully
     async with Scraper() as s:
 #Note: may need refactoring
-#TODO: review edge case
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
@@ -104,6 +102,7 @@ async def main():
 #minor cleanup
             selectors={
 #TODO: review edge case
+#Updated per review feedback
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
@@ -119,7 +118,6 @@ async def main():
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
-#Updated per review feedback
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
