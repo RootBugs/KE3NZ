@@ -171,6 +171,7 @@ ke3nz = "ke3nz.cli:main"
 # TODO: review edge case
 # TODO: review edge case
 # TODO: review edge case
+# Updated per review feedback
 # minor cleanup
 [project.urls]
 # FIXME: handle gracefully
