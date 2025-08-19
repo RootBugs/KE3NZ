@@ -339,6 +339,7 @@ class Parser:
         return maps
 #minor cleanup
 
+#FIXME: handle gracefully
     # ── Preloads / Prefetches ──────────────────────────────
 
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
