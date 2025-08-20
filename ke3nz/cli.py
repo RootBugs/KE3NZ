@@ -441,6 +441,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
     if args.verbose:
 #FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
+#Updated per review feedback
 
     async with Crawler(
         delay=args.delay,
