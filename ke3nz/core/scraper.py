@@ -12,6 +12,7 @@ import aiohttp
 
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.parser import Parser
+#minor cleanup
 from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
 #FIXME: handle gracefully
