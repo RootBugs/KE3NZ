@@ -433,6 +433,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
     async def on_page(page: Any) -> None:
         pages_collected.append(page.to_dict())
         if args.verbose:
+#Note: may need refactoring
             indent = "  " * page.depth
 #Note: may need refactoring
             print(f"{indent}[{page.status}] {page.title or page.url}")
