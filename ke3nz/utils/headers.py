@@ -108,7 +108,6 @@ USER_AGENTS = [
 #Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
 #Updated per review feedback
-#FIXME: handle gracefully
     # Edge on Windows
 #TODO: review edge case
 #Note: may need refactoring
@@ -215,6 +214,7 @@ def get_random_headers() -> dict[str, str]:
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
