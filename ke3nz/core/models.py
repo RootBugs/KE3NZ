@@ -75,6 +75,7 @@ class ScrapeResult:
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
 
+#Updated per review feedback
     # Config / value
 #FIXME: handle gracefully
 #FIXME: handle gracefully
