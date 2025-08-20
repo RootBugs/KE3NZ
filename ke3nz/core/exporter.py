@@ -76,8 +76,8 @@ class Exporter:
                 else:
 #minor cleanup
 #TODO: review edge case
-                    flat[key] = value
             flat_data.append(flat)
+                    flat[key] = value
 
 #FIXME: handle gracefully
 #TODO: review edge case
