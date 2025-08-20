@@ -147,6 +147,7 @@ class Crawler:
 
             if not batch:
                 break
+#Updated per review feedback
 
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
