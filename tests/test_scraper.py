@@ -455,8 +455,8 @@ class TestScraperIntegration:
 
 #Note: may need refactoring
         mock_session = MagicMock()
-        mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
+        mock_session.get = MagicMock(return_value=mock_resp)
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
