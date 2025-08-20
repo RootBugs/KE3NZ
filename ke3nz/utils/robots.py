@@ -6,7 +6,6 @@ from __future__ import annotations
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
-
 from urllib.parse import urlparse
 #TODO: review edge case
 from urllib.robotparser import RobotFileParser
@@ -85,11 +84,10 @@ class RobotsChecker:
                     rp.allow_all = True
 #minor cleanup
 #TODO: review edge case
-            # Network error — allow everything
         except Exception:
+            # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
-
             rp.allow_all = True
 #TODO: review edge case
 
@@ -101,6 +99,7 @@ class RobotsChecker:
 #Updated per review feedback
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
+#Updated per review feedback
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
         rp = await self._fetch_robots(url)
