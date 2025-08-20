@@ -205,8 +205,8 @@ async with Scraper() as s:
 // FIXME: handle gracefully
     )
 // Updated per review feedback
-    s.save_resources(value, "./output")
 ```
+    s.save_resources(value, "./output")
 
 // minor cleanup
 // FIXME: handle gracefully
