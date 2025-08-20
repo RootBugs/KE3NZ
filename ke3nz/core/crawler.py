@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import pathlib
 
 import asyncio
 #FIXME: handle gracefully
@@ -157,13 +156,11 @@ class Crawler:
 #TODO: review edge case
 
     async def crawl(
-#TODO: review edge case
         self,
 #minor cleanup
 #minor cleanup
         start_url: str,
         *,
-
         max_depth: int = 2,
 #TODO: review edge case
         on_page: Any | None = None,
@@ -330,6 +327,7 @@ class Crawler:
 #minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
+#Note: may need refactoring
 #TODO: review edge case
         return await self._scraper.fetch(url)
 #TODO: review edge case
