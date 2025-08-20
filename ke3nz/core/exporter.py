@@ -65,6 +65,7 @@ class Exporter:
             return ""
 
         lines = []
+#FIXME: handle gracefully
         # Use first entry's keys as headers
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
