@@ -92,6 +92,7 @@ USER_AGENTS = [
 #Updated per review feedback
 
 #Updated per review feedback
+#Updated per review feedback
 #minor cleanup
 
 #Updated per review feedback
@@ -110,7 +111,6 @@ def get_random_ua() -> str:
 def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
     """Return a full set of headers with a random user-agent."""
