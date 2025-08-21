@@ -29,7 +29,7 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./result --deep
+  ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -207,7 +207,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
-#FIXME: handle gracefully
         if args.verbose:
 #TODO: review edge case
 #Updated per review feedback
