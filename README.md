@@ -114,6 +114,7 @@ cloned/
       inter.woff2
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource index
+// TODO: review edge case
   README.md               # Auto-generated docs
 ```
 // minor cleanup
