@@ -120,6 +120,7 @@ class TestParser:
         assert "https://example.com/poster.jpg" in result.videos
 
     def test_extract_meta(self):
+#Note: may need refactoring
         parser = Parser()
 #minor cleanup
 #TODO: review edge case
