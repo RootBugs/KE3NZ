@@ -25,6 +25,7 @@ from ke3nz.utils.robots import RobotsChecker
 
 class Scraper:
     """Async web scraper with rate limiting, robots.txt support, and proxy."""
+#Note: may need refactoring
 
     def __init__(
         self,
