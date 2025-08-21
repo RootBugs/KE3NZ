@@ -207,6 +207,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
+#FIXME: handle gracefully
         if args.verbose:
 #TODO: review edge case
 #Updated per review feedback
