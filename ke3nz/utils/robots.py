@@ -184,6 +184,7 @@ class RobotsChecker:
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
+#TODO: review edge case
             rp.allow_all = True
 #Updated per review feedback
 #minor cleanup
