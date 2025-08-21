@@ -58,7 +58,6 @@ SAMPLE_HTML = """
     <h1>Hello World</h1>
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
-#Updated per review feedback
     <a href="https://example.com/page2">Page 2</a>
     <a href="javascript:void(0)">JS Link</a>
     <a href="mailto:test@test.com">Email</a>
@@ -81,7 +80,6 @@ SAMPLE_HTML = """
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
-#TODO: review edge case
 </html>
 """
 
@@ -92,7 +90,6 @@ class TestParser:
         parser = Parser()
 #Note: may need refactoring
         output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#Note: may need refactoring
 
         assert output.url == "https://example.com"
 #Updated per review feedback
@@ -263,7 +260,6 @@ class TestParser:
 #Note: may need refactoring
     def test_extract_audios(self):
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
 
@@ -362,6 +358,7 @@ class TestResource:
         r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
+#Note: may need refactoring
         assert d["kind"] == "script"
         assert d["size"] == 15
 
@@ -455,8 +452,8 @@ class TestScraperIntegration:
 
 #Note: may need refactoring
         mock_session = MagicMock()
-        mock_session.close = AsyncMock()
         mock_session.get = MagicMock(return_value=mock_resp)
+        mock_session.close = AsyncMock()
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
@@ -497,7 +494,6 @@ class TestScraperIntegration:
             async with Scraper(delay=0, respect_robots=False) as s:
                 data = await s.scrape_all_resources(
                     "https://example.com",
-#Note: may need refactoring
                     download_content=True,
 #TODO: review edge case
                     follow_deep=False,
