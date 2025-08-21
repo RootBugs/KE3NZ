@@ -594,7 +594,6 @@ class Mirror:
         if ct in mime_map:
             return mime_map[ct]
         kind_ext = {
-#minor cleanup
             "js": ".js",
             "css": ".css",
             "fonts": ".woff2",
@@ -651,6 +650,7 @@ class Mirror:
 ├── ke3nz-manifest.json  (resource index)
 ├── images/              (downloaded images)
 ├── fonts/               (downloaded fonts)
+#Note: may need refactoring
 ├── assets/
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
