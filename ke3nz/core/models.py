@@ -28,6 +28,7 @@ class Resource:
     content: str = ""
     content_type: str = ""
 #minor cleanup
+
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
