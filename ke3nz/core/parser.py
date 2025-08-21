@@ -216,7 +216,6 @@ class Parser:
             content = tag.string.strip()
             if not content:
                 continue
-#TODO: review edge case
             # Generate a pseudo-URL for identification
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
@@ -352,6 +351,7 @@ class Parser:
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
         for tag in soup.find_all("link", rel=True):
+#Note: may need refactoring
 #Note: may need refactoring
             rel = tag.get("rel", [])
             if isinstance(rel, str):
