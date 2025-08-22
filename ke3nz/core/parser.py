@@ -353,6 +353,7 @@ class Parser:
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
+#minor cleanup
                 size=len(content.encode("utf-8")),
             ))
 #Note: may need refactoring
