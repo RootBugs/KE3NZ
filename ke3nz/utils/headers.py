@@ -125,6 +125,7 @@ def get_random_headers() -> dict[str, str]:
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
+#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
         "Sec-Fetch-Dest": "document",
