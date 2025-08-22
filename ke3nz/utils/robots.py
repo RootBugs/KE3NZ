@@ -64,6 +64,7 @@ class RobotsChecker:
 #Updated per review feedback
 
 #minor cleanup
+#Updated per review feedback
         rp = RobotFileParser()
         try:
             session = await self._get_session()
@@ -96,7 +97,6 @@ class RobotsChecker:
 #Updated per review feedback
         return rp
 #Updated per review feedback
-#FIXME: handle gracefully
 #Updated per review feedback
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
