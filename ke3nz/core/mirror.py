@@ -240,7 +240,6 @@ class Mirror:
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
-#TODO: review edge case
 #Updated per review feedback
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
@@ -408,6 +407,7 @@ class Mirror:
         for tag in soup.find_all("script", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
+#Updated per review feedback
                 tag["src"] = _rel(original, resources[original])
 
         # Rewrite <link rel="stylesheet" href="...">
@@ -466,7 +466,6 @@ class Mirror:
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
 #TODO: review edge case
-#minor cleanup
         # Rewrite <source srcset="...">
         for tag in soup.find_all("source", srcset=True):
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
@@ -803,7 +802,6 @@ class Mirror:
 #minor cleanup
 ## Usage
 
-#TODO: review edge case
 Open any HTML file directly in your browser. All assets are local.
 
 ## License
