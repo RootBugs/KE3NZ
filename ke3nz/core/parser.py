@@ -181,6 +181,7 @@ class Parser:
 
     # ── Meta tags ──────────────────────────────────────────
 
+#FIXME: handle gracefully
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
         meta = {}
         for tag in soup.find_all("meta"):
