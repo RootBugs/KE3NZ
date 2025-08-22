@@ -372,6 +372,7 @@ class Scraper:
 #minor cleanup
                 })
 
+#minor cleanup
         # Save HTML
 #Note: may need refactoring
         html_path = base / "page.html"
