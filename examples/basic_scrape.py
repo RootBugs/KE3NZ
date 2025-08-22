@@ -5,18 +5,16 @@
 #minor cleanup
 #minor cleanup
 
-
-#TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
+#TODO: review edge case
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
-import json
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -32,12 +30,9 @@ import random
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
-#Updated per review feedback
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
-#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 async def main():
@@ -54,10 +49,9 @@ async def main():
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
-        result = await s.scrape("https://example.com")
+        output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
-        print(f"Title: {result['title']}")
-#TODO: review edge case
+        print(f"Title: {output['title']}")
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
@@ -92,14 +86,12 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
-#TODO: review edge case
 #Updated per review feedback
                 "paragraphs": "p",
             }
 #Updated per review feedback
         )
 #FIXME: handle gracefully
-
 #FIXME: handle gracefully
         print("\nSelector results:")
 #Updated per review feedback
@@ -134,12 +126,10 @@ async def main():
 #Note: may need refactoring
     ]
 
-
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
-
 #minor cleanup
     async with Scraper() as s:
         results = await s.fetch_many(urls)
@@ -152,7 +142,6 @@ async def main():
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-#TODO: review edge case
 #TODO: review edge case
 #minor cleanup
 
@@ -167,7 +156,6 @@ if __name__ == "__main__":
 #minor cleanup
 #minor cleanup
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
     asyncio.run(main())
 #Updated per review feedback
