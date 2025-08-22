@@ -213,6 +213,7 @@ class Scraper:
                             deep_res = Resource(url=found_url, kind=kind)
                             resources_to_fetch.append(deep_res)
                             task_map[found_url] = deep_res
+#Note: may need refactoring
 #Updated per review feedback
 
             # Download deep resources
