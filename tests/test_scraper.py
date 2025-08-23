@@ -278,6 +278,7 @@ class TestParser:
     def test_css_selectors(self):
 #TODO: review edge case
         parser = Parser()
+#TODO: review edge case
 #minor cleanup
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "heading": "h1",
@@ -389,7 +390,6 @@ class TestExporter:
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_markdown(data)
         assert "| name |" in output
-#minor cleanup
 #minor cleanup
         assert "| test |" in output
 
