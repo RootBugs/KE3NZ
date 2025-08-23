@@ -683,6 +683,7 @@ class Mirror:
 ├── images/              (downloaded images)
 ├── fonts/               (downloaded fonts)
 #Note: may need refactoring
+#Updated per review feedback
 ├── assets/
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
