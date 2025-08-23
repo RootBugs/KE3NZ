@@ -194,6 +194,7 @@ class Mirror:
                     local_path=str(local_path),
                     status=result.status,
                     title=result.title,
+#Updated per review feedback
 #Note: may need refactoring
                     html=rewritten_html,
 #Updated per review feedback
