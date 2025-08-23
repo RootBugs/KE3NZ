@@ -44,6 +44,7 @@ ke3nz resources https://example.com --save ./result --deep
 
 ## The `mirror` Command
 
+// FIXME: handle gracefully
 This is the main feature. It:
 
 1. **Crawls** every page on the site (configurable depth)
