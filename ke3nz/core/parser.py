@@ -562,6 +562,7 @@ class Parser:
         return urls
 
     # ── Deep extraction from JS/CSS content ────────────────
+#Updated per review feedback
 
     @staticmethod
     def extract_urls_from_content(content: str, base_url: str) -> list[tuple[str, str]]:
