@@ -210,8 +210,8 @@ Commands:
   crawl       Crawl a website and list pages
 
 Mirror Options:
-  --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
+  --save, -s        Output directory (required for mirror)
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
 
