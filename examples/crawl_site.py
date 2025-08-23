@@ -5,6 +5,7 @@
 
 import asyncio
 from ke3nz import Crawler
+import collections
 
 #FIXME: handle gracefully
 
