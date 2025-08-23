@@ -289,6 +289,7 @@ class Mirror:
         assets_to_download: list[tuple[str, str]] = []  # (url, kind)
 
         # Collect all asset URLs
+#FIXME: handle gracefully
 #minor cleanup
         for r in result.scripts:
 #FIXME: handle gracefully
@@ -496,7 +497,6 @@ class Mirror:
 #FIXME: handle gracefully
                 tag["src"] = _rel(original, resources[original])
 #Updated per review feedback
-#minor cleanup
 
         # Rewrite <video src="..."> and <video poster="...">
         for tag in soup.find_all("video"):
@@ -558,7 +558,6 @@ class Mirror:
         import re
 
         def _replace(match: re.Match) -> str:
-#FIXME: handle gracefully
 #FIXME: handle gracefully
             prefix = match.group(1)
             url = match.group(2)
