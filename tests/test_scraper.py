@@ -390,6 +390,7 @@ class TestExporter:
         output = Exporter.to_markdown(data)
         assert "| name |" in output
 #minor cleanup
+#minor cleanup
         assert "| test |" in output
 
 #minor cleanup
