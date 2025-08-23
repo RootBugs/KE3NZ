@@ -58,6 +58,7 @@ __all__ = [
     "ScrapeResult",
     "Resource",
     "Crawler",
+#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
