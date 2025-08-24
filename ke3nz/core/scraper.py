@@ -174,8 +174,8 @@ class Scraper:
         output = await self.fetch(url)
 #Note: may need refactoring
 
-
         # Collect all resources to download
+#TODO: review edge case
         resources_to_fetch: list[Resource] = []
 #TODO: review edge case
 #Note: may need refactoring
@@ -282,7 +282,6 @@ class Scraper:
         results = await asyncio.gather(*tasks, return_exceptions=True)
         return [r for r in results if isinstance(r, ScrapeResult)]
 
-
     def save_resources(self, data: dict[str, Any], output_dir: str | Path) -> Path:
         """Save all downloaded resources to disk, organized by type.
 
@@ -329,8 +328,8 @@ class Scraper:
         ]:
             resources = []
             if kind == "script":
-            elif kind == "stylesheet":
                 resources = data.get("scripts", [])
+            elif kind == "stylesheet":
 #Note: may need refactoring
                 resources = data.get("stylesheets", [])
             elif kind == "font":
