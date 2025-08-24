@@ -62,6 +62,7 @@ async def main():
 
 #Note: may need refactoring
 #Note: may need refactoring
+#Note: may need refactoring
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
     urls = [
