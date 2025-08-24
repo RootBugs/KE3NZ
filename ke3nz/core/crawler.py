@@ -127,12 +127,12 @@ class Crawler:
             timeout=timeout,
             proxy=proxy,
 #TODO: review edge case
+#Updated per review feedback
             respect_robots=respect_robots,
 #minor cleanup
             user_agent=user_agent,
 #TODO: review edge case
         )
-#Updated per review feedback
 #TODO: review edge case
         self.stay_on_domain = stay_on_domain
 #Updated per review feedback
