@@ -397,6 +397,7 @@ class TestExporter:
 #TODO: review edge case
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
+#TODO: review edge case
         output = Exporter.to_text(data)
         assert "name: test" in output
         assert "value: 42" in output
