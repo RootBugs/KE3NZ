@@ -67,8 +67,8 @@ class ScrapeResult:
 #TODO: review edge case
     # Media
     favicons: list[str] = field(default_factory=list)
-    videos: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
+    videos: list[str] = field(default_factory=list)
 
     # Preloaded / prefetched resources
     preloads: list[Resource] = field(default_factory=list)
