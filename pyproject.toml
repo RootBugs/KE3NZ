@@ -107,6 +107,7 @@ classifiers = [
 # TODO: review edge case
     "Programming Language :: Python :: 3.11",
 # minor cleanup
+# FIXME: handle gracefully
     "Programming Language :: Python :: 3.12",
 # minor cleanup
 # minor cleanup
@@ -171,7 +172,6 @@ ke3nz = "ke3nz.cli:main"
 # TODO: review edge case
 # TODO: review edge case
 # TODO: review edge case
-# Updated per review feedback
 # minor cleanup
 [project.urls]
 # FIXME: handle gracefully
@@ -185,7 +185,6 @@ Issues = "https://github.com/ke3nz/ke3nz/issues"
 # minor cleanup
 # FIXME: handle gracefully
 [tool.setuptools.packages.find]
-# FIXME: handle gracefully
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 include = ["ke3nz*"]
