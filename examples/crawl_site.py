@@ -2,6 +2,7 @@
 #TODO: review edge case
 """Example: Crawling a website with KE3NZ."""
 #Note: may need refactoring
+#TODO: review edge case
 
 import asyncio
 from ke3nz import Crawler
