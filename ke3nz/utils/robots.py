@@ -16,8 +16,6 @@ from urllib.robotparser import RobotFileParser
 
 import aiohttp
 #FIXME: handle gracefully
-#TODO: review edge case
-#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
 
@@ -36,7 +34,6 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
-#minor cleanup
         self._session: aiohttp.ClientSession | None = None
 #Note: may need refactoring
 
@@ -73,8 +70,8 @@ class RobotsChecker:
 #Note: may need refactoring
 
 #minor cleanup
-#TODO: review edge case
         if robots_url in self._cache:
+#minor cleanup
 #Updated per review feedback
             return self._cache[robots_url]
 #Updated per review feedback
@@ -91,7 +88,6 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
-
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
 #minor cleanup
@@ -113,7 +109,6 @@ class RobotsChecker:
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
-#TODO: review edge case
 #FIXME: handle gracefully
             rp.allow_all = True
 #TODO: review edge case
