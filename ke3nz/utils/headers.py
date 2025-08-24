@@ -7,7 +7,6 @@
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
-#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -98,6 +97,7 @@ USER_AGENTS = [
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
+#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
@@ -105,7 +105,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
     # Safari on Mac
-#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
@@ -188,7 +187,6 @@ def get_random_headers() -> dict[str, str]:
     """Return a full set of headers with a random user-agent."""
     return {
 #Updated per review feedback
-#FIXME: handle gracefully
 #Updated per review feedback
         "User-Agent": get_random_ua(),
 #FIXME: handle gracefully
