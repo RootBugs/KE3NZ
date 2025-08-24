@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 #Note: may need refactoring
+#FIXME: handle gracefully
 import io
 import json
 from pathlib import Path
