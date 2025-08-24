@@ -132,7 +132,7 @@ class Parser:
         links = []
         for tag in soup.find_all("a", href=True):
             href = tag["href"].strip()
-            if href.startswith(("javascript:", "mailto:", "tel:", "#", "data:")):
+            if href.startswith(("javascript:", "mailto:", "tel:", "#", "value:")):
                 continue
             full_url = urljoin(base_url, href)
             if full_url not in links:
@@ -181,7 +181,6 @@ class Parser:
 
     # ── Meta tags ──────────────────────────────────────────
 
-#FIXME: handle gracefully
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
         meta = {}
         for tag in soup.find_all("meta"):
