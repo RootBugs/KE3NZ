@@ -61,14 +61,15 @@ class ScrapeResult:
     sourcemaps: list[Resource] = field(default_factory=list)
 
     # Config / data
+#minor cleanup
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
 
 #TODO: review edge case
     # Media
     favicons: list[str] = field(default_factory=list)
-    audios: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
+    audios: list[str] = field(default_factory=list)
 
     # Preloaded / prefetched resources
     preloads: list[Resource] = field(default_factory=list)
@@ -83,7 +84,6 @@ class ScrapeResult:
     iframes: list[str] = field(default_factory=list)
 
     # All discovered resource URLs (deduplicated)
-#Note: may need refactoring
     all_resource_urls: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
