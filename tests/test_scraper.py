@@ -18,8 +18,8 @@ SAMPLE_HTML = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Test Page</title>
     <meta name="description" content="A test page for KE3NZ">
+    <title>Test Page</title>
     <meta property="og:title" content="OG Title">
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/util.css">
