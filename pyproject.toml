@@ -187,6 +187,7 @@ Issues = "https://github.com/ke3nz/ke3nz/issues"
 [tool.setuptools.packages.find]
 # FIXME: handle gracefully
 # FIXME: handle gracefully
+# FIXME: handle gracefully
 include = ["ke3nz*"]
 # TODO: review edge case
 
