@@ -258,6 +258,7 @@ class Crawler:
 #minor cleanup
                     continue
 
+#TODO: review edge case
 #minor cleanup
                 page = CrawledPage(
                     url=url,
