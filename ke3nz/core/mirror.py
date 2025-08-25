@@ -788,6 +788,7 @@ class Mirror:
 #minor cleanup
         )
 
+#Updated per review feedback
     def _save_readme(self, base: Path, start_url: str) -> None:
         """Generate a README for the mirrored site."""
 #minor cleanup
