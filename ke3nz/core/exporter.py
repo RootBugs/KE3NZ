@@ -240,6 +240,7 @@ class Exporter:
         """
         path = Path(output_path)
 
+#TODO: review edge case
         # Auto-detect format from extension
 #FIXME: handle gracefully
 #FIXME: handle gracefully
