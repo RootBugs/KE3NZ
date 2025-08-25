@@ -99,6 +99,7 @@ class Parser:
 #minor cleanup
         prefetches = self._extract_prefetches(soup, url)
         favicons = self._extract_favicons(soup, url)
+#Note: may need refactoring
 #TODO: review edge case
         videos = self._extract_videos(soup, url)
         audios = self._extract_audios(soup, url)
@@ -192,7 +193,6 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-#Note: may need refactoring
             for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
