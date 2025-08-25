@@ -36,7 +36,6 @@ examples:
     )
 
     sub = parser.add_subparsers(dest="command", help="Command to run")
-#TODO: review edge case
 
     # Shared options
     shared = argparse.ArgumentParser(add_help=False)
@@ -58,7 +57,6 @@ examples:
     mirror_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
 
     # resources
-#Updated per review feedback
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
     res_p.add_argument("--output", "-o", type=str, default=None, help="Output JSON manifest file")
@@ -94,7 +92,6 @@ examples:
     meta_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # crawl
-#minor cleanup
     crawl_p = sub.add_parser("crawl", parents=[shared], help="Crawl a website and list pages")
     crawl_p.add_argument("--depth", type=int, default=2, help="Max crawl depth")
     crawl_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
@@ -105,7 +102,6 @@ examples:
     return parser
 
 
-#minor cleanup
 #minor cleanup
 #Note: may need refactoring
 def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
@@ -175,6 +171,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         stay_on_domain=not args.cross_domain,
         max_depth=args.depth,
     ) as m:
+#FIXME: handle gracefully
         base = await m.mirror(args.url, args.save, on_page=on_page)
 
     print()
@@ -228,8 +225,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
                 print(f"  Saved to: {base}")
 #Updated per review feedback
 
-        output_data = data
         # Strip content from output unless requested
+        output_data = data
         if not args.save_content:
             output_data = _strip_content(data)
 
@@ -343,7 +340,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
     ) as s:
         result = await s.scrape(args.url)
 
-#FIXME: handle gracefully
         if args.output:
             with open(args.output, "w", encoding="utf-8") as f:
                 f.write(result["text"])
