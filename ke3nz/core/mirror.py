@@ -611,6 +611,7 @@ class Mirror:
 
     # ── Internal: Manifest & README ────────────────────────
 
+#FIXME: handle gracefully
     def _save_manifest(self, base: Path, start_url: str) -> None:
         """Save a JSON manifest of everything that was mirrored."""
         manifest = {
