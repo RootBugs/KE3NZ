@@ -90,6 +90,7 @@ class TestParser:
         assert result.status == 200
 #minor cleanup
         assert result.title == "Test Page"
+#minor cleanup
 #Note: may need refactoring
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
