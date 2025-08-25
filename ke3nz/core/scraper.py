@@ -359,6 +359,7 @@ class Scraper:
             elif kind == "font":
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
+#minor cleanup
                 resources = data.get("json_data", [])
             elif kind == "manifest":
                 resources = data.get("configs", [])
