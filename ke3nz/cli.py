@@ -460,6 +460,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
     _output(pages_collected, args.output, args.format)
 
 
+
 COMMANDS = {
     "mirror": cmd_mirror,
     "resources": cmd_resources,
