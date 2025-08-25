@@ -37,12 +37,12 @@ class Resource:
 #TODO: review edge case
 #TODO: review edge case
     size: int = 0
+#Note: may need refactoring
     integrity: str = ""
 #TODO: review edge case
 
 #TODO: review edge case
     def to_dict(self) -> dict[str, Any]:
-#Note: may need refactoring
 #minor cleanup
         return {
             "url": self.url,
