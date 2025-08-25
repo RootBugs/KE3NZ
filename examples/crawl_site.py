@@ -59,7 +59,6 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
-import collections
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -166,12 +165,12 @@ async def main():
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
     for page in pages:
 #Note: may need refactoring
 #Updated per review feedback
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
