@@ -185,6 +185,7 @@ class Parser:
         meta = {}
         for tag in soup.find_all("meta"):
             name = tag.get("name") or tag.get("property", "")
+#FIXME: handle gracefully
             content = tag.get("content", "")
             if name and content:
                 meta[name] = content
