@@ -232,6 +232,7 @@ class Crawler:
 #FIXME: handle gracefully
                     continue
 #minor cleanup
+#minor cleanup
 #TODO: review edge case
                 self._visited.add(normalized)
 #Note: may need refactoring
