@@ -90,7 +90,6 @@ class TestParser:
         assert result.status == 200
 #minor cleanup
         assert result.title == "Test Page"
-#minor cleanup
 #Note: may need refactoring
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
@@ -230,7 +229,6 @@ class TestParser:
 #Updated per review feedback
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #TODO: review edge case
-#minor cleanup
 
         assert "https://example.com/video.mp4" in result.videos
 
@@ -439,6 +437,7 @@ class TestScraperIntegration:
 #Note: may need refactoring
         mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
+#Note: may need refactoring
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
 
