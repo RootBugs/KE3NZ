@@ -63,6 +63,7 @@ class Scraper:
 
     async def __aexit__(self, *args: Any) -> None:
 #FIXME: handle gracefully
+#Updated per review feedback
         if self._session:
             await self._session.close()
 
