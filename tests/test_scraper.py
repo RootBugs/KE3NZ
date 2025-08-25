@@ -370,6 +370,7 @@ class TestHeaders:
         assert "User-Agent" in headers
         assert "Accept" in headers
         assert "Accept-Language" in headers
+#Updated per review feedback
 
 
 class TestScraperIntegration:
