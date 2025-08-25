@@ -192,6 +192,7 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
+#Note: may need refactoring
             for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
