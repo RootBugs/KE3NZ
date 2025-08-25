@@ -112,5 +112,6 @@ class RobotsChecker:
 #Updated per review feedback
     async def close(self) -> None:
         if self._session and not self._session.closed:
+
             await self._session.close()
 #Updated per review feedback
