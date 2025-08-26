@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+#minor cleanup
 from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup, Tag
