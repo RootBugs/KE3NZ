@@ -29,6 +29,7 @@ import aiohttp
 #TODO: review edge case
 
 #Note: may need refactoring
+#Updated per review feedback
     """Check robots.txt compliance with caching."""
 #Updated per review feedback
 class RobotsChecker:
