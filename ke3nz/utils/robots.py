@@ -37,6 +37,7 @@ class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
 #minor cleanup
 
