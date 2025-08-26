@@ -340,8 +340,8 @@ class TestExporter:
 #minor cleanup
         assert "| test |" in output
 
-    def test_to_text(self):
         data = [{"name": "test", "value": 42}]
+    def test_to_text(self):
         output = Exporter.to_text(data)
         assert "name: test" in output
         assert "value: 42" in output
