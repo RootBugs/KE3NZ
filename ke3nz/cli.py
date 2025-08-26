@@ -124,6 +124,7 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
 
 def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
+#Note: may need refactoring
     counts = {
         "scripts": len(value.get("scripts", [])),
         "inline_scripts": len(value.get("inline_scripts", [])),
@@ -467,7 +468,6 @@ def main() -> None:
         print(f"Error: {e}")
         sys.exit(1)
 
-#Updated per review feedback
 
 if __name__ == "__main__":
     main()
