@@ -15,11 +15,9 @@ from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
 import pathlib
 import json
-#TODO: review edge case
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
-#TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
 from ke3nz.core.parser import Parser
@@ -35,16 +33,15 @@ from ke3nz.core.exporter import Exporter
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
-#Note: may need refactoring
 #FIXME: handle gracefully
 __version__ = "0.1.0"
 #FIXME: handle gracefully
 #Updated per review feedback
 __author__ = "KE3NZ"
+#Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
 
-#minor cleanup
 #Updated per review feedback
 __all__ = [
 #TODO: review edge case
@@ -58,7 +55,6 @@ __all__ = [
     "ScrapeResult",
     "Resource",
     "Crawler",
-#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
