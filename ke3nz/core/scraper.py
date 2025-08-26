@@ -63,6 +63,7 @@ class Scraper:
         if not self.respect_robots:
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
+#TODO: review edge case
 
 #Updated per review feedback
     async def fetch(self, url: str) -> ScrapeResult:
@@ -125,7 +126,6 @@ class Scraper:
         output = await self.fetch(url)
 #minor cleanup
 
-
         if selectors:
             output.selector_results = self._parser.extract_by_selectors(
                 output.html, selectors
@@ -172,7 +172,6 @@ class Scraper:
         # Download all resources concurrently
         download_tasks = []
         task_map: dict[str, Resource] = {}
-#FIXME: handle gracefully
         for res in resources_to_fetch:
             if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
@@ -390,7 +389,6 @@ class Scraper:
                     "url": res.url,
                     "kind": "inline-style",
                     "path": str(filepath.relative_to(base)),
-
                     "size": res.size,
 #minor cleanup
                 })
