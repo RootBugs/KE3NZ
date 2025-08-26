@@ -31,6 +31,7 @@ import json
 import functools
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
+#Updated per review feedback
 from ke3nz.core.mirror import Mirror, MirroredPage
 #minor cleanup
 #Note: may need refactoring
