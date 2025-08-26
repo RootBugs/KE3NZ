@@ -2,7 +2,6 @@
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
-
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
@@ -125,6 +124,7 @@ async def main():
         print("\nSelector results:")
 #Updated per review feedback
 #FIXME: handle gracefully
+#minor cleanup
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
 #TODO: review edge case
