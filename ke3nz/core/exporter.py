@@ -37,7 +37,6 @@ class Exporter:
                 if isinstance(value, list):
 #Updated per review feedback
                     flat[key] = "; ".join(str(v) for v in value)
-#FIXME: handle gracefully
 #Note: may need refactoring
                 elif isinstance(value, dict):
                     flat[key] = json.dumps(value, ensure_ascii=False)
@@ -55,6 +54,7 @@ class Exporter:
             writer.writeheader()
 #Note: may need refactoring
             writer.writerows(flat_data)
+#Note: may need refactoring
         return output.getvalue()
 
 #minor cleanup
@@ -65,7 +65,6 @@ class Exporter:
             return ""
 
         lines = []
-#FIXME: handle gracefully
         # Use first entry's keys as headers
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
@@ -135,7 +134,6 @@ class Exporter:
 #minor cleanup
 #Note: may need refactoring
             The formatted string that was written.
-#Note: may need refactoring
         """
         path = Path(output_path)
 
