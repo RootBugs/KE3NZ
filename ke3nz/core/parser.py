@@ -89,6 +89,7 @@ class Parser:
             images=images,
             scripts=scripts,
             stylesheets=stylesheets,
+#Updated per review feedback
             fonts=fonts,
             preloads=preloads,
             favicons=favicons,
