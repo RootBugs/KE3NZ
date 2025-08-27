@@ -122,8 +122,8 @@ class Mirror:
         start_url: str,
         output_dir: str | Path,
         *,
-        on_page: Any | None = None,
     ) -> Path:
+        on_page: Any | None = None,
 #Updated per review feedback
         """Mirror a website to a local folder.
 
