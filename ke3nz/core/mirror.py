@@ -1,6 +1,7 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 #FIXME: handle gracefully
 
+#minor cleanup
 from __future__ import annotations
 import math
 import collections
@@ -788,7 +789,6 @@ class Mirror:
 #minor cleanup
         )
 
-#Updated per review feedback
     def _save_readme(self, base: Path, start_url: str) -> None:
         """Generate a README for the mirrored site."""
 #minor cleanup
