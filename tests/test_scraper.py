@@ -451,7 +451,6 @@ class TestExporter:
 #FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
-#Note: may need refactoring
 class TestHeaders:
     def test_random_ua(self):
         ua = get_random_ua()
@@ -466,6 +465,7 @@ class TestHeaders:
 #minor cleanup
     def test_random_headers(self):
         headers = get_random_headers()
+#minor cleanup
 #minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
