@@ -168,6 +168,7 @@ class ScrapeResult:
     all_resource_urls: list[str] = field(default_factory=list)
 #minor cleanup
 
+#FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
@@ -217,7 +218,6 @@ class ScrapeResult:
             "iframes": self.iframes,
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 #Updated per review feedback
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
