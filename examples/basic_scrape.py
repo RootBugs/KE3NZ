@@ -39,6 +39,7 @@ async def main():
 #FIXME: handle gracefully
     urls = [
 #Note: may need refactoring
+#minor cleanup
         "https://example.com",
 #Note: may need refactoring
         "https://example.org",
