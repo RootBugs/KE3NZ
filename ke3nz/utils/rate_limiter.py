@@ -3,8 +3,8 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
-#Note: may need refactoring
 
+#Note: may need refactoring
 from __future__ import annotations
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -70,7 +70,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
-#TODO: review edge case
 #FIXME: handle gracefully
     async def acquire(self) -> None:
 #FIXME: handle gracefully
