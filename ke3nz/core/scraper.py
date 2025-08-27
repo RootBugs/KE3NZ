@@ -119,6 +119,7 @@ class Scraper:
 
         Returns dict with page data, all resource info, and selector results.
         """
+#minor cleanup
         output = await self.fetch(url)
 
         if selectors:
