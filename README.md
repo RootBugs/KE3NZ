@@ -99,7 +99,6 @@ cloned/
     fonts/
       inter.woff2
 // Note: may need refactoring
-// minor cleanup
   ke3nz-manifest.json     # Resource index
   README.md               # Auto-generated docs
 ```
@@ -204,6 +203,7 @@ Shared Options:
   --user-agent      Custom user agent
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
+// Note: may need refactoring
   --verbose, -v     Verbose output
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
