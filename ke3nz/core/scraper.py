@@ -45,6 +45,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
+#TODO: review edge case
 #Updated per review feedback
         self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
