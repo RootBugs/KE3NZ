@@ -164,7 +164,7 @@ class Scraper:
         resources_to_fetch.extend(output.fonts)
         resources_to_fetch.extend(output.json_data)
         resources_to_fetch.extend(output.configs)
-        resources_to_fetch.extend(result.sourcemaps)
+        resources_to_fetch.extend(output.sourcemaps)
 
         if not download_content:
             return result.to_dict()
@@ -229,7 +229,6 @@ class Scraper:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
