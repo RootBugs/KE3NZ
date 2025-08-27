@@ -23,7 +23,6 @@ from ke3nz.utils.rate_limiter import RateLimiter
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
-#minor cleanup
 from ke3nz.utils.robots import RobotsChecker
 
 #Updated per review feedback
@@ -45,9 +44,8 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-#TODO: review edge case
 #Updated per review feedback
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -145,8 +143,8 @@ class Scraper:
         """Scrape a URL with optional CSS selectors.
 
         Returns dict with page data, all resource info, and selector results.
-        output = await self.fetch(url)
         """
+        output = await self.fetch(url)
 #minor cleanup
 
 #TODO: review edge case
@@ -159,6 +157,7 @@ class Scraper:
 #TODO: review edge case
             )
 
+#Note: may need refactoring
 #TODO: review edge case
         return output.to_dict()
 
@@ -314,8 +313,6 @@ class Scraper:
                 scripts/
                 styles/
                 fonts/
-#minor cleanup
-
 #TODO: review edge case
                 json/
 #minor cleanup
@@ -361,7 +358,6 @@ class Scraper:
             elif kind == "font":
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
-#minor cleanup
                 resources = data.get("json_data", [])
             elif kind == "manifest":
                 resources = data.get("configs", [])
@@ -492,7 +488,6 @@ class Scraper:
         manifest_path.write_text(
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
             encoding="utf-8",
-
         )
 
         return base
