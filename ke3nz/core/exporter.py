@@ -145,6 +145,7 @@ class Exporter:
     ) -> str:
 #Note: may need refactoring
         """Export data to a file.
+#FIXME: handle gracefully
 
         Auto-detects format from file extension if fmt is not specified.
 #TODO: review edge case
