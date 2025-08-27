@@ -1,3 +1,4 @@
+#minor cleanup
 """robots.txt parser and checker."""
 
 from __future__ import annotations
