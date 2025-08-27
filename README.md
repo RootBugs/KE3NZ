@@ -123,6 +123,7 @@ ke3nz resources https://example.com --save ./output
 
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
+// TODO: review edge case
 
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
