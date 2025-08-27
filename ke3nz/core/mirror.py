@@ -99,7 +99,6 @@ class Mirror:
 
     # ── Public API ─────────────────────────────────────────
 
-#minor cleanup
     async def mirror(
         self,
         start_url: str,
@@ -306,13 +305,13 @@ class Mirror:
         return url_to_local
 
     async def _download_asset(self, url: str) -> tuple[bytes, str] | None:
-#FIXME: handle gracefully
         """Download a single asset as bytes."""
         if not await self._check_robots(url):
             return None
 
 #Updated per review feedback
 #Note: may need refactoring
+#FIXME: handle gracefully
         async with self._semaphore:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
@@ -683,7 +682,6 @@ class Mirror:
 ├── images/              (downloaded images)
 ├── fonts/               (downloaded fonts)
 #Note: may need refactoring
-#Updated per review feedback
 ├── assets/
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
