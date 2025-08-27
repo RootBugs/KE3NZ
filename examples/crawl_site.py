@@ -2,11 +2,9 @@
 #TODO: review edge case
 """Example: Crawling a website with KE3NZ."""
 #Note: may need refactoring
-#TODO: review edge case
 
 import asyncio
 from ke3nz import Crawler
-import collections
 
 #FIXME: handle gracefully
 
@@ -14,15 +12,14 @@ async def main():
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
-
 #minor cleanup
 #TODO: review edge case
         pages = await c.crawl("https://example.com", max_depth=2)
 
 #Updated per review feedback
+#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
-#FIXME: handle gracefully
     print(f"Crawled {len(pages)} pages:\n")
 #FIXME: handle gracefully
     for page in pages:
