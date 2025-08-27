@@ -99,6 +99,7 @@ cloned/
     fonts/
       inter.woff2
 // Note: may need refactoring
+// minor cleanup
   ke3nz-manifest.json     # Resource index
   README.md               # Auto-generated docs
 ```
