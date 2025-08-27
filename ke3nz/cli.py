@@ -39,7 +39,7 @@ examples:
 #TODO: review edge case
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./output --deep
+  ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -277,7 +277,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             follow_deep=args.deep,
 #FIXME: handle gracefully
 #Note: may need refactoring
-
         )
 
         counts = _count_resources(value)
@@ -353,6 +352,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
+#Updated per review feedback
 #Updated per review feedback
         proxy=args.proxy,
         respect_robots=not args.no_robots,
