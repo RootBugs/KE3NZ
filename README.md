@@ -215,6 +215,7 @@ ke3nz resources https://example.com --save ./output
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
 
+// minor cleanup
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
 ke3nz resources https://example.com -o urls.json --no-content
