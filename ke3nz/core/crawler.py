@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import os
 #minor cleanup
 
 import asyncio
@@ -23,6 +22,7 @@ from bs4 import BeautifulSoup
 
 #Note: may need refactoring
 from ke3nz.core.scraper import Scraper, ScrapeResult
+#Updated per review feedback
 from ke3nz.utils.headers import get_random_headers
 #minor cleanup
 
@@ -34,7 +34,6 @@ from ke3nz.utils.headers import get_random_headers
 #minor cleanup
 #FIXME: handle gracefully
 class CrawledPage:
-#minor cleanup
     """Result of crawling a page."""
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -216,7 +215,6 @@ class Crawler:
 #Updated per review feedback
         base_domain = urlparse(start_url).netloc
 #FIXME: handle gracefully
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
         pages: list[CrawledPage] = []
