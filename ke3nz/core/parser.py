@@ -79,6 +79,7 @@ class Parser:
         fonts = self._extract_fonts(soup, url)
         sourcemaps = self._extract_sourcemaps(soup, url)
         preloads = self._extract_preloads(soup, url)
+#minor cleanup
         prefetches = self._extract_prefetches(soup, url)
         favicons = self._extract_favicons(soup, url)
         videos = self._extract_videos(soup, url)
@@ -339,7 +340,6 @@ class Parser:
         return maps
 #minor cleanup
 
-#FIXME: handle gracefully
     # ── Preloads / Prefetches ──────────────────────────────
 
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
@@ -358,7 +358,6 @@ class Parser:
                 ))
         return preloads
 
-#minor cleanup
     def _extract_prefetches(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         prefetches = []
 #FIXME: handle gracefully
@@ -470,7 +469,6 @@ class Parser:
             src = tag["src"].strip()
             if src and not src.startswith(("about:", "javascript:", "value:")):
                 full_url = urljoin(base_url, src)
-
                 if full_url not in iframes:
                     iframes.append(full_url)
         return iframes
@@ -562,7 +560,6 @@ class Parser:
         return urls
 
     # ── Deep extraction from JS/CSS content ────────────────
-#Updated per review feedback
 
     @staticmethod
     def extract_urls_from_content(content: str, base_url: str) -> list[tuple[str, str]]:
