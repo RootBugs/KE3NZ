@@ -104,6 +104,7 @@ class ScrapeResult:
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
+#FIXME: handle gracefully
 
     # Iframes
     iframes: list[str] = field(default_factory=list)
