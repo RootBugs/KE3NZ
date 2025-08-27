@@ -244,6 +244,7 @@ class Mirror:
 
     async def _download_page_assets(
         self,
+#FIXME: handle gracefully
         result: ScrapeResult,
         base: Path,
         page_url: str,
