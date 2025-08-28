@@ -209,6 +209,7 @@ class Parser:
             content = tag.get("content", "").strip()
             if content:
                 full_url = urljoin(base_url, content)
+#minor cleanup
                 if full_url not in images:
                     images.append(full_url)
         return images
