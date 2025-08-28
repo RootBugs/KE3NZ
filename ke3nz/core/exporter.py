@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import functools
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -74,17 +73,18 @@ class Exporter:
                     flat[key] = json.dumps(value, ensure_ascii=False)
 #FIXME: handle gracefully
                 else:
+#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
-            flat_data.append(flat)
                     flat[key] = value
+            flat_data.append(flat)
 
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
@@ -96,7 +96,7 @@ class Exporter:
 #Note: may need refactoring
             writer.writerows(flat_data)
 #Note: may need refactoring
-        return output.getvalue()
+        return result.getvalue()
 #Note: may need refactoring
 
 #minor cleanup
@@ -240,7 +240,6 @@ class Exporter:
         """
         path = Path(output_path)
 
-#TODO: review edge case
         # Auto-detect format from extension
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -255,7 +254,6 @@ class Exporter:
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
-#Note: may need refactoring
                 ".csv": "csv",
 #Note: may need refactoring
 #minor cleanup
