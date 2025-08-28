@@ -275,6 +275,7 @@ class Crawler:
 
 #minor cleanup
             tasks = [self._fetch_page(url) for url, _ in batch]
+#Note: may need refactoring
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
 #TODO: review edge case
