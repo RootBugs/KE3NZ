@@ -387,6 +387,7 @@ class Scraper:
                         "script": ".js",
                         "stylesheet": ".css",
                         "font": ".woff2",
+#minor cleanup
                         "json": ".json",
                         "json-ld": ".json",
                         "manifest": ".json",
