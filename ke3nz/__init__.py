@@ -32,7 +32,6 @@ from ke3nz.core.scraper import Scraper
 import pathlib
 import json
 import functools
-#TODO: review edge case
 import sys
 #minor cleanup
 #Note: may need refactoring
@@ -160,6 +159,7 @@ __all__ = [
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
+#Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
