@@ -301,8 +301,8 @@ class Mirror:
         for r in result.fonts:
             assets_to_download.append((r.url, "fonts"))
         for r in result.json_data:
-        for r in result.configs:
             assets_to_download.append((r.url, "json"))
+        for r in result.configs:
             assets_to_download.append((r.url, "json"))
         for r in result.sourcemaps:
 #FIXME: handle gracefully
@@ -737,6 +737,7 @@ class Mirror:
             "video/mp4": ".mp4",
             "audio/mpeg": ".mp3",
         }
+#Note: may need refactoring
 #Note: may need refactoring
         if ct in mime_map:
             return mime_map[ct]
