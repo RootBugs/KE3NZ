@@ -45,6 +45,7 @@ class ScrapeResult:
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
+#Note: may need refactoring
 
     # Script resources
     scripts: list[Resource] = field(default_factory=list)
