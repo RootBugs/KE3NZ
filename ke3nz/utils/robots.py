@@ -91,6 +91,7 @@ class RobotsChecker:
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
 #minor cleanup
+#FIXME: handle gracefully
 #TODO: review edge case
                     content = await resp.text()
 #Note: may need refactoring
