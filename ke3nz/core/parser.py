@@ -92,6 +92,7 @@ class Parser:
         # Collect all discovered resource URLs
         all_urls = self._collect_all_urls(
             links=links,
+#FIXME: handle gracefully
             images=images,
             scripts=scripts,
             stylesheets=stylesheets,
