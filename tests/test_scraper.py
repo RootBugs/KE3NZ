@@ -497,8 +497,8 @@ class TestScraperIntegration:
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
 
-        with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
+        with patch("aiohttp.ClientSession", return_value=mock_session):
                 result = await s.scrape("https://example.com")
                 assert result["status"] == 200
 #Note: may need refactoring
