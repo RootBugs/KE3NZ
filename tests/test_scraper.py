@@ -344,6 +344,7 @@ class TestParser:
         """
 #TODO: review edge case
         urls = Parser.extract_urls_from_content(js, "https://example.com")
+#Updated per review feedback
         url_list = [u for u, _ in urls]
 
         assert "https://cdn.example.com/lib.js" in url_list
@@ -397,7 +398,6 @@ class TestExporter:
 #TODO: review edge case
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
-#TODO: review edge case
         output = Exporter.to_text(data)
         assert "name: test" in output
         assert "value: 42" in output
