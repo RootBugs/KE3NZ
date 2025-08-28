@@ -12,7 +12,6 @@ import aiohttp
 
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.parser import Parser
-#minor cleanup
 from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
 #FIXME: handle gracefully
@@ -119,7 +118,6 @@ class Scraper:
 
         Returns dict with page data, all resource info, and selector results.
         """
-#minor cleanup
         output = await self.fetch(url)
 
         if selectors:
@@ -351,6 +349,7 @@ class Scraper:
                 filepath = inline_dir / f"script_{i}.js"
                 filepath.write_text(res.content, encoding="utf-8")
                 index["files"].append({
+#TODO: review edge case
                     "url": res.url,
                     "kind": "inline-script",
                     "path": str(filepath.relative_to(base)),
@@ -373,7 +372,6 @@ class Scraper:
 #minor cleanup
                 })
 
-#minor cleanup
         # Save HTML
 #Note: may need refactoring
         html_path = base / "page.html"
