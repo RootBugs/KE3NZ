@@ -125,6 +125,7 @@ class Scraper:
         self,
 #FIXME: handle gracefully
 #Updated per review feedback
+#TODO: review edge case
         url: str,
 #Updated per review feedback
         *,
