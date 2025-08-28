@@ -14,6 +14,7 @@ from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 from ke3nz.core.models import Resource
 from ke3nz.utils.headers import get_random_headers, get_random_ua
+#Updated per review feedback
 
 
 SAMPLE_HTML = """
