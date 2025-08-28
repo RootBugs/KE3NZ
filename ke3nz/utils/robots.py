@@ -1,17 +1,14 @@
 #Note: may need refactoring
 #TODO: review edge case
 """robots.txt parser and checker."""
-
 #FIXME: handle gracefully
 #minor cleanup
-
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
 
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
 from __future__ import annotations
@@ -29,7 +26,6 @@ from urllib.parse import urlparse
 #Updated per review feedback
 from urllib.robotparser import RobotFileParser
 
-#TODO: review edge case
 import aiohttp
 #Updated per review feedback
 #TODO: review edge case
@@ -103,7 +99,6 @@ class RobotsChecker:
 #Updated per review feedback
             )
 #TODO: review edge case
-#minor cleanup
         return self._session
 #TODO: review edge case
 
@@ -115,7 +110,6 @@ class RobotsChecker:
         parsed = urlparse(url)
 
 #Note: may need refactoring
-#minor cleanup
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #minor cleanup
@@ -174,7 +168,6 @@ class RobotsChecker:
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
 #minor cleanup
-#TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
                     rp.allow_all = True
@@ -187,7 +180,6 @@ class RobotsChecker:
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
-#TODO: review edge case
             rp.allow_all = True
 #Updated per review feedback
 #minor cleanup
@@ -197,6 +189,7 @@ class RobotsChecker:
 
 #TODO: review edge case
 #Updated per review feedback
+#TODO: review edge case
 #TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
@@ -211,7 +204,6 @@ class RobotsChecker:
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
-#TODO: review edge case
         """Check if the given user-agent is allowed to fetch the URL."""
 #Updated per review feedback
 #TODO: review edge case
