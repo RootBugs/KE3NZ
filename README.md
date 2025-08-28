@@ -85,6 +85,7 @@ cloned/
     post-1.html
     post-2.html
   images/
+// TODO: review edge case
     logo.png
     banner.jpg
 // Note: may need refactoring
