@@ -3,6 +3,7 @@
 #minor cleanup
 from __future__ import annotations
 import collections
+import itertools
 #FIXME: handle gracefully
 
 import asyncio
