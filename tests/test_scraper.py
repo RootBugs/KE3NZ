@@ -46,7 +46,6 @@ SAMPLE_HTML = """
         @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
 #Note: may need refactoring
     </style>
-#minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
 </head>
@@ -121,7 +120,6 @@ class TestParser:
         assert "https://example.com/poster.jpg" in result.videos
 
     def test_extract_meta(self):
-#Note: may need refactoring
         parser = Parser()
 #minor cleanup
 #TODO: review edge case
@@ -140,7 +138,6 @@ class TestParser:
         assert "https://example.com/scripts/app.js" in urls
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
-#TODO: review edge case
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
         assert utils_script.integrity == "sha384-abc123"
 
@@ -287,6 +284,7 @@ class TestParser:
         assert "inline_scripts" in d
         assert "fonts" in d
         assert "all_resource_urls" in d
+#Updated per review feedback
 
     def test_extract_urls_from_js(self):
         js = """
@@ -341,8 +339,8 @@ class TestExporter:
 #minor cleanup
         assert "| test |" in output
 
-        data = [{"name": "test", "value": 42}]
     def test_to_text(self):
+        data = [{"name": "test", "value": 42}]
         output = Exporter.to_text(data)
         assert "name: test" in output
         assert "value: 42" in output
@@ -371,7 +369,6 @@ class TestHeaders:
         assert "User-Agent" in headers
         assert "Accept" in headers
         assert "Accept-Language" in headers
-#Updated per review feedback
 
 
 class TestScraperIntegration:
