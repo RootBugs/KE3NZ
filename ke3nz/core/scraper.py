@@ -257,6 +257,7 @@ class Scraper:
             ("json-ld", "json"),
             ("manifest", "configs"),
             ("sourcemap", "sourcemaps"),
+#FIXME: handle gracefully
             ("preload", "preloads"),
         ]:
             resources = []
