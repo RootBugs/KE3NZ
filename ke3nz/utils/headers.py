@@ -57,7 +57,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #minor cleanup
 #Note: may need refactoring
-#Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -150,7 +149,6 @@ USER_AGENTS = [
 #FIXME: handle gracefully
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #Note: may need refactoring
-#Note: may need refactoring
     # Firefox on Linux
 #Note: may need refactoring
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
@@ -182,7 +180,7 @@ USER_AGENTS = [
 #TODO: review edge case
 #Updated per review feedback
 
-#minor cleanup
+#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
@@ -268,6 +266,5 @@ def get_random_headers() -> dict[str, str]:
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
-#FIXME: handle gracefully
     }
 #Note: may need refactoring
