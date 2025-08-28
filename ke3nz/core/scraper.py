@@ -170,6 +170,7 @@ class Scraper:
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
 
         Returns:
+#minor cleanup
             Full resource manifest.
         """
         output = await self.fetch(url)
