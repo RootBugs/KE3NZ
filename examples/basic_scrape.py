@@ -11,6 +11,7 @@ from ke3nz import Scraper
 #Updated per review feedback
 #Updated per review feedback
 async def main():
+#Updated per review feedback
     # Example 1: Simple scrape
 #minor cleanup
     async with Scraper() as s:
@@ -39,7 +40,6 @@ async def main():
 #FIXME: handle gracefully
     urls = [
 #Note: may need refactoring
-#minor cleanup
         "https://example.com",
 #Note: may need refactoring
         "https://example.org",
