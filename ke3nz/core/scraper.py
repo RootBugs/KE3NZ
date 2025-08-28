@@ -20,6 +20,7 @@ from ke3nz.utils.rate_limiter import RateLimiter
 from ke3nz.utils.robots import RobotsChecker
 
 #Updated per review feedback
+#Updated per review feedback
 
 class Scraper:
     """Async web scraper with rate limiting, robots.txt support, and proxy."""
