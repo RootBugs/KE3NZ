@@ -271,6 +271,7 @@ Resource Options:
   --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
 // Note: may need refactoring
+// TODO: review edge case
   --save-content    Include raw content in JSON output
 
 Shared Options:
