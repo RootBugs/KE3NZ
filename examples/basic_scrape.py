@@ -106,6 +106,7 @@ async def main():
 
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Updated per review feedback
 #minor cleanup
     async with Scraper() as s:
         results = await s.fetch_many(urls)
