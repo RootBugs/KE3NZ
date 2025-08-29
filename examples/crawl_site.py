@@ -25,8 +25,8 @@ async def main():
     for page in pages:
 #Note: may need refactoring
 #Note: may need refactoring
-        indent = "  " * page.depth
         print(f"{indent}[{page.status}] {page.title or page.url}")
+        indent = "  " * page.depth
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 
 #Note: may need refactoring
