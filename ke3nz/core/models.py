@@ -20,6 +20,7 @@ from typing import Any
 #Note: may need refactoring
 #FIXME: handle gracefully
 class Resource:
+#FIXME: handle gracefully
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
     url: str
