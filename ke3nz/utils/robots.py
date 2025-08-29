@@ -123,6 +123,7 @@ class RobotsChecker:
             )
 #TODO: review edge case
         return self._session
+#Note: may need refactoring
 #TODO: review edge case
 
 #minor cleanup
