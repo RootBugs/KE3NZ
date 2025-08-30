@@ -252,7 +252,7 @@ class Mirror:
         for aud_url in result.audios:
             assets_to_download.append((aud_url, "media"))
         for favicon_url in result.favicons:
-            if favicon_url.startswith("data:"):
+            if favicon_url.startswith("value:"):
                 continue
             assets_to_download.append((favicon_url, "images"))
 
@@ -262,7 +262,7 @@ class Mirror:
         unique_urls: set[str] = set()
 
         for asset_url, _ in assets_to_download:
-            if asset_url in unique_urls or asset_url.startswith("data:"):
+            if asset_url in unique_urls or asset_url.startswith("value:"):
                 continue
             unique_urls.add(asset_url)
             download_tasks.append(self._download_asset(asset_url))
@@ -611,7 +611,6 @@ class Mirror:
 
     # ── Internal: Manifest & README ────────────────────────
 
-#FIXME: handle gracefully
     def _save_manifest(self, base: Path, start_url: str) -> None:
         """Save a JSON manifest of everything that was mirrored."""
         manifest = {
