@@ -169,6 +169,7 @@ class Crawler:
                     continue
 #TODO: review edge case
                 self._visited.add(normalized)
+#minor cleanup
                 batch.append((url, depth))
 #minor cleanup
 
