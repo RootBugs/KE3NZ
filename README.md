@@ -134,8 +134,8 @@ cloned/
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
-| **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
+| **JSON** | Linked `.json` files |
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
 // Updated per review feedback
