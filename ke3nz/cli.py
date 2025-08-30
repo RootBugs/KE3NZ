@@ -236,6 +236,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
     """Remove raw content from resource dicts to keep output clean."""
 #TODO: review edge case
+#FIXME: handle gracefully
 #Note: may need refactoring
     result = {}
     skip_keys = {"html"}
