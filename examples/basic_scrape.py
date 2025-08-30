@@ -29,6 +29,7 @@ async def main():
                 "heading": "h1",
                 "paragraphs": "p",
             }
+#Note: may need refactoring
         )
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
