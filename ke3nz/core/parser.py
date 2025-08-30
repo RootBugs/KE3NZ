@@ -89,7 +89,6 @@ class Parser:
             images=images,
             scripts=scripts,
             stylesheets=stylesheets,
-#Updated per review feedback
             fonts=fonts,
             preloads=preloads,
             favicons=favicons,
@@ -576,6 +575,7 @@ class Parser:
         results: dict[str, list[str]] = {}
 
         for name, selector in selectors.items():
+#Note: may need refactoring
             attr_match = re.match(r"(.+?)::attr\((\w+)\)$", selector)
             if attr_match:
                 css_selector, attr_name = attr_match.groups()
