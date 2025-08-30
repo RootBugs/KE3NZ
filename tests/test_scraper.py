@@ -18,15 +18,15 @@ SAMPLE_HTML = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="A test page for KE3NZ">
     <title>Test Page</title>
+    <meta name="description" content="A test page for KE3NZ">
     <meta property="og:title" content="OG Title">
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
-    <link rel="preload" href="/data/app.js" as="script">
+    <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-icon.png">
@@ -200,7 +200,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-#Updated per review feedback
         assert len(result.all_resource_urls) > 10
         assert "https://example.com/scripts/app.js" in result.all_resource_urls
         assert "https://example.com/styles/main.css" in result.all_resource_urls
@@ -236,7 +235,6 @@ class TestParser:
         assert d["url"] == "https://example.com"
         assert d["status"] == 200
         assert "scripts" in d
-#FIXME: handle gracefully
 #TODO: review edge case
         assert "stylesheets" in d
         assert "inline_scripts" in d
@@ -250,6 +248,7 @@ class TestParser:
         const worker = new Worker('/worker.js');
         //# sourceMappingURL=https://cdn.example.com/app.js.map
         """
+#TODO: review edge case
         urls = Parser.extract_urls_from_content(js, "https://example.com")
         url_list = [u for u, _ in urls]
 
@@ -310,7 +309,6 @@ class TestHeaders:
     def test_random_headers(self):
         headers = get_random_headers()
 #Note: may need refactoring
-
         assert "User-Agent" in headers
         assert "Accept" in headers
         assert "Accept-Language" in headers
@@ -329,7 +327,6 @@ class TestScraperIntegration:
         mock_resp.__aexit__ = AsyncMock(return_value=False)
 #Note: may need refactoring
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
-
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
 
@@ -353,8 +350,8 @@ class TestScraperIntegration:
         from ke3nz.core.scraper import Scraper
 
         mock_resp = AsyncMock()
-        mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
+        mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
