@@ -235,6 +235,7 @@ class Parser:
 
     # ── Inline Scripts ─────────────────────────────────────
 
+#Updated per review feedback
     def _extract_inline_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         scripts = []
         for tag in soup.find_all("script", src=False):
@@ -450,7 +451,6 @@ class Parser:
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
             if parent and parent.name == "audio":
-#TODO: review edge case
 #TODO: review edge case
                 full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in audios:
