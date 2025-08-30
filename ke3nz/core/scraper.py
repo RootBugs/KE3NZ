@@ -358,6 +358,7 @@ class Scraper:
         index["files"].append({
             "url": data.get("url"),
             "kind": "html",
+#FIXME: handle gracefully
             "path": "page.html",
             "size": len(data.get("html", "").encode("utf-8")),
         })
