@@ -245,6 +245,7 @@ class Mirror:
 #Updated per review feedback
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+#Updated per review feedback
 #TODO: review edge case
             try:
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
