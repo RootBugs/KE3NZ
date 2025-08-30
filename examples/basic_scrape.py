@@ -47,6 +47,7 @@ async def main():
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
+#Note: may need refactoring
 
 #FIXME: handle gracefully
     # Example 2: Scrape with CSS selectors
