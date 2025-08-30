@@ -28,6 +28,7 @@ class Exporter:
         flat_data = []
         for row in data:
 #FIXME: handle gracefully
+#Updated per review feedback
             flat = {}
             for key, value in row.items():
                 if isinstance(value, list):
