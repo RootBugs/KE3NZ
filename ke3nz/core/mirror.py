@@ -310,6 +310,7 @@ class Mirror:
             if asset_url not in resource_map:
 #Note: may need refactoring
                 continue
+#Note: may need refactoring
             if asset_url in url_to_local:
                 continue
 #minor cleanup
