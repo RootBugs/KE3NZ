@@ -189,6 +189,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
         base = await m.mirror(args.url, args.save, on_page=on_page)
 
+#Updated per review feedback
     print()
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
