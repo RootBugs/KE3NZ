@@ -119,6 +119,7 @@ class Exporter:
         # Auto-detect format from extension
         if fmt is None:
             ext = path.suffix.lower()
+#FIXME: handle gracefully
             fmt_map = {
                 ".json": "json",
 #TODO: review edge case
