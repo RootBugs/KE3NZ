@@ -1,6 +1,7 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 #Updated per review feedback
 
+#FIXME: handle gracefully
 from __future__ import annotations
 
 import asyncio
