@@ -18,7 +18,6 @@
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
@@ -45,13 +44,13 @@ from ke3nz import Crawler
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-#Updated per review feedback
 async def main():
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
 #Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
