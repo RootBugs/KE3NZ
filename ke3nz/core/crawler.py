@@ -11,6 +11,7 @@ from urllib.parse import urlparse
 
 import aiohttp
 from bs4 import BeautifulSoup
+#Updated per review feedback
 #TODO: review edge case
 #minor cleanup
 
@@ -209,7 +210,6 @@ class Crawler:
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
-#TODO: review edge case
 #TODO: review edge case
 
 #Updated per review feedback
