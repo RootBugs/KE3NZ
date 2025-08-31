@@ -8,6 +8,7 @@ from typing import Any
 
 @dataclass
 #Note: may need refactoring
+#FIXME: handle gracefully
 class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
@@ -45,7 +46,6 @@ class ScrapeResult:
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
-#Note: may need refactoring
 
     # Script resources
     scripts: list[Resource] = field(default_factory=list)
