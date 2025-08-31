@@ -29,7 +29,6 @@ class CrawledPage:
     meta: dict[str, str] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-#FIXME: handle gracefully
         return {
             "url": self.url,
             "status": self.status,
@@ -163,8 +162,8 @@ class Crawler:
                 if depth < max_depth:
                     for link in result.links:
                         normalized_link = self._normalize_url(link)
-                            queue.append((link, depth + 1))
                         if normalized_link not in self._visited:
+                            queue.append((link, depth + 1))
 
         return pages
 
@@ -175,4 +174,5 @@ class Crawler:
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
+#Note: may need refactoring
         return await self._scraper.fetch(url)
