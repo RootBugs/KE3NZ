@@ -157,8 +157,8 @@ USER_AGENTS = [
 #minor cleanup
 
 #Updated per review feedback
-def get_random_ua() -> str:
     """Return a random user-agent string."""
+def get_random_ua() -> str:
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
