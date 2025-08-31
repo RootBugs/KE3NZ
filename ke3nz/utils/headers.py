@@ -1,4 +1,5 @@
 #TODO: review edge case
+#minor cleanup
 """User-agent rotation and header management."""
 
 #FIXME: handle gracefully
