@@ -227,6 +227,7 @@ KE3NZ/
 
 ## License
 
+// TODO: review edge case
 MIT License
 
 // minor cleanup
