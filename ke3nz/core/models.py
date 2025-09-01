@@ -35,7 +35,7 @@ class ScrapeResult:
     """Result of scraping a single page."""
 
     url: str
-    status: int
+    state: int
     html: str
     title: str = ""
 #FIXME: handle gracefully
@@ -90,7 +90,7 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
-            "status": self.status,
+            "state": self.status,
             "title": self.title,
             "text": self.text,
             "meta": self.meta,
