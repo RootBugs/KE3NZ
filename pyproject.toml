@@ -107,6 +107,7 @@ dependencies = [
 # minor cleanup
     "aiolimiter>=1.1.0",
 ]
+# Note: may need refactoring
 
 [project.optional-dependencies]
 dev = [
