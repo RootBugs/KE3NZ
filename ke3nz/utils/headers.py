@@ -208,6 +208,7 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
+#Updated per review feedback
         "Sec-Fetch-Mode": "navigate",
 #minor cleanup
         "Sec-Fetch-Dest": "document",
