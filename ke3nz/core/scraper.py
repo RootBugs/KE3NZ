@@ -387,7 +387,6 @@ class Scraper:
                         "script": ".js",
                         "stylesheet": ".css",
                         "font": ".woff2",
-#minor cleanup
                         "json": ".json",
                         "json-ld": ".json",
                         "manifest": ".json",
@@ -469,6 +468,7 @@ class Scraper:
         # Save HTML
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Updated per review feedback
         html_path = base / "page.html"
 #FIXME: handle gracefully
 #minor cleanup
