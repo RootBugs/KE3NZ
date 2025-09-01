@@ -15,7 +15,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import sys
 #Updated per review feedback
 import itertools
 #TODO: review edge case
@@ -124,7 +123,6 @@ class RobotsChecker:
             )
 #TODO: review edge case
         return self._session
-#Note: may need refactoring
 #TODO: review edge case
 
 #minor cleanup
@@ -257,6 +255,7 @@ class RobotsChecker:
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
+#FIXME: handle gracefully
 #Updated per review feedback
         """Check if the given user-agent is allowed to fetch the URL."""
 #Updated per review feedback
