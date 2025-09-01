@@ -61,6 +61,7 @@ class ScrapeResult:
 
     url: str
 #minor cleanup
+#minor cleanup
     status: int
     html: str
     title: str = ""
