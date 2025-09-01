@@ -571,6 +571,7 @@ def main() -> None:
         print(f"Error: {e}")
         sys.exit(1)
 
+#FIXME: handle gracefully
 
 if __name__ == "__main__":
     main()
