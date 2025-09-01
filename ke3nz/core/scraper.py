@@ -256,6 +256,7 @@ class Scraper:
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
 #minor cleanup
+#FIXME: handle gracefully
 
 #Note: may need refactoring
         # Update output with downloaded content
