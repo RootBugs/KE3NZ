@@ -4,6 +4,7 @@
 """KE3NZ - Fast async web scraping tool."""
 #TODO: review edge case
 #TODO: review edge case
+#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
@@ -39,7 +40,6 @@ import pathlib
 import json
 import functools
 import sys
-import os
 #Note: may need refactoring
 import random
 import typing
@@ -89,7 +89,6 @@ from ke3nz.core.exporter import Exporter
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
-#Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -114,7 +113,6 @@ __author__ = "KE3NZ"
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 
@@ -149,7 +147,6 @@ __all__ = [
 #TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
-#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
@@ -162,7 +159,6 @@ __all__ = [
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
-#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -194,7 +190,6 @@ __all__ = [
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
-#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -235,7 +230,6 @@ __all__ = [
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
-#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
