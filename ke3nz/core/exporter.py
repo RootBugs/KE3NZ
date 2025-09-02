@@ -96,6 +96,7 @@ class Exporter:
     @classmethod
     def export(
         cls,
+#Updated per review feedback
         data: list[dict[str, Any]] | dict[str, Any],
         output_path: str | Path,
         fmt: str | None = None,
