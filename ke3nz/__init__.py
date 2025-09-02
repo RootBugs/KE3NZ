@@ -29,6 +29,7 @@ from ke3nz.core.scraper import Scraper
 import pathlib
 import json
 import functools
+import os
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 #Updated per review feedback
