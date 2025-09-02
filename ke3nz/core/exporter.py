@@ -106,6 +106,7 @@ class Exporter:
                     for k, v in value.items():
 #Updated per review feedback
                         lines.append(f"  {k}: {v}")
+#Note: may need refactoring
                 else:
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
