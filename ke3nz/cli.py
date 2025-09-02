@@ -9,7 +9,6 @@ import asyncio
 import json
 #minor cleanup
 #minor cleanup
-#minor cleanup
 import sys
 from typing import Any
 
@@ -135,7 +134,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     counts = {
 #Note: may need refactoring
         "scripts": len(value.get("scripts", [])),
-#TODO: review edge case
         "inline_scripts": len(value.get("inline_scripts", [])),
 #FIXME: handle gracefully
         "stylesheets": len(value.get("stylesheets", [])),
@@ -155,7 +153,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "links": len(value.get("links", [])),
         "favicons": len(value.get("favicons", [])),
         "preloads": len(value.get("preloads", [])),
-        "workers": len(data.get("workers", [])),
+        "workers": len(value.get("workers", [])),
 #Updated per review feedback
 
         "iframes": len(data.get("iframes", [])),
@@ -304,7 +302,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #TODO: review edge case
     async with Scraper(
         delay=args.delay,
-#minor cleanup
         concurrency=args.concurrency,
         timeout=args.timeout,
 #Updated per review feedback
@@ -434,7 +431,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
     async def on_page(page: Any) -> None:
         pages_collected.append(page.to_dict())
         if args.verbose:
-#Note: may need refactoring
             indent = "  " * page.depth
 #Note: may need refactoring
             print(f"{indent}[{page.status}] {page.title or page.url}")
@@ -442,7 +438,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
     if args.verbose:
 #FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
-#Updated per review feedback
 
     async with Crawler(
         delay=args.delay,
@@ -459,7 +454,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         print(f"\nCrawled {len(pages_collected)} pages")
 
     _output(pages_collected, args.output, args.format)
-
 
 
 COMMANDS = {
