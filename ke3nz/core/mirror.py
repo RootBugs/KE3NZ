@@ -30,7 +30,6 @@ from ke3nz.utils.rate_limiter import RateLimiter
 from ke3nz.utils.robots import RobotsChecker
 
 
-
 #Updated per review feedback
 @dataclass
 class MirroredPage:
@@ -202,7 +201,6 @@ class Mirror:
                 html_file.parent.mkdir(parents=True, exist_ok=True)
                 html_file.write_text(rewritten_html, encoding="utf-8")
 
-#TODO: review edge case
                 if on_page:
                     await on_page(page)
 
@@ -518,7 +516,6 @@ class Mirror:
             url = match.group(2)
             suffix = match.group(3)
             if url.startswith(("value:", "#")):
-#Updated per review feedback
 #Note: may need refactoring
                 return match.group(0)
             original = self._resolve_url(url, page_url)
@@ -587,7 +584,6 @@ class Mirror:
 #minor cleanup
         """Convert a URL to a local file path relative to the mirror root.
 
-#minor cleanup
         The returned path is sanitized to prevent directory traversal:
         ``..`` segments are stripped and the path is normalized.
         """
@@ -708,6 +704,7 @@ class Mirror:
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 #minor cleanup
 
+#FIXME: handle gracefully
     # ── Internal: Manifest & README ────────────────────────
 
     def _save_manifest(self, base: Path, start_url: str) -> None:
