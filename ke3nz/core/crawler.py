@@ -155,6 +155,7 @@ class Crawler:
             results = await asyncio.gather(*tasks, return_exceptions=True)
 
 #Updated per review feedback
+#Updated per review feedback
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
 #Updated per review feedback
