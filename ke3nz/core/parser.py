@@ -518,6 +518,7 @@ class Parser:
                 if not any(r.url == full_url for r in json_links):
                     json_links.append(Resource(url=full_url, kind="json"))
         return json_links
+#Note: may need refactoring
 
     # ── URL Collection ─────────────────────────────────────
 
