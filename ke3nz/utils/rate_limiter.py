@@ -17,6 +17,7 @@ import time
 #minor cleanup
 class RateLimiter:
 #minor cleanup
+#FIXME: handle gracefully
     """Token bucket rate limiter for async code.
 
 #Note: may need refactoring
@@ -65,7 +66,6 @@ class RateLimiter:
             if elapsed < self._min_interval:
 #minor cleanup
 #TODO: review edge case
-#Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
