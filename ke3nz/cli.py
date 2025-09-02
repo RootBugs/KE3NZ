@@ -440,6 +440,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
 #TODO: review edge case
         proxy=args.proxy,
 #Note: may need refactoring
+#TODO: review edge case
         respect_robots=not args.no_robots,
 #TODO: review edge case
         user_agent=args.user_agent,
@@ -571,7 +572,6 @@ def main() -> None:
         print(f"Error: {e}")
         sys.exit(1)
 
-#FIXME: handle gracefully
 
 if __name__ == "__main__":
     main()
