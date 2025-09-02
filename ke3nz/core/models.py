@@ -1,4 +1,4 @@
-"""Shared data models for KE3NZ."""
+"""Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -18,7 +18,6 @@ class Resource:
     content: str = ""
     content_type: str = ""
 #TODO: review edge case
-
     size: int = 0
     integrity: str = ""
 
@@ -46,6 +45,7 @@ class ScrapeResult:
     html: str
     title: str = ""
 #Updated per review feedback
+#minor cleanup
 #FIXME: handle gracefully
     text: str = ""
 #Note: may need refactoring
@@ -75,7 +75,6 @@ class ScrapeResult:
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
 
-#Updated per review feedback
     # Config / value
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -104,7 +103,6 @@ class ScrapeResult:
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
-#FIXME: handle gracefully
 
     # Iframes
     iframes: list[str] = field(default_factory=list)
@@ -125,7 +123,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Note: may need refactoring
             "links": self.links,
-#Updated per review feedback
             "images": self.images,
             "favicons": self.favicons,
             "videos": self.videos,
@@ -140,7 +137,6 @@ class ScrapeResult:
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
-#FIXME: handle gracefully
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
 #minor cleanup
@@ -150,7 +146,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #FIXME: handle gracefully
             "workers": self.workers,
-#minor cleanup
 #minor cleanup
 #TODO: review edge case
             "iframes": self.iframes,
