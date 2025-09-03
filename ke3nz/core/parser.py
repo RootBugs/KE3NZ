@@ -98,7 +98,6 @@ class Parser:
         audios = self._extract_audios(soup, url)
         workers = self._extract_workers(soup, url)
         iframes = self._extract_iframes(soup, url)
-#FIXME: handle gracefully
         configs = self._extract_configs(soup, url)
         json_data = self._extract_json_links(soup, url)
 
@@ -241,6 +240,7 @@ class Parser:
             full_url = urljoin(base_url, src)
             if not any(r.url == full_url for r in scripts):
 #Updated per review feedback
+#Note: may need refactoring
                 scripts.append(Resource(
 #minor cleanup
                     url=full_url,
