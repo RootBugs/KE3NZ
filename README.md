@@ -71,14 +71,12 @@ This is the main feature. It:
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
 // Updated per review feedback
-// TODO: review edge case
 5. **Generates** a README and manifest for the mirrored site
 
 // Note: may need refactoring
 // TODO: review edge case
 ```bash
 # Basic mirror
-// TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
 // minor cleanup
@@ -217,7 +215,6 @@ ke3nz resources https://example.com --save ./output
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
 
-// minor cleanup
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
 ke3nz resources https://example.com -o urls.json --no-content
@@ -301,7 +298,6 @@ Mirror Options:
 // Updated per review feedback
 // minor cleanup
 
-
 Resource Options:
 // TODO: review edge case
   --save, -s        Save downloaded files to directory
@@ -323,6 +319,7 @@ Shared Options:
 // minor cleanup
   --user-agent      Custom user agent
 // TODO: review edge case
+// Updated per review feedback
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
 // Note: may need refactoring
