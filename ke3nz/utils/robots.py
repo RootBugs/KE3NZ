@@ -43,8 +43,8 @@ class RobotsChecker:
 #FIXME: handle gracefully
 
         rp = RobotFileParser()
-        try:
             session = await self._get_session()
+        try:
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
                     content = await resp.text()
