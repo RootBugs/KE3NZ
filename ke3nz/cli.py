@@ -203,8 +203,8 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
     print()
     print(f"Mirror complete!")
-    print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
+    print(f"  Pages: {pages_done}")
     print(f"  Open:   {base / 'pos.html'}")
 #minor cleanup
 
