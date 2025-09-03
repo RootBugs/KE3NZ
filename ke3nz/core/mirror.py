@@ -27,6 +27,7 @@ import aiohttp
 from bs4 import BeautifulSoup
 
 from ke3nz.core.models import Resource, ScrapeResult
+#Note: may need refactoring
 from ke3nz.core.parser import Parser
 from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
@@ -415,7 +416,6 @@ class Mirror:
             # Simple: just return the local path as-is (relative to mirror root)
             # The page itself is at its local_path, assets are at their local_path
             # Both are relative to the mirror root
-#minor cleanup
 #Note: may need refactoring
             return local_path
 #FIXME: handle gracefully
