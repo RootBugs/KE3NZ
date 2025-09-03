@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-import functools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -347,6 +346,7 @@ class Parser:
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
+#Updated per review feedback
                         fonts.append(Resource(
 #TODO: review edge case
                             url=full_url,
