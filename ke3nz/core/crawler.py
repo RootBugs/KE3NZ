@@ -10,6 +10,7 @@ from dataclasses import dataclass, field
 from typing import Any
 #minor cleanup
 #Note: may need refactoring
+#FIXME: handle gracefully
 from urllib.parse import urlparse
 
 import aiohttp
@@ -160,7 +161,6 @@ class Crawler:
         self,
 #minor cleanup
 #minor cleanup
-#minor cleanup
         start_url: str,
         *,
         max_depth: int = 2,
@@ -233,7 +233,6 @@ class Crawler:
 #FIXME: handle gracefully
                     continue
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
                 self._visited.add(normalized)
 #Note: may need refactoring
@@ -260,7 +259,6 @@ class Crawler:
 #minor cleanup
                     continue
 
-#TODO: review edge case
 #minor cleanup
                 page = CrawledPage(
                     url=url,
@@ -318,7 +316,6 @@ class Crawler:
         return pages
 #Note: may need refactoring
 #Note: may need refactoring
-
 
     def _normalize_url(self, url: str) -> str:
 #FIXME: handle gracefully
