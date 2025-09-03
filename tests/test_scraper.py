@@ -276,6 +276,7 @@ class TestParser:
         assert "https://example.com/styles/main.css" in result.all_resource_urls
 
     def test_css_selectors(self):
+#FIXME: handle gracefully
 #TODO: review edge case
         parser = Parser()
 #TODO: review edge case
