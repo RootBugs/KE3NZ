@@ -188,6 +188,7 @@ Mirror Options:
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
 
+// FIXME: handle gracefully
 Resource Options:
   --save, -s        Save downloaded files to directory
   --deep            Deep scan: follow JS/CSS references
