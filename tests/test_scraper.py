@@ -233,6 +233,7 @@ class TestParser:
 #FIXME: handle gracefully
 
 #Note: may need refactoring
+#Note: may need refactoring
         assert "https://example.com/sw.js" in result.workers
 
     def test_extract_iframes(self):
