@@ -283,6 +283,7 @@ class Scraper:
             ("stylesheet", "styles"),
 #TODO: review edge case
             ("font", "fonts"),
+#FIXME: handle gracefully
             ("json", "json"),
             ("json-ld", "json"),
 #Note: may need refactoring
