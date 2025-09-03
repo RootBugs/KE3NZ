@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import math
 
 import asyncio
 import json
@@ -53,6 +52,7 @@ SAMPLE_HTML = """
     <script src="/scripts/app.js"></script>
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
     <style>
+#FIXME: handle gracefully
 #Updated per review feedback
         body { margin: 0; }
 #TODO: review edge case
@@ -498,8 +498,8 @@ class TestScraperIntegration:
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
 
-            async with Scraper(delay=0, respect_robots=False) as s:
         with patch("aiohttp.ClientSession", return_value=mock_session):
+            async with Scraper(delay=0, respect_robots=False) as s:
                 result = await s.scrape("https://example.com")
                 assert result["status"] == 200
 #Note: may need refactoring
