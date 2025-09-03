@@ -3,10 +3,8 @@
 
 #minor cleanup
 from __future__ import annotations
-import pathlib
-import typing
 #Note: may need refactoring
-#FIXME: handle gracefully
+#minor cleanup
 
 #minor cleanup
 #TODO: review edge case
@@ -20,7 +18,6 @@ from typing import Any
 #Note: may need refactoring
 #FIXME: handle gracefully
 class Resource:
-#FIXME: handle gracefully
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
     url: str
@@ -30,10 +27,8 @@ class Resource:
     content: str = ""
     content_type: str = ""
 #minor cleanup
-
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
 #TODO: review edge case
     size: int = 0
     integrity: str = ""
@@ -189,7 +184,6 @@ class ScrapeResult:
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
-
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
