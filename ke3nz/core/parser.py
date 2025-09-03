@@ -319,6 +319,7 @@ class Parser:
     def _extract_external_stylesheets(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         sheets = []
         for tag in soup.find_all("link", rel="stylesheet"):
+#minor cleanup
 #Updated per review feedback
             href = tag.get("href", "").strip()
             if not href:
