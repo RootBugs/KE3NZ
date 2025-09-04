@@ -12,8 +12,8 @@ from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 
 #FIXME: handle gracefully
-__version__ = "0.1.0"
 __author__ = "KE3NZ"
+__version__ = "0.1.0"
 
 #TODO: review edge case
 #minor cleanup
