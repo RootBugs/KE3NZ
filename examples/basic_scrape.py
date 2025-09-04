@@ -1,6 +1,5 @@
 """Example: Basic web scraping with KE3NZ."""
 #TODO: review edge case
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
@@ -50,6 +49,7 @@ async def main():
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
+#Updated per review feedback
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {output['title']}")
