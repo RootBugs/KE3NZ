@@ -80,8 +80,8 @@ class Crawler:
         await self._scraper.__aexit__(*args)
 #TODO: review edge case
 
-    def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
+    def _is_same_domain(self, url: str, base_url: str) -> bool:
 
     async def crawl(
         self,
