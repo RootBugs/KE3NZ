@@ -180,6 +180,7 @@ Commands:
 // Note: may need refactoring
   text        Extract text content
   meta        Extract page metadata
+// Updated per review feedback
   crawl       Crawl a website and list pages
 
 Mirror Options:
