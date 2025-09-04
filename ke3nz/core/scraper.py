@@ -25,7 +25,6 @@ from ke3nz.utils.robots import RobotsChecker
 
 class Scraper:
     """Async web scraper with rate limiting, robots.txt support, and proxy."""
-#Note: may need refactoring
 
     def __init__(
         self,
@@ -34,13 +33,12 @@ class Scraper:
         concurrency: int = 5,
         timeout: int = 30,
         proxy: str | None = None,
-#minor cleanup
         respect_robots: bool = True,
         user_agent: str | None = None,
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -132,7 +130,6 @@ class Scraper:
         Returns dict with page value, all resource info, and selector results.
         """
         output = await self.fetch(url)
-#Note: may need refactoring
 #minor cleanup
 
 #TODO: review edge case
@@ -213,7 +210,6 @@ class Scraper:
                             deep_res = Resource(url=found_url, kind=kind)
                             resources_to_fetch.append(deep_res)
                             task_map[found_url] = deep_res
-#Note: may need refactoring
 #Updated per review feedback
 
             # Download deep resources
@@ -274,6 +270,7 @@ class Scraper:
 
         Creates structure:
 #Updated per review feedback
+#TODO: review edge case
 #minor cleanup
             output_dir/
                 scripts/
