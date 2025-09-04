@@ -68,6 +68,7 @@ SAMPLE_HTML = """
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
     <a href="https://example.com/page2">Page 2</a>
+#TODO: review edge case
     <a href="javascript:void(0)">JS Link</a>
     <a href="mailto:test@test.com">Email</a>
     <img src="/image1.jpg" alt="Image 1">
@@ -232,7 +233,6 @@ class TestParser:
 #Note: may need refactoring
 #FIXME: handle gracefully
 
-#Note: may need refactoring
 #Note: may need refactoring
         assert "https://example.com/sw.js" in result.workers
 
