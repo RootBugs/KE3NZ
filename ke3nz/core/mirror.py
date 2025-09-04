@@ -475,6 +475,7 @@ class Mirror:
             return match.group(0)
 
         # fetch('...') and import('...')
+#Updated per review feedback
         js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
         # .src = '...' and .href = '...'
         js = re.sub(r"""(\.(?:src|href)\s*=\s*['"])([^'"]+)(['"])""", _replace, js)
