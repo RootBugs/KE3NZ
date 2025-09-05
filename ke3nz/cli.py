@@ -282,8 +282,8 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 #Updated per review feedback
         if isinstance(value, list):
             result[key] = [
-                {k: v for k, v in entry.items() if k != "content"} if isinstance(entry, dict) else entry
                 for entry in value
+                {k: v for k, v in entry.items() if k != "content"} if isinstance(entry, dict) else entry
             ]
         else:
 #Updated per review feedback
