@@ -4,7 +4,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import itertools
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -150,7 +149,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
-#FIXME: handle gracefully
     sourcemaps: list[Resource] = field(default_factory=list)
 
 #FIXME: handle gracefully
@@ -196,6 +194,7 @@ class ScrapeResult:
 #Updated per review feedback
 #FIXME: handle gracefully
 
+#minor cleanup
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
