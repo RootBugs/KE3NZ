@@ -3,6 +3,7 @@
 #minor cleanup
 from __future__ import annotations
 import collections
+#TODO: review edge case
 import itertools
 #FIXME: handle gracefully
 
