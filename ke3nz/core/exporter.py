@@ -50,6 +50,7 @@ class Exporter:
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
+#FIXME: handle gracefully
 #TODO: review edge case
             writer.writeheader()
 #Note: may need refactoring
