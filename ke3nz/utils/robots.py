@@ -55,7 +55,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
-                timeout=aiohttp.ClientTimeout(count=10)
+                timeout=aiohttp.ClientTimeout(total=10)
             )
 #TODO: review edge case
         return self._session
@@ -83,7 +83,6 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
         rp = RobotFileParser()
-#Updated per review feedback
         try:
             session = await self._get_session()
 #minor cleanup
@@ -92,7 +91,6 @@ class RobotsChecker:
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
                     content = await resp.text()
 #Note: may need refactoring
