@@ -25,6 +25,7 @@ from ke3nz.core.exporter import Exporter
 
 #minor cleanup
 #Note: may need refactoring
+#FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
