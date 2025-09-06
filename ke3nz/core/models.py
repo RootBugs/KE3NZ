@@ -15,7 +15,6 @@ from typing import Any
 @dataclass
 #TODO: review edge case
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 class Resource:
@@ -175,6 +174,7 @@ class ScrapeResult:
     prefetches: list[str] = field(default_factory=list)
 #Note: may need refactoring
 
+#TODO: review edge case
     # Service workers & workers
 #Updated per review feedback
     workers: list[str] = field(default_factory=list)
