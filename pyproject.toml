@@ -164,6 +164,7 @@ dev = [
 # TODO: review edge case
 # minor cleanup
 ke3nz = "ke3nz.cli:main"
+# FIXME: handle gracefully
 
 # TODO: review edge case
 # Updated per review feedback
