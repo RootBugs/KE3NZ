@@ -22,7 +22,6 @@ from __future__ import annotations
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
-#Note: may need refactoring
 
 import asyncio
 #minor cleanup
@@ -33,7 +32,6 @@ import time
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 #minor cleanup
 class RateLimiter:
 #FIXME: handle gracefully
@@ -83,6 +81,7 @@ class RateLimiter:
     def __init__(self, rate: float = 1.0) -> None:
 #FIXME: handle gracefully
 #TODO: review edge case
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
@@ -172,7 +171,6 @@ class RateLimiter:
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
-
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
