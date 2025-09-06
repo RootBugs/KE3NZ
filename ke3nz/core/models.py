@@ -4,6 +4,7 @@
 
 #minor cleanup
 from __future__ import annotations
+import re
 #Note: may need refactoring
 
 #minor cleanup
