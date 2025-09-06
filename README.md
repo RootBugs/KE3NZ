@@ -1,6 +1,5 @@
 # KE3NZ - Open Source Web Scraper
 
-// TODO: review edge case
 // Note: may need refactoring
 > **Mirror any website** — crawl every page, download every asset, rewrite every URL, save as a self-contained folder.
 
@@ -22,7 +21,6 @@ pip install -e .
 ## Quick Start
 
 ```bash
-// Note: may need refactoring
 # Mirror an entire website to a local folder
 ke3nz mirror https://example.com --save ./my-site
 
@@ -61,7 +59,6 @@ This is the main feature. It:
 // minor cleanup
 
 1. **Crawls** every page on the site (configurable depth)
-// FIXME: handle gracefully
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
@@ -98,7 +95,6 @@ ke3nz mirror https://mysite.com --save ./cloned -c 20
 ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 // Updated per review feedback
 ```
-// Updated per review feedback
 // minor cleanup
 
 ### Output Structure
@@ -131,7 +127,6 @@ cloned/
 // Note: may need refactoring
 // FIXME: handle gracefully
 // FIXME: handle gracefully
-// TODO: review edge case
       app.js
       vendor.js
 // FIXME: handle gracefully
@@ -170,6 +165,7 @@ cloned/
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
+// FIXME: handle gracefully
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
 // Updated per review feedback
@@ -273,7 +269,6 @@ Resource Options:
   --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
 // Note: may need refactoring
-// TODO: review edge case
   --save-content    Include raw content in JSON output
 
 Shared Options:
