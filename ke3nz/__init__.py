@@ -29,10 +29,8 @@ from ke3nz.core.scraper import Scraper
 import pathlib
 import json
 import functools
-import os
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
-#Updated per review feedback
 from ke3nz.core.mirror import Mirror, MirroredPage
 #minor cleanup
 #Note: may need refactoring
@@ -62,13 +60,13 @@ from ke3nz.core.exporter import Exporter
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
-#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 __version__ = "0.1.0"
 #FIXME: handle gracefully
+#Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
@@ -164,12 +162,9 @@ __all__ = [
 #FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
-#Updated per review feedback
-#minor cleanup
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 ]
-#FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
