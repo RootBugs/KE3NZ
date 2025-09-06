@@ -9,7 +9,6 @@
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
-#Updated per review feedback
 #minor cleanup
 
 #TODO: review edge case
@@ -229,6 +228,7 @@ async def main():
 if __name__ == "__main__":
 #FIXME: handle gracefully
 #Updated per review feedback
+#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
