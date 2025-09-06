@@ -255,8 +255,8 @@ class Exporter:
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
-        # Format the output
         formatters = {
+        # Format the output
 #minor cleanup
             "json": lambda d: cls.to_json(d),
 #Updated per review feedback
