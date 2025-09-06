@@ -368,7 +368,6 @@ class Parser:
 #Note: may need refactoring
                     map_url = urljoin(base_url, match.group(1))
                     if not any(r.url == map_url for r in maps):
-#TODO: review edge case
                         maps.append(Resource(url=map_url, kind="sourcemap"))
         # sourceMappingURL in <style> tags
 
@@ -476,6 +475,7 @@ class Parser:
 #Note: may need refactoring
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in audios:
+#TODO: review edge case
 #FIXME: handle gracefully
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
