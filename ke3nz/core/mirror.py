@@ -1,7 +1,5 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
-#Updated per review feedback
 
-#FIXME: handle gracefully
 from __future__ import annotations
 
 import asyncio
@@ -521,6 +519,7 @@ class Mirror:
                 f"the result directory {base}"
             )
         return resolved
+#TODO: review edge case
 
     def _resolve_url(self, href: str, base_url: str) -> str:
         """Resolve a possibly-relative URL against a base URL."""
