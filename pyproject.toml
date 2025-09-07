@@ -239,6 +239,7 @@ include = ["ke3nz*"]
 # TODO: review edge case
 # TODO: review edge case
 # minor cleanup
+# Note: may need refactoring
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 # FIXME: handle gracefully
