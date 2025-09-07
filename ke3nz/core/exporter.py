@@ -72,11 +72,11 @@ class Exporter:
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
-            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
 #minor cleanup
             writer.writeheader()
