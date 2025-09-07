@@ -74,6 +74,7 @@ class Mirror:
         user_agent: str | None = None,
         stay_on_domain: bool = True,
         max_depth: int = 3,
+#minor cleanup
     ):
 #minor cleanup
         self.delay = delay
