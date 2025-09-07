@@ -26,8 +26,8 @@ async def main():
 #FIXME: handle gracefully
     # Example 1: Simple scrape
 #minor cleanup
-#TODO: review edge case
     async with Scraper() as s:
+#minor cleanup
 #minor cleanup
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
@@ -36,8 +36,8 @@ async def main():
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
 
-    async with Scraper() as s:
     # Example 2: Scrape with CSS selectors
+    async with Scraper() as s:
 #TODO: review edge case
         items = await s.scrape(
 #Note: may need refactoring
@@ -47,7 +47,6 @@ async def main():
 #TODO: review edge case
                 "heading": "h1",
 #Note: may need refactoring
-
 #Updated per review feedback
                 "paragraphs": "p",
             }
@@ -60,7 +59,6 @@ async def main():
 #TODO: review edge case
             print(f"  {key}: {values}")
 
-#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
     # Example 3: Scrape multiple URLs
@@ -89,7 +87,6 @@ async def main():
 
 if __name__ == "__main__":
 #Updated per review feedback
-#minor cleanup
 #minor cleanup
 #minor cleanup
 #minor cleanup
