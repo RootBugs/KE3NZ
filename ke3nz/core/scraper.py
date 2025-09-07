@@ -420,6 +420,7 @@ class Scraper:
         # Save HTML
 #Note: may need refactoring
 #FIXME: handle gracefully
+#TODO: review edge case
         html_path = base / "page.html"
 #minor cleanup
         html_path.write_text(data.get("html", ""), encoding="utf-8")
