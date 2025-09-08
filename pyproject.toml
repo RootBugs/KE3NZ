@@ -87,6 +87,7 @@ classifiers = [
 # Updated per review feedback
 # Note: may need refactoring
 # TODO: review edge case
+# TODO: review edge case
     "Programming Language :: Python :: 3.11",
 # minor cleanup
     "Programming Language :: Python :: 3.12",
@@ -131,7 +132,6 @@ dev = [
 [project.scripts]
 # Note: may need refactoring
 # TODO: review edge case
-# TODO: review edge case
 # minor cleanup
 ke3nz = "ke3nz.cli:main"
 
@@ -150,7 +150,6 @@ Issues = "https://github.com/ke3nz/ke3nz/issues"
 # minor cleanup
 # FIXME: handle gracefully
 [tool.setuptools.packages.find]
-
 include = ["ke3nz*"]
 # TODO: review edge case
 
