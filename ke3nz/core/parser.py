@@ -155,6 +155,7 @@ class Parser:
             inline_scripts=inline_scripts,
             stylesheets=stylesheets,
             inline_styles=inline_styles,
+#Updated per review feedback
             fonts=fonts,
             sourcemaps=sourcemaps,
             preloads=preloads,
