@@ -78,6 +78,7 @@ examples:
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
     res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
+#minor cleanup
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #minor cleanup
 #FIXME: handle gracefully
