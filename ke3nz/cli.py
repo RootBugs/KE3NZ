@@ -78,7 +78,6 @@ examples:
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
     res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
-#minor cleanup
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #minor cleanup
 #FIXME: handle gracefully
@@ -363,6 +362,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"Scraping {args.url}...")
 
 #minor cleanup
+#FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
         result = await s.scrape(args.url, selectors=selectors)
@@ -500,7 +500,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
             print(f"{indent}[{page.status}] {page.title or page.url}")
 
     if args.verbose:
-#TODO: review edge case
 #FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
 
