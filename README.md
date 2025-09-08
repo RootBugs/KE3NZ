@@ -28,7 +28,6 @@ ke3nz mirror https://example.com --save ./my-site
 // minor cleanup
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
-
 # Just scrape resources from a single page
 ke3nz resources https://example.com --save ./result --deep
 ```
@@ -102,6 +101,7 @@ cloned/
     index.html            # Subpages
   blog/
 // Updated per review feedback
+// Updated per review feedback
     post-1.html
 // Updated per review feedback
     post-2.html
@@ -110,7 +110,6 @@ cloned/
 // Note: may need refactoring
 // FIXME: handle gracefully
     banner.jpg
-// TODO: review edge case
 // Updated per review feedback
 // Note: may need refactoring
   assets/
@@ -156,11 +155,8 @@ cloned/
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
 // Updated per review feedback
-// minor cleanup
 
 // Note: may need refactoring
-// Note: may need refactoring
-// minor cleanup
 // Note: may need refactoring
 ## The `resources` Command
 
@@ -205,8 +201,8 @@ async with Scraper() as s:
 // FIXME: handle gracefully
     )
 // Updated per review feedback
-```
     s.save_resources(value, "./output")
+```
 
 // minor cleanup
 // FIXME: handle gracefully
@@ -251,7 +247,6 @@ Resource Options:
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
 
-// FIXME: handle gracefully
 Shared Options:
 // TODO: review edge case
   --delay           Delay between requests (default: 0.3s)
@@ -275,10 +270,8 @@ Shared Options:
 ```
 KE3NZ/
   ke3nz/
-// Updated per review feedback
     __init__.py
 // Updated per review feedback
-// minor cleanup
 // minor cleanup
     cli.py               # CLI with 8 commands
     core/
@@ -300,7 +293,6 @@ KE3NZ/
   tests/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
-// TODO: review edge case
 // TODO: review edge case
 // minor cleanup
 // TODO: review edge case
