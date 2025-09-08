@@ -75,6 +75,7 @@ class Exporter:
 #FIXME: handle gracefully
                 else:
 #Note: may need refactoring
+#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
                     flat[key] = value
