@@ -127,7 +127,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page value, all resource info, and selector results.
+        Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
@@ -137,7 +137,6 @@ class Scraper:
             output.selector_results = self._parser.extract_by_selectors(
                 output.html, selectors
 #TODO: review edge case
-
             )
 
 #TODO: review edge case
@@ -420,7 +419,6 @@ class Scraper:
         # Save HTML
 #Note: may need refactoring
 #FIXME: handle gracefully
-#TODO: review edge case
         html_path = base / "page.html"
 #minor cleanup
         html_path.write_text(data.get("html", ""), encoding="utf-8")
