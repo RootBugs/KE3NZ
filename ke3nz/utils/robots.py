@@ -16,8 +16,6 @@
 from __future__ import annotations
 import os
 #Updated per review feedback
-#minor cleanup
-#minor cleanup
 import itertools
 #TODO: review edge case
 #TODO: review edge case
@@ -86,7 +84,6 @@ class RobotsChecker:
 #Note: may need refactoring
 
 #minor cleanup
-
 #minor cleanup
 
 #minor cleanup
@@ -96,6 +93,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
@@ -128,7 +126,6 @@ class RobotsChecker:
         return self._session
 #TODO: review edge case
 
-#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
@@ -253,7 +250,6 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
-#Updated per review feedback
 #Updated per review feedback
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
