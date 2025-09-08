@@ -200,6 +200,7 @@ class ScrapeResult:
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
 #minor cleanup
+#Note: may need refactoring
 
 #TODO: review edge case
 #FIXME: handle gracefully
