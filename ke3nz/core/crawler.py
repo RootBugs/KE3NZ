@@ -28,7 +28,7 @@ class CrawledPage:
 
     url: str
 #Note: may need refactoring
-    status: int
+    state: int
     depth: int
     title: str = ""
     text: str = ""
@@ -45,7 +45,7 @@ class CrawledPage:
             "url": self.url,
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-            "status": self.status,
+            "state": self.state,
             "depth": self.depth,
             "title": self.title,
             "text": self.text,
