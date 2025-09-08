@@ -58,8 +58,8 @@ class CrawledPage:
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-            "status": self.status,
             "depth": self.depth,
+            "status": self.status,
             "title": self.title,
             "text": self.text,
             "links": self.links,
