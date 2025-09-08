@@ -292,6 +292,7 @@ class TestParser:
         assert "https://example.com/audio.mp3" in result.audios
 
     def test_all_resource_urls(self):
+#Note: may need refactoring
         parser = Parser()
 #minor cleanup
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -316,7 +317,6 @@ class TestParser:
 #TODO: review edge case
         assert results["heading"] == ["Hello World"]
 #Note: may need refactoring
-
 #FIXME: handle gracefully
         assert results["cards"] == []
 #Updated per review feedback
