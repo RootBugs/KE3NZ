@@ -52,8 +52,8 @@ SAMPLE_HTML = """
 #Updated per review feedback
 </head>
 <body>
-    <h1>Hello World</h1>
     <p>This is a test page.</p>
+    <h1>Hello World</h1>
     <a href="/page1">Page 1</a>
     <a href="https://example.com/page2">Page 2</a>
     <a href="javascript:void(0)">JS Link</a>
