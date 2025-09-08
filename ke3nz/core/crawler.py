@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import functools
 
 import asyncio
 from dataclasses import dataclass, field
@@ -58,8 +57,8 @@ class CrawledPage:
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-            "depth": self.depth,
             "status": self.status,
+            "depth": self.depth,
             "title": self.title,
             "text": self.text,
             "links": self.links,
@@ -68,6 +67,7 @@ class CrawledPage:
 #Note: may need refactoring
             "images": self.images,
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Updated per review feedback
             "meta": self.meta,
 #Note: may need refactoring
