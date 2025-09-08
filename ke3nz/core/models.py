@@ -201,6 +201,7 @@ class ScrapeResult:
     all_resource_urls: list[str] = field(default_factory=list)
 #minor cleanup
 
+#TODO: review edge case
 #FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
