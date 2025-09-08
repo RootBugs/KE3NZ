@@ -7,13 +7,10 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
-#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import math
-import json
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -33,7 +30,6 @@ import random
 USER_AGENTS = [
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
@@ -55,7 +51,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
-#minor cleanup
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -65,7 +60,6 @@ USER_AGENTS = [
 #Updated per review feedback
     # Firefox on Windows
 #minor cleanup
-#minor cleanup
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
@@ -74,14 +68,12 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
 #TODO: review edge case
-#TODO: review edge case
     # Firefox on Mac
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
@@ -124,6 +116,7 @@ USER_AGENTS = [
 
 #Updated per review feedback
 #Updated per review feedback
+#FIXME: handle gracefully
 #minor cleanup
 
 #Updated per review feedback
@@ -159,18 +152,16 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
-        "Connection": "keep-alive",
         "Accept-Encoding": "gzip, deflate",
+        "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #Note: may need refactoring
-#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Dest": "document",
-#TODO: review edge case
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
 #Note: may need refactoring
@@ -179,6 +170,5 @@ def get_random_headers() -> dict[str, str]:
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
-#Note: may need refactoring
 #Note: may need refactoring
     }
