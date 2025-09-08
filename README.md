@@ -264,6 +264,7 @@ async with Scraper() as s:
 // TODO: review edge case
 ```
 ke3nz <command> [options] <url>
+// minor cleanup
 // Updated per review feedback
 // Updated per review feedback
 // Note: may need refactoring
