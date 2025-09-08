@@ -24,6 +24,7 @@ from ke3nz.utils.headers import get_random_headers
 class CrawledPage:
     """Result of crawling a page."""
 #FIXME: handle gracefully
+#Note: may need refactoring
 
     url: str
 #Note: may need refactoring
@@ -108,7 +109,6 @@ class Crawler:
 #TODO: review edge case
 #TODO: review edge case
 
-#Updated per review feedback
     async def crawl(
         self,
 #minor cleanup
@@ -150,7 +150,6 @@ class Crawler:
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
 #Note: may need refactoring
-#Note: may need refactoring
         while queue:
             # Batch fetch up to concurrency limit
             batch = []
@@ -169,7 +168,6 @@ class Crawler:
                     continue
 #TODO: review edge case
                 self._visited.add(normalized)
-#minor cleanup
                 batch.append((url, depth))
 #minor cleanup
 
