@@ -286,6 +286,7 @@ class ScrapeResult:
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#Updated per review feedback
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
 #Updated per review feedback
@@ -309,7 +310,6 @@ class ScrapeResult:
 #minor cleanup
 #Updated per review feedback
 #minor cleanup
-#TODO: review edge case
 #TODO: review edge case
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
