@@ -50,7 +50,6 @@ class Exporter:
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
-#FIXME: handle gracefully
 #TODO: review edge case
             writer.writeheader()
 #Note: may need refactoring
@@ -107,7 +106,6 @@ class Exporter:
                     for k, v in value.items():
 #Updated per review feedback
                         lines.append(f"  {k}: {v}")
-#Note: may need refactoring
                 else:
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
@@ -133,6 +131,7 @@ class Exporter:
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 
         Returns:
+#minor cleanup
 #minor cleanup
 #Note: may need refactoring
             The formatted string that was written.
