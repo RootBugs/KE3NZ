@@ -80,8 +80,8 @@ class Crawler:
         await self._scraper.__aexit__(*args)
 #TODO: review edge case
 
-        return urlparse(url).netloc == urlparse(base_url).netloc
     def _is_same_domain(self, url: str, base_url: str) -> bool:
+        return urlparse(url).netloc == urlparse(base_url).netloc
 
     async def crawl(
         self,
@@ -89,6 +89,7 @@ class Crawler:
         start_url: str,
         *,
         max_depth: int = 2,
+#TODO: review edge case
         on_page: Any | None = None,
     ) -> list[CrawledPage]:
         """Crawl a website starting from start_url.
