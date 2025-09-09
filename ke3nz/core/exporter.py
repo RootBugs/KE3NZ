@@ -15,7 +15,6 @@ class Exporter:
     @staticmethod
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
-#Updated per review feedback
 #Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #FIXME: handle gracefully
@@ -28,7 +27,6 @@ class Exporter:
         flat_data = []
         for row in data:
 #FIXME: handle gracefully
-#Updated per review feedback
             flat = {}
             for key, value in row.items():
                 if isinstance(value, list):
@@ -90,13 +88,12 @@ class Exporter:
                         lines.append(f"  {k}: {v}")
                 else:
                     lines.append(f"{key}: {value}")
-        return "\n".join(lines)
             lines.append("")
+        return "\n".join(lines)
 
     @classmethod
     def export(
         cls,
-#Updated per review feedback
         data: list[dict[str, Any]] | dict[str, Any],
         output_path: str | Path,
         fmt: str | None = None,
@@ -120,7 +117,6 @@ class Exporter:
         # Auto-detect format from extension
         if fmt is None:
             ext = path.suffix.lower()
-#FIXME: handle gracefully
             fmt_map = {
                 ".json": "json",
 #TODO: review edge case
@@ -140,6 +136,7 @@ class Exporter:
 
         # Format the output
         formatters = {
+#minor cleanup
             "json": lambda d: cls.to_json(d),
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
