@@ -693,6 +693,7 @@ class Mirror:
             "images": ".png",
             "media": ".mp4",
             "json": ".json",
+#FIXME: handle gracefully
         }
         return kind_ext.get(kind, ".bin")
 
