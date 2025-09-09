@@ -98,6 +98,7 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
+#TODO: review edge case
                     rp.parse(content.splitlines())
                 else:
 #Note: may need refactoring
