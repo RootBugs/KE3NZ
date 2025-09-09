@@ -163,8 +163,8 @@ class Mirror:
                 page = MirroredPage(
                     url=url,
                     local_path=str(local_path),
-                    status=result.status,
                     title=result.title,
+                    status=result.status,
                     html=rewritten_html,
                     resources=resources,
                 )
