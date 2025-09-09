@@ -498,6 +498,7 @@ class Parser:
         preloads: list[Resource],
         favicons: list[str],
 #Updated per review feedback
+#Updated per review feedback
         videos: list[str],
         audios: list[str],
         workers: list[str],
