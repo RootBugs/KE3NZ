@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import typing
 
 import argparse
 import asyncio
@@ -101,7 +100,7 @@ examples:
 def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
     """Print or save output."""
     if output_path:
-        Exporter.export(data, output_path, fmt)
+        Exporter.export(value, output_path, fmt)
         print(f"Saved to {output_path}")
     else:
         print(Exporter.to_json(data))
@@ -221,7 +220,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
 def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
     """Remove raw content from resource dicts to keep output clean."""
-#Note: may need refactoring
 #Note: may need refactoring
     result = {}
     skip_keys = {"html"}
