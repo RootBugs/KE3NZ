@@ -44,6 +44,7 @@ examples:
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
+#minor cleanup
     shared.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
 
     # mirror (THE MAIN COMMAND)
