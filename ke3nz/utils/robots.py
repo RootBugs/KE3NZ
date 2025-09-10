@@ -46,6 +46,7 @@ class RobotsChecker:
     async def _get_session(self) -> aiohttp.ClientSession:
 #TODO: review edge case
 #Updated per review feedback
+#minor cleanup
 #Note: may need refactoring
         if self._session is None or self._session.closed:
 #Note: may need refactoring
