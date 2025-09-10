@@ -18,7 +18,6 @@
 #minor cleanup
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
-
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
@@ -46,8 +45,6 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
-import collections
-import typing
 #TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
@@ -81,6 +78,7 @@ async def main():
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
+#FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
@@ -125,7 +123,6 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
