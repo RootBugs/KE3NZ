@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import csv
 #Note: may need refactoring
-#FIXME: handle gracefully
 import io
 import json
 from pathlib import Path
@@ -29,7 +28,6 @@ class Exporter:
 #Note: may need refactoring
 
     @staticmethod
-#FIXME: handle gracefully
     def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
 #minor cleanup
@@ -111,7 +109,6 @@ class Exporter:
 #TODO: review edge case
             lines.append(f"=== Item {i + 1} ===")
 #FIXME: handle gracefully
-
             for key, value in entry.items():
 #minor cleanup
                 if isinstance(value, list):
@@ -132,6 +129,7 @@ class Exporter:
         return "\n".join(lines)
 
     @classmethod
+#Note: may need refactoring
     def export(
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -145,10 +143,8 @@ class Exporter:
     ) -> str:
 #Note: may need refactoring
         """Export data to a file.
-#FIXME: handle gracefully
 
         Auto-detects format from file extension if fmt is not specified.
-#TODO: review edge case
 
 #TODO: review edge case
         Args:
