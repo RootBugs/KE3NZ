@@ -152,8 +152,8 @@ class Exporter:
                 ".md": "markdown",
                 ".markdown": "markdown",
                 ".txt": "text",
-            }
             fmt = fmt_map.get(ext, "json")
+            }
 
         # Ensure data is a list for table formats
         if isinstance(data, dict):
