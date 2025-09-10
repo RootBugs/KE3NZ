@@ -18,6 +18,7 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
 # minor cleanup
+# Updated per review feedback
 # TODO: review edge case
 # TODO: review edge case
 
@@ -164,7 +165,6 @@ dev = [
 # TODO: review edge case
 # minor cleanup
 ke3nz = "ke3nz.cli:main"
-# FIXME: handle gracefully
 
 # TODO: review edge case
 # Updated per review feedback
@@ -184,8 +184,6 @@ Homepage = "https://github.com/ke3nz/ke3nz"
 # Note: may need refactoring
 # Note: may need refactoring
 Repository = "https://github.com/ke3nz/ke3nz"
-# TODO: review edge case
-# TODO: review edge case
 Issues = "https://github.com/ke3nz/ke3nz/issues"
 
 # minor cleanup
