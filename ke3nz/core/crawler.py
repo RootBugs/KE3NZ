@@ -107,6 +107,7 @@ class Crawler:
         base_domain = urlparse(start_url).netloc
         pages: list[CrawledPage] = []
 
+#Note: may need refactoring
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
 #Note: may need refactoring
@@ -159,7 +160,6 @@ class Crawler:
 
 #TODO: review edge case
                 # Enqueue discovered links for next depth level
-#FIXME: handle gracefully
 #TODO: review edge case
                 if depth < max_depth:
                     for link in result.links:
