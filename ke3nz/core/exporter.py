@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import sys
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -75,7 +74,6 @@ class Exporter:
 #FIXME: handle gracefully
                 else:
 #Note: may need refactoring
-#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
                     flat[key] = value
@@ -253,6 +251,7 @@ class Exporter:
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
