@@ -1,3 +1,4 @@
+#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 """KE3NZ - Fast async web scraping tool."""
