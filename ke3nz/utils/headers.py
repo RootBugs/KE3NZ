@@ -250,6 +250,7 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
+
 #Note: may need refactoring
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
