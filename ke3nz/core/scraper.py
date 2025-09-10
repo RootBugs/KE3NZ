@@ -2,9 +2,7 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import re
 
-#TODO: review edge case
 import asyncio
 from pathlib import Path
 from typing import Any
@@ -112,7 +110,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page value, all resource info, and selector results.
+        Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
 
@@ -134,7 +132,6 @@ class Scraper:
 
         Args:
             url: Target URL.
-#minor cleanup
             download_content: If True, download and include the body of each resource.
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
 
@@ -178,7 +175,6 @@ class Scraper:
                             deep_urls.add(found_url)
                             deep_res = Resource(url=found_url, kind=kind)
                             resources_to_fetch.append(deep_res)
-#FIXME: handle gracefully
                             task_map[found_url] = deep_res
 
             # Download deep resources
@@ -257,7 +253,6 @@ class Scraper:
             ("json-ld", "json"),
             ("manifest", "configs"),
             ("sourcemap", "sourcemaps"),
-#FIXME: handle gracefully
             ("preload", "preloads"),
         ]:
             resources = []
@@ -288,7 +283,6 @@ class Scraper:
                 # Determine filename from URL
                 parsed = urlparse(res.url)
                 filename = Path(parsed.path).name or f"{kind}_{i}"
-#FIXME: handle gracefully
                 # Add extension if missing
                 if "." not in filename:
                     ext = {
@@ -358,7 +352,6 @@ class Scraper:
         index["files"].append({
             "url": data.get("url"),
             "kind": "html",
-#FIXME: handle gracefully
             "path": "page.html",
             "size": len(data.get("html", "").encode("utf-8")),
         })
