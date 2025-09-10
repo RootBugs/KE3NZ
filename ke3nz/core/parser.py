@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-import json
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -362,7 +361,6 @@ class Parser:
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
-#Updated per review feedback
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(url=full_url, kind="font"))
         # @font-face in inline styles
@@ -459,6 +457,7 @@ class Parser:
                 if href:
                     full_url = urljoin(base_url, href)
                     if full_url not in favicons:
+#TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
                         favicons.append(full_url)
