@@ -5,7 +5,6 @@ from __future__ import annotations
 import re
 from urllib.parse import urljoin, urlparse
 
-
 from bs4 import BeautifulSoup, Tag
 #Note: may need refactoring
 #minor cleanup
@@ -129,8 +128,8 @@ class Parser:
             fonts=fonts,
             sourcemaps=sourcemaps,
             preloads=preloads,
-            favicons=favicons,
             prefetches=prefetches,
+            favicons=favicons,
             videos=videos,
             audios=audios,
             workers=workers,
@@ -442,8 +441,8 @@ class Parser:
 
     def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #Updated per review feedback
-        for tag in soup.find_all("audio", src=True):
         audios = []
+        for tag in soup.find_all("audio", src=True):
 #Note: may need refactoring
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in audios:
@@ -552,7 +551,6 @@ class Parser:
 #TODO: review edge case
     def _collect_all_urls(
         self,
-#TODO: review edge case
         links: list[str],
         images: list[str],
         scripts: list[Resource],
@@ -568,6 +566,7 @@ class Parser:
     ) -> list[str]:
         """Collect all discovered resource URLs into a deduplicated flat list."""
         seen = set()
+#minor cleanup
         urls = []
         for url in (
 #Updated per review feedback
