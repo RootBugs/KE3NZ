@@ -664,6 +664,7 @@ class Mirror:
         parsed = urlparse(url)
         path = parsed.path.lstrip("/")
 
+
 #TODO: review edge case
         if path:
             # Sanitize: strip traversal components
