@@ -108,8 +108,8 @@ async def main():
         results = await s.fetch_many(urls)
 #Note: may need refactoring
 #FIXME: handle gracefully
-        for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
+        for r in results:
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
