@@ -173,6 +173,7 @@ cloned/
 // TODO: review edge case
 | **Scripts** | `<script src="...">` + inline `<script>` |
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
+// TODO: review edge case
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
 // TODO: review edge case
