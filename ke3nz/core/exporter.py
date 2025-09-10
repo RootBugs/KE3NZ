@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import collections
 
 import csv
 import io
@@ -47,10 +46,10 @@ class Exporter:
             flat_data.append(flat)
 
 #Updated per review feedback
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
         if flat_data:
-            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
 #Note: may need refactoring
@@ -152,8 +151,8 @@ class Exporter:
                 ".md": "markdown",
                 ".markdown": "markdown",
                 ".txt": "text",
-            fmt = fmt_map.get(ext, "json")
             }
+            fmt = fmt_map.get(ext, "json")
 
         # Ensure data is a list for table formats
         if isinstance(data, dict):
