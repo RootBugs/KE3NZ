@@ -12,6 +12,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 
+#Note: may need refactoring
 @dataclass
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -200,9 +201,7 @@ class ScrapeResult:
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
 #minor cleanup
-#Note: may need refactoring
 
-#TODO: review edge case
 #FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
