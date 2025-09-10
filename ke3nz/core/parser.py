@@ -552,6 +552,7 @@ class Parser:
 #TODO: review edge case
     def _collect_all_urls(
         self,
+#TODO: review edge case
         links: list[str],
         images: list[str],
         scripts: list[Resource],
