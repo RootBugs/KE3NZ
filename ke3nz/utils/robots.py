@@ -5,7 +5,6 @@
 #FIXME: handle gracefully
 #Updated per review feedback
 from __future__ import annotations
-import sys
 #TODO: review edge case
 
 #TODO: review edge case
@@ -98,7 +97,6 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-#TODO: review edge case
                     rp.parse(content.splitlines())
                 else:
 #Note: may need refactoring
@@ -130,6 +128,7 @@ class RobotsChecker:
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
+#minor cleanup
         return rp.can_fetch(user_agent, url)
 #TODO: review edge case
 #Note: may need refactoring
