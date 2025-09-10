@@ -168,6 +168,7 @@ Commands:
   text        Extract text content
   meta        Extract page metadata
   crawl       Crawl a website and list pages
+// FIXME: handle gracefully
 
 Mirror Options:
   --save, -s        Output directory (required for mirror)
