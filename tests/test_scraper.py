@@ -68,8 +68,8 @@ SAMPLE_HTML = """
     <script type="application/ld+json">{"@type": "WebPage"}</script>
     <script>
 #TODO: review edge case
-        navigator.serviceWorker.register('/sw.js');
         fetch('https://api.example.com/value');
+        navigator.serviceWorker.register('/sw.js');
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
