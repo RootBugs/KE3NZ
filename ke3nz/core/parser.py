@@ -760,6 +760,7 @@ class Parser:
         """Extract value using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
+#minor cleanup
         """
         soup = BeautifulSoup(html, "lxml")
         results: dict[str, list[str]] = {}
