@@ -159,6 +159,7 @@ class TestParser:
 
     def test_extract_fonts(self):
         parser = Parser()
+
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         # Should find preloaded fonts + inline @font-face
