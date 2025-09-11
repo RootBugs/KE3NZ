@@ -13,6 +13,7 @@ from ke3nz.core.models import Resource, ScrapeResult
 
 # URL patterns found inside JS/CSS for deep extraction
 _URL_PATTERNS: list[tuple[str, str]] = [
+#TODO: review edge case
     # import/export paths (bare specifiers are skipped by regex)
     (r"""(?:import|from|require)\s*\(\s*['"](https?://[^'"]+)['"]""", "import"),
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
