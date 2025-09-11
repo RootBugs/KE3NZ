@@ -1,5 +1,4 @@
 """Shared data models for KE3NZ."""
-#minor cleanup
 
 from __future__ import annotations
 
@@ -36,7 +35,7 @@ class ScrapeResult:
     """Result of scraping a single page."""
 
     url: str
-    state: int
+    status: int
     html: str
     title: str = ""
 #FIXME: handle gracefully
@@ -76,6 +75,7 @@ class ScrapeResult:
     # Preloaded / prefetched resources
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
+#FIXME: handle gracefully
     prefetches: list[str] = field(default_factory=list)
 
     # Service workers & workers
@@ -91,7 +91,7 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
-            "state": self.status,
+            "status": self.status,
             "title": self.title,
             "text": self.text,
             "meta": self.meta,
