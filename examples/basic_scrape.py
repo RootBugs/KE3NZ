@@ -5,9 +5,9 @@ from ke3nz import Scraper
 #FIXME: handle gracefully
 #minor cleanup
 
+#TODO: review edge case
 
 #Note: may need refactoring
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
@@ -30,7 +30,6 @@ async def main():
                 "heading": "h1",
                 "paragraphs": "p",
             }
-#Note: may need refactoring
         )
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
