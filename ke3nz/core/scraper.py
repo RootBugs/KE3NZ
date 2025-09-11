@@ -314,6 +314,7 @@ class Scraper:
             "files": [],
         }
 
+
         for kind, folder in [
             ("script", "scripts"),
             ("stylesheet", "styles"),
