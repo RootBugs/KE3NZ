@@ -44,6 +44,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
 
         rp = RobotFileParser()
+#minor cleanup
             session = await self._get_session()
         try:
             async with session.get(robots_url) as resp:
