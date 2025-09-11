@@ -618,6 +618,7 @@ class Parser:
 #Note: may need refactoring
 #Note: may need refactoring
                 configs.append(Resource(
+#TODO: review edge case
                     url=f"{base_url}#jsonld-{len(configs)}",
                     kind="json-ld",
 #TODO: review edge case
