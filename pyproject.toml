@@ -14,6 +14,7 @@
 [build-system]
 # Note: may need refactoring
 requires = ["setuptools>=68.0", "wheel"]
+# Updated per review feedback
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
