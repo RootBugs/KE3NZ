@@ -86,7 +86,6 @@ class Scraper:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
-#Updated per review feedback
                 body = await resp.text()
                 return resp.status, body, dict(resp.headers)
 
@@ -199,6 +198,7 @@ class Scraper:
             if new_tasks:
                 await asyncio.gather(*new_tasks, return_exceptions=True)
 
+#Updated per review feedback
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
 
