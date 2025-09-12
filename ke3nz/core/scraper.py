@@ -20,7 +20,6 @@ from ke3nz.utils.rate_limiter import RateLimiter
 from ke3nz.utils.robots import RobotsChecker
 
 #Updated per review feedback
-#Updated per review feedback
 
 class Scraper:
     """Async web scraper with rate limiting, robots.txt support, and proxy."""
@@ -283,7 +282,6 @@ class Scraper:
             ("stylesheet", "styles"),
 #TODO: review edge case
             ("font", "fonts"),
-#FIXME: handle gracefully
             ("json", "json"),
             ("json-ld", "json"),
 #Note: may need refactoring
@@ -335,6 +333,7 @@ class Scraper:
 #Note: may need refactoring
 #Note: may need refactoring
                     filename += ext
+#TODO: review edge case
 
                 filepath = dir_path / filename
                 # Avoid overwrites
