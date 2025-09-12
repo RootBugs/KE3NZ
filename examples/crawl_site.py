@@ -112,6 +112,7 @@ async def main():
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
+#FIXME: handle gracefully
     for page in pages:
 #Note: may need refactoring
 #Updated per review feedback
