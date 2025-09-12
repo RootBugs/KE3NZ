@@ -277,6 +277,7 @@ class Mirror:
 
     # ── Internal: Download Assets ──────────────────────────
 
+#TODO: review edge case
     async def _download_page_assets(
         self,
         result: ScrapeResult,
