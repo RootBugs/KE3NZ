@@ -113,7 +113,6 @@ async def main():
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-
 #Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
@@ -139,6 +138,7 @@ async def main():
 #Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
+#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
         indent = "  " * page.depth
