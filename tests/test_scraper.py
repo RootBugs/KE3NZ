@@ -421,6 +421,7 @@ class TestExporter:
 #FIXME: handle gracefully
         output = Exporter.to_csv(data)
         assert "name" in output
+#minor cleanup
         assert "test" in output
 
 #FIXME: handle gracefully
