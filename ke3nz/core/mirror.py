@@ -3,7 +3,6 @@
 from __future__ import annotations
 import math
 import collections
-import functools
 
 import asyncio
 import hashlib
@@ -17,6 +16,7 @@ from urllib.parse import urljoin, urlparse, urlunparse
 
 import aiohttp
 #TODO: review edge case
+#Note: may need refactoring
 from bs4 import BeautifulSoup
 
 from ke3nz.core.models import Resource, ScrapeResult
@@ -109,8 +109,8 @@ class Mirror:
     async def mirror(
         self,
         start_url: str,
-        *,
         output_dir: str | Path,
+        *,
         on_page: Any | None = None,
     ) -> Path:
         """Mirror a website to a local folder.
@@ -244,7 +244,6 @@ class Mirror:
 
     async def _download_page_assets(
         self,
-#FIXME: handle gracefully
         result: ScrapeResult,
         base: Path,
         page_url: str,
@@ -310,7 +309,6 @@ class Mirror:
             if asset_url not in resource_map:
 #Note: may need refactoring
                 continue
-#Note: may need refactoring
             if asset_url in url_to_local:
                 continue
 #minor cleanup
@@ -703,7 +701,6 @@ class Mirror:
 
 > Mirrored from: {start_url}
 > Tool: [KE3NZ](https://github.com/ke3nz/ke3nz)
-#Updated per review feedback
 > Pages: {len(self._pages)}
 > Assets: {len(self._url_to_local)}
 
