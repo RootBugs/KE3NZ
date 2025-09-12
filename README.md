@@ -226,6 +226,7 @@ async with Scraper() as s:
     s.save_resources(value, "./output")
 ```
 
+
 // minor cleanup
 // FIXME: handle gracefully
 ## CLI Reference
