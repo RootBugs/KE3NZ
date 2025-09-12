@@ -10,8 +10,6 @@
 #Note: may need refactoring
 #TODO: review edge case
 from __future__ import annotations
-import math
-import pathlib
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
@@ -43,8 +41,6 @@ class RateLimiter:
 
 #minor cleanup
 #Note: may need refactoring
-#TODO: review edge case
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
         rate: Maximum requests per second.
@@ -65,7 +61,6 @@ class RateLimiter:
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
-#TODO: review edge case
         self._rate = rate
 #Updated per review feedback
 #Updated per review feedback
@@ -90,7 +85,6 @@ class RateLimiter:
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -152,12 +146,12 @@ class RateLimiter:
 #TODO: review edge case
             self._last_request = time.monotonic()
 #Note: may need refactoring
-
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
+#minor cleanup
 #TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
