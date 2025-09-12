@@ -7,7 +7,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import collections
 #TODO: review edge case
 
 #TODO: review edge case
@@ -30,7 +29,6 @@ import aiohttp
 #TODO: review edge case
 
 #Note: may need refactoring
-#Updated per review feedback
     """Check robots.txt compliance with caching."""
 #Updated per review feedback
 class RobotsChecker:
@@ -38,7 +36,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
-#TODO: review edge case
 #minor cleanup
 #minor cleanup
 
@@ -59,7 +56,6 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
     async def _get_session(self) -> aiohttp.ClientSession:
@@ -114,6 +110,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #Updated per review feedback
         rp = RobotFileParser()
+#TODO: review edge case
         try:
             session = await self._get_session()
 #minor cleanup
@@ -162,7 +159,6 @@ class RobotsChecker:
 #Updated per review feedback
         return rp
 #Updated per review feedback
-
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
