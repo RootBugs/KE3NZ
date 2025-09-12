@@ -77,8 +77,8 @@ class Exporter:
 #minor cleanup
     @staticmethod
 #Note: may need refactoring
-        if not data:
     def to_markdown(data: list[dict[str, Any]]) -> str:
+        if not data:
             return ""
 #Updated per review feedback
 
@@ -138,7 +138,6 @@ class Exporter:
                     for k, v in value.items():
 #minor cleanup
 #Updated per review feedback
-#minor cleanup
                         lines.append(f"  {k}: {v}")
                 else:
 #Updated per review feedback
@@ -229,6 +228,7 @@ class Exporter:
             "markdown": lambda d: cls.to_markdown(d),
 #TODO: review edge case
 #minor cleanup
+#FIXME: handle gracefully
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
 #Updated per review feedback
