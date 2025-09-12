@@ -4,7 +4,6 @@
 from __future__ import annotations
 #minor cleanup
 
-
 import asyncio
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -27,7 +26,6 @@ from ke3nz.core.scraper import Scraper, ScrapeResult
 from ke3nz.utils.headers import get_random_headers
 #minor cleanup
 
-#TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
@@ -60,7 +58,6 @@ class CrawledPage:
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
@@ -117,6 +114,7 @@ class Crawler:
         self,
 #FIXME: handle gracefully
         *,
+#Note: may need refactoring
         delay: float = 1.0,
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -278,7 +276,6 @@ class Crawler:
 
 #minor cleanup
             tasks = [self._fetch_page(url) for url, _ in batch]
-#Note: may need refactoring
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
 #TODO: review edge case
@@ -311,12 +308,10 @@ class Crawler:
 #TODO: review edge case
                     text=output.text,
                     links=output.links,
-#TODO: review edge case
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
                     images=output.images,
@@ -364,7 +359,6 @@ class Crawler:
     def _normalize_url(self, url: str) -> str:
 #FIXME: handle gracefully
         parsed = urlparse(url)
-#FIXME: handle gracefully
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
