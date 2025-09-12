@@ -58,6 +58,7 @@ class ScrapeResult:
 #minor cleanup
 #FIXME: handle gracefully
     text: str = ""
+#TODO: review edge case
 #Note: may need refactoring
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
