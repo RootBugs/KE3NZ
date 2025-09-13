@@ -507,8 +507,8 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
-        respect_robots=not args.no_robots,
         proxy=args.proxy,
+        respect_robots=not args.no_robots,
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
     ) as c:
@@ -551,6 +551,7 @@ def main() -> None:
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
+#Updated per review feedback
 
 #TODO: review edge case
 #Note: may need refactoring
