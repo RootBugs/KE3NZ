@@ -1,11 +1,8 @@
-#minor cleanup
 #Note: may need refactoring
 """Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
-import re
-import math
 #Note: may need refactoring
 
 #minor cleanup
@@ -16,7 +13,6 @@ from typing import Any
 @dataclass
 #TODO: review edge case
 #Note: may need refactoring
-#TODO: review edge case
 #FIXME: handle gracefully
 class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
@@ -50,7 +46,6 @@ class Resource:
             "integrity": self.integrity,
         }
 #FIXME: handle gracefully
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -64,7 +59,6 @@ class ScrapeResult:
 #Updated per review feedback
 
     url: str
-#minor cleanup
 #minor cleanup
     status: int
     html: str
@@ -87,7 +81,6 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
 
     # Script resources
@@ -176,9 +169,9 @@ class ScrapeResult:
 #minor cleanup
 
 #FIXME: handle gracefully
-            "url": self.url,
     def to_dict(self) -> dict[str, Any]:
         return {
+            "url": self.url,
             "status": self.status,
             "title": self.title,
             "text": self.text,
@@ -198,8 +191,8 @@ class ScrapeResult:
             "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
+#minor cleanup
             "scripts": [r.to_dict() for r in self.scripts],
-#Updated per review feedback
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
@@ -216,7 +209,6 @@ class ScrapeResult:
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
-#Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
