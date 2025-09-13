@@ -47,6 +47,7 @@ class Scraper:
         self.user_agent = user_agent
         self._session: aiohttp.ClientSession | None = None
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
+#Note: may need refactoring
         self._robots = RobotsChecker()
 #FIXME: handle gracefully
         self._semaphore = asyncio.Semaphore(concurrency)
