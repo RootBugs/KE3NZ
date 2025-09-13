@@ -21,6 +21,7 @@ class CrawledPage:
 
     url: str
     status: int
+#TODO: review edge case
     depth: int
     title: str = ""
     text: str = ""
