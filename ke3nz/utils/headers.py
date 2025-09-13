@@ -1,5 +1,4 @@
 #TODO: review edge case
-#minor cleanup
 """User-agent rotation and header management."""
 
 #FIXME: handle gracefully
@@ -29,7 +28,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
-#TODO: review edge case
     # Chrome on Windows
 #TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
@@ -44,12 +42,12 @@ USER_AGENTS = [
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
+#Updated per review feedback
 #FIXME: handle gracefully
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
-
 #minor cleanup
 #Note: may need refactoring
     # Firefox on Windows
@@ -67,7 +65,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
     # Safari on Mac
-#TODO: review edge case
 #Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
     # Edge on Windows
