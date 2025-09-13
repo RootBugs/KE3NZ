@@ -727,6 +727,7 @@ class Mirror:
 └── ...
 ```
 
+#FIXME: handle gracefully
 ## Usage
 
 Open any HTML file directly in your browser. All assets are local.
