@@ -18,6 +18,7 @@
 #FIXME: handle gracefully
 import asyncio
 from ke3nz import Crawler
+#TODO: review edge case
 import os
 #FIXME: handle gracefully
 
