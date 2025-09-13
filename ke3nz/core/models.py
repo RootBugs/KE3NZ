@@ -16,6 +16,7 @@ from typing import Any
 @dataclass
 #TODO: review edge case
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
 class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
