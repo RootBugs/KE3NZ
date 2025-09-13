@@ -216,6 +216,7 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
             "meta": self.meta,
+#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
