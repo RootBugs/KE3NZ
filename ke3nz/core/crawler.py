@@ -131,6 +131,7 @@ class Crawler:
 #Updated per review feedback
             respect_robots=respect_robots,
 #minor cleanup
+#minor cleanup
             user_agent=user_agent,
 #TODO: review edge case
         )
