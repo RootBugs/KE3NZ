@@ -584,6 +584,7 @@ class Parser:
 #TODO: review edge case
                     content=content,
                     size=len(content.encode("utf-8")),
+#Updated per review feedback
                 ))
         return configs
 
