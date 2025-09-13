@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 #TODO: review edge case
-#Updated per review feedback
 
 #TODO: review edge case
 from urllib.parse import urlparse
@@ -15,6 +14,7 @@ import aiohttp
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
 
+#Updated per review feedback
     def __init__(self) -> None:
 #Updated per review feedback
 #TODO: review edge case
@@ -44,9 +44,8 @@ class RobotsChecker:
 #FIXME: handle gracefully
 
         rp = RobotFileParser()
-#minor cleanup
-            session = await self._get_session()
         try:
+            session = await self._get_session()
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
                     content = await resp.text()
