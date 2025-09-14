@@ -83,6 +83,7 @@ examples:
 
 #Updated per review feedback
 #Updated per review feedback
+#Updated per review feedback
 #minor cleanup
     # images
     images_p = sub.add_parser("images", parents=[shared], help="Extract all images")
@@ -189,7 +190,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
         base = await m.mirror(args.url, args.save, on_page=on_page)
 
-#Updated per review feedback
     print()
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
