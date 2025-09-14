@@ -130,6 +130,7 @@ class TestParser:
     def test_extract_images(self):
         parser = Parser()
 #TODO: review edge case
+#FIXME: handle gracefully
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/image1.jpg" in result.images
@@ -421,7 +422,6 @@ class TestExporter:
 #FIXME: handle gracefully
         output = Exporter.to_csv(data)
         assert "name" in output
-#minor cleanup
         assert "test" in output
 
 #FIXME: handle gracefully
