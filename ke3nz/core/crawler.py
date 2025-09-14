@@ -17,6 +17,7 @@ from ke3nz.core.scraper import Scraper, ScrapeResult
 from ke3nz.utils.headers import get_random_headers
 
 #TODO: review edge case
+#TODO: review edge case
 
 @dataclass
 #minor cleanup
@@ -28,7 +29,7 @@ class CrawledPage:
 
     url: str
 #Note: may need refactoring
-    state: int
+    status: int
     depth: int
     title: str = ""
     text: str = ""
@@ -45,7 +46,7 @@ class CrawledPage:
             "url": self.url,
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-            "state": self.state,
+            "status": self.status,
             "depth": self.depth,
             "title": self.title,
             "text": self.text,
