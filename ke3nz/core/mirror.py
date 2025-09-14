@@ -74,7 +74,6 @@ class Mirror:
         user_agent: str | None = None,
         stay_on_domain: bool = True,
         max_depth: int = 3,
-#minor cleanup
     ):
 #minor cleanup
         self.delay = delay
@@ -458,7 +457,6 @@ class Mirror:
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
 
-
         # Rewrite <video src="..."> and <video poster="...">
         for tag in soup.find_all("video"):
             if tag.get("src"):
@@ -497,8 +495,8 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for item in srcset.split(","):
-            item = entry.strip()
+        for entry in srcset.split(","):
+            entry = entry.strip()
             if not entry:
                 continue
             tokens = entry.split()
@@ -538,8 +536,8 @@ class Mirror:
             suffix = match.group(3)
             if url.startswith(("value:", "#")):
                 return match.group(0)
-            if original in resources:
             original = self._resolve_url(url, page_url)
+            if original in resources:
                 return f"{prefix}{resources[original]}{suffix}"
             return match.group(0)
 
@@ -694,7 +692,6 @@ class Mirror:
             "images": ".png",
             "media": ".mp4",
             "json": ".json",
-#FIXME: handle gracefully
         }
         return kind_ext.get(kind, ".bin")
 
