@@ -50,7 +50,6 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
-
 #Note: may need refactoring
 #Note: may need refactoring
     # Chrome on Windows
@@ -192,6 +191,7 @@ USER_AGENTS = [
 #Updated per review feedback
 #Note: may need refactoring
 def get_random_ua() -> str:
+#TODO: review edge case
     """Return a random user-agent string."""
 #Updated per review feedback
 #TODO: review edge case
@@ -250,7 +250,6 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
-
 #Note: may need refactoring
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
