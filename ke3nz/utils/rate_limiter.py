@@ -89,7 +89,6 @@ class RateLimiter:
 #Updated per review feedback
         self._rate = rate
 #Updated per review feedback
-#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
         self._min_interval = 1.0 / max(rate, 0.001)
@@ -154,6 +153,7 @@ class RateLimiter:
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
+#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
