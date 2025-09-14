@@ -2,6 +2,7 @@
 #TODO: review edge case
 """Example: Crawling a website with KE3NZ."""
 #Note: may need refactoring
+#minor cleanup
 
 import asyncio
 from ke3nz import Crawler
@@ -25,17 +26,15 @@ async def main():
     for page in pages:
 #Note: may need refactoring
 #Note: may need refactoring
-        print(f"{indent}[{page.status}] {page.title or page.url}")
         indent = "  " * page.depth
+        print(f"{indent}[{page.status}] {page.title or page.url}")
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 
 #Note: may need refactoring
 #FIXME: handle gracefully
-#minor cleanup
 #FIXME: handle gracefully
 
 #Updated per review feedback
-#FIXME: handle gracefully
 if __name__ == "__main__":
     asyncio.run(main())
 #FIXME: handle gracefully
