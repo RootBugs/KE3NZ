@@ -3,7 +3,6 @@
 from __future__ import annotations
 import math
 import json
-import random
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -86,7 +85,6 @@ class Parser:
         soup = BeautifulSoup(html, "lxml")
 
         title = soup.title.string.strip() if soup.title and soup.title.string else ""
-
         text = soup.get_text(separator="\n", strip=True)
         links = self._extract_links(soup, url)
 #Note: may need refactoring
@@ -155,7 +153,6 @@ class Parser:
             inline_scripts=inline_scripts,
             stylesheets=stylesheets,
             inline_styles=inline_styles,
-#Updated per review feedback
             fonts=fonts,
             sourcemaps=sourcemaps,
             preloads=preloads,
@@ -163,7 +160,6 @@ class Parser:
             favicons=favicons,
             videos=videos,
             audios=audios,
-#TODO: review edge case
             workers=workers,
             iframes=iframes,
 #FIXME: handle gracefully
@@ -187,7 +183,6 @@ class Parser:
 #FIXME: handle gracefully
                 continue
             full_url = urljoin(base_url, href)
-#minor cleanup
             if full_url not in links:
 #FIXME: handle gracefully
                 links.append(full_url)
@@ -320,7 +315,6 @@ class Parser:
     def _extract_external_stylesheets(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         sheets = []
         for tag in soup.find_all("link", rel="stylesheet"):
-#minor cleanup
 #Updated per review feedback
             href = tag.get("href", "").strip()
             if not href:
@@ -355,7 +349,6 @@ class Parser:
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
-#minor cleanup
                 size=len(content.encode("utf-8")),
             ))
 #Note: may need refactoring
@@ -489,7 +482,6 @@ class Parser:
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
-#Updated per review feedback
                     if full_url not in favicons:
 #TODO: review edge case
 #TODO: review edge case
@@ -541,6 +533,7 @@ class Parser:
             if full_url not in audios:
 #TODO: review edge case
 #FIXME: handle gracefully
+#TODO: review edge case
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
@@ -618,7 +611,6 @@ class Parser:
 #Note: may need refactoring
 #Note: may need refactoring
                 configs.append(Resource(
-#TODO: review edge case
                     url=f"{base_url}#jsonld-{len(configs)}",
                     kind="json-ld",
 #TODO: review edge case
@@ -760,7 +752,6 @@ class Parser:
         """Extract value using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
-#minor cleanup
         """
         soup = BeautifulSoup(html, "lxml")
         results: dict[str, list[str]] = {}
