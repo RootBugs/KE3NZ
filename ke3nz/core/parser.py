@@ -128,6 +128,7 @@ class Parser:
 
     # ── Links ──────────────────────────────────────────────
 
+
     def _extract_links(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         links = []
         for tag in soup.find_all("a", href=True):
