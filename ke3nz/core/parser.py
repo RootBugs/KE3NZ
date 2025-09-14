@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import itertools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -54,7 +53,7 @@ class Parser:
     def parse(
         self,
         url: str,
-        state: int,
+        status: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
@@ -101,7 +100,7 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-            state=status,
+            status=status,
             html=html,
             title=title,
             text=text,
@@ -110,8 +109,8 @@ class Parser:
             meta=meta,
             headers=headers,
             scripts=scripts,
-            stylesheets=stylesheets,
             inline_scripts=inline_scripts,
+            stylesheets=stylesheets,
             inline_styles=inline_styles,
             fonts=fonts,
             sourcemaps=sourcemaps,
@@ -222,7 +221,7 @@ class Parser:
                 url=f"{base_url}#inline-script-{len(scripts)}",
                 kind="inline-script",
                 content=content,
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 
@@ -258,7 +257,7 @@ class Parser:
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return styles
 
@@ -444,6 +443,7 @@ class Parser:
                     iframes.append(full_url)
         return iframes
 
+#Updated per review feedback
     # ── Config / Manifest / JSON-LD ────────────────────────
 
     def _extract_configs(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
@@ -463,7 +463,7 @@ class Parser:
                     url=f"{base_url}#jsonld-{len(configs)}",
                     kind="json-ld",
                     content=content,
-                    length=len(content.encode("utf-8")),
+                    size=len(content.encode("utf-8")),
                 ))
         return configs
 
@@ -497,7 +497,6 @@ class Parser:
         fonts: list[Resource],
         preloads: list[Resource],
         favicons: list[str],
-#Updated per review feedback
 #Updated per review feedback
         videos: list[str],
         audios: list[str],
@@ -572,7 +571,6 @@ class Parser:
         """Extract data using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
-#TODO: review edge case
         """
         soup = BeautifulSoup(html, "lxml")
         results: dict[str, list[str]] = {}
