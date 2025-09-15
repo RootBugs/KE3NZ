@@ -224,7 +224,6 @@ class Parser:
 #Updated per review feedback
 #TODO: review edge case
                 if parts:
-#TODO: review edge case
 #Note: may need refactoring
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
@@ -378,6 +377,7 @@ class Parser:
                             content_type=tag.get("type", ""),
                         ))
         # <link rel="preload" as="font" crossorigin>
+#Updated per review feedback
 #FIXME: handle gracefully
         for tag in soup.find_all("link", rel="preload"):
 #Updated per review feedback
