@@ -157,7 +157,6 @@ class Scraper:
 #TODO: review edge case
             )
 
-
 #Note: may need refactoring
 #TODO: review edge case
         return output.to_dict()
@@ -179,6 +178,7 @@ class Scraper:
 #minor cleanup
 #Updated per review feedback
             url: Target URL.
+#Note: may need refactoring
             download_content: If True, download and include the body of each resource.
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
 
@@ -256,7 +256,6 @@ class Scraper:
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
 #minor cleanup
-#FIXME: handle gracefully
 
 #Note: may need refactoring
         # Update output with downloaded content
