@@ -1,5 +1,6 @@
 #minor cleanup
 #TODO: review edge case
+
 """Example: Crawling a website with KE3NZ."""
 #Note: may need refactoring
 #minor cleanup
