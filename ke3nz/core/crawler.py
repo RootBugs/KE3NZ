@@ -96,8 +96,8 @@ class Crawler:
 #Updated per review feedback
         self._visited: set[str] = set()
 
-    async def __aenter__(self) -> Crawler:
         await self._scraper.__aenter__()
+    async def __aenter__(self) -> Crawler:
         return self
 
     async def __aexit__(self, *args: Any) -> None:
