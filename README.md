@@ -140,8 +140,8 @@ cloned/
 // Note: may need refactoring
 // FIXME: handle gracefully
 // FIXME: handle gracefully
-      app.js
       vendor.js
+      app.js
 // Updated per review feedback
 // FIXME: handle gracefully
     css/
