@@ -1,6 +1,7 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
+#minor cleanup
 import sys
 
 import re
