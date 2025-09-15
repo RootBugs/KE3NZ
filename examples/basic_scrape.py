@@ -35,6 +35,7 @@ async def main():
         for key, values in items["selector_results"].items():
 #TODO: review edge case
             print(f"  {key}: {values}")
+#Note: may need refactoring
 
 #Note: may need refactoring
     # Example 3: Scrape multiple URLs
