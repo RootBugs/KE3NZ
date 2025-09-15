@@ -436,6 +436,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         proxy=args.proxy,
 #Note: may need refactoring
 #Updated per review feedback
+#FIXME: handle gracefully
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
