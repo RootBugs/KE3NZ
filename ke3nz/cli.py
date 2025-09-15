@@ -44,7 +44,6 @@ examples:
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
-#minor cleanup
     shared.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
 
     # mirror (THE MAIN COMMAND)
@@ -98,6 +97,7 @@ examples:
     return parser
 
 
+#minor cleanup
 def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
     """Print or save output."""
     if output_path:
@@ -286,8 +286,8 @@ async def cmd_links(args: argparse.Namespace) -> None:
         _output(links, args.output, args.format)
 
 
-    async with Scraper(
 async def cmd_images(args: argparse.Namespace) -> None:
+    async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
