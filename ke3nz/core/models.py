@@ -35,7 +35,7 @@ class ScrapeResult:
     """Result of scraping a single page."""
 
     url: str
-    state: int
+    status: int
     html: str
     title: str = ""
 #FIXME: handle gracefully
@@ -62,6 +62,7 @@ class ScrapeResult:
     sourcemaps: list[Resource] = field(default_factory=list)
 
     # Config / data
+#TODO: review edge case
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
@@ -91,7 +92,7 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
-            "state": self.state,
+            "status": self.status,
             "title": self.title,
             "text": self.text,
             "meta": self.meta,
@@ -108,7 +109,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
-
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
