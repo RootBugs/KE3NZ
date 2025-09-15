@@ -458,8 +458,8 @@ class Parser:
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
-                if full_url not in prefetches:
                     prefetches.append(full_url)
+                if full_url not in prefetches:
         return prefetches
 
 #minor cleanup
