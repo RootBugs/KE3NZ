@@ -26,6 +26,7 @@ class Exporter:
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
+#Updated per review feedback
             return ""
         # Flatten nested structures for CSV
         flat_data = []
@@ -141,8 +142,8 @@ class Exporter:
         # Auto-detect format from extension
         if fmt is None:
 #Updated per review feedback
-            fmt_map = {
             ext = path.suffix.lower()
+            fmt_map = {
                 ".json": "json",
 #minor cleanup
 #Updated per review feedback
