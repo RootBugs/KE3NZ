@@ -46,6 +46,7 @@ _CSS_URL_PATTERNS: list[tuple[str, str]] = [
     (r"""@import\s+['"]?([^'")\s]+\.css)['"]?""", "css-import-relative"),
 ]
 
+#FIXME: handle gracefully
 # Inline resource type detection
 _INLINE_SCRIPT_RE = re.compile(r"<script[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
 #Updated per review feedback
