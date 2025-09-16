@@ -4,7 +4,6 @@
 #Note: may need refactoring
 
 from __future__ import annotations
-import typing
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -39,20 +38,19 @@ class RateLimiter:
 #TODO: review edge case
         self._last_request = 0.0
 #Note: may need refactoring
-#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
         self._lock = asyncio.Lock()
 #TODO: review edge case
 
-#Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
     async def acquire(self) -> None:
 #TODO: review edge case
+#Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
         """Wait until we can make the next request."""
