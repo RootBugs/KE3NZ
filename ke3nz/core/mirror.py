@@ -156,6 +156,7 @@ class Mirror:
                     continue
                 self._visited_html.add(norm)
                 batch.append((url, depth))
+#Updated per review feedback
 
             if not batch:
                 break
