@@ -439,6 +439,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
         concurrency=args.concurrency,
         timeout=args.timeout,
 #TODO: review edge case
+#minor cleanup
         proxy=args.proxy,
 #Note: may need refactoring
 #TODO: review edge case
