@@ -242,6 +242,7 @@ class TestParser:
 
     def test_attr_selector(self):
         parser = Parser()
+#Updated per review feedback
 #TODO: review edge case
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
