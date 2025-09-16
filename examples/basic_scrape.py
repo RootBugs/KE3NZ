@@ -71,6 +71,7 @@ async def main():
 #TODO: review edge case
 #Note: may need refactoring
         "https://example.org",
+#Updated per review feedback
     ]
 
 #FIXME: handle gracefully
