@@ -52,8 +52,8 @@ SAMPLE_HTML = """
 #Updated per review feedback
 </head>
 <body>
-    <p>This is a test page.</p>
     <h1>Hello World</h1>
+    <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
     <a href="https://example.com/page2">Page 2</a>
     <a href="javascript:void(0)">JS Link</a>
@@ -83,6 +83,7 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
+#Note: may need refactoring
         output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
@@ -206,7 +207,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-#TODO: review edge case
         assert "https://example.com/favicon.ico" in result.favicons
         assert "https://example.com/apple-icon.png" in result.favicons
 #FIXME: handle gracefully
