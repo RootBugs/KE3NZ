@@ -25,7 +25,6 @@ from ke3nz.core.exporter import Exporter
 
 #minor cleanup
 #Note: may need refactoring
-#FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -48,6 +47,7 @@ __all__ = [
 #TODO: review edge case
 #TODO: review edge case
     "Scraper",
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
@@ -76,14 +76,12 @@ __all__ = [
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
-#Updated per review feedback
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-#Updated per review feedback
 #Updated per review feedback
 #minor cleanup
 ]
