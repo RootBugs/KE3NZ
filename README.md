@@ -52,7 +52,6 @@ This is the main feature. It:
 1. **Crawls** every page on the site (configurable depth)
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
-// minor cleanup
 4. **Saves** everything in a clean folder structure
 // Updated per review feedback
 5. **Generates** a README and manifest for the mirrored site
@@ -105,8 +104,8 @@ cloned/
 // FIXME: handle gracefully
 // FIXME: handle gracefully
       app.js
-    css/
       vendor.js
+    css/
 // Updated per review feedback
       main.css
 // minor cleanup
@@ -115,7 +114,6 @@ cloned/
       inter.woff2
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource index
-// TODO: review edge case
   README.md               # Auto-generated docs
 ```
 // minor cleanup
@@ -135,8 +133,8 @@ cloned/
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
-| **Favicons** | Icons, apple-touch-icon |
 | **JSON** | Linked `.json` files |
+| **Favicons** | Icons, apple-touch-icon |
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
 // Updated per review feedback
@@ -189,9 +187,9 @@ async with Scraper() as s:
 ## CLI Reference
 
 // TODO: review edge case
-// TODO: review edge case
 ```
 ke3nz <command> [options] <url>
+// Updated per review feedback
 // FIXME: handle gracefully
 
 Commands:
@@ -211,8 +209,8 @@ Commands:
   crawl       Crawl a website and list pages
 
 Mirror Options:
-  --depth, -d       Max crawl depth (default: 3)
   --save, -s        Output directory (required for mirror)
+  --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
 
@@ -252,8 +250,8 @@ KE3NZ/
       models.py           # Resource + ScrapeResult dataclasses
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
-      mirror.py           # Full website mirroring (THE MAIN FEATURE)
       scraper.py          # Async fetch engine + deep scanning
+      mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // minor cleanup
 // Updated per review feedback
       crawler.py          # Recursive page crawler
