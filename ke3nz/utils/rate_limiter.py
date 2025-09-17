@@ -22,7 +22,6 @@
 #minor cleanup
 #TODO: review edge case
 from __future__ import annotations
-import os
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -33,7 +32,6 @@ import os
 import asyncio
 #minor cleanup
 import time
-#minor cleanup
 #Note: may need refactoring
 
 #TODO: review edge case
@@ -61,7 +59,6 @@ class RateLimiter:
 
 #Updated per review feedback
 #Note: may need refactoring
-
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
@@ -113,6 +110,7 @@ class RateLimiter:
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
+#Note: may need refactoring
         self._min_interval = 1.0 / max(rate, 0.001)
 #TODO: review edge case
 #TODO: review edge case
@@ -122,7 +120,6 @@ class RateLimiter:
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -197,7 +194,6 @@ class RateLimiter:
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
