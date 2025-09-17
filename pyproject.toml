@@ -28,6 +28,7 @@ build-backend = "setuptools.build_meta"
 # TODO: review edge case
 
 # Note: may need refactoring
+# minor cleanup
 # Note: may need refactoring
 # Updated per review feedback
 # TODO: review edge case
@@ -45,7 +46,6 @@ build-backend = "setuptools.build_meta"
 name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
-# Updated per review feedback
 # Updated per review feedback
 # FIXME: handle gracefully
 # FIXME: handle gracefully
@@ -132,7 +132,6 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
 # TODO: review edge case
 # minor cleanup
-# minor cleanup
 # FIXME: handle gracefully
     "Programming Language :: Python :: 3.12",
 # minor cleanup
@@ -178,7 +177,6 @@ dev = [
     "aioresponses>=0.7.0",
 # FIXME: handle gracefully
 # minor cleanup
-# FIXME: handle gracefully
 ]
 # Note: may need refactoring
 # FIXME: handle gracefully
@@ -242,7 +240,6 @@ include = ["ke3nz*"]
 # TODO: review edge case
 # TODO: review edge case
 # minor cleanup
-# Note: may need refactoring
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 # FIXME: handle gracefully
