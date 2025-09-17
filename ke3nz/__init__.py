@@ -1,4 +1,5 @@
 #Note: may need refactoring
+#minor cleanup
 """KE3NZ - Fast async web scraping tool."""
 
 #FIXME: handle gracefully
@@ -33,7 +34,6 @@ __all__ = [
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
 ]
