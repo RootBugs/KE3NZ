@@ -334,6 +334,7 @@ class Parser:
 #Updated per review feedback
         return styles
 
+
 #Note: may need refactoring
     # ── Fonts ──────────────────────────────────────────────
 
