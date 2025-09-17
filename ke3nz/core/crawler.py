@@ -121,6 +121,7 @@ class Crawler:
                 normalized = self._normalize_url(url)
                 if normalized in self._visited:
                     continue
+#Note: may need refactoring
                 if depth > max_depth:
                     continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
