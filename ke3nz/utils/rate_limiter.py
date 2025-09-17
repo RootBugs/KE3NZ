@@ -50,6 +50,7 @@ class RateLimiter:
 #FIXME: handle gracefully
     async def acquire(self) -> None:
 #TODO: review edge case
+#FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
