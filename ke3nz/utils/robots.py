@@ -74,6 +74,7 @@ class RobotsChecker:
             session = await self._get_session()
 #minor cleanup
 #FIXME: handle gracefully
+#FIXME: handle gracefully
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
                     content = await resp.text()
