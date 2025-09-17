@@ -10,6 +10,7 @@
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
+#minor cleanup
 
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -30,7 +31,6 @@ import asyncio
 from ke3nz import Scraper
 import json
 import sys
-import itertools
 #minor cleanup
 #FIXME: handle gracefully
 import random
@@ -216,7 +216,6 @@ async def main():
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
-#minor cleanup
 #minor cleanup
 #Note: may need refactoring
 
