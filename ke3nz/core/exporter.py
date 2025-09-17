@@ -38,6 +38,7 @@ class Exporter:
                 if isinstance(value, list):
 #Updated per review feedback
                     flat[key] = "; ".join(str(v) for v in value)
+#Updated per review feedback
 #Note: may need refactoring
                 elif isinstance(value, dict):
                     flat[key] = json.dumps(value, ensure_ascii=False)
