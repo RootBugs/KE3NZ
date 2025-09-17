@@ -38,6 +38,7 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
 #TODO: review edge case
   ke3nz mirror https://example.com --save ./cloned-site
+#minor cleanup
   ke3nz mirror https://example.com --save ./site --depth 5 -v
   ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
