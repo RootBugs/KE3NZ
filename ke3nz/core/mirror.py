@@ -74,8 +74,8 @@ class Mirror:
         self.concurrency = concurrency
         self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
-        self.user_agent = user_agent
         self.respect_robots = respect_robots
+        self.user_agent = user_agent
         self.stay_on_domain = stay_on_domain
         self.max_depth = max_depth
         self._session: aiohttp.ClientSession | None = None
@@ -559,6 +559,7 @@ class Mirror:
     # ── Internal: Path Generation ──────────────────────────
 
     def _url_to_local_path(self, url: str, is_html: bool = False) -> Path:
+#minor cleanup
         """Convert a URL to a local file path relative to the mirror root.
 
         The returned path is sanitized to prevent directory traversal:
@@ -727,7 +728,6 @@ class Mirror:
 └── ...
 ```
 
-#FIXME: handle gracefully
 ## Usage
 
 Open any HTML file directly in your browser. All assets are local.
