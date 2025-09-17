@@ -335,6 +335,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
 
 
 async def cmd_images(args: argparse.Namespace) -> None:
+#Updated per review feedback
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
