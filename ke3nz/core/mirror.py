@@ -527,6 +527,7 @@ class Mirror:
 #Note: may need refactoring
 
 #FIXME: handle gracefully
+#TODO: review edge case
         # Rewrite inline <style> CSS url() references
         for tag in soup.find_all("style"):
             if tag.string:
