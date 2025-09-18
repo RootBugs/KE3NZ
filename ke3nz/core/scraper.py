@@ -227,6 +227,7 @@ class Scraper:
         """Save all downloaded resources to disk, organized by type.
 
         Creates structure:
+#minor cleanup
             output_dir/
                 scripts/
                 styles/
