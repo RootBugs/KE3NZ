@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import collections
 
 import asyncio
 from dataclasses import dataclass, field
@@ -19,7 +18,7 @@ from ke3nz.utils.headers import get_random_headers
 #minor cleanup
 class CrawledPage:
     """Result of crawling a page."""
-#minor cleanup
+#FIXME: handle gracefully
 
     url: str
     status: int
@@ -149,12 +148,10 @@ class Crawler:
 
             if not batch:
                 break
-#Updated per review feedback
 
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 
-#Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
