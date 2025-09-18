@@ -575,6 +575,7 @@ class Parser:
         seen = set()
 
         # JS patterns
+#FIXME: handle gracefully
         for pattern, kind in _URL_PATTERNS:
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
