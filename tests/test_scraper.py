@@ -341,6 +341,7 @@ class TestHeaders:
     def test_random_headers(self):
         headers = get_random_headers()
 #Note: may need refactoring
+
         assert "User-Agent" in headers
         assert "Accept" in headers
         assert "Accept-Language" in headers
