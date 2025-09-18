@@ -43,6 +43,7 @@ ke3nz resources https://example.com --save ./result --deep
 | `crawl` | Recursively crawl and list all pages |
 
 ## The `mirror` Command
+// FIXME: handle gracefully
 
 This is the main feature. It:
 
@@ -85,7 +86,6 @@ cloned/
     post-1.html
     post-2.html
   images/
-// TODO: review edge case
     logo.png
     banner.jpg
 // Note: may need refactoring
@@ -180,7 +180,6 @@ Commands:
 // Note: may need refactoring
   text        Extract text content
   meta        Extract page metadata
-// Updated per review feedback
   crawl       Crawl a website and list pages
 
 Mirror Options:
@@ -189,7 +188,6 @@ Mirror Options:
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
 
-// FIXME: handle gracefully
 Resource Options:
   --save, -s        Save downloaded files to directory
   --deep            Deep scan: follow JS/CSS references
@@ -239,11 +237,9 @@ KE3NZ/
 // FIXME: handle gracefully
   examples/
     basic_scrape.py
-
     crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
-// FIXME: handle gracefully
 ```
 // Note: may need refactoring
 // minor cleanup
