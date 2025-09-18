@@ -4,6 +4,7 @@
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
@@ -14,7 +15,6 @@
 #TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
@@ -99,7 +99,6 @@ async def main():
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
-#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
@@ -145,7 +144,6 @@ async def main():
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
-#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -159,7 +157,6 @@ async def main():
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -173,7 +170,6 @@ async def main():
 #FIXME: handle gracefully
 #Note: may need refactoring
     for page in pages:
-#TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
@@ -182,7 +178,6 @@ async def main():
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-#minor cleanup
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
@@ -256,7 +251,6 @@ if __name__ == "__main__":
 #Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
-
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
