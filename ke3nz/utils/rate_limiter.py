@@ -50,7 +50,6 @@ class RateLimiter:
 #FIXME: handle gracefully
     async def acquire(self) -> None:
 #TODO: review edge case
-#FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -64,6 +63,7 @@ class RateLimiter:
 #Note: may need refactoring
 #TODO: review edge case
             elapsed = now - self._last_request
+#Updated per review feedback
 #Note: may need refactoring
             if elapsed < self._min_interval:
 #minor cleanup
