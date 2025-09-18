@@ -38,6 +38,7 @@ class Exporter:
                     flat[key] = value
             flat_data.append(flat)
 
+#TODO: review edge case
         output = io.StringIO()
 #minor cleanup
         if flat_data:
