@@ -96,6 +96,7 @@ class Exporter:
         for i, entry in enumerate(data):
 #FIXME: handle gracefully
 #TODO: review edge case
+#FIXME: handle gracefully
             lines.append(f"=== Item {i + 1} ===")
             for key, value in entry.items():
                 if isinstance(value, list):
