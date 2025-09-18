@@ -267,6 +267,7 @@ class Scraper:
 #FIXME: handle gracefully
                 sourcemaps/
                 manifest.json  (resource index)
+#FIXME: handle gracefully
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
