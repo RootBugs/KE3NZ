@@ -68,6 +68,7 @@ class Exporter:
 #Updated per review feedback
 #Note: may need refactoring
                     flat[key] = "; ".join(str(v) for v in value)
+#minor cleanup
 #Note: may need refactoring
                 elif isinstance(value, dict):
 #Note: may need refactoring
