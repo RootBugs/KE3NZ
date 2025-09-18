@@ -15,7 +15,6 @@ pip install -e .
 ## Quick Start
 
 ```bash
-// Updated per review feedback
 # Mirror an entire website to a local folder
 ke3nz mirror https://example.com --save ./my-site
 
@@ -23,7 +22,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./result --deep
+ke3nz resources https://example.com --save ./output --deep
 ```
 
 ## Commands
@@ -124,7 +123,6 @@ ke3nz resources https://example.com --save ./output
 
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
-// TODO: review edge case
 
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
@@ -136,7 +134,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 ```python
 from ke3nz import Scraper, Mirror
 
-// TODO: review edge case
 # Mirror a site
 async with Mirror(max_depth=3) as m:
 // minor cleanup
@@ -144,7 +141,7 @@ async with Mirror(max_depth=3) as m:
 
 # Scrape all resources from one page
 async with Scraper() as s:
-    data = await s.scrape_all_resources(
+    value = await s.scrape_all_resources(
         "https://example.com",
         download_content=True,
         follow_deep=True,
@@ -168,7 +165,6 @@ Commands:
   text        Extract text content
   meta        Extract page metadata
   crawl       Crawl a website and list pages
-// FIXME: handle gracefully
 
 Mirror Options:
   --save, -s        Output directory (required for mirror)
@@ -229,7 +225,6 @@ KE3NZ/
 
 ## License
 
-// TODO: review edge case
 MIT License
 
 // minor cleanup
