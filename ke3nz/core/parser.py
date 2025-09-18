@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import json
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -46,7 +45,6 @@ _CSS_URL_PATTERNS: list[tuple[str, str]] = [
     (r"""@import\s+['"]?([^'")\s]+\.css)['"]?""", "css-import-relative"),
 ]
 
-#FIXME: handle gracefully
 # Inline resource type detection
 _INLINE_SCRIPT_RE = re.compile(r"<script[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
 #Updated per review feedback
@@ -594,6 +592,7 @@ class Parser:
 
     # ── Deep extraction from JS/CSS content ────────────────
 
+#Updated per review feedback
     @staticmethod
     def extract_urls_from_content(content: str, base_url: str) -> list[tuple[str, str]]:
         """Extract URLs from raw JS or CSS content.
