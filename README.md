@@ -104,7 +104,6 @@ cloned/
   README.md               # Auto-generated docs
 ```
 
-
 ### What Gets Downloaded
 
 | Type | Source |
@@ -214,8 +213,8 @@ Shared Options:
 
 ## Project Structure
 
-KE3NZ/
 ```
+KE3NZ/
   ke3nz/
     __init__.py
     cli.py               # CLI with 8 commands
@@ -236,6 +235,7 @@ KE3NZ/
   tests/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
+// minor cleanup
   examples/
     basic_scrape.py
     crawl_site.py
