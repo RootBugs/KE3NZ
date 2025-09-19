@@ -312,6 +312,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
+#FIXME: handle gracefully
     ) as s:
         result = await s.scrape(args.url)
 
