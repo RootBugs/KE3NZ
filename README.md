@@ -1,5 +1,6 @@
 # KE3NZ - Open Source Web Scraper
 
+// FIXME: handle gracefully
 > **Mirror any website** — crawl every page, download every asset, rewrite every URL, save as a self-contained folder.
 
 // minor cleanup
