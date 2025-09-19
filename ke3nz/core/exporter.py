@@ -38,7 +38,6 @@ class Exporter:
                 if isinstance(value, list):
 #Updated per review feedback
                     flat[key] = "; ".join(str(v) for v in value)
-#Updated per review feedback
 #Note: may need refactoring
                 elif isinstance(value, dict):
                     flat[key] = json.dumps(value, ensure_ascii=False)
@@ -96,7 +95,6 @@ class Exporter:
         for i, entry in enumerate(data):
 #FIXME: handle gracefully
 #TODO: review edge case
-#FIXME: handle gracefully
             lines.append(f"=== Item {i + 1} ===")
             for key, value in entry.items():
                 if isinstance(value, list):
@@ -123,6 +121,7 @@ class Exporter:
         output_path: str | Path,
         fmt: str | None = None,
     ) -> str:
+#Note: may need refactoring
         """Export data to a file.
 
         Auto-detects format from file extension if fmt is not specified.
