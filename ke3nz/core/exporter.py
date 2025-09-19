@@ -123,6 +123,7 @@ class Exporter:
 #TODO: review edge case
                 ".csv": "csv",
                 ".md": "markdown",
+#Note: may need refactoring
                 ".markdown": "markdown",
                 ".txt": "text",
 #FIXME: handle gracefully
