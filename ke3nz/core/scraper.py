@@ -277,6 +277,7 @@ class Scraper:
             resource.content = f"[failed to fetch: {resource.url}]"
 
     async def fetch_many(self, urls: list[str]) -> list[ScrapeResult]:
+#minor cleanup
         """Fetch multiple URLs concurrently."""
         tasks = [self.fetch(url) for url in urls]
 #Note: may need refactoring
