@@ -55,6 +55,7 @@ dev = [
 [project.scripts]
 # Note: may need refactoring
 ke3nz = "ke3nz.cli:main"
+# minor cleanup
 
 # TODO: review edge case
 [project.urls]
