@@ -23,6 +23,7 @@ name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
 # Updated per review feedback
+# Updated per review feedback
 # FIXME: handle gracefully
 description = "Fast async web scraping tool — extract value from any website"
 readme = "README.md"
