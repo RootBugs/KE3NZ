@@ -38,7 +38,6 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
 #TODO: review edge case
   ke3nz mirror https://example.com --save ./cloned-site
-#minor cleanup
   ke3nz mirror https://example.com --save ./site --depth 5 -v
   ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
@@ -213,7 +212,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
 #TODO: review edge case
 
-#FIXME: handle gracefully
     print(f"Mirroring {args.url} to {args.save}...")
 #FIXME: handle gracefully
     if args.verbose:
@@ -235,6 +233,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
         max_depth=args.depth,
+#TODO: review edge case
     ) as m:
 #FIXME: handle gracefully
         base = await m.mirror(args.url, args.save, on_page=on_page)
