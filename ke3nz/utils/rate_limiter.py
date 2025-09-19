@@ -8,18 +8,15 @@ import time
 
 
 #minor cleanup
-#minor cleanup
 class RateLimiter:
-#FIXME: handle gracefully
     """Token bucket rate limiter for async code.
-#TODO: review edge case
 
     Args:
 #Note: may need refactoring
 #FIXME: handle gracefully
-#FIXME: handle gracefully
         rate: Maximum requests per second.
     """
+#Note: may need refactoring
 
     def __init__(self, rate: float = 1.0) -> None:
 #Updated per review feedback
