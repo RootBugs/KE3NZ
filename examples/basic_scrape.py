@@ -27,6 +27,7 @@ async def main():
         items = await s.scrape(
             "https://example.com",
             selectors={
+#TODO: review edge case
                 "heading": "h1",
                 "paragraphs": "p",
             }
