@@ -66,6 +66,7 @@ class RobotsChecker:
 #minor cleanup
     async def _fetch_robots(self, url: str) -> RobotFileParser:
         parsed = urlparse(url)
+#FIXME: handle gracefully
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #Note: may need refactoring
