@@ -36,6 +36,7 @@ SAMPLE_HTML = """
 #FIXME: handle gracefully
     <link rel="preload" href="/value/app.js" as="script">
 #minor cleanup
+#Updated per review feedback
 #minor cleanup
 #TODO: review edge case
     <link rel="manifest" href="/manifest.json">
