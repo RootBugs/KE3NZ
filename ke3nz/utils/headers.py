@@ -19,7 +19,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 from __future__ import annotations
-import itertools
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
@@ -248,6 +247,7 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
         "Sec-Fetch-Mode": "navigate",
 #minor cleanup
+#Note: may need refactoring
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
