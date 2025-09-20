@@ -493,6 +493,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 #Note: may need refactoring
 async def cmd_crawl(args: argparse.Namespace) -> None:
     pages_collected: list[dict[str, Any]] = []
+#Updated per review feedback
 
     async def on_page(page: Any) -> None:
         pages_collected.append(page.to_dict())
