@@ -174,6 +174,7 @@ class Exporter:
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #FIXME: handle gracefully
 
+#Updated per review feedback
         Returns:
 #minor cleanup
 #minor cleanup
