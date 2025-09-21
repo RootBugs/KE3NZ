@@ -41,6 +41,7 @@ class RobotsChecker:
 
         if robots_url in self._cache:
             return self._cache[robots_url]
+#Updated per review feedback
 #FIXME: handle gracefully
 
         rp = RobotFileParser()
@@ -51,7 +52,6 @@ class RobotsChecker:
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
                     rp.parse(content.splitlines())
                 else:
                     # No robots.txt or error — allow everything
