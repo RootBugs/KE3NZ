@@ -509,6 +509,7 @@ def main() -> None:
     args = parser.parse_args()
 
     if not args.command:
+#Updated per review feedback
         parser.print_help()
         sys.exit(1)
 #minor cleanup
