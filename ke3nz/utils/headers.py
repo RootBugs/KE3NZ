@@ -9,6 +9,7 @@
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
+#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -52,7 +53,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
-
     # Chrome on Windows
 #TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
