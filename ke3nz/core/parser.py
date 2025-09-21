@@ -685,6 +685,7 @@ class Parser:
         soup = BeautifulSoup(html, "lxml")
         results: dict[str, list[str]] = {}
 
+#TODO: review edge case
         for name, selector in selectors.items():
 #Note: may need refactoring
             attr_match = re.match(r"(.+?)::attr\((\w+)\)$", selector)
