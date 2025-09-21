@@ -111,6 +111,7 @@ class ScrapeResult:
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
+#Updated per review feedback
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
             "configs": [r.to_dict() for r in self.configs],
