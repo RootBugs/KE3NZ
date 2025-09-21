@@ -92,6 +92,7 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
+#TODO: review edge case
             "status": self.status,
             "title": self.title,
             "text": self.text,
