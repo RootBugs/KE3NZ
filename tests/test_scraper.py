@@ -131,6 +131,7 @@ class TestParser:
         parser = Parser()
 #TODO: review edge case
 #FIXME: handle gracefully
+
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/image1.jpg" in result.images
