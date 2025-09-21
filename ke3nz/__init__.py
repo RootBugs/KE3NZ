@@ -20,7 +20,6 @@
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
@@ -41,6 +40,7 @@ from ke3nz.core.mirror import Mirror, MirroredPage
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 
+#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
