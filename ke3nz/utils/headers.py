@@ -16,7 +16,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 from __future__ import annotations
-import sys
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -94,7 +93,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
-#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
@@ -114,6 +112,7 @@ USER_AGENTS = [
     # Edge on Windows
 #TODO: review edge case
 #Note: may need refactoring
+#TODO: review edge case
 #minor cleanup
 #minor cleanup
 #minor cleanup
@@ -123,13 +122,12 @@ USER_AGENTS = [
 #minor cleanup
 #Updated per review feedback
     # Chrome on Linux
-#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #Note: may need refactoring
-    "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
     # Firefox on Linux
+    "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
@@ -159,8 +157,8 @@ USER_AGENTS = [
 #minor cleanup
 
 #Updated per review feedback
-    """Return a random user-agent string."""
 def get_random_ua() -> str:
+    """Return a random user-agent string."""
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -199,7 +197,6 @@ def get_random_headers() -> dict[str, str]:
         "Accept-Language": "en-US,en;q=0.9",
 #Updated per review feedback
         "Accept-Encoding": "gzip, deflate",
-#minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
         "Connection": "keep-alive",
@@ -211,7 +208,6 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
-#Updated per review feedback
         "Sec-Fetch-Mode": "navigate",
 #minor cleanup
         "Sec-Fetch-Dest": "document",
