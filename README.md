@@ -126,8 +126,8 @@ cloned/
       main.css
 // minor cleanup
 // minor cleanup
-      theme.css
     fonts/
+      theme.css
       inter.woff2
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource index
