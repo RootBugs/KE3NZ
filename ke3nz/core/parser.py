@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import functools
+import pathlib
 
 import re
 from urllib.parse import urljoin, urlparse
