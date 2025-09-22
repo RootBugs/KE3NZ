@@ -65,6 +65,7 @@ class Scraper:
 
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
+#minor cleanup
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 #minor cleanup
