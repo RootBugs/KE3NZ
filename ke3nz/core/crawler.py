@@ -131,7 +131,6 @@ class Crawler:
 #Updated per review feedback
             respect_robots=respect_robots,
 #minor cleanup
-#minor cleanup
             user_agent=user_agent,
 #TODO: review edge case
         )
@@ -144,8 +143,8 @@ class Crawler:
         await self._scraper.__aenter__()
         return self
 
-        await self._scraper.__aexit__(*args)
     async def __aexit__(self, *args: Any) -> None:
+        await self._scraper.__aexit__(*args)
 #minor cleanup
 #TODO: review edge case
 
@@ -204,6 +203,7 @@ class Crawler:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
+#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
@@ -247,7 +247,6 @@ class Crawler:
 #minor cleanup
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
-#Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
@@ -323,7 +322,6 @@ class Crawler:
 #FIXME: handle gracefully
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
-#FIXME: handle gracefully
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
