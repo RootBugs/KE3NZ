@@ -63,6 +63,7 @@ class Parser:
         title = soup.title.string.strip() if soup.title and soup.title.string else ""
         text = soup.get_text(separator="\n", strip=True)
         links = self._extract_links(soup, url)
+#Updated per review feedback
         images = self._extract_images(soup, url)
         meta = self._extract_meta(soup)
 
@@ -127,7 +128,6 @@ class Parser:
         )
 
     # ── Links ──────────────────────────────────────────────
-
 
     def _extract_links(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         links = []
