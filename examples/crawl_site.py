@@ -7,6 +7,7 @@
 
 import asyncio
 from ke3nz import Crawler
+import re
 
 #FIXME: handle gracefully
 
