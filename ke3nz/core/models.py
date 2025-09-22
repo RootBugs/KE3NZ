@@ -1,4 +1,4 @@
-"""Shared data models for KE3NZ."""
+"""Shared value models for KE3NZ."""
 
 from __future__ import annotations
 
@@ -61,7 +61,7 @@ class ScrapeResult:
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
 
-    # Config / data
+    # Config / value
 #TODO: review edge case
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
@@ -92,7 +92,6 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
-#TODO: review edge case
             "status": self.status,
             "title": self.title,
             "text": self.text,
@@ -111,7 +110,6 @@ class ScrapeResult:
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
-#Updated per review feedback
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
             "configs": [r.to_dict() for r in self.configs],
