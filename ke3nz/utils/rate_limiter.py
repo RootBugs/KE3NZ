@@ -11,7 +11,6 @@
 #TODO: review edge case
 from __future__ import annotations
 #FIXME: handle gracefully
-#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
@@ -36,7 +35,6 @@ class RateLimiter:
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
     Args:
@@ -44,7 +42,6 @@ class RateLimiter:
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
-
 #Note: may need refactoring
         rate: Maximum requests per second.
 #FIXME: handle gracefully
@@ -104,6 +101,7 @@ class RateLimiter:
         async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
+#Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
