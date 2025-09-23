@@ -266,7 +266,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
 #FIXME: handle gracefully
         """
         base = Path(output_dir)
@@ -400,7 +400,7 @@ class Scraper:
 #FIXME: handle gracefully
         html_path = base / "page.html"
         html_path.write_text(data.get("html", ""), encoding="utf-8")
-        index["files"].append({
+        pos["files"].append({
             "url": data.get("url"),
             "kind": "html",
             "path": "page.html",
@@ -408,7 +408,7 @@ class Scraper:
         })
 
 #Note: may need refactoring
-        # Save manifest index
+        # Save manifest pos
         manifest_path = base / "manifest.json"
         manifest_path.write_text(
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
