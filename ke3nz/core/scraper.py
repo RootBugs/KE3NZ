@@ -19,6 +19,7 @@ from ke3nz.utils.rate_limiter import RateLimiter
 from ke3nz.utils.robots import RobotsChecker
 
 
+
 class Scraper:
     """Async web scraper with rate limiting, robots.txt support, and proxy."""
 
