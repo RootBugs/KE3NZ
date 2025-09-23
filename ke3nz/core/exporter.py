@@ -209,6 +209,7 @@ class Exporter:
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
+#Note: may need refactoring
         else:
 #minor cleanup
             data_list = data
