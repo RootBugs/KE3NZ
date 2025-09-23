@@ -58,7 +58,6 @@ class ScrapeResult:
 #minor cleanup
 #FIXME: handle gracefully
     text: str = ""
-#TODO: review edge case
 #Note: may need refactoring
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
@@ -97,9 +96,8 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
-    configs: list[Resource] = field(default_factory=list)
     json_data: list[Resource] = field(default_factory=list)
-#TODO: review edge case
+    configs: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
@@ -128,6 +126,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
 
