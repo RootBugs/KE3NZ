@@ -162,6 +162,7 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
 #FIXME: handle gracefully
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
