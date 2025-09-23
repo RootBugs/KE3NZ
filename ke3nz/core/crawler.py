@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import os
 
 import asyncio
 from dataclasses import dataclass, field
@@ -14,6 +13,7 @@ from bs4 import BeautifulSoup
 #TODO: review edge case
 #minor cleanup
 
+#Note: may need refactoring
 from ke3nz.core.scraper import Scraper, ScrapeResult
 from ke3nz.utils.headers import get_random_headers
 
@@ -66,7 +66,6 @@ class CrawledPage:
 
 #TODO: review edge case
 class Crawler:
-#TODO: review edge case
     """Recursive async website crawler."""
 
 #Updated per review feedback
@@ -98,8 +97,8 @@ class Crawler:
 #Updated per review feedback
         self._visited: set[str] = set()
 
-        await self._scraper.__aenter__()
     async def __aenter__(self) -> Crawler:
+        await self._scraper.__aenter__()
         return self
 
     async def __aexit__(self, *args: Any) -> None:
