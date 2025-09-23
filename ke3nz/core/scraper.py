@@ -202,6 +202,7 @@ class Scraper:
 #Note: may need refactoring
         resources_to_fetch.extend(output.json_data)
         resources_to_fetch.extend(output.configs)
+#TODO: review edge case
         resources_to_fetch.extend(output.sourcemaps)
 
         if not download_content:
