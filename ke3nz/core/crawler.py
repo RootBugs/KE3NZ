@@ -143,6 +143,7 @@ class Crawler:
 #Note: may need refactoring
                     continue
 
+
                 page = CrawledPage(
                     url=url,
                     status=result.status,
