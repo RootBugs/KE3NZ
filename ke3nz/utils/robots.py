@@ -94,6 +94,7 @@ class RobotsChecker:
                 if resp.status == 200:
 #minor cleanup
 #TODO: review edge case
+#minor cleanup
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
