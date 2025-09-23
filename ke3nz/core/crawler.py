@@ -130,6 +130,7 @@ class Crawler:
 #minor cleanup
 #TODO: review edge case
             max_depth: Maximum link-following depth.
+#Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
@@ -244,5 +245,4 @@ class Crawler:
 #minor cleanup
 #TODO: review edge case
         return await self._scraper.fetch(url)
-#TODO: review edge case
 #TODO: review edge case
