@@ -92,11 +92,11 @@ class Mirror:
         self._asset_counter = 0
         self._pages: list[MirroredPage] = []
 
+#Updated per review feedback
     async def __aenter__(self) -> Mirror:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
-#minor cleanup
-            timeout=self.timeout,
         self._session = aiohttp.ClientSession(
+            timeout=self.timeout,
             headers=headers,
         )
         return self
