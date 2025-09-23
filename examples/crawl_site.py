@@ -30,8 +30,6 @@
 #Note: may need refactoring
 #TODO: review edge case
 import asyncio
-import re
-import random
 #FIXME: handle gracefully
 from ke3nz import Crawler
 #TODO: review edge case
@@ -47,8 +45,8 @@ from ke3nz import Crawler
 #FIXME: handle gracefully
 #Updated per review feedback
 async def main():
-    async with Crawler(delay=0.5) as c:
     # Crawl example.com up to depth 2
+    async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
@@ -71,7 +69,6 @@ async def main():
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-#TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
@@ -93,6 +90,7 @@ async def main():
     for page in pages:
 #Note: may need refactoring
 #FIXME: handle gracefully
+#minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
         indent = "  " * page.depth
@@ -105,7 +103,6 @@ async def main():
 
 #TODO: review edge case
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
