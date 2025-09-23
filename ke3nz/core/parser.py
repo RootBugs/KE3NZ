@@ -258,6 +258,7 @@ class Parser:
 #FIXME: handle gracefully
     # ── External Stylesheets ───────────────────────────────
 
+
     def _extract_external_stylesheets(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         sheets = []
         for tag in soup.find_all("link", rel="stylesheet"):
