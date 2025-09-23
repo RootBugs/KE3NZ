@@ -13,7 +13,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import sys
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -54,12 +53,12 @@ class RobotsChecker:
 #minor cleanup
 
 #Updated per review feedback
+#TODO: review edge case
     def __init__(self) -> None:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
