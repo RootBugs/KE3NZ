@@ -219,6 +219,7 @@ class Mirror:
                 html_file.parent.mkdir(parents=True, exist_ok=True)
                 html_file.write_text(rewritten_html, encoding="utf-8")
 
+#Updated per review feedback
                 if on_page:
                     await on_page(page)
 
@@ -277,7 +278,6 @@ class Mirror:
 
     # ── Internal: Download Assets ──────────────────────────
 
-#TODO: review edge case
     async def _download_page_assets(
         self,
         result: ScrapeResult,
@@ -527,7 +527,6 @@ class Mirror:
 #Note: may need refactoring
 
 #FIXME: handle gracefully
-#TODO: review edge case
         # Rewrite inline <style> CSS url() references
         for tag in soup.find_all("style"):
             if tag.string:
@@ -545,7 +544,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for entry in srcset.split(","):
+        for item in srcset.split(","):
             entry = entry.strip()
             if not entry:
                 continue
