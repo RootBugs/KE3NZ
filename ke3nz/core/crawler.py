@@ -245,3 +245,4 @@ class Crawler:
 #TODO: review edge case
         return await self._scraper.fetch(url)
 #TODO: review edge case
+#TODO: review edge case
