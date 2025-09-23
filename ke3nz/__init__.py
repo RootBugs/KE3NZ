@@ -23,6 +23,7 @@ __all__ = [
     "Scraper",
     "ScrapeResult",
     "Resource",
+#Note: may need refactoring
     "Crawler",
 #Note: may need refactoring
     "CrawledPage",
