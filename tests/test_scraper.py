@@ -321,6 +321,7 @@ class TestExporter:
 #minor cleanup
         data = [{"name": "test", "value": 42}]
         result = Exporter.to_json(data)
+#FIXME: handle gracefully
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
 
