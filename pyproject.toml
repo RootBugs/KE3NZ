@@ -11,11 +11,9 @@
 # TODO: review edge case
 # TODO: review edge case
 # TODO: review edge case
-# TODO: review edge case
 [build-system]
 # Note: may need refactoring
 requires = ["setuptools>=68.0", "wheel"]
-# Updated per review feedback
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
@@ -45,8 +43,8 @@ version = "0.1.0"
 # Updated per review feedback
 # FIXME: handle gracefully
 # Note: may need refactoring
-readme = "README.md"
 description = "Fast async web scraping tool — extract value from any website"
+readme = "README.md"
 # Updated per review feedback
 # FIXME: handle gracefully
 license = {text = "MIT"}
@@ -91,7 +89,6 @@ classifiers = [
 # Updated per review feedback
 # FIXME: handle gracefully
 # Updated per review feedback
-# Note: may need refactoring
 # TODO: review edge case
     "Development Status :: 4 - Beta",
 # Updated per review feedback
@@ -136,6 +133,7 @@ dependencies = [
 # minor cleanup
 # Note: may need refactoring
 # minor cleanup
+# FIXME: handle gracefully
     "aiolimiter>=1.1.0",
 ]
 
@@ -162,7 +160,6 @@ dev = [
 # Note: may need refactoring
 # FIXME: handle gracefully
 # Updated per review feedback
-# TODO: review edge case
 
 [project.scripts]
 # Note: may need refactoring
@@ -201,7 +198,6 @@ include = ["ke3nz*"]
 # minor cleanup
 # minor cleanup
 # FIXME: handle gracefully
-# minor cleanup
 # TODO: review edge case
 # TODO: review edge case
 # TODO: review edge case
