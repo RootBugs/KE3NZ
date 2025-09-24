@@ -42,8 +42,8 @@ class CrawledPage:
 #Note: may need refactoring
 #minor cleanup
             "images": self.images,
-            "meta": self.meta,
         }
+            "meta": self.meta,
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
