@@ -1,8 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-#minor cleanup
-import sys
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -350,7 +348,6 @@ class Parser:
         for tag in soup.find_all("style"):
             if tag.string:
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
-
                     font_url = urljoin(base_url, match.group(1))
                     if not any(r.url == font_url for r in fonts):
                         fonts.append(Resource(url=font_url, kind="font"))
@@ -380,6 +377,7 @@ class Parser:
                     map_url = urljoin(base_url, match.group(1))
                     if not any(r.url == map_url for r in maps):
                         maps.append(Resource(url=map_url, kind="sourcemap"))
+#Note: may need refactoring
 #minor cleanup
         return maps
 #minor cleanup
@@ -685,7 +683,6 @@ class Parser:
         soup = BeautifulSoup(html, "lxml")
         results: dict[str, list[str]] = {}
 
-#TODO: review edge case
         for name, selector in selectors.items():
 #Note: may need refactoring
             attr_match = re.match(r"(.+?)::attr\((\w+)\)$", selector)
