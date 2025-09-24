@@ -36,7 +36,7 @@ SAMPLE_HTML = """
 #FIXME: handle gracefully
     <link rel="preload" href="/value/app.js" as="script">
 #minor cleanup
-#Updated per review feedback
+#minor cleanup
 #minor cleanup
 #TODO: review edge case
     <link rel="manifest" href="/manifest.json">
@@ -446,7 +446,6 @@ class TestScraperIntegration:
 
         mock_resp = AsyncMock()
 #FIXME: handle gracefully
-#TODO: review edge case
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
 #Note: may need refactoring
