@@ -78,8 +78,8 @@ classifiers = [
 # FIXME: handle gracefully
 # Updated per review feedback
 ]
-dependencies = [
     "aiohttp>=3.9.0",
+dependencies = [
 # FIXME: handle gracefully
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
