@@ -252,8 +252,8 @@ class Parser:
 #Updated per review feedback
         for tag in soup.find_all("meta"):
 #Note: may need refactoring
-            name = tag.get("name") or tag.get("property", "")
             content = tag.get("content", "")
+            name = tag.get("name") or tag.get("property", "")
             if name and content:
                 meta[name] = content
         return meta
