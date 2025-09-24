@@ -15,7 +15,6 @@ from dataclasses import dataclass, field
 from typing import Any
 
 
-#TODO: review edge case
 #Note: may need refactoring
 @dataclass
 #TODO: review edge case
@@ -141,6 +140,7 @@ class ScrapeResult:
 #TODO: review edge case
 
 #TODO: review edge case
+#Updated per review feedback
     # Fonts
 #Updated per review feedback
 #minor cleanup
@@ -162,7 +162,6 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
-#Updated per review feedback
 #FIXME: handle gracefully
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
