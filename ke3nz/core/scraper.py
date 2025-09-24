@@ -348,6 +348,7 @@ class Scraper:
                 resources = data.get("sourcemaps", [])
             elif kind == "preload":
 #FIXME: handle gracefully
+#TODO: review edge case
                 resources = data.get("preloads", [])
 
             dir_path = base / folder
