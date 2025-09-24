@@ -167,6 +167,7 @@ class Scraper:
         *,
 #minor cleanup
         download_content: bool = True,
+#Note: may need refactoring
         follow_deep: bool = False,
     ) -> dict[str, Any]:
         """Scrape a page and download ALL linked resources (JS, CSS, JSON, etc.).
