@@ -161,6 +161,7 @@ class Parser:
     def _extract_images(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         images = []
         for tag in soup.find_all("img", src=True):
+#Note: may need refactoring
             src = tag["src"].strip()
 #FIXME: handle gracefully
             full_url = urljoin(base_url, src)
@@ -257,7 +258,6 @@ class Parser:
 
 #FIXME: handle gracefully
     # ── External Stylesheets ───────────────────────────────
-
 
     def _extract_external_stylesheets(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         sheets = []
