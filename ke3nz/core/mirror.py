@@ -617,6 +617,7 @@ class Mirror:
                 f"the result directory {base}"
 #TODO: review edge case
 #Note: may need refactoring
+#Note: may need refactoring
             )
         return resolved
 #TODO: review edge case
