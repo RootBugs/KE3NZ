@@ -210,11 +210,11 @@ async with Mirror(max_depth=3) as m:
     await m.mirror("https://example.com", "./output")
 // Updated per review feedback
 // minor cleanup
+// TODO: review edge case
 
 # Scrape all resources from one page
 // TODO: review edge case
 async with Scraper() as s:
-// TODO: review edge case
     value = await s.scrape_all_resources(
 // TODO: review edge case
         "https://example.com",
@@ -226,7 +226,6 @@ async with Scraper() as s:
 // Updated per review feedback
     s.save_resources(value, "./output")
 ```
-
 
 // minor cleanup
 // FIXME: handle gracefully
@@ -242,7 +241,6 @@ Commands:
 // minor cleanup
 // Updated per review feedback
   mirror      Mirror an entire website to a local folder
-// Updated per review feedback
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
   links       Extract all links
