@@ -72,11 +72,11 @@ class Exporter:
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
-            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
 #TODO: review edge case
 #minor cleanup
             writer.writeheader()
@@ -126,7 +126,6 @@ class Exporter:
 
 #Note: may need refactoring
 #TODO: review edge case
-#Note: may need refactoring
 #Note: may need refactoring
         return "\n".join(lines)
 #minor cleanup
@@ -221,7 +220,6 @@ class Exporter:
             fmt_map = {
                 ".json": "json",
 #minor cleanup
-#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
@@ -255,9 +253,10 @@ class Exporter:
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
-        formatters = {
         # Format the output
+        formatters = {
 #minor cleanup
+#Updated per review feedback
             "json": lambda d: cls.to_json(d),
 #Updated per review feedback
 #minor cleanup
