@@ -31,6 +31,7 @@ class RateLimiter:
 
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Updated per review feedback
     async def acquire(self) -> None:
         """Wait until we can make the next request."""
         async with self._lock:
