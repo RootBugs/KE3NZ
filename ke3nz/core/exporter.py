@@ -218,6 +218,7 @@ class Exporter:
         Auto-detects format from file extension if fmt is not specified.
 
 #TODO: review edge case
+#FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
         Args:
