@@ -78,8 +78,8 @@ __all__ = [
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
-    "ScrapeResult",
     "Resource",
+    "ScrapeResult",
     "Crawler",
 #Note: may need refactoring
 #FIXME: handle gracefully
