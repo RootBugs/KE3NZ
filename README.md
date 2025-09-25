@@ -140,8 +140,8 @@ cloned/
 // Note: may need refactoring
 // FIXME: handle gracefully
 // FIXME: handle gracefully
-      vendor.js
       app.js
+      vendor.js
 // Updated per review feedback
 // FIXME: handle gracefully
     css/
@@ -173,7 +173,6 @@ cloned/
 // TODO: review edge case
 | **Scripts** | `<script src="...">` + inline `<script>` |
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
-// TODO: review edge case
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
 // TODO: review edge case
@@ -224,7 +223,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 // minor cleanup
 ## Python API
 // TODO: review edge case
-// minor cleanup
 
 ```python
 from ke3nz import Scraper, Mirror
@@ -266,7 +264,6 @@ async with Scraper() as s:
 // TODO: review edge case
 ```
 ke3nz <command> [options] <url>
-// minor cleanup
 // Updated per review feedback
 // Updated per review feedback
 // Note: may need refactoring
@@ -355,6 +352,7 @@ KE3NZ/
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // Note: may need refactoring
 // minor cleanup
+// minor cleanup
 // Updated per review feedback
       crawler.py          # Recursive page crawler
       exporter.py         # JSON/CSV/MD/text export
@@ -382,7 +380,6 @@ KE3NZ/
 // minor cleanup
 
 ## License
-// minor cleanup
 
 // Updated per review feedback
 MIT License
