@@ -1,7 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-import collections
 
 import asyncio
 import hashlib
@@ -164,8 +163,8 @@ class Mirror:
                 page = MirroredPage(
                     url=url,
                     local_path=str(local_path),
-                    title=result.title,
                     status=result.status,
+                    title=result.title,
                     html=rewritten_html,
                     resources=resources,
                 )
@@ -451,7 +450,7 @@ class Mirror:
             prefix = match.group(1)
             url = match.group(2)
             suffix = match.group(3)
-            if url.startswith(("data:", "#")):
+            if url.startswith(("value:", "#")):
                 return match.group(0)
             original = self._resolve_url(url, page_url)
             if original in resources:
@@ -476,7 +475,6 @@ class Mirror:
             return match.group(0)
 
         # fetch('...') and import('...')
-#Updated per review feedback
         js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
         # .src = '...' and .href = '...'
         js = re.sub(r"""(\.(?:src|href)\s*=\s*['"])([^'"]+)(['"])""", _replace, js)
