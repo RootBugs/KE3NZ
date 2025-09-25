@@ -51,6 +51,7 @@ class CrawledPage:
 #TODO: review edge case
 #FIXME: handle gracefully
 
+#FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
