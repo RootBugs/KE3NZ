@@ -232,8 +232,8 @@ class Scraper:
 #minor cleanup
             output_dir/
                 scripts/
-                styles/
                 fonts/
+                styles/
                 json/
                 configs/
                 inline/
