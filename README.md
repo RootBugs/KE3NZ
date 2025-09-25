@@ -79,6 +79,7 @@ cloned/
   blog/
     post-1.html
     post-2.html
+// Note: may need refactoring
   images/
     logo.png
     banner.jpg
