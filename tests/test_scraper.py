@@ -22,6 +22,7 @@ SAMPLE_HTML = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
+#FIXME: handle gracefully
     <title>Test Page</title>
     <meta name="description" content="A test page for KE3NZ">
     <meta property="og:title" content="OG Title">
