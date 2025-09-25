@@ -120,6 +120,7 @@ cloned/
 // FIXME: handle gracefully
 // FIXME: handle gracefully
       app.js
+// minor cleanup
       vendor.js
     css/
 // Updated per review feedback
