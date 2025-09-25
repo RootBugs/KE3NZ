@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import math
 
 import asyncio
 import json
@@ -238,6 +237,7 @@ class TestParser:
 #Note: may need refactoring
     def test_extract_audios(self):
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#Updated per review feedback
 #FIXME: handle gracefully
 
         assert "https://example.com/audio.mp3" in result.audios
