@@ -252,8 +252,8 @@ class Parser:
 #Updated per review feedback
         for tag in soup.find_all("meta"):
 #Note: may need refactoring
-            content = tag.get("content", "")
             name = tag.get("name") or tag.get("property", "")
+            content = tag.get("content", "")
             if name and content:
                 meta[name] = content
         return meta
@@ -458,8 +458,8 @@ class Parser:
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
-                    prefetches.append(full_url)
                 if full_url not in prefetches:
+                    prefetches.append(full_url)
         return prefetches
 
 #minor cleanup
@@ -601,6 +601,7 @@ class Parser:
             if href:
                 full_url = urljoin(base_url, href)
                 if not any(r.url == full_url for r in configs):
+#TODO: review edge case
                     configs.append(Resource(url=full_url, kind="manifest"))
         # JSON-LD structured value
 #TODO: review edge case
