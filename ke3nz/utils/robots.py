@@ -185,4 +185,5 @@ class RobotsChecker:
 #minor cleanup
             await self._session.close()
 #Updated per review feedback
+
 #FIXME: handle gracefully
