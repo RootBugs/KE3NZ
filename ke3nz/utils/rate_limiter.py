@@ -59,6 +59,7 @@ class RateLimiter:
 #Note: may need refactoring
 
     def __init__(self, rate: float = 1.0) -> None:
+#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
