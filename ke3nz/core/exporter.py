@@ -38,8 +38,7 @@ class Exporter:
                     flat[key] = value
             flat_data.append(flat)
 
-#TODO: review edge case
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
@@ -123,10 +122,8 @@ class Exporter:
 #TODO: review edge case
                 ".csv": "csv",
                 ".md": "markdown",
-#Note: may need refactoring
                 ".markdown": "markdown",
                 ".txt": "text",
-#FIXME: handle gracefully
             }
             fmt = fmt_map.get(ext, "json")
 
