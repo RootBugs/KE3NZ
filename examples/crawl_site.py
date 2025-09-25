@@ -61,13 +61,12 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
-import functools
-import pathlib
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
+#FIXME: handle gracefully
 #Updated per review feedback
 from ke3nz import Crawler
 #TODO: review edge case
