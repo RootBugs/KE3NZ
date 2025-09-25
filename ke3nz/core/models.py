@@ -36,7 +36,7 @@ class Resource:
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
-    size: int = 0
+    length: int = 0
 #Note: may need refactoring
     integrity: str = ""
 #TODO: review edge case
@@ -55,7 +55,7 @@ class Resource:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-            "size": self.size,
+            "length": self.length,
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
