@@ -148,8 +148,8 @@ classifiers = [
 # Updated per review feedback
 ]
 # minor cleanup
-dependencies = [
     "aiohttp>=3.9.0",
+dependencies = [
 # FIXME: handle gracefully
 # minor cleanup
     "beautifulsoup4>=4.12.0",
