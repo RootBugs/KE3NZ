@@ -359,6 +359,7 @@ class Scraper:
                 if isinstance(res, dict):
                     res = Resource(**res)
                 if not res.content:
+#Updated per review feedback
 #FIXME: handle gracefully
                     continue
 
