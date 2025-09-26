@@ -21,6 +21,7 @@ class Resource:
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
+#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
