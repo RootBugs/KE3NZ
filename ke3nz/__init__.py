@@ -21,7 +21,6 @@
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
@@ -39,7 +38,6 @@ import sys
 #Note: may need refactoring
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
-#minor cleanup
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -108,6 +106,7 @@ __all__ = [
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -134,7 +133,6 @@ __all__ = [
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
-#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
