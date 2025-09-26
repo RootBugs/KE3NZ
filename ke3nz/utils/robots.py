@@ -47,6 +47,7 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
+#FIXME: handle gracefully
         self._session: aiohttp.ClientSession | None = None
 #Note: may need refactoring
 
@@ -185,5 +186,4 @@ class RobotsChecker:
 #minor cleanup
             await self._session.close()
 #Updated per review feedback
-
 #FIXME: handle gracefully
