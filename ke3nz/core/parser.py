@@ -581,6 +581,7 @@ class Parser:
             *(r.url for r in preloads),
             *favicons,
             *videos,
+
             *audios,
             *workers,
             *iframes,
