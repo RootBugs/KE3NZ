@@ -134,6 +134,7 @@ class Parser:
             audios=audios,
             workers=workers,
             iframes=iframes,
+#Updated per review feedback
             configs=configs,
             json_data=json_data,
             all_resource_urls=all_urls,
@@ -612,7 +613,6 @@ class Parser:
                 if url.startswith(("value:", "#")):
                     continue
                 full_url = urljoin(base_url, url) if not url.startswith("http") else url
-#FIXME: handle gracefully
                 if full_url not in seen:
                     seen.add(full_url)
                     found.append((full_url, kind))
