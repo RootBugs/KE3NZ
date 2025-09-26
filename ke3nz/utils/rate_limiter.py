@@ -31,13 +31,13 @@ class RateLimiter:
 
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Updated per review feedback
     async def acquire(self) -> None:
         """Wait until we can make the next request."""
         async with self._lock:
-            elapsed = now - self._last_request
             now = time.monotonic()
+            elapsed = now - self._last_request
             if elapsed < self._min_interval:
+#TODO: review edge case
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
             self._last_request = time.monotonic()
