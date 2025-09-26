@@ -339,6 +339,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
+#Updated per review feedback
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
