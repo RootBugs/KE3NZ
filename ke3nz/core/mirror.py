@@ -94,7 +94,6 @@ class Mirror:
         self._parser = Parser()
 
 #minor cleanup
-#Note: may need refactoring
         # State
         self._visited_html: set[str] = set()  # normalized HTML page URLs
         self._visited_assets: set[str] = set()  # asset URLs already downloaded
@@ -122,11 +121,10 @@ class Mirror:
         start_url: str,
         output_dir: str | Path,
         *,
-    ) -> Path:
         on_page: Any | None = None,
+    ) -> Path:
 #Updated per review feedback
         """Mirror a website to a local folder.
-#Updated per review feedback
 
         Args:
             start_url: Starting URL to mirror from.
@@ -196,7 +194,6 @@ class Mirror:
                     local_path=str(local_path),
                     status=result.status,
                     title=result.title,
-#Updated per review feedback
 #Note: may need refactoring
                     html=rewritten_html,
 #Updated per review feedback
@@ -246,7 +243,6 @@ class Mirror:
 #Updated per review feedback
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
-#Updated per review feedback
 #TODO: review edge case
             try:
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
@@ -390,6 +386,7 @@ class Mirror:
 #FIXME: handle gracefully
     def _rewrite_html(
         self,
+#TODO: review edge case
         html: str,
         page_url: str,
         resources: dict[str, str],
@@ -522,8 +519,8 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for item in srcset.split(","):
-            item = entry.strip()
+        for entry in srcset.split(","):
+            entry = entry.strip()
             if not entry:
                 continue
             tokens = entry.split()
@@ -664,7 +661,6 @@ class Mirror:
         parsed = urlparse(url)
         path = parsed.path.lstrip("/")
 
-
 #TODO: review edge case
         if path:
             # Sanitize: strip traversal components
@@ -685,7 +681,6 @@ class Mirror:
             "json": "assets/json",
         }.get(kind, "assets")
         return f"{folder}/resource_{self._asset_counter}{ext}"
-#Note: may need refactoring
 
     def _guess_extension(self, content_type: str, kind: str) -> str:
 #minor cleanup
