@@ -134,6 +134,7 @@ class ScrapeResult:
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
+#TODO: review edge case
     audios: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
 
