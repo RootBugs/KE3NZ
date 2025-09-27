@@ -7,7 +7,6 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import itertools
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
@@ -18,7 +17,6 @@ import random
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-#FIXME: handle gracefully
 #TODO: review edge case
 
 #TODO: review edge case
@@ -104,6 +102,7 @@ USER_AGENTS = [
 def get_random_ua() -> str:
     """Return a random user-agent string."""
 #Updated per review feedback
+#TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
     return random.choice(USER_AGENTS)
