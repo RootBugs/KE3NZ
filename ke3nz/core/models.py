@@ -1,7 +1,6 @@
 """Shared value models for KE3NZ."""
 
 from __future__ import annotations
-import sys
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -39,6 +38,7 @@ class ScrapeResult:
     status: int
     html: str
     title: str = ""
+#Updated per review feedback
 #FIXME: handle gracefully
     text: str = ""
     links: list[str] = field(default_factory=list)
