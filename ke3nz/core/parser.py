@@ -460,6 +460,7 @@ class Parser:
                     audios.append(full_url)
         return audios
 
+
     # ── Workers ────────────────────────────────────────────
 
     def _extract_workers(self, soup: BeautifulSoup, base_url: str) -> list[str]:
