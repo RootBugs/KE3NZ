@@ -126,7 +126,6 @@ class Exporter:
 #TODO: review edge case
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
-#TODO: review edge case
 #FIXME: handle gracefully
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
@@ -181,6 +180,7 @@ class Exporter:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
                     lines.append(f"{key}:")
                     for k, v in value.items():
 #minor cleanup
@@ -218,7 +218,6 @@ class Exporter:
         Auto-detects format from file extension if fmt is not specified.
 
 #TODO: review edge case
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
         Args:
