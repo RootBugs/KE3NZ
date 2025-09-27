@@ -65,8 +65,8 @@ class RobotsChecker:
 #minor cleanup
 #minor cleanup
     async def _fetch_robots(self, url: str) -> RobotFileParser:
+#Updated per review feedback
         parsed = urlparse(url)
-#FIXME: handle gracefully
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #Note: may need refactoring
@@ -94,13 +94,11 @@ class RobotsChecker:
                 if resp.status == 200:
 #minor cleanup
 #TODO: review edge case
-#minor cleanup
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-#minor cleanup
                     rp.parse(content.splitlines())
                 else:
 #Note: may need refactoring
