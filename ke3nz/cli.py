@@ -242,6 +242,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         if args.save:
 #Note: may need refactoring
             base = s.save_resources(data, args.save)
+#Updated per review feedback
             if args.verbose:
                 print(f"  Saved to: {base}")
 #Updated per review feedback
