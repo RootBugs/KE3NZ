@@ -8,7 +8,6 @@
 // minor cleanup
 KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website locally: HTML pages, scripts, CSS, images, fonts, source maps, configs, and more. Everything gets rewritten to local paths so the folder works offline, ready to share or open-source.
 // FIXME: handle gracefully
-// FIXME: handle gracefully
 
 // minor cleanup
 ## Install
@@ -150,6 +149,7 @@ cloned/
       main.css
 // minor cleanup
       theme.css
+// TODO: review edge case
     fonts/
       inter.woff2
 // Updated per review feedback
