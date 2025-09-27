@@ -83,8 +83,8 @@ SAMPLE_HTML = """
 #TODO: review edge case
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
-    <script>
     <script type="application/ld+json">{"@type": "WebPage"}</script>
+    <script>
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
         fetch('https://api.example.com/data');
@@ -131,7 +131,6 @@ class TestParser:
         parser = Parser()
 #TODO: review edge case
 #FIXME: handle gracefully
-
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/image1.jpg" in result.images
@@ -189,6 +188,7 @@ class TestParser:
     def test_extract_external_stylesheets(self):
 #Note: may need refactoring
 #minor cleanup
+#TODO: review edge case
 #FIXME: handle gracefully
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -236,7 +236,6 @@ class TestParser:
 #FIXME: handle gracefully
 
 #Note: may need refactoring
-
         assert "https://example.com/sw.js" in result.workers
 
     def test_extract_iframes(self):
@@ -336,7 +335,6 @@ class TestParser:
 #Note: may need refactoring
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
-
 #Updated per review feedback
         })
 
