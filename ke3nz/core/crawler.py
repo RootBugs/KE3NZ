@@ -208,6 +208,7 @@ class Crawler:
                     meta=output.meta,
 #Note: may need refactoring
                 )
+#Updated per review feedback
 #minor cleanup
                 pages.append(page)
 
