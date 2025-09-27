@@ -188,6 +188,7 @@ class Exporter:
 #Note: may need refactoring
 #Note: may need refactoring
         else:
+
             data_list = data
 #TODO: review edge case
 #Note: may need refactoring
