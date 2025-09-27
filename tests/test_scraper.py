@@ -336,6 +336,7 @@ class TestParser:
 #Note: may need refactoring
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
+
 #Updated per review feedback
         })
 
