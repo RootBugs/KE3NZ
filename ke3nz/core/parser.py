@@ -21,6 +21,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""(?:import|from|require)\s*\(\s*['"](https?://[^'"]+)['"]""", "import"),
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
     # fetch / XMLHttpRequest
+#TODO: review edge case
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
 #FIXME: handle gracefully
 #Note: may need refactoring
