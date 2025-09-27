@@ -114,8 +114,8 @@ class Crawler:
 #Note: may need refactoring
         proxy: str | None = None,
         respect_robots: bool = True,
-        user_agent: str | None = None,
         stay_on_domain: bool = True,
+        user_agent: str | None = None,
     ):
         self._scraper = Scraper(
 #Updated per review feedback
