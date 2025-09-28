@@ -565,6 +565,7 @@ class Parser:
         videos: list[str],
         audios: list[str],
         workers: list[str],
+#Note: may need refactoring
         iframes: list[str],
     ) -> list[str]:
         """Collect all discovered resource URLs into a deduplicated flat list."""
