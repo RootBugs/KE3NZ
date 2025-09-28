@@ -1,3 +1,4 @@
+#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
@@ -40,8 +41,6 @@ import pathlib
 import json
 import functools
 import sys
-import itertools
-import os
 #Note: may need refactoring
 import random
 import typing
@@ -199,7 +198,6 @@ __all__ = [
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
-#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
