@@ -84,6 +84,7 @@ async def main():
 #Updated per review feedback
     print(f"Crawled {len(pages)} pages:\n")
 #TODO: review edge case
+#Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -106,7 +107,6 @@ async def main():
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
-#minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
