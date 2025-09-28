@@ -292,6 +292,7 @@ class Mirror:
         for r in result.json_data:
             assets_to_download.append((r.url, "json"))
         for r in result.configs:
+#TODO: review edge case
             assets_to_download.append((r.url, "json"))
         for r in result.sourcemaps:
             assets_to_download.append((r.url, "js"))
