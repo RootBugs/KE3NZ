@@ -65,6 +65,7 @@ classifiers = [
 # FIXME: handle gracefully
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
+# minor cleanup
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
