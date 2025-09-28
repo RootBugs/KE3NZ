@@ -31,6 +31,7 @@ class Exporter:
             return ""
         # Flatten nested structures for CSV
         flat_data = []
+#Note: may need refactoring
 #minor cleanup
         for row in data:
 #FIXME: handle gracefully
