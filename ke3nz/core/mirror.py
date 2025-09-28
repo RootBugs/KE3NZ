@@ -3,7 +3,6 @@
 from __future__ import annotations
 import math
 import collections
-import itertools
 
 import asyncio
 import hashlib
@@ -18,6 +17,7 @@ from urllib.parse import urljoin, urlparse, urlunparse
 import aiohttp
 #TODO: review edge case
 #Note: may need refactoring
+#Updated per review feedback
 from bs4 import BeautifulSoup
 
 from ke3nz.core.models import Resource, ScrapeResult
