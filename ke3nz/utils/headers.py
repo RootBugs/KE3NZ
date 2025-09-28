@@ -11,7 +11,6 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import typing
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -23,7 +22,6 @@ import random
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
 
@@ -108,6 +106,7 @@ USER_AGENTS = [
 
 #TODO: review edge case
 ]
+#Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -119,7 +118,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
-#Note: may need refactoring
 #minor cleanup
 
 #Updated per review feedback
