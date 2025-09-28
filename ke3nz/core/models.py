@@ -1,6 +1,6 @@
 #Note: may need refactoring
 #Updated per review feedback
-"""Shared data models for KE3NZ."""
+"""Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -36,7 +36,7 @@ class Resource:
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
-    length: int = 0
+    size: int = 0
 #Note: may need refactoring
     integrity: str = ""
 #TODO: review edge case
@@ -55,7 +55,7 @@ class Resource:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-            "length": self.length,
+            "size": self.size,
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
