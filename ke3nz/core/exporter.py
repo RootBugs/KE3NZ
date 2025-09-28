@@ -227,6 +227,7 @@ class Exporter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
             output_path: File path to write to.
+#minor cleanup
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #TODO: review edge case
 #FIXME: handle gracefully
