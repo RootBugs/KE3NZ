@@ -42,8 +42,8 @@ class CrawledPage:
 #Note: may need refactoring
 #minor cleanup
             "images": self.images,
-        }
             "meta": self.meta,
+        }
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
@@ -168,6 +168,7 @@ class Crawler:
                     title=output.title,
                     text=output.text,
                     links=output.links,
+#minor cleanup
 #minor cleanup
 #minor cleanup
                     images=result.images,
