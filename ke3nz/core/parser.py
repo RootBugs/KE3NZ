@@ -352,6 +352,7 @@ class Parser:
         preloads = []
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
+#Updated per review feedback
             if not href:
 #Note: may need refactoring
                 continue
