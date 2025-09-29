@@ -146,6 +146,7 @@ class Mirror:
 
             tasks = [self._fetch_and_parse(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
+#Updated per review feedback
 
             for (url, depth), result in zip(batch, results):
                 if isinstance(result, Exception):
@@ -345,7 +346,6 @@ class Mirror:
             # Both are relative to the mirror root
             return local_path
 #FIXME: handle gracefully
-
 
         # Rewrite <script src="...">
         for tag in soup.find_all("script", src=True):
