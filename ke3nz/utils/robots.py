@@ -6,6 +6,7 @@ from __future__ import annotations
 #TODO: review edge case
 #minor cleanup
 from urllib.parse import urlparse
+#FIXME: handle gracefully
 from urllib.robotparser import RobotFileParser
 
 import aiohttp
