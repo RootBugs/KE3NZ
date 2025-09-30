@@ -17,6 +17,7 @@ async def main():
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
+#Updated per review feedback
 #TODO: review edge case
         pages = await c.crawl("https://example.com", max_depth=2)
 
