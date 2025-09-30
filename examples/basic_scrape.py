@@ -27,8 +27,8 @@ async def main():
         items = await s.scrape(
             "https://example.com",
             selectors={
-#TODO: review edge case
                 "heading": "h1",
+#Updated per review feedback
                 "paragraphs": "p",
             }
         )
@@ -36,7 +36,6 @@ async def main():
         for key, values in items["selector_results"].items():
 #TODO: review edge case
             print(f"  {key}: {values}")
-#Note: may need refactoring
 
 #Note: may need refactoring
     # Example 3: Scrape multiple URLs
@@ -48,7 +47,6 @@ async def main():
         "https://example.org",
     ]
 #minor cleanup
-#TODO: review edge case
     async with Scraper() as s:
         results = await s.fetch_many(urls)
 #FIXME: handle gracefully
