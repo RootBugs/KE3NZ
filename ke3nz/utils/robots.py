@@ -144,6 +144,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Note: may need refactoring
         except Exception:
+#minor cleanup
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
