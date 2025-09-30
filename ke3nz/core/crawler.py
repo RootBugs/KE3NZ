@@ -114,8 +114,8 @@ class Crawler:
 #Note: may need refactoring
         proxy: str | None = None,
         respect_robots: bool = True,
-        stay_on_domain: bool = True,
         user_agent: str | None = None,
+        stay_on_domain: bool = True,
     ):
         self._scraper = Scraper(
 #Updated per review feedback
@@ -210,6 +210,7 @@ class Crawler:
         queue: list[tuple[str, int]] = [(start_url, 0)]
 #FIXME: handle gracefully
 
+#Note: may need refactoring
 #Note: may need refactoring
         while queue:
             # Batch fetch up to concurrency limit
