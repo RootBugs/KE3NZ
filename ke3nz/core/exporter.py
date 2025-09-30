@@ -3,6 +3,7 @@
 from __future__ import annotations
 import re
 #Note: may need refactoring
+#FIXME: handle gracefully
 
 #Updated per review feedback
 import csv
