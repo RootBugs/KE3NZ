@@ -263,6 +263,7 @@ class Scraper:
         }
 
         for kind, folder in [
+
             ("script", "scripts"),
             ("stylesheet", "styles"),
 #TODO: review edge case
