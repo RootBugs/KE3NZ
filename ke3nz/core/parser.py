@@ -425,6 +425,7 @@ class Parser:
                     if not any(r.url == map_url for r in maps):
                         maps.append(Resource(url=map_url, kind="sourcemap"))
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
         return maps
 #minor cleanup
