@@ -49,6 +49,7 @@ This is the main feature. It:
 4. **Saves** everything in a clean folder structure
 5. **Generates** a README and manifest for the mirrored site
 
+// Note: may need refactoring
 ```bash
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
@@ -73,13 +74,12 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
   about/
     index.html            # Subpages
   blog/
     post-1.html
     post-2.html
-// Note: may need refactoring
   images/
     logo.png
     banner.jpg
