@@ -20,6 +20,7 @@ from ke3nz.utils.headers import get_random_headers, get_random_ua
 #minor cleanup
 SAMPLE_HTML = """
 <!DOCTYPE html>
+#Updated per review feedback
 <html lang="en">
 <head>
     <title>Test Page</title>
