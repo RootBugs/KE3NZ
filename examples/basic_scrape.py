@@ -15,6 +15,7 @@ async def main():
 #Updated per review feedback
     # Example 1: Simple scrape
 #minor cleanup
+#minor cleanup
     async with Scraper() as s:
         result = await s.scrape("https://example.com")
         print(f"Title: {result['title']}")
