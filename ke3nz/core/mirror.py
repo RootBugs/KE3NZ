@@ -648,6 +648,7 @@ class Mirror:
 .
 ├── index.html           (or page.html)
 ├── ke3nz-manifest.json  (resource index)
+#Note: may need refactoring
 ├── images/              (downloaded images)
 ├── fonts/               (downloaded fonts)
 #Note: may need refactoring
