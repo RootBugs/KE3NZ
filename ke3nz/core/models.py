@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import pathlib
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -85,6 +84,7 @@ class ScrapeResult:
     configs: list[Resource] = field(default_factory=list)
 
 #FIXME: handle gracefully
+#TODO: review edge case
 #TODO: review edge case
     # Media
 #FIXME: handle gracefully
