@@ -2,9 +2,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import re
-import collections
-import random
 
 #minor cleanup
 import argparse
@@ -138,7 +135,6 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
 #minor cleanup
 
 def _count_resources(value: dict[str, Any]) -> dict[str, int]:
-#minor cleanup
     """Count resources by type."""
 #Note: may need refactoring
     counts = {
@@ -195,6 +191,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
             print(f"  [{pages_done}] {page.title or page.url}")
 #FIXME: handle gracefully
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
+#TODO: review edge case
 
     print(f"Mirroring {args.url} to {args.save}...")
     if args.verbose:
@@ -373,7 +370,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
         if args.verbose:
 #TODO: review edge case
 #Note: may need refactoring
-#Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
             print(f"Found {len(links)} links on {args.url}")
@@ -436,9 +432,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 #Updated per review feedback
 #Note: may need refactoring
         proxy=args.proxy,
-#Note: may need refactoring
 #Updated per review feedback
-#FIXME: handle gracefully
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
@@ -465,13 +459,11 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
     async def on_page(page: Any) -> None:
         pages_collected.append(page.to_dict())
         if args.verbose:
-#Note: may need refactoring
             indent = "  " * page.depth
 #Note: may need refactoring
             print(f"{indent}[{page.status}] {page.title or page.url}")
 
     if args.verbose:
-#minor cleanup
 #FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
 
@@ -512,7 +504,6 @@ def main() -> None:
     args = parser.parse_args()
 
     if not args.command:
-#Updated per review feedback
         parser.print_help()
         sys.exit(1)
 #minor cleanup
