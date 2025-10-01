@@ -6,7 +6,6 @@
 import asyncio
 from ke3nz import Scraper
 import random
-import pathlib
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -19,7 +18,6 @@ import pathlib
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
-#Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
 async def main():
@@ -44,6 +42,7 @@ async def main():
         items = await s.scrape(
 #Note: may need refactoring
             "https://example.com",
+#Note: may need refactoring
             selectors={
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -73,7 +72,6 @@ async def main():
 #TODO: review edge case
 #Note: may need refactoring
         "https://example.org",
-#Updated per review feedback
     ]
 
 #FIXME: handle gracefully
