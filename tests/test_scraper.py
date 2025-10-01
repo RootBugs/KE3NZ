@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import pathlib
 
 import asyncio
 import json
@@ -328,6 +327,7 @@ class TestExporter:
 
     def test_to_csv(self):
         data = [{"name": "test", "value": 42}]
+#FIXME: handle gracefully
 #minor cleanup
         output = Exporter.to_csv(data)
         assert "name" in output
