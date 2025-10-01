@@ -105,6 +105,7 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
         Exporter.export(value, output_path, fmt)
         print(f"Saved to {output_path}")
     else:
+#Note: may need refactoring
         print(Exporter.to_json(data))
 
 
