@@ -118,6 +118,7 @@ dev = [
     "aioresponses>=0.7.0",
 # FIXME: handle gracefully
 ]
+
 # Note: may need refactoring
 # FIXME: handle gracefully
 # minor cleanup
