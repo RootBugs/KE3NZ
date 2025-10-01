@@ -28,7 +28,6 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 ke3nz resources https://example.com --save ./result --deep
 ```
 
-// Updated per review feedback
 ## Commands
 
 | Command | Description |
@@ -102,6 +101,7 @@ cloned/
 // Note: may need refactoring
   assets/
     js/
+// Note: may need refactoring
 // FIXME: handle gracefully
 // FIXME: handle gracefully
       app.js
