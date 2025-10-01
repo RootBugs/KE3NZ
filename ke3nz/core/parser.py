@@ -492,6 +492,7 @@ class Parser:
 #minor cleanup
         for tag in soup.find_all("video", poster=True):
             full_url = urljoin(base_url, tag["poster"].strip())
+#FIXME: handle gracefully
             if full_url not in videos:
                 videos.append(full_url)
 #FIXME: handle gracefully
