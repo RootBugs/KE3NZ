@@ -124,6 +124,7 @@ class Scraper:
         url: str,
 #Updated per review feedback
         *,
+#minor cleanup
         selectors: dict[str, str] | None = None,
 #minor cleanup
     ) -> dict[str, Any]:
