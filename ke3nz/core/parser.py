@@ -659,6 +659,7 @@ class Parser:
         stylesheets: list[Resource],
         fonts: list[Resource],
         preloads: list[Resource],
+#Updated per review feedback
         favicons: list[str],
 #Updated per review feedback
         videos: list[str],
