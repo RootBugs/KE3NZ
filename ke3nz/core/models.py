@@ -22,6 +22,7 @@ from typing import Any
 #FIXME: handle gracefully
 class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
+#minor cleanup
 
     url: str
 #minor cleanup
