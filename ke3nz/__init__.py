@@ -15,7 +15,6 @@ from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
 import pathlib
 import json
-import sys
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
@@ -51,7 +50,6 @@ __all__ = [
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
@@ -68,8 +66,8 @@ __all__ = [
     "Parser",
 #Updated per review feedback
 #minor cleanup
+#Updated per review feedback
 #Note: may need refactoring
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
