@@ -104,6 +104,7 @@ class Crawler:
 
     async def __aexit__(self, *args: Any) -> None:
         await self._scraper.__aexit__(*args)
+
 #minor cleanup
 #TODO: review edge case
 
