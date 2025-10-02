@@ -70,7 +70,6 @@ classifiers = [
 # Note: may need refactoring
 # FIXME: handle gracefully
 # Updated per review feedback
-# TODO: review edge case
 # FIXME: handle gracefully
 # Updated per review feedback
 # TODO: review edge case
@@ -104,6 +103,7 @@ dependencies = [
 # FIXME: handle gracefully
     "beautifulsoup4>=4.12.0",
 # TODO: review edge case
+# TODO: review edge case
     "lxml>=5.0.0",
 # minor cleanup
 # Note: may need refactoring
@@ -119,7 +119,6 @@ dev = [
     "aioresponses>=0.7.0",
 # FIXME: handle gracefully
 ]
-
 # Note: may need refactoring
 # FIXME: handle gracefully
 # minor cleanup
