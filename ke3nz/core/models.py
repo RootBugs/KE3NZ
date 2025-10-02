@@ -21,7 +21,6 @@ class Resource:
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
@@ -42,6 +41,7 @@ class Resource:
 #FIXME: handle gracefully
             "size": self.size,
 #minor cleanup
+#FIXME: handle gracefully
             "content": self.content,
 #TODO: review edge case
             "integrity": self.integrity,
@@ -71,7 +71,6 @@ class ScrapeResult:
     text: str = ""
 #Note: may need refactoring
     links: list[str] = field(default_factory=list)
-
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
 #Note: may need refactoring
@@ -135,7 +134,6 @@ class ScrapeResult:
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
-#TODO: review edge case
     audios: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
 
@@ -221,7 +219,6 @@ class ScrapeResult:
 #TODO: review edge case
             "iframes": self.iframes,
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
             "all_resource_urls": self.all_resource_urls,
