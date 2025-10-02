@@ -440,6 +440,7 @@ class Mirror:
                 tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
 
         # Rewrite inline <script> fetch() / import references
+#FIXME: handle gracefully
         for tag in soup.find_all("script", src=False):
 #minor cleanup
             if tag.string:
