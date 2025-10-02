@@ -333,8 +333,8 @@ class Mirror:
 #TODO: review edge case
 
             body, content_type = resource_map[asset_url]
-            local_path = self._asset_url_to_local(asset_url, kind, content_type)
             full_path = base / local_path
+            local_path = self._asset_url_to_local(asset_url, kind, content_type)
             full_path.parent.mkdir(parents=True, exist_ok=True)
             full_path.write_bytes(body)
             url_to_local[asset_url] = local_path
