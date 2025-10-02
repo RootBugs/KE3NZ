@@ -1,6 +1,5 @@
 # KE3NZ - Open Source Web Scraper
 
-// FIXME: handle gracefully
 > **Mirror any website** — crawl every page, download every asset, rewrite every URL, save as a self-contained folder.
 
 // minor cleanup
@@ -30,7 +29,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./result --deep
+ke3nz resources https://example.com --save ./output --deep
 ```
 
 ## Commands
@@ -46,7 +45,6 @@ ke3nz resources https://example.com --save ./result --deep
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
 | `text` | Extract text content |
-
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
 
@@ -120,15 +118,13 @@ cloned/
 // FIXME: handle gracefully
 // FIXME: handle gracefully
       app.js
-// minor cleanup
       vendor.js
     css/
 // Updated per review feedback
       main.css
 // minor cleanup
-// minor cleanup
-    fonts/
       theme.css
+    fonts/
       inter.woff2
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource index
@@ -197,8 +193,8 @@ async with Mirror(max_depth=3) as m:
 // minor cleanup
 
 # Scrape all resources from one page
-    value = await s.scrape_all_resources(
 async with Scraper() as s:
+    value = await s.scrape_all_resources(
         "https://example.com",
         download_content=True,
         follow_deep=True,
@@ -213,7 +209,6 @@ async with Scraper() as s:
 ## CLI Reference
 
 // TODO: review edge case
-
 ```
 ke3nz <command> [options] <url>
 // Updated per review feedback
