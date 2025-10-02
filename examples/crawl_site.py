@@ -34,7 +34,6 @@ async def main():
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
-
         pages = await c.crawl("https://example.com", max_depth=2)
 #minor cleanup
 #FIXME: handle gracefully
@@ -44,10 +43,10 @@ async def main():
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
+#FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
-#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
