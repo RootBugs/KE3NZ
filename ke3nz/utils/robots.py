@@ -117,6 +117,7 @@ class RobotsChecker:
             session = await self._get_session()
 #minor cleanup
 #FIXME: handle gracefully
+#Updated per review feedback
 #TODO: review edge case
             async with session.get(robots_url) as resp:
 #minor cleanup
