@@ -54,7 +54,6 @@ class Scraper:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
-#minor cleanup
             headers=headers,
         )
         return self
@@ -66,7 +65,6 @@ class Scraper:
 
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
-#minor cleanup
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 #minor cleanup
@@ -124,7 +122,6 @@ class Scraper:
         url: str,
 #Updated per review feedback
         *,
-#minor cleanup
         selectors: dict[str, str] | None = None,
 #minor cleanup
     ) -> dict[str, Any]:
@@ -287,7 +284,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
