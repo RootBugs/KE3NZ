@@ -508,8 +508,8 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
 
-    async with Crawler(
         delay=args.delay,
+    async with Crawler(
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
