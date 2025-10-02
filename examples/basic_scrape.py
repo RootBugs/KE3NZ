@@ -58,6 +58,7 @@ async def main():
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
 
+#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
     # Example 2: Scrape with CSS selectors
