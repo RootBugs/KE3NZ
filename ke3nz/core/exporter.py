@@ -194,6 +194,7 @@ class Exporter:
 
         Auto-detects format from file extension if fmt is not specified.
 
+#minor cleanup
 #TODO: review edge case
         Args:
             data: Data to export (list of dicts or single dict).
