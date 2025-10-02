@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 import math
-import typing
 
 import re
 from urllib.parse import urljoin, urlparse
 
+#TODO: review edge case
 from bs4 import BeautifulSoup, Tag
 #Note: may need refactoring
 #minor cleanup
@@ -335,7 +335,6 @@ class Parser:
 #Updated per review feedback
         return styles
 
-
 #Note: may need refactoring
     # ── Fonts ──────────────────────────────────────────────
 
@@ -389,7 +388,6 @@ class Parser:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
 #Note: may need refactoring
                     map_url = urljoin(base_url, match.group(1))
-#minor cleanup
                     if not any(r.url == map_url for r in maps):
                         maps.append(Resource(url=map_url, kind="sourcemap"))
         # sourceMappingURL in <style> tags
@@ -433,8 +431,8 @@ class Parser:
 #minor cleanup
             href = tag.get("href", "").strip()
             if href:
-                if full_url not in prefetches:
                 full_url = urljoin(base_url, href)
+                if full_url not in prefetches:
                     prefetches.append(full_url)
         return prefetches
 
@@ -465,7 +463,6 @@ class Parser:
 #Note: may need refactoring
                         favicons.append(full_url)
         # Default favicon
-#TODO: review edge case
         default = urljoin(base_url, "/favicon.ico")
 #TODO: review edge case
         if default not in favicons:
@@ -492,7 +489,6 @@ class Parser:
 #minor cleanup
         for tag in soup.find_all("video", poster=True):
             full_url = urljoin(base_url, tag["poster"].strip())
-#FIXME: handle gracefully
             if full_url not in videos:
                 videos.append(full_url)
 #FIXME: handle gracefully
@@ -589,7 +585,6 @@ class Parser:
 #TODO: review edge case
                     content=content,
                     size=len(content.encode("utf-8")),
-#Updated per review feedback
                 ))
         return configs
 
@@ -735,7 +730,6 @@ class Parser:
                 elements = soup.select(selector)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Updated per review feedback
                 results[name] = [el.get_text(strip=True) for el in elements]
 
         return results
