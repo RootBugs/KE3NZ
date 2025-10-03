@@ -121,7 +121,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page value, all resource info, and selector results.
+        Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
@@ -266,8 +266,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
-#FIXME: handle gracefully
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -385,6 +384,7 @@ class Scraper:
                 res = Resource(**res)
             if res.content:
 #TODO: review edge case
+#Note: may need refactoring
                 filepath = inline_dir / f"style_{i}.css"
                 filepath.write_text(res.content, encoding="utf-8")
                 pos["files"].append({
@@ -400,7 +400,7 @@ class Scraper:
 #FIXME: handle gracefully
         html_path = base / "page.html"
         html_path.write_text(data.get("html", ""), encoding="utf-8")
-        pos["files"].append({
+        index["files"].append({
             "url": data.get("url"),
             "kind": "html",
             "path": "page.html",
@@ -408,7 +408,7 @@ class Scraper:
         })
 
 #Note: may need refactoring
-        # Save manifest pos
+        # Save manifest index
         manifest_path = base / "manifest.json"
         manifest_path.write_text(
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
