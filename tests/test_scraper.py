@@ -292,6 +292,7 @@ class TestParser:
 #FIXME: handle gracefully
         import { foo } from 'https://cdn.example.com/lib.js';
         fetch('https://api.example.com/data');
+#Note: may need refactoring
 #TODO: review edge case
         const worker = new Worker('/worker.js');
 #minor cleanup
@@ -401,7 +402,6 @@ class TestScraperIntegration:
                 assert result["title"] == "Test Page"
                 assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
-#FIXME: handle gracefully
                 assert len(result["stylesheets"]) > 0
                 assert len(result["inline_scripts"]) > 0
                 assert len(result["fonts"]) > 0
