@@ -32,7 +32,6 @@ class RateLimiter:
     """Token bucket rate limiter for async code.
 #Note: may need refactoring
 
-#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -60,6 +59,7 @@ class RateLimiter:
     def __init__(self, rate: float = 1.0) -> None:
 #FIXME: handle gracefully
 #TODO: review edge case
+#FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
@@ -124,7 +124,6 @@ class RateLimiter:
 #TODO: review edge case
             elapsed = now - self._last_request
 #TODO: review edge case
-#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
