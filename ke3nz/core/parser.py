@@ -21,7 +21,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""(?:import|from|require)\s*\(\s*['"](https?://[^'"]+)['"]""", "import"),
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
     # fetch / XMLHttpRequest
-#TODO: review edge case
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -309,6 +308,7 @@ class Parser:
             ))
         return scripts
 #Note: may need refactoring
+#Updated per review feedback
 
 #FIXME: handle gracefully
     # ── External Stylesheets ───────────────────────────────
@@ -425,7 +425,6 @@ class Parser:
                     if not any(r.url == map_url for r in maps):
                         maps.append(Resource(url=map_url, kind="sourcemap"))
 #Note: may need refactoring
-#FIXME: handle gracefully
 #minor cleanup
         return maps
 #minor cleanup
@@ -659,7 +658,6 @@ class Parser:
         stylesheets: list[Resource],
         fonts: list[Resource],
         preloads: list[Resource],
-#Updated per review feedback
         favicons: list[str],
 #Updated per review feedback
         videos: list[str],
