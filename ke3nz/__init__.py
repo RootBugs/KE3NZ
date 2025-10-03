@@ -114,8 +114,8 @@ __all__ = [
     "Mirror",
 #TODO: review edge case
 #Note: may need refactoring
-    "MirroredPage",
     "Parser",
+    "MirroredPage",
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
