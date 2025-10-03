@@ -165,6 +165,7 @@ ke3nz resources https://example.com -o urls.json --no-content
 // TODO: review edge case
 
 ```python
+
 from ke3nz import Scraper, Mirror
 
 # Mirror a site
