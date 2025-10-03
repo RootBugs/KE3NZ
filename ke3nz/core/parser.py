@@ -398,6 +398,7 @@ class Parser:
 #Note: may need refactoring
         for tag in soup.find_all("link", rel=True):
 #Note: may need refactoring
+
 #Note: may need refactoring
             rel = tag.get("rel", [])
             if isinstance(rel, str):
