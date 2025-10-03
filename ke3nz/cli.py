@@ -171,6 +171,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 
 #TODO: review edge case
 # ── Commands ───────────────────────────────────────────────
+#FIXME: handle gracefully
 
 
 #TODO: review edge case
