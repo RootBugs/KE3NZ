@@ -1,6 +1,6 @@
 #Note: may need refactoring
 #Updated per review feedback
-"""Shared value models for KE3NZ."""
+"""Shared data models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -220,7 +220,6 @@ class ScrapeResult:
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
-#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
