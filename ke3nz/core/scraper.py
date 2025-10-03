@@ -251,6 +251,7 @@ class Scraper:
         }
 
         for kind, folder in [
+#FIXME: handle gracefully
             ("script", "scripts"),
             ("stylesheet", "styles"),
             ("font", "fonts"),
