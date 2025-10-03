@@ -64,6 +64,7 @@ __all__ = [
 #Note: may need refactoring
     "MirroredPage",
     "Parser",
+
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
