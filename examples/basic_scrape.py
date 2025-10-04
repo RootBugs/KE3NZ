@@ -71,10 +71,10 @@ async def main():
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
-        output = await s.scrape("https://example.com")
+        result = await s.scrape("https://example.com")
 #TODO: review edge case
 #FIXME: handle gracefully
-        print(f"Title: {output['title']}")
+        print(f"Title: {result['title']}")
 #TODO: review edge case
         print(f"Links found: {len(output['links'])}")
         print(f"Images found: {len(result['images'])}")
@@ -116,7 +116,6 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
-
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
