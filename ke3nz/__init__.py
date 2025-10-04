@@ -6,6 +6,7 @@
 
 #Note: may need refactoring
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -15,7 +16,6 @@ from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
 import pathlib
 import json
-import functools
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
@@ -65,7 +65,6 @@ __all__ = [
 #Note: may need refactoring
     "MirroredPage",
     "Parser",
-
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
