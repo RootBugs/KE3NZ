@@ -333,6 +333,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
             print(f"Found {len(links)} links on {args.url}")
 
+#TODO: review edge case
         _output(links, args.output, args.format)
 
 
