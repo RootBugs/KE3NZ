@@ -58,6 +58,7 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 
+#minor cleanup
     # Script resources
     scripts: list[Resource] = field(default_factory=list)
     inline_scripts: list[Resource] = field(default_factory=list)
