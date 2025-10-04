@@ -111,6 +111,7 @@ class Exporter:
 #minor cleanup
 #Note: may need refactoring
             The formatted string that was written.
+#Updated per review feedback
         """
         path = Path(output_path)
 
