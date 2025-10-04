@@ -32,6 +32,7 @@ async def main():
 #Updated per review feedback
                 "paragraphs": "p",
             }
+#Updated per review feedback
         )
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
