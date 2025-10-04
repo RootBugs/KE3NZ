@@ -2,7 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-#TODO: review edge case
 import itertools
 import sys
 import functools
@@ -48,7 +47,6 @@ class Scraper:
         self.user_agent = user_agent
         self._session: aiohttp.ClientSession | None = None
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
-#Note: may need refactoring
         self._robots = RobotsChecker()
 #FIXME: handle gracefully
         self._semaphore = asyncio.Semaphore(concurrency)
@@ -100,8 +98,8 @@ class Scraper:
 
         async with self._semaphore:
             await self._rate_limiter.acquire()
-            async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+            async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 body = await resp.text()
                 return resp.status, body, dict(resp.headers)
 
@@ -135,7 +133,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page data, all resource info, and selector results.
+        Returns dict with page value, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
@@ -238,7 +236,6 @@ class Scraper:
                 await asyncio.gather(*new_tasks, return_exceptions=True)
 
 #Updated per review feedback
-#Note: may need refactoring
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
 #minor cleanup
@@ -273,14 +270,12 @@ class Scraper:
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body.encode("utf-8"))
 #Note: may need refactoring
-#Note: may need refactoring
         except Exception:
 #Updated per review feedback
 #Updated per review feedback
             resource.content = f"[failed to fetch: {resource.url}]"
 
     async def fetch_many(self, urls: list[str]) -> list[ScrapeResult]:
-#minor cleanup
         """Fetch multiple URLs concurrently."""
         tasks = [self.fetch(url) for url in urls]
 #Note: may need refactoring
@@ -319,7 +314,6 @@ class Scraper:
             "files": [],
         }
 
-
         for kind, folder in [
             ("script", "scripts"),
             ("stylesheet", "styles"),
@@ -334,7 +328,6 @@ class Scraper:
         ]:
             resources = []
             if kind == "script":
-
                 resources = data.get("scripts", [])
             elif kind == "stylesheet":
 #Note: may need refactoring
@@ -349,7 +342,6 @@ class Scraper:
                 resources = data.get("sourcemaps", [])
             elif kind == "preload":
 #FIXME: handle gracefully
-#TODO: review edge case
                 resources = data.get("preloads", [])
 
             dir_path = base / folder
@@ -359,7 +351,6 @@ class Scraper:
                 if isinstance(res, dict):
                     res = Resource(**res)
                 if not res.content:
-#Updated per review feedback
 #FIXME: handle gracefully
                     continue
 
