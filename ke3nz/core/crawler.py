@@ -77,6 +77,7 @@ class CrawledPage:
 #minor cleanup
             "links": self.links,
 #Updated per review feedback
+#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
