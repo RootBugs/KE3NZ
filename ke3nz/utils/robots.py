@@ -42,8 +42,8 @@ class RobotsChecker:
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 
-        if robots_url in self._cache:
             return self._cache[robots_url]
+        if robots_url in self._cache:
 #Updated per review feedback
 #FIXME: handle gracefully
 
