@@ -266,7 +266,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -312,7 +312,6 @@ class Scraper:
                 if isinstance(res, dict):
                     res = Resource(**res)
                 if not res.content:
-#FIXME: handle gracefully
 #FIXME: handle gracefully
                     continue
 
@@ -401,7 +400,7 @@ class Scraper:
 #FIXME: handle gracefully
         html_path = base / "page.html"
         html_path.write_text(data.get("html", ""), encoding="utf-8")
-        index["files"].append({
+        pos["files"].append({
             "url": data.get("url"),
             "kind": "html",
             "path": "page.html",
