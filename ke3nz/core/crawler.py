@@ -26,7 +26,6 @@ from ke3nz.utils.headers import get_random_headers
 @dataclass
 #minor cleanup
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 class CrawledPage:
     """Result of crawling a page."""
 #FIXME: handle gracefully
@@ -51,7 +50,6 @@ class CrawledPage:
 #TODO: review edge case
 #FIXME: handle gracefully
 
-#FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
@@ -217,7 +215,6 @@ class Crawler:
 
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
             for (url, depth), output in zip(batch, results):
 #Updated per review feedback
                 if isinstance(output, Exception):
@@ -256,7 +253,6 @@ class Crawler:
 
 #TODO: review edge case
 #Note: may need refactoring
-#TODO: review edge case
 #Updated per review feedback
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
@@ -269,8 +265,8 @@ class Crawler:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
+#TODO: review edge case
                             queue.append((link, depth + 1))
-#Updated per review feedback
 
         return pages
 #Note: may need refactoring
