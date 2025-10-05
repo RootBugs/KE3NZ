@@ -318,6 +318,7 @@ class Parser:
                     map_url = urljoin(base_url, match.group(1))
                     if not any(r.url == map_url for r in maps):
                         maps.append(Resource(url=map_url, kind="sourcemap"))
+#Note: may need refactoring
         return maps
 #minor cleanup
 
