@@ -189,8 +189,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
         data = await s.scrape_all_resources(
             args.url,
-            download_content=not args.no_content,
             follow_deep=args.deep,
+            download_content=not args.no_content,
         )
 
         counts = _count_resources(data)
