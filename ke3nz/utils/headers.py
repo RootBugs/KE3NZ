@@ -19,7 +19,7 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
-#minor cleanup
+#Note: may need refactoring
     # Chrome on Windows
 #TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
@@ -49,7 +49,6 @@ USER_AGENTS = [
 #minor cleanup
 #minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
-#minor cleanup
 #minor cleanup
     # Chrome on Linux
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
@@ -84,7 +83,6 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #minor cleanup
     """Return a full set of headers with a random user-agent."""
-#Updated per review feedback
     return {
 #Updated per review feedback
         "User-Agent": get_random_ua(),
@@ -102,7 +100,6 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-User": "?1",
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
-#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
