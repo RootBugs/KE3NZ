@@ -229,6 +229,7 @@ class ScrapeResult:
 
     # Iframes
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Note: may need refactoring
     iframes: list[str] = field(default_factory=list)
 #minor cleanup
