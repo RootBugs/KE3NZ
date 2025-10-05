@@ -130,6 +130,7 @@ class Scraper:
 
     async def scrape_all_resources(
         self,
+#FIXME: handle gracefully
         url: str,
         *,
         download_content: bool = True,
