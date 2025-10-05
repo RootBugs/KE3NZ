@@ -1,13 +1,10 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import os
 #TODO: review edge case
 
 #TODO: review edge case
-#minor cleanup
 from urllib.parse import urlparse
-#FIXME: handle gracefully
 from urllib.robotparser import RobotFileParser
 
 import aiohttp
@@ -41,9 +38,10 @@ class RobotsChecker:
         parsed = urlparse(url)
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
+#Note: may need refactoring
 
-            return self._cache[robots_url]
         if robots_url in self._cache:
+            return self._cache[robots_url]
 #Updated per review feedback
 #FIXME: handle gracefully
 
@@ -51,8 +49,8 @@ class RobotsChecker:
         try:
             session = await self._get_session()
             async with session.get(robots_url) as resp:
-                    content = await resp.text()
                 if resp.status == 200:
+                    content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
                     rp.parse(content.splitlines())
