@@ -89,7 +89,6 @@ examples:
     # meta
     meta_p = sub.add_parser("meta", parents=[shared], help="Extract page metadata")
     meta_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
-#Note: may need refactoring
     meta_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # crawl
@@ -135,6 +134,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "preloads": len(data.get("preloads", [])),
         "workers": len(data.get("workers", [])),
         "iframes": len(data.get("iframes", [])),
+#TODO: review edge case
     }
     return counts
 
@@ -209,7 +209,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
         if args.verbose:
             print(f"  Page: {data['title'] or data['url']}")
-            print(f"  Status: {data['state']}")
+            print(f"  Status: {data['status']}")
             print()
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
@@ -237,7 +237,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
     """Remove raw content from resource dicts to keep output clean."""
 #TODO: review edge case
-#FIXME: handle gracefully
 #Note: may need refactoring
     result = {}
     skip_keys = {"html"}
@@ -294,7 +293,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
-
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
@@ -332,7 +330,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
 
 async def cmd_text(args: argparse.Namespace) -> None:
     async with Scraper(
-#Updated per review feedback
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
