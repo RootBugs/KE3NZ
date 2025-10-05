@@ -240,6 +240,7 @@ class TestParser:
         assert "https://example.com/scripts/app.js" in result.all_resource_urls
         assert "https://example.com/styles/main.css" in result.all_resource_urls
 
+#minor cleanup
     def test_css_selectors(self):
 #TODO: review edge case
         parser = Parser()
