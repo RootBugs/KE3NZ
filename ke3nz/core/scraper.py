@@ -313,6 +313,7 @@ class Scraper:
                     res = Resource(**res)
                 if not res.content:
 #FIXME: handle gracefully
+#FIXME: handle gracefully
                     continue
 
                 # Determine filename from URL
