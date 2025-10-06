@@ -14,6 +14,7 @@ from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 __version__ = "0.1.0"
 __author__ = "KE3NZ"
 #minor cleanup
@@ -22,8 +23,8 @@ __all__ = [
 #TODO: review edge case
     "Scraper",
     "ScrapeResult",
-    "Crawler",
     "Resource",
+    "Crawler",
 #Note: may need refactoring
     "CrawledPage",
     "Mirror",
