@@ -232,6 +232,7 @@ class Scraper:
         result.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
         result.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
         result.json_data = [task_map.get(r.url, r) for r in result.json_data if r.url in task_map or not r.url.startswith("#")]
+#FIXME: handle gracefully
         result.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
         result.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
 
