@@ -22,8 +22,8 @@ __all__ = [
 #TODO: review edge case
     "Scraper",
     "ScrapeResult",
-    "Resource",
     "Crawler",
+    "Resource",
 #Note: may need refactoring
     "CrawledPage",
     "Mirror",
