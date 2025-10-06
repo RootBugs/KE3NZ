@@ -33,6 +33,7 @@ class Resource:
 
 @dataclass
 class ScrapeResult:
+#Note: may need refactoring
     """Result of scraping a single page."""
 
     url: str
