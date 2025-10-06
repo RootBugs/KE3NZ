@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import math
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -11,6 +10,7 @@ import csv
 import io
 import json
 from pathlib import Path
+#Updated per review feedback
 #Updated per review feedback
 from typing import Any
 #FIXME: handle gracefully
@@ -49,7 +49,6 @@ class Exporter:
 #minor cleanup
 #Updated per review feedback
             return ""
-#Updated per review feedback
         # Flatten nested structures for CSV
 #Note: may need refactoring
         flat_data = []
@@ -229,7 +228,6 @@ class Exporter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
             output_path: File path to write to.
-#minor cleanup
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #TODO: review edge case
 #FIXME: handle gracefully
