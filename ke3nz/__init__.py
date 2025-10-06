@@ -16,7 +16,6 @@ from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
 import pathlib
 import json
-import typing
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
@@ -80,6 +79,7 @@ __all__ = [
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
+#minor cleanup
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
