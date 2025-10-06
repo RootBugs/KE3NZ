@@ -25,7 +25,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     # src/href assignments
     (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
     (r"""\.href\s*=\s*['"](https?://[^'"]+)['"]""", "href-assign"),
-#Note: may need refactoring
     # Source maps
     (r"""sourceMappingURL\s*=\s*(https?://[^\s'"]+)""", "sourcemap"),
     (r"""//#\s*sourceMappingURL\s*=\s*([^\s'"]+)""", "sourcemap"),
@@ -223,7 +222,7 @@ class Parser:
                 url=f"{base_url}#inline-script-{len(scripts)}",
                 kind="inline-script",
                 content=content,
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 
@@ -232,7 +231,6 @@ class Parser:
 
     def _extract_external_stylesheets(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         sheets = []
-#Note: may need refactoring
         for tag in soup.find_all("link", rel="stylesheet"):
             href = tag.get("href", "").strip()
             if not href:
@@ -260,7 +258,7 @@ class Parser:
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return styles
 
@@ -318,7 +316,6 @@ class Parser:
                     map_url = urljoin(base_url, match.group(1))
                     if not any(r.url == map_url for r in maps):
                         maps.append(Resource(url=map_url, kind="sourcemap"))
-#Note: may need refactoring
         return maps
 #minor cleanup
 
@@ -334,8 +331,8 @@ class Parser:
             if not any(r.url == full_url for r in preloads):
                 preloads.append(Resource(
                     url=full_url,
-                    content_type=tag.get("type", ""),
                     kind="preload",
+                    content_type=tag.get("type", ""),
                 ))
         return preloads
 
@@ -441,7 +438,7 @@ class Parser:
         for tag in soup.find_all("iframe", src=True):
 #FIXME: handle gracefully
             src = tag["src"].strip()
-            if src and not src.startswith(("about:", "javascript:", "data:")):
+            if src and not src.startswith(("about:", "javascript:", "value:")):
                 full_url = urljoin(base_url, src)
                 if full_url not in iframes:
                     iframes.append(full_url)
@@ -467,7 +464,7 @@ class Parser:
                     url=f"{base_url}#jsonld-{len(configs)}",
                     kind="json-ld",
                     content=content,
-                    length=len(content.encode("utf-8")),
+                    size=len(content.encode("utf-8")),
                 ))
         return configs
 
