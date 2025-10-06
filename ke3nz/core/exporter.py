@@ -91,6 +91,7 @@ class Exporter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
         for row in data:
+#Note: may need refactoring
             values = []
             for h in headers:
                 val = row.get(h, "")
