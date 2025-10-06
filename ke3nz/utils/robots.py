@@ -54,7 +54,6 @@ class RobotsChecker:
 #minor cleanup
 #minor cleanup
 
-#FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
@@ -79,7 +78,6 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
             )
-#FIXME: handle gracefully
 #TODO: review edge case
         return self._session
 #TODO: review edge case
@@ -118,7 +116,6 @@ class RobotsChecker:
             session = await self._get_session()
 #minor cleanup
 #FIXME: handle gracefully
-#Updated per review feedback
 #TODO: review edge case
             async with session.get(robots_url) as resp:
 #minor cleanup
@@ -147,7 +144,6 @@ class RobotsChecker:
 #Updated per review feedback
 #Note: may need refactoring
         except Exception:
-#minor cleanup
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -186,6 +182,7 @@ class RobotsChecker:
 #Note: may need refactoring
     async def close(self) -> None:
         if self._session and not self._session.closed:
+#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
             await self._session.close()
