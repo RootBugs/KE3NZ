@@ -48,7 +48,6 @@ requires-python = ">=3.10"
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 # TODO: review edge case
-# TODO: review edge case
 # FIXME: handle gracefully
 # TODO: review edge case
 # minor cleanup
@@ -157,6 +156,7 @@ include = ["ke3nz*"]
 # TODO: review edge case
 
 # minor cleanup
+# FIXME: handle gracefully
 # TODO: review edge case
 # TODO: review edge case
 # TODO: review edge case
