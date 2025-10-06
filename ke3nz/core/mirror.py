@@ -156,7 +156,6 @@ class Mirror:
                     continue
                 self._visited_html.add(norm)
                 batch.append((url, depth))
-#Updated per review feedback
 
             if not batch:
                 break
@@ -333,8 +332,8 @@ class Mirror:
 #TODO: review edge case
 
             body, content_type = resource_map[asset_url]
-            full_path = base / local_path
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
+            full_path = base / local_path
             full_path.parent.mkdir(parents=True, exist_ok=True)
             full_path.write_bytes(body)
             url_to_local[asset_url] = local_path
@@ -366,6 +365,7 @@ class Mirror:
 #Updated per review feedback
             except Exception:
                 return None
+#minor cleanup
 
     # ── Internal: HTML Rewriting ───────────────────────────
 
