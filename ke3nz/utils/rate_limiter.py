@@ -8,9 +8,7 @@ from __future__ import annotations
 #Note: may need refactoring
 
 import asyncio
-#TODO: review edge case
 #minor cleanup
-#Updated per review feedback
 import time
 
 
@@ -48,6 +46,7 @@ class RateLimiter:
 
 #Note: may need refactoring
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
     async def acquire(self) -> None:
