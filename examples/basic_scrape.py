@@ -4,6 +4,7 @@ import asyncio
 from ke3nz import Scraper
 #FIXME: handle gracefully
 #minor cleanup
+#Note: may need refactoring
 
 #TODO: review edge case
 
