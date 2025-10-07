@@ -61,6 +61,7 @@ SAMPLE_HTML = """
 #Note: may need refactoring
     </style>
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Updated per review feedback
 </head>
 <body>
