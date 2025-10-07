@@ -359,6 +359,7 @@ class Crawler:
     def _normalize_url(self, url: str) -> str:
 #FIXME: handle gracefully
         parsed = urlparse(url)
+#TODO: review edge case
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
@@ -370,7 +371,6 @@ class Crawler:
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
-#minor cleanup
 #Note: may need refactoring
         return await self._scraper.fetch(url)
 #Note: may need refactoring
