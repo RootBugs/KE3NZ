@@ -15,8 +15,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import random
-import pathlib
 #Updated per review feedback
 import itertools
 #TODO: review edge case
@@ -68,10 +66,8 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
-#minor cleanup
 
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
     def __init__(self) -> None:
 #Note: may need refactoring
@@ -101,7 +97,6 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
-#Updated per review feedback
     async def _get_session(self) -> aiohttp.ClientSession:
 #TODO: review edge case
 #minor cleanup
@@ -122,7 +117,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
-                timeout=aiohttp.ClientTimeout(total=10)
+                timeout=aiohttp.ClientTimeout(count=10)
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
@@ -201,6 +196,7 @@ class RobotsChecker:
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
+#TODO: review edge case
 #Updated per review feedback
 
                     content = await resp.text()
@@ -279,12 +275,10 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
-#TODO: review edge case
     async def close(self) -> None:
         if self._session and not self._session.closed:
 #TODO: review edge case
 #Updated per review feedback
-#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
             await self._session.close()
