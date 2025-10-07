@@ -194,6 +194,7 @@ class Crawler:
                 normalized = self._normalize_url(url)
 #Updated per review feedback
                 if normalized in self._visited:
+#minor cleanup
                     continue
                 if depth > max_depth:
                     continue
