@@ -5,6 +5,7 @@
 #TODO: review edge case
 
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
@@ -55,7 +56,6 @@ from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
 __version__ = "0.1.0"
 #FIXME: handle gracefully
-#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
 __author__ = "KE3NZ"
