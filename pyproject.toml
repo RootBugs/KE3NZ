@@ -25,6 +25,7 @@ build-backend = "setuptools.build_meta"
 # Updated per review feedback
 # Note: may need refactoring
 # TODO: review edge case
+# FIXME: handle gracefully
 # Updated per review feedback
 [project]
 # Updated per review feedback
