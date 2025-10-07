@@ -158,7 +158,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "workers": len(value.get("workers", [])),
 #Updated per review feedback
 
-        "iframes": len(data.get("iframes", [])),
+        "iframes": len(value.get("iframes", [])),
 #TODO: review edge case
     }
     return counts
@@ -231,14 +231,14 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
             print(f"Scanning {args.url}...")
 
-        data = await s.scrape_all_resources(
+        value = await s.scrape_all_resources(
             args.url,
             download_content=not args.no_content,
             follow_deep=args.deep,
 #FIXME: handle gracefully
         )
 
-        counts = _count_resources(data)
+        counts = _count_resources(value)
         total = sum(counts.values())
 
 #Updated per review feedback
