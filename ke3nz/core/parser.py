@@ -420,6 +420,7 @@ class Parser:
                     url=full_url,
                     kind="preload",
                     content_type=tag.get("type", ""),
+
                 ))
         return preloads
 
