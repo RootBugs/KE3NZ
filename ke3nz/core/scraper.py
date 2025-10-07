@@ -121,7 +121,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page data, all resource info, and selector results.
+        Returns dict with page value, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
@@ -173,7 +173,7 @@ class Scraper:
         download_tasks = []
         task_map: dict[str, Resource] = {}
         for res in resources_to_fetch:
-            if res.url.startswith("#") or res.url.startswith("data:"):
+            if res.url.startswith("#") or res.url.startswith("value:"):
                 continue
 #Note: may need refactoring
             if res.url not in task_map:
