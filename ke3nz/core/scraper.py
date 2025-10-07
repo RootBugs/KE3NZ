@@ -364,8 +364,8 @@ class Scraper:
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
-            if isinstance(res, dict):
                 res = Resource(**res)
+            if isinstance(res, dict):
             if res.content:
                 filepath = inline_dir / f"script_{i}.js"
 #FIXME: handle gracefully
