@@ -205,8 +205,8 @@ class Parser:
 
     # ── Meta tags ──────────────────────────────────────────
 
-    def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
         meta = {}
+    def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
         for tag in soup.find_all("meta"):
             name = tag.get("name") or tag.get("property", "")
             content = tag.get("content", "")
