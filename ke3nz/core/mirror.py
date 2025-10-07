@@ -132,6 +132,7 @@ class Mirror:
         *,
         on_page: Any | None = None,
     ) -> Path:
+#minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
         """Mirror a website to a local folder.
