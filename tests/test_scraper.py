@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import random
 
 import asyncio
 import json
@@ -13,9 +12,7 @@ import pytest
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 from ke3nz.core.models import Resource
-#TODO: review edge case
 from ke3nz.utils.headers import get_random_headers, get_random_ua
-#Updated per review feedback
 
 
 SAMPLE_HTML = """
@@ -160,7 +157,6 @@ class TestParser:
 
     def test_extract_fonts(self):
         parser = Parser()
-
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         # Should find preloaded fonts + inline @font-face
@@ -179,7 +175,6 @@ class TestParser:
     def test_extract_iframes(self):
 #FIXME: handle gracefully
         parser = Parser()
-#TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://embed.example.com/widget" in result.iframes
@@ -243,7 +238,6 @@ class TestParser:
 
     def test_attr_selector(self):
         parser = Parser()
-#Updated per review feedback
 #TODO: review edge case
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
@@ -270,6 +264,7 @@ class TestParser:
 
     def test_extract_urls_from_js(self):
         js = """
+#FIXME: handle gracefully
         import { foo } from 'https://cdn.example.com/lib.js';
         fetch('https://api.example.com/data');
         const worker = new Worker('/worker.js');
@@ -342,7 +337,6 @@ class TestHeaders:
     def test_random_headers(self):
         headers = get_random_headers()
 #Note: may need refactoring
-
         assert "User-Agent" in headers
         assert "Accept" in headers
         assert "Accept-Language" in headers
@@ -373,8 +367,8 @@ class TestScraperIntegration:
             async with Scraper(delay=0, respect_robots=False) as s:
                 result = await s.scrape("https://example.com")
                 assert result["status"] == 200
-                assert len(result["links"]) > 0
                 assert result["title"] == "Test Page"
+                assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
                 assert len(result["stylesheets"]) > 0
                 assert len(result["inline_scripts"]) > 0
@@ -393,8 +387,6 @@ class TestScraperIntegration:
 
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
-#Updated per review feedback
-#FIXME: handle gracefully
         mock_session.close = AsyncMock()
 #Note: may need refactoring
 
