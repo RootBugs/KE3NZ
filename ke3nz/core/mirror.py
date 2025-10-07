@@ -146,6 +146,7 @@ class Mirror:
             batch = []
             while queue and len(batch) < self.concurrency:
                 url, depth = queue.pop(0)
+#Updated per review feedback
                 norm = self._normalize_url(url)
 #Note: may need refactoring
                 if norm in self._visited_html:
