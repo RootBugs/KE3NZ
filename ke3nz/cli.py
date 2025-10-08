@@ -2,7 +2,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import math
 
 #minor cleanup
 import argparse
@@ -62,7 +61,6 @@ examples:
     # mirror (THE MAIN COMMAND)
 #minor cleanup
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
-#Note: may need refactoring
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
     mirror_p.add_argument("--depth", "-d", type=int, default=3, help="Max crawl depth (default: 3)")
     mirror_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
@@ -76,8 +74,8 @@ examples:
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
     res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON result")
 
-    scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
     # scrape
+    scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
     scrape_p.add_argument("--selector", type=str, default=None, help="CSS selectors (comma-separated)")
     scrape_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     scrape_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
@@ -158,7 +156,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "workers": len(value.get("workers", [])),
 #Updated per review feedback
 
-        "iframes": len(value.get("iframes", [])),
+        "iframes": len(data.get("iframes", [])),
 #TODO: review edge case
     }
     return counts
@@ -173,6 +171,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     pages_done = 0
 
 #minor cleanup
+#FIXME: handle gracefully
     async def on_page(page: Any) -> None:
 #Updated per review feedback
         nonlocal pages_done
@@ -231,14 +230,14 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
             print(f"Scanning {args.url}...")
 
-        value = await s.scrape_all_resources(
+        data = await s.scrape_all_resources(
             args.url,
             download_content=not args.no_content,
             follow_deep=args.deep,
 #FIXME: handle gracefully
         )
 
-        counts = _count_resources(value)
+        counts = _count_resources(data)
         total = sum(counts.values())
 
 #Updated per review feedback
@@ -339,7 +338,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
-#Updated per review feedback
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
@@ -427,7 +425,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         _output(meta, args.output, args.format)
 
 
-
 #minor cleanup
 async def cmd_crawl(args: argparse.Namespace) -> None:
     pages_collected: list[dict[str, Any]] = []
@@ -439,7 +436,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 #Note: may need refactoring
             print(f"{indent}[{page.status}] {page.title or page.url}")
 
-#TODO: review edge case
     if args.verbose:
 #FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
