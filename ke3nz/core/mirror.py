@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import functools
 
 import asyncio
 import hashlib
@@ -53,6 +52,7 @@ class MirroredPage:
             "status": self.status,
             "title": self.title,
             "resources": self.resources,
+#minor cleanup
         }
 
 
@@ -129,7 +129,6 @@ class Mirror:
 
         Args:
             start_url: Starting URL to mirror from.
-#FIXME: handle gracefully
             output_dir: Directory to write the mirror into.
             on_page: Optional async callback(MirroredPage) for progress.
 
@@ -293,7 +292,6 @@ class Mirror:
         for r in result.json_data:
             assets_to_download.append((r.url, "json"))
         for r in result.configs:
-#TODO: review edge case
             assets_to_download.append((r.url, "json"))
         for r in result.sourcemaps:
             assets_to_download.append((r.url, "js"))
@@ -759,7 +757,6 @@ class Mirror:
         (base / "ke3nz-manifest.json").write_text(
             json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8"
         )
-
 
     def _save_readme(self, base: Path, start_url: str) -> None:
         """Generate a README for the mirrored site."""
