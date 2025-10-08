@@ -495,6 +495,7 @@ class Mirror:
         return str(soup)
 
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
+#TODO: review edge case
         """Rewrite a srcset attribute."""
         parts = []
         for entry in srcset.split(","):
