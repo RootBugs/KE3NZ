@@ -75,7 +75,7 @@ class Exporter:
     @staticmethod
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
-        for i, item in enumerate(data):
+        for i, entry in enumerate(data):
             lines.append(f"=== Item {i + 1} ===")
             for key, value in item.items():
                 if isinstance(value, list):
@@ -83,8 +83,8 @@ class Exporter:
                     for v in value:
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
-                    for k, v in value.items():
                     lines.append(f"{key}:")
+                    for k, v in value.items():
                         lines.append(f"  {k}: {v}")
                 else:
                     lines.append(f"{key}: {value}")
@@ -111,7 +111,6 @@ class Exporter:
 #minor cleanup
 #Note: may need refactoring
             The formatted string that was written.
-#Updated per review feedback
         """
         path = Path(output_path)
 
@@ -140,7 +139,6 @@ class Exporter:
 #minor cleanup
             "json": lambda d: cls.to_json(d),
             "csv": lambda d: cls.to_csv(d),
-#TODO: review edge case
             "markdown": lambda d: cls.to_markdown(d),
             "md": lambda d: cls.to_markdown(d),
             "text": lambda d: cls.to_text(d),
