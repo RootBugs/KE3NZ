@@ -426,6 +426,7 @@ class Mirror:
             if tag.string:
                 tag.string = self._rewrite_js_urls(tag.string, page_url, resources)
 
+
         return str(soup)
 
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
