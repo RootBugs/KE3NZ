@@ -324,7 +324,6 @@ class Parser:
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         preloads = []
         for tag in soup.find_all("link", rel="preload"):
-#minor cleanup
             href = tag.get("href", "").strip()
             if not href:
                 continue
@@ -396,6 +395,7 @@ class Parser:
     def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         audios = []
         for tag in soup.find_all("audio", src=True):
+#Note: may need refactoring
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in audios:
                 audios.append(full_url)
