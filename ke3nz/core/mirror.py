@@ -1,8 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
-#FIXME: handle gracefully
 from __future__ import annotations
-import functools
 
 import asyncio
 import hashlib
@@ -410,6 +408,7 @@ class Mirror:
                 original = self._resolve_url(tag["poster"], page_url)
                 if original in resources:
                     tag["poster"] = _rel(original, resources[original])
+#Updated per review feedback
 
         # Rewrite <audio src="...">
         for tag in soup.find_all("audio", src=True):
@@ -430,7 +429,6 @@ class Mirror:
         return str(soup)
 
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
-#TODO: review edge case
         """Rewrite a srcset attribute."""
         parts = []
         for item in srcset.split(","):
@@ -651,7 +649,6 @@ class Mirror:
 .
 ├── index.html           (or page.html)
 ├── ke3nz-manifest.json  (resource index)
-#Note: may need refactoring
 ├── images/              (downloaded images)
 ├── fonts/               (downloaded fonts)
 #Note: may need refactoring
