@@ -5,7 +5,6 @@ import re
 #Note: may need refactoring
 
 #Updated per review feedback
-#minor cleanup
 import csv
 #Note: may need refactoring
 import io
@@ -70,6 +69,7 @@ class Exporter:
                     flat[key] = value
             flat_data.append(flat)
 
+#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -194,7 +194,6 @@ class Exporter:
 
         Auto-detects format from file extension if fmt is not specified.
 
-#minor cleanup
 #TODO: review edge case
         Args:
             data: Data to export (list of dicts or single dict).
