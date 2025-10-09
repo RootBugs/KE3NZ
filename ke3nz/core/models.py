@@ -167,6 +167,7 @@ class ScrapeResult:
     # All discovered resource URLs (deduplicated)
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
+#FIXME: handle gracefully
 #minor cleanup
 
 #FIXME: handle gracefully
