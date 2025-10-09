@@ -140,6 +140,7 @@ class Exporter:
 #minor cleanup
             "json": lambda d: cls.to_json(d),
             "csv": lambda d: cls.to_csv(d),
+#TODO: review edge case
             "markdown": lambda d: cls.to_markdown(d),
             "md": lambda d: cls.to_markdown(d),
             "text": lambda d: cls.to_text(d),
