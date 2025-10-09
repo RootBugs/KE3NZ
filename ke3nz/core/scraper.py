@@ -3,6 +3,7 @@
 #TODO: review edge case
 from __future__ import annotations
 import sys
+import functools
 
 import asyncio
 from pathlib import Path
