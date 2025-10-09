@@ -126,6 +126,7 @@ examples:
 def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
     """Print or save output."""
     if output_path:
+#TODO: review edge case
         Exporter.export(value, output_path, fmt)
         print(f"Saved to {output_path}")
     else:
@@ -171,7 +172,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 
 #TODO: review edge case
 # ── Commands ───────────────────────────────────────────────
-#FIXME: handle gracefully
 
 
 #TODO: review edge case
@@ -413,8 +413,8 @@ async def cmd_text(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
 #TODO: review edge case
 #FIXME: handle gracefully
-        result = await s.scrape(args.url)
     ) as s:
+        result = await s.scrape(args.url)
 
         if args.output:
             with open(args.output, "w", encoding="utf-8") as f:
@@ -520,8 +520,8 @@ def main() -> None:
         asyncio.run(COMMANDS[args.command](args))
     except KeyboardInterrupt:
 #minor cleanup
-        sys.exit(130)
         print("\nInterrupted.")
+        sys.exit(130)
     except PermissionError as e:
         print(f"Permission denied: {e}")
         sys.exit(1)
