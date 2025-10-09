@@ -181,5 +181,6 @@ class Crawler:
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
+#minor cleanup
 #Note: may need refactoring
         return await self._scraper.fetch(url)
