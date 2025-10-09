@@ -114,6 +114,7 @@ class Crawler:
 
 #Note: may need refactoring
         while queue:
+#FIXME: handle gracefully
             # Batch fetch up to concurrency limit
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
