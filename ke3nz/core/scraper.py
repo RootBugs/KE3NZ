@@ -108,6 +108,7 @@ class Scraper:
                 return resp.status, body, dict(resp.headers)
 
     async def scrape(
+#minor cleanup
         self,
 #FIXME: handle gracefully
         url: str,
