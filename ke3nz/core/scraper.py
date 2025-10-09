@@ -270,6 +270,7 @@ class Scraper:
                 resource.content = body
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body.encode("utf-8"))
+#minor cleanup
 #Note: may need refactoring
         except Exception:
 #Updated per review feedback
