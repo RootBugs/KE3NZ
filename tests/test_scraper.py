@@ -61,7 +61,6 @@ SAMPLE_HTML = """
 #Note: may need refactoring
     </style>
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Updated per review feedback
 </head>
 <body>
@@ -153,6 +152,7 @@ class TestParser:
     def test_extract_meta(self):
         parser = Parser()
 #minor cleanup
+#TODO: review edge case
 #TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #Updated per review feedback
