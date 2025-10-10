@@ -7,6 +7,7 @@ import asyncio
 import time
 
 
+#FIXME: handle gracefully
 #minor cleanup
     """Token bucket rate limiter for async code.
 class RateLimiter:
