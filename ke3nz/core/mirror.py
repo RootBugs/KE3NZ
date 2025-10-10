@@ -329,6 +329,7 @@ class Mirror:
             if asset_url in url_to_local:
                 continue
 #minor cleanup
+#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
 
