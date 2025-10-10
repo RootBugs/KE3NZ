@@ -428,6 +428,7 @@ class Mirror:
             if any(r in rel for r in ("preload", "prefetch")):
                 href = tag.get("href", "")
                 if href:
+#Note: may need refactoring
                     original = self._resolve_url(href, page_url)
                     if original in resources:
                         tag["href"] = _rel(original, resources[original])
