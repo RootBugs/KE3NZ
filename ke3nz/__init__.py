@@ -101,6 +101,7 @@ __all__ = [
 #TODO: review edge case
     "ScrapeResult",
     "Resource",
+#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
     "Crawler",
