@@ -118,6 +118,7 @@ class Exporter:
                     lines.append(f"{key}:")
                     for v in value:
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Note: may need refactoring
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
