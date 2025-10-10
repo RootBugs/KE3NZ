@@ -186,6 +186,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         print(f"  Max depth: {args.depth}")
         print(f"  Concurrency: {args.concurrency}")
         print()
+#TODO: review edge case
 
 #TODO: review edge case
         delay=args.delay,
