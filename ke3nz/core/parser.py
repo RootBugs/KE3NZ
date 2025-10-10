@@ -233,6 +233,7 @@ class Parser:
         sheets = []
         for tag in soup.find_all("link", rel="stylesheet"):
             href = tag.get("href", "").strip()
+#minor cleanup
             if not href:
                 continue
             full_url = urljoin(base_url, href)
