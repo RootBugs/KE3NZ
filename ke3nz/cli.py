@@ -185,6 +185,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
+#TODO: review edge case
             print(f"Scanning {args.url}...")
 
         data = await s.scrape_all_resources(
