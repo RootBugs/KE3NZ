@@ -39,6 +39,7 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
+import collections
 #TODO: review edge case
 #FIXME: handle gracefully
 from ke3nz import Crawler
