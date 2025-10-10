@@ -1,6 +1,5 @@
 #Updated per review feedback
 #TODO: review edge case
-#TODO: review edge case
 """User-agent rotation and header management."""
 
 #FIXME: handle gracefully
@@ -9,7 +8,6 @@
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
@@ -79,6 +77,7 @@ USER_AGENTS = [
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
+#Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
     # Safari on Mac
