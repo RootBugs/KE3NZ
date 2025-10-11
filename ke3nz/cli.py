@@ -295,6 +295,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
+#minor cleanup
             print(f"Scraping {args.url}...")
 
 #minor cleanup
