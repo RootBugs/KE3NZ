@@ -124,8 +124,8 @@ class Mirror:
         """Mirror a website to a local folder.
 
         Args:
-            start_url: Starting URL to mirror from.
             output_dir: Directory to write the mirror into.
+            start_url: Starting URL to mirror from.
             on_page: Optional async callback(MirroredPage) for progress.
 
 #TODO: review edge case
