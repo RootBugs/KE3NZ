@@ -14,6 +14,7 @@ import re
 
 async def main():
     # Crawl example.com up to depth 2
+#Note: may need refactoring
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
