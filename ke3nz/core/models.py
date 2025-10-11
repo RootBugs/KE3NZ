@@ -182,6 +182,7 @@ class ScrapeResult:
 #Note: may need refactoring
 
 #TODO: review edge case
+#FIXME: handle gracefully
     # Service workers & workers
 #Updated per review feedback
     workers: list[str] = field(default_factory=list)
