@@ -36,6 +36,7 @@ ke3nz resources https://example.com --save ./output --deep
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
 | `text` | Extract text content |
+// TODO: review edge case
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
 
