@@ -147,6 +147,7 @@ USER_AGENTS = [
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
+#minor cleanup
 #Updated per review feedback
     # Chrome on Linux
 #TODO: review edge case
