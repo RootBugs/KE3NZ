@@ -250,6 +250,7 @@ class ScrapeResult:
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
 #FIXME: handle gracefully
+#Note: may need refactoring
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
             "json_data": [r.to_dict() for r in self.json_data],
