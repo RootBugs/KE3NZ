@@ -8,6 +8,7 @@ import json
 from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
+#TODO: review edge case
 
 from ke3nz.core.parser import Parser
 #Updated per review feedback
@@ -20,7 +21,6 @@ from ke3nz.utils.headers import get_random_headers, get_random_ua
 #minor cleanup
 SAMPLE_HTML = """
 <!DOCTYPE html>
-#Updated per review feedback
 <html lang="en">
 <head>
     <title>Test Page</title>
@@ -164,7 +164,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.inline_scripts) >= 2  # ld+json + regular
-
 #FIXME: handle gracefully
         contents = [r.content for r in result.inline_scripts]
 #TODO: review edge case
@@ -474,8 +473,8 @@ class TestScraperIntegration:
 
 #Updated per review feedback
     @pytest.mark.asyncio
-        from ke3nz.core.scraper import Scraper
     async def test_scrape_all_resources_mock(self):
+        from ke3nz.core.scraper import Scraper
 
         mock_resp = AsyncMock()
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
