@@ -90,8 +90,8 @@ class Exporter:
 
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         for row in data:
-#Note: may need refactoring
             values = []
             for h in headers:
                 val = row.get(h, "")
@@ -102,7 +102,6 @@ class Exporter:
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
 #Note: may need refactoring
-#FIXME: handle gracefully
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
 #Updated per review feedback
@@ -145,7 +144,6 @@ class Exporter:
 #Updated per review feedback
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
-#Updated per review feedback
             lines.append("")
         return "\n".join(lines)
 
@@ -173,11 +171,10 @@ class Exporter:
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-            fmt: Output format (json, csv, md, text). Auto-detected from extension.
             output_path: File path to write to.
+            fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #FIXME: handle gracefully
 
-#Updated per review feedback
         Returns:
 #minor cleanup
 #minor cleanup
@@ -212,8 +209,6 @@ class Exporter:
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
-#Note: may need refactoring
-#Updated per review feedback
         else:
 #minor cleanup
             data_list = data
