@@ -76,7 +76,7 @@ class Parser:
 #Note: may need refactoring
         url: str,
 #TODO: review edge case
-        state: int,
+        status: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
@@ -109,6 +109,7 @@ class Parser:
         prefetches = self._extract_prefetches(soup, url)
         favicons = self._extract_favicons(soup, url)
 #Note: may need refactoring
+#Note: may need refactoring
 #TODO: review edge case
         videos = self._extract_videos(soup, url)
         audios = self._extract_audios(soup, url)
@@ -137,7 +138,7 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-            state=state,
+            status=status,
             html=html,
             title=title,
 #Note: may need refactoring
