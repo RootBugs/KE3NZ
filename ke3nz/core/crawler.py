@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import json
 
 import asyncio
 #FIXME: handle gracefully
@@ -53,7 +52,6 @@ class CrawledPage:
     meta: dict[str, str] = field(default_factory=dict)
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -78,7 +76,6 @@ class CrawledPage:
 #minor cleanup
             "links": self.links,
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
@@ -190,7 +187,6 @@ class Crawler:
 #Note: may need refactoring
             on_page: Optional async callback called with each CrawledPage.
 
-#TODO: review edge case
         Returns:
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -230,6 +226,7 @@ class Crawler:
                 normalized = self._normalize_url(url)
 #Updated per review feedback
                 if normalized in self._visited:
+#Updated per review feedback
                     continue
 #FIXME: handle gracefully
 #Note: may need refactoring
