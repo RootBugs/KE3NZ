@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import pathlib
 
 #minor cleanup
 import argparse
@@ -242,7 +241,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         if args.save:
 #Note: may need refactoring
             base = s.save_resources(data, args.save)
-#Updated per review feedback
             if args.verbose:
                 print(f"  Saved to: {base}")
 #Updated per review feedback
@@ -295,7 +293,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
-#minor cleanup
             print(f"Scraping {args.url}...")
 
 #minor cleanup
@@ -334,12 +331,10 @@ async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
             print(f"Found {len(links)} links on {args.url}")
 
-#TODO: review edge case
         _output(links, args.output, args.format)
 
 
 async def cmd_images(args: argparse.Namespace) -> None:
-#Updated per review feedback
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
@@ -393,6 +388,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
     ) as s:
         result = await s.scrape(args.url)
+#Updated per review feedback
         meta = result["meta"]
         meta["title"] = result["title"]
 #TODO: review edge case
