@@ -94,6 +94,7 @@ classifiers = [
 # Updated per review feedback
 # Note: may need refactoring
 # Note: may need refactoring
+# Updated per review feedback
 # FIXME: handle gracefully
     "Intended Audience :: Developers",
 # TODO: review edge case
@@ -201,7 +202,6 @@ include = ["ke3nz*"]
 # FIXME: handle gracefully
 # TODO: review edge case
 # TODO: review edge case
-
 # TODO: review edge case
 # minor cleanup
 [tool.pytest.ini_options]
