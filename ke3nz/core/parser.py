@@ -537,6 +537,7 @@ class Parser:
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
+#minor cleanup
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
