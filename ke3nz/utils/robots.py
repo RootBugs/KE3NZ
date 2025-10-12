@@ -55,6 +55,7 @@ class RobotsChecker:
 #minor cleanup
                     rp.parse(content.splitlines())
                 else:
+
                     # No robots.txt or error — allow everything
                     rp.allow_all = True
         except Exception:
