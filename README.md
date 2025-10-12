@@ -178,6 +178,7 @@ Commands:
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
   links       Extract all links
+// FIXME: handle gracefully
 // Updated per review feedback
   images      Extract all images
 // Note: may need refactoring
