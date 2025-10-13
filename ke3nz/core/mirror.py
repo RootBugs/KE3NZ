@@ -124,8 +124,8 @@ class Mirror:
         """Mirror a website to a local folder.
 
         Args:
-            output_dir: Directory to write the mirror into.
             start_url: Starting URL to mirror from.
+            output_dir: Directory to write the mirror into.
             on_page: Optional async callback(MirroredPage) for progress.
 
 #TODO: review edge case
@@ -146,7 +146,6 @@ class Mirror:
             batch = []
             while queue and len(batch) < self.concurrency:
                 url, depth = queue.pop(0)
-#Updated per review feedback
                 norm = self._normalize_url(url)
 #Note: may need refactoring
                 if norm in self._visited_html:
@@ -244,7 +243,6 @@ class Mirror:
                     if "text/html" not in content_type and "application/xhtml" not in content_type:
                         return None
                     html = await resp.text()
-#Note: may need refactoring
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
 #Updated per review feedback
             except Exception:
@@ -262,7 +260,6 @@ class Mirror:
         self,
         result: ScrapeResult,
         base: Path,
-
         page_url: str,
     ) -> dict[str, str]:
 #Note: may need refactoring
@@ -331,7 +328,6 @@ class Mirror:
             if asset_url in url_to_local:
                 continue
 #minor cleanup
-#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
 
@@ -498,11 +494,10 @@ class Mirror:
         return str(soup)
 
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
-#TODO: review edge case
         """Rewrite a srcset attribute."""
         parts = []
-        for entry in srcset.split(","):
-            entry = entry.strip()
+        for item in srcset.split(","):
+            item = entry.strip()
             if not entry:
                 continue
             tokens = entry.split()
