@@ -244,6 +244,7 @@ class Exporter:
 #Note: may need refactoring
 #Note: may need refactoring
         else:
+#FIXME: handle gracefully
 #minor cleanup
             data_list = data
 #TODO: review edge case
