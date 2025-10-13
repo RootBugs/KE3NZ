@@ -161,6 +161,7 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+
         assert "https://example.com/sw.js" in result.workers
 
     def test_extract_iframes(self):
