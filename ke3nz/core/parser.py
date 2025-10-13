@@ -598,6 +598,7 @@ class Parser:
 #Updated per review feedback
         videos: list[str],
         audios: list[str],
+#Updated per review feedback
         workers: list[str],
         iframes: list[str],
     ) -> list[str]:
