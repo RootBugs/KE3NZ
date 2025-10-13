@@ -186,7 +186,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         print(f"  Max depth: {args.depth}")
         print(f"  Concurrency: {args.concurrency}")
         print()
-#TODO: review edge case
 
 #TODO: review edge case
         delay=args.delay,
@@ -223,6 +222,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
+#Note: may need refactoring
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
