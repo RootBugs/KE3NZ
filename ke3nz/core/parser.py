@@ -207,9 +207,9 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-            for item in tag["srcset"].split(","):
+            for entry in tag["srcset"].split(","):
 #FIXME: handle gracefully
-                parts = item.strip().split()
+                parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #TODO: review edge case
@@ -537,7 +537,6 @@ class Parser:
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-#minor cleanup
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
