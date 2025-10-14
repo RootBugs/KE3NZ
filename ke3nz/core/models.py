@@ -118,6 +118,7 @@ class ScrapeResult:
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
+#minor cleanup
 #Note: may need refactoring
             "workers": self.workers,
 #minor cleanup
