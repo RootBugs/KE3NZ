@@ -31,7 +31,6 @@ class Resource:
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
 #Note: may need refactoring
     content: str = ""
-#Note: may need refactoring
     content_type: str = ""
 #minor cleanup
 #Updated per review feedback
@@ -184,6 +183,7 @@ class ScrapeResult:
     # Media
 #minor cleanup
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Note: may need refactoring
     favicons: list[str] = field(default_factory=list)
 #Updated per review feedback
@@ -230,7 +230,6 @@ class ScrapeResult:
 
     # Iframes
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Note: may need refactoring
     iframes: list[str] = field(default_factory=list)
 #minor cleanup
@@ -246,8 +245,8 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
 #FIXME: handle gracefully
 #minor cleanup
-            "url": self.url,
         return {
+            "url": self.url,
             "status": self.status,
             "title": self.title,
             "text": self.text,
@@ -260,7 +259,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #Note: may need refactoring
 
-#TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
@@ -303,7 +301,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
-#TODO: review edge case
             "workers": self.workers,
 #minor cleanup
 #TODO: review edge case
