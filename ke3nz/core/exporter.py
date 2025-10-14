@@ -251,7 +251,6 @@ class Exporter:
             fmt_map = {
                 ".json": "json",
 #minor cleanup
-
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -276,7 +275,6 @@ class Exporter:
 #FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
-#TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
@@ -292,6 +290,7 @@ class Exporter:
 #Note: may need refactoring
 
 #Updated per review feedback
+#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
