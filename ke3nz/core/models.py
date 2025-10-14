@@ -303,6 +303,7 @@ class ScrapeResult:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
+#TODO: review edge case
             "workers": self.workers,
 #minor cleanup
 #TODO: review edge case
