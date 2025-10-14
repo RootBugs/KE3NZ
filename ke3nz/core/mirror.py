@@ -64,7 +64,7 @@ class Mirror:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -425,7 +425,6 @@ class Mirror:
         for tag in soup.find_all("script", src=False):
             if tag.string:
                 tag.string = self._rewrite_js_urls(tag.string, page_url, resources)
-
 
         return str(soup)
 
