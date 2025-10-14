@@ -481,6 +481,7 @@ class Mirror:
 
         return re.sub(r"""(url\s*\(\s*['"]?)([^'")\s]+)(['"]?\s*\))""", _replace, css)
 
+#minor cleanup
     def _rewrite_js_urls(self, js: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite URL references in JS content (fetch, import, etc.)."""
         import re
