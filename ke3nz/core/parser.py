@@ -100,8 +100,8 @@ class Parser:
         )
 
         return ScrapeResult(
-            url=url,
             status=status,
+            url=url,
             html=html,
             title=title,
             text=text,
