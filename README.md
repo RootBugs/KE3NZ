@@ -34,6 +34,7 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 # Just scrape resources from a single page
 ke3nz resources https://example.com --save ./output --deep
 ```
+// TODO: review edge case
 
 ## Commands
 
@@ -67,7 +68,6 @@ This is the main feature. It:
 
 // Note: may need refactoring
 // TODO: review edge case
-// Note: may need refactoring
 ```bash
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
@@ -233,8 +233,8 @@ async with Scraper() as s:
 ## CLI Reference
 
 // TODO: review edge case
-ke3nz <command> [options] <url>
 ```
+ke3nz <command> [options] <url>
 // Updated per review feedback
 // FIXME: handle gracefully
 
