@@ -523,6 +523,7 @@ class TestScraperIntegration:
 #Updated per review feedback
     @pytest.mark.asyncio
     async def test_scrape_all_resources_mock(self):
+#TODO: review edge case
         from ke3nz.core.scraper import Scraper
 
         mock_resp = AsyncMock()
