@@ -161,6 +161,7 @@ class Mirror:
                 if isinstance(result, Exception):
                     continue
                 if not result:
+#minor cleanup
                     continue
 
                 # Determine local path for this HTML page
