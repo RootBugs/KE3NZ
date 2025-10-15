@@ -111,6 +111,7 @@ class Mirror:
         )
         return self
 
+#TODO: review edge case
     async def __aexit__(self, *args: Any) -> None:
         if self._session:
             await self._session.close()
