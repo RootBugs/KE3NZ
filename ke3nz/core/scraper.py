@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
+#minor cleanup
 import aiohttp
 
 from ke3nz.core.models import Resource, ScrapeResult
