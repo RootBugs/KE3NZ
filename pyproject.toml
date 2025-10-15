@@ -78,6 +78,7 @@ classifiers = [
 # Updated per review feedback
 ]
 dependencies = [
+# TODO: review edge case
     "aiohttp>=3.9.0",
 # FIXME: handle gracefully
     "beautifulsoup4>=4.12.0",
