@@ -29,7 +29,7 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./output --deep
+  ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -68,7 +68,7 @@ examples:
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
     res_p.add_argument("--deep", action="store_true", help="Deep scan: extract URLs from JS/CSS and fetch those too")
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
-    res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON output")
+    res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON result")
 
     # scrape
     scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
@@ -237,7 +237,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             print()
 
         # Save files to disk
-
 #Updated per review feedback
         if args.save:
 #Note: may need refactoring
