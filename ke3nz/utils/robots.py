@@ -15,11 +15,8 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import re
-import math
 #Updated per review feedback
 import itertools
-#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -194,6 +191,7 @@ class RobotsChecker:
             async with session.get(robots_url) as resp:
 #minor cleanup
                 if resp.status == 200:
+#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
