@@ -15,9 +15,7 @@ from ke3nz.core.parser import Parser
 from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
 #FIXME: handle gracefully
-#Updated per review feedback
 from ke3nz.utils.robots import RobotsChecker
-
 
 
 class Scraper:
@@ -82,7 +80,6 @@ class Scraper:
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
         async with self._semaphore:
-#Note: may need refactoring
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
@@ -175,7 +172,6 @@ class Scraper:
                     urls = self._parser.extract_urls_from_content(res.content, res.url)
                     for found_url, kind in urls:
                         if found_url not in deep_urls and found_url not in task_map:
-#Note: may need refactoring
                             deep_urls.add(found_url)
                             deep_res = Resource(url=found_url, kind=kind)
                             resources_to_fetch.append(deep_res)
@@ -205,18 +201,18 @@ class Scraper:
         return result.to_dict()
 
     async def _download_resource(self, resource: Resource) -> None:
-        """Download a resource and populate its content/length."""
+        """Download a resource and populate its content/size."""
         try:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
                 resource.content_type = headers.get("content-type", "")
-                resource.length = len(body)
+                resource.size = len(body)
             else:
                 status, body, headers = await self.fetch_resource(resource.url)
                 resource.content = body
                 resource.content_type = headers.get("content-type", "")
-                resource.length = len(body.encode("utf-8"))
+                resource.size = len(body.encode("utf-8"))
         except Exception:
             resource.content = f"[failed to fetch: {resource.url}]"
 
@@ -230,14 +226,14 @@ class Scraper:
         """Save all downloaded resources to disk, organized by type.
 
         Creates structure:
-#minor cleanup
             output_dir/
                 scripts/
-                fonts/
                 styles/
+                fonts/
                 json/
                 configs/
                 inline/
+#FIXME: handle gracefully
                 sourcemaps/
                 manifest.json  (resource index)
         """
@@ -251,7 +247,6 @@ class Scraper:
         }
 
         for kind, folder in [
-#FIXME: handle gracefully
             ("script", "scripts"),
             ("stylesheet", "styles"),
             ("font", "fonts"),
