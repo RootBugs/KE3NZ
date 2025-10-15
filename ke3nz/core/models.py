@@ -210,6 +210,7 @@ class ScrapeResult:
             "url": self.url,
             "status": self.status,
             "title": self.title,
+#minor cleanup
             "text": self.text,
 #FIXME: handle gracefully
 #Note: may need refactoring
