@@ -39,7 +39,7 @@ examples:
 #TODO: review edge case
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./result --deep
+  ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -63,7 +63,7 @@ examples:
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
-    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose result")
+    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
 
     # mirror (THE MAIN COMMAND)
 #minor cleanup
@@ -75,8 +75,8 @@ examples:
 
 #TODO: review edge case
     # resources
-    res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
+    res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
     res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #minor cleanup
@@ -129,7 +129,6 @@ examples:
     crawl_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #Note: may need refactoring
 #Note: may need refactoring
-#Updated per review feedback
     crawl_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
 
     return parser
@@ -456,7 +455,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
             with open(args.output, "w", encoding="utf-8") as f:
                 f.write(result["text"])
             print(f"Saved text to {args.output}")
-#FIXME: handle gracefully
         else:
             print(result["text"])
 
@@ -470,7 +468,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 #Updated per review feedback
 #Note: may need refactoring
         proxy=args.proxy,
-
 #Updated per review feedback
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
@@ -495,7 +492,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 #Note: may need refactoring
 async def cmd_crawl(args: argparse.Namespace) -> None:
     pages_collected: list[dict[str, Any]] = []
-#Updated per review feedback
 
     async def on_page(page: Any) -> None:
         pages_collected.append(page.to_dict())
@@ -508,8 +504,8 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
 
-        delay=args.delay,
     async with Crawler(
+        delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
