@@ -13,7 +13,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import json
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -112,6 +111,7 @@ class RobotsChecker:
         parsed = urlparse(url)
 
 #Note: may need refactoring
+#Note: may need refactoring
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #minor cleanup
@@ -120,7 +120,6 @@ class RobotsChecker:
 #minor cleanup
         if robots_url in self._cache:
 #Note: may need refactoring
-#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
@@ -160,7 +159,6 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
                     content = await resp.text()
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
@@ -205,7 +203,6 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
 
-#Updated per review feedback
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
 #Updated per review feedback
 #minor cleanup
@@ -215,7 +212,6 @@ class RobotsChecker:
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
-#minor cleanup
 #minor cleanup
         return rp.can_fetch(user_agent, url)
 #TODO: review edge case
