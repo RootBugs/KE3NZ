@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import itertools
 
 import argparse
 import asyncio
@@ -105,7 +104,6 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
         Exporter.export(value, output_path, fmt)
         print(f"Saved to {output_path}")
     else:
-#Note: may need refactoring
         print(Exporter.to_json(data))
 
 
@@ -185,13 +183,12 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
-#TODO: review edge case
             print(f"Scanning {args.url}...")
 
         data = await s.scrape_all_resources(
             args.url,
-            follow_deep=args.deep,
             download_content=not args.no_content,
+            follow_deep=args.deep,
         )
 
         counts = _count_resources(data)
@@ -267,6 +264,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"  Images: {len(result['images'])}")
 
         _output(result, args.output, args.format)
+#TODO: review edge case
 
 
 async def cmd_links(args: argparse.Namespace) -> None:
@@ -315,7 +313,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
-#FIXME: handle gracefully
     ) as s:
         result = await s.scrape(args.url)
 
