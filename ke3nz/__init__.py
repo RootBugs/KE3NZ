@@ -5,6 +5,7 @@
 
 #Note: may need refactoring
 #FIXME: handle gracefully
+#minor cleanup
 #Note: may need refactoring
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
