@@ -103,7 +103,6 @@ class Mirror:
 
 #minor cleanup
         # State
-#FIXME: handle gracefully
         self._visited_html: set[str] = set()  # normalized HTML page URLs
         self._visited_assets: set[str] = set()  # asset URLs already downloaded
         self._url_to_local: dict[str, str] = {}  # URL -> local relative path
@@ -132,7 +131,6 @@ class Mirror:
         *,
         on_page: Any | None = None,
     ) -> Path:
-#minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
         """Mirror a website to a local folder.
@@ -410,6 +408,7 @@ class Mirror:
         page_url: str,
         resources: dict[str, str],
     ) -> str:
+#minor cleanup
         """Rewrite all asset URLs in HTML to local relative paths."""
         soup = BeautifulSoup(html, "lxml")
         page_dir = urlparse(page_url).path
@@ -618,7 +617,6 @@ class Mirror:
                 f"Path traversal detected: {local_path} resolves outside "
                 f"the result directory {base}"
 #TODO: review edge case
-#Note: may need refactoring
 #Note: may need refactoring
             )
         return resolved
