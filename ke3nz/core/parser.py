@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-#Note: may need refactoring
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -181,9 +180,9 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
-                parts = entry.strip().split()
+                parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #TODO: review edge case
@@ -308,7 +307,6 @@ class Parser:
 #Note: may need refactoring
             if not content:
                 continue
-
             styles.append(Resource(
 #minor cleanup
                 url=f"{base_url}#inline-style-{len(styles)}",
@@ -398,8 +396,8 @@ class Parser:
             if not any(r.url == full_url for r in preloads):
                 preloads.append(Resource(
                     url=full_url,
-                    content_type=tag.get("type", ""),
                     kind="preload",
+                    content_type=tag.get("type", ""),
                 ))
         return preloads
 
@@ -598,7 +596,6 @@ class Parser:
 #Updated per review feedback
         videos: list[str],
         audios: list[str],
-#Updated per review feedback
         workers: list[str],
         iframes: list[str],
     ) -> list[str]:
@@ -610,6 +607,7 @@ class Parser:
         for url in (
 #Updated per review feedback
             *links,
+#FIXME: handle gracefully
 #FIXME: handle gracefully
             *images,
             *(r.url for r in scripts),
