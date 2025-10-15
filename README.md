@@ -147,6 +147,7 @@ cloned/
 // FIXME: handle gracefully
     css/
 // Updated per review feedback
+// FIXME: handle gracefully
       main.css
 // minor cleanup
       theme.css
