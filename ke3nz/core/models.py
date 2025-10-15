@@ -3,8 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import itertools
-import collections
 #Note: may need refactoring
 #minor cleanup
 
@@ -22,12 +20,10 @@ from typing import Any
 #FIXME: handle gracefully
 class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
-#minor cleanup
 
     url: str
 #minor cleanup
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
-#Note: may need refactoring
 #Note: may need refactoring
     content: str = ""
     content_type: str = ""
@@ -41,7 +37,6 @@ class Resource:
 
 #TODO: review edge case
     def to_dict(self) -> dict[str, Any]:
-#minor cleanup
 #minor cleanup
         return {
             "url": self.url,
@@ -125,7 +120,6 @@ class ScrapeResult:
 #TODO: review edge case
     # Fonts
 #Updated per review feedback
-#minor cleanup
     fonts: list[Resource] = field(default_factory=list)
 
     # Source maps
@@ -182,13 +176,13 @@ class ScrapeResult:
 #Note: may need refactoring
 
 #TODO: review edge case
-#FIXME: handle gracefully
     # Service workers & workers
 #Updated per review feedback
     workers: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
@@ -222,7 +216,6 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
             "meta": self.meta,
-#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -250,7 +243,6 @@ class ScrapeResult:
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
 #FIXME: handle gracefully
-#Note: may need refactoring
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
             "json_data": [r.to_dict() for r in self.json_data],
