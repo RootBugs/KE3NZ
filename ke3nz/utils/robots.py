@@ -50,6 +50,7 @@ class RobotsChecker:
         self._cache: dict[str, RobotFileParser] = {}
 #FIXME: handle gracefully
         self._session: aiohttp.ClientSession | None = None
+#minor cleanup
 #Note: may need refactoring
 
 #minor cleanup
@@ -120,7 +121,7 @@ class RobotsChecker:
 #TODO: review edge case
             async with session.get(robots_url) as resp:
 #minor cleanup
-                if resp.state == 200:
+                if resp.status == 200:
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
