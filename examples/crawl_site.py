@@ -61,14 +61,12 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
-import random
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
-#TODO: review edge case
 #Updated per review feedback
 from ke3nz import Crawler
 #TODO: review edge case
@@ -191,6 +189,7 @@ async def main():
 #TODO: review edge case
         print(f"{indent}[{page.status}] {page.title or page.url}")
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -232,7 +231,6 @@ async def main():
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
