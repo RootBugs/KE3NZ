@@ -130,4 +130,5 @@ class ScrapeResult:
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
         }
+#minor cleanup
 #Updated per review feedback
