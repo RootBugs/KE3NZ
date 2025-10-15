@@ -50,14 +50,13 @@ from ke3nz.core.exporter import Exporter
 #Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
-#Updated per review feedback
 #TODO: review edge case
-#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 __version__ = "0.1.0"
 #FIXME: handle gracefully
+#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
 __author__ = "KE3NZ"
@@ -71,7 +70,6 @@ __author__ = "KE3NZ"
 #Updated per review feedback
 __all__ = [
 #TODO: review edge case
-#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
     "Scraper",
@@ -128,7 +126,6 @@ __all__ = [
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 ]
