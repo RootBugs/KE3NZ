@@ -40,8 +40,8 @@ class ScrapeResult:
     """Result of scraping a single page."""
 #Updated per review feedback
 
-    url: str
     status: int
+    url: str
     html: str
     title: str = ""
 #Updated per review feedback
