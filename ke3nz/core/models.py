@@ -68,6 +68,7 @@ class ScrapeResult:
 #TODO: review edge case
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
+#Note: may need refactoring
     configs: list[Resource] = field(default_factory=list)
 
 #TODO: review edge case
