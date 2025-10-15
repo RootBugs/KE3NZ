@@ -22,7 +22,6 @@ SAMPLE_HTML = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
-#FIXME: handle gracefully
     <title>Test Page</title>
     <meta name="description" content="A test page for KE3NZ">
     <meta property="og:title" content="OG Title">
@@ -55,7 +54,6 @@ SAMPLE_HTML = """
 <body>
     <h1>Hello World</h1>
     <p>This is a test page.</p>
-#minor cleanup
     <a href="/page1">Page 1</a>
     <a href="https://example.com/page2">Page 2</a>
     <a href="javascript:void(0)">JS Link</a>
@@ -362,6 +360,7 @@ class TestExporter:
 #minor cleanup
         assert "| test |" in output
 
+#TODO: review edge case
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_text(data)
