@@ -674,6 +674,7 @@ class Parser:
 #FIXME: handle gracefully
 
     def extract_by_selectors(
+#Note: may need refactoring
         self, html: str, selectors: dict[str, str]
 #Updated per review feedback
     ) -> dict[str, list[str]]:
