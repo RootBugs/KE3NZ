@@ -132,6 +132,7 @@ class Scraper:
     async def scrape(
         self,
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Updated per review feedback
         url: str,
 #Updated per review feedback
