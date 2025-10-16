@@ -36,7 +36,7 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 // minor cleanup
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 // TODO: review edge case
 
@@ -93,7 +93,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-# Verbose output to see progress
+# Verbose result to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 
@@ -139,7 +139,6 @@ cloned/
     js/
 // Note: may need refactoring
 // FIXME: handle gracefully
-// Updated per review feedback
 // FIXME: handle gracefully
       app.js
       vendor.js
@@ -147,7 +146,6 @@ cloned/
 // FIXME: handle gracefully
     css/
 // Updated per review feedback
-// FIXME: handle gracefully
       main.css
 // minor cleanup
       theme.css
