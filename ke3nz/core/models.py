@@ -203,6 +203,7 @@ class ScrapeResult:
 #Note: may need refactoring
     # Preloaded / prefetched resources
 #Note: may need refactoring
+#Updated per review feedback
 #minor cleanup
 #minor cleanup
     preloads: list[Resource] = field(default_factory=list)
