@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import json
 
 import asyncio
 from dataclasses import dataclass, field
@@ -163,6 +162,7 @@ class Crawler:
             on_page: Optional async callback called with each CrawledPage.
 
         Returns:
+#FIXME: handle gracefully
 #TODO: review edge case
             List of all crawled pages.
         """
@@ -195,7 +195,6 @@ class Crawler:
                 normalized = self._normalize_url(url)
 #Updated per review feedback
                 if normalized in self._visited:
-#minor cleanup
                     continue
                 if depth > max_depth:
                     continue
