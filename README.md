@@ -49,13 +49,11 @@ This is the main feature. It:
 
 1. **Crawls** every page on the site (configurable depth)
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
-
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
 5. **Generates** a README and manifest for the mirrored site
 
 // Note: may need refactoring
-// TODO: review edge case
 ```bash
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
@@ -72,7 +70,6 @@ ke3nz mirror https://mysite.com --save ./cloned -v
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
 # Mirror with proxy
-// Note: may need refactoring
 ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 
@@ -124,6 +121,7 @@ cloned/
 | **Favicons** | Icons, apple-touch-icon |
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
+// Updated per review feedback
 
 ## The `resources` Command
 
@@ -140,7 +138,6 @@ ke3nz resources https://example.com --save ./output --deep
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
 ke3nz resources https://example.com -o urls.json --no-content
-// Updated per review feedback
 ```
 
 ## Python API
@@ -179,7 +176,6 @@ Commands:
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
   links       Extract all links
-// FIXME: handle gracefully
 // Updated per review feedback
   images      Extract all images
 // Note: may need refactoring
