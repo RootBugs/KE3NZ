@@ -29,7 +29,6 @@ import random
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
 async def main():
 #Updated per review feedback
 #Updated per review feedback
@@ -99,6 +98,7 @@ async def main():
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
+#FIXME: handle gracefully
         "https://example.org",
 #Note: may need refactoring
     ]
