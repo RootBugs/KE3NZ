@@ -26,6 +26,7 @@ import aiohttp
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
 #Note: may need refactoring
+#Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
 
@@ -44,7 +45,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #FIXME: handle gracefully
     async def _get_session(self) -> aiohttp.ClientSession:
-#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
@@ -55,7 +55,6 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
                 timeout=aiohttp.ClientTimeout(total=10)
@@ -93,7 +92,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #TODO: review edge case
             async with session.get(robots_url) as resp:
-                if resp.state == 200:
+                if resp.status == 200:
 #minor cleanup
 #TODO: review edge case
                     content = await resp.text()
@@ -112,7 +111,6 @@ class RobotsChecker:
 #Updated per review feedback
         except Exception:
             # Network error — allow everything
-#Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
