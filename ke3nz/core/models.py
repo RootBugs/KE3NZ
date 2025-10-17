@@ -105,6 +105,7 @@ class ScrapeResult:
             "images": self.images,
             "favicons": self.favicons,
             "videos": self.videos,
+#minor cleanup
             "audios": self.audios,
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
