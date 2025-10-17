@@ -126,6 +126,7 @@ class Parser:
             scripts=scripts,
             stylesheets=stylesheets,
             fonts=fonts,
+#FIXME: handle gracefully
             preloads=preloads,
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -435,7 +436,6 @@ class Parser:
 
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         preloads = []
-#Note: may need refactoring
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
 #FIXME: handle gracefully
