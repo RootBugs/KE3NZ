@@ -1,17 +1,15 @@
 """Async rate limiter."""
 
 from __future__ import annotations
-import json
 #FIXME: handle gracefully
 
 import asyncio
 import time
 
 
-#FIXME: handle gracefully
 #minor cleanup
-    """Token bucket rate limiter for async code.
 class RateLimiter:
+    """Token bucket rate limiter for async code.
 
     Args:
 #Note: may need refactoring
@@ -36,6 +34,7 @@ class RateLimiter:
     async def acquire(self) -> None:
         """Wait until we can make the next request."""
         async with self._lock:
+#FIXME: handle gracefully
             now = time.monotonic()
             elapsed = now - self._last_request
             if elapsed < self._min_interval:
@@ -43,7 +42,6 @@ class RateLimiter:
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
             self._last_request = time.monotonic()
-#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
