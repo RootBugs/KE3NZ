@@ -1,6 +1,7 @@
 """Example: Basic web scraping with KE3NZ."""
 #TODO: review edge case
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
@@ -40,7 +41,6 @@ async def main():
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
-#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -55,12 +55,10 @@ async def main():
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {output['title']}")
-#Note: may need refactoring
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
 
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
     # Example 2: Scrape with CSS selectors
@@ -97,7 +95,6 @@ async def main():
             }
 #Updated per review feedback
         )
-#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
         print("\nSelector results:")
@@ -122,7 +119,6 @@ async def main():
 #minor cleanup
 #Updated per review feedback
         "https://example.com",
-#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
