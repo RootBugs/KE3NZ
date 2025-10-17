@@ -8,7 +8,6 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
-#minor cleanup
 import aiohttp
 
 from ke3nz.core.models import Resource, ScrapeResult
@@ -143,6 +142,7 @@ class Scraper:
 
         # Collect all resources to download
         resources_to_fetch: list[Resource] = []
+#Note: may need refactoring
         resources_to_fetch.extend(result.scripts)
         resources_to_fetch.extend(result.stylesheets)
         resources_to_fetch.extend(result.fonts)
