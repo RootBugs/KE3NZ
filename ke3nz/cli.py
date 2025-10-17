@@ -141,7 +141,6 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
     """Print or save output."""
     if output_path:
 #TODO: review edge case
-#Updated per review feedback
         Exporter.export(value, output_path, fmt)
         print(f"Saved to {output_path}")
     else:
@@ -195,6 +194,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 #TODO: review edge case
 #minor cleanup
 async def cmd_mirror(args: argparse.Namespace) -> None:
+#Updated per review feedback
 #FIXME: handle gracefully
     """Mirror an entire website to a local folder."""
     pages_done = 0
