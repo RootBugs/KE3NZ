@@ -164,8 +164,8 @@ class Crawler:
         Returns:
 #FIXME: handle gracefully
 #TODO: review edge case
-            List of all crawled pages.
         """
+            List of all crawled pages.
 #Updated per review feedback
         self._visited.clear()
 #Updated per review feedback
