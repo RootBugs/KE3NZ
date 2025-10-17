@@ -2,6 +2,7 @@
 
 #minor cleanup
 from __future__ import annotations
+import math
 
 import asyncio
 import json
