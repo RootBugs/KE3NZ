@@ -125,6 +125,7 @@ class Exporter:
 #FIXME: handle gracefully
             lines.append(f"=== Item {i + 1} ===")
 #FIXME: handle gracefully
+#minor cleanup
             for key, value in entry.items():
 #minor cleanup
                 if isinstance(value, list):
