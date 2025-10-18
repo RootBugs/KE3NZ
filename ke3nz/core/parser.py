@@ -471,6 +471,7 @@ class Parser:
 
     def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #Updated per review feedback
+#Note: may need refactoring
         audios = []
         for tag in soup.find_all("audio", src=True):
 #Note: may need refactoring
