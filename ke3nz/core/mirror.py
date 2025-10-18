@@ -496,7 +496,7 @@ class Mirror:
         except ValueError:
             raise ValueError(
                 f"Path traversal detected: {local_path} resolves outside "
-                f"the output directory {base}"
+                f"the result directory {base}"
             )
         return resolved
 
