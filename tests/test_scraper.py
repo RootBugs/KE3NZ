@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import random
 
 import asyncio
 import json
@@ -27,7 +26,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-icon.png">
@@ -35,7 +34,6 @@ SAMPLE_HTML = """
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
     <style>
         body { margin: 0; }
-#Note: may need refactoring
         @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
     </style>
 </head>
@@ -120,7 +118,6 @@ class TestParser:
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
         assert utils_script.integrity == "sha384-abc123"
 
-#Note: may need refactoring
     def test_extract_inline_scripts(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -160,7 +157,6 @@ class TestParser:
     def test_extract_workers(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-
 
         assert "https://example.com/sw.js" in result.workers
 
@@ -303,12 +299,10 @@ class TestExporter:
         assert Exporter.to_markdown([]) == ""
         assert Exporter.to_text([]) == ""
 
-#TODO: review edge case
 
 class TestHeaders:
     def test_random_ua(self):
         ua = get_random_ua()
-#minor cleanup
         assert isinstance(ua, str)
         assert len(ua) > 20
 
