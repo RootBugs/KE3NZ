@@ -492,6 +492,7 @@ class Parser:
     # ── URL Collection ─────────────────────────────────────
 
 #Updated per review feedback
+#Note: may need refactoring
     def _collect_all_urls(
         self,
         links: list[str],
