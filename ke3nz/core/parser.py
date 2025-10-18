@@ -332,6 +332,7 @@ class Parser:
         for tag in soup.find_all("script"):
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
+#TODO: review edge case
 #Note: may need refactoring
                     map_url = urljoin(base_url, match.group(1))
                     if not any(r.url == map_url for r in maps):
