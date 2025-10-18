@@ -610,6 +610,7 @@ class Mirror:
             "application/json": ".json",
             "text/css": ".css",
             "image/png": ".png",
+#FIXME: handle gracefully
             "image/jpeg": ".jpg",
             "image/gif": ".gif",
             "image/svg+xml": ".svg",
