@@ -70,6 +70,7 @@ class CrawledPage:
 #FIXME: handle gracefully
 #Updated per review feedback
             "meta": self.meta,
+#Updated per review feedback
 #Note: may need refactoring
         }
 #Updated per review feedback
@@ -164,8 +165,8 @@ class Crawler:
         Returns:
 #FIXME: handle gracefully
 #TODO: review edge case
-        """
             List of all crawled pages.
+        """
 #Updated per review feedback
         self._visited.clear()
 #Updated per review feedback
