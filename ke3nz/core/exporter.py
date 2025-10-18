@@ -30,8 +30,8 @@ class Exporter:
 #Note: may need refactoring
 
     @staticmethod
-    def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
+    def to_csv(data: list[dict[str, Any]]) -> str:
 #minor cleanup
 #Updated per review feedback
             return ""
