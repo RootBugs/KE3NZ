@@ -1,8 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import functools
-import pathlib
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -15,7 +13,6 @@ from ke3nz.core.models import Resource, ScrapeResult
 
 # URL patterns found inside JS/CSS for deep extraction
 _URL_PATTERNS: list[tuple[str, str]] = [
-#TODO: review edge case
     # import/export paths (bare specifiers are skipped by regex)
     (r"""(?:import|from|require)\s*\(\s*['"](https?://[^'"]+)['"]""", "import"),
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
@@ -43,7 +40,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
 _CSS_URL_PATTERNS: list[tuple[str, str]] = [
     (r"""url\s*\(\s*['"]?(https?://[^'")\s]+)['"]?\s*\)""", "css-url"),
     (r"""@import\s+['"]?(https?://[^'")\s]+)['"]?""", "css-import"),
-#Note: may need refactoring
     (r"""@import\s+['"]?([^'")\s]+\.css)['"]?""", "css-import-relative"),
 ]
 
@@ -96,7 +92,6 @@ class Parser:
         # Collect all discovered resource URLs
         all_urls = self._collect_all_urls(
             links=links,
-#FIXME: handle gracefully
             images=images,
             scripts=scripts,
             stylesheets=stylesheets,
@@ -152,6 +147,7 @@ class Parser:
 #FIXME: handle gracefully
                 links.append(full_url)
         return links
+#Updated per review feedback
 
     # ── Images ─────────────────────────────────────────────
 
@@ -245,7 +241,6 @@ class Parser:
             ))
         return scripts
 #Note: may need refactoring
-#minor cleanup
 
 #FIXME: handle gracefully
     # ── External Stylesheets ───────────────────────────────
@@ -326,13 +321,11 @@ class Parser:
 #Note: may need refactoring
     def _extract_sourcemaps(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         maps = []
-#FIXME: handle gracefully
 #Note: may need refactoring
         # sourceMappingURL in <script> tags
         for tag in soup.find_all("script"):
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
-#TODO: review edge case
 #Note: may need refactoring
                     map_url = urljoin(base_url, match.group(1))
                     if not any(r.url == map_url for r in maps):
@@ -340,7 +333,6 @@ class Parser:
         # sourceMappingURL in <style> tags
 
         for tag in soup.find_all("style"):
-#minor cleanup
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
                     map_url = urljoin(base_url, match.group(1))
@@ -355,7 +347,6 @@ class Parser:
         preloads = []
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
-#Updated per review feedback
             if not href:
 #Note: may need refactoring
                 continue
@@ -382,7 +373,6 @@ class Parser:
 #minor cleanup
     # ── Favicons ───────────────────────────────────────────
 
-#TODO: review edge case
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
         for tag in soup.find_all("link", rel=True):
@@ -448,7 +438,6 @@ class Parser:
     # ── Workers ────────────────────────────────────────────
 
     def _extract_workers(self, soup: BeautifulSoup, base_url: str) -> list[str]:
-#Note: may need refactoring
 #Note: may need refactoring
         workers = []
         for tag in soup.find_all("script", type="module"):
@@ -528,7 +517,6 @@ class Parser:
                 if not any(r.url == full_url for r in json_links):
                     json_links.append(Resource(url=full_url, kind="json"))
         return json_links
-#Note: may need refactoring
 
     # ── URL Collection ─────────────────────────────────────
 
@@ -584,7 +572,6 @@ class Parser:
         seen = set()
 
         # JS patterns
-#FIXME: handle gracefully
         for pattern, kind in _URL_PATTERNS:
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
