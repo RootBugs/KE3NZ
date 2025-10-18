@@ -52,6 +52,7 @@ async def main():
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
+#minor cleanup
     print(f"Crawled {len(pages)} pages:\n")
 #Note: may need refactoring
 #FIXME: handle gracefully
