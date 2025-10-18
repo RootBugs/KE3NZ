@@ -44,7 +44,6 @@ class MirroredPage:
 
 
 class Mirror:
-#FIXME: handle gracefully
     """Mirror an entire website to a local folder.
 
     Crawl depth, download all assets, rewrite URLs to local paths,
@@ -294,6 +293,7 @@ class Mirror:
             if asset_url in url_to_local:
                 continue
 #minor cleanup
+#TODO: review edge case
 
             body, content_type = resource_map[asset_url]
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
@@ -441,7 +441,6 @@ class Mirror:
                 tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
 
         # Rewrite inline <script> fetch() / import references
-#FIXME: handle gracefully
         for tag in soup.find_all("script", src=False):
 #minor cleanup
             if tag.string:
@@ -482,7 +481,6 @@ class Mirror:
 
         return re.sub(r"""(url\s*\(\s*['"]?)([^'")\s]+)(['"]?\s*\))""", _replace, css)
 
-#minor cleanup
     def _rewrite_js_urls(self, js: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite URL references in JS content (fetch, import, etc.)."""
         import re
@@ -610,15 +608,14 @@ class Mirror:
             "application/json": ".json",
             "text/css": ".css",
             "image/png": ".png",
-#FIXME: handle gracefully
             "image/jpeg": ".jpg",
             "image/gif": ".gif",
             "image/svg+xml": ".svg",
             "image/webp": ".webp",
             "image/avif": ".avif",
             "image/x-icon": ".ico",
-            "font/woff": ".woff",
             "font/woff2": ".woff2",
+            "font/woff": ".woff",
             "font/ttf": ".ttf",
             "video/mp4": ".mp4",
             "audio/mpeg": ".mp3",
