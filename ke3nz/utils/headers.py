@@ -6,18 +6,17 @@
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
+#TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
-#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 from __future__ import annotations
-import sys
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -78,7 +77,6 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
-#minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
     # Firefox on Windows
@@ -92,7 +90,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
 #TODO: review edge case
-#Note: may need refactoring
     # Firefox on Mac
 #Updated per review feedback
 #TODO: review edge case
@@ -128,7 +125,6 @@ USER_AGENTS = [
     # Chrome on Linux
 #TODO: review edge case
 #FIXME: handle gracefully
-#Note: may need refactoring
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #Note: may need refactoring
     # Firefox on Linux
