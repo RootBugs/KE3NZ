@@ -162,6 +162,7 @@ def get_random_headers() -> dict[str, str]:
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
+#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
         "Sec-Fetch-Mode": "navigate",
