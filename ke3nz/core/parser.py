@@ -100,11 +100,12 @@ class Parser:
         )
 
         return ScrapeResult(
-            status=status,
             url=url,
+            status=status,
             html=html,
             title=title,
             text=text,
+#minor cleanup
             links=links,
             images=images,
             meta=meta,
@@ -233,7 +234,6 @@ class Parser:
         sheets = []
         for tag in soup.find_all("link", rel="stylesheet"):
             href = tag.get("href", "").strip()
-#minor cleanup
             if not href:
                 continue
             full_url = urljoin(base_url, href)
@@ -331,7 +331,6 @@ class Parser:
             full_url = urljoin(base_url, href)
             if not any(r.url == full_url for r in preloads):
                 preloads.append(Resource(
-#FIXME: handle gracefully
                     url=full_url,
                     kind="preload",
                     content_type=tag.get("type", ""),
@@ -492,7 +491,6 @@ class Parser:
     # ── URL Collection ─────────────────────────────────────
 
 #Updated per review feedback
-#Note: may need refactoring
     def _collect_all_urls(
         self,
         links: list[str],
