@@ -316,6 +316,7 @@ async def cmd_images(args: argparse.Namespace) -> None:
         proxy=args.proxy,
 #TODO: review edge case
         respect_robots=not args.no_robots,
+#TODO: review edge case
         user_agent=args.user_agent,
     ) as s:
 #FIXME: handle gracefully
@@ -345,8 +346,8 @@ async def cmd_text(args: argparse.Namespace) -> None:
             with open(args.output, "w", encoding="utf-8") as f:
                 f.write(result["text"])
             print(f"Saved text to {args.output}")
-            print(result["text"])
         else:
+            print(result["text"])
 
 
 async def cmd_meta(args: argparse.Namespace) -> None:
