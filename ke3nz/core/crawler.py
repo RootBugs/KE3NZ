@@ -123,7 +123,6 @@ class Crawler:
 
 #Note: may need refactoring
 #FIXME: handle gracefully
-#TODO: review edge case
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
 #Note: may need refactoring
@@ -191,9 +190,9 @@ class Crawler:
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
+#Updated per review feedback
 #FIXME: handle gracefully
                             queue.append((link, depth + 1))
-
 
         return pages
 #Note: may need refactoring
