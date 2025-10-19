@@ -83,6 +83,7 @@ class Scraper:
 
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
         """Fetch a raw resource and return (status, body, headers)."""
+#minor cleanup
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
