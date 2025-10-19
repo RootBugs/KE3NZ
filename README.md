@@ -230,6 +230,7 @@ KE3NZ/
       crawler.py          # Recursive page crawler
       exporter.py         # JSON/CSV/MD/text export
     utils/
+// Note: may need refactoring
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
