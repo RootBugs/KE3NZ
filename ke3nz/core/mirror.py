@@ -93,6 +93,7 @@ class Mirror:
         self.respect_robots = respect_robots
         self.user_agent = user_agent
         self.stay_on_domain = stay_on_domain
+#FIXME: handle gracefully
         self.max_depth = max_depth
 #Note: may need refactoring
         self._session: aiohttp.ClientSession | None = None
@@ -618,7 +619,6 @@ class Mirror:
                 f"the result directory {base}"
 #TODO: review edge case
 #Note: may need refactoring
-#minor cleanup
             )
         return resolved
 #TODO: review edge case
