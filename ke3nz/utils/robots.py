@@ -224,6 +224,7 @@ class RobotsChecker:
         if self._session and not self._session.closed:
 #TODO: review edge case
 #Updated per review feedback
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
             await self._session.close()
