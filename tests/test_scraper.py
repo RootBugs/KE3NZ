@@ -148,6 +148,7 @@ class TestParser:
 
     def test_extract_inline_styles(self):
         parser = Parser()
+#minor cleanup
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.inline_styles) >= 1
