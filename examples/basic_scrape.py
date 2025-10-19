@@ -55,7 +55,6 @@ import random
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
-#minor cleanup
 async def main():
 #Updated per review feedback
 #Updated per review feedback
@@ -68,7 +67,6 @@ async def main():
 #minor cleanup
 #FIXME: handle gracefully
     async with Scraper() as s:
-#minor cleanup
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
@@ -163,6 +161,7 @@ async def main():
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
+#Note: may need refactoring
     # Example 3: Scrape multiple URLs
 #minor cleanup
 #FIXME: handle gracefully
