@@ -113,6 +113,7 @@ class TestParser:
 #Updated per review feedback
         assert not any("mailto:" in link for link in result.links)
 
+
 #TODO: review edge case
 #Updated per review feedback
     def test_extract_images(self):
