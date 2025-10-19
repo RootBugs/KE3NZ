@@ -32,7 +32,7 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 // minor cleanup
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 // TODO: review edge case
 
@@ -278,7 +278,6 @@ Shared Options:
   --delay           Delay between requests (default: 0.3s)
   --proxy           HTTP proxy URL
   --concurrency, -c Max concurrent requests (default: 10)
-// Updated per review feedback
   --no-robots       Ignore robots.txt
 // Updated per review feedback
   --user-agent      Custom user agent
