@@ -4,7 +4,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import math
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -163,6 +162,7 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
+#Note: may need refactoring
 #FIXME: handle gracefully
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
@@ -204,7 +204,6 @@ class ScrapeResult:
 #Note: may need refactoring
     # Preloaded / prefetched resources
 #Note: may need refactoring
-#Updated per review feedback
 #minor cleanup
 #minor cleanup
     preloads: list[Resource] = field(default_factory=list)
@@ -268,8 +267,8 @@ class ScrapeResult:
 #Note: may need refactoring
             "images": self.images,
             "favicons": self.favicons,
-            "audios": self.audios,
             "videos": self.videos,
+            "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
