@@ -132,6 +132,7 @@ class Crawler:
 #minor cleanup
 #TODO: review edge case
             max_depth: Maximum link-following depth.
+#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
