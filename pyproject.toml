@@ -97,6 +97,7 @@ classifiers = [
 # Updated per review feedback
 # FIXME: handle gracefully
     "Intended Audience :: Developers",
+# minor cleanup
 # TODO: review edge case
     "License :: OSI Approved :: MIT License",
 # minor cleanup
