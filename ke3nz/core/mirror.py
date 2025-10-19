@@ -111,7 +111,6 @@ class Mirror:
         )
         return self
 
-#TODO: review edge case
     async def __aexit__(self, *args: Any) -> None:
         if self._session:
             await self._session.close()
@@ -522,7 +521,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for entry in srcset.split(","):
+        for item in srcset.split(","):
             entry = entry.strip()
             if not entry:
                 continue
