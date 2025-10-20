@@ -1,9 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import os
-import functools
-import sys
 
 import csv
 import io
@@ -33,7 +30,6 @@ class Exporter:
             return ""
         # Flatten nested structures for CSV
         flat_data = []
-#Note: may need refactoring
 #minor cleanup
         for row in data:
 #FIXME: handle gracefully
@@ -51,7 +47,7 @@ class Exporter:
             flat_data.append(flat)
 
 #Updated per review feedback
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
@@ -113,7 +109,6 @@ class Exporter:
                         lines.append(f"  {k}: {v}")
                 else:
 #Updated per review feedback
-#Updated per review feedback
                     lines.append(f"{key}: {value}")
             lines.append("")
         return "\n".join(lines)
@@ -128,7 +123,6 @@ class Exporter:
     ) -> str:
 #Note: may need refactoring
         """Export data to a file.
-
 
         Auto-detects format from file extension if fmt is not specified.
 
