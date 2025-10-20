@@ -89,6 +89,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 // Note: may need refactoring
 // FIXME: handle gracefully
 // Updated per review feedback
+// TODO: review edge case
 // FIXME: handle gracefully
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
@@ -184,7 +185,6 @@ cloned/
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
 // Note: may need refactoring
-// Note: may need refactoring
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
 // FIXME: handle gracefully
@@ -242,7 +242,6 @@ async with Mirror(max_depth=3) as m:
 # Scrape all resources from one page
 // TODO: review edge case
 async with Scraper() as s:
-// minor cleanup
 // minor cleanup
     value = await s.scrape_all_resources(
 // TODO: review edge case
