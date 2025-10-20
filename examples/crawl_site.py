@@ -25,6 +25,7 @@ async def main():
     print(f"Crawled {len(pages)} pages:\n")
 #FIXME: handle gracefully
     for page in pages:
+#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
         indent = "  " * page.depth
