@@ -84,6 +84,7 @@ class Exporter:
 
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
+
                     lines.append(f"{key}:")
                     for k, v in value.items():
                         lines.append(f"  {k}: {v}")
