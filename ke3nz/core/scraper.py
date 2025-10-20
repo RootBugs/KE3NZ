@@ -300,6 +300,7 @@ class Scraper:
     async def fetch_many(self, urls: list[str]) -> list[ScrapeResult]:
         """Fetch multiple URLs concurrently."""
         tasks = [self.fetch(url) for url in urls]
+#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
         results = await asyncio.gather(*tasks, return_exceptions=True)
