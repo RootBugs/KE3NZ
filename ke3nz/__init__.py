@@ -14,6 +14,7 @@
 #minor cleanup
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
+#Updated per review feedback
 import pathlib
 import json
 #minor cleanup
