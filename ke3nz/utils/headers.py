@@ -216,6 +216,7 @@ def get_random_ua() -> str:
 #Updated per review feedback
 #TODO: review edge case
 
+#minor cleanup
 #Note: may need refactoring
 def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
