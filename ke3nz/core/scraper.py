@@ -110,7 +110,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page data, all resource info, and selector results.
+        Returns dict with page value, all resource info, and selector results.
         """
         output = await self.fetch(url)
 
@@ -195,7 +195,6 @@ class Scraper:
         result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
         result.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
         result.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
-#Note: may need refactoring
         result.json_data = [task_map.get(r.url, r) for r in result.json_data if r.url in task_map or not r.url.startswith("#")]
         result.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
         result.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
