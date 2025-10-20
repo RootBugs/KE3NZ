@@ -18,6 +18,7 @@ class Exporter:
 #Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
@@ -81,10 +82,8 @@ class Exporter:
                 if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
-
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
-
                     lines.append(f"{key}:")
                     for k, v in value.items():
                         lines.append(f"  {k}: {v}")
@@ -126,7 +125,6 @@ class Exporter:
                 ".md": "markdown",
                 ".markdown": "markdown",
                 ".txt": "text",
-
             }
             fmt = fmt_map.get(ext, "json")
 
