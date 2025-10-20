@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import math
 
 import asyncio
 import json
@@ -35,7 +34,6 @@ SAMPLE_HTML = """
 #minor cleanup
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/util.css">
-#TODO: review edge case
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
@@ -524,7 +522,6 @@ class TestScraperIntegration:
 #Updated per review feedback
     @pytest.mark.asyncio
     async def test_scrape_all_resources_mock(self):
-#TODO: review edge case
         from ke3nz.core.scraper import Scraper
 
         mock_resp = AsyncMock()
@@ -544,6 +541,7 @@ class TestScraperIntegration:
 
 #FIXME: handle gracefully
 #minor cleanup
+#Note: may need refactoring
         with patch("aiohttp.ClientSession", return_value=mock_session):
 #Note: may need refactoring
             async with Scraper(delay=0, respect_robots=False) as s:
