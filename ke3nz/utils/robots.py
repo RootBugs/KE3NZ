@@ -34,6 +34,7 @@ class RobotsChecker:
         return self._session
 
 #minor cleanup
+#minor cleanup
     async def _fetch_robots(self, url: str) -> RobotFileParser:
         parsed = urlparse(url)
 #TODO: review edge case
@@ -55,7 +56,6 @@ class RobotsChecker:
 #minor cleanup
                     rp.parse(content.splitlines())
                 else:
-
                     # No robots.txt or error — allow everything
                     rp.allow_all = True
         except Exception:
