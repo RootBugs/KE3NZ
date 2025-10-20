@@ -20,6 +20,7 @@ license = {text = "MIT"}
 requires-python = ">=3.10"
 authors = [
     {name = "KE3NZ"},
+# Updated per review feedback
 ]
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # Updated per review feedback
