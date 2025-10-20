@@ -186,6 +186,7 @@ class TestParser:
     def test_extract_videos(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#TODO: review edge case
 
         assert "https://example.com/video.mp4" in result.videos
 
@@ -307,7 +308,6 @@ class TestHeaders:
         assert len(ua) > 20
 
     def test_random_headers(self):
-
         headers = get_random_headers()
 #Note: may need refactoring
         assert "User-Agent" in headers
