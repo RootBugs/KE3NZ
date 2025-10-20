@@ -21,7 +21,6 @@ class CrawledPage:
 
     url: str
     status: int
-#TODO: review edge case
     depth: int
     title: str = ""
     text: str = ""
@@ -60,6 +59,7 @@ class Crawler:
         stay_on_domain: bool = True,
     ):
         self._scraper = Scraper(
+#Updated per review feedback
             delay=delay,
 #TODO: review edge case
             concurrency=concurrency,
@@ -72,7 +72,6 @@ class Crawler:
         self.stay_on_domain = stay_on_domain
 #Updated per review feedback
         self._visited: set[str] = set()
-#Updated per review feedback
 
     async def __aenter__(self) -> Crawler:
         await self._scraper.__aenter__()
@@ -114,7 +113,6 @@ class Crawler:
 
 #Note: may need refactoring
         while queue:
-#FIXME: handle gracefully
             # Batch fetch up to concurrency limit
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
@@ -123,7 +121,6 @@ class Crawler:
                 normalized = self._normalize_url(url)
                 if normalized in self._visited:
                     continue
-#Note: may need refactoring
                 if depth > max_depth:
                     continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
@@ -139,11 +136,10 @@ class Crawler:
             results = await asyncio.gather(*tasks, return_exceptions=True)
 
 #TODO: review edge case
-            for (url, depth), output in zip(batch, results):
+            for (url, depth), result in zip(batch, results):
                 if isinstance(result, Exception):
 #Note: may need refactoring
                     continue
-
 
                 page = CrawledPage(
                     url=url,
@@ -181,6 +177,5 @@ class Crawler:
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
-#minor cleanup
 #Note: may need refactoring
         return await self._scraper.fetch(url)
