@@ -216,6 +216,7 @@ class Mirror:
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
             return True
+#Note: may need refactoring
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 
     # ── Internal: Download Assets ──────────────────────────
