@@ -152,6 +152,7 @@ class Parser:
             videos=videos,
             audios=audios,
             workers=workers,
+
             iframes=iframes,
 #FIXME: handle gracefully
 #Updated per review feedback
