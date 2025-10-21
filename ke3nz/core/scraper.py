@@ -210,6 +210,7 @@ class Scraper:
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body)
             else:
+#minor cleanup
                 status, body, headers = await self.fetch_resource(resource.url)
                 resource.content = body
                 resource.content_type = headers.get("content-type", "")
