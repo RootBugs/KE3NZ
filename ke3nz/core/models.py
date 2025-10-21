@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import functools
 
 #minor cleanup
 from dataclasses import dataclass, field
@@ -47,7 +46,6 @@ class Resource:
 #Updated per review feedback
 @dataclass
 class ScrapeResult:
-#Updated per review feedback
     """Result of scraping a single page."""
 #TODO: review edge case
 #Updated per review feedback
@@ -189,4 +187,5 @@ class ScrapeResult:
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
             "selector_results": self.selector_results,
+#TODO: review edge case
         }
