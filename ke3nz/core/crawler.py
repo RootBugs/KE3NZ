@@ -29,6 +29,7 @@ class CrawledPage:
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
 #TODO: review edge case
+#TODO: review edge case
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -63,7 +64,6 @@ class Crawler:
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
-#Note: may need refactoring
         stay_on_domain: bool = True,
     ):
         self._scraper = Scraper(
