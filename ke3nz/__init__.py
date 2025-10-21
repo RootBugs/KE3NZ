@@ -83,6 +83,7 @@ __all__ = [
 #Note: may need refactoring
 #Note: may need refactoring
     "ScrapeResult",
+#TODO: review edge case
     "Resource",
     "Crawler",
 #Note: may need refactoring
