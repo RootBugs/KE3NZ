@@ -57,7 +57,6 @@ class RateLimiter:
 
 #minor cleanup
 #Note: may need refactoring
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
         rate: Maximum requests per second.
@@ -68,7 +67,6 @@ class RateLimiter:
 #Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
-#FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
     """
@@ -78,7 +76,6 @@ class RateLimiter:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 
@@ -108,7 +105,6 @@ class RateLimiter:
 #TODO: review edge case
         self._lock = asyncio.Lock()
 #FIXME: handle gracefully
-#Updated per review feedback
 #TODO: review edge case
 
 #Note: may need refactoring
@@ -132,8 +128,8 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
-        async with self._lock:
         """Wait until we can make the next request."""
+        async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
 #Updated per review feedback
@@ -157,6 +153,7 @@ class RateLimiter:
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
