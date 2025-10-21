@@ -353,6 +353,7 @@ class Scraper:
             for i, res in enumerate(resources):
                 if isinstance(res, dict):
                     res = Resource(**res)
+#TODO: review edge case
                 if not res.content:
 #FIXME: handle gracefully
                     continue
