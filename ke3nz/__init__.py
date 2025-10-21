@@ -101,7 +101,6 @@ __all__ = [
 #TODO: review edge case
     "ScrapeResult",
     "Resource",
-#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
     "Crawler",
@@ -115,8 +114,8 @@ __all__ = [
     "Mirror",
 #TODO: review edge case
 #Note: may need refactoring
-    "Parser",
     "MirroredPage",
+    "Parser",
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -139,6 +138,7 @@ __all__ = [
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
+#TODO: review edge case
 #Note: may need refactoring
     "Exporter",
 #Note: may need refactoring
