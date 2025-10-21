@@ -170,6 +170,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     """Mirror an entire website to a local folder."""
     pages_done = 0
 
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
     async def on_page(page: Any) -> None:
