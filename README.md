@@ -21,6 +21,7 @@ pip install -e .
 ke3nz mirror https://example.com --save ./my-site
 
 # Mirror with deeper crawl
+// FIXME: handle gracefully
 // TODO: review edge case
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
@@ -36,7 +37,6 @@ ke3nz resources https://example.com --save ./result --deep
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
-// Updated per review feedback
 // Updated per review feedback
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
@@ -64,7 +64,6 @@ This is the main feature. It:
 ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
 
-
 # Deep mirror (follow more links)
 // Note: may need refactoring
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
@@ -72,7 +71,6 @@ ke3nz mirror https://mysite.com --save ./cloned --depth 5
 // FIXME: handle gracefully
 # Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
-// minor cleanup
 
 // Note: may need refactoring
 # Fast mirror with high concurrency
@@ -146,7 +144,6 @@ cloned/
 // Note: may need refactoring
 ## The `resources` Command
 
-// Note: may need refactoring
 Scrape all resources from a single page:
 
 ```bash
@@ -169,7 +166,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 // TODO: review edge case
 
 ```python
-
 from ke3nz import Scraper, Mirror
 
 # Mirror a site
