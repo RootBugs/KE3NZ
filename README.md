@@ -38,6 +38,7 @@ ke3nz resources https://example.com --save ./result --deep
 // Note: may need refactoring
 |---------|-------------|
 // minor cleanup
+// TODO: review edge case
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
