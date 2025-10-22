@@ -252,6 +252,7 @@ class Scraper:
             ("script", "scripts"),
             ("stylesheet", "styles"),
             ("font", "fonts"),
+
             ("json", "json"),
             ("json-ld", "json"),
             ("manifest", "configs"),
