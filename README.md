@@ -243,6 +243,7 @@ Commands:
 // Updated per review feedback
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
+// Updated per review feedback
   scrape      Scrape a page (basic info)
   links       Extract all links
 // Updated per review feedback
