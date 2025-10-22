@@ -131,6 +131,7 @@ class Parser:
 #FIXME: handle gracefully
 #TODO: review edge case
             favicons=favicons,
+#TODO: review edge case
             videos=videos,
             audios=audios,
             workers=workers,
