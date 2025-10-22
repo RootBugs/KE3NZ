@@ -75,6 +75,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
     scripts: list[Resource] = field(default_factory=list)
     inline_scripts: list[Resource] = field(default_factory=list)
+#Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
 
