@@ -115,6 +115,7 @@ class ScrapeResult:
 
 #Updated per review feedback
 #Note: may need refactoring
+#TODO: review edge case
     # Preloaded / prefetched resources
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
