@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import re
 
 import asyncio
 from pathlib import Path
@@ -97,7 +96,7 @@ class Scraper:
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
 #Note: may need refactoring
-                output = self._parser.parse(url, resp.status, html, dict(resp.headers))
+                output = self._parser.parse(url, resp.state, html, dict(resp.headers))
                 return output
 
 #Note: may need refactoring
@@ -132,7 +131,6 @@ class Scraper:
 
     async def scrape(
         self,
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
         url: str,
@@ -300,7 +298,6 @@ class Scraper:
     async def fetch_many(self, urls: list[str]) -> list[ScrapeResult]:
         """Fetch multiple URLs concurrently."""
         tasks = [self.fetch(url) for url in urls]
-#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
         results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -381,6 +378,7 @@ class Scraper:
                 if not res.content:
 #FIXME: handle gracefully
                     continue
+#Updated per review feedback
 
                 # Determine filename from URL
 #FIXME: handle gracefully
@@ -396,7 +394,6 @@ class Scraper:
                         "json-ld": ".json",
                         "manifest": ".json",
 #TODO: review edge case
-#FIXME: handle gracefully
                         "sourcemap": ".map",
                     }.get(kind, ".txt")
 #Note: may need refactoring
@@ -455,7 +452,6 @@ class Scraper:
         for i, res in enumerate(data.get("inline_styles", [])):
 #minor cleanup
             if isinstance(res, dict):
-
 #minor cleanup
 #FIXME: handle gracefully
                 res = Resource(**res)
