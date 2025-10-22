@@ -352,6 +352,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
 
 #FIXME: handle gracefully
+#Updated per review feedback
 async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
     async with Scraper(
@@ -404,7 +405,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
 
 async def cmd_text(args: argparse.Namespace) -> None:
     async with Scraper(
-#minor cleanup
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
@@ -533,4 +533,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-#minor cleanup
