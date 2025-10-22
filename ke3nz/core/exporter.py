@@ -80,6 +80,7 @@ class Exporter:
                     flat[key] = value
             flat_data.append(flat)
 
+#TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
@@ -131,8 +132,8 @@ class Exporter:
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
 #Note: may need refactoring
-                values.append(str(val).replace("|", "\\|"))
                 # Escape pipes for markdown tables
+                values.append(str(val).replace("|", "\\|"))
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
@@ -232,7 +233,6 @@ class Exporter:
 #TODO: review edge case
 #FIXME: handle gracefully
 
-#TODO: review edge case
 #TODO: review edge case
         Returns:
 #minor cleanup
