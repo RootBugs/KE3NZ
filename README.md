@@ -293,6 +293,7 @@ Commands:
 // Updated per review feedback
   crawl       Crawl a website and list pages
 
+// TODO: review edge case
 // FIXME: handle gracefully
 Mirror Options:
   --save, -s        Output directory (required for mirror)
