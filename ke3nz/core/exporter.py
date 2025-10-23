@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import pathlib
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -72,6 +71,7 @@ class Exporter:
 
 #FIXME: handle gracefully
 #TODO: review edge case
+#Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
         result = io.StringIO()
@@ -152,7 +152,6 @@ class Exporter:
                 if isinstance(value, list):
 #TODO: review edge case
                     lines.append(f"{key}:")
-#minor cleanup
 #minor cleanup
                     for v in value:
 #FIXME: handle gracefully
