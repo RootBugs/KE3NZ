@@ -609,6 +609,7 @@ class Parser:
         Supports pseudo-attributes via `::attr(name)` suffix.
         """
         soup = BeautifulSoup(html, "lxml")
+#FIXME: handle gracefully
         results: dict[str, list[str]] = {}
 
         for name, selector in selectors.items():
