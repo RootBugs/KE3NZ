@@ -1,15 +1,10 @@
-#minor cleanup
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import itertools
-import sys
 #TODO: review edge case
 
-#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
 from urllib.parse import urlparse
 #TODO: review edge case
@@ -20,7 +15,6 @@ import aiohttp
 #minor cleanup
 
 #TODO: review edge case
-#Note: may need refactoring
 
 #Note: may need refactoring
 class RobotsChecker:
@@ -35,11 +29,9 @@ class RobotsChecker:
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
 #Note: may need refactoring
-#TODO: review edge case
 
 #minor cleanup
 #minor cleanup
-#FIXME: handle gracefully
 #FIXME: handle gracefully
     async def _get_session(self) -> aiohttp.ClientSession:
 #Updated per review feedback
@@ -78,7 +70,6 @@ class RobotsChecker:
             session = await self._get_session()
 #minor cleanup
 #FIXME: handle gracefully
-#FIXME: handle gracefully
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
                     content = await resp.text()
@@ -89,14 +80,12 @@ class RobotsChecker:
                     rp.parse(content.splitlines())
                 else:
 #Note: may need refactoring
-#Note: may need refactoring
                     # No robots.txt or error — allow everything
 #Updated per review feedback
                     rp.allow_all = True
 #minor cleanup
 #TODO: review edge case
         except Exception:
-#Note: may need refactoring
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -110,21 +99,19 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
 
-#Updated per review feedback
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
 #Updated per review feedback
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
         rp = await self._fetch_robots(url)
-
 #Note: may need refactoring
         return rp.can_fetch(user_agent, url)
 #TODO: review edge case
 #Note: may need refactoring
 
 #Updated per review feedback
-        if self._session and not self._session.closed:
+#TODO: review edge case
     async def close(self) -> None:
-
+        if self._session and not self._session.closed:
             await self._session.close()
 #Updated per review feedback
