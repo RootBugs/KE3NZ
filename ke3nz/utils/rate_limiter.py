@@ -23,7 +23,6 @@ class RateLimiter:
 #Note: may need refactoring
     Args:
 #Note: may need refactoring
-
 #FIXME: handle gracefully
         rate: Maximum requests per second.
 #Updated per review feedback
@@ -38,6 +37,7 @@ class RateLimiter:
         self._min_interval = 1.0 / max(rate, 0.001)
 #TODO: review edge case
         self._last_request = 0.0
+#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
