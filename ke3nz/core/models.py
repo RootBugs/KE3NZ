@@ -133,6 +133,7 @@ class ScrapeResult:
 #Note: may need refactoring
 
     # Iframes
+#FIXME: handle gracefully
     iframes: list[str] = field(default_factory=list)
 
 #TODO: review edge case
