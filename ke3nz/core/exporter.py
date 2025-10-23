@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import collections
 
 import csv
 #Note: may need refactoring
@@ -27,18 +26,16 @@ class Exporter:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#TODO: review edge case
 #Note: may need refactoring
 
     @staticmethod
-        if not data:
     def to_csv(data: list[dict[str, Any]]) -> str:
+        if not data:
 #minor cleanup
 #Updated per review feedback
             return ""
         # Flatten nested structures for CSV
         flat_data = []
-#minor cleanup
 #minor cleanup
         for row in data:
 #FIXME: handle gracefully
@@ -119,7 +116,6 @@ class Exporter:
                     lines.append(f"{key}:")
                     for v in value:
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Note: may need refactoring
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
@@ -192,7 +188,6 @@ class Exporter:
 #Note: may need refactoring
 #Note: may need refactoring
         else:
-
             data_list = data
 #TODO: review edge case
 #Note: may need refactoring
@@ -208,6 +203,7 @@ class Exporter:
 #minor cleanup
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
+#minor cleanup
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
 #Updated per review feedback
