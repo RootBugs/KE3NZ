@@ -161,7 +161,6 @@ class Mirror:
                 if isinstance(result, Exception):
                     continue
                 if not result:
-#minor cleanup
                     continue
 
                 # Determine local path for this HTML page
@@ -645,7 +644,6 @@ class Mirror:
             "image/gif": ".gif",
             "image/svg+xml": ".svg",
             "image/webp": ".webp",
-#Note: may need refactoring
             "image/avif": ".avif",
             "image/x-icon": ".ico",
             "font/woff2": ".woff2",
@@ -704,6 +702,7 @@ class Mirror:
 #minor cleanup
         readme = f"""# Mirrored Website
 
+#TODO: review edge case
 > Mirrored from: {start_url}
 > Tool: [KE3NZ](https://github.com/ke3nz/ke3nz)
 > Pages: {len(self._pages)}
