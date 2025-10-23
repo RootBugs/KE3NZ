@@ -37,7 +37,6 @@ ke3nz resources https://example.com --save ./result --deep
 // TODO: review edge case
 
 ## Commands
-// Updated per review feedback
 
 | Command | Description |
 // Note: may need refactoring
@@ -206,6 +205,7 @@ ke3nz resources https://example.com -o urls.json --no-content
 ```python
 from ke3nz import Scraper, Mirror
 
+// FIXME: handle gracefully
 # Mirror a site
 async with Mirror(max_depth=3) as m:
 // minor cleanup
@@ -244,7 +244,6 @@ Commands:
 // Updated per review feedback
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
-// Updated per review feedback
   scrape      Scrape a page (basic info)
   links       Extract all links
 // Updated per review feedback
@@ -285,7 +284,6 @@ Shared Options:
   --user-agent      Custom user agent
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
-// Updated per review feedback
 // Note: may need refactoring
 // Note: may need refactoring
   --verbose, -v     Verbose output
