@@ -726,6 +726,7 @@ class Parser:
 #Note: may need refactoring
             attr_match = re.match(r"(.+?)::attr\((\w+)\)$", selector)
             if attr_match:
+#TODO: review edge case
                 css_selector, attr_name = attr_match.groups()
                 elements = soup.select(css_selector.strip())
 #Updated per review feedback
