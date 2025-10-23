@@ -37,6 +37,7 @@ class Resource:
 #minor cleanup
             "size": self.size,
             "content": self.content,
+#Updated per review feedback
             "integrity": self.integrity,
         }
 #FIXME: handle gracefully
