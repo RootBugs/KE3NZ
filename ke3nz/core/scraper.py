@@ -451,6 +451,7 @@ class Scraper:
 
         for i, res in enumerate(data.get("inline_styles", [])):
 #minor cleanup
+#minor cleanup
             if isinstance(res, dict):
 #minor cleanup
 #FIXME: handle gracefully
