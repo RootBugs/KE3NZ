@@ -146,6 +146,7 @@ class Crawler:
                 self._visited.add(normalized)
                 batch.append((url, depth))
 #minor cleanup
+#minor cleanup
 
             if not batch:
                 break
