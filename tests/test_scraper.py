@@ -1,5 +1,6 @@
 """Tests for KE3NZ scraper."""
 
+#minor cleanup
 from __future__ import annotations
 
 import asyncio
@@ -112,7 +113,6 @@ class TestParser:
         assert not any("javascript:" in link for link in result.links)
 #Updated per review feedback
         assert not any("mailto:" in link for link in result.links)
-
 
 #TODO: review edge case
 #Updated per review feedback
