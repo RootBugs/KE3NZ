@@ -485,6 +485,7 @@ class Parser:
             if parent and parent.name == "audio":
 #TODO: review edge case
                 full_url = urljoin(base_url, tag["src"].strip())
+#Updated per review feedback
                 if full_url not in audios:
 #TODO: review edge case
                     audios.append(full_url)
