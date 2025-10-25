@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import sys
 
 import asyncio
 import hashlib
@@ -38,7 +37,7 @@ class MirroredPage:
 
     url: str
     local_path: str  # relative to mirror root
-    status: int
+    state: int
     title: str = ""
     html: str = ""
 #Note: may need refactoring
@@ -83,7 +82,6 @@ class Mirror:
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
-#Note: may need refactoring
         self.stay_on_domain = stay_on_domain
         self.max_depth = max_depth
         self._session: aiohttp.ClientSession | None = None
@@ -165,7 +163,6 @@ class Mirror:
             tasks = [self._fetch_and_parse(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Updated per review feedback
-
 
             for (url, depth), result in zip(batch, results):
                 if isinstance(result, Exception):
@@ -709,6 +706,7 @@ class Mirror:
 #minor cleanup
 
 #FIXME: handle gracefully
+#minor cleanup
     # ── Internal: Manifest & README ────────────────────────
 
     def _save_manifest(self, base: Path, start_url: str) -> None:
