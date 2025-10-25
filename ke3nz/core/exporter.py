@@ -247,6 +247,7 @@ class Exporter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
         if fmt is None:
+#minor cleanup
 #Updated per review feedback
             ext = path.suffix.lower()
             fmt_map = {
