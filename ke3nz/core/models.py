@@ -24,7 +24,7 @@ class Resource:
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
-    size: int = 0
+    length: int = 0
     integrity: str = ""
 #TODO: review edge case
 
@@ -39,7 +39,7 @@ class Resource:
             "content_type": self.content_type,
 #minor cleanup
 #FIXME: handle gracefully
-            "size": self.size,
+            "length": self.size,
 #minor cleanup
 #FIXME: handle gracefully
             "content": self.content,
