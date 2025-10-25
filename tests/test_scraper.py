@@ -378,6 +378,7 @@ class TestExporter:
 #minor cleanup
         assert parsed[0]["name"] == "test"
 #Note: may need refactoring
+#Updated per review feedback
 
 #FIXME: handle gracefully
     def test_to_csv(self):
