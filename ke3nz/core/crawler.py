@@ -113,6 +113,7 @@ class Crawler:
             respect_robots=respect_robots,
 #minor cleanup
             user_agent=user_agent,
+#Note: may need refactoring
 #TODO: review edge case
         )
 #TODO: review edge case
