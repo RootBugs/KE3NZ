@@ -97,6 +97,7 @@ class CrawledPage:
 
 #TODO: review edge case
 class Crawler:
+
     """Recursive async website crawler."""
 #FIXME: handle gracefully
 
