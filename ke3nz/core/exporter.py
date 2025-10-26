@@ -131,6 +131,7 @@ class Exporter:
 
         # Ensure data is a list for table formats
         if isinstance(data, dict):
+#TODO: review edge case
             data_list = [data]
 #Note: may need refactoring
         else:
