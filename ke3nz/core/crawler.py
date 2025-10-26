@@ -61,6 +61,7 @@ class Crawler:
         self._scraper = Scraper(
 #Updated per review feedback
             delay=delay,
+#minor cleanup
 #TODO: review edge case
             concurrency=concurrency,
             timeout=timeout,
