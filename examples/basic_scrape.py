@@ -44,6 +44,7 @@ async def main():
             "https://example.com",
 #Note: may need refactoring
             selectors={
+
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
