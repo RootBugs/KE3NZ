@@ -17,7 +17,6 @@ from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.parser import Parser
 from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
-#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -173,6 +172,7 @@ class Scraper:
             Full resource manifest.
         """
         output = await self.fetch(url)
+#TODO: review edge case
 #Note: may need refactoring
 
         # Collect all resources to download
@@ -200,7 +200,6 @@ class Scraper:
 #Updated per review feedback
                 continue
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
             if res.url not in task_map:
@@ -271,7 +270,6 @@ class Scraper:
                 resource.content = body
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body.encode("utf-8"))
-#minor cleanup
 #Note: may need refactoring
         except Exception:
 #Updated per review feedback
@@ -353,7 +351,6 @@ class Scraper:
             for i, res in enumerate(resources):
                 if isinstance(res, dict):
                     res = Resource(**res)
-#TODO: review edge case
                 if not res.content:
 #FIXME: handle gracefully
                     continue
