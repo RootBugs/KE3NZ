@@ -231,6 +231,7 @@ class Parser:
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
                     if full_url not in images:
+#FIXME: handle gracefully
                         images.append(full_url)
         # <picture> <source> with type="image/..."
         for tag in soup.find_all("source", src=True):
