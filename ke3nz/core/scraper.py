@@ -137,6 +137,7 @@ class Scraper:
 #Updated per review feedback
         *,
 #Updated per review feedback
+#Updated per review feedback
         selectors: dict[str, str] | None = None,
 #minor cleanup
     ) -> dict[str, Any]:
