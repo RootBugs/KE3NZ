@@ -17,7 +17,6 @@ build-backend = "setuptools.build_meta"
 name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
-# Updated per review feedback
 # FIXME: handle gracefully
 description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
@@ -26,10 +25,10 @@ license = {text = "MIT"}
 # Note: may need refactoring
 requires-python = ">=3.10"
 # FIXME: handle gracefully
+# FIXME: handle gracefully
 # TODO: review edge case
 # Note: may need refactoring
 authors = [
-# FIXME: handle gracefully
     {name = "KE3NZ"},
 # Note: may need refactoring
 # Updated per review feedback
@@ -57,14 +56,12 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
-# FIXME: handle gracefully
 # Updated per review feedback
 ]
 dependencies = [
     "aiohttp>=3.9.0",
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
-# FIXME: handle gracefully
 # Note: may need refactoring
 # minor cleanup
     "aiolimiter>=1.1.0",
@@ -83,18 +80,14 @@ dev = [
 # Note: may need refactoring
 # Note: may need refactoring
 # FIXME: handle gracefully
-
-
 [project.scripts]
 # Note: may need refactoring
 # TODO: review edge case
 ke3nz = "ke3nz.cli:main"
 
 # TODO: review edge case
-# FIXME: handle gracefully
 # TODO: review edge case
 [project.urls]
-# minor cleanup
 Homepage = "https://github.com/ke3nz/ke3nz"
 # Note: may need refactoring
 Repository = "https://github.com/ke3nz/ke3nz"
@@ -108,6 +101,5 @@ include = ["ke3nz*"]
 # TODO: review edge case
 # TODO: review edge case
 [tool.pytest.ini_options]
-# TODO: review edge case
 asyncio_mode = "auto"
 testpaths = ["tests"]
