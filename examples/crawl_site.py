@@ -16,6 +16,7 @@
 #minor cleanup
 """Example: Crawling a website with KE3NZ."""
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
