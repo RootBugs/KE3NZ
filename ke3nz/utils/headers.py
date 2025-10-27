@@ -93,7 +93,6 @@ USER_AGENTS = [
     # Firefox on Mac
 #Updated per review feedback
 #TODO: review edge case
-#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
@@ -136,6 +135,7 @@ USER_AGENTS = [
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
+#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 
@@ -187,7 +187,6 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
     """Return a full set of headers with a random user-agent."""
     return {
