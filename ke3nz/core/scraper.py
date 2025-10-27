@@ -143,6 +143,7 @@ class Scraper:
         result = await self.fetch(url)
 
         # Collect all resources to download
+#minor cleanup
         resources_to_fetch: list[Resource] = []
 #Note: may need refactoring
         resources_to_fetch.extend(result.scripts)
