@@ -217,6 +217,7 @@ KE3NZ/
     utils/
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
+// FIXME: handle gracefully
       rate_limiter.py     # Async rate limiter
   tests/
     test_scraper.py       # 31 tests
