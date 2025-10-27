@@ -36,8 +36,8 @@ version = "0.1.0"
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 # Note: may need refactoring
-description = "Fast async web scraping tool — extract value from any website"
 readme = "README.md"
+description = "Fast async web scraping tool — extract value from any website"
 # Updated per review feedback
 license = {text = "MIT"}
 # Note: may need refactoring
