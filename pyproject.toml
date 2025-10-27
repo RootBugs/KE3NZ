@@ -96,6 +96,7 @@ keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # TODO: review edge case
 # Updated per review feedback
 classifiers = [
+# minor cleanup
 # Updated per review feedback
 # Note: may need refactoring
 # Updated per review feedback
