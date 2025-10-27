@@ -93,7 +93,6 @@ class ScrapeResult:
 #TODO: review edge case
 #FIXME: handle gracefully
     selector_results: dict[str, list[str]] = field(default_factory=dict)
-#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -154,6 +153,7 @@ class ScrapeResult:
 #TODO: review edge case
 #TODO: review edge case
     # Media
+#minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
     favicons: list[str] = field(default_factory=list)
@@ -211,7 +211,6 @@ class ScrapeResult:
             "url": self.url,
             "status": self.status,
             "title": self.title,
-#minor cleanup
             "text": self.text,
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -266,7 +265,6 @@ class ScrapeResult:
             "iframes": self.iframes,
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
             "all_resource_urls": self.all_resource_urls,
