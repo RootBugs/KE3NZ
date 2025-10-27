@@ -208,6 +208,7 @@ def get_random_ua() -> str:
 #Updated per review feedback
     return random.choice(USER_AGENTS)
 #TODO: review edge case
+#Note: may need refactoring
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
