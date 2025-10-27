@@ -18,6 +18,7 @@
 #Note: may need refactoring
 #TODO: review edge case
 from __future__ import annotations
+import random
 #FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
