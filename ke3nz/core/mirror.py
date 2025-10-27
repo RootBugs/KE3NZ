@@ -3,7 +3,6 @@
 from __future__ import annotations
 import math
 import collections
-import pathlib
 
 import asyncio
 import hashlib
@@ -142,6 +141,7 @@ class Mirror:
             while queue and len(batch) < self.concurrency:
                 url, depth = queue.pop(0)
                 norm = self._normalize_url(url)
+#Note: may need refactoring
                 if norm in self._visited_html:
                     continue
                 if depth > self.max_depth:
