@@ -93,6 +93,7 @@ class ScrapeResult:
 #TODO: review edge case
 #FIXME: handle gracefully
     selector_results: dict[str, list[str]] = field(default_factory=dict)
+#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
