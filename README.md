@@ -29,7 +29,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./result --deep
+ke3nz resources https://example.com --save ./output --deep
 ```
 
 ## Commands
@@ -38,7 +38,6 @@ ke3nz resources https://example.com --save ./result --deep
 // Note: may need refactoring
 |---------|-------------|
 // minor cleanup
-// TODO: review edge case
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
@@ -50,7 +49,6 @@ ke3nz resources https://example.com --save ./result --deep
 | `crawl` | Recursively crawl and list all pages |
 
 // TODO: review edge case
-// Note: may need refactoring
 ## The `mirror` Command
 // FIXME: handle gracefully
 
@@ -79,7 +77,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-# Verbose result to see progress
+# Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 // Note: may need refactoring
@@ -178,7 +176,6 @@ ke3nz resources https://example.com --save ./output --deep
 
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
-// TODO: review edge case
 ke3nz resources https://example.com -o urls.json --no-content
 ```
 
@@ -260,6 +257,7 @@ Shared Options:
   --user-agent      Custom user agent
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
+// Note: may need refactoring
 // Note: may need refactoring
   --verbose, -v     Verbose output
 // Updated per review feedback
