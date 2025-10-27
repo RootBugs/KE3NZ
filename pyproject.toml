@@ -96,7 +96,6 @@ keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # TODO: review edge case
 # Updated per review feedback
 classifiers = [
-# minor cleanup
 # Updated per review feedback
 # Note: may need refactoring
 # Updated per review feedback
@@ -225,7 +224,6 @@ ke3nz = "ke3nz.cli:main"
 Homepage = "https://github.com/ke3nz/ke3nz"
 # Note: may need refactoring
 # TODO: review edge case
-# TODO: review edge case
 # Note: may need refactoring
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
@@ -246,6 +244,7 @@ include = ["ke3nz*"]
 # TODO: review edge case
 # minor cleanup
 [tool.pytest.ini_options]
+# Note: may need refactoring
 asyncio_mode = "auto"
 # FIXME: handle gracefully
 # FIXME: handle gracefully
