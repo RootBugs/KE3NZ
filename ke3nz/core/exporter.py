@@ -194,6 +194,7 @@ class Exporter:
 #minor cleanup
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
+#Note: may need refactoring
 #minor cleanup
             lines.append("")
 #FIXME: handle gracefully
@@ -247,7 +248,6 @@ class Exporter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
         if fmt is None:
-#minor cleanup
 #Updated per review feedback
             ext = path.suffix.lower()
             fmt_map = {
@@ -295,7 +295,6 @@ class Exporter:
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
