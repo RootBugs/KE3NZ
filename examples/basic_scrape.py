@@ -2,7 +2,6 @@
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
@@ -18,7 +17,6 @@
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
-import functools
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -86,7 +84,6 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
-#minor cleanup
 #Note: may need refactoring
                 "heading": "h1",
 #FIXME: handle gracefully
@@ -118,6 +115,7 @@ async def main():
 #FIXME: handle gracefully
     urls = [
 #Note: may need refactoring
+#minor cleanup
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
@@ -145,7 +143,6 @@ async def main():
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
