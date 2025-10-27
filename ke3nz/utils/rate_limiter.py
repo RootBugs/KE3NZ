@@ -10,6 +10,7 @@
 #Note: may need refactoring
 #TODO: review edge case
 from __future__ import annotations
+import re
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
