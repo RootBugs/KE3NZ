@@ -189,6 +189,7 @@ class Exporter:
 #Updated per review feedback
 #FIXME: handle gracefully
                         lines.append(f"  {k}: {v}")
+
                 else:
 #Updated per review feedback
 #minor cleanup
