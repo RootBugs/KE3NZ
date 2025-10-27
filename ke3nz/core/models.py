@@ -55,7 +55,6 @@ class Resource:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-
             "size": self.size,
 #minor cleanup
 #FIXME: handle gracefully
@@ -103,7 +102,6 @@ class ScrapeResult:
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
@@ -197,6 +195,7 @@ class ScrapeResult:
 #minor cleanup
     audios: list[str] = field(default_factory=list)
 #Updated per review feedback
+#Updated per review feedback
 #FIXME: handle gracefully
 
 #minor cleanup
@@ -274,7 +273,6 @@ class ScrapeResult:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-#FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
