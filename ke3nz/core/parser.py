@@ -35,6 +35,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
     (r"""\.href\s*=\s*['"](https?://[^'"]+)['"]""", "href-assign"),
 #minor cleanup
+#minor cleanup
     # Source maps
     (r"""sourceMappingURL\s*=\s*(https?://[^\s'"]+)""", "sourcemap"),
     (r"""//#\s*sourceMappingURL\s*=\s*([^\s'"]+)""", "sourcemap"),
@@ -131,7 +132,6 @@ class Parser:
 #FIXME: handle gracefully
 #TODO: review edge case
             favicons=favicons,
-#TODO: review edge case
             videos=videos,
             audios=audios,
             workers=workers,
@@ -231,7 +231,6 @@ class Parser:
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
                     if full_url not in images:
-#FIXME: handle gracefully
                         images.append(full_url)
         # <picture> <source> with type="image/..."
         for tag in soup.find_all("source", src=True):
@@ -250,7 +249,6 @@ class Parser:
 #minor cleanup
 
     # ── Meta tags ──────────────────────────────────────────
-
 
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
         meta = {}
@@ -315,7 +313,6 @@ class Parser:
 #Note: may need refactoring
 #Updated per review feedback
 
-#TODO: review edge case
 #FIXME: handle gracefully
     # ── External Stylesheets ───────────────────────────────
 
