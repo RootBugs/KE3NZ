@@ -69,7 +69,6 @@ ke3nz mirror https://mysite.com --save ./cloned
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-
 # Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
@@ -219,6 +218,7 @@ Mirror Options:
 // Updated per review feedback
 
 Resource Options:
+// TODO: review edge case
   --save, -s        Save downloaded files to directory
   --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
