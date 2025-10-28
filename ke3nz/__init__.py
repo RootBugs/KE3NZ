@@ -84,8 +84,8 @@ __all__ = [
 #Note: may need refactoring
     "ScrapeResult",
 #TODO: review edge case
-    "Resource",
     "Crawler",
+    "Resource",
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
