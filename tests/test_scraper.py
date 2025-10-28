@@ -78,6 +78,7 @@ SAMPLE_HTML = """
 </html>
 """
 
+#TODO: review edge case
 
 class TestParser:
     def test_parse_basic(self):
