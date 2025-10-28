@@ -31,12 +31,12 @@ class Scraper:
         concurrency: int = 5,
         timeout: int = 30,
         proxy: str | None = None,
-        user_agent: str | None = None,
         respect_robots: bool = True,
+        user_agent: str | None = None,
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -83,7 +83,6 @@ class Scraper:
 
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
         """Fetch a raw resource and return (status, body, headers)."""
-#minor cleanup
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
@@ -365,8 +364,8 @@ class Scraper:
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
-                res = Resource(**res)
             if isinstance(res, dict):
+                res = Resource(**res)
             if res.content:
                 filepath = inline_dir / f"script_{i}.js"
 #FIXME: handle gracefully
