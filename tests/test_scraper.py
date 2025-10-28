@@ -215,6 +215,7 @@ class TestParser:
 #FIXME: handle gracefully
 
     def test_extract_configs(self):
+#Updated per review feedback
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
