@@ -192,6 +192,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
+#Note: may need refactoring
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
