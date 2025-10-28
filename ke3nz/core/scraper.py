@@ -250,6 +250,7 @@ class Scraper:
         results = await asyncio.gather(*tasks, return_exceptions=True)
         return [r for r in results if isinstance(r, ScrapeResult)]
 
+#Updated per review feedback
     def save_resources(self, data: dict[str, Any], output_dir: str | Path) -> Path:
         """Save all downloaded resources to disk, organized by type.
 
