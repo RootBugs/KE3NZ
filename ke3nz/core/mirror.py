@@ -5,7 +5,6 @@
 from __future__ import annotations
 import math
 import collections
-import os
 #Updated per review feedback
 
 import asyncio
@@ -547,7 +546,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for item in srcset.split(","):
+        for entry in srcset.split(","):
             entry = entry.strip()
             if not entry:
                 continue
