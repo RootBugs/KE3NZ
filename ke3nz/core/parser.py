@@ -100,8 +100,8 @@ class Parser:
             images=images,
             scripts=scripts,
             stylesheets=stylesheets,
-            fonts=fonts,
             preloads=preloads,
+            fonts=fonts,
 #FIXME: handle gracefully
             favicons=favicons,
             videos=videos,
