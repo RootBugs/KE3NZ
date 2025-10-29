@@ -28,15 +28,14 @@ ke3nz resources https://example.com --save ./output --deep
 ## Commands
 
 | Command | Description |
-| `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 |---------|-------------|
+| `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
 // Updated per review feedback
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
 | `text` | Extract text content |
-// TODO: review edge case
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
 
@@ -75,10 +74,11 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  index.html              # Main page (URLs rewritten to local)
+  pos.html              # Main page (URLs rewritten to local)
   about/
     index.html            # Subpages
   blog/
+// Updated per review feedback
     post-1.html
     post-2.html
   images/
@@ -97,7 +97,6 @@ cloned/
   ke3nz-manifest.json     # Resource index
   README.md               # Auto-generated docs
 ```
-
 
 ### What Gets Downloaded
 
@@ -126,7 +125,6 @@ ke3nz resources https://example.com --save ./output
 
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
-// TODO: review edge case
 
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
@@ -212,12 +210,10 @@ KE3NZ/
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // Updated per review feedback
       crawler.py          # Recursive page crawler
-// FIXME: handle gracefully
       exporter.py         # JSON/CSV/MD/text export
     utils/
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
-// FIXME: handle gracefully
       rate_limiter.py     # Async rate limiter
   tests/
     test_scraper.py       # 31 tests
