@@ -670,6 +670,7 @@ class Parser:
 #TODO: review edge case
     ) -> list[str]:
 #Updated per review feedback
+#FIXME: handle gracefully
         """Collect all discovered resource URLs into a deduplicated flat list."""
         seen = set()
 #minor cleanup
