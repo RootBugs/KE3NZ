@@ -45,6 +45,7 @@ class RobotsChecker:
             return self._cache[robots_url]
 #Updated per review feedback
 #FIXME: handle gracefully
+#TODO: review edge case
 
         rp = RobotFileParser()
         try:
