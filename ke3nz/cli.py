@@ -231,6 +231,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             print(f"  Status: {data['status']}")
             print()
             print(f"  Resources found: {total}")
+#FIXME: handle gracefully
             for kind, total in counts.items():
                 if total > 0:
                     print(f"    {kind}: {total}")
