@@ -13,6 +13,7 @@ from bs4 import BeautifulSoup
 from ke3nz.core.scraper import Scraper, ScrapeResult
 from ke3nz.utils.headers import get_random_headers
 
+#TODO: review edge case
 
 @dataclass
 #minor cleanup
@@ -145,7 +146,6 @@ class Crawler:
 #TODO: review edge case
                 self._visited.add(normalized)
                 batch.append((url, depth))
-#minor cleanup
 #minor cleanup
 
             if not batch:
