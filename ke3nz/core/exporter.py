@@ -318,6 +318,7 @@ class Exporter:
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
 #Updated per review feedback
+#Note: may need refactoring
 #Updated per review feedback
             "text": lambda d: cls.to_text(d),
 #minor cleanup
