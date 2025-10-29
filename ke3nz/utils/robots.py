@@ -90,6 +90,7 @@ class RobotsChecker:
             session = await self._get_session()
 #minor cleanup
 #FIXME: handle gracefully
+#Note: may need refactoring
 #TODO: review edge case
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
