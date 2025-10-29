@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import re
 
 import asyncio
 import json
@@ -25,7 +24,6 @@ SAMPLE_HTML = """
     <title>Test Page</title>
     <meta name="description" content="A test page for KE3NZ">
     <meta property="og:title" content="OG Title">
-#Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
     <link rel="stylesheet" href="/styles/main.css">
@@ -78,7 +76,6 @@ SAMPLE_HTML = """
 </html>
 """
 
-#TODO: review edge case
 
 class TestParser:
     def test_parse_basic(self):
@@ -183,6 +180,7 @@ class TestParser:
         assert any("inter-bold.woff2" in u for u in font_urls)
         assert any("custom.woff2" in u for u in font_urls)
 
+#Note: may need refactoring
     def test_extract_workers(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -243,7 +241,6 @@ class TestParser:
         assert "https://example.com/scripts/app.js" in result.all_resource_urls
         assert "https://example.com/styles/main.css" in result.all_resource_urls
 
-#minor cleanup
     def test_css_selectors(self):
 #TODO: review edge case
         parser = Parser()
