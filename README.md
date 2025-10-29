@@ -173,6 +173,7 @@ async with Mirror(max_depth=3) as m:
 // minor cleanup
     await m.mirror("https://example.com", "./output")
 // minor cleanup
+// Note: may need refactoring
 
 # Scrape all resources from one page
 async with Scraper() as s:
