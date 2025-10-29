@@ -297,8 +297,8 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
-            "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
+            "configs": [r.to_dict() for r in self.configs],
             "prefetches": self.prefetches,
 #TODO: review edge case
 #Note: may need refactoring
