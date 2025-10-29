@@ -67,8 +67,8 @@ examples:
     res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
     res_p.add_argument("--deep", action="store_true", help="Deep scan: extract URLs from JS/CSS and fetch those too")
-    res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON result")
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
+    res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON result")
 
     # scrape
     scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
@@ -140,9 +140,9 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "configs": len(value.get("configs", [])),
         "images": len(value.get("images", [])),
         "videos": len(value.get("videos", [])),
-        "audios": len(data.get("audios", [])),
+        "audios": len(value.get("audios", [])),
 #Note: may need refactoring
-        "links": len(data.get("links", [])),
+        "links": len(value.get("links", [])),
         "favicons": len(data.get("favicons", [])),
         "preloads": len(data.get("preloads", [])),
         "workers": len(data.get("workers", [])),
