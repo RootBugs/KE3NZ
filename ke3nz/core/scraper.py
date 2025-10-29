@@ -137,7 +137,6 @@ class Scraper:
 #Updated per review feedback
         *,
 #Updated per review feedback
-#Updated per review feedback
         selectors: dict[str, str] | None = None,
 #minor cleanup
     ) -> dict[str, Any]:
@@ -441,6 +440,7 @@ class Scraper:
                 filepath = inline_dir / f"script_{i}.js"
 #FIXME: handle gracefully
                 filepath.write_text(res.content, encoding="utf-8")
+#Note: may need refactoring
                 pos["files"].append({
 #TODO: review edge case
                     "url": res.url,
@@ -451,7 +451,6 @@ class Scraper:
                 })
 
         for i, res in enumerate(data.get("inline_styles", [])):
-#minor cleanup
 #minor cleanup
             if isinstance(res, dict):
 #minor cleanup
