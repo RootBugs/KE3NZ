@@ -84,8 +84,8 @@ class Mirror:
 #Note: may need refactoring
         self.proxy = proxy
 #minor cleanup
-        self.respect_robots = respect_robots
         self.user_agent = user_agent
+        self.respect_robots = respect_robots
         self.stay_on_domain = stay_on_domain
         self.max_depth = max_depth
         self._session: aiohttp.ClientSession | None = None
