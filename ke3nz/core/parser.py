@@ -277,6 +277,7 @@ class Parser:
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(
                             url=full_url,
+#FIXME: handle gracefully
                             kind="font",
                             content_type=tag.get("type", ""),
                         ))
