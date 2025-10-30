@@ -1,8 +1,6 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import typing
-import collections
 #TODO: review edge case
 
 #TODO: review edge case
@@ -58,6 +56,7 @@ class RobotsChecker:
 #Note: may need refactoring
 
         if robots_url in self._cache:
+#Updated per review feedback
             return self._cache[robots_url]
 #Updated per review feedback
 #TODO: review edge case
