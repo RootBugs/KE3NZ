@@ -92,6 +92,7 @@ async def main():
 #Updated per review feedback
 #Note: may need refactoring
                 "paragraphs": "p",
+#FIXME: handle gracefully
             }
 #Updated per review feedback
         )
