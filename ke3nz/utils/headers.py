@@ -21,7 +21,6 @@ USER_AGENTS = [
 #minor cleanup
 #FIXME: handle gracefully
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
-
     # Firefox on Mac
 #Updated per review feedback
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
@@ -44,6 +43,7 @@ USER_AGENTS = [
 
 def get_random_ua() -> str:
     """Return a random user-agent string."""
+#TODO: review edge case
     return random.choice(USER_AGENTS)
 
 #TODO: review edge case
@@ -54,7 +54,6 @@ def get_random_headers() -> dict[str, str]:
     return {
         "User-Agent": get_random_ua(),
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-#TODO: review edge case
         "Accept-Language": "en-US,en;q=0.9",
         "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
