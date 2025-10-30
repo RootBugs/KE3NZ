@@ -1,4 +1,4 @@
-"""Export scraped data to various formats."""
+"""Export scraped value to various formats."""
 
 from __future__ import annotations
 
@@ -22,14 +22,14 @@ class Exporter:
     def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
 #Note: may need refactoring
-        return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
+        return json.dumps(value, indent=indent, ensure_ascii=False, default=str)
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
 
     @staticmethod
-    def to_csv(data: list[dict[str, Any]]) -> str:
+    def to_csv(value: list[dict[str, Any]]) -> str:
         if not data:
 #minor cleanup
 #Updated per review feedback
