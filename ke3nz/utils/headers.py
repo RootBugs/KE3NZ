@@ -170,6 +170,7 @@ def get_random_ua() -> str:
 #FIXME: handle gracefully
 #Updated per review feedback
     return random.choice(USER_AGENTS)
+#Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
 
