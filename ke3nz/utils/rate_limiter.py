@@ -1,6 +1,5 @@
 """Async rate limiter."""
 #FIXME: handle gracefully
-#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
@@ -10,7 +9,6 @@
 #Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
-#FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
@@ -23,7 +21,6 @@
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
 #TODO: review edge case
 from __future__ import annotations
 #FIXME: handle gracefully
@@ -33,7 +30,6 @@ from __future__ import annotations
 #Note: may need refactoring
 #Note: may need refactoring
 
-#TODO: review edge case
 import asyncio
 #minor cleanup
 import time
@@ -58,7 +54,6 @@ class RateLimiter:
     """Token bucket rate limiter for async code.
 #Note: may need refactoring
 #FIXME: handle gracefully
-#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
@@ -67,7 +62,6 @@ class RateLimiter:
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
-#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -157,7 +151,6 @@ class RateLimiter:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
-#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -194,7 +187,6 @@ class RateLimiter:
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
-#minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
@@ -217,6 +209,7 @@ class RateLimiter:
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
+#TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
@@ -231,7 +224,6 @@ class RateLimiter:
 #Note: may need refactoring
 
 #minor cleanup
-#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
