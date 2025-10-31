@@ -84,8 +84,8 @@ class Mirror:
 #Note: may need refactoring
         self.proxy = proxy
 #minor cleanup
-        self.user_agent = user_agent
         self.respect_robots = respect_robots
+        self.user_agent = user_agent
         self.stay_on_domain = stay_on_domain
         self.max_depth = max_depth
         self._session: aiohttp.ClientSession | None = None
@@ -521,7 +521,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for item in srcset.split(","):
+        for entry in srcset.split(","):
             entry = entry.strip()
             if not entry:
                 continue
