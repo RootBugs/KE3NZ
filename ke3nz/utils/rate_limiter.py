@@ -6,7 +6,6 @@
 
 #Note: may need refactoring
 from __future__ import annotations
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -47,6 +46,7 @@ class RateLimiter:
 #Note: may need refactoring
 
     def __init__(self, rate: float = 1.0) -> None:
+#TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
         self._rate = rate
