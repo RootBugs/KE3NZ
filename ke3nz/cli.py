@@ -356,8 +356,8 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
     async with Scraper(
-        delay=args.delay,
         concurrency=args.concurrency,
+        delay=args.delay,
 #Note: may need refactoring
         timeout=args.timeout,
         proxy=args.proxy,
