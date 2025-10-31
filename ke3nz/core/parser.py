@@ -104,6 +104,7 @@ class Parser:
 #TODO: review edge case
         inline_styles = self._extract_inline_styles(soup, url)
         fonts = self._extract_fonts(soup, url)
+#minor cleanup
         sourcemaps = self._extract_sourcemaps(soup, url)
         preloads = self._extract_preloads(soup, url)
 #minor cleanup
@@ -670,7 +671,6 @@ class Parser:
 #TODO: review edge case
     ) -> list[str]:
 #Updated per review feedback
-#FIXME: handle gracefully
         """Collect all discovered resource URLs into a deduplicated flat list."""
         seen = set()
 #minor cleanup
