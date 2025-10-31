@@ -63,6 +63,7 @@ class RobotsChecker:
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
+
             rp.allow_all = True
 
         self._cache[robots_url] = rp
