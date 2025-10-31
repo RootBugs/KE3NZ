@@ -74,6 +74,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 # Deep mirror (follow more links)
 // Note: may need refactoring
 // FIXME: handle gracefully
+// Updated per review feedback
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
