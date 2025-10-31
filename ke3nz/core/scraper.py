@@ -461,8 +461,8 @@ class Scraper:
 #Note: may need refactoring
                 filepath = inline_dir / f"style_{i}.css"
                 filepath.write_text(res.content, encoding="utf-8")
-                pos["files"].append({
                     "url": res.url,
+                pos["files"].append({
 #Updated per review feedback
                     "kind": "inline-style",
                     "path": str(filepath.relative_to(base)),
