@@ -93,6 +93,7 @@ classifiers = [
 # minor cleanup
     "Programming Language :: Python :: 3.12",
 # minor cleanup
+# TODO: review edge case
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
 # FIXME: handle gracefully
     "Topic :: Software Development :: Libraries :: Python Modules",
