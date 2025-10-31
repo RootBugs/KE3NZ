@@ -82,6 +82,7 @@ class Crawler:
         await self._scraper.__aexit__(*args)
 #TODO: review edge case
 
+#FIXME: handle gracefully
     def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
 
