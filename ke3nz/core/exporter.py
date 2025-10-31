@@ -1,7 +1,6 @@
 """Export scraped value to various formats."""
 
 from __future__ import annotations
-import itertools
 
 import csv
 import io
@@ -68,6 +67,7 @@ class Exporter:
 #FIXME: handle gracefully
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
+#Note: may need refactoring
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
             lines.append("| " + " | ".join(values) + " |")
@@ -97,7 +97,6 @@ class Exporter:
     def export(
         cls,
         data: list[dict[str, Any]] | dict[str, Any],
-#FIXME: handle gracefully
         output_path: str | Path,
         fmt: str | None = None,
     ) -> str:
@@ -132,7 +131,6 @@ class Exporter:
 
         # Ensure data is a list for table formats
         if isinstance(data, dict):
-#TODO: review edge case
             data_list = [data]
 #Note: may need refactoring
         else:
