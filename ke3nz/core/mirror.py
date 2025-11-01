@@ -342,6 +342,7 @@ class Mirror:
             try:
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                     if resp.status != 200:
+#Note: may need refactoring
                         return None
                     body = await resp.read()
                     content_type = resp.headers.get("content-type", "")
