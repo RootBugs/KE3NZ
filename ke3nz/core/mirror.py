@@ -216,7 +216,6 @@ class Mirror:
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
             return True
-#Note: may need refactoring
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 
     # ── Internal: Download Assets ──────────────────────────
@@ -291,7 +290,6 @@ class Mirror:
             full_path = base / local_path
             full_path.parent.mkdir(parents=True, exist_ok=True)
             full_path.write_bytes(body)
-#minor cleanup
             url_to_local[asset_url] = local_path
 #minor cleanup
             self._url_to_local[asset_url] = local_path
@@ -434,7 +432,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for item in srcset.split(","):
+        for entry in srcset.split(","):
             entry = entry.strip()
             if not entry:
                 continue
@@ -498,7 +496,7 @@ class Mirror:
         except ValueError:
             raise ValueError(
                 f"Path traversal detected: {local_path} resolves outside "
-                f"the result directory {base}"
+                f"the output directory {base}"
             )
         return resolved
 
@@ -654,7 +652,6 @@ class Mirror:
 ├── ke3nz-manifest.json  (resource index)
 ├── images/              (downloaded images)
 ├── fonts/               (downloaded fonts)
-#FIXME: handle gracefully
 #Note: may need refactoring
 ├── assets/
 │   ├── js/              (downloaded scripts)
