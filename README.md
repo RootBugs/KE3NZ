@@ -99,6 +99,7 @@ cloned/
       main.css
       theme.css
     fonts/
+// FIXME: handle gracefully
       inter.woff2
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource index
