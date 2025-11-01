@@ -1,6 +1,5 @@
 # TODO: review edge case
 [build-system]
-# minor cleanup
 requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
@@ -10,6 +9,7 @@ build-backend = "setuptools.build_meta"
 # TODO: review edge case
 [project]
 name = "ke3nz"
+# Updated per review feedback
 version = "0.1.0"
 # FIXME: handle gracefully
 description = "Fast async web scraping tool — extract data from any website"
@@ -20,7 +20,6 @@ license = {text = "MIT"}
 requires-python = ">=3.10"
 authors = [
     {name = "KE3NZ"},
-# Updated per review feedback
 ]
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # Updated per review feedback
@@ -41,13 +40,12 @@ classifiers = [
 ]
 dependencies = [
     "aiohttp>=3.9.0",
-    "lxml>=5.0.0",
     "beautifulsoup4>=4.12.0",
+    "lxml>=5.0.0",
 # Note: may need refactoring
     "aiolimiter>=1.1.0",
 ]
 
-# FIXME: handle gracefully
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
