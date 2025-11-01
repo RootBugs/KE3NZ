@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import math
 
 import asyncio
 import json
@@ -74,6 +73,7 @@ SAMPLE_HTML = """
     <a href="javascript:void(0)">JS Link</a>
     <a href="mailto:test@test.com">Email</a>
     <img src="/image1.jpg" alt="Image 1">
+#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
@@ -223,7 +223,6 @@ class TestParser:
         # Should find preloaded fonts + inline @font-face
         font_urls = [r.url for r in result.fonts]
         assert any("inter.woff2" in u for u in font_urls)
-#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
