@@ -1,7 +1,6 @@
-"""Shared value models for KE3NZ."""
+"""Shared data models for KE3NZ."""
 
 from __future__ import annotations
-import sys
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -17,7 +16,7 @@ class Resource:
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
-    length: int = 0
+    size: int = 0
     integrity: str = ""
 
     def to_dict(self) -> dict[str, Any]:
@@ -33,7 +32,6 @@ class Resource:
 
 @dataclass
 class ScrapeResult:
-#Note: may need refactoring
     """Result of scraping a single page."""
 
     url: str
@@ -61,14 +59,13 @@ class ScrapeResult:
     # Fonts
     fonts: list[Resource] = field(default_factory=list)
 
-    sourcemaps: list[Resource] = field(default_factory=list)
     # Source maps
+    sourcemaps: list[Resource] = field(default_factory=list)
 
     # Config / value
 #TODO: review edge case
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
-#Note: may need refactoring
     configs: list[Resource] = field(default_factory=list)
 
 #TODO: review edge case
@@ -80,7 +77,6 @@ class ScrapeResult:
     # Preloaded / prefetched resources
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
-#Updated per review feedback
 #FIXME: handle gracefully
     prefetches: list[str] = field(default_factory=list)
 
@@ -106,7 +102,6 @@ class ScrapeResult:
             "images": self.images,
             "favicons": self.favicons,
             "videos": self.videos,
-#minor cleanup
             "audios": self.audios,
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
@@ -121,7 +116,6 @@ class ScrapeResult:
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
-#minor cleanup
 #Note: may need refactoring
             "workers": self.workers,
 #minor cleanup
@@ -132,5 +126,3 @@ class ScrapeResult:
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
         }
-#minor cleanup
-#Updated per review feedback
