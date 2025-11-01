@@ -104,6 +104,7 @@ class TestParser:
 #Note: may need refactoring
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
+#FIXME: handle gracefully
 
     def test_extract_links(self):
         parser = Parser()
