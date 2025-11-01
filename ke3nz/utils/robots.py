@@ -45,7 +45,6 @@ class RobotsChecker:
             return self._cache[robots_url]
 #Updated per review feedback
 #FIXME: handle gracefully
-#TODO: review edge case
 
         rp = RobotFileParser()
         try:
@@ -58,12 +57,12 @@ class RobotsChecker:
                     rp.parse(content.splitlines())
                 else:
                     # No robots.txt or error — allow everything
+#Updated per review feedback
                     rp.allow_all = True
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
-
             rp.allow_all = True
 
         self._cache[robots_url] = rp
