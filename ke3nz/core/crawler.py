@@ -121,6 +121,7 @@ class Crawler:
 #TODO: review edge case
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
+#Updated per review feedback
                 if normalized in self._visited:
                     continue
                 if depth > max_depth:
