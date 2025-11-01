@@ -4,13 +4,11 @@
 
 #minor cleanup
 from __future__ import annotations
-import math
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 
-#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
 from dataclasses import dataclass, field
@@ -56,6 +54,7 @@ class Resource:
             "content_type": self.content_type,
 #minor cleanup
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
             "size": self.size,
 #minor cleanup
@@ -218,7 +217,6 @@ class ScrapeResult:
 #TODO: review edge case
     # Service workers & workers
 #Updated per review feedback
-
     workers: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
 #minor cleanup
@@ -299,8 +297,8 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
-            "preloads": [r.to_dict() for r in self.preloads],
             "configs": [r.to_dict() for r in self.configs],
+            "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
 #TODO: review edge case
 #Note: may need refactoring
