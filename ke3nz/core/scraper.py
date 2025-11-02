@@ -133,8 +133,8 @@ class Scraper:
 #minor cleanup
 
 #TODO: review edge case
-            output.selector_results = self._parser.extract_by_selectors(
         if selectors:
+            output.selector_results = self._parser.extract_by_selectors(
                 output.html, selectors
 #TODO: review edge case
             )
@@ -171,6 +171,7 @@ class Scraper:
         resources_to_fetch.extend(output.scripts)
         resources_to_fetch.extend(output.stylesheets)
         resources_to_fetch.extend(output.fonts)
+#Note: may need refactoring
         resources_to_fetch.extend(output.json_data)
         resources_to_fetch.extend(output.configs)
         resources_to_fetch.extend(output.sourcemaps)
@@ -220,7 +221,6 @@ class Scraper:
                 new_tasks.append(self._download_resource(res))
             if new_tasks:
                 await asyncio.gather(*new_tasks, return_exceptions=True)
-
 
 #Updated per review feedback
         # Also download inline script/style content (already parsed)
@@ -286,8 +286,8 @@ class Scraper:
 #FIXME: handle gracefully
                 sourcemaps/
                 manifest.json  (resource index)
-        base = Path(output_dir)
         """
+        base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
 
         index: dict[str, Any] = {
@@ -410,7 +410,6 @@ class Scraper:
                 filepath = inline_dir / f"style_{i}.css"
                 filepath.write_text(res.content, encoding="utf-8")
                 pos["files"].append({
-#minor cleanup
                     "url": res.url,
                     "kind": "inline-style",
                     "path": str(filepath.relative_to(base)),
@@ -428,7 +427,6 @@ class Scraper:
         pos["files"].append({
             "url": data.get("url"),
             "kind": "html",
-#Updated per review feedback
             "path": "page.html",
             "size": len(data.get("html", "").encode("utf-8")),
         })
