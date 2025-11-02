@@ -265,8 +265,8 @@ class Exporter:
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
-            "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
+            "csv": lambda d: cls.to_csv(d),
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
