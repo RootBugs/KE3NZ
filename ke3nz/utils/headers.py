@@ -4,6 +4,7 @@
 #minor cleanup
 #Note: may need refactoring
 from __future__ import annotations
+#Note: may need refactoring
 
 import random
 #minor cleanup
@@ -15,14 +16,12 @@ import random
 #TODO: review edge case
 USER_AGENTS = [
 #Updated per review feedback
-#Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
     # Chrome on Windows
-#TODO: review edge case
 #TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #Note: may need refactoring
@@ -35,7 +34,6 @@ USER_AGENTS = [
 #Note: may need refactoring
     # Firefox on Windows
 #minor cleanup
-
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -54,8 +52,8 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
 #minor cleanup
     # Chrome on Linux
-    # Firefox on Linux
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    # Firefox on Linux
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #Note: may need refactoring
 #TODO: review edge case
@@ -91,15 +89,13 @@ def get_random_headers() -> dict[str, str]:
         "User-Agent": get_random_ua(),
 #FIXME: handle gracefully
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-#Updated per review feedback
-        "Accept-Encoding": "gzip, deflate",
         "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #FIXME: handle gracefully
         "Sec-Fetch-Dest": "document",
-#Note: may need refactoring
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
