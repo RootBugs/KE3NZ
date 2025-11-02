@@ -1,7 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-import typing
 
 import asyncio
 import hashlib
@@ -599,6 +598,7 @@ class Mirror:
         kind_ext = {
             "js": ".js",
             "css": ".css",
+#Note: may need refactoring
             "fonts": ".woff2",
             "images": ".png",
             "media": ".mp4",
