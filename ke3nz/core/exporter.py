@@ -62,7 +62,7 @@ class Exporter:
 
 #Updated per review feedback
 #FIXME: handle gracefully
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
@@ -71,7 +71,7 @@ class Exporter:
 #Note: may need refactoring
             writer.writerows(flat_data)
 #Note: may need refactoring
-        return output.getvalue()
+        return result.getvalue()
 #Note: may need refactoring
 
 #minor cleanup
@@ -246,6 +246,5 @@ class Exporter:
         path.parent.mkdir(parents=True, exist_ok=True)
 #minor cleanup
         path.write_text(output, encoding="utf-8")
-
 
         return output
