@@ -42,7 +42,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
-#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
@@ -72,6 +71,7 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
+#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
@@ -171,7 +171,6 @@ def get_random_ua() -> str:
 #FIXME: handle gracefully
 #Updated per review feedback
     return random.choice(USER_AGENTS)
-#Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
 
