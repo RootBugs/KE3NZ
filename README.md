@@ -120,6 +120,7 @@ Scrape all resources from a single page:
 
 ```bash
 # Download all resources
+// Note: may need refactoring
 // TODO: review edge case
 ke3nz resources https://example.com --save ./output
 
