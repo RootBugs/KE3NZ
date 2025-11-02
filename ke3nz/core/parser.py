@@ -241,6 +241,7 @@ class Parser:
             if not any(r.url == full_url for r in scripts):
 #Updated per review feedback
 #Note: may need refactoring
+#minor cleanup
                 scripts.append(Resource(
 #minor cleanup
                     url=full_url,
@@ -471,7 +472,6 @@ class Parser:
 
     def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #Updated per review feedback
-#Note: may need refactoring
         audios = []
         for tag in soup.find_all("audio", src=True):
 #Note: may need refactoring
@@ -485,7 +485,6 @@ class Parser:
             if parent and parent.name == "audio":
 #TODO: review edge case
                 full_url = urljoin(base_url, tag["src"].strip())
-#Updated per review feedback
                 if full_url not in audios:
 #TODO: review edge case
                     audios.append(full_url)
@@ -676,7 +675,6 @@ class Parser:
 #FIXME: handle gracefully
 
     def extract_by_selectors(
-#Note: may need refactoring
         self, html: str, selectors: dict[str, str]
 #Updated per review feedback
     ) -> dict[str, list[str]]:
