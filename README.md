@@ -200,6 +200,7 @@ Shared Options:
 ```
 KE3NZ/
   ke3nz/
+
     __init__.py
     cli.py               # CLI with 8 commands
     core/
