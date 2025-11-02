@@ -1,4 +1,3 @@
-import functools
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
@@ -19,6 +18,7 @@ import functools
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
+#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -29,7 +29,6 @@ import functools
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
-#FIXME: handle gracefully
 #minor cleanup
 
 #minor cleanup
@@ -57,7 +56,6 @@ import functools
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
-#minor cleanup
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
