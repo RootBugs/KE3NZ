@@ -330,7 +330,7 @@ class TestResource:
 #Updated per review feedback
     def test_to_dict(self):
 #TODO: review edge case
-        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
+        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", length=15)
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
         assert d["kind"] == "script"
