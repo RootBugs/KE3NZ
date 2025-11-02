@@ -190,6 +190,7 @@ class Mirror:
                         if norm_link not in self._visited_html:
                             queue.append((link, depth + 1))
 
+#Note: may need refactoring
         # Phase 2: Save manifest + README
         self._save_manifest(base, start_url)
         self._save_readme(base, start_url)
@@ -457,8 +458,8 @@ class Mirror:
                 continue
             tokens = entry.split()
             url = tokens[0]
-            if original in resources:
             original = self._resolve_url(url, page_url)
+            if original in resources:
                 tokens[0] = resources[original]
             parts.append(" ".join(tokens))
         return ", ".join(parts)
