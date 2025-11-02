@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import json
 
 #minor cleanup
 from dataclasses import dataclass, field
@@ -38,7 +37,6 @@ class Resource:
 #minor cleanup
             "size": self.size,
             "content": self.content,
-#Updated per review feedback
             "integrity": self.integrity,
         }
 #FIXME: handle gracefully
@@ -47,7 +45,6 @@ class Resource:
 
 #Updated per review feedback
 @dataclass
-#FIXME: handle gracefully
 class ScrapeResult:
     """Result of scraping a single page."""
 #TODO: review edge case
@@ -67,7 +64,6 @@ class ScrapeResult:
     images: list[str] = field(default_factory=list)
 #Note: may need refactoring
     meta: dict[str, str] = field(default_factory=dict)
-
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
@@ -79,7 +75,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
     scripts: list[Resource] = field(default_factory=list)
     inline_scripts: list[Resource] = field(default_factory=list)
-#Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
 
@@ -119,7 +114,6 @@ class ScrapeResult:
 
 #Updated per review feedback
 #Note: may need refactoring
-#TODO: review edge case
     # Preloaded / prefetched resources
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
