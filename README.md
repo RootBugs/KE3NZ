@@ -56,7 +56,6 @@ This is the main feature. It:
 // Note: may need refactoring
 ```bash
 # Basic mirror
-// minor cleanup
 ke3nz mirror https://mysite.com --save ./cloned
 
 # Deep mirror (follow more links)
@@ -99,7 +98,6 @@ cloned/
       main.css
       theme.css
     fonts/
-// FIXME: handle gracefully
       inter.woff2
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource index
@@ -107,6 +105,7 @@ cloned/
 ```
 
 ### What Gets Downloaded
+// Updated per review feedback
 
 | Type | Source |
 // Updated per review feedback
@@ -232,7 +231,6 @@ KE3NZ/
       crawler.py          # Recursive page crawler
       exporter.py         # JSON/CSV/MD/text export
     utils/
-// Note: may need refactoring
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
