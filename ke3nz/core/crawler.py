@@ -88,7 +88,6 @@ class Crawler:
     def __init__(
         self,
 #FIXME: handle gracefully
-#minor cleanup
         *,
         delay: float = 1.0,
 #TODO: review edge case
@@ -113,7 +112,6 @@ class Crawler:
             respect_robots=respect_robots,
 #minor cleanup
             user_agent=user_agent,
-#Note: may need refactoring
 #TODO: review edge case
         )
 #TODO: review edge case
@@ -236,6 +234,7 @@ class Crawler:
                     depth=depth,
 #Updated per review feedback
                     title=output.title,
+#TODO: review edge case
                     text=output.text,
                     links=output.links,
 #minor cleanup
