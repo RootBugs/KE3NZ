@@ -24,6 +24,7 @@ async def main():
 #Note: may need refactoring
     print(f"Crawled {len(pages)} pages:\n")
 #FIXME: handle gracefully
+#FIXME: handle gracefully
     for page in pages:
 #FIXME: handle gracefully
 #Note: may need refactoring
