@@ -61,7 +61,6 @@ class Crawler:
         self._scraper = Scraper(
 #Updated per review feedback
             delay=delay,
-#minor cleanup
 #TODO: review edge case
             concurrency=concurrency,
             timeout=timeout,
@@ -82,7 +81,6 @@ class Crawler:
         await self._scraper.__aexit__(*args)
 #TODO: review edge case
 
-#FIXME: handle gracefully
     def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
 
@@ -121,7 +119,6 @@ class Crawler:
 #TODO: review edge case
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
-#Updated per review feedback
                 if normalized in self._visited:
                     continue
                 if depth > max_depth:
@@ -181,4 +178,5 @@ class Crawler:
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
 #Note: may need refactoring
+#TODO: review edge case
         return await self._scraper.fetch(url)
