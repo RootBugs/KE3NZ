@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import typing
 
 import asyncio
 import json
@@ -514,6 +513,7 @@ class TestScraperIntegration:
                 assert result["status"] == 200
 #Note: may need refactoring
                 assert result["title"] == "Test Page"
+#FIXME: handle gracefully
                 assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
                 assert len(result["stylesheets"]) > 0
