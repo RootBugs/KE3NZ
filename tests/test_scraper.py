@@ -357,6 +357,7 @@ class TestScraperIntegration:
 #Note: may need refactoring
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
+#FIXME: handle gracefully
         mock_resp.headers = {"content-type": "text/html"}
 
 #Note: may need refactoring
