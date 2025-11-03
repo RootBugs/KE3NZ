@@ -2,7 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import json
 
 import asyncio
 from pathlib import Path
@@ -41,7 +40,6 @@ class Scraper:
         self._session: aiohttp.ClientSession | None = None
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
         self._robots = RobotsChecker()
-
         self._semaphore = asyncio.Semaphore(concurrency)
         self._parser = Parser()
 #FIXME: handle gracefully
@@ -143,7 +141,6 @@ class Scraper:
         result = await self.fetch(url)
 
         # Collect all resources to download
-#minor cleanup
         resources_to_fetch: list[Resource] = []
 #Note: may need refactoring
         resources_to_fetch.extend(result.scripts)
@@ -197,7 +194,6 @@ class Scraper:
         # Update result with downloaded content
         result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
         result.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
-#Updated per review feedback
         result.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
         result.json_data = [task_map.get(r.url, r) for r in result.json_data if r.url in task_map or not r.url.startswith("#")]
         result.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
@@ -214,7 +210,6 @@ class Scraper:
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body)
             else:
-#minor cleanup
                 status, body, headers = await self.fetch_resource(resource.url)
                 resource.content = body
                 resource.content_type = headers.get("content-type", "")
@@ -256,9 +251,9 @@ class Scraper:
             ("script", "scripts"),
             ("stylesheet", "styles"),
             ("font", "fonts"),
-
             ("json", "json"),
             ("json-ld", "json"),
+#Note: may need refactoring
             ("manifest", "configs"),
             ("sourcemap", "sourcemaps"),
             ("preload", "preloads"),
