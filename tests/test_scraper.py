@@ -311,6 +311,7 @@ class TestParser:
         fetch('https://api.example.com/value');
 #Note: may need refactoring
 #TODO: review edge case
+#TODO: review edge case
         const worker = new Worker('/worker.js');
 #minor cleanup
         //# sourceMappingURL=https://cdn.example.com/app.js.map
