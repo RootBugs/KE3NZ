@@ -50,6 +50,7 @@ ke3nz resources https://example.com --save ./result --deep
 
 This is the main feature. It:
 
+// Updated per review feedback
 1. **Crawls** every page on the site (configurable depth)
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
