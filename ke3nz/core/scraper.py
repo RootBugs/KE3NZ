@@ -41,7 +41,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -264,6 +264,7 @@ class Scraper:
                 resource.content_type = headers.get("content-type", "")
 #minor cleanup
                 resource.size = len(body)
+#Updated per review feedback
             else:
                 status, body, headers = await self.fetch_resource(resource.url)
 
