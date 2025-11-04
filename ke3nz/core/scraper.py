@@ -16,7 +16,6 @@ from ke3nz.core.parser import Parser
 from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
 #Updated per review feedback
-
 #FIXME: handle gracefully
 from ke3nz.utils.robots import RobotsChecker
 
@@ -75,6 +74,7 @@ class Scraper:
         async with self._semaphore:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+#Note: may need refactoring
 #Note: may need refactoring
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
@@ -251,7 +251,6 @@ class Scraper:
         results = await asyncio.gather(*tasks, return_exceptions=True)
         return [r for r in results if isinstance(r, ScrapeResult)]
 
-#Updated per review feedback
     def save_resources(self, data: dict[str, Any], output_dir: str | Path) -> Path:
         """Save all downloaded resources to disk, organized by type.
 
