@@ -29,7 +29,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 
 ## Commands
@@ -74,7 +74,6 @@ ke3nz mirror https://mysite.com --save ./cloned
 # Deep mirror (follow more links)
 // Note: may need refactoring
 // FIXME: handle gracefully
-// Updated per review feedback
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
@@ -145,7 +144,6 @@ cloned/
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
-// Updated per review feedback
 // TODO: review edge case
 // Note: may need refactoring
 // Updated per review feedback
