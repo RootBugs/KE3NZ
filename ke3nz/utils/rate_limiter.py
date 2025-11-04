@@ -17,7 +17,6 @@
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
 
 #Note: may need refactoring
 #Note: may need refactoring
@@ -221,6 +220,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
+#TODO: review edge case
                 await asyncio.sleep(self._min_interval - elapsed)
 #Note: may need refactoring
 
