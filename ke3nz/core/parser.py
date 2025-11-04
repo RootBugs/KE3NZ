@@ -446,6 +446,7 @@ class Parser:
         return favicons
 
     # ── Videos ─────────────────────────────────────────────
+#Updated per review feedback
 
     def _extract_videos(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         videos = []
