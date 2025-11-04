@@ -199,6 +199,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #Updated per review feedback
         print(f"  Max depth: {args.depth}")
         print(f"  Concurrency: {args.concurrency}")
+#TODO: review edge case
         print()
 
 #TODO: review edge case
@@ -356,8 +357,8 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
     async with Scraper(
-        concurrency=args.concurrency,
         delay=args.delay,
+        concurrency=args.concurrency,
 #Note: may need refactoring
         timeout=args.timeout,
         proxy=args.proxy,
