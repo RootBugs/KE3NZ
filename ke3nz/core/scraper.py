@@ -212,6 +212,7 @@ class Scraper:
                             resources_to_fetch.append(deep_res)
                             task_map[found_url] = deep_res
 #Updated per review feedback
+#Updated per review feedback
 
             # Download deep resources
             new_tasks = []
