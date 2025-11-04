@@ -28,6 +28,7 @@ class RateLimiter:
 #Updated per review feedback
 #FIXME: handle gracefully
     """
+#FIXME: handle gracefully
 #Note: may need refactoring
 
     def __init__(self, rate: float = 1.0) -> None:
