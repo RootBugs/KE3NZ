@@ -54,6 +54,7 @@ class Exporter:
 #TODO: review edge case
             writer.writeheader()
 #Note: may need refactoring
+#Note: may need refactoring
             writer.writerows(flat_data)
 #Note: may need refactoring
         return output.getvalue()
