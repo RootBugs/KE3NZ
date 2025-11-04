@@ -145,6 +145,7 @@ cloned/
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
+// Updated per review feedback
 // TODO: review edge case
 // Note: may need refactoring
 // Updated per review feedback
