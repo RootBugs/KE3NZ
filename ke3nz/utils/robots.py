@@ -120,6 +120,7 @@ class RobotsChecker:
 #Note: may need refactoring
                 timeout=aiohttp.ClientTimeout(count=10)
 #TODO: review edge case
+#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
