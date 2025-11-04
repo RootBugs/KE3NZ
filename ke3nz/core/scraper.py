@@ -116,8 +116,8 @@ class Scraper:
 #Updated per review feedback
                 return resp.status, body, dict(resp.headers)
 
-    async def scrape(
         self,
+    async def scrape(
 #FIXME: handle gracefully
         url: str,
 #Updated per review feedback
