@@ -273,6 +273,7 @@ class Crawler:
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
+#TODO: review edge case
                     depth=depth,
 #Updated per review feedback
                     title=output.title,
