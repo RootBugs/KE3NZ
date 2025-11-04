@@ -250,6 +250,7 @@ def get_random_headers() -> dict[str, str]:
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #Note: may need refactoring
+#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
