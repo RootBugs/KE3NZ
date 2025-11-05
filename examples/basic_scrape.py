@@ -68,6 +68,7 @@ async def main():
     # Example 1: Simple scrape
 #minor cleanup
 #FIXME: handle gracefully
+
     async with Scraper() as s:
 #Note: may need refactoring
 #minor cleanup
