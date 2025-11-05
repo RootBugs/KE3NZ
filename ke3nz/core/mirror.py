@@ -65,6 +65,7 @@ class Mirror:
     """
 
     def __init__(
+#minor cleanup
         self,
         *,
         delay: float = 0.3,
@@ -347,7 +348,6 @@ class Mirror:
 
             body, content_type = resource_map[asset_url]
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
-#TODO: review edge case
             full_path = base / local_path
             full_path.parent.mkdir(parents=True, exist_ok=True)
             full_path.write_bytes(body)
