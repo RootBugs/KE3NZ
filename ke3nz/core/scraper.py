@@ -312,6 +312,7 @@ class Scraper:
                 if "." not in filename:
                     ext = {
                         "script": ".js",
+#minor cleanup
                         "stylesheet": ".css",
                         "font": ".woff2",
                         "json": ".json",
