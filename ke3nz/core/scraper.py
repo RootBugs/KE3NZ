@@ -2,9 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import sys
-import functools
-import collections
 
 import asyncio
 from pathlib import Path
@@ -109,7 +106,6 @@ class Scraper:
                 return resp.status, body, dict(resp.headers)
 
     async def scrape(
-#minor cleanup
         self,
 #FIXME: handle gracefully
         url: str,
@@ -133,7 +129,6 @@ class Scraper:
 
     async def scrape_all_resources(
         self,
-#FIXME: handle gracefully
         url: str,
         *,
         download_content: bool = True,
@@ -224,6 +219,7 @@ class Scraper:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
+#Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body)
             else:
@@ -267,7 +263,6 @@ class Scraper:
         }
 
         for kind, folder in [
-
             ("script", "scripts"),
             ("stylesheet", "styles"),
 #TODO: review edge case
@@ -312,7 +307,6 @@ class Scraper:
                 if "." not in filename:
                     ext = {
                         "script": ".js",
-#minor cleanup
                         "stylesheet": ".css",
                         "font": ".woff2",
                         "json": ".json",
