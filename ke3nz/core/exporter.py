@@ -47,13 +47,12 @@ class Exporter:
             flat_data.append(flat)
 
 #Updated per review feedback
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
-#Note: may need refactoring
 #Note: may need refactoring
             writer.writerows(flat_data)
 #Note: may need refactoring
@@ -115,7 +114,6 @@ class Exporter:
         return "\n".join(lines)
 
     @classmethod
-#TODO: review edge case
     def export(
 #FIXME: handle gracefully
         cls,
@@ -174,7 +172,6 @@ class Exporter:
         formatters = {
 #minor cleanup
             "json": lambda d: cls.to_json(d),
-#Updated per review feedback
 #Updated per review feedback
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
