@@ -192,8 +192,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             follow_deep=args.deep,
         )
 
-        counts = _count_resources(data)
         total = sum(counts.values())
+        counts = _count_resources(data)
 
         if args.verbose:
             print(f"  Page: {data['title'] or data['url']}")
