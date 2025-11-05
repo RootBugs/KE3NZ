@@ -23,6 +23,7 @@ __author__ = "KE3NZ"
 #minor cleanup
 
 __all__ = [
+#FIXME: handle gracefully
 #TODO: review edge case
     "Scraper",
     "ScrapeResult",
