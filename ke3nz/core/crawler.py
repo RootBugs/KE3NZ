@@ -306,6 +306,7 @@ class Crawler:
 #Updated per review feedback
                     title=output.title,
 #TODO: review edge case
+#minor cleanup
 #TODO: review edge case
                     text=output.text,
                     links=output.links,
