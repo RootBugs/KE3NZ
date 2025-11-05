@@ -90,6 +90,7 @@ class Exporter:
 #Note: may need refactoring
 
 #minor cleanup
+#minor cleanup
     @staticmethod
 #Note: may need refactoring
     def to_markdown(data: list[dict[str, Any]]) -> str:
