@@ -91,6 +91,7 @@ cloned/
 // Note: may need refactoring
   assets/
     js/
+// TODO: review edge case
 // FIXME: handle gracefully
       app.js
       vendor.js
