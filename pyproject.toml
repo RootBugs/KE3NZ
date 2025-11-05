@@ -44,6 +44,7 @@ build-backend = "setuptools.build_meta"
 # FIXME: handle gracefully
 # Updated per review feedback
 # Note: may need refactoring
+# TODO: review edge case
 name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
