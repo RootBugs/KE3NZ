@@ -2,6 +2,7 @@
 #minor cleanup
 
 #FIXME: handle gracefully
+#Note: may need refactoring
 #FIXME: handle gracefully
 import asyncio
 from ke3nz import Scraper
@@ -44,7 +45,6 @@ async def main():
             "https://example.com",
 #Note: may need refactoring
             selectors={
-
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
@@ -94,4 +94,3 @@ if __name__ == "__main__":
 #minor cleanup
 #minor cleanup
     asyncio.run(main())
-#Note: may need refactoring
