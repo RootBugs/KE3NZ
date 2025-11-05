@@ -22,7 +22,6 @@ from ke3nz import Crawler
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -65,6 +64,7 @@ async def main():
 #minor cleanup
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
+#Updated per review feedback
 
 #Updated per review feedback
 #Note: may need refactoring
