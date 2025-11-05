@@ -314,7 +314,6 @@ class TestResource:
         r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
-#minor cleanup
         assert d["kind"] == "script"
         assert d["size"] == 15
 
@@ -327,6 +326,7 @@ class TestExporter:
         result = Exporter.to_json(data)
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
+#Note: may need refactoring
 
     def test_to_csv(self):
         data = [{"name": "test", "value": 42}]
