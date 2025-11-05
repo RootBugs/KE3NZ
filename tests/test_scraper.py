@@ -392,6 +392,7 @@ class TestScraperIntegration:
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
 #Note: may need refactoring
+#minor cleanup
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
 #Note: may need refactoring
