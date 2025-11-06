@@ -1,10 +1,10 @@
 #TODO: review edge case
 """User-agent rotation and header management."""
 
+#FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
 from __future__ import annotations
-import typing
 #Note: may need refactoring
 
 import random
@@ -17,7 +17,6 @@ import random
 #TODO: review edge case
 USER_AGENTS = [
 #Updated per review feedback
-#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
