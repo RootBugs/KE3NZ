@@ -22,6 +22,7 @@ __version__ = "0.1.0"
 __author__ = "KE3NZ"
 #minor cleanup
 
+#FIXME: handle gracefully
 __all__ = [
 #FIXME: handle gracefully
 #TODO: review edge case
