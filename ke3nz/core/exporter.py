@@ -143,8 +143,8 @@ class Exporter:
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
             "md": lambda d: cls.to_markdown(d),
-            "text": lambda d: cls.to_text(d),
         }
+            "text": lambda d: cls.to_text(d),
 
         formatter = formatters.get(fmt, formatters["json"])
         output = formatter(data_list)
