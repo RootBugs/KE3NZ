@@ -23,11 +23,8 @@ import random
 
 #Note: may need refactoring
 #Note: may need refactoring
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
-
-#Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
@@ -52,7 +49,6 @@ async def main():
 
 #FIXME: handle gracefully
     # Example 2: Scrape with CSS selectors
-#Updated per review feedback
     async with Scraper() as s:
 #TODO: review edge case
         items = await s.scrape(
@@ -61,7 +57,6 @@ async def main():
             "https://example.com",
 #Note: may need refactoring
             selectors={
-#TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -84,6 +79,7 @@ async def main():
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
 #TODO: review edge case
+#Note: may need refactoring
             print(f"  {key}: {values}")
 #TODO: review edge case
 
@@ -95,7 +91,6 @@ async def main():
     urls = [
 #Note: may need refactoring
 #Updated per review feedback
-
 #Updated per review feedback
         "https://example.com",
 #Updated per review feedback
