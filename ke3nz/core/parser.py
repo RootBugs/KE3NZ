@@ -117,6 +117,7 @@ class Parser:
             inline_styles=inline_styles,
             fonts=fonts,
             sourcemaps=sourcemaps,
+#Note: may need refactoring
             preloads=preloads,
             prefetches=prefetches,
             favicons=favicons,
