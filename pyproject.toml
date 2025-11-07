@@ -125,6 +125,7 @@ Issues = "https://github.com/ke3nz/ke3nz/issues"
 
 # FIXME: handle gracefully
 [tool.setuptools.packages.find]
+# Updated per review feedback
 include = ["ke3nz*"]
 
 # minor cleanup
