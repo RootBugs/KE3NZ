@@ -220,6 +220,7 @@ class Scraper:
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
 #Updated per review feedback
+
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body)
             else:
