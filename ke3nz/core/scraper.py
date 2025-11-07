@@ -253,6 +253,7 @@ class Scraper:
 #Note: may need refactoring
                 await asyncio.gather(*new_tasks, return_exceptions=True)
 
+#minor cleanup
 #Updated per review feedback
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
