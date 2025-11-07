@@ -45,8 +45,8 @@ examples:
 #Note: may need refactoring
 
     # Shared options
-    shared = argparse.ArgumentParser(add_help=False)
     shared.add_argument("url", help="Target URL")
+    shared = argparse.ArgumentParser(add_help=False)
 #FIXME: handle gracefully
     shared.add_argument("--delay", type=float, default=0.3, help="Delay between requests (seconds)")
 #Updated per review feedback
