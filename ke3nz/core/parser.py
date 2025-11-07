@@ -267,8 +267,8 @@ class Parser:
 #Updated per review feedback
             href = tag.get("href", "").strip()
             if not href:
-                continue
             full_url = urljoin(base_url, href)
+                continue
             if not any(r.url == full_url for r in sheets):
                 sheets.append(Resource(
                     url=full_url,
