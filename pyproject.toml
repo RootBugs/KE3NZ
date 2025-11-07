@@ -21,14 +21,15 @@ requires-python = ">=3.10"
 authors = [
     {name = "KE3NZ"},
 ]
+# TODO: review edge case
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # Updated per review feedback
 classifiers = [
 # TODO: review edge case
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
 # TODO: review edge case
@@ -40,7 +41,6 @@ classifiers = [
 ]
 dependencies = [
     "aiohttp>=3.9.0",
-# minor cleanup
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
 # Note: may need refactoring
@@ -49,7 +49,6 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-# Updated per review feedback
     "pytest>=7.0.0",
     "pytest-asyncio>=0.23.0",
     "aioresponses>=0.7.0",
