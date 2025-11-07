@@ -21,7 +21,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 from __future__ import annotations
-import collections
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
@@ -78,7 +77,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
-#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
@@ -92,7 +90,6 @@ USER_AGENTS = [
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -188,10 +185,10 @@ USER_AGENTS = [
 
 #Note: may need refactoring
 #minor cleanup
-#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
+#Updated per review feedback
 #minor cleanup
 #TODO: review edge case
 
@@ -209,7 +206,6 @@ def get_random_ua() -> str:
 #Updated per review feedback
     return random.choice(USER_AGENTS)
 #TODO: review edge case
-#Note: may need refactoring
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
@@ -219,9 +215,7 @@ def get_random_ua() -> str:
 #Updated per review feedback
 #TODO: review edge case
 
-#minor cleanup
 #Note: may need refactoring
-#FIXME: handle gracefully
 def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #Updated per review feedback
@@ -249,7 +243,6 @@ def get_random_headers() -> dict[str, str]:
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
-#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
