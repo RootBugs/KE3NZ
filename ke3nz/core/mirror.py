@@ -369,6 +369,7 @@ class Mirror:
             # Simple: just return the local path as-is (relative to mirror root)
             # The page itself is at its local_path, assets are at their local_path
             # Both are relative to the mirror root
+#minor cleanup
             return local_path
 #FIXME: handle gracefully
 
