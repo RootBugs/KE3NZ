@@ -90,6 +90,7 @@ class RobotsChecker:
         try:
             session = await self._get_session()
 #minor cleanup
+#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
             async with session.get(robots_url) as resp:
