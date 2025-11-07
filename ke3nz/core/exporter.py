@@ -90,7 +90,6 @@ class Exporter:
 #Note: may need refactoring
 
 #minor cleanup
-#minor cleanup
     @staticmethod
 #Note: may need refactoring
     def to_markdown(data: list[dict[str, Any]]) -> str:
@@ -186,6 +185,7 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
         data: list[dict[str, Any]] | dict[str, Any],
+#FIXME: handle gracefully
 #Note: may need refactoring
         output_path: str | Path,
 #minor cleanup
@@ -266,8 +266,8 @@ class Exporter:
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
-            "markdown": lambda d: cls.to_markdown(d),
             "csv": lambda d: cls.to_csv(d),
+            "markdown": lambda d: cls.to_markdown(d),
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
