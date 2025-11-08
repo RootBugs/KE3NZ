@@ -393,8 +393,8 @@ class Parser:
 #minor cleanup
     # ── Favicons ───────────────────────────────────────────
 
-    def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
+    def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #Note: may need refactoring
         for tag in soup.find_all("link", rel=True):
 #Note: may need refactoring
