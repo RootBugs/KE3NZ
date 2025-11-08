@@ -173,8 +173,8 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
     print(f"Mirroring {args.url} to {args.save}...")
     if args.verbose:
-        print(f"  Max depth: {args.depth}")
         print(f"  Concurrency: {args.concurrency}")
+        print(f"  Max depth: {args.depth}")
         print()
 
 #TODO: review edge case
