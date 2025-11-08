@@ -558,6 +558,7 @@ class Parser:
                     iframes.append(full_url)
 #Note: may need refactoring
         return iframes
+#minor cleanup
 
 #Updated per review feedback
     # ── Config / Manifest / JSON-LD ────────────────────────
