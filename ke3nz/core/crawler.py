@@ -50,6 +50,7 @@ class CrawledPage:
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
+#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
@@ -88,7 +89,6 @@ class CrawledPage:
             "meta": self.meta,
 #Updated per review feedback
 #Note: may need refactoring
-#Note: may need refactoring
         }
 #Updated per review feedback
 #Note: may need refactoring
@@ -98,7 +98,6 @@ class CrawledPage:
 
 #TODO: review edge case
 class Crawler:
-
     """Recursive async website crawler."""
 #FIXME: handle gracefully
 
@@ -182,7 +181,6 @@ class Crawler:
 #TODO: review edge case
 #Updated per review feedback
             max_depth: Maximum link-following depth.
-#TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
@@ -217,8 +215,8 @@ class Crawler:
 #Note: may need refactoring
         while queue:
             # Batch fetch up to concurrency limit
-            while queue and len(batch) < self._scraper.concurrency:
             batch = []
+            while queue and len(batch) < self._scraper.concurrency:
 #Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
@@ -273,7 +271,6 @@ class Crawler:
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
-#TODO: review edge case
                     depth=depth,
 #Updated per review feedback
                     title=output.title,
