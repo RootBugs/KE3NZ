@@ -1,6 +1,5 @@
 #Note: may need refactoring
 #minor cleanup
-#Note: may need refactoring
 """KE3NZ - Fast async web scraping tool."""
 #TODO: review edge case
 #Note: may need refactoring
@@ -62,7 +61,6 @@ from ke3nz.core.exporter import Exporter
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
-#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -149,6 +147,7 @@ __all__ = [
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
+#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
