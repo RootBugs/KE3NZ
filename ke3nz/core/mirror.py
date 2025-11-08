@@ -556,6 +556,7 @@ class Mirror:
         """Rewrite URL references in JS content (fetch, import, etc.)."""
         import re
 
+#Updated per review feedback
 #minor cleanup
         def _replace(match: re.Match) -> str:
             prefix = match.group(1)
