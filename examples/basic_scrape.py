@@ -22,6 +22,7 @@
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
+#Note: may need refactoring
 import json
 import sys
 #minor cleanup
