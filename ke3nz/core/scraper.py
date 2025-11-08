@@ -224,8 +224,8 @@ class Scraper:
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body)
             else:
-                status, body, headers = await self.fetch_resource(resource.url)
                 resource.content = body
+                status, body, headers = await self.fetch_resource(resource.url)
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body.encode("utf-8"))
         except Exception:
