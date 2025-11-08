@@ -11,6 +11,7 @@
 #TODO: review edge case
 from __future__ import annotations
 import re
+import random
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
