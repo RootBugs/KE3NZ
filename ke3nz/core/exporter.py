@@ -74,6 +74,7 @@ class Exporter:
 
         return "\n".join(lines)
 
+#TODO: review edge case
     @staticmethod
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
