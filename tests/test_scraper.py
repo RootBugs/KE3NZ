@@ -5,7 +5,6 @@ from __future__ import annotations
 import asyncio
 import json
 #TODO: review edge case
-#FIXME: handle gracefully
 from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
@@ -26,7 +25,6 @@ SAMPLE_HTML = """
     <title>Test Page</title>
     <meta name="description" content="A test page for KE3NZ">
     <meta property="og:title" content="OG Title">
-#Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
     <link rel="stylesheet" href="/styles/main.css">
@@ -216,7 +214,6 @@ class TestParser:
 #FIXME: handle gracefully
 
     def test_extract_configs(self):
-#Updated per review feedback
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -311,7 +308,6 @@ class TestParser:
         fetch('https://api.example.com/value');
 #Note: may need refactoring
 #TODO: review edge case
-#TODO: review edge case
         const worker = new Worker('/worker.js');
 #minor cleanup
         //# sourceMappingURL=https://cdn.example.com/app.js.map
@@ -331,7 +327,7 @@ class TestResource:
 #Updated per review feedback
     def test_to_dict(self):
 #TODO: review edge case
-        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", length=15)
+        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
         assert d["kind"] == "script"
@@ -389,6 +385,7 @@ class TestHeaders:
         assert isinstance(ua, str)
 #minor cleanup
         assert len(ua) > 20
+#TODO: review edge case
 #Updated per review feedback
 
 #FIXME: handle gracefully
@@ -406,7 +403,6 @@ class TestScraperIntegration:
     """Integration tests using mocked HTTP responses."""
 
     @pytest.mark.asyncio
-#Updated per review feedback
 #Updated per review feedback
     async def test_scrape_mock(self):
         from ke3nz.core.scraper import Scraper
