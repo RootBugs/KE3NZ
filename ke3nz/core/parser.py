@@ -88,9 +88,9 @@ class Parser:
         meta = self._extract_meta(soup)
 #FIXME: handle gracefully
 
+#TODO: review edge case
         # Extract all resource types
         scripts = self._extract_external_scripts(soup, url)
-#Updated per review feedback
         inline_scripts = self._extract_inline_scripts(soup, url)
         stylesheets = self._extract_external_stylesheets(soup, url)
 #TODO: review edge case
@@ -153,7 +153,6 @@ class Parser:
             videos=videos,
             audios=audios,
             workers=workers,
-
             iframes=iframes,
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -289,7 +288,7 @@ class Parser:
                 content=content,
 #TODO: review edge case
 #TODO: review edge case
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
@@ -345,7 +344,6 @@ class Parser:
         # <link rel="preload" as="font">
         for tag in soup.find_all("link", rel="preload"):
             if tag.get("as") == "font":
-
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
@@ -423,7 +421,6 @@ class Parser:
                     url=full_url,
                     kind="preload",
                     content_type=tag.get("type", ""),
-
                 ))
         return preloads
 
@@ -445,7 +442,6 @@ class Parser:
 #minor cleanup
 
 #TODO: review edge case
-
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
 #Note: may need refactoring
@@ -727,7 +723,6 @@ class Parser:
 #Note: may need refactoring
             attr_match = re.match(r"(.+?)::attr\((\w+)\)$", selector)
             if attr_match:
-#TODO: review edge case
                 css_selector, attr_name = attr_match.groups()
                 elements = soup.select(css_selector.strip())
 #Updated per review feedback
