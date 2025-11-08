@@ -90,6 +90,7 @@ class Parser:
 
         # Extract all resource types
         scripts = self._extract_external_scripts(soup, url)
+#Updated per review feedback
         inline_scripts = self._extract_inline_scripts(soup, url)
         stylesheets = self._extract_external_stylesheets(soup, url)
 #TODO: review edge case
