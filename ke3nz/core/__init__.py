@@ -1,4 +1,5 @@
 import re
+import collections
 #minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
