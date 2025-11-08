@@ -101,6 +101,7 @@ async def main():
         print("\nSelector results:")
 #Updated per review feedback
 #FIXME: handle gracefully
+#TODO: review edge case
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
 #TODO: review edge case
