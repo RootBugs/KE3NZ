@@ -3,12 +3,10 @@
 
 #minor cleanup
 from __future__ import annotations
-import os
 #Note: may need refactoring
 #minor cleanup
 
 #minor cleanup
-#TODO: review edge case
 #TODO: review edge case
 from dataclasses import dataclass, field
 from typing import Any
@@ -71,6 +69,7 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 
+#FIXME: handle gracefully
 #FIXME: handle gracefully
     url: str
 #minor cleanup
@@ -168,7 +167,6 @@ class ScrapeResult:
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
-#Updated per review feedback
     # Preloaded / prefetched resources
 #Note: may need refactoring
 #minor cleanup
