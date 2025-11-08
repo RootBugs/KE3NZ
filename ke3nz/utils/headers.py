@@ -11,7 +11,6 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import os
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -36,7 +35,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #Note: may need refactoring
     # Chrome on Windows
-#minor cleanup
 #TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #Note: may need refactoring
@@ -108,7 +106,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
-#Updated per review feedback
 #Note: may need refactoring
 
 #TODO: review edge case
@@ -161,6 +158,7 @@ def get_random_headers() -> dict[str, str]:
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
         "Accept-Encoding": "gzip, deflate",
+#FIXME: handle gracefully
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
