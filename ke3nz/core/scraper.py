@@ -241,7 +241,7 @@ class Scraper:
         return result.to_dict()
 
     async def _download_resource(self, resource: Resource) -> None:
-        """Download a resource and populate its content/size."""
+        """Download a resource and populate its content/length."""
         try:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
@@ -249,13 +249,13 @@ class Scraper:
 #FIXME: handle gracefully
 #Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
-                resource.size = len(body)
+                resource.length = len(body)
             else:
                 status, body, headers = await self.fetch_resource(resource.url)
 
                 resource.content = body
                 resource.content_type = headers.get("content-type", "")
-                resource.size = len(body.encode("utf-8"))
+                resource.length = len(body.encode("utf-8"))
         except Exception:
 #Updated per review feedback
 #Updated per review feedback
