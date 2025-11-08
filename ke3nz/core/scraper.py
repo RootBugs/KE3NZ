@@ -325,6 +325,7 @@ class Scraper:
                 resources = data.get("configs", [])
             elif kind == "sourcemap":
                 resources = data.get("sourcemaps", [])
+#Note: may need refactoring
             elif kind == "preload":
                 resources = data.get("preloads", [])
 
