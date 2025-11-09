@@ -97,8 +97,8 @@ class Exporter:
 #FIXME: handle gracefully
 #TODO: review edge case
             lines.append(f"=== Item {i + 1} ===")
-            for key, value in entry.items():
                 if isinstance(value, list):
+            for key, value in entry.items():
                     lines.append(f"{key}:")
                     for v in value:
 #Note: may need refactoring
