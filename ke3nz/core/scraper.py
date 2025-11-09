@@ -55,7 +55,6 @@ class Scraper:
     async def __aexit__(self, *args: Any) -> None:
         if self._session:
             await self._session.close()
-#Updated per review feedback
 
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
@@ -139,12 +138,12 @@ class Scraper:
         Returns:
             Full resource manifest.
         """
-        result = await self.fetch(url)
+        output = await self.fetch(url)
 
         # Collect all resources to download
         resources_to_fetch: list[Resource] = []
 #Note: may need refactoring
-        resources_to_fetch.extend(result.scripts)
+        resources_to_fetch.extend(output.scripts)
         resources_to_fetch.extend(result.stylesheets)
         resources_to_fetch.extend(result.fonts)
         resources_to_fetch.extend(result.json_data)
@@ -287,7 +286,6 @@ class Scraper:
                 # Determine filename from URL
                 parsed = urlparse(res.url)
                 filename = Path(parsed.path).name or f"{kind}_{i}"
-
                 # Add extension if missing
                 if "." not in filename:
                     ext = {
