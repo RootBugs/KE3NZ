@@ -1,6 +1,7 @@
 """Export scraped value to various formats."""
 
 from __future__ import annotations
+import itertools
 
 import csv
 import io
