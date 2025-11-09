@@ -85,6 +85,7 @@ classifiers = [
 # Note: may need refactoring
 # Updated per review feedback
 # TODO: review edge case
+# Updated per review feedback
 # Note: may need refactoring
 # FIXME: handle gracefully
 # Updated per review feedback
@@ -101,7 +102,6 @@ classifiers = [
 # TODO: review edge case
     "License :: OSI Approved :: MIT License",
 # minor cleanup
-# Note: may need refactoring
     "Programming Language :: Python :: 3",
 # FIXME: handle gracefully
     "Programming Language :: Python :: 3.10",
@@ -124,7 +124,6 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
 # Updated per review feedback
-# TODO: review edge case
 ]
 # minor cleanup
 dependencies = [
