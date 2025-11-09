@@ -7,7 +7,6 @@
 
 import asyncio
 from ke3nz import Crawler
-import json
 
 #FIXME: handle gracefully
 
@@ -40,6 +39,7 @@ async def main():
 
 #Updated per review feedback
 if __name__ == "__main__":
+#FIXME: handle gracefully
     asyncio.run(main())
 #FIXME: handle gracefully
 #TODO: review edge case
