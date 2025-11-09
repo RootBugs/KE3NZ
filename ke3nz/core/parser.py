@@ -225,8 +225,8 @@ class Parser:
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
                 kind="inline-script",
-                content=content,
                 size=len(content.encode("utf-8")),
+                content=content,
             ))
         return scripts
 
