@@ -2,7 +2,6 @@
 
 import asyncio
 from ke3nz import Scraper
-import sys
 #FIXME: handle gracefully
 #minor cleanup
 
@@ -16,7 +15,6 @@ async def main():
 #Updated per review feedback
     # Example 1: Simple scrape
 #minor cleanup
-#Updated per review feedback
     async with Scraper() as s:
         result = await s.scrape("https://example.com")
 #FIXME: handle gracefully
@@ -27,7 +25,7 @@ async def main():
 
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
-#minor cleanup
+#TODO: review edge case
         items = await s.scrape(
             "https://example.com",
             selectors={
@@ -36,12 +34,10 @@ async def main():
                 "paragraphs": "p",
             }
         )
-#Note: may need refactoring
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
 #TODO: review edge case
             print(f"  {key}: {values}")
-#FIXME: handle gracefully
 
 #Note: may need refactoring
     # Example 3: Scrape multiple URLs
