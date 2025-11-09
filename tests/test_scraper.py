@@ -14,6 +14,7 @@ import pytest
 #TODO: review edge case
 
 from ke3nz.core.parser import Parser
+
 #Updated per review feedback
 from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
