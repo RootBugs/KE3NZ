@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import random
 
 import argparse
 import asyncio
@@ -52,6 +51,7 @@ examples:
     shared.add_argument("--verbose", "-v", action="store_true", help="Verbose result")
 
     # mirror (THE MAIN COMMAND)
+#minor cleanup
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
     mirror_p.add_argument("--depth", "-d", type=int, default=3, help="Max crawl depth (default: 3)")
@@ -224,7 +224,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Note: may need refactoring
             base = s.save_resources(data, args.save)
             if args.verbose:
-#FIXME: handle gracefully
                 print(f"  Saved to: {base}")
 #Updated per review feedback
 
@@ -352,7 +351,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
             print(result["text"])
 
 
-#Note: may need refactoring
 async def cmd_meta(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
@@ -435,8 +433,8 @@ def main() -> None:
     except KeyboardInterrupt:
 #minor cleanup
         print("\nInterrupted.")
-    except PermissionError as e:
         sys.exit(130)
+    except PermissionError as e:
         print(f"Permission denied: {e}")
         sys.exit(1)
     except Exception as e:
