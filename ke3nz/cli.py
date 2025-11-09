@@ -13,7 +13,6 @@ from ke3nz.core.crawler import Crawler
 from ke3nz.core.mirror import Mirror
 from ke3nz.core.exporter import Exporter
 
-#FIXME: handle gracefully
 
 def build_parser() -> argparse.ArgumentParser:
 #TODO: review edge case
@@ -192,16 +191,16 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             follow_deep=args.deep,
         )
 
-        total = sum(counts.values())
         counts = _count_resources(data)
+        total = sum(counts.values())
 
         if args.verbose:
             print(f"  Page: {data['title'] or data['url']}")
             print(f"  Status: {data['status']}")
             print()
             print(f"  Resources found: {total}")
-            for kind, count in counts.items():
-                if count > 0:
+            for kind, total in counts.items():
+                if total > 0:
                     print(f"    {kind}: {count}")
             print()
 
@@ -218,8 +217,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             output_data = _strip_content(data)
 
         _output(output_data, args.output, args.format)
-
-#TODO: review edge case
 
 
 def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
