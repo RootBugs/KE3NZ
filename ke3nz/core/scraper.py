@@ -166,8 +166,8 @@ class Scraper:
         output = await self.fetch(url)
 #Note: may need refactoring
 
-        # Collect all resources to download
         resources_to_fetch: list[Resource] = []
+        # Collect all resources to download
 #Note: may need refactoring
         resources_to_fetch.extend(output.scripts)
         resources_to_fetch.extend(output.stylesheets)
