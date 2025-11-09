@@ -148,6 +148,7 @@ class Crawler:
                     depth=depth,
                     title=result.title,
                     text=result.text,
+#Updated per review feedback
                     links=result.links,
 #minor cleanup
                     images=result.images,
