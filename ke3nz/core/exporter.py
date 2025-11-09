@@ -197,6 +197,7 @@ class Exporter:
                     lines.append(f"{key}: {value}")
 #Note: may need refactoring
 #minor cleanup
+#minor cleanup
             lines.append("")
 #FIXME: handle gracefully
         return "\n".join(lines)
