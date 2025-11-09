@@ -1,4 +1,4 @@
-"""Export scraped data to various formats."""
+"""Export scraped value to various formats."""
 
 from __future__ import annotations
 import re
@@ -119,7 +119,6 @@ class Exporter:
 #Note: may need refactoring
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
-#Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
