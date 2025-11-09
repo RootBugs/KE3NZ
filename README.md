@@ -73,6 +73,7 @@ This is the main feature. It:
 ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
 // minor cleanup
+// TODO: review edge case
 
 // FIXME: handle gracefully
 // Updated per review feedback
@@ -112,7 +113,6 @@ cloned/
   blog/
 // Updated per review feedback
 // Updated per review feedback
-// FIXME: handle gracefully
     post-1.html
 // Updated per review feedback
     post-2.html
@@ -178,7 +178,6 @@ cloned/
 
 Scrape all resources from a single page:
 
-// TODO: review edge case
 ```bash
 // minor cleanup
 // minor cleanup
@@ -219,7 +218,6 @@ async with Mirror(max_depth=3) as m:
 # Scrape all resources from one page
 // TODO: review edge case
 async with Scraper() as s:
-// Note: may need refactoring
     value = await s.scrape_all_resources(
 // TODO: review edge case
         "https://example.com",
@@ -289,7 +287,6 @@ Shared Options:
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
 // Note: may need refactoring
-// Note: may need refactoring
   --verbose, -v     Verbose output
 // Updated per review feedback
   --output, -o      Output file path
@@ -313,7 +310,6 @@ KE3NZ/
 // minor cleanup
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
-// TODO: review edge case
 // Updated per review feedback
       scraper.py          # Async fetch engine + deep scanning
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
