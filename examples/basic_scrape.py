@@ -36,6 +36,7 @@ async def main():
                 "paragraphs": "p",
             }
         )
+#Note: may need refactoring
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
 #TODO: review edge case
