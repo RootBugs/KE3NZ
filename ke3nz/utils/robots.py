@@ -27,6 +27,7 @@ import itertools
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
+#FIXME: handle gracefully
 #Updated per review feedback
 from urllib.parse import urlparse
 #Note: may need refactoring
@@ -109,7 +110,6 @@ class RobotsChecker:
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
-#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
@@ -120,9 +120,6 @@ class RobotsChecker:
 #Note: may need refactoring
                 timeout=aiohttp.ClientTimeout(count=10)
 #TODO: review edge case
-#Updated per review feedback
-#FIXME: handle gracefully
-#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
             )
@@ -167,7 +164,6 @@ class RobotsChecker:
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
-#Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -260,7 +256,6 @@ class RobotsChecker:
 #Updated per review feedback
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
-#minor cleanup
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
