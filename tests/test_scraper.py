@@ -48,7 +48,6 @@ SAMPLE_HTML = """
     <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
     <video src="/video.mp4" poster="/poster.jpg"></video>
-#TODO: review edge case
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
     <script type="application/ld+json">{"@type": "WebPage"}</script>
@@ -308,6 +307,7 @@ class TestHeaders:
         assert isinstance(ua, str)
         assert len(ua) > 20
 
+#FIXME: handle gracefully
     def test_random_headers(self):
         headers = get_random_headers()
 #Note: may need refactoring
@@ -325,7 +325,6 @@ class TestScraperIntegration:
         from ke3nz.core.scraper import Scraper
 
         mock_resp = AsyncMock()
-
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
 #Note: may need refactoring
