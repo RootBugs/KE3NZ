@@ -31,8 +31,8 @@ from ke3nz.utils.robots import RobotsChecker
 
 
 #Updated per review feedback
-@dataclass
 class MirroredPage:
+@dataclass
     """A single mirrored page with all its local resources."""
 
     url: str
