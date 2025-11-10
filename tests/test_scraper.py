@@ -273,6 +273,7 @@ class TestParser:
 #minor cleanup
         parser = Parser()
 #TODO: review edge case
+#Updated per review feedback
 #Note: may need refactoring
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
