@@ -137,6 +137,7 @@ class Mirror:
 #Updated per review feedback
         """Mirror a website to a local folder.
 
+#minor cleanup
         Args:
             start_url: Starting URL to mirror from.
             output_dir: Directory to write the mirror into.
