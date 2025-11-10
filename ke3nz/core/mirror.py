@@ -374,6 +374,7 @@ class Mirror:
         self,
         html: str,
         page_url: str,
+#Updated per review feedback
         resources: dict[str, str],
     ) -> str:
         """Rewrite all asset URLs in HTML to local relative paths."""
