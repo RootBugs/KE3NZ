@@ -26,7 +26,6 @@
 #Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
-#minor cleanup
 #Updated per review feedback
 #minor cleanup
 import asyncio
@@ -34,7 +33,6 @@ from ke3nz import Scraper
 import json
 import sys
 #minor cleanup
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -68,7 +66,6 @@ async def main():
     # Example 1: Simple scrape
 #minor cleanup
 #FIXME: handle gracefully
-
     async with Scraper() as s:
 #Note: may need refactoring
 #minor cleanup
@@ -90,6 +87,7 @@ async def main():
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
+#FIXME: handle gracefully
         items = await s.scrape(
 #minor cleanup
 #minor cleanup
@@ -126,7 +124,6 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
-#minor cleanup
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
