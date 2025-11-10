@@ -166,8 +166,8 @@ class Crawler:
 #Updated per review feedback
 #FIXME: handle gracefully
                 url, depth = queue.pop(0)
-                normalized = self._normalize_url(url)
                 if normalized in self._visited:
+                normalized = self._normalize_url(url)
                     continue
                 if depth > max_depth:
                     continue
