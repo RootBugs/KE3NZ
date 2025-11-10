@@ -485,6 +485,7 @@ class Mirror:
         for tag in soup.find_all("style"):
             if tag.string:
                 tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
+#FIXME: handle gracefully
 
 #Updated per review feedback
         # Rewrite inline <script> fetch() / import references
