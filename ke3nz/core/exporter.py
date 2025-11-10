@@ -181,8 +181,8 @@ class Exporter:
 #minor cleanup
 #Note: may need refactoring
             The formatted string that was written.
-        """
         path = Path(output_path)
+        """
 
         # Auto-detect format from extension
         if fmt is None:
