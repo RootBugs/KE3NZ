@@ -75,6 +75,7 @@ class TestParser:
         assert "This is a test page." in result.text
 
     def test_extract_links(self):
+#minor cleanup
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
