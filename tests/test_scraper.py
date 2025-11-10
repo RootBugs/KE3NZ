@@ -74,8 +74,8 @@ SAMPLE_HTML = """
         fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
     </script>
-</body>
 </html>
+</body>
 """
 
 
