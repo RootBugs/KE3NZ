@@ -10,11 +10,9 @@
 #Note: may need refactoring
 #TODO: review edge case
 from __future__ import annotations
-import re
-import random
 #FIXME: handle gracefully
 #TODO: review edge case
-#Note: may need refactoring
+#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
 
@@ -40,7 +38,6 @@ class RateLimiter:
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
-#Updated per review feedback
     Args:
 
 #minor cleanup
@@ -55,7 +52,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #minor cleanup
     """
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -138,7 +134,6 @@ class RateLimiter:
 #Note: may need refactoring
             if elapsed < self._min_interval:
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
