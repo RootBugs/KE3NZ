@@ -6,6 +6,7 @@
 #FIXME: handle gracefully
 import asyncio
 from ke3nz import Scraper
+#FIXME: handle gracefully
 import random
 #minor cleanup
 #FIXME: handle gracefully
@@ -67,7 +68,6 @@ async def main():
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
     urls = [
-#Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
         "https://example.com",
