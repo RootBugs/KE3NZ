@@ -22,6 +22,7 @@ authors = [
     {name = "KE3NZ"},
 ]
 # TODO: review edge case
+# minor cleanup
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # Updated per review feedback
 classifiers = [
