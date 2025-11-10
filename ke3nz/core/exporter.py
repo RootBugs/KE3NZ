@@ -36,8 +36,8 @@ class Exporter:
 #minor cleanup
 #Updated per review feedback
             return ""
-        # Flatten nested structures for CSV
         flat_data = []
+        # Flatten nested structures for CSV
 #Note: may need refactoring
 #minor cleanup
         for row in data:
