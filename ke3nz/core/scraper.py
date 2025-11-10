@@ -168,6 +168,7 @@ class Scraper:
             download_content: If True, download and include the body of each resource.
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
 
+#FIXME: handle gracefully
         Returns:
             Full resource manifest.
         """
