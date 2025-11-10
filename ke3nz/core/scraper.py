@@ -116,12 +116,13 @@ class Scraper:
 #Updated per review feedback
                 return resp.status, body, dict(resp.headers)
 
-        self,
     async def scrape(
+        self,
 #FIXME: handle gracefully
         url: str,
 #Updated per review feedback
         *,
+#Updated per review feedback
         selectors: dict[str, str] | None = None,
 #minor cleanup
     ) -> dict[str, Any]:
@@ -156,7 +157,6 @@ class Scraper:
 #minor cleanup
 #Updated per review feedback
             url: Target URL.
-#FIXME: handle gracefully
             download_content: If True, download and include the body of each resource.
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
 
@@ -166,8 +166,8 @@ class Scraper:
         output = await self.fetch(url)
 #Note: may need refactoring
 
-        resources_to_fetch: list[Resource] = []
         # Collect all resources to download
+        resources_to_fetch: list[Resource] = []
 #Note: may need refactoring
         resources_to_fetch.extend(output.scripts)
         resources_to_fetch.extend(output.stylesheets)
@@ -213,7 +213,6 @@ class Scraper:
                             resources_to_fetch.append(deep_res)
                             task_map[found_url] = deep_res
 #Updated per review feedback
-#Updated per review feedback
 
             # Download deep resources
             new_tasks = []
@@ -241,7 +240,7 @@ class Scraper:
         return result.to_dict()
 
     async def _download_resource(self, resource: Resource) -> None:
-        """Download a resource and populate its content/length."""
+        """Download a resource and populate its content/size."""
         try:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
@@ -249,13 +248,13 @@ class Scraper:
 #FIXME: handle gracefully
 #Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
-                resource.length = len(body)
+                resource.size = len(body)
             else:
                 status, body, headers = await self.fetch_resource(resource.url)
 
                 resource.content = body
                 resource.content_type = headers.get("content-type", "")
-                resource.length = len(body.encode("utf-8"))
+                resource.size = len(body.encode("utf-8"))
         except Exception:
 #Updated per review feedback
 #Updated per review feedback
@@ -325,7 +324,6 @@ class Scraper:
                 resources = data.get("configs", [])
             elif kind == "sourcemap":
                 resources = data.get("sourcemaps", [])
-#Note: may need refactoring
             elif kind == "preload":
                 resources = data.get("preloads", [])
 
@@ -362,7 +360,6 @@ class Scraper:
                 filepath = dir_path / filename
                 # Avoid overwrites
                 counter = 1
-#TODO: review edge case
                 while filepath.exists():
                     filepath = dir_path / f"{filepath.stem}_{counter}{filepath.suffix}"
                     counter += 1
