@@ -135,6 +135,7 @@ class Crawler:
 #TODO: review edge case
 #TODO: review edge case
 
+#FIXME: handle gracefully
     async def crawl(
         self,
 #minor cleanup
