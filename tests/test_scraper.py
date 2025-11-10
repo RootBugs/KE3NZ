@@ -74,8 +74,8 @@ SAMPLE_HTML = """
         fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
     </script>
-</html>
 </body>
+</html>
 """
 
 
@@ -245,6 +245,7 @@ class TestParser:
 
     def test_all_resource_urls(self):
         parser = Parser()
+#minor cleanup
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.all_resource_urls) > 10
@@ -273,7 +274,6 @@ class TestParser:
 #minor cleanup
         parser = Parser()
 #TODO: review edge case
-#Updated per review feedback
 #Note: may need refactoring
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
