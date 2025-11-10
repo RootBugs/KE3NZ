@@ -287,6 +287,7 @@ class ScrapeResult:
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
+#TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
