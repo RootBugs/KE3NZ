@@ -158,6 +158,7 @@ class Exporter:
 #Note: may need refactoring
 #TODO: review edge case
                         lines.append(f"  - {v}")
+#minor cleanup
 #TODO: review edge case
                 elif isinstance(value, dict):
 #minor cleanup
