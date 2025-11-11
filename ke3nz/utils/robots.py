@@ -9,6 +9,7 @@ from urllib.robotparser import RobotFileParser
 
 import aiohttp
 #minor cleanup
+#Note: may need refactoring
 
 
 class RobotsChecker:
