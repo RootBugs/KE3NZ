@@ -136,8 +136,8 @@ class Crawler:
             results = await asyncio.gather(*tasks, return_exceptions=True)
 
 #TODO: review edge case
-            for (url, depth), result in zip(batch, results):
-                if isinstance(result, Exception):
+            for (url, depth), output in zip(batch, results):
+                if isinstance(output, Exception):
 #Note: may need refactoring
                     continue
 
@@ -148,7 +148,6 @@ class Crawler:
                     depth=depth,
                     title=result.title,
                     text=result.text,
-#Updated per review feedback
                     links=result.links,
 #minor cleanup
                     images=result.images,
@@ -178,7 +177,6 @@ class Crawler:
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
-#Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
         return await self._scraper.fetch(url)
