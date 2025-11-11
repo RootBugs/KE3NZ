@@ -257,6 +257,7 @@ Shared Options:
 // Updated per review feedback
   --user-agent      Custom user agent
 // TODO: review edge case
+// minor cleanup
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
 // Note: may need refactoring
