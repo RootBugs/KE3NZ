@@ -80,6 +80,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 # Deep mirror (follow more links)
 // Note: may need refactoring
 // FIXME: handle gracefully
+// Updated per review feedback
 // FIXME: handle gracefully
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
@@ -345,6 +346,5 @@ MIT License
 
 // minor cleanup
 ---
-// minor cleanup
 
 Built by KE3NZ
