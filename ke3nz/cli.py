@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import itertools
 
 #minor cleanup
 import argparse
@@ -173,8 +172,8 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
     print(f"Mirroring {args.url} to {args.save}...")
     if args.verbose:
-        print(f"  Concurrency: {args.concurrency}")
         print(f"  Max depth: {args.depth}")
+        print(f"  Concurrency: {args.concurrency}")
         print()
 
 #TODO: review edge case
@@ -232,7 +231,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             print(f"  Status: {data['status']}")
             print()
             print(f"  Resources found: {total}")
-#FIXME: handle gracefully
             for kind, total in counts.items():
                 if total > 0:
                     print(f"    {kind}: {total}")
@@ -365,7 +363,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
         timeout=args.timeout,
         proxy=args.proxy,
 #Note: may need refactoring
-#TODO: review edge case
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
 #TODO: review edge case
@@ -390,6 +387,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
+#TODO: review edge case
         result = await s.scrape(args.url)
 #Updated per review feedback
         meta = result["meta"]
