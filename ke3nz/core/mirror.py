@@ -342,7 +342,6 @@ class Mirror:
             try:
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                     if resp.status != 200:
-#Note: may need refactoring
                         return None
                     body = await resp.read()
                     content_type = resp.headers.get("content-type", "")
@@ -369,7 +368,6 @@ class Mirror:
             # Simple: just return the local path as-is (relative to mirror root)
             # The page itself is at its local_path, assets are at their local_path
             # Both are relative to the mirror root
-#minor cleanup
             return local_path
 #FIXME: handle gracefully
 
@@ -649,6 +647,7 @@ class Mirror:
             "image/webp": ".webp",
             "image/avif": ".avif",
             "image/x-icon": ".ico",
+#Note: may need refactoring
             "font/woff2": ".woff2",
             "font/woff": ".woff",
             "font/ttf": ".ttf",
