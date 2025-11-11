@@ -39,6 +39,7 @@
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
+#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
@@ -70,7 +71,6 @@
 #Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
-
 #minor cleanup
 #Note: may need refactoring
 #minor cleanup
