@@ -84,7 +84,6 @@ class Crawler:
     """Recursive async website crawler."""
 
 #Updated per review feedback
-#FIXME: handle gracefully
 #minor cleanup
     def __init__(
         self,
@@ -135,7 +134,6 @@ class Crawler:
 #TODO: review edge case
 #TODO: review edge case
 
-#FIXME: handle gracefully
     async def crawl(
         self,
 #minor cleanup
@@ -199,6 +197,7 @@ class Crawler:
 #Updated per review feedback
                 if normalized in self._visited:
                     continue
+#FIXME: handle gracefully
                 if depth > max_depth:
                     continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
