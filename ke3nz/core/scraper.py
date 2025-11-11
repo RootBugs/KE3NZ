@@ -37,6 +37,7 @@ class Scraper:
         timeout: int = 30,
         proxy: str | None = None,
         respect_robots: bool = True,
+
         user_agent: str | None = None,
     ):
         self.delay = delay
