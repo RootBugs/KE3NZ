@@ -108,6 +108,7 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
     async def _fetch_robots(self, url: str) -> RobotFileParser:
+#minor cleanup
 #Updated per review feedback
         parsed = urlparse(url)
 
@@ -135,7 +136,6 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 
