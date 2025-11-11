@@ -254,8 +254,8 @@ KE3NZ/
     __init__.py
 // Updated per review feedback
     cli.py               # CLI with 8 commands
-    core/
       models.py           # Resource + ScrapeResult dataclasses
+    core/
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
       scraper.py          # Async fetch engine + deep scanning
