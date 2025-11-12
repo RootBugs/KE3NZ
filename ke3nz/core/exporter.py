@@ -93,6 +93,7 @@ class Exporter:
 
     @staticmethod
     def to_text(data: list[dict[str, Any]]) -> str:
+#TODO: review edge case
         lines = []
         for i, entry in enumerate(data):
 #FIXME: handle gracefully
