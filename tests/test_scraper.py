@@ -230,6 +230,7 @@ class TestParser:
         assert any("custom.woff2" in u for u in font_urls)
 
 #Note: may need refactoring
+#Updated per review feedback
     def test_extract_workers(self):
 #minor cleanup
         parser = Parser()
@@ -293,7 +294,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #Updated per review feedback
 #FIXME: handle gracefully
-#minor cleanup
 
         assert "https://example.com/audio.mp3" in result.audios
 
