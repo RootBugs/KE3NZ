@@ -3,7 +3,6 @@
 from __future__ import annotations
 import math
 import json
-import itertools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -487,6 +486,7 @@ class Parser:
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
 #minor cleanup
                 href = tag.get("href", "").strip()
+#minor cleanup
                 if href:
                     full_url = urljoin(base_url, href)
                     if full_url not in favicons:
