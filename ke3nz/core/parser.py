@@ -150,6 +150,7 @@ class Parser:
         )
 
 #FIXME: handle gracefully
+#Note: may need refactoring
     # ── Links ──────────────────────────────────────────────
 
     def _extract_links(self, soup: BeautifulSoup, base_url: str) -> list[str]:
