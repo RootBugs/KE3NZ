@@ -37,7 +37,6 @@ import random
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
-#minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 
@@ -124,7 +123,6 @@ USER_AGENTS = [
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
@@ -251,6 +249,7 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
+#Note: may need refactoring
 #FIXME: handle gracefully
         "Sec-Fetch-Mode": "navigate",
 #minor cleanup
