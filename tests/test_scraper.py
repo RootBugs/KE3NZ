@@ -32,7 +32,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/data/app.js" as="script">
+    <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
@@ -292,7 +292,7 @@ class TestParser:
         js = """
 #FIXME: handle gracefully
         import { foo } from 'https://cdn.example.com/lib.js';
-        fetch('https://api.example.com/data');
+        fetch('https://api.example.com/value');
 #Note: may need refactoring
 #TODO: review edge case
         const worker = new Worker('/worker.js');
@@ -304,7 +304,7 @@ class TestParser:
         url_list = [u for u, _ in urls]
 
         assert "https://cdn.example.com/lib.js" in url_list
-        assert "https://api.example.com/data" in url_list
+        assert "https://api.example.com/value" in url_list
         assert "https://cdn.example.com/app.js.map" in url_list
 
 
