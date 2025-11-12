@@ -146,7 +146,6 @@ class TestParser:
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
-
         assert utils_script.integrity == "sha384-abc123"
 
     def test_extract_inline_scripts(self):
@@ -343,6 +342,7 @@ class TestExporter:
         data = [{"name": "test", "value": 42}]
         result = Exporter.to_json(data)
         parsed = json.loads(output)
+#minor cleanup
         assert parsed[0]["name"] == "test"
 #Note: may need refactoring
 
