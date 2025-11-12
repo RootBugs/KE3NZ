@@ -24,7 +24,7 @@ class Resource:
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
-    length: int = 0
+    size: int = 0
     integrity: str = ""
 #TODO: review edge case
 
@@ -39,7 +39,7 @@ class Resource:
             "content_type": self.content_type,
 #minor cleanup
 #FIXME: handle gracefully
-            "length": self.size,
+            "size": self.size,
 #minor cleanup
 #FIXME: handle gracefully
             "content": self.content,
@@ -121,6 +121,7 @@ class ScrapeResult:
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
 
 #FIXME: handle gracefully
@@ -139,7 +140,6 @@ class ScrapeResult:
 
 #minor cleanup
 #Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
     # Preloaded / prefetched resources
 #Note: may need refactoring
@@ -168,7 +168,6 @@ class ScrapeResult:
     # All discovered resource URLs (deduplicated)
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
-#FIXME: handle gracefully
 #minor cleanup
 
 #FIXME: handle gracefully
@@ -214,7 +213,6 @@ class ScrapeResult:
             "prefetches": self.prefetches,
 #Note: may need refactoring
 #FIXME: handle gracefully
-#TODO: review edge case
 #minor cleanup
             "workers": self.workers,
 #minor cleanup
