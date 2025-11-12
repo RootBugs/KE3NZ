@@ -232,6 +232,7 @@ Resource Options:
 Shared Options:
   --delay           Delay between requests (default: 0.3s)
   --concurrency, -c Max concurrent requests (default: 10)
+// Updated per review feedback
   --proxy           HTTP proxy URL
   --no-robots       Ignore robots.txt
 // Updated per review feedback
