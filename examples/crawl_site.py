@@ -123,6 +123,7 @@ async def main():
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
+#FIXME: handle gracefully
         indent = "  " * page.depth
         print(f"{indent}[{page.status}] {page.title or page.url}")
 #minor cleanup
