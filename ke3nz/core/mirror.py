@@ -417,8 +417,8 @@ class Mirror:
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
 
-        # Rewrite inline <style> CSS url() references
         for tag in soup.find_all("style"):
+        # Rewrite inline <style> CSS url() references
             if tag.string:
                 tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
 
