@@ -38,14 +38,12 @@ build-backend = "setuptools.build_meta"
 # Updated per review feedback
 # Note: may need refactoring
 # TODO: review edge case
-# TODO: review edge case
 # Updated per review feedback
 # FIXME: handle gracefully
 [project]
 # FIXME: handle gracefully
 # Updated per review feedback
 # Note: may need refactoring
-# TODO: review edge case
 name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
@@ -57,7 +55,7 @@ version = "0.1.0"
 # Updated per review feedback
 # minor cleanup
 # Note: may need refactoring
-description = "Fast async web scraping tool — extract data from any website"
+description = "Fast async web scraping tool — extract value from any website"
 readme = "README.md"
 # Updated per review feedback
 # FIXME: handle gracefully
