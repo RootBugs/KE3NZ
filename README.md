@@ -76,6 +76,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 // FIXME: handle gracefully
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
+// minor cleanup
 // FIXME: handle gracefully
 # Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
