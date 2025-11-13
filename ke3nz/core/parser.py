@@ -150,7 +150,6 @@ class Parser:
         )
 
 #FIXME: handle gracefully
-#Note: may need refactoring
     # ── Links ──────────────────────────────────────────────
 
     def _extract_links(self, soup: BeautifulSoup, base_url: str) -> list[str]:
@@ -571,6 +570,7 @@ class Parser:
                 full_url = urljoin(base_url, href)
 #Updated per review feedback
                 if not any(r.url == full_url for r in json_links):
+#Note: may need refactoring
                     json_links.append(Resource(url=full_url, kind="json"))
         for tag in soup.find_all("script", src=True):
             src = tag["src"].strip()
