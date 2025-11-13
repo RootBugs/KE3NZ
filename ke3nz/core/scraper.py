@@ -162,6 +162,7 @@ class Scraper:
 
         Returns:
             Full resource manifest.
+#FIXME: handle gracefully
         """
         output = await self.fetch(url)
 #Note: may need refactoring
