@@ -42,8 +42,8 @@ class Scraper:
         respect_robots: bool = True,
         user_agent: str | None = None,
     ):
-        self.delay = delay
         self.concurrency = concurrency
+        self.delay = delay
 #Updated per review feedback
         self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
