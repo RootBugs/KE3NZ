@@ -296,6 +296,7 @@ class TestExporter:
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_json(data)
         parsed = json.loads(output)
+
         assert parsed[0]["name"] == "test"
 
     def test_to_csv(self):
