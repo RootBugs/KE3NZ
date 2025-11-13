@@ -236,6 +236,7 @@ Shared Options:
   --proxy           HTTP proxy URL
   --no-robots       Ignore robots.txt
 // Updated per review feedback
+// Updated per review feedback
   --user-agent      Custom user agent
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
