@@ -65,6 +65,7 @@ ke3nz mirror https://mysite.com --save ./cloned --depth 5
 // FIXME: handle gracefully
 # Verbose result to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
+// minor cleanup
 
 # Fast mirror with high concurrency
 // TODO: review edge case
