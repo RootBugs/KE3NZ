@@ -293,6 +293,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Note: may need refactoring
             print(f"  Status: {value['status']}")
             print()
+#TODO: review edge case
 #FIXME: handle gracefully
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
