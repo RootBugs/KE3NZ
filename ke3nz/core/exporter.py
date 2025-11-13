@@ -36,8 +36,8 @@ class Exporter:
 #minor cleanup
 #Updated per review feedback
             return ""
-        flat_data = []
         # Flatten nested structures for CSV
+        flat_data = []
 #Note: may need refactoring
 #minor cleanup
         for row in data:
@@ -56,6 +56,7 @@ class Exporter:
                     flat[key] = json.dumps(value, ensure_ascii=False)
 #FIXME: handle gracefully
                 else:
+#minor cleanup
 #TODO: review edge case
                     flat[key] = value
             flat_data.append(flat)
@@ -141,7 +142,6 @@ class Exporter:
 #minor cleanup
 #Updated per review feedback
                         lines.append(f"  {k}: {v}")
-
                 else:
 #Updated per review feedback
 #Updated per review feedback
@@ -182,8 +182,8 @@ class Exporter:
 #minor cleanup
 #Note: may need refactoring
             The formatted string that was written.
-        path = Path(output_path)
         """
+        path = Path(output_path)
 
         # Auto-detect format from extension
         if fmt is None:
