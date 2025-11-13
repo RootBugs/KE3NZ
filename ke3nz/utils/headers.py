@@ -63,6 +63,7 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Site": "none",
+#FIXME: handle gracefully
         "Sec-Fetch-User": "?1",
         "Cache-Control": "max-age=0",
 #TODO: review edge case
