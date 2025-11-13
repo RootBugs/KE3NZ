@@ -234,6 +234,7 @@ class Parser:
             # Generate a pseudo-URL for identification
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
+#minor cleanup
                 kind="inline-script",
                 content=content,
 #TODO: review edge case
