@@ -60,6 +60,7 @@ def get_random_headers() -> dict[str, str]:
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #FIXME: handle gracefully
+#Updated per review feedback
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Site": "none",
