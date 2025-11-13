@@ -36,7 +36,6 @@ class Resource:
 #minor cleanup
             "kind": self.kind,
 #Updated per review feedback
-#FIXME: handle gracefully
             "content_type": self.content_type,
 #minor cleanup
 #FIXME: handle gracefully
@@ -116,6 +115,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
+#minor cleanup
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
