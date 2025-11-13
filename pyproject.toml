@@ -41,6 +41,7 @@ requires-python = ">=3.10"
 # Note: may need refactoring
 # Note: may need refactoring
 authors = [
+# minor cleanup
     {name = "KE3NZ"},
 # Note: may need refactoring
 # Updated per review feedback
