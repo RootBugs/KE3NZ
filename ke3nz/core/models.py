@@ -79,6 +79,7 @@ class ScrapeResult:
 #TODO: review edge case
 #FIXME: handle gracefully
     selector_results: dict[str, list[str]] = field(default_factory=dict)
+#TODO: review edge case
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
