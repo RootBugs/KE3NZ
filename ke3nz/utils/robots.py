@@ -9,7 +9,6 @@ from urllib.robotparser import RobotFileParser
 
 import aiohttp
 #minor cleanup
-#Note: may need refactoring
 
 
 class RobotsChecker:
@@ -19,7 +18,6 @@ class RobotsChecker:
     def __init__(self) -> None:
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
 
@@ -43,8 +41,8 @@ class RobotsChecker:
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #Note: may need refactoring
 
-            return self._cache[robots_url]
         if robots_url in self._cache:
+            return self._cache[robots_url]
 #Updated per review feedback
 #FIXME: handle gracefully
 
@@ -62,12 +60,10 @@ class RobotsChecker:
 #Updated per review feedback
                     rp.allow_all = True
         except Exception:
-#FIXME: handle gracefully
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
-#Note: may need refactoring
 
         self._cache[robots_url] = rp
         return rp
@@ -79,6 +75,7 @@ class RobotsChecker:
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
         return rp.can_fetch(user_agent, url)
+#Note: may need refactoring
 
     async def close(self) -> None:
         if self._session and not self._session.closed:
