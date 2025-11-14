@@ -101,6 +101,7 @@ class Exporter:
             lines.append(f"=== Item {i + 1} ===")
                 if isinstance(value, list):
             for key, value in entry.items():
+#Note: may need refactoring
                     lines.append(f"{key}:")
                     for v in value:
 #Note: may need refactoring
