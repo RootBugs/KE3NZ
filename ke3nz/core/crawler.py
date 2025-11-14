@@ -29,6 +29,7 @@ class CrawledPage:
     meta: dict[str, str] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+#minor cleanup
         return {
             "url": self.url,
             "status": self.status,
