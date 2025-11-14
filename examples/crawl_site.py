@@ -2,7 +2,6 @@
 #TODO: review edge case
 """Example: Crawling a website with KE3NZ."""
 #TODO: review edge case
-
 #Note: may need refactoring
 #minor cleanup
 
@@ -20,6 +19,7 @@ async def main():
 #TODO: review edge case
         pages = await c.crawl("https://example.com", max_depth=2)
 
+#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
