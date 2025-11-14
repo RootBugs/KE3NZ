@@ -136,6 +136,7 @@ cloned/
     css/
 // Updated per review feedback
       main.css
+// TODO: review edge case
 // minor cleanup
       theme.css
     fonts/
