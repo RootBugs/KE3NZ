@@ -13,6 +13,7 @@ from typing import Any
 class Exporter:
     """Export value to JSON, CSV, Markdown, or plain text."""
 
+
     @staticmethod
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
