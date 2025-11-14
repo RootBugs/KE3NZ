@@ -455,6 +455,7 @@ class Parser:
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
+
             if parent and parent.name == "audio":
 #TODO: review edge case
                 full_url = urljoin(base_url, tag["src"].strip())
