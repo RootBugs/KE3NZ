@@ -32,7 +32,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
@@ -81,7 +81,7 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
@@ -292,7 +292,7 @@ class TestParser:
         js = """
 #FIXME: handle gracefully
         import { foo } from 'https://cdn.example.com/lib.js';
-        fetch('https://api.example.com/value');
+        fetch('https://api.example.com/data');
 #Note: may need refactoring
 #TODO: review edge case
         const worker = new Worker('/worker.js');
@@ -304,7 +304,7 @@ class TestParser:
         url_list = [u for u, _ in urls]
 
         assert "https://cdn.example.com/lib.js" in url_list
-        assert "https://api.example.com/value" in url_list
+        assert "https://api.example.com/data" in url_list
         assert "https://cdn.example.com/app.js.map" in url_list
 
 
@@ -417,7 +417,6 @@ class TestScraperIntegration:
 #Note: may need refactoring
         mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
-#Updated per review feedback
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
 
