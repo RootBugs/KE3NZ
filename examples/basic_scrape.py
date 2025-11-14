@@ -48,6 +48,7 @@ async def main():
 #Note: may need refactoring
         "https://example.org",
     ]
+#Note: may need refactoring
 #minor cleanup
     async with Scraper() as s:
         results = await s.fetch_many(urls)
