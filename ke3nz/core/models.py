@@ -77,6 +77,7 @@ class ScrapeResult:
     audios: list[str] = field(default_factory=list)
 
     # Preloaded / prefetched resources
+#Updated per review feedback
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
