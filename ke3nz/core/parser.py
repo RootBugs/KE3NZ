@@ -415,6 +415,7 @@ class Parser:
 
     # ── Workers ────────────────────────────────────────────
 
+#TODO: review edge case
     def _extract_workers(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #Note: may need refactoring
         workers = []
