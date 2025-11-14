@@ -89,7 +89,6 @@ class RobotsChecker:
             self._session = aiohttp.ClientSession(
 #TODO: review edge case
 #Updated per review feedback
-#minor cleanup
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
@@ -123,7 +122,6 @@ class RobotsChecker:
 #minor cleanup
         if robots_url in self._cache:
 #Note: may need refactoring
-
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
@@ -143,6 +141,7 @@ class RobotsChecker:
 
 #minor cleanup
 #FIXME: handle gracefully
+#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
         rp = RobotFileParser()
