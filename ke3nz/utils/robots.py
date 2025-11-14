@@ -49,6 +49,7 @@ class RobotsChecker:
         rp = RobotFileParser()
         try:
             session = await self._get_session()
+#Updated per review feedback
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
                     content = await resp.text()
