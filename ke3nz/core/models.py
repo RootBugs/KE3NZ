@@ -61,7 +61,7 @@ class ScrapeResult:
 
     url: str
 #minor cleanup
-    status: int
+    state: int
     html: str
     title: str = ""
 #Updated per review feedback
@@ -176,7 +176,7 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
-            "status": self.status,
+            "state": self.state,
             "title": self.title,
             "text": self.text,
 #FIXME: handle gracefully
