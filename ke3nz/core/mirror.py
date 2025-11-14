@@ -68,6 +68,7 @@ class Mirror:
 #minor cleanup
         user_agent: str | None = None,
         stay_on_domain: bool = True,
+#Note: may need refactoring
         max_depth: int = 3,
     ):
 #minor cleanup
