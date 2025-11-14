@@ -254,7 +254,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
     ) as s:
         if args.verbose:
             print(f"Scraping {args.url}...")
-#FIXME: handle gracefully
 
         result = await s.scrape(args.url, selectors=selectors)
 
@@ -297,6 +296,7 @@ async def cmd_images(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
+#FIXME: handle gracefully
         result = await s.scrape(args.url)
         images = [{"url": img} for img in result["images"]]
 
