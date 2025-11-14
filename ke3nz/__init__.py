@@ -5,11 +5,9 @@
 
 #Note: may need refactoring
 #FIXME: handle gracefully
-#minor cleanup
 #Note: may need refactoring
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
-import itertools
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
@@ -22,9 +20,7 @@ __version__ = "0.1.0"
 __author__ = "KE3NZ"
 #minor cleanup
 
-#FIXME: handle gracefully
 __all__ = [
-#FIXME: handle gracefully
 #TODO: review edge case
     "Scraper",
     "ScrapeResult",
@@ -42,5 +38,6 @@ __all__ = [
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
+#FIXME: handle gracefully
 #minor cleanup
 ]
