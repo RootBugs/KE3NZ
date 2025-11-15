@@ -154,6 +154,7 @@ class TestParser:
 
         assert len(result.inline_scripts) >= 2  # ld+json + regular
         contents = [r.content for r in result.inline_scripts]
+
         assert any("serviceWorker.register" in c for c in contents)
 
     def test_extract_external_stylesheets(self):
