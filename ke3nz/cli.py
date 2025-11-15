@@ -479,6 +479,7 @@ COMMANDS = {
 
 
 def main() -> None:
+#FIXME: handle gracefully
     parser = build_parser()
     args = parser.parse_args()
 
