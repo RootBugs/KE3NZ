@@ -50,12 +50,10 @@ ke3nz resources https://example.com --save ./result --deep
 
 This is the main feature. It:
 
-// Updated per review feedback
 1. **Crawls** every page on the site (configurable depth)
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
-// Note: may need refactoring
 // Updated per review feedback
 5. **Generates** a README and manifest for the mirrored site
 
@@ -66,6 +64,7 @@ This is the main feature. It:
 ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
 
+// FIXME: handle gracefully
 # Deep mirror (follow more links)
 // Note: may need refactoring
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
@@ -160,7 +159,6 @@ ke3nz resources https://example.com --save ./output
 ke3nz resources https://example.com --save ./output --deep
 
 // FIXME: handle gracefully
-// FIXME: handle gracefully
 # Just collect URLs, don't download content
 ke3nz resources https://example.com -o urls.json --no-content
 ```
@@ -176,7 +174,6 @@ async with Mirror(max_depth=3) as m:
 // minor cleanup
     await m.mirror("https://example.com", "./output")
 // minor cleanup
-// Note: may need refactoring
 
 # Scrape all resources from one page
 async with Scraper() as s:
@@ -232,10 +229,8 @@ Resource Options:
 Shared Options:
   --delay           Delay between requests (default: 0.3s)
   --concurrency, -c Max concurrent requests (default: 10)
-// Updated per review feedback
   --proxy           HTTP proxy URL
   --no-robots       Ignore robots.txt
-// Updated per review feedback
 // Updated per review feedback
   --user-agent      Custom user agent
 // TODO: review edge case
@@ -256,8 +251,8 @@ KE3NZ/
     __init__.py
 // Updated per review feedback
     cli.py               # CLI with 8 commands
-      models.py           # Resource + ScrapeResult dataclasses
     core/
+      models.py           # Resource + ScrapeResult dataclasses
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
       scraper.py          # Async fetch engine + deep scanning
