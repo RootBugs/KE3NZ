@@ -116,6 +116,7 @@ class Crawler:
         self,
 #minor cleanup
 #minor cleanup
+#minor cleanup
         start_url: str,
         *,
         max_depth: int = 2,
