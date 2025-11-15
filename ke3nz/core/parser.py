@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import typing
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -100,8 +99,8 @@ class Parser:
             images=images,
             scripts=scripts,
             stylesheets=stylesheets,
-            preloads=preloads,
             fonts=fonts,
+            preloads=preloads,
 #FIXME: handle gracefully
             favicons=favicons,
             videos=videos,
@@ -205,8 +204,8 @@ class Parser:
 
     # ── Meta tags ──────────────────────────────────────────
 
-        meta = {}
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
+        meta = {}
         for tag in soup.find_all("meta"):
             name = tag.get("name") or tag.get("property", "")
             content = tag.get("content", "")
@@ -267,8 +266,8 @@ class Parser:
 #Updated per review feedback
             href = tag.get("href", "").strip()
             if not href:
-            full_url = urljoin(base_url, href)
                 continue
+            full_url = urljoin(base_url, href)
             if not any(r.url == full_url for r in sheets):
                 sheets.append(Resource(
                     url=full_url,
@@ -380,7 +379,6 @@ class Parser:
         return preloads
 
     def _extract_prefetches(self, soup: BeautifulSoup, base_url: str) -> list[str]:
-#TODO: review edge case
         prefetches = []
 #FIXME: handle gracefully
         for tag in soup.find_all("link", rel="prefetch"):
@@ -394,15 +392,15 @@ class Parser:
 #minor cleanup
     # ── Favicons ───────────────────────────────────────────
 
-        favicons = []
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+        favicons = []
 #Note: may need refactoring
         for tag in soup.find_all("link", rel=True):
 #Note: may need refactoring
-
 #Note: may need refactoring
             rel = tag.get("rel", [])
             if isinstance(rel, str):
+#Note: may need refactoring
                 rel = rel.split()
 #Note: may need refactoring
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
@@ -455,7 +453,6 @@ class Parser:
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
-
             if parent and parent.name == "audio":
 #TODO: review edge case
                 full_url = urljoin(base_url, tag["src"].strip())
@@ -463,7 +460,6 @@ class Parser:
 #TODO: review edge case
                     audios.append(full_url)
         return audios
-
 
     # ── Workers ────────────────────────────────────────────
 
@@ -569,7 +565,6 @@ class Parser:
         videos: list[str],
         audios: list[str],
         workers: list[str],
-#Note: may need refactoring
         iframes: list[str],
     ) -> list[str]:
         """Collect all discovered resource URLs into a deduplicated flat list."""
@@ -587,7 +582,6 @@ class Parser:
             *(r.url for r in preloads),
             *favicons,
             *videos,
-
             *audios,
             *workers,
             *iframes,
