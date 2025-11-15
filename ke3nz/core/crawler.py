@@ -112,6 +112,7 @@ class Crawler:
 #FIXME: handle gracefully
         concurrency: int = 5,
         timeout: int = 30,
+#minor cleanup
 #Note: may need refactoring
         proxy: str | None = None,
         respect_robots: bool = True,
