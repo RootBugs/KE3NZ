@@ -177,6 +177,7 @@ class Scraper:
                             deep_res = Resource(url=found_url, kind=kind)
                             resources_to_fetch.append(deep_res)
                             task_map[found_url] = deep_res
+#Updated per review feedback
 
             # Download deep resources
             new_tasks = []
@@ -207,7 +208,6 @@ class Scraper:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
-#FIXME: handle gracefully
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body)
             else:
