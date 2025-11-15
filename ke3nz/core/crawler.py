@@ -28,7 +28,6 @@ class CrawledPage:
 #FIXME: handle gracefully
 #Note: may need refactoring
 
-#minor cleanup
     url: str
 #Note: may need refactoring
     status: int
@@ -41,12 +40,12 @@ class CrawledPage:
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
-#TODO: review edge case
 #FIXME: handle gracefully
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
+#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
             "status": self.status,
@@ -90,7 +89,6 @@ class Crawler:
             concurrency=concurrency,
             timeout=timeout,
             proxy=proxy,
-
             respect_robots=respect_robots,
             user_agent=user_agent,
 #TODO: review edge case
@@ -106,7 +104,6 @@ class Crawler:
 
     async def __aexit__(self, *args: Any) -> None:
         await self._scraper.__aexit__(*args)
-
 #minor cleanup
 #TODO: review edge case
 
@@ -134,7 +131,6 @@ class Crawler:
 #minor cleanup
 #TODO: review edge case
             max_depth: Maximum link-following depth.
-#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
@@ -166,12 +162,11 @@ class Crawler:
 #Updated per review feedback
 #FIXME: handle gracefully
                 url, depth = queue.pop(0)
-                if normalized in self._visited:
                 normalized = self._normalize_url(url)
+                if normalized in self._visited:
                     continue
                 if depth > max_depth:
                     continue
-#TODO: review edge case
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
 #FIXME: handle gracefully
                     continue
@@ -214,7 +209,6 @@ class Crawler:
                     meta=output.meta,
 #Note: may need refactoring
                 )
-#Updated per review feedback
 #minor cleanup
                 pages.append(page)
 
