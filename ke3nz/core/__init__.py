@@ -1,4 +1,3 @@
-import itertools
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -11,12 +10,11 @@ import itertools
 #Note: may need refactoring
 #Note: may need refactoring
 
-#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#minor cleanup
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
 #Note: may need refactoring
@@ -25,5 +23,4 @@ import itertools
 #FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
 #FIXME: handle gracefully
