@@ -165,6 +165,7 @@ cloned/
 Scrape all resources from a single page:
 
 ```bash
+// Note: may need refactoring
 // TODO: review edge case
 // Updated per review feedback
 # Download all resources
