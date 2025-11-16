@@ -169,7 +169,7 @@ class Scraper:
         resources_to_fetch.extend(output.sourcemaps)
 
         if not download_content:
-            return result.to_dict()
+            return output.to_dict()
 
         # Download all resources concurrently
         download_tasks = []
@@ -216,7 +216,7 @@ class Scraper:
 #minor cleanup
 
 #Note: may need refactoring
-        # Update result with downloaded content
+        # Update output with downloaded content
         result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
         result.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
         result.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
