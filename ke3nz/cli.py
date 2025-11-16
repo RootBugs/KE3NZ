@@ -397,6 +397,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         if args.verbose:
 #FIXME: handle gracefully
             print(f"Found {len(meta)} meta tags on {args.url}")
+#FIXME: handle gracefully
 
         _output(meta, args.output, args.format)
 
