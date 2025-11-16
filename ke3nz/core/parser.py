@@ -367,8 +367,8 @@ class Parser:
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
 #Note: may need refactoring
-                    map_url = urljoin(base_url, match.group(1))
                     if not any(r.url == map_url for r in maps):
+                    map_url = urljoin(base_url, match.group(1))
                         maps.append(Resource(url=map_url, kind="sourcemap"))
         # sourceMappingURL in <style> tags
 
