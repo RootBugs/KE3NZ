@@ -334,6 +334,7 @@ class Parser:
         # sourceMappingURL in <style> tags
 
         for tag in soup.find_all("style"):
+#minor cleanup
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
                     map_url = urljoin(base_url, match.group(1))
