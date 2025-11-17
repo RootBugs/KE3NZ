@@ -52,7 +52,6 @@ class CrawledPage:
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
-#TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
@@ -75,6 +74,7 @@ class CrawledPage:
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
+#minor cleanup
 #TODO: review edge case
             "status": self.status,
             "depth": self.depth,
@@ -128,8 +128,8 @@ class Crawler:
         user_agent: str | None = None,
 #Updated per review feedback
         stay_on_domain: bool = True,
-        self._scraper = Scraper(
     ):
+        self._scraper = Scraper(
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -229,7 +229,6 @@ class Crawler:
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
-#FIXME: handle gracefully
         queue: list[tuple[str, int]] = [(start_url, 0)]
 #FIXME: handle gracefully
 
@@ -308,7 +307,6 @@ class Crawler:
 #Updated per review feedback
                     title=output.title,
 #TODO: review edge case
-#minor cleanup
 #TODO: review edge case
                     text=output.text,
                     links=output.links,
