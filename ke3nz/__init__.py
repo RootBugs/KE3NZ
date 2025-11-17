@@ -1,6 +1,5 @@
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
 """KE3NZ - Fast async web scraping tool."""
 #TODO: review edge case
 
@@ -37,6 +36,7 @@ __all__ = [
     "Exporter",
 #Updated per review feedback
 #Updated per review feedback
+#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
