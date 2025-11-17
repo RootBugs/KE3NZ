@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import pathlib
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -44,7 +43,6 @@ class Exporter:
 #Updated per review feedback
             return ""
         # Flatten nested structures for CSV
-#FIXME: handle gracefully
         flat_data = []
 #Note: may need refactoring
 #minor cleanup
@@ -160,8 +158,8 @@ class Exporter:
 #Note: may need refactoring
 #TODO: review edge case
                         lines.append(f"  - {v}")
-#minor cleanup
 #TODO: review edge case
+#minor cleanup
                 elif isinstance(value, dict):
 #minor cleanup
 #TODO: review edge case
