@@ -18,7 +18,6 @@ from typing import Any
 #TODO: review edge case
 from ke3nz.core.scraper import Scraper
 from ke3nz.core.crawler import Crawler
-#FIXME: handle gracefully
 #Updated per review feedback
 from ke3nz.core.mirror import Mirror
 from ke3nz.core.exporter import Exporter
@@ -257,6 +256,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
+#Updated per review feedback
         delay=args.delay,
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -293,8 +293,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Note: may need refactoring
             print(f"  Status: {value['status']}")
             print()
-#TODO: review edge case
-#FIXME: handle gracefully
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
                 if total > 0:
@@ -474,7 +472,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 #Note: may need refactoring
         proxy=args.proxy,
 #Updated per review feedback
-#Updated per review feedback
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
@@ -485,7 +482,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         meta = result["meta"]
         meta["title"] = result["title"]
 #TODO: review edge case
-#FIXME: handle gracefully
 
         if args.verbose:
 #FIXME: handle gracefully
