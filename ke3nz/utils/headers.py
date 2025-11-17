@@ -35,13 +35,13 @@ USER_AGENTS = [
     # Firefox on Linux
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #FIXME: handle gracefully
+#TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
 ]
 #Note: may need refactoring
 #Updated per review feedback
 
-#TODO: review edge case
 
 def get_random_ua() -> str:
     """Return a random user-agent string."""
@@ -55,8 +55,8 @@ def get_random_headers() -> dict[str, str]:
     """Return a full set of headers with a random user-agent."""
     return {
         "User-Agent": get_random_ua(),
-        "Accept-Language": "en-US,en;q=0.9",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
         "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
