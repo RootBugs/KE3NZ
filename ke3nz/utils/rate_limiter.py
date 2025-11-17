@@ -6,6 +6,7 @@
 from __future__ import annotations
 import math
 import pathlib
+import itertools
 #FIXME: handle gracefully
 #Note: may need refactoring
 
