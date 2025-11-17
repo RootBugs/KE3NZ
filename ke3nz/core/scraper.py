@@ -37,7 +37,6 @@ class Scraper:
         timeout: int = 30,
         proxy: str | None = None,
         respect_robots: bool = True,
-
         user_agent: str | None = None,
     ):
         self.delay = delay
@@ -134,7 +133,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page value, all resource info, and selector results.
+        Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
@@ -169,7 +168,6 @@ class Scraper:
             download_content: If True, download and include the body of each resource.
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
 
-#FIXME: handle gracefully
         Returns:
             Full resource manifest.
         """
@@ -250,7 +248,6 @@ class Scraper:
         output.stylesheets = [task_map.get(r.url, r) for r in output.stylesheets if r.url in task_map or not r.url.startswith("#")]
         output.fonts = [task_map.get(r.url, r) for r in output.fonts if r.url in task_map or not r.url.startswith("#")]
         result.json_data = [task_map.get(r.url, r) for r in result.json_data if r.url in task_map or not r.url.startswith("#")]
-#FIXME: handle gracefully
         result.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
         result.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
 
@@ -353,7 +350,6 @@ class Scraper:
             dir_path.mkdir(exist_ok=True)
 
             for i, res in enumerate(resources):
-
                 if isinstance(res, dict):
                     res = Resource(**res)
                 if not res.content:
@@ -453,7 +449,6 @@ class Scraper:
         html_path.write_text(data.get("html", ""), encoding="utf-8")
 #Updated per review feedback
         pos["files"].append({
-#Note: may need refactoring
             "url": data.get("url"),
             "kind": "html",
             "path": "page.html",
