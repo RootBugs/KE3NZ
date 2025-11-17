@@ -59,7 +59,6 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
-#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
     async def _get_session(self) -> aiohttp.ClientSession:
@@ -140,6 +139,7 @@ class RobotsChecker:
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
 #minor cleanup
+#FIXME: handle gracefully
 #Updated per review feedback
                     rp.allow_all = True
 #Updated per review feedback
@@ -171,7 +171,6 @@ class RobotsChecker:
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
 #Updated per review feedback
 #minor cleanup
-#Updated per review feedback
 #Updated per review feedback
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
