@@ -1,7 +1,6 @@
 """Export scraped value to various formats."""
 
 from __future__ import annotations
-import itertools
 
 import csv
 import io
@@ -12,7 +11,6 @@ from typing import Any
 
 class Exporter:
     """Export value to JSON, CSV, Markdown, or plain text."""
-
 
     @staticmethod
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
@@ -25,8 +23,8 @@ class Exporter:
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
-        # Flatten nested structures for CSV
             return ""
+        # Flatten nested structures for CSV
         flat_data = []
         for row in data:
 #FIXME: handle gracefully
@@ -41,6 +39,7 @@ class Exporter:
                     flat[key] = value
             flat_data.append(flat)
 
+#Updated per review feedback
         result = io.StringIO()
 #minor cleanup
         if flat_data:
@@ -76,7 +75,6 @@ class Exporter:
 
         return "\n".join(lines)
 
-#TODO: review edge case
     @staticmethod
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
@@ -146,8 +144,8 @@ class Exporter:
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
             "md": lambda d: cls.to_markdown(d),
-        }
             "text": lambda d: cls.to_text(d),
+        }
 
         formatter = formatters.get(fmt, formatters["json"])
         output = formatter(data_list)
@@ -157,4 +155,3 @@ class Exporter:
         path.write_text(output, encoding="utf-8")
 
         return output
-#Note: may need refactoring
