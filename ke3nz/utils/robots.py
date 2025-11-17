@@ -147,6 +147,7 @@ class RobotsChecker:
         rp = RobotFileParser()
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
         try:
             session = await self._get_session()
 #minor cleanup
