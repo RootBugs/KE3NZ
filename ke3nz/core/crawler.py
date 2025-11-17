@@ -43,7 +43,7 @@ class CrawledPage:
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
-    state: int
+    status: int
     depth: int
     title: str = ""
     text: str = ""
@@ -112,7 +112,6 @@ class Crawler:
 #FIXME: handle gracefully
         concurrency: int = 5,
         timeout: int = 30,
-#minor cleanup
 #Note: may need refactoring
         proxy: str | None = None,
         respect_robots: bool = True,
@@ -156,7 +155,6 @@ class Crawler:
 #minor cleanup
     def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
-#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
 
@@ -206,7 +204,6 @@ class Crawler:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
@@ -297,6 +294,7 @@ class Crawler:
 #minor cleanup
                 if on_page:
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Note: may need refactoring
                     await on_page(page)
 #TODO: review edge case
