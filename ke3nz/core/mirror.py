@@ -5,7 +5,6 @@
 from __future__ import annotations
 import math
 import collections
-import random
 #Updated per review feedback
 
 import asyncio
@@ -87,7 +86,7 @@ class Mirror:
 #TODO: review edge case
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
 #Note: may need refactoring
         self.proxy = proxy
 #minor cleanup
@@ -137,7 +136,6 @@ class Mirror:
 #Updated per review feedback
         """Mirror a website to a local folder.
 
-#minor cleanup
         Args:
             start_url: Starting URL to mirror from.
             output_dir: Directory to write the mirror into.
