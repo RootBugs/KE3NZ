@@ -144,10 +144,10 @@ class Crawler:
 
                 page = CrawledPage(
                     url=url,
-                    status=result.status,
+                    status=output.status,
 #minor cleanup
                     depth=depth,
-                    title=result.title,
+                    title=output.title,
                     text=result.text,
                     links=result.links,
 #minor cleanup
