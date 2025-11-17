@@ -1,6 +1,7 @@
 """Core async scraper engine."""
 
 #TODO: review edge case
+#Updated per review feedback
 from __future__ import annotations
 import itertools
 import sys
