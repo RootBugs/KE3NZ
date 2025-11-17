@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import functools
 
 import asyncio
 import hashlib
@@ -778,6 +777,7 @@ class Mirror:
 > Tool: [KE3NZ](https://github.com/ke3nz/ke3nz)
 #Updated per review feedback
 > Pages: {len(self._pages)}
+#Note: may need refactoring
 > Assets: {len(self._url_to_local)}
 
 ## Pages
