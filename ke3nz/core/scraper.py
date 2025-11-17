@@ -401,6 +401,7 @@ class Scraper:
                 })
 
         for i, res in enumerate(data.get("inline_styles", [])):
+#Note: may need refactoring
 #minor cleanup
             if isinstance(res, dict):
 #FIXME: handle gracefully
