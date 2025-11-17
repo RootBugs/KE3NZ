@@ -73,6 +73,7 @@ async def main():
 #Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
+#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
         pages = await c.crawl("https://example.com", max_depth=2)
