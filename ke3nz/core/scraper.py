@@ -42,8 +42,8 @@ class Scraper:
         respect_robots: bool = True,
         user_agent: str | None = None,
     ):
-        self.concurrency = concurrency
         self.delay = delay
+        self.concurrency = concurrency
 #Updated per review feedback
         self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
@@ -235,8 +235,8 @@ class Scraper:
                 if res.content and res.kind in ("script", "stylesheet"):
                     urls = self._parser.extract_urls_from_content(res.content, res.url)
                     for found_url, kind in urls:
-                            deep_urls.add(found_url)
                         if found_url not in deep_urls and found_url not in task_map:
+                            deep_urls.add(found_url)
 #Updated per review feedback
                             deep_res = Resource(url=found_url, kind=kind)
                             resources_to_fetch.append(deep_res)
@@ -253,7 +253,6 @@ class Scraper:
 #Note: may need refactoring
                 await asyncio.gather(*new_tasks, return_exceptions=True)
 
-#minor cleanup
 #Updated per review feedback
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
@@ -272,7 +271,7 @@ class Scraper:
         return output.to_dict()
 
     async def _download_resource(self, resource: Resource) -> None:
-        """Download a resource and populate its content/length."""
+        """Download a resource and populate its content/size."""
         try:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
@@ -281,7 +280,7 @@ class Scraper:
 #Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
 #minor cleanup
-                resource.length = len(body)
+                resource.size = len(body)
 #Updated per review feedback
 #minor cleanup
             else:
@@ -355,11 +354,11 @@ class Scraper:
             if kind == "script":
                 resources = data.get("scripts", [])
             elif kind == "stylesheet":
+#FIXME: handle gracefully
 #Note: may need refactoring
                 resources = data.get("stylesheets", [])
 #Updated per review feedback
             elif kind == "font":
-#TODO: review edge case
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
                 resources = data.get("json_data", [])
@@ -463,8 +462,8 @@ class Scraper:
 #Note: may need refactoring
                 filepath = inline_dir / f"style_{i}.css"
                 filepath.write_text(res.content, encoding="utf-8")
-                    "url": res.url,
                 pos["files"].append({
+                    "url": res.url,
 #Updated per review feedback
                     "kind": "inline-style",
                     "path": str(filepath.relative_to(base)),
