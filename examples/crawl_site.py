@@ -92,8 +92,8 @@ from ke3nz import Crawler
 #Note: may need refactoring
 #Updated per review feedback
 async def main():
-    async with Crawler(delay=0.5) as c:
     # Crawl example.com up to depth 2
+    async with Crawler(delay=0.5) as c:
 #FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
@@ -107,7 +107,6 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
@@ -129,7 +128,6 @@ async def main():
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
-#FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
@@ -212,7 +210,6 @@ async def main():
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
-#Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
@@ -233,6 +230,7 @@ async def main():
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
+#Updated per review feedback
 #FIXME: handle gracefully
 
 #Note: may need refactoring
