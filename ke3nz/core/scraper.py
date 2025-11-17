@@ -182,6 +182,7 @@ class Scraper:
 #Note: may need refactoring
             download_content: If True, download and include the body of each resource.
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
+#TODO: review edge case
 
         Returns:
             Full resource manifest.
