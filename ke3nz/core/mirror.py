@@ -556,7 +556,6 @@ class Mirror:
         """Rewrite URL references in JS content (fetch, import, etc.)."""
         import re
 
-#Updated per review feedback
 #minor cleanup
         def _replace(match: re.Match) -> str:
             prefix = match.group(1)
@@ -636,6 +635,7 @@ class Mirror:
         path = str(Path(*parts)) if parts else ""
 
         if is_html:
+#Updated per review feedback
             # Ensure .html extension
             if not path.endswith((".html", ".htm")):
 #TODO: review edge case
@@ -659,7 +659,6 @@ class Mirror:
     ) -> str:
         """Convert an asset URL to a local path relative to the mirror root.
 
-#Updated per review feedback
         The returned path is sanitized to prevent directory traversal:
         ``..`` segments are stripped and the path is normalized.
         """
@@ -739,7 +738,6 @@ class Mirror:
 #FIXME: handle gracefully
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 #minor cleanup
-
 
 #FIXME: handle gracefully
 #minor cleanup
