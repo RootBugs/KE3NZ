@@ -1,7 +1,6 @@
 """Shared data models for KE3NZ."""
 
 from __future__ import annotations
-import sys
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -71,13 +70,11 @@ class ScrapeResult:
 
 #TODO: review edge case
     # Media
-#Updated per review feedback
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
 
     # Preloaded / prefetched resources
-#Updated per review feedback
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -120,6 +117,7 @@ class ScrapeResult:
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
 #Note: may need refactoring
+#FIXME: handle gracefully
             "workers": self.workers,
 #minor cleanup
 #TODO: review edge case
