@@ -323,6 +323,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         result = await s.scrape(args.url, selectors=selectors)
 
 #Note: may need refactoring
+#TODO: review edge case
 #Note: may need refactoring
         if args.verbose:
             print(f"  Status: {result['status']}")
