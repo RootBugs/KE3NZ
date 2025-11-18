@@ -216,6 +216,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         max_depth=args.depth,
     ) as m:
 #FIXME: handle gracefully
+#Note: may need refactoring
         base = await m.mirror(args.url, args.save, on_page=on_page)
 
 #TODO: review edge case
