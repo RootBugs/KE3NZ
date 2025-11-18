@@ -170,7 +170,7 @@ class Parser:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
@@ -180,7 +180,7 @@ class Parser:
                         images.append(full_url)
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
                 parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
@@ -385,7 +385,6 @@ class Parser:
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
-#Updated per review feedback
                 if full_url not in prefetches:
                     prefetches.append(full_url)
         return prefetches
