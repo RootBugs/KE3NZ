@@ -435,6 +435,7 @@ class Parser:
                 full_url = urljoin(base_url, href)
                 if full_url not in prefetches:
                     prefetches.append(full_url)
+#minor cleanup
         return prefetches
 
 #minor cleanup
