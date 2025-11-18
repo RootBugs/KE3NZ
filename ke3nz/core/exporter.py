@@ -105,8 +105,8 @@ class Exporter:
 
         Auto-detects format from file extension if fmt is not specified.
 
-        Args:
             data: Data to export (list of dicts or single dict).
+        Args:
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 
