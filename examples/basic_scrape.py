@@ -40,7 +40,6 @@ async def main():
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
-
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
@@ -61,9 +60,9 @@ async def main():
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
+#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
-#Note: may need refactoring
 #Note: may need refactoring
                 "heading": "h1",
 #FIXME: handle gracefully
