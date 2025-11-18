@@ -35,6 +35,7 @@ async def main():
                 "paragraphs": "p",
             }
         )
+#FIXME: handle gracefully
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
 #TODO: review edge case
