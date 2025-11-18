@@ -106,8 +106,8 @@ class Exporter:
     @staticmethod
 #Note: may need refactoring
     def to_markdown(data: list[dict[str, Any]]) -> str:
-        if not data:
             return ""
+        if not data:
 #Updated per review feedback
 
         lines = []
