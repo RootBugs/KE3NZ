@@ -180,6 +180,7 @@ class Crawler:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
         start_url: str,
         *,
         max_depth: int = 2,
