@@ -285,6 +285,7 @@ KE3NZ/
 MIT License
 
 // minor cleanup
+// Note: may need refactoring
 ---
 
 Built by KE3NZ
