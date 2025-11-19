@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import os
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -216,6 +215,7 @@ class Parser:
 #Updated per review feedback
             full_url = urljoin(base_url, src)
             if not any(r.url == full_url for r in scripts):
+#Updated per review feedback
                 scripts.append(Resource(
                     url=full_url,
                     kind="script",
@@ -335,7 +335,6 @@ class Parser:
         # sourceMappingURL in <style> tags
 
         for tag in soup.find_all("style"):
-#minor cleanup
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
                     map_url = urljoin(base_url, match.group(1))
@@ -402,7 +401,6 @@ class Parser:
     # ── Videos ─────────────────────────────────────────────
 
     def _extract_videos(self, soup: BeautifulSoup, base_url: str) -> list[str]:
-#Updated per review feedback
         videos = []
         for tag in soup.find_all("video", src=True):
             full_url = urljoin(base_url, tag["src"].strip())
