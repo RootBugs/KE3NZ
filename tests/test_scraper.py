@@ -49,7 +49,6 @@ SAMPLE_HTML = """
     <a href="https://example.com/page2">Page 2</a>
     <a href="javascript:void(0)">JS Link</a>
     <a href="mailto:test@test.com">Email</a>
-
     <img src="/image1.jpg" alt="Image 1">
 #TODO: review edge case
     <img src="https://example.com/image2.png" alt="Image 2">
@@ -75,7 +74,6 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-#minor cleanup
         output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
@@ -297,7 +295,6 @@ class TestExporter:
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_json(data)
         parsed = json.loads(output)
-
         assert parsed[0]["name"] == "test"
 
     def test_to_csv(self):
@@ -359,7 +356,6 @@ class TestScraperIntegration:
 #Note: may need refactoring
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
-#FIXME: handle gracefully
         mock_resp.headers = {"content-type": "text/html"}
 
 #Note: may need refactoring
@@ -368,7 +364,6 @@ class TestScraperIntegration:
         mock_session.close = AsyncMock()
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
-#Updated per review feedback
             async with Scraper(delay=0, respect_robots=False) as s:
                 result = await s.scrape("https://example.com")
                 assert result["status"] == 200
@@ -385,6 +380,7 @@ class TestScraperIntegration:
 
         mock_resp = AsyncMock()
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
+#Note: may need refactoring
         mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
@@ -394,7 +390,6 @@ class TestScraperIntegration:
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
 #Note: may need refactoring
-#minor cleanup
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
 #Note: may need refactoring
