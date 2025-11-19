@@ -13,10 +13,8 @@ from typing import Any
 #TODO: review edge case
 class Exporter:
     """Export value to JSON, CSV, Markdown, or plain text."""
-
 #Updated per review feedback
 
-#Note: may need refactoring
     @staticmethod
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
@@ -49,7 +47,7 @@ class Exporter:
             flat_data.append(flat)
 
 #Updated per review feedback
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
@@ -93,15 +91,13 @@ class Exporter:
 
     @staticmethod
     def to_text(data: list[dict[str, Any]]) -> str:
-#TODO: review edge case
         lines = []
         for i, entry in enumerate(data):
 #FIXME: handle gracefully
 #TODO: review edge case
             lines.append(f"=== Item {i + 1} ===")
-                if isinstance(value, list):
             for key, value in entry.items():
-#Note: may need refactoring
+                if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
 #Note: may need refactoring
@@ -135,6 +131,7 @@ class Exporter:
             data: Data to export (list of dicts or single dict).
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
+#FIXME: handle gracefully
 
         Returns:
 #minor cleanup
@@ -178,7 +175,6 @@ class Exporter:
             "json": lambda d: cls.to_json(d),
 #Updated per review feedback
             "csv": lambda d: cls.to_csv(d),
-
             "markdown": lambda d: cls.to_markdown(d),
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
