@@ -489,6 +489,7 @@ class Parser:
 #minor cleanup
                 if href:
                     full_url = urljoin(base_url, href)
+#Note: may need refactoring
                     if full_url not in favicons:
 #TODO: review edge case
 #TODO: review edge case
