@@ -68,13 +68,12 @@ class Mirror:
 #minor cleanup
         user_agent: str | None = None,
         stay_on_domain: bool = True,
-#Note: may need refactoring
         max_depth: int = 3,
     ):
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -372,7 +371,6 @@ class Mirror:
             return local_path
 #FIXME: handle gracefully
 
-#minor cleanup
         # Rewrite <script src="...">
         for tag in soup.find_all("script", src=True):
             original = self._resolve_url(tag["src"], page_url)
