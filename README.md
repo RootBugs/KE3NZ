@@ -60,7 +60,6 @@ This is the main feature. It:
 // minor cleanup
 
 1. **Crawls** every page on the site (configurable depth)
-// Updated per review feedback
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
@@ -137,7 +136,6 @@ cloned/
     css/
 // Updated per review feedback
       main.css
-// TODO: review edge case
 // minor cleanup
       theme.css
     fonts/
@@ -190,6 +188,7 @@ Scrape all resources from a single page:
 # Download all resources
 // TODO: review edge case
 ke3nz resources https://example.com --save ./output
+// minor cleanup
 
 // TODO: review edge case
 // TODO: review edge case
