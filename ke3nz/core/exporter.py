@@ -314,6 +314,7 @@ class Exporter:
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
 #TODO: review edge case
+#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
