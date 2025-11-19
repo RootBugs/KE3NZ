@@ -173,7 +173,7 @@ class Crawler:
 #minor cleanup
 #minor cleanup
 #minor cleanup
-                    images=result.images,
+                    images=output.images,
                     meta=result.meta,
 #Note: may need refactoring
                 )
