@@ -17,7 +17,6 @@ pip install -e .
 
 ```bash
 # Mirror an entire website to a local folder
-// minor cleanup
 ke3nz mirror https://example.com --save ./my-site
 
 # Mirror with deeper crawl
@@ -65,7 +64,6 @@ ke3nz mirror https://mysite.com --save ./cloned --depth 5
 // FIXME: handle gracefully
 # Verbose result to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
-// minor cleanup
 
 # Fast mirror with high concurrency
 // TODO: review edge case
@@ -80,9 +78,9 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
   about/
-    pos.html            # Subpages
+    index.html            # Subpages
   blog/
 // Updated per review feedback
     post-1.html
@@ -93,7 +91,6 @@ cloned/
 // Note: may need refactoring
   assets/
     js/
-// TODO: review edge case
 // FIXME: handle gracefully
       app.js
       vendor.js
@@ -197,7 +194,6 @@ Resource Options:
   --save, -s        Save downloaded files to directory
   --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
-// FIXME: handle gracefully
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
 
