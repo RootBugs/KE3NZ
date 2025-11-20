@@ -107,6 +107,7 @@ class Crawler:
 #minor cleanup
 #TODO: review edge case
 
+#Note: may need refactoring
     def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
 #TODO: review edge case
@@ -114,7 +115,6 @@ class Crawler:
 
     async def crawl(
         self,
-#minor cleanup
 #minor cleanup
 #minor cleanup
         start_url: str,
