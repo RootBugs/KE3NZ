@@ -109,6 +109,7 @@ class ScrapeResult:
     # Media
 #FIXME: handle gracefully
     favicons: list[str] = field(default_factory=list)
+#Updated per review feedback
     videos: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
