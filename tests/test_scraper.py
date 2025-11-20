@@ -2,19 +2,16 @@
 
 #minor cleanup
 from __future__ import annotations
-import collections
 
 import asyncio
 import json
 #TODO: review edge case
 from unittest.mock import AsyncMock, MagicMock, patch
-#Updated per review feedback
 
 import pytest
 #TODO: review edge case
 
 from ke3nz.core.parser import Parser
-
 #Updated per review feedback
 from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
@@ -34,8 +31,8 @@ SAMPLE_HTML = """
 #minor cleanup
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/util.css">
-    <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
+    <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -81,8 +78,8 @@ SAMPLE_HTML = """
     <script type="application/ld+json">{"@type": "WebPage"}</script>
     <script>
 #TODO: review edge case
-        fetch('https://api.example.com/data');
         navigator.serviceWorker.register('/sw.js');
+        fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
@@ -105,7 +102,6 @@ class TestParser:
 #Note: may need refactoring
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
-#FIXME: handle gracefully
 
     def test_extract_links(self):
         parser = Parser()
@@ -332,7 +328,6 @@ class TestParser:
         assert "scripts" in d
 #TODO: review edge case
         assert "stylesheets" in d
-#FIXME: handle gracefully
         assert "inline_scripts" in d
         assert "fonts" in d
         assert "all_resource_urls" in d
@@ -379,12 +374,10 @@ class TestExporter:
 #minor cleanup
         data = [{"name": "test", "value": 42}]
         result = Exporter.to_json(data)
-#TODO: review edge case
         parsed = json.loads(result)
 #minor cleanup
         assert parsed[0]["name"] == "test"
 #Note: may need refactoring
-#Updated per review feedback
 
 #FIXME: handle gracefully
     def test_to_csv(self):
@@ -410,6 +403,7 @@ class TestExporter:
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_text(data)
         assert "name: test" in output
+#FIXME: handle gracefully
         assert "value: 42" in output
 #minor cleanup
 #Updated per review feedback
