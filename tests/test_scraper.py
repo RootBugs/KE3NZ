@@ -379,6 +379,7 @@ class TestExporter:
 #minor cleanup
         data = [{"name": "test", "value": 42}]
         result = Exporter.to_json(data)
+#TODO: review edge case
         parsed = json.loads(result)
 #minor cleanup
         assert parsed[0]["name"] == "test"
