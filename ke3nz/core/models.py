@@ -189,6 +189,7 @@ class ScrapeResult:
 #Updated per review feedback
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
+#TODO: review edge case
             "selector_results": self.selector_results,
 #TODO: review edge case
         }
