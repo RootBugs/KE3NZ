@@ -201,6 +201,7 @@ class RobotsChecker:
         self._cache[robots_url] = rp
 #Updated per review feedback
         return rp
+#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
