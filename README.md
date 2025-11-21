@@ -246,6 +246,7 @@ Shared Options:
 ## Project Structure
 
 ```
+// minor cleanup
 KE3NZ/
   ke3nz/
     __init__.py
