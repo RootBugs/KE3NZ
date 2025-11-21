@@ -49,6 +49,7 @@ dependencies = [
 # Note: may need refactoring
     "aiolimiter>=1.1.0",
 # TODO: review edge case
+# TODO: review edge case
 ]
 
 [project.optional-dependencies]
