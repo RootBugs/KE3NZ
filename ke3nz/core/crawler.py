@@ -64,6 +64,7 @@ class CrawledPage:
 #minor cleanup
 #FIXME: handle gracefully
 
+#Note: may need refactoring
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
