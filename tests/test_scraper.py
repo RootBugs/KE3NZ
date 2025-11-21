@@ -158,6 +158,7 @@ class TestParser:
         assert len(result.stylesheets) == 2
         urls = [r.url for r in result.stylesheets]
         assert "https://example.com/styles/main.css" in urls
+#FIXME: handle gracefully
         assert "https://example.com/styles/util.css" in urls
 
     def test_extract_inline_styles(self):
