@@ -8,6 +8,7 @@
 import asyncio
 from ke3nz import Crawler
 import random
+import os
 
 #FIXME: handle gracefully
 
