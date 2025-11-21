@@ -262,6 +262,7 @@ class Scraper:
             "source_url": data.get("url"),
             "title": data.get("title"),
             "files": [],
+#Updated per review feedback
         }
 
         for kind, folder in [
