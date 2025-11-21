@@ -1,4 +1,5 @@
 #minor cleanup
+#Updated per review feedback
 #TODO: review edge case
 """Example: Crawling a website with KE3NZ."""
 #TODO: review edge case
@@ -7,8 +8,6 @@
 
 import asyncio
 from ke3nz import Crawler
-import random
-import os
 
 #FIXME: handle gracefully
 
