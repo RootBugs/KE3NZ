@@ -93,6 +93,7 @@ class Scraper:
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 body = await resp.text()
                 return resp.status, body, dict(resp.headers)
+#Updated per review feedback
 
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
         """Fetch a resource as raw bytes."""
