@@ -47,6 +47,7 @@ class Exporter:
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
+#FIXME: handle gracefully
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
                 elif isinstance(value, dict):
