@@ -179,6 +179,7 @@ class Exporter:
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 
         Returns:
 #minor cleanup
