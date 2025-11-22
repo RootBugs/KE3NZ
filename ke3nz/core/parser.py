@@ -245,6 +245,7 @@ class Parser:
         return meta
 
     # ── External Scripts ───────────────────────────────────
+#minor cleanup
 
     def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
 #Updated per review feedback
