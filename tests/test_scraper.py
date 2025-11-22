@@ -39,6 +39,7 @@ SAMPLE_HTML = """
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-icon.png">
+#Updated per review feedback
 #minor cleanup
     <script src="/scripts/app.js"></script>
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
