@@ -160,6 +160,7 @@ async with Scraper() as s:
 ```
 ke3nz <command> [options] <url>
 
+
 Commands:
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
