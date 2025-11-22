@@ -42,6 +42,7 @@ async def main():
 #TODO: review edge case
             print(f"  {key}: {values}")
 
+
 #Note: may need refactoring
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
