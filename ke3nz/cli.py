@@ -11,7 +11,6 @@ import asyncio
 import json
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 import sys
 from typing import Any
 
@@ -460,6 +459,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
                 f.write(result["text"])
             print(f"Saved text to {args.output}")
         else:
+#TODO: review edge case
             print(result["text"])
 
 
