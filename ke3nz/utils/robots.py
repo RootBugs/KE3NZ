@@ -33,6 +33,7 @@ class RobotsChecker:
         self._session: aiohttp.ClientSession | None = None
 #Note: may need refactoring
 
+#Updated per review feedback
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
