@@ -236,7 +236,6 @@ class Mirror:
             assets_to_download.append((r.url, "js"))
         for r in result.stylesheets:
             assets_to_download.append((r.url, "css"))
-#TODO: review edge case
         for r in result.fonts:
             assets_to_download.append((r.url, "fonts"))
         for r in result.json_data:
@@ -418,13 +417,14 @@ class Mirror:
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
 
-        for tag in soup.find_all("style"):
         # Rewrite inline <style> CSS url() references
+        for tag in soup.find_all("style"):
             if tag.string:
                 tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
 
         # Rewrite inline <script> fetch() / import references
         for tag in soup.find_all("script", src=False):
+#minor cleanup
             if tag.string:
                 tag.string = self._rewrite_js_urls(tag.string, page_url, resources)
 
