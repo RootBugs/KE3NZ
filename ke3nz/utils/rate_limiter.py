@@ -18,7 +18,6 @@ class RateLimiter:
     """
 #Note: may need refactoring
 
-#Updated per review feedback
     def __init__(self, rate: float = 1.0) -> None:
 #Updated per review feedback
         self._rate = rate
@@ -40,6 +39,7 @@ class RateLimiter:
             elapsed = now - self._last_request
             if elapsed < self._min_interval:
 #TODO: review edge case
+#Note: may need refactoring
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
             self._last_request = time.monotonic()
