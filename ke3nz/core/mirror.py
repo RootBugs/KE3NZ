@@ -31,8 +31,8 @@ from ke3nz.utils.robots import RobotsChecker
 
 
 #Updated per review feedback
-class MirroredPage:
 @dataclass
+class MirroredPage:
     """A single mirrored page with all its local resources."""
 
     url: str
@@ -374,7 +374,6 @@ class Mirror:
         self,
         html: str,
         page_url: str,
-#Updated per review feedback
         resources: dict[str, str],
     ) -> str:
         """Rewrite all asset URLs in HTML to local relative paths."""
@@ -481,11 +480,11 @@ class Mirror:
                 tag["src"] = _rel(original, resources[original])
 #Note: may need refactoring
 
+#FIXME: handle gracefully
         # Rewrite inline <style> CSS url() references
         for tag in soup.find_all("style"):
             if tag.string:
                 tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
-#FIXME: handle gracefully
 
 #Updated per review feedback
         # Rewrite inline <script> fetch() / import references
