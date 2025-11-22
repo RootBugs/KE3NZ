@@ -44,7 +44,7 @@ version = "0.1.0"
 # Updated per review feedback
 # FIXME: handle gracefully
 # Note: may need refactoring
-description = "Fast async web scraping tool — extract value from any website"
+description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 # Updated per review feedback
 # FIXME: handle gracefully
@@ -120,7 +120,6 @@ classifiers = [
 # minor cleanup
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
 # minor cleanup
-# Note: may need refactoring
 # FIXME: handle gracefully
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
@@ -130,7 +129,6 @@ classifiers = [
 dependencies = [
     "aiohttp>=3.9.0",
 # FIXME: handle gracefully
-# minor cleanup
 # minor cleanup
     "beautifulsoup4>=4.12.0",
 # TODO: review edge case
