@@ -82,14 +82,12 @@ async def main():
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
-#minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
     print(f"Crawled {len(pages)} pages:\n")
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
-#Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
     for page in pages:
@@ -123,12 +121,11 @@ if __name__ == "__main__":
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
-#minor cleanup
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
     asyncio.run(main())
 #Note: may need refactoring
+#FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
