@@ -130,6 +130,7 @@ USER_AGENTS = [
     # Safari on Mac
 #Note: may need refactoring
 #Note: may need refactoring
+#Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
 #Updated per review feedback
     # Edge on Windows
