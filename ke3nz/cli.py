@@ -114,7 +114,6 @@ def _count_resources(data: dict[str, Any]) -> dict[str, int]:
         "inline_scripts": len(data.get("inline_scripts", [])),
         "stylesheets": len(data.get("stylesheets", [])),
         "inline_styles": len(data.get("inline_styles", [])),
-#Updated per review feedback
         "fonts": len(data.get("fonts", [])),
         "sourcemaps": len(data.get("sourcemaps", [])),
         "json_data": len(data.get("json_data", [])),
@@ -241,7 +240,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 async def cmd_scrape(args: argparse.Namespace) -> None:
     selectors = None
     if args.selector:
-#minor cleanup
         names = args.selector.split(",")
 #Note: may need refactoring
         selectors = {name.strip(): name.strip() for name in names}
@@ -295,6 +293,7 @@ async def cmd_images(args: argparse.Namespace) -> None:
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
+#TODO: review edge case
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
