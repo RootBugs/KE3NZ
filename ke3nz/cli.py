@@ -241,6 +241,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 async def cmd_scrape(args: argparse.Namespace) -> None:
     selectors = None
     if args.selector:
+#minor cleanup
         names = args.selector.split(",")
 #Note: may need refactoring
         selectors = {name.strip(): name.strip() for name in names}
