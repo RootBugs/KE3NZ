@@ -507,6 +507,7 @@ def main() -> None:
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)
+#Updated per review feedback
 
 
 if __name__ == "__main__":
