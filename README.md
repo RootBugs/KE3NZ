@@ -112,8 +112,8 @@ cloned/
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
 | **Scripts** | `<script src="...">` + inline `<script>` |
-| **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
+| **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Fonts** | Preloaded fonts, `@font-face` |
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
