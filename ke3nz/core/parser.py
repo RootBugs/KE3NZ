@@ -245,7 +245,6 @@ class Parser:
         return meta
 
     # ── External Scripts ───────────────────────────────────
-#minor cleanup
 
     def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
 #Updated per review feedback
@@ -285,6 +284,7 @@ class Parser:
             # Generate a pseudo-URL for identification
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
+#Note: may need refactoring
                 kind="inline-script",
                 content=content,
 #TODO: review edge case
@@ -343,7 +343,6 @@ class Parser:
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         fonts = []
         # <link rel="preload" as="font">
-#Note: may need refactoring
         for tag in soup.find_all("link", rel="preload"):
             if tag.get("as") == "font":
                 href = tag.get("href", "").strip()
@@ -437,7 +436,6 @@ class Parser:
                 full_url = urljoin(base_url, href)
                 if full_url not in prefetches:
                     prefetches.append(full_url)
-#minor cleanup
         return prefetches
 
 #minor cleanup
@@ -477,7 +475,6 @@ class Parser:
 
 #TODO: review edge case
     def _extract_videos(self, soup: BeautifulSoup, base_url: str) -> list[str]:
-#TODO: review edge case
         videos = []
         for tag in soup.find_all("video", src=True):
             full_url = urljoin(base_url, tag["src"].strip())
@@ -492,7 +489,6 @@ class Parser:
                 if full_url not in videos:
                     videos.append(full_url)
 #minor cleanup
-#FIXME: handle gracefully
         for tag in soup.find_all("video", poster=True):
             full_url = urljoin(base_url, tag["poster"].strip())
             if full_url not in videos:
@@ -563,7 +559,6 @@ class Parser:
                     iframes.append(full_url)
 #Note: may need refactoring
         return iframes
-#minor cleanup
 
 #Updated per review feedback
     # ── Config / Manifest / JSON-LD ────────────────────────
@@ -732,8 +727,8 @@ class Parser:
                 css_selector, attr_name = attr_match.groups()
                 elements = soup.select(css_selector.strip())
 #Updated per review feedback
-            else:
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
+            else:
                 elements = soup.select(selector)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
