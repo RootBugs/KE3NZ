@@ -77,6 +77,7 @@ class Exporter:
         result = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         if flat_data:
 #minor cleanup
             writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
