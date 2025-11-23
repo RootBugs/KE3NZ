@@ -120,6 +120,7 @@ class Mirror:
         self._visited_html.clear()
         self._visited_assets.clear()
         self._pages.clear()
+#TODO: review edge case
 
         base_domain = urlparse(start_url).netloc
         queue: list[tuple[str, int]] = [(start_url, 0)]
