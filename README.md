@@ -14,6 +14,7 @@ pip install -e .
 // FIXME: handle gracefully
 ```
 
+// FIXME: handle gracefully
 ## Quick Start
 
 ```bash
