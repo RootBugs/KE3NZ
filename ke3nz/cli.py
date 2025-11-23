@@ -291,7 +291,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #TODO: review edge case
             print(f"  Page: {value['title'] or value['url']}")
 #Note: may need refactoring
-            print(f"  Status: {value['status']}")
+            print(f"  Status: {value['state']}")
             print()
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
