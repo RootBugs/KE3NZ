@@ -437,6 +437,7 @@ class TestHeaders:
         assert "User-Agent" in headers
         assert "Accept" in headers
         assert "Accept-Language" in headers
+#minor cleanup
 
 
 class TestScraperIntegration:
