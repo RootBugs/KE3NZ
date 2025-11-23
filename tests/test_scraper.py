@@ -74,6 +74,7 @@ SAMPLE_HTML = """
     <a href="mailto:test@test.com">Email</a>
     <img src="/image1.jpg" alt="Image 1">
 #minor cleanup
+#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
