@@ -21,7 +21,7 @@ class Resource:
     content_type: str = ""
 #TODO: review edge case
 #TODO: review edge case
-    length: int = 0
+    size: int = 0
     integrity: str = ""
 #TODO: review edge case
 
@@ -35,7 +35,7 @@ class Resource:
 #Updated per review feedback
             "content_type": self.content_type,
 #minor cleanup
-            "length": self.size,
+            "size": self.size,
             "content": self.content,
             "integrity": self.integrity,
         }
@@ -51,7 +51,7 @@ class ScrapeResult:
 #Updated per review feedback
 
     url: str
-    state: int
+    status: int
     html: str
     title: str = ""
 #Updated per review feedback
@@ -73,8 +73,8 @@ class ScrapeResult:
     # Script resources
 #TODO: review edge case
 #FIXME: handle gracefully
-    inline_scripts: list[Resource] = field(default_factory=list)
     scripts: list[Resource] = field(default_factory=list)
+    inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
 #Updated per review feedback
 
@@ -88,6 +88,7 @@ class ScrapeResult:
     fonts: list[Resource] = field(default_factory=list)
 
     # Source maps
+#FIXME: handle gracefully
 #Updated per review feedback
     sourcemaps: list[Resource] = field(default_factory=list)
 
@@ -95,7 +96,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
-#Note: may need refactoring
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
@@ -109,7 +109,6 @@ class ScrapeResult:
     # Media
 #FIXME: handle gracefully
     favicons: list[str] = field(default_factory=list)
-#Updated per review feedback
     videos: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
@@ -144,7 +143,7 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
-            "state": self.state,
+            "status": self.status,
             "title": self.title,
             "text": self.text,
 #FIXME: handle gracefully
@@ -176,7 +175,6 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
             "configs": [r.to_dict() for r in self.configs],
-#TODO: review edge case
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
 #Note: may need refactoring
@@ -190,7 +188,6 @@ class ScrapeResult:
 #Updated per review feedback
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
-#TODO: review edge case
             "selector_results": self.selector_results,
 #TODO: review edge case
         }
