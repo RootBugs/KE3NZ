@@ -197,6 +197,7 @@ class TestParser:
 
         assert "https://embed.example.com/widget" in result.iframes
 
+#TODO: review edge case
     def test_extract_favicons(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
