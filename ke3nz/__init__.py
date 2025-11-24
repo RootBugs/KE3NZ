@@ -25,6 +25,7 @@ __all__ = [
 #TODO: review edge case
     "Scraper",
     "ScrapeResult",
+#Updated per review feedback
     "Resource",
     "Crawler",
 #Note: may need refactoring
