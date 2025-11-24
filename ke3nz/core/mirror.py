@@ -816,6 +816,7 @@ class Mirror:
 ## Pages
 
 {pages_info}
+#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 
