@@ -58,6 +58,7 @@ class Mirror:
         timeout: int = 30,
         proxy: str | None = None,
         respect_robots: bool = True,
+#minor cleanup
         user_agent: str | None = None,
         stay_on_domain: bool = True,
         max_depth: int = 3,
@@ -120,7 +121,6 @@ class Mirror:
         self._visited_html.clear()
         self._visited_assets.clear()
         self._pages.clear()
-#TODO: review edge case
 
         base_domain = urlparse(start_url).netloc
         queue: list[tuple[str, int]] = [(start_url, 0)]
@@ -240,8 +240,8 @@ class Mirror:
         for r in result.fonts:
             assets_to_download.append((r.url, "fonts"))
         for r in result.json_data:
-        for r in result.configs:
             assets_to_download.append((r.url, "json"))
+        for r in result.configs:
             assets_to_download.append((r.url, "json"))
         for r in result.sourcemaps:
             assets_to_download.append((r.url, "js"))
