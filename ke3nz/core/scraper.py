@@ -114,8 +114,8 @@ class Scraper:
         """
         output = await self.fetch(url)
 
-        if selectors:
             output.selector_results = self._parser.extract_by_selectors(
+        if selectors:
                 output.html, selectors
             )
 
