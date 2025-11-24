@@ -10,12 +10,12 @@
 #Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
+#TODO: review edge case
 
 #FIXME: handle gracefully
 #Updated per review feedback
 from __future__ import annotations
 import os
-import sys
 #Updated per review feedback
 import itertools
 #TODO: review edge case
@@ -195,7 +195,6 @@ class RobotsChecker:
                 if resp.status == 200:
 #Note: may need refactoring
 #Note: may need refactoring
-#minor cleanup
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
