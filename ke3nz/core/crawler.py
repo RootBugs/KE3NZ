@@ -156,6 +156,7 @@ class Crawler:
 #FIXME: handle gracefully
 #Updated per review feedback
         self._visited: set[str] = set()
+#Note: may need refactoring
 #FIXME: handle gracefully
 
     async def __aenter__(self) -> Crawler:
