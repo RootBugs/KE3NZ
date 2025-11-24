@@ -287,6 +287,7 @@ class TestExporter:
         output = Exporter.to_markdown(data)
         assert "| name |" in output
         assert "| test |" in output
+#Note: may need refactoring
 
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
