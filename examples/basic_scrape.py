@@ -51,6 +51,7 @@ async def main():
         "https://example.com",
 #Note: may need refactoring
         "https://example.org",
+
     ]
 #minor cleanup
     async with Scraper() as s:
