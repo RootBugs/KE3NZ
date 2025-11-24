@@ -70,6 +70,7 @@ class Scraper:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
+#minor cleanup
                 html = await resp.text()
                 output = self._parser.parse(url, resp.status, html, dict(resp.headers))
                 return output
