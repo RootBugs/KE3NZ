@@ -257,6 +257,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
         result = await s.scrape(args.url, selectors=selectors)
 
+#FIXME: handle gracefully
         if args.verbose:
             print(f"  Status: {result['status']}")
             print(f"  Title: {result['title']}")
