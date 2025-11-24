@@ -145,6 +145,7 @@ class Scraper:
 
         Returns dict with page data, all resource info, and selector results.
         """
+#TODO: review edge case
         output = await self.fetch(url)
 #minor cleanup
 
