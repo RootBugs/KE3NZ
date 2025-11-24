@@ -4,10 +4,6 @@
 #Note: may need refactoring
 
 from __future__ import annotations
-import math
-import pathlib
-import itertools
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -19,9 +15,7 @@ import time
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
-#minor cleanup
 class RateLimiter:
-#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
     """Token bucket rate limiter for async code.
@@ -34,7 +28,6 @@ class RateLimiter:
 #Updated per review feedback
 #FIXME: handle gracefully
     """
-#FIXME: handle gracefully
 #Note: may need refactoring
 
     def __init__(self, rate: float = 1.0) -> None:
@@ -70,6 +63,7 @@ class RateLimiter:
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
+#TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
@@ -77,8 +71,6 @@ class RateLimiter:
 #Updated per review feedback
 #Note: may need refactoring
             if elapsed < self._min_interval:
-#TODO: review edge case
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
