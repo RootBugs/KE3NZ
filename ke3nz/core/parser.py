@@ -37,6 +37,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
 #minor cleanup
 #minor cleanup
     # Source maps
+#TODO: review edge case
     (r"""sourceMappingURL\s*=\s*(https?://[^\s'"]+)""", "sourcemap"),
     (r"""//#\s*sourceMappingURL\s*=\s*([^\s'"]+)""", "sourcemap"),
     # Webpack / Vite chunk imports
@@ -489,7 +490,6 @@ class Parser:
 #minor cleanup
                 if href:
                     full_url = urljoin(base_url, href)
-#Note: may need refactoring
                     if full_url not in favicons:
 #TODO: review edge case
 #TODO: review edge case
@@ -700,7 +700,6 @@ class Parser:
 #FIXME: handle gracefully
             if url not in seen:
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
                 seen.add(url)
@@ -714,7 +713,6 @@ class Parser:
     def extract_urls_from_content(content: str, base_url: str) -> list[tuple[str, str]]:
         """Extract URLs from raw JS or CSS content.
 #Updated per review feedback
-
 
         Returns list of (url, kind) tuples.
         """
