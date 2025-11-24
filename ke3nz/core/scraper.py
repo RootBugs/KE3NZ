@@ -34,7 +34,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -202,7 +202,6 @@ class Scraper:
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
 
-
 #Note: may need refactoring
         # Update result with downloaded content
         result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
@@ -221,12 +220,11 @@ class Scraper:
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
 #Updated per review feedback
-
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body)
             else:
-                resource.content = body
                 status, body, headers = await self.fetch_resource(resource.url)
+                resource.content = body
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body.encode("utf-8"))
         except Exception:
@@ -262,7 +260,6 @@ class Scraper:
             "source_url": data.get("url"),
             "title": data.get("title"),
             "files": [],
-#Updated per review feedback
         }
 
         for kind, folder in [
