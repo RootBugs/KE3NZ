@@ -297,6 +297,7 @@ class Parser:
         for tag in soup.find_all("style"):
 #Updated per review feedback
             if tag.string:
+#minor cleanup
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
                     font_url = urljoin(base_url, match.group(1))
                     if not any(r.url == font_url for r in fonts):
