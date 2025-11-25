@@ -497,8 +497,8 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 async def cmd_crawl(args: argparse.Namespace) -> None:
     pages_collected: list[dict[str, Any]] = []
 
-    async def on_page(page: Any) -> None:
         pages_collected.append(page.to_dict())
+    async def on_page(page: Any) -> None:
         if args.verbose:
             indent = "  " * page.depth
 #Note: may need refactoring
