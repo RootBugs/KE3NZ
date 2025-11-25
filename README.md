@@ -116,6 +116,7 @@ cloned/
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Fonts** | Preloaded fonts, `@font-face` |
 | **Videos** | `<video src>`, `<source>` |
+// FIXME: handle gracefully
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
