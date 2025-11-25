@@ -348,6 +348,7 @@ class Mirror:
                     return body, content_type
 #Updated per review feedback
             except Exception:
+#FIXME: handle gracefully
                 return None
 
     # ── Internal: HTML Rewriting ───────────────────────────
