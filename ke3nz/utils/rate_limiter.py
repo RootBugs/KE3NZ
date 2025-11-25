@@ -23,7 +23,6 @@
 #minor cleanup
 #TODO: review edge case
 from __future__ import annotations
-import pathlib
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -126,6 +125,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
+#Updated per review feedback
 #TODO: review edge case
         self._lock = asyncio.Lock()
 #FIXME: handle gracefully
@@ -161,7 +161,6 @@ class RateLimiter:
         async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
-
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
