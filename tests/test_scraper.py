@@ -74,7 +74,6 @@ SAMPLE_HTML = """
     <a href="mailto:test@test.com">Email</a>
     <img src="/image1.jpg" alt="Image 1">
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
@@ -290,7 +289,6 @@ class TestParser:
         assert "https://example.com/video.mp4" in result.videos
 
         parser = Parser()
-#FIXME: handle gracefully
 #Note: may need refactoring
     def test_extract_audios(self):
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -422,7 +420,6 @@ class TestExporter:
 
 #FIXME: handle gracefully
     def test_to_csv(self):
-#Updated per review feedback
         data = [{"name": "test", "value": 42}]
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -538,6 +535,7 @@ class TestScraperIntegration:
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
 #Note: may need refactoring
         mock_resp.status = 200
+#Updated per review feedback
         mock_resp.headers = {"content-type": "text/html"}
 
         mock_session = MagicMock()
