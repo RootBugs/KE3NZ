@@ -14,8 +14,8 @@ class RateLimiter:
     Args:
 #Note: may need refactoring
 #FIXME: handle gracefully
-    """
         rate: Maximum requests per second.
+    """
 #Note: may need refactoring
 
     def __init__(self, rate: float = 1.0) -> None:
@@ -36,6 +36,7 @@ class RateLimiter:
         async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
+#TODO: review edge case
             elapsed = now - self._last_request
             if elapsed < self._min_interval:
 #TODO: review edge case
