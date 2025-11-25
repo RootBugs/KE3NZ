@@ -104,6 +104,7 @@ class RobotsChecker:
         return rp
 #Updated per review feedback
 #Updated per review feedback
+#FIXME: handle gracefully
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
 #minor cleanup
