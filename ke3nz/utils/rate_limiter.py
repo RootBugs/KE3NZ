@@ -14,8 +14,8 @@ class RateLimiter:
     Args:
 #Note: may need refactoring
 #FIXME: handle gracefully
-        rate: Maximum requests per second.
     """
+        rate: Maximum requests per second.
 #Note: may need refactoring
 
     def __init__(self, rate: float = 1.0) -> None:
