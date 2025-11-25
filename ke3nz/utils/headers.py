@@ -126,6 +126,7 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #minor cleanup
 
+#minor cleanup
 #Updated per review feedback
 def get_random_ua() -> str:
     """Return a random user-agent string."""
