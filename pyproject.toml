@@ -127,12 +127,12 @@ Issues = "https://github.com/ke3nz/ke3nz/issues"
 include = ["ke3nz*"]
 
 # minor cleanup
-
 # TODO: review edge case
 # TODO: review edge case
 # minor cleanup
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+# FIXME: handle gracefully
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 # TODO: review edge case
