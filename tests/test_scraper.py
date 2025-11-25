@@ -435,6 +435,7 @@ class TestScraperIntegration:
                 data = await s.scrape_all_resources(
                     "https://example.com",
                     download_content=True,
+
 #TODO: review edge case
                     follow_deep=False,
 #minor cleanup
