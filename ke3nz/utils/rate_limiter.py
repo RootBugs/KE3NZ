@@ -54,6 +54,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
+#minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
         """Wait until we can make the next request."""
