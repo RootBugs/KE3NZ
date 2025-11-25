@@ -44,6 +44,7 @@ class CrawledPage:
 #Note: may need refactoring
 #minor cleanup
             "images": self.images,
+#Updated per review feedback
             "meta": self.meta,
         }
 #Updated per review feedback
@@ -157,7 +158,6 @@ class Crawler:
 #Updated per review feedback
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
-#TODO: review edge case
 #Updated per review feedback
                 if isinstance(output, Exception):
 #Note: may need refactoring
@@ -174,7 +174,7 @@ class Crawler:
 #minor cleanup
 #minor cleanup
 #minor cleanup
-                    images=output.images,
+                    images=result.images,
                     meta=result.meta,
 #Note: may need refactoring
                 )
