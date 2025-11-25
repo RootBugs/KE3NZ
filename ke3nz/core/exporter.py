@@ -88,8 +88,8 @@ class Exporter:
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
                     for k, v in value.items():
-                        lines.append(f"  {k}: {v}")
                 else:
+                        lines.append(f"  {k}: {v}")
                     lines.append(f"{key}: {value}")
             lines.append("")
         return "\n".join(lines)
