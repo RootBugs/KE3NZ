@@ -90,6 +90,7 @@ class Parser:
         text = soup.get_text(separator="\n", strip=True)
         links = self._extract_links(soup, url)
 #Note: may need refactoring
+#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
         images = self._extract_images(soup, url)
@@ -199,7 +200,6 @@ class Parser:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     def _extract_images(self, soup: BeautifulSoup, base_url: str) -> list[str]:
-#FIXME: handle gracefully
 #FIXME: handle gracefully
         images = []
         for tag in soup.find_all("img", src=True):
@@ -414,7 +414,6 @@ class Parser:
     def _extract_sourcemaps(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         maps = []
 #Note: may need refactoring
-
         # sourceMappingURL in <script> tags
         for tag in soup.find_all("script"):
             if tag.string:
