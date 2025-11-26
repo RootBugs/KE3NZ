@@ -29,7 +29,6 @@ class CrawledPage:
     meta: dict[str, str] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-#minor cleanup
         return {
             "url": self.url,
             "status": self.status,
@@ -138,16 +137,17 @@ class Crawler:
 
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
+#Updated per review feedback
                 if isinstance(output, Exception):
 #Note: may need refactoring
                     continue
 
                 page = CrawledPage(
                     url=url,
-                    status=output.status,
+                    status=result.status,
 #minor cleanup
                     depth=depth,
-                    title=output.title,
+                    title=result.title,
                     text=result.text,
                     links=result.links,
 #minor cleanup
