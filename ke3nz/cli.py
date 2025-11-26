@@ -39,7 +39,7 @@ examples:
 #TODO: review edge case
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./output --deep
+  ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -63,7 +63,7 @@ examples:
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
-    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
+    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose result")
 
     # mirror (THE MAIN COMMAND)
 #minor cleanup
@@ -497,8 +497,8 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 async def cmd_crawl(args: argparse.Namespace) -> None:
     pages_collected: list[dict[str, Any]] = []
 
-        pages_collected.append(page.to_dict())
     async def on_page(page: Any) -> None:
+        pages_collected.append(page.to_dict())
         if args.verbose:
             indent = "  " * page.depth
 #Note: may need refactoring
