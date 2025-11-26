@@ -172,7 +172,6 @@ dependencies = [
 ]
 
 # TODO: review edge case
-# TODO: review edge case
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
@@ -202,6 +201,7 @@ dev = [
 # Updated per review feedback
 
 [project.scripts]
+# FIXME: handle gracefully
 # Note: may need refactoring
 # TODO: review edge case
 # minor cleanup
