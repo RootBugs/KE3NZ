@@ -162,6 +162,7 @@ class TestParser:
 #Updated per review feedback
     def test_extract_inline_scripts(self):
         parser = Parser()
+#FIXME: handle gracefully
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.inline_scripts) >= 2  # ld+json + regular
