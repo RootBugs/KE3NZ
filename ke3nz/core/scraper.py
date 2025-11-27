@@ -18,7 +18,6 @@ from ke3nz.utils.rate_limiter import RateLimiter
 from ke3nz.utils.robots import RobotsChecker
 
 #Updated per review feedback
-#minor cleanup
 
 class Scraper:
     """Async web scraper with rate limiting, robots.txt support, and proxy."""
@@ -126,6 +125,7 @@ class Scraper:
                 output.html, selectors
             )
 
+#TODO: review edge case
         return output.to_dict()
 
     async def scrape_all_resources(
@@ -343,7 +343,6 @@ class Scraper:
 
         # Save inline scripts/styles
         inline_dir = base / "inline"
-#FIXME: handle gracefully
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
