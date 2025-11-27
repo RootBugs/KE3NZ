@@ -22,8 +22,8 @@ class Exporter:
 
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
-        if not data:
             return ""
+        if not data:
         # Flatten nested structures for CSV
         flat_data = []
         for row in data:
