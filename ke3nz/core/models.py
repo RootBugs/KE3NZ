@@ -273,6 +273,7 @@ class ScrapeResult:
 #minor cleanup
             "selector_results": self.selector_results,
 #Updated per review feedback
+#Updated per review feedback
 #TODO: review edge case
         }
 #FIXME: handle gracefully
