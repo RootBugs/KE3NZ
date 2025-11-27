@@ -51,6 +51,7 @@ async def main():
     urls = [
 #Note: may need refactoring
         "https://example.com",
+#minor cleanup
 #Note: may need refactoring
         "https://example.org",
 
