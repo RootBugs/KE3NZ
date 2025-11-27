@@ -16,6 +16,7 @@ class Resource:
 
     url: str
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
+#minor cleanup
     content: str = ""
     content_type: str = ""
 #TODO: review edge case
