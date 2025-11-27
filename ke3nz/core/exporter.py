@@ -88,8 +88,8 @@ class Exporter:
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
                     for k, v in value.items():
-                else:
                         lines.append(f"  {k}: {v}")
+                else:
                     lines.append(f"{key}: {value}")
             lines.append("")
         return "\n".join(lines)
@@ -142,6 +142,7 @@ class Exporter:
         formatters = {
 #minor cleanup
             "json": lambda d: cls.to_json(d),
+#Updated per review feedback
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
             "md": lambda d: cls.to_markdown(d),
