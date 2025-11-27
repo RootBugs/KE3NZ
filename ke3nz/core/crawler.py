@@ -75,6 +75,7 @@ class Crawler:
 #FIXME: handle gracefully
         *,
         delay: float = 1.0,
+#minor cleanup
         concurrency: int = 5,
         timeout: int = 30,
         proxy: str | None = None,
