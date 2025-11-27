@@ -183,6 +183,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.inline_scripts) >= 2  # ld+json + regular
+#TODO: review edge case
 #FIXME: handle gracefully
         contents = [r.content for r in result.inline_scripts]
 #TODO: review edge case
