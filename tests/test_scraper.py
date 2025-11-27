@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import typing
 
 import asyncio
 import json
@@ -27,7 +26,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-icon.png">
@@ -179,7 +178,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-#Note: may need refactoring
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         assert "https://example.com/manifest.json" in manifest_urls
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
@@ -289,7 +287,6 @@ class TestExporter:
         output = Exporter.to_markdown(data)
         assert "| name |" in output
         assert "| test |" in output
-#Note: may need refactoring
 
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
@@ -325,7 +322,6 @@ class TestScraperIntegration:
     @pytest.mark.asyncio
 #Updated per review feedback
     async def test_scrape_mock(self):
-#FIXME: handle gracefully
         from ke3nz.core.scraper import Scraper
 
         mock_resp = AsyncMock()
