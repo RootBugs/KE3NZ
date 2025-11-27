@@ -34,6 +34,7 @@ from ke3nz.core.exporter import Exporter
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
+#minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
