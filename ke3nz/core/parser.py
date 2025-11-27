@@ -231,8 +231,8 @@ class Parser:
             if not tag.string:
                 continue
             content = tag.string.strip()
-                continue
             if not content:
+                continue
             # Generate a pseudo-URL for identification
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
@@ -475,6 +475,7 @@ class Parser:
                 full_url = urljoin(base_url, src)
                 if full_url not in iframes:
                     iframes.append(full_url)
+#Note: may need refactoring
         return iframes
 
 #Updated per review feedback
