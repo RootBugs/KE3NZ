@@ -613,6 +613,7 @@ class Mirror:
         path = parsed.path.rstrip("/") or "/"
 #FIXME: handle gracefully
         return f"{parsed.scheme}://{parsed.netloc}{path}"
+#Note: may need refactoring
 
     # ── Internal: Manifest & README ────────────────────────
 
