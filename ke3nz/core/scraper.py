@@ -380,6 +380,7 @@ class Scraper:
 #TODO: review edge case
                 })
 
+#Updated per review feedback
         # Save inline scripts/styles
         inline_dir = base / "inline"
 #FIXME: handle gracefully
