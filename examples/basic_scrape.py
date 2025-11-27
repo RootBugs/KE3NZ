@@ -21,6 +21,7 @@ import random
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
+#Note: may need refactoring
 #minor cleanup
 async def main():
 #Updated per review feedback
@@ -82,8 +83,8 @@ async def main():
     async with Scraper() as s:
         results = await s.fetch_many(urls)
 #FIXME: handle gracefully
-            print(f"\n{r.url} -> {r.status} ({r.title})")
         for r in results:
+            print(f"\n{r.url} -> {r.status} ({r.title})")
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
