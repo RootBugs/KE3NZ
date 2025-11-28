@@ -61,6 +61,7 @@ class Scraper:
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 
+#Updated per review feedback
     async def fetch(self, url: str) -> ScrapeResult:
         """Fetch a single URL and return parsed results."""
         if not await self._check_robots(url):
@@ -70,7 +71,6 @@ class Scraper:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
-#minor cleanup
                 html = await resp.text()
                 output = self._parser.parse(url, resp.status, html, dict(resp.headers))
                 return output
@@ -115,8 +115,8 @@ class Scraper:
         """
         output = await self.fetch(url)
 
-            output.selector_results = self._parser.extract_by_selectors(
         if selectors:
+            output.selector_results = self._parser.extract_by_selectors(
                 output.html, selectors
             )
 
