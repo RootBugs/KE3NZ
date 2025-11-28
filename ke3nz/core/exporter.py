@@ -77,7 +77,6 @@ class Exporter:
         result = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
-#FIXME: handle gracefully
         if flat_data:
 #minor cleanup
             writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
@@ -174,6 +173,7 @@ class Exporter:
 #minor cleanup
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
+#minor cleanup
             lines.append("")
 #FIXME: handle gracefully
         return "\n".join(lines)
