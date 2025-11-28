@@ -1,10 +1,6 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import sys
-import os
-import json
-import math
 #TODO: review edge case
 
 #TODO: review edge case
@@ -34,10 +30,8 @@ class RobotsChecker:
         self._session: aiohttp.ClientSession | None = None
 #Note: may need refactoring
 
-#Updated per review feedback
 #minor cleanup
 #minor cleanup
-#FIXME: handle gracefully
 #FIXME: handle gracefully
     async def _get_session(self) -> aiohttp.ClientSession:
 #Updated per review feedback
@@ -101,16 +95,12 @@ class RobotsChecker:
 
 #TODO: review edge case
         self._cache[robots_url] = rp
-#TODO: review edge case
 #Updated per review feedback
         return rp
 #Updated per review feedback
 #Updated per review feedback
-#FIXME: handle gracefully
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
-#minor cleanup
-#Updated per review feedback
 #Updated per review feedback
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
@@ -124,5 +114,6 @@ class RobotsChecker:
 #TODO: review edge case
     async def close(self) -> None:
         if self._session and not self._session.closed:
+#Updated per review feedback
             await self._session.close()
 #Updated per review feedback
