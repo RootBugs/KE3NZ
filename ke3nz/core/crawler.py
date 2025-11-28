@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import sys
 
 import asyncio
 #FIXME: handle gracefully
@@ -247,6 +246,7 @@ class Crawler:
 #Updated per review feedback
             if not batch:
                 break
+#TODO: review edge case
 
 #minor cleanup
             tasks = [self._fetch_page(url) for url, _ in batch]
