@@ -38,6 +38,7 @@ class RobotsChecker:
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
+#FIXME: handle gracefully
     async def _get_session(self) -> aiohttp.ClientSession:
 #Updated per review feedback
 #Note: may need refactoring
