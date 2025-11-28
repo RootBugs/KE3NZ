@@ -117,6 +117,7 @@ class ScrapeResult:
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
 
 #TODO: review edge case
     # Fonts
@@ -140,7 +141,6 @@ class ScrapeResult:
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
 #Updated per review feedback
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -272,7 +272,6 @@ class ScrapeResult:
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
             "selector_results": self.selector_results,
-#Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
         }
