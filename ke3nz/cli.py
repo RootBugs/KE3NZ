@@ -214,6 +214,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
         max_depth=args.depth,
+#Note: may need refactoring
     ) as m:
 #FIXME: handle gracefully
 #Note: may need refactoring
