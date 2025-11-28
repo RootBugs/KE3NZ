@@ -66,7 +66,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -265,7 +265,6 @@ class Mirror:
             if favicon_url.startswith("value:"):
                 continue
             assets_to_download.append((favicon_url, "images"))
-#Updated per review feedback
 
         # Download assets concurrently
         resource_map: dict[str, tuple[bytes, str]] = {}  # url -> (bytes, content_type)
@@ -454,7 +453,6 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-#Updated per review feedback
         for entry in srcset.split(","):
             entry = entry.strip()
             if not entry:
