@@ -530,7 +530,6 @@ class Mirror:
             url = tokens[0]
             original = self._resolve_url(url, page_url)
             if original in resources:
-
                 tokens[0] = resources[original]
             parts.append(" ".join(tokens))
         return ", ".join(parts)
@@ -540,6 +539,7 @@ class Mirror:
         import re
 
         def _replace(match: re.Match) -> str:
+#FIXME: handle gracefully
             prefix = match.group(1)
             url = match.group(2)
             suffix = match.group(3)
@@ -627,7 +627,6 @@ class Mirror:
 
 #Note: may need refactoring
         # Normalize to remove any ".." or "." segments that could escape
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
         # the result directory. PurePython Path.as_posix + resolve tricks
