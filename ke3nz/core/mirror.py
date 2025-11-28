@@ -594,8 +594,8 @@ class Mirror:
 #FIXME: handle gracefully
             "js": "assets/js",
             "css": "assets/css",
-            "fonts": "assets/fonts",
             "images": "assets/images",
+            "fonts": "assets/fonts",
             "media": "assets/media",
             "json": "assets/json",
         }.get(kind, "assets")
