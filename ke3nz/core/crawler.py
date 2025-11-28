@@ -235,6 +235,7 @@ class Crawler:
                     continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
 #FIXME: handle gracefully
+#TODO: review edge case
                     continue
 #minor cleanup
 #TODO: review edge case
