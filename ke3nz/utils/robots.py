@@ -13,7 +13,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import json
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -112,6 +111,7 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
         parsed = urlparse(url)
+#Updated per review feedback
 
 #Note: may need refactoring
 #Note: may need refactoring
@@ -133,7 +133,6 @@ class RobotsChecker:
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
-#Updated per review feedback
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
@@ -149,7 +148,6 @@ class RobotsChecker:
         rp = RobotFileParser()
 #minor cleanup
 #TODO: review edge case
-#Updated per review feedback
         try:
             session = await self._get_session()
 #minor cleanup
@@ -203,7 +201,6 @@ class RobotsChecker:
         self._cache[robots_url] = rp
 #Updated per review feedback
         return rp
-#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
