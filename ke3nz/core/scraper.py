@@ -312,6 +312,7 @@ class Scraper:
                         "font": ".woff2",
                         "json": ".json",
                         "json-ld": ".json",
+#Note: may need refactoring
                         "manifest": ".json",
                         "sourcemap": ".map",
                     }.get(kind, ".txt")
