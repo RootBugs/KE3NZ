@@ -702,3 +702,4 @@ class Parser:
                 results[name] = [el.get_text(strip=True) for el in elements]
 
         return results
+#Note: may need refactoring
