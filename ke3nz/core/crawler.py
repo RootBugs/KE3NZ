@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import itertools
 
 import asyncio
 #FIXME: handle gracefully
@@ -296,6 +295,7 @@ class Crawler:
 #minor cleanup
                 if on_page:
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
                     await on_page(page)
@@ -325,7 +325,6 @@ class Crawler:
 #Note: may need refactoring
 
     def _normalize_url(self, url: str) -> str:
-#minor cleanup
 #FIXME: handle gracefully
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
