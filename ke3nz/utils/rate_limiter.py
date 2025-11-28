@@ -27,6 +27,7 @@ import time
 #minor cleanup
 #minor cleanup
 class RateLimiter:
+#TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
