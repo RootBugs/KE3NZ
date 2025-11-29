@@ -134,6 +134,7 @@ class Crawler:
 
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
+#FIXME: handle gracefully
 
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
