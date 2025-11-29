@@ -79,6 +79,7 @@ def get_random_ua() -> str:
     return random.choice(USER_AGENTS)
 
 #TODO: review edge case
+#FIXME: handle gracefully
 
 #Note: may need refactoring
 def get_random_headers() -> dict[str, str]:
