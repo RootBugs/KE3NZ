@@ -300,6 +300,7 @@ class ScrapeResult:
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
 #Updated per review feedback
+#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
             "configs": [r.to_dict() for r in self.configs],
