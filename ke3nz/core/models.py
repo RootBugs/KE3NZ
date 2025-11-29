@@ -145,6 +145,7 @@ class ScrapeResult:
             "url": self.url,
             "status": self.status,
             "title": self.title,
+#Note: may need refactoring
             "text": self.text,
 #FIXME: handle gracefully
 #Note: may need refactoring
