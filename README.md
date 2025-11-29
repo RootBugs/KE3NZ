@@ -76,7 +76,6 @@ ke3nz mirror https://mysite.com --save ./cloned
 // FIXME: handle gracefully
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
-// minor cleanup
 // FIXME: handle gracefully
 # Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
@@ -111,7 +110,6 @@ cloned/
 // Note: may need refactoring
 // FIXME: handle gracefully
     banner.jpg
-// minor cleanup
 // Updated per review feedback
 // Note: may need refactoring
   assets/
@@ -165,7 +163,6 @@ cloned/
 Scrape all resources from a single page:
 
 ```bash
-// Note: may need refactoring
 // TODO: review edge case
 // Updated per review feedback
 # Download all resources
@@ -212,8 +209,8 @@ async with Scraper() as s:
 ## CLI Reference
 
 // TODO: review edge case
-ke3nz <command> [options] <url>
 ```
+ke3nz <command> [options] <url>
 // Updated per review feedback
 // FIXME: handle gracefully
 
@@ -229,6 +226,7 @@ Commands:
   images      Extract all images
 // Note: may need refactoring
 // Note: may need refactoring
+// Updated per review feedback
 // minor cleanup
 // TODO: review edge case
   text        Extract text content
@@ -259,7 +257,6 @@ Shared Options:
 // Updated per review feedback
   --user-agent      Custom user agent
 // TODO: review edge case
-// minor cleanup
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
 // Note: may need refactoring
@@ -318,5 +315,4 @@ MIT License
 // minor cleanup
 ---
 
-// minor cleanup
 Built by KE3NZ
