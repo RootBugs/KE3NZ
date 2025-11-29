@@ -209,6 +209,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
+#minor cleanup
         return {
             "url": self.url,
             "status": self.status,
