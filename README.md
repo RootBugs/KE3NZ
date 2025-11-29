@@ -89,14 +89,12 @@ ke3nz mirror https://mysite.com --save ./cloned
 // Note: may need refactoring
 // FIXME: handle gracefully
 // Updated per review feedback
-// Note: may need refactoring
 // TODO: review edge case
 // FIXME: handle gracefully
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
 # Verbose result to see progress
-// Updated per review feedback
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 
@@ -164,7 +162,6 @@ cloned/
 // minor cleanup
 
 // TODO: review edge case
-// TODO: review edge case
 ### What Gets Downloaded
 // Updated per review feedback
 // FIXME: handle gracefully
@@ -208,13 +205,13 @@ Scrape all resources from a single page:
 // minor cleanup
 // TODO: review edge case
 // Updated per review feedback
+// TODO: review edge case
 # Download all resources
 // TODO: review edge case
 ke3nz resources https://example.com --save ./output
 // minor cleanup
 
 // TODO: review edge case
-// minor cleanup
 // TODO: review edge case
 // TODO: review edge case
 // TODO: review edge case
@@ -266,7 +263,6 @@ async with Scraper() as s:
 ## CLI Reference
 
 // TODO: review edge case
-// minor cleanup
 // minor cleanup
 // TODO: review edge case
 ```
@@ -356,12 +352,9 @@ KE3NZ/
 // minor cleanup
 // Updated per review feedback
       scraper.py          # Async fetch engine + deep scanning
-// TODO: review edge case
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // Note: may need refactoring
-
 // minor cleanup
-// Note: may need refactoring
 // minor cleanup
 // Updated per review feedback
       crawler.py          # Recursive page crawler
@@ -371,7 +364,6 @@ KE3NZ/
 // Note: may need refactoring
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
-// Updated per review feedback
   tests/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
