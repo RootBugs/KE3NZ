@@ -212,6 +212,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
             print(f"  [{pages_done}] {page.title or page.url}")
 #FIXME: handle gracefully
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
+
 #TODO: review edge case
 
     print(f"Mirroring {args.url} to {args.save}...")
