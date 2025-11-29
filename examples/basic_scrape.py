@@ -4,6 +4,7 @@
 #FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Note: may need refactoring
 import asyncio
 from ke3nz import Scraper
 #FIXME: handle gracefully
@@ -25,7 +26,6 @@ import random
 #minor cleanup
 async def main():
 #Updated per review feedback
-#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
     # Example 1: Simple scrape
