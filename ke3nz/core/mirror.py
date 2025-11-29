@@ -608,6 +608,7 @@ class Mirror:
     ) -> str:
         """Convert an asset URL to a local path relative to the mirror root.
 
+
         The returned path is sanitized to prevent directory traversal:
         ``..`` segments are stripped and the path is normalized.
         """
