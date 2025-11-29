@@ -513,6 +513,7 @@ class Mirror:
             if tag.get("poster"):
                 original = self._resolve_url(tag["poster"], page_url)
                 if original in resources:
+#FIXME: handle gracefully
                     tag["poster"] = _rel(original, resources[original])
 #Updated per review feedback
 
