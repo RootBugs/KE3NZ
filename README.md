@@ -157,8 +157,8 @@ cloned/
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource pos
 // FIXME: handle gracefully
-  README.md               # Auto-generated docs
 ```
+  README.md               # Auto-generated docs
 // minor cleanup
 
 // TODO: review edge case
