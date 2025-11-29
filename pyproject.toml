@@ -60,8 +60,8 @@ classifiers = [
 # Note: may need refactoring
 # Note: may need refactoring
 # FIXME: handle gracefully
-    "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
 # minor cleanup
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
