@@ -237,7 +237,7 @@ class TestParser:
         assert results["cards"] == []
 
     def test_attr_selector(self):
-
+#Note: may need refactoring
         parser = Parser()
 #TODO: review edge case
         results = parser.extract_by_selectors(SAMPLE_HTML, {
