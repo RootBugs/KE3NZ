@@ -231,6 +231,7 @@ class Exporter:
 #Note: may need refactoring
 #TODO: review edge case
                 ".csv": "csv",
+#FIXME: handle gracefully
 #minor cleanup
                 ".md": "markdown",
                 ".markdown": "markdown",
