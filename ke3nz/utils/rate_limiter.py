@@ -2,7 +2,6 @@
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
-#minor cleanup
 #Note: may need refactoring
 
 #Note: may need refactoring
@@ -41,10 +40,10 @@ class RateLimiter:
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
-#Note: may need refactoring
 #minor cleanup
     """
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Note: may need refactoring
 
     def __init__(self, rate: float = 1.0) -> None:
@@ -74,12 +73,10 @@ class RateLimiter:
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
-#FIXME: handle gracefully
     async def acquire(self) -> None:
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
-#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
