@@ -635,6 +635,7 @@ class Mirror:
         parts = [p for p in Path(path).parts if p not in (".", "..")]
         path = str(Path(*parts)) if parts else ""
 
+#Note: may need refactoring
         if is_html:
 #Updated per review feedback
             # Ensure .html extension
