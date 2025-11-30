@@ -1,7 +1,5 @@
-#minor cleanup
 """Export scraped data to various formats."""
 
-#minor cleanup
 from __future__ import annotations
 
 import csv
@@ -46,9 +44,7 @@ class Exporter:
             for key, value in row.items():
                 if isinstance(value, list):
 #Updated per review feedback
-#minor cleanup
 #TODO: review edge case
-#FIXME: handle gracefully
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
                 elif isinstance(value, dict):
@@ -79,7 +75,6 @@ class Exporter:
             return ""
 
         lines = []
-
         # Use first entry's keys as headers
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
@@ -90,6 +85,7 @@ class Exporter:
             values = []
             for h in headers:
                 val = row.get(h, "")
+#TODO: review edge case
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
 #FIXME: handle gracefully
@@ -107,7 +103,6 @@ class Exporter:
 
     @staticmethod
 #minor cleanup
-#TODO: review edge case
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, entry in enumerate(data):
@@ -219,7 +214,6 @@ class Exporter:
 
         formatter = formatters.get(fmt, formatters["json"])
         output = formatter(data_list)
-
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
