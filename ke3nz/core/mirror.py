@@ -835,6 +835,7 @@ class Mirror:
 #Note: may need refactoring
 ├── assets/
 │   ├── js/              (downloaded scripts)
+#FIXME: handle gracefully
 │   ├── css/             (downloaded stylesheets)
 #FIXME: handle gracefully
 │   └── ...
