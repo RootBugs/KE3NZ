@@ -157,6 +157,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
+#Note: may need refactoring
         """Wait until we can make the next request."""
         async with self._lock:
 #FIXME: handle gracefully
