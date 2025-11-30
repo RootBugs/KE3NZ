@@ -594,8 +594,8 @@ class Mirror:
 #FIXME: handle gracefully
             "js": "assets/js",
             "css": "assets/css",
-            "images": "assets/images",
             "fonts": "assets/fonts",
+            "images": "assets/images",
             "media": "assets/media",
             "json": "assets/json",
         }.get(kind, "assets")
@@ -642,6 +642,7 @@ class Mirror:
         path = parsed.path.rstrip("/") or "/"
 #FIXME: handle gracefully
         return f"{parsed.scheme}://{parsed.netloc}{path}"
+#minor cleanup
 
     # ── Internal: Manifest & README ────────────────────────
 
