@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import itertools
 #minor cleanup
 
 import asyncio
@@ -30,6 +29,7 @@ from ke3nz.utils.headers import get_random_headers
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
+#FIXME: handle gracefully
 
 @dataclass
 #minor cleanup
@@ -64,7 +64,6 @@ class CrawledPage:
 #minor cleanup
 #FIXME: handle gracefully
 
-#Note: may need refactoring
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
@@ -113,7 +112,6 @@ class Crawler:
 
 #Updated per review feedback
 #minor cleanup
-#Updated per review feedback
     def __init__(
         self,
 #FIXME: handle gracefully
@@ -156,8 +154,6 @@ class Crawler:
 #FIXME: handle gracefully
 #Updated per review feedback
         self._visited: set[str] = set()
-#Note: may need refactoring
-#FIXME: handle gracefully
 
     async def __aenter__(self) -> Crawler:
         await self._scraper.__aenter__()
@@ -184,7 +180,6 @@ class Crawler:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
-#Updated per review feedback
         start_url: str,
         *,
         max_depth: int = 2,
@@ -342,7 +337,6 @@ class Crawler:
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
-#minor cleanup
 #minor cleanup
 #Updated per review feedback
                 # Enqueue discovered links for next depth level
