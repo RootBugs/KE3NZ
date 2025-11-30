@@ -172,6 +172,7 @@ class Scraper:
         Returns:
             Full resource manifest.
         """
+#minor cleanup
         output = await self.fetch(url)
 #TODO: review edge case
 #Note: may need refactoring
