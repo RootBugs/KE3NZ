@@ -22,8 +22,8 @@ class Exporter:
 
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
-            return ""
         if not data:
+            return ""
         # Flatten nested structures for CSV
         flat_data = []
         for row in data:
@@ -80,7 +80,7 @@ class Exporter:
         lines = []
         for i, entry in enumerate(data):
             lines.append(f"=== Item {i + 1} ===")
-            for key, value in item.items():
+            for key, value in entry.items():
                 if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
