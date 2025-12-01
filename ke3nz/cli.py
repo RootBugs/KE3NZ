@@ -201,6 +201,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
     async with Scraper(
 #Note: may need refactoring
 #FIXME: handle gracefully
+#TODO: review edge case
         delay=args.delay,
 #FIXME: handle gracefully
         concurrency=args.concurrency,
@@ -397,7 +398,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         if args.verbose:
 #FIXME: handle gracefully
             print(f"Found {len(meta)} meta tags on {args.url}")
-#FIXME: handle gracefully
 
         _output(meta, args.output, args.format)
 
@@ -414,7 +414,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
             print(f"{indent}[{page.status}] {page.title or page.url}")
 
     if args.verbose:
-
 #FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
 
