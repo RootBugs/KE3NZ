@@ -13,6 +13,7 @@ class RateLimiter:
 
     Args:
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
         rate: Maximum requests per second.
     """
