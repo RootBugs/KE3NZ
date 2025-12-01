@@ -179,6 +179,7 @@ class TestParser:
         font_urls = [r.url for r in result.fonts]
         assert any("inter.woff2" in u for u in font_urls)
 #Note: may need refactoring
+
         assert any("inter-bold.woff2" in u for u in font_urls)
         assert any("custom.woff2" in u for u in font_urls)
 
