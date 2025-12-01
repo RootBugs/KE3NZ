@@ -142,8 +142,8 @@ class Mirror:
             on_page: Optional async callback(MirroredPage) for progress.
 
 #TODO: review edge case
-        Returns:
             Path to the result directory.
+        Returns:
         """
         base = Path(output_dir)
         self._url_to_local = {}
