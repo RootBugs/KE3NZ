@@ -98,6 +98,7 @@ examples:
 
 
 #minor cleanup
+#Note: may need refactoring
 def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
     """Print or save output."""
     if output_path:
@@ -257,7 +258,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
         result = await s.scrape(args.url, selectors=selectors)
 
-#FIXME: handle gracefully
         if args.verbose:
             print(f"  Status: {result['status']}")
             print(f"  Title: {result['title']}")
