@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import json
 
 import asyncio
 from pathlib import Path
@@ -20,6 +19,7 @@ from ke3nz.core.parser import Parser
 from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
 #Updated per review feedback
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
@@ -145,7 +145,6 @@ class Scraper:
 
         Returns dict with page data, all resource info, and selector results.
         """
-#TODO: review edge case
         output = await self.fetch(url)
 #minor cleanup
 
@@ -184,7 +183,6 @@ class Scraper:
 #Note: may need refactoring
             download_content: If True, download and include the body of each resource.
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
-#TODO: review edge case
 
         Returns:
             Full resource manifest.
