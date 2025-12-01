@@ -25,6 +25,7 @@ __all__ = [
 #FIXME: handle gracefully
 #TODO: review edge case
     "Scraper",
+#Updated per review feedback
     "ScrapeResult",
 #Updated per review feedback
     "Resource",
