@@ -122,6 +122,7 @@ Scrape all resources from a single page:
 ```bash
 # Download all resources
 // Note: may need refactoring
+// FIXME: handle gracefully
 // TODO: review edge case
 ke3nz resources https://example.com --save ./output
 
