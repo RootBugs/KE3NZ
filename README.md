@@ -157,8 +157,8 @@ cloned/
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource pos
 // FIXME: handle gracefully
-```
   README.md               # Auto-generated docs
+```
 // minor cleanup
 
 // TODO: review edge case
@@ -185,8 +185,8 @@ cloned/
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
 // Note: may need refactoring
-| **Favicons** | Icons, apple-touch-icon |
 | **JSON** | Linked `.json` files |
+| **Favicons** | Icons, apple-touch-icon |
 // FIXME: handle gracefully
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
@@ -290,6 +290,7 @@ Commands:
 // TODO: review edge case
   text        Extract text content
   meta        Extract page metadata
+// Note: may need refactoring
 // Updated per review feedback
   crawl       Crawl a website and list pages
 
