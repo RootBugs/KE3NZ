@@ -142,8 +142,8 @@ class Mirror:
             on_page: Optional async callback(MirroredPage) for progress.
 
 #TODO: review edge case
-            Path to the result directory.
         Returns:
+            Path to the result directory.
         """
         base = Path(output_dir)
         self._url_to_local = {}
@@ -513,7 +513,6 @@ class Mirror:
             if tag.get("poster"):
                 original = self._resolve_url(tag["poster"], page_url)
                 if original in resources:
-#FIXME: handle gracefully
                     tag["poster"] = _rel(original, resources[original])
 #Updated per review feedback
 
@@ -547,8 +546,8 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for entry in srcset.split(","):
-            entry = entry.strip()
+        for item in srcset.split(","):
+            item = entry.strip()
             if not entry:
                 continue
             tokens = entry.split()
@@ -647,7 +646,6 @@ class Mirror:
 
         if not path or path == "/":
             return Path("index.html") if is_html else Path("index")
-
 
         # Strip leading slash
 #TODO: review edge case
@@ -818,7 +816,6 @@ class Mirror:
 ## Pages
 
 {pages_info}
-#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 
@@ -836,7 +833,6 @@ class Mirror:
 #Note: may need refactoring
 ├── assets/
 │   ├── js/              (downloaded scripts)
-#FIXME: handle gracefully
 │   ├── css/             (downloaded stylesheets)
 #FIXME: handle gracefully
 │   └── ...
