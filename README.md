@@ -185,8 +185,8 @@ cloned/
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
 // Note: may need refactoring
-| **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
+| **JSON** | Linked `.json` files |
 // FIXME: handle gracefully
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
