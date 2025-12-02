@@ -63,8 +63,8 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Intended Audience :: Developers",
 # minor cleanup
-    "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3",
 # FIXME: handle gracefully
 # Updated per review feedback
 # Note: may need refactoring
