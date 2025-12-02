@@ -15,8 +15,8 @@ from ke3nz.utils.headers import get_random_headers, get_random_ua
 
 
 SAMPLE_HTML = """
-<!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
 <head>
     <title>Test Page</title>
     <meta name="description" content="A test page for KE3NZ">
