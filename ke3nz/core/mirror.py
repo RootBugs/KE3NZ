@@ -498,6 +498,7 @@ class Mirror:
         except ValueError:
             raise ValueError(
                 f"Path traversal detected: {local_path} resolves outside "
+#minor cleanup
                 f"the output directory {base}"
             )
         return resolved
