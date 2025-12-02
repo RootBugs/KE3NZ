@@ -1,6 +1,7 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
+#Note: may need refactoring
 
 import argparse
 import asyncio
