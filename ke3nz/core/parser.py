@@ -278,7 +278,6 @@ class Parser:
 #FIXME: handle gracefully
     # ── External Stylesheets ───────────────────────────────
 
-
     def _extract_external_stylesheets(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         sheets = []
         for tag in soup.find_all("link", rel="stylesheet"):
@@ -331,6 +330,7 @@ class Parser:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(
+#TODO: review edge case
                             url=full_url,
                             kind="font",
                             content_type=tag.get("type", ""),
@@ -368,8 +368,8 @@ class Parser:
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
 #Note: may need refactoring
-                    if not any(r.url == map_url for r in maps):
                     map_url = urljoin(base_url, match.group(1))
+                    if not any(r.url == map_url for r in maps):
                         maps.append(Resource(url=map_url, kind="sourcemap"))
         # sourceMappingURL in <style> tags
 
@@ -702,4 +702,3 @@ class Parser:
                 results[name] = [el.get_text(strip=True) for el in elements]
 
         return results
-#Note: may need refactoring
