@@ -58,8 +58,8 @@ from ke3nz import Crawler
 #Updated per review feedback
 #Note: may need refactoring
 async def main():
-    async with Crawler(delay=0.5) as c:
     # Crawl example.com up to depth 2
+    async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
@@ -73,6 +73,7 @@ async def main():
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
+#Updated per review feedback
 #Note: may need refactoring
         pages = await c.crawl("https://example.com", max_depth=2)
 #minor cleanup
@@ -116,7 +117,6 @@ async def main():
 #FIXME: handle gracefully
     for page in pages:
 #Note: may need refactoring
-#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
