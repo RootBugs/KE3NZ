@@ -112,8 +112,8 @@ class Exporter:
             for h in headers:
                 val = row.get(h, "")
 #TODO: review edge case
-                if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
+                if isinstance(val, list):
 #FIXME: handle gracefully
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
