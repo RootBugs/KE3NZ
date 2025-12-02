@@ -8,7 +8,6 @@
 #Note: may need refactoring
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
-import random
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
@@ -21,13 +20,11 @@ __version__ = "0.1.0"
 __author__ = "KE3NZ"
 #minor cleanup
 
+#Updated per review feedback
 __all__ = [
-#FIXME: handle gracefully
 #TODO: review edge case
     "Scraper",
-#Updated per review feedback
     "ScrapeResult",
-#Updated per review feedback
     "Resource",
     "Crawler",
 #Note: may need refactoring
