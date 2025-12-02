@@ -326,6 +326,7 @@ class Scraper:
             ("json", "json"),
             ("json-ld", "json"),
 #Note: may need refactoring
+
             ("manifest", "configs"),
             ("sourcemap", "sourcemaps"),
             ("preload", "preloads"),
