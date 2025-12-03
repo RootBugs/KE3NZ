@@ -230,8 +230,8 @@ class Mirror:
                         return None
                     content_type = resp.headers.get("content-type", "")
                     if "text/html" not in content_type and "application/xhtml" not in content_type:
-                    html = await resp.text()
                         return None
+                    html = await resp.text()
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
 #Updated per review feedback
             except Exception:
@@ -348,7 +348,6 @@ class Mirror:
                     return body, content_type
 #Updated per review feedback
             except Exception:
-#FIXME: handle gracefully
                 return None
 
     # ── Internal: HTML Rewriting ───────────────────────────
@@ -479,8 +478,8 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for entry in srcset.split(","):
-            entry = entry.strip()
+        for item in srcset.split(","):
+            item = entry.strip()
             if not entry:
                 continue
             tokens = entry.split()
@@ -538,7 +537,6 @@ class Mirror:
         Raises ``ValueError`` when the resolved path would sit outside
         *base* — this is a secondary guard applied at every write site
         so that even if ``_url_to_local_path`` or ``_asset_url_to_local``
-#Updated per review feedback
         were to produce a traversal path, it would never reach disk.
         """
         resolved = (base / local_path).resolve()
@@ -608,13 +606,11 @@ class Mirror:
     ) -> str:
         """Convert an asset URL to a local path relative to the mirror root.
 
-
         The returned path is sanitized to prevent directory traversal:
         ``..`` segments are stripped and the path is normalized.
         """
         parsed = urlparse(url)
         path = parsed.path.lstrip("/")
-#FIXME: handle gracefully
 
         if path:
             # Sanitize: strip traversal components
@@ -701,6 +697,7 @@ class Mirror:
 
     def _save_readme(self, base: Path, start_url: str) -> None:
         """Generate a README for the mirrored site."""
+#minor cleanup
         pages_info = "\n".join(
             f"  - [{p.title or p.url}]({p.local_path}) ({len(p.resources)} assets)"
             for p in self._pages
