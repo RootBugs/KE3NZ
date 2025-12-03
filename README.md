@@ -124,6 +124,7 @@ cloned/
 | **Favicons** | Icons, apple-touch-icon |
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
+// FIXME: handle gracefully
 // Updated per review feedback
 
 ## The `resources` Command
