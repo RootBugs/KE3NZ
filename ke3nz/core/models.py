@@ -99,6 +99,7 @@ class ScrapeResult:
     audios: list[str] = field(default_factory=list)
 
     # Preloaded / prefetched resources
+#minor cleanup
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
