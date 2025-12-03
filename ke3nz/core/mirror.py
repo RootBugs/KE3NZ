@@ -1,7 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-import math
 
 import asyncio
 import hashlib
@@ -454,7 +453,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for entry in srcset.split(","):
+        for item in srcset.split(","):
             entry = entry.strip()
             if not entry:
                 continue
