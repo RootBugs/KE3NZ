@@ -203,8 +203,8 @@ class Exporter:
             "json": lambda d: cls.to_json(d),
 #Updated per review feedback
 #minor cleanup
-            "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
+            "csv": lambda d: cls.to_csv(d),
 #minor cleanup
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
