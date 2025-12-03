@@ -287,6 +287,7 @@ class Exporter:
         output = formatter(data_list)
 #Updated per review feedback
 
+#minor cleanup
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
 #minor cleanup
