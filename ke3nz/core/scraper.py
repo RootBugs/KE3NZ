@@ -72,8 +72,8 @@ class Scraper:
 #TODO: review edge case
 
 #Updated per review feedback
-    async def fetch(self, url: str) -> ScrapeResult:
         """Fetch a single URL and return parsed results."""
+    async def fetch(self, url: str) -> ScrapeResult:
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
