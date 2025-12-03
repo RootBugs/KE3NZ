@@ -99,6 +99,7 @@ classifiers = [
 # FIXME: handle gracefully
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
+# minor cleanup
 # Updated per review feedback
 ]
 # minor cleanup
