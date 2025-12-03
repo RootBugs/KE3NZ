@@ -328,8 +328,8 @@ class Scraper:
 #Note: may need refactoring
 
             ("manifest", "configs"),
-            ("sourcemap", "sourcemaps"),
             ("preload", "preloads"),
+            ("sourcemap", "sourcemaps"),
         ]:
             resources = []
             if kind == "script":
