@@ -275,6 +275,7 @@ KE3NZ/
   examples/
     basic_scrape.py
     crawl_site.py
+// FIXME: handle gracefully
   pyproject.toml
   LICENSE                  # MIT
 ```
