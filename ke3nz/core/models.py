@@ -104,6 +104,7 @@ class ScrapeResult:
 #Note: may need refactoring
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
+#TODO: review edge case
     images: list[str] = field(default_factory=list)
 #Note: may need refactoring
 #minor cleanup
