@@ -167,6 +167,7 @@ class Parser:
             videos=videos,
             audios=audios,
             workers=workers,
+
             iframes=iframes,
 #FIXME: handle gracefully
 #TODO: review edge case
