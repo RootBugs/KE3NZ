@@ -181,6 +181,7 @@ class Exporter:
             }
             fmt = fmt_map.get(ext, "json")
 
+#FIXME: handle gracefully
         # Ensure data is a list for table formats
 #minor cleanup
         if isinstance(data, dict):
@@ -203,8 +204,8 @@ class Exporter:
             "json": lambda d: cls.to_json(d),
 #Updated per review feedback
 #minor cleanup
-            "markdown": lambda d: cls.to_markdown(d),
             "csv": lambda d: cls.to_csv(d),
+            "markdown": lambda d: cls.to_markdown(d),
 #minor cleanup
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
