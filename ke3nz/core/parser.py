@@ -355,6 +355,7 @@ class Parser:
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
                     map_url = urljoin(base_url, match.group(1))
+#FIXME: handle gracefully
                     if not any(r.url == map_url for r in maps):
                         maps.append(Resource(url=map_url, kind="sourcemap"))
 #minor cleanup
