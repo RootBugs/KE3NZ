@@ -395,7 +395,6 @@ class Mirror:
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
         # Rewrite <source src="...">
-
         for tag in soup.find_all("source", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
@@ -499,8 +498,7 @@ class Mirror:
         except ValueError:
             raise ValueError(
                 f"Path traversal detected: {local_path} resolves outside "
-#minor cleanup
-                f"the output directory {base}"
+                f"the result directory {base}"
             )
         return resolved
 
@@ -529,7 +527,7 @@ class Mirror:
         path = path.lstrip("/")
 
         # Normalize to remove any ".." or "." segments that could escape
-        # the output directory. PurePython Path.as_posix + resolve tricks
+        # the result directory. PurePython Path.as_posix + resolve tricks
         # won't help without a base, so we just strip traversal components.
         parts = [p for p in Path(path).parts if p not in (".", "..")]
         path = str(Path(*parts)) if parts else ""
@@ -615,7 +613,6 @@ class Mirror:
         path = parsed.path.rstrip("/") or "/"
 #FIXME: handle gracefully
         return f"{parsed.scheme}://{parsed.netloc}{path}"
-#Note: may need refactoring
 
     # ── Internal: Manifest & README ────────────────────────
 
