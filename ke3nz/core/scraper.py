@@ -119,6 +119,7 @@ class Scraper:
         Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
+#minor cleanup
 
         if selectors:
             output.selector_results = self._parser.extract_by_selectors(
@@ -312,7 +313,6 @@ class Scraper:
                         "font": ".woff2",
                         "json": ".json",
                         "json-ld": ".json",
-#Note: may need refactoring
                         "manifest": ".json",
                         "sourcemap": ".map",
                     }.get(kind, ".txt")
