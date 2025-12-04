@@ -167,7 +167,6 @@ class Parser:
             videos=videos,
             audios=audios,
             workers=workers,
-
             iframes=iframes,
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -416,7 +415,6 @@ class Parser:
         maps = []
 #Note: may need refactoring
         # sourceMappingURL in <script> tags
-#FIXME: handle gracefully
         for tag in soup.find_all("script"):
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
@@ -439,7 +437,6 @@ class Parser:
 #Updated per review feedback
 
     # ── Preloads / Prefetches ──────────────────────────────
-#FIXME: handle gracefully
 
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         preloads = []
@@ -513,6 +510,7 @@ class Parser:
         videos = []
         for tag in soup.find_all("video", src=True):
             full_url = urljoin(base_url, tag["src"].strip())
+#minor cleanup
 #minor cleanup
             if full_url not in videos:
                 videos.append(full_url)
