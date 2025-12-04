@@ -415,6 +415,7 @@ class Parser:
         maps = []
 #Note: may need refactoring
         # sourceMappingURL in <script> tags
+#FIXME: handle gracefully
         for tag in soup.find_all("script"):
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
