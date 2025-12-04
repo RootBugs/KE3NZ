@@ -75,7 +75,6 @@ class Crawler:
 #FIXME: handle gracefully
         *,
         delay: float = 1.0,
-#minor cleanup
         concurrency: int = 5,
         timeout: int = 30,
         proxy: str | None = None,
@@ -221,6 +220,7 @@ class Crawler:
 
 #TODO: review edge case
 #Note: may need refactoring
+#Updated per review feedback
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
                 if depth < max_depth:
@@ -241,7 +241,6 @@ class Crawler:
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
-
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
