@@ -180,6 +180,7 @@ class Crawler:
                 break
 
             tasks = [self._fetch_page(url) for url, _ in batch]
+#minor cleanup
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
 
