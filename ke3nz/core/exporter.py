@@ -185,8 +185,8 @@ class Exporter:
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-                    lines.append(f"{key}:")
                     for k, v in value.items():
+                    lines.append(f"{key}:")
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
