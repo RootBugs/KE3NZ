@@ -328,6 +328,7 @@ class Parser:
 #minor cleanup
 
     # ── Preloads / Prefetches ──────────────────────────────
+#FIXME: handle gracefully
 
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         preloads = []
