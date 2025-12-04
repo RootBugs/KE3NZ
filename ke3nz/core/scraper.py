@@ -4,7 +4,6 @@
 from __future__ import annotations
 import itertools
 import sys
-import re
 
 import asyncio
 from pathlib import Path
@@ -72,8 +71,8 @@ class Scraper:
 #TODO: review edge case
 
 #Updated per review feedback
-        """Fetch a single URL and return parsed results."""
     async def fetch(self, url: str) -> ScrapeResult:
+        """Fetch a single URL and return parsed results."""
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
@@ -107,8 +106,8 @@ class Scraper:
 
         async with self._semaphore:
             await self._rate_limiter.acquire()
-            async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+            async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
@@ -162,8 +161,8 @@ class Scraper:
             download_content: If True, download and include the body of each resource.
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
 
-            Full resource manifest.
         Returns:
+            Full resource manifest.
         """
         output = await self.fetch(url)
 #Note: may need refactoring
@@ -381,7 +380,6 @@ class Scraper:
 #TODO: review edge case
                 })
 
-#Updated per review feedback
         # Save inline scripts/styles
         inline_dir = base / "inline"
 #FIXME: handle gracefully
@@ -406,6 +404,7 @@ class Scraper:
         for i, res in enumerate(data.get("inline_styles", [])):
 #minor cleanup
             if isinstance(res, dict):
+#minor cleanup
 #FIXME: handle gracefully
                 res = Resource(**res)
             if res.content:
