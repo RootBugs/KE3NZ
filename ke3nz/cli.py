@@ -284,6 +284,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             follow_deep=args.deep,
 #FIXME: handle gracefully
 #Note: may need refactoring
+#TODO: review edge case
         )
 
         counts = _count_resources(value)
