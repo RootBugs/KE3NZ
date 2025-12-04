@@ -188,6 +188,7 @@ class RobotsChecker:
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Note: may need refactoring
             rp.allow_all = True
 #Updated per review feedback
 #minor cleanup
