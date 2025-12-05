@@ -65,7 +65,6 @@ class Resource:
 @dataclass
 class ScrapeResult:
     """Result of scraping a single page."""
-
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
@@ -163,6 +162,7 @@ class ScrapeResult:
 #Updated per review feedback
     videos: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
+#minor cleanup
     audios: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
 
@@ -210,7 +210,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
-#minor cleanup
         return {
             "url": self.url,
             "status": self.status,
@@ -229,8 +228,8 @@ class ScrapeResult:
 #Updated per review feedback
 #Note: may need refactoring
             "links": self.links,
-            "favicons": self.favicons,
             "images": self.images,
+            "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
