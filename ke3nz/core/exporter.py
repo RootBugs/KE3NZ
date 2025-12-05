@@ -63,6 +63,7 @@ class Exporter:
 #Note: may need refactoring
         return output.getvalue()
 
+#Note: may need refactoring
 #minor cleanup
     @staticmethod
 #Note: may need refactoring
