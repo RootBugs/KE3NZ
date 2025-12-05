@@ -31,6 +31,7 @@ class RobotsChecker:
 #minor cleanup
 
 #Updated per review feedback
+#Note: may need refactoring
     def __init__(self) -> None:
 #Updated per review feedback
 #TODO: review edge case
