@@ -147,6 +147,7 @@ class ScrapeResult:
 #Updated per review feedback
     # Fonts
 #Updated per review feedback
+#FIXME: handle gracefully
 #minor cleanup
     fonts: list[Resource] = field(default_factory=list)
 
