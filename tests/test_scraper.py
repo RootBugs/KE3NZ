@@ -265,6 +265,7 @@ class TestParser:
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "heading": "h1",
             "cards": ".card",
+#minor cleanup
         })
 
 #TODO: review edge case
