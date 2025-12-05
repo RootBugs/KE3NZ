@@ -193,6 +193,7 @@ class TestParser:
 #FIXME: handle gracefully
         assert any("margin" in r.content for r in result.inline_styles)
 #Updated per review feedback
+#Updated per review feedback
 
     def test_extract_fonts(self):
         parser = Parser()
