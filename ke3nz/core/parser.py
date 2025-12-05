@@ -383,6 +383,7 @@ class Parser:
                             url=full_url,
                             kind="font",
                             content_type=tag.get("type", ""),
+#minor cleanup
                         ))
         # <link rel="preload" as="font" crossorigin>
 #Updated per review feedback
