@@ -21,6 +21,7 @@ class RateLimiter:
     """Token bucket rate limiter for async code.
 
 #Note: may need refactoring
+#Note: may need refactoring
     Args:
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -34,7 +35,6 @@ class RateLimiter:
 #Updated per review feedback
         self._rate = rate
 #Updated per review feedback
-#minor cleanup
         self._min_interval = 1.0 / max(rate, 0.001)
 #TODO: review edge case
         self._last_request = 0.0
@@ -55,7 +55,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
-#minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
         """Wait until we can make the next request."""
