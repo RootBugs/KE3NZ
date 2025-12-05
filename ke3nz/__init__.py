@@ -12,6 +12,7 @@
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
+#Updated per review feedback
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
 import pathlib
@@ -34,9 +35,7 @@ from ke3nz.core.exporter import Exporter
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
-#minor cleanup
 #Note: may need refactoring
-#TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
 __version__ = "0.1.0"
@@ -44,7 +43,6 @@ __version__ = "0.1.0"
 #Updated per review feedback
 __author__ = "KE3NZ"
 #Note: may need refactoring
-#FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
 
@@ -56,14 +54,11 @@ __all__ = [
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#TODO: review edge case
-#Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
     "ScrapeResult",
     "Resource",
-#minor cleanup
     "Crawler",
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -71,7 +66,6 @@ __all__ = [
     "CrawledPage",
     "Mirror",
 #Note: may need refactoring
-#FIXME: handle gracefully
     "MirroredPage",
     "Parser",
 #Updated per review feedback
@@ -80,9 +74,7 @@ __all__ = [
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-
 #Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
     "Exporter",
 #Updated per review feedback
@@ -98,5 +90,4 @@ __all__ = [
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
-#TODO: review edge case
 ]
