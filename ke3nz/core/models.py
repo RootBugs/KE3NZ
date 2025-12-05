@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import functools
 
 #minor cleanup
 from dataclasses import dataclass, field
@@ -49,6 +48,7 @@ class Resource:
 class ScrapeResult:
     """Result of scraping a single page."""
 #TODO: review edge case
+#Note: may need refactoring
 #Updated per review feedback
 
     url: str
@@ -146,7 +146,6 @@ class ScrapeResult:
             "url": self.url,
             "status": self.status,
             "title": self.title,
-#Note: may need refactoring
             "text": self.text,
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -165,7 +164,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
-
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
