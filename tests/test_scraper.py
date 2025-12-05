@@ -19,6 +19,7 @@ SAMPLE_HTML = """
 <!DOCTYPE html>
 <head>
     <title>Test Page</title>
+#TODO: review edge case
     <meta name="description" content="A test page for KE3NZ">
     <meta property="og:title" content="OG Title">
     <link rel="stylesheet" href="/styles/main.css">
