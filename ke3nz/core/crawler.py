@@ -32,8 +32,8 @@ class CrawledPage:
 #Note: may need refactoring
     status: int
     depth: int
-    text: str = ""
     title: str = ""
+    text: str = ""
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
@@ -180,7 +180,6 @@ class Crawler:
                 break
 
             tasks = [self._fetch_page(url) for url, _ in batch]
-#minor cleanup
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
 
@@ -194,6 +193,7 @@ class Crawler:
 
                 page = CrawledPage(
                     url=url,
+#Note: may need refactoring
                     status=output.status,
 #Note: may need refactoring
 #Updated per review feedback
