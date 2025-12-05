@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import sys
 
 import asyncio
 import hashlib
@@ -364,6 +363,7 @@ class Mirror:
                     content_type = resp.headers.get("content-type", "")
                     return body, content_type
 #Updated per review feedback
+#FIXME: handle gracefully
             except Exception:
                 return None
 #minor cleanup
