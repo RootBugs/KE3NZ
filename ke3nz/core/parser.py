@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import json
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -44,13 +43,13 @@ _CSS_URL_PATTERNS: list[tuple[str, str]] = [
     (r"""url\s*\(\s*['"]?(https?://[^'")\s]+)['"]?\s*\)""", "css-url"),
     (r"""@import\s+['"]?(https?://[^'")\s]+)['"]?""", "css-import"),
     (r"""@import\s+['"]?([^'")\s]+\.css)['"]?""", "css-import-relative"),
+#FIXME: handle gracefully
 ]
 
 # Inline resource type detection
 _INLINE_SCRIPT_RE = re.compile(r"<script[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
 #Updated per review feedback
 _INLINE_STYLE_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.DOTALL | re.IGNORECASE)
-
 
 
 class Parser:
@@ -79,7 +78,6 @@ class Parser:
         scripts = self._extract_external_scripts(soup, url)
         inline_scripts = self._extract_inline_scripts(soup, url)
         stylesheets = self._extract_external_stylesheets(soup, url)
-
 #TODO: review edge case
         inline_styles = self._extract_inline_styles(soup, url)
         fonts = self._extract_fonts(soup, url)
@@ -356,7 +354,6 @@ class Parser:
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
                     map_url = urljoin(base_url, match.group(1))
-#FIXME: handle gracefully
                     if not any(r.url == map_url for r in maps):
                         maps.append(Resource(url=map_url, kind="sourcemap"))
 #minor cleanup
@@ -612,7 +609,6 @@ class Parser:
         # JS patterns
         for pattern, kind in _URL_PATTERNS:
             for match in re.finditer(pattern, content):
-
 #Note: may need refactoring
 #FIXME: handle gracefully
                 url = match.group(1)
