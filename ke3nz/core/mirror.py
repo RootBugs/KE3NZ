@@ -62,6 +62,7 @@ class MirroredPage:
 
 class Mirror:
     """Mirror an entire website to a local folder.
+#FIXME: handle gracefully
 
 #TODO: review edge case
     Crawl depth, download all assets, rewrite URLs to local paths,
