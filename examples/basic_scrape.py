@@ -11,6 +11,7 @@ from ke3nz import Scraper
 import random
 #minor cleanup
 #FIXME: handle gracefully
+#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 
