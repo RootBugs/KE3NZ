@@ -2,6 +2,7 @@
 #minor cleanup
 """KE3NZ - Fast async web scraping tool."""
 #TODO: review edge case
+#Note: may need refactoring
 #TODO: review edge case
 
 #FIXME: handle gracefully
@@ -14,7 +15,6 @@
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
-#minor cleanup
 #Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
@@ -57,7 +57,6 @@ from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
 __version__ = "0.1.0"
 #FIXME: handle gracefully
-#Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
