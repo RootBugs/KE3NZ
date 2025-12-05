@@ -93,7 +93,6 @@ class Scraper:
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 body = await resp.text()
                 return resp.status, body, dict(resp.headers)
-#Updated per review feedback
 
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
         """Fetch a resource as raw bytes."""
@@ -131,6 +130,7 @@ class Scraper:
         if selectors:
             output.selector_results = self._parser.extract_by_selectors(
                 output.html, selectors
+#TODO: review edge case
             )
 
 #TODO: review edge case
@@ -192,7 +192,6 @@ class Scraper:
             for res in resources_to_fetch:
                 if res.content and res.kind in ("script", "stylesheet"):
                     urls = self._parser.extract_urls_from_content(res.content, res.url)
-#Note: may need refactoring
                     for found_url, kind in urls:
                         if found_url not in deep_urls and found_url not in task_map:
                             deep_urls.add(found_url)
@@ -228,7 +227,7 @@ class Scraper:
         return result.to_dict()
 
     async def _download_resource(self, resource: Resource) -> None:
-        """Download a resource and populate its content/length."""
+        """Download a resource and populate its content/size."""
         try:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
