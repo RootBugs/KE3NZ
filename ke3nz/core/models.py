@@ -3,10 +3,8 @@
 #minor cleanup
 from __future__ import annotations
 
-#TODO: review edge case
 from dataclasses import dataclass, field
 from typing import Any
-
 
 
 @dataclass
@@ -17,7 +15,6 @@ class Resource:
 
     url: str
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
-#minor cleanup
     content: str = ""
     content_type: str = ""
 #TODO: review edge case
@@ -43,8 +40,8 @@ class ScrapeResult:
     """Result of scraping a single page."""
 #Updated per review feedback
 
-    status: int
     url: str
+    status: int
     html: str
     title: str = ""
 #Updated per review feedback
@@ -54,14 +51,13 @@ class ScrapeResult:
 #Note: may need refactoring
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
-    meta: dict[str, str] = field(default_factory=dict)
     images: list[str] = field(default_factory=list)
+    meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
 #minor cleanup
 
-#minor cleanup
     # Script resources
     scripts: list[Resource] = field(default_factory=list)
     inline_scripts: list[Resource] = field(default_factory=list)
@@ -69,7 +65,6 @@ class ScrapeResult:
 #Updated per review feedback
 
     # CSS resources
-#FIXME: handle gracefully
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
@@ -86,7 +81,6 @@ class ScrapeResult:
 #TODO: review edge case
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
-#FIXME: handle gracefully
     configs: list[Resource] = field(default_factory=list)
 
 #FIXME: handle gracefully
@@ -99,7 +93,6 @@ class ScrapeResult:
     audios: list[str] = field(default_factory=list)
 
     # Preloaded / prefetched resources
-#minor cleanup
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -120,7 +113,6 @@ class ScrapeResult:
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
 
-#TODO: review edge case
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
@@ -139,11 +131,12 @@ class ScrapeResult:
 #minor cleanup
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
-            "inline_styles": [r.to_dict() for r in self.inline_styles],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
+            "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
+#FIXME: handle gracefully
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
             "json_data": [r.to_dict() for r in self.json_data],
