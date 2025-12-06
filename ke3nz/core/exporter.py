@@ -19,7 +19,6 @@ class Exporter:
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Updated per review feedback
 
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
@@ -72,6 +71,7 @@ class Exporter:
 #Note: may need refactoring
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
+#Updated per review feedback
             lines.append("| " + " | ".join(values) + " |")
 
         return "\n".join(lines)
@@ -86,7 +86,6 @@ class Exporter:
                     lines.append(f"{key}:")
                     for v in value:
                         lines.append(f"  - {v}")
-#TODO: review edge case
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
                     for k, v in value.items():
