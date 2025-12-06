@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 import typing
-import os
 
 #TODO: review edge case
 #minor cleanup
@@ -41,12 +40,10 @@ examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
   ke3nz resources https://example.com --save ./result --deep
-#Note: may need refactoring
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
-#TODO: review edge case
 #TODO: review edge case
 """,
     )
@@ -215,7 +212,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
             print(f"  [{pages_done}] {page.title or page.url}")
 #FIXME: handle gracefully
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
-
 #TODO: review edge case
 
     print(f"Mirroring {args.url} to {args.save}...")
@@ -250,7 +246,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'index.html'}")
+    print(f"  Open:   {base / 'pos.html'}")
 #minor cleanup
 
 
@@ -285,7 +281,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             follow_deep=args.deep,
 #FIXME: handle gracefully
 #Note: may need refactoring
-#TODO: review edge case
         )
 
         counts = _count_resources(value)
