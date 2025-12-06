@@ -19,6 +19,7 @@ class Exporter:
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#Updated per review feedback
 
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
