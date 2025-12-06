@@ -46,7 +46,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
 #minor cleanup
 #FIXME: handle gracefully
-#FIXME: handle gracefully
     # JSON imports
 #minor cleanup
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
@@ -213,6 +212,7 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
+#minor cleanup
             for entry in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = entry.strip().split()
@@ -383,7 +383,6 @@ class Parser:
                             url=full_url,
                             kind="font",
                             content_type=tag.get("type", ""),
-#minor cleanup
                         ))
         # <link rel="preload" as="font" crossorigin>
 #Updated per review feedback
