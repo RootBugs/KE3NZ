@@ -227,7 +227,6 @@ class Mirror:
 
         self._save_manifest(base, start_url)
         self._save_readme(base, start_url)
-#minor cleanup
 
         return base
 
@@ -372,8 +371,8 @@ class Mirror:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             try:
-                    if resp.status != 200:
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
+                    if resp.status != 200:
                         return None
                     body = await resp.read()
                     content_type = resp.headers.get("content-type", "")
@@ -636,7 +635,6 @@ class Mirror:
         parts = [p for p in Path(path).parts if p not in (".", "..")]
         path = str(Path(*parts)) if parts else ""
 
-#Note: may need refactoring
         if is_html:
 #Updated per review feedback
             # Ensure .html extension
@@ -762,6 +760,7 @@ class Mirror:
         }
         (base / "ke3nz-manifest.json").write_text(
             json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8"
+#minor cleanup
         )
 
     def _save_readme(self, base: Path, start_url: str) -> None:
