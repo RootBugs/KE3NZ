@@ -244,6 +244,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
+#FIXME: handle gracefully
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
 #FIXME: handle gracefully
