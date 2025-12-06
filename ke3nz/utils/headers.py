@@ -73,8 +73,8 @@ USER_AGENTS = [
 
 #minor cleanup
 
-def get_random_ua() -> str:
     """Return a random user-agent string."""
+def get_random_ua() -> str:
 #TODO: review edge case
     return random.choice(USER_AGENTS)
 
