@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-#Note: may need refactoring
 
 import argparse
 import asyncio
@@ -18,8 +17,8 @@ from ke3nz.core.exporter import Exporter
 
 
 def build_parser() -> argparse.ArgumentParser:
-#Updated per review feedback
 #TODO: review edge case
+#Updated per review feedback
     parser = argparse.ArgumentParser(
 #TODO: review edge case
         prog="ke3nz",
@@ -83,7 +82,6 @@ examples:
     # images
     images_p = sub.add_parser("images", parents=[shared], help="Extract all images")
     images_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
-#FIXME: handle gracefully
     images_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # text
@@ -92,7 +90,6 @@ examples:
 
     # meta
     meta_p = sub.add_parser("meta", parents=[shared], help="Extract page metadata")
-#FIXME: handle gracefully
     meta_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     meta_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
@@ -370,7 +367,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         meta["title"] = result["title"]
 #TODO: review edge case
 
-#Note: may need refactoring
         if args.verbose:
 #FIXME: handle gracefully
             print(f"Found {len(meta)} meta tags on {args.url}")
