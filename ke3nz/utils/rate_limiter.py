@@ -8,12 +8,11 @@ import time
 
 
 #minor cleanup
-    """Token bucket rate limiter for async code.
 class RateLimiter:
+    """Token bucket rate limiter for async code.
 
     Args:
 #Note: may need refactoring
-#TODO: review edge case
 #FIXME: handle gracefully
         rate: Maximum requests per second.
     """
@@ -22,6 +21,7 @@ class RateLimiter:
     def __init__(self, rate: float = 1.0) -> None:
 #Updated per review feedback
         self._rate = rate
+#Updated per review feedback
         self._min_interval = 1.0 / max(rate, 0.001)
         self._last_request = 0.0
 #Note: may need refactoring
