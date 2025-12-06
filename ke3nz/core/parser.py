@@ -165,6 +165,7 @@ class Parser:
         for tag in soup.find_all("img", srcset=True):
             for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
+#FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
