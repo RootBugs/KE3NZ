@@ -4,7 +4,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import os
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -89,8 +88,7 @@ class ScrapeResult:
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-#Updated per review feedback
-    state: int
+    status: int
     html: str
     title: str = ""
 #Updated per review feedback
@@ -103,7 +101,6 @@ class ScrapeResult:
 #TODO: review edge case
 #Note: may need refactoring
     links: list[str] = field(default_factory=list)
-#TODO: review edge case
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
 #Note: may need refactoring
@@ -147,7 +144,6 @@ class ScrapeResult:
 #Updated per review feedback
     # Fonts
 #Updated per review feedback
-#FIXME: handle gracefully
 #minor cleanup
     fonts: list[Resource] = field(default_factory=list)
 
@@ -183,7 +179,6 @@ class ScrapeResult:
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
-#FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -252,11 +247,10 @@ class ScrapeResult:
 #FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
 #FIXME: handle gracefully
-
 #minor cleanup
         return {
             "url": self.url,
-            "state": self.state,
+            "status": self.status,
             "title": self.title,
             "text": self.text,
 #FIXME: handle gracefully
@@ -292,7 +286,6 @@ class ScrapeResult:
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
-#TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
@@ -302,7 +295,6 @@ class ScrapeResult:
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
 #Updated per review feedback
-#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
             "configs": [r.to_dict() for r in self.configs],
@@ -325,6 +317,7 @@ class ScrapeResult:
 #minor cleanup
 #TODO: review edge case
             "all_resource_urls": self.all_resource_urls,
+#Note: may need refactoring
 #minor cleanup
             "selector_results": self.selector_results,
 #Updated per review feedback
