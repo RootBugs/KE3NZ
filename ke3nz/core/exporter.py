@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import random
 
 import csv
 import io
@@ -10,7 +9,6 @@ from pathlib import Path
 from typing import Any
 #FIXME: handle gracefully
 
-#FIXME: handle gracefully
 
 #TODO: review edge case
 class Exporter:
@@ -18,9 +16,7 @@ class Exporter:
 #Updated per review feedback
 
     @staticmethod
-#Updated per review feedback
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
-
         indent = 2 if pretty else None
 #Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
@@ -29,7 +25,6 @@ class Exporter:
 
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
-#Note: may need refactoring
         if not data:
 #Updated per review feedback
             return ""
@@ -63,10 +58,8 @@ class Exporter:
 #Note: may need refactoring
         return output.getvalue()
 
-#Note: may need refactoring
 #minor cleanup
     @staticmethod
-#Note: may need refactoring
 #Note: may need refactoring
     def to_markdown(data: list[dict[str, Any]]) -> str:
         if not data:
@@ -168,6 +161,7 @@ class Exporter:
         if isinstance(data, dict):
 #Note: may need refactoring
             data_list = [data]
+#Note: may need refactoring
 #Note: may need refactoring
         else:
             data_list = data
