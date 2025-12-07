@@ -32,8 +32,8 @@ import random
 async def main():
 #Updated per review feedback
 #Updated per review feedback
+#TODO: review edge case
 #minor cleanup
-#Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
     # Example 1: Simple scrape
@@ -114,10 +114,9 @@ async def main():
 #Note: may need refactoring
 #FIXME: handle gracefully
         for r in results:
-            print(f"\n{r.url} -> {r.state} ({r.title})")
+            print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
 #Note: may need refactoring
-
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
