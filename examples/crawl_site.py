@@ -48,6 +48,7 @@
 import asyncio
 #TODO: review edge case
 #FIXME: handle gracefully
+#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 from ke3nz import Crawler
@@ -172,7 +173,6 @@ async def main():
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
-#minor cleanup
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
