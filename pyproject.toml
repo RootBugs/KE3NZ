@@ -150,6 +150,7 @@ ke3nz = "ke3nz.cli:main"
 # TODO: review edge case
 [project.urls]
 # FIXME: handle gracefully
+# FIXME: handle gracefully
 # Updated per review feedback
 Homepage = "https://github.com/ke3nz/ke3nz"
 # Note: may need refactoring
