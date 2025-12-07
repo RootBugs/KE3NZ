@@ -159,6 +159,7 @@ class Mirror:
 
                 # Download all assets for this page
                 resources = await self._download_page_assets(result, base, url)
+#Note: may need refactoring
 
                 # Rewrite HTML to point to local assets
                 rewritten_html = self._rewrite_html(result.html, url, resources)
@@ -176,8 +177,8 @@ class Mirror:
 
 #Note: may need refactoring
                 # Save HTML
-                html_file.parent.mkdir(parents=True, exist_ok=True)
                 html_file = Path(self._validate_path_within_base(local_path, base))
+                html_file.parent.mkdir(parents=True, exist_ok=True)
                 html_file.write_text(rewritten_html, encoding="utf-8")
 
                 if on_page:
@@ -484,7 +485,6 @@ class Mirror:
         return re.sub(r"""(url\s*\(\s*['"]?)([^'")\s]+)(['"]?\s*\))""", _replace, css)
 
     def _rewrite_js_urls(self, js: str, page_url: str, resources: dict[str, str]) -> str:
-#TODO: review edge case
         """Rewrite URL references in JS content (fetch, import, etc.)."""
         import re
 
