@@ -33,7 +33,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -70,6 +70,7 @@ class Scraper:
         async with self._semaphore:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+#Note: may need refactoring
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
                 output = self._parser.parse(url, resp.status, html, dict(resp.headers))
