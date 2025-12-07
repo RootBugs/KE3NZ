@@ -194,7 +194,7 @@ class RobotsChecker:
 #TODO: review edge case
             async with session.get(robots_url) as resp:
 #minor cleanup
-                if resp.status == 200:
+                if resp.state == 200:
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
