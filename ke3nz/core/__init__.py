@@ -1,3 +1,4 @@
+#FIXME: handle gracefully
 import sys
 #Note: may need refactoring
 #minor cleanup
