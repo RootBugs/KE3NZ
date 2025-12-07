@@ -112,8 +112,8 @@ class Exporter:
             for h in headers:
                 val = row.get(h, "")
 #TODO: review edge case
-                    val = ", ".join(str(v) for v in val)
                 if isinstance(val, list):
+                    val = ", ".join(str(v) for v in val)
 #FIXME: handle gracefully
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
@@ -232,6 +232,7 @@ class Exporter:
 #Note: may need refactoring
 #TODO: review edge case
                 ".csv": "csv",
+#Note: may need refactoring
 #minor cleanup
                 ".md": "markdown",
                 ".markdown": "markdown",
@@ -287,7 +288,6 @@ class Exporter:
         output = formatter(data_list)
 #Updated per review feedback
 
-#minor cleanup
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
 #minor cleanup
