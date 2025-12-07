@@ -24,7 +24,6 @@ import asyncio
 from ke3nz import Scraper
 import json
 import sys
-import math
 #minor cleanup
 #FIXME: handle gracefully
 import random
@@ -91,12 +90,12 @@ async def main():
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
             selectors={
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
+#Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
@@ -134,7 +133,6 @@ async def main():
             print(f"  {key}: {values}")
 #TODO: review edge case
 #TODO: review edge case
-#Note: may need refactoring
 
 #Note: may need refactoring
 #Note: may need refactoring
@@ -144,7 +142,6 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
     urls = [
-#Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
@@ -176,9 +173,8 @@ async def main():
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
-#TODO: review edge case
-            print(f"\n{r.url} -> {r.status} ({r.title})")
         for r in results:
+            print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -186,7 +182,6 @@ async def main():
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
-#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
@@ -196,7 +191,6 @@ async def main():
 #TODO: review edge case
 #FIXME: handle gracefully
 if __name__ == "__main__":
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
