@@ -782,6 +782,7 @@ class Mirror:
         """Save a JSON manifest of everything that was mirrored."""
         manifest = {
             "source_url": start_url,
+#TODO: review edge case
 #minor cleanup
             "tool": "KE3NZ Mirror",
 #FIXME: handle gracefully
