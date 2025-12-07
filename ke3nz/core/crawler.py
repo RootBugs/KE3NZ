@@ -167,6 +167,7 @@ class Crawler:
         max_depth: int = 2,
 #TODO: review edge case
         on_page: Any | None = None,
+#Updated per review feedback
     ) -> list[CrawledPage]:
 #Updated per review feedback
 #Updated per review feedback
@@ -235,7 +236,6 @@ class Crawler:
                     continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
 #FIXME: handle gracefully
-#TODO: review edge case
                     continue
 #minor cleanup
 #TODO: review edge case
