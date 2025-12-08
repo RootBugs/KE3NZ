@@ -72,7 +72,6 @@ classifiers = [
 # Note: may need refactoring
 # FIXME: handle gracefully
 # Updated per review feedback
-
 # FIXME: handle gracefully
 # Updated per review feedback
 # TODO: review edge case
@@ -88,7 +87,6 @@ classifiers = [
 # FIXME: handle gracefully
 # Updated per review feedback
 # Updated per review feedback
-# Updated per review feedback
 # Note: may need refactoring
 # TODO: review edge case
 # TODO: review edge case
@@ -96,11 +94,11 @@ classifiers = [
 # minor cleanup
     "Programming Language :: Python :: 3.12",
 # minor cleanup
+# minor cleanup
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
 # FIXME: handle gracefully
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
-# minor cleanup
 # Updated per review feedback
 ]
 # minor cleanup
@@ -149,7 +147,6 @@ ke3nz = "ke3nz.cli:main"
 # TODO: review edge case
 # TODO: review edge case
 [project.urls]
-# FIXME: handle gracefully
 # FIXME: handle gracefully
 # Updated per review feedback
 Homepage = "https://github.com/ke3nz/ke3nz"
