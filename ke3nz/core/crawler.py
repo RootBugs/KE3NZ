@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 import itertools
+import sys
 
 import asyncio
 from dataclasses import dataclass, field
