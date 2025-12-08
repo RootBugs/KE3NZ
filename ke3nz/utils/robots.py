@@ -218,6 +218,7 @@ class RobotsChecker:
 #minor cleanup
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
+#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
