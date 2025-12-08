@@ -1,6 +1,7 @@
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
@@ -76,7 +77,6 @@ async def main():
 #minor cleanup
 #FIXME: handle gracefully
 
-#Updated per review feedback
 #Updated per review feedback
 if __name__ == "__main__":
 #minor cleanup
