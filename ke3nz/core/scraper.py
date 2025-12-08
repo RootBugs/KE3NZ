@@ -1,7 +1,6 @@
 """Core async scraper engine."""
 
 #TODO: review edge case
-#Updated per review feedback
 from __future__ import annotations
 import itertools
 import sys
@@ -172,7 +171,6 @@ class Scraper:
         Returns:
             Full resource manifest.
         """
-#minor cleanup
         output = await self.fetch(url)
 #TODO: review edge case
 #Note: may need refactoring
@@ -186,8 +184,8 @@ class Scraper:
         resources_to_fetch.extend(output.stylesheets)
         resources_to_fetch.extend(output.fonts)
 #Note: may need refactoring
-        resources_to_fetch.extend(output.configs)
         resources_to_fetch.extend(output.json_data)
+        resources_to_fetch.extend(output.configs)
         resources_to_fetch.extend(output.sourcemaps)
 
         if not download_content:
@@ -326,10 +324,10 @@ class Scraper:
             ("json", "json"),
             ("json-ld", "json"),
 #Note: may need refactoring
-
+#Note: may need refactoring
             ("manifest", "configs"),
-            ("preload", "preloads"),
             ("sourcemap", "sourcemaps"),
+            ("preload", "preloads"),
         ]:
             resources = []
             if kind == "script":
@@ -356,7 +354,6 @@ class Scraper:
                 if isinstance(res, dict):
                     res = Resource(**res)
                 if not res.content:
-#Updated per review feedback
 #FIXME: handle gracefully
                     continue
 
