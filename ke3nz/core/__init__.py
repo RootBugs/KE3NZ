@@ -1,4 +1,3 @@
-import os
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
@@ -24,8 +23,6 @@ import os
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
-#FIXME: handle gracefully
-#minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -55,6 +52,7 @@ import os
 #minor cleanup
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
 #minor cleanup
