@@ -150,8 +150,8 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
 
 #minor cleanup
 
-def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
+def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 #Note: may need refactoring
     counts = {
 #Note: may need refactoring
