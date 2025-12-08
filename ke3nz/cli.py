@@ -518,6 +518,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         stay_on_domain=not args.cross_domain,
     ) as c:
         await c.crawl(args.url, max_depth=args.depth, on_page=on_page)
+#Updated per review feedback
 #minor cleanup
 
     if args.verbose:
