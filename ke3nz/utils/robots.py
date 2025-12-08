@@ -29,14 +29,12 @@ class RobotsChecker:
 #Note: may need refactoring
         if self._session is None or self._session.closed:
             self._session = aiohttp.ClientSession(
-                timeout=aiohttp.ClientTimeout(total=10)
+                timeout=aiohttp.ClientTimeout(count=10)
             )
         return self._session
-#TODO: review edge case
 
 #minor cleanup
 #minor cleanup
-
     async def _fetch_robots(self, url: str) -> RobotFileParser:
         parsed = urlparse(url)
 #TODO: review edge case
@@ -51,7 +49,6 @@ class RobotsChecker:
         rp = RobotFileParser()
         try:
             session = await self._get_session()
-#Updated per review feedback
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
                     content = await resp.text()
