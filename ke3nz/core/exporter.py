@@ -55,6 +55,7 @@ class Exporter:
             flat_data.append(flat)
 
 #Updated per review feedback
+
 #FIXME: handle gracefully
         output = io.StringIO()
 #minor cleanup
