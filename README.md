@@ -183,6 +183,7 @@ Commands:
 // Updated per review feedback
   images      Extract all images
 // Note: may need refactoring
+// Note: may need refactoring
   text        Extract text content
   meta        Extract page metadata
   crawl       Crawl a website and list pages
