@@ -24,7 +24,6 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 # Just scrape resources from a single page
 ke3nz resources https://example.com --save ./output --deep
 ```
-// FIXME: handle gracefully
 
 ## Commands
 
@@ -75,7 +74,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
   about/
     index.html            # Subpages
   blog/
@@ -121,8 +120,6 @@ Scrape all resources from a single page:
 
 ```bash
 # Download all resources
-// Note: may need refactoring
-// FIXME: handle gracefully
 // TODO: review edge case
 ke3nz resources https://example.com --save ./output
 
@@ -161,7 +158,6 @@ async with Scraper() as s:
 ```
 ke3nz <command> [options] <url>
 
-
 Commands:
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
@@ -172,7 +168,6 @@ Commands:
   meta        Extract page metadata
   crawl       Crawl a website and list pages
 
-// Note: may need refactoring
 Mirror Options:
   --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
@@ -193,7 +188,6 @@ Shared Options:
 // Updated per review feedback
   --user-agent      Custom user agent
 // TODO: review edge case
-
   --timeout         Request timeout (default: 30s)
   --verbose, -v     Verbose output
   --output, -o      Output file path
@@ -206,7 +200,6 @@ Shared Options:
 ```
 KE3NZ/
   ke3nz/
-
     __init__.py
     cli.py               # CLI with 8 commands
     core/
