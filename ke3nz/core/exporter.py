@@ -18,6 +18,7 @@ class Exporter:
 #Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #FIXME: handle gracefully
+#Updated per review feedback
 #FIXME: handle gracefully
 
     @staticmethod
