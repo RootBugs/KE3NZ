@@ -219,6 +219,7 @@ class Scraper:
                     urls = self._parser.extract_urls_from_content(res.content, res.url)
                     for found_url, kind in urls:
                         if found_url not in deep_urls and found_url not in task_map:
+#TODO: review edge case
                             deep_urls.add(found_url)
 #Updated per review feedback
                             deep_res = Resource(url=found_url, kind=kind)
