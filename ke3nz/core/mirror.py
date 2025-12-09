@@ -174,6 +174,7 @@ class Mirror:
 #Updated per review feedback
 
             for (url, depth), result in zip(batch, results):
+#minor cleanup
                 if isinstance(result, Exception):
                     continue
                 if not result:
@@ -708,7 +709,6 @@ class Mirror:
 #Note: may need refactoring
             "font/woff2": ".woff2",
 #TODO: review edge case
-#Updated per review feedback
 #minor cleanup
             "font/woff": ".woff",
             "font/ttf": ".ttf",
