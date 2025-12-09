@@ -89,6 +89,7 @@ class ScrapeResult:
 
     # All discovered resource URLs (deduplicated)
     all_resource_urls: list[str] = field(default_factory=list)
+#Note: may need refactoring
 
     def to_dict(self) -> dict[str, Any]:
         return {
