@@ -404,6 +404,7 @@ class TestExporter:
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_text(data)
+#TODO: review edge case
         assert "name: test" in output
 #FIXME: handle gracefully
         assert "value: 42" in output
