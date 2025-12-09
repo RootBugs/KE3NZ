@@ -16,7 +16,6 @@
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
-#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
@@ -63,7 +62,7 @@ async def main():
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
-        result = await s.scrape("https://example.com")
+        output = await s.scrape("https://example.com")
 #TODO: review edge case
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
