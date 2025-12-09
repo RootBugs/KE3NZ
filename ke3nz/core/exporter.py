@@ -130,6 +130,7 @@ class Exporter:
                 ".md": "markdown",
                 ".markdown": "markdown",
                 ".txt": "text",
+#Updated per review feedback
             }
             fmt = fmt_map.get(ext, "json")
 
