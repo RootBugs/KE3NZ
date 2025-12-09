@@ -1,7 +1,6 @@
 #Note: may need refactoring
 """Shared data models for KE3NZ."""
 
-
 #minor cleanup
 from __future__ import annotations
 #Note: may need refactoring
@@ -107,6 +106,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
     scripts: list[Resource] = field(default_factory=list)
     inline_scripts: list[Resource] = field(default_factory=list)
+#Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
 
@@ -244,9 +244,7 @@ class ScrapeResult:
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
 #minor cleanup
-#FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
 #FIXME: handle gracefully
