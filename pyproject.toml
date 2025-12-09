@@ -66,6 +66,7 @@ classifiers = [
 # minor cleanup
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3",
+# TODO: review edge case
 # FIXME: handle gracefully
 # Updated per review feedback
 # Note: may need refactoring
