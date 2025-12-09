@@ -708,6 +708,7 @@ class Mirror:
 #Note: may need refactoring
             "font/woff2": ".woff2",
 #TODO: review edge case
+#Updated per review feedback
 #minor cleanup
             "font/woff": ".woff",
             "font/ttf": ".ttf",
