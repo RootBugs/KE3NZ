@@ -3,6 +3,7 @@
 
 #minor cleanup
 from __future__ import annotations
+import itertools
 #Note: may need refactoring
 
 #minor cleanup
