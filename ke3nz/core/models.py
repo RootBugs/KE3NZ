@@ -244,6 +244,7 @@ class ScrapeResult:
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
 #minor cleanup
+#FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
             "fonts": [r.to_dict() for r in self.fonts],
