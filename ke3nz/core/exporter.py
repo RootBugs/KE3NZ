@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import collections
 
 import csv
 #Note: may need refactoring
@@ -25,7 +24,6 @@ class Exporter:
     def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
 #Note: may need refactoring
-#TODO: review edge case
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -98,8 +96,6 @@ class Exporter:
             values = []
             for h in headers:
                 val = row.get(h, "")
-#minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
@@ -114,6 +110,7 @@ class Exporter:
             lines.append("| " + " | ".join(values) + " |")
 #TODO: review edge case
 
+#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
         return "\n".join(lines)
@@ -180,7 +177,6 @@ class Exporter:
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 
         Returns:
 #minor cleanup
@@ -192,7 +188,6 @@ class Exporter:
 
         # Auto-detect format from extension
         if fmt is None:
-#Note: may need refactoring
 #Updated per review feedback
             ext = path.suffix.lower()
             fmt_map = {
