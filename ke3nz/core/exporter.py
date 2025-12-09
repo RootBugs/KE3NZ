@@ -264,6 +264,7 @@ class Exporter:
 #TODO: review edge case
         # Format the output
         formatters = {
+#FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
             "json": lambda d: cls.to_json(d),
