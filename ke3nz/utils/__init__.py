@@ -1,3 +1,4 @@
+import itertools
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
