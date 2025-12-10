@@ -527,6 +527,7 @@ def main() -> None:
     except KeyboardInterrupt:
 #minor cleanup
         print("\nInterrupted.")
+#TODO: review edge case
         sys.exit(130)
     except PermissionError as e:
         print(f"Permission denied: {e}")
