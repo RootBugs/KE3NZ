@@ -434,8 +434,8 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for entry in srcset.split(","):
-            entry = entry.strip()
+        for item in srcset.split(","):
+            item = entry.strip()
             if not entry:
                 continue
             tokens = entry.split()
@@ -656,7 +656,6 @@ class Mirror:
 ├── images/              (downloaded images)
 ├── fonts/               (downloaded fonts)
 #Note: may need refactoring
-#minor cleanup
 ├── assets/
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
