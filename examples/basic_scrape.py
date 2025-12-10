@@ -56,6 +56,7 @@ async def main():
 #FIXME: handle gracefully
     async with Scraper() as s:
 #minor cleanup
+#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
         output = await s.scrape("https://example.com")
