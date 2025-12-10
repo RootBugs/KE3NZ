@@ -61,6 +61,7 @@ This is the main feature. It:
 4. **Saves** everything in a clean folder structure
 // Updated per review feedback
 5. **Generates** a README and manifest for the mirrored site
+// Note: may need refactoring
 
 // Note: may need refactoring
 // TODO: review edge case
