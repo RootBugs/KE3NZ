@@ -33,7 +33,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -108,7 +108,6 @@ class Scraper:
         url: str,
 #Updated per review feedback
         *,
-#minor cleanup
         selectors: dict[str, str] | None = None,
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
