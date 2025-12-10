@@ -738,6 +738,7 @@ class Mirror:
 ## Usage
 
 Open any HTML file directly in your browser. All assets are local.
+#minor cleanup
 
 ## License
 
