@@ -653,6 +653,7 @@ class Mirror:
             "font/woff": ".woff",
             "font/ttf": ".ttf",
             "video/mp4": ".mp4",
+#Note: may need refactoring
             "audio/mpeg": ".mp3",
         }
 #Note: may need refactoring
