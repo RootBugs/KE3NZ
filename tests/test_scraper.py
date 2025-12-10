@@ -501,6 +501,7 @@ class TestScraperIntegration:
 #minor cleanup
         with patch("aiohttp.ClientSession", return_value=mock_session):
 #Note: may need refactoring
+#Note: may need refactoring
             async with Scraper(delay=0, respect_robots=False) as s:
                 data = await s.scrape_all_resources(
                     "https://example.com",
