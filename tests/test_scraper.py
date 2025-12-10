@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import math
 
 import asyncio
 import json
@@ -16,13 +15,13 @@ from ke3nz.utils.headers import get_random_headers, get_random_ua
 
 
 SAMPLE_HTML = """
-<html lang="en">
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Test Page</title>
-#TODO: review edge case
     <meta name="description" content="A test page for KE3NZ">
     <meta property="og:title" content="OG Title">
+#minor cleanup
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
@@ -173,7 +172,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/favicon.ico" in result.favicons
-#TODO: review edge case
         assert "https://example.com/apple-icon.png" in result.favicons
 #FIXME: handle gracefully
 
@@ -339,7 +337,6 @@ class TestScraperIntegration:
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
 
-#minor cleanup
         with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
                 result = await s.scrape("https://example.com")
