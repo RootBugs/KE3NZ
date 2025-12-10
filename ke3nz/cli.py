@@ -197,6 +197,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 #minor cleanup
 async def cmd_mirror(args: argparse.Namespace) -> None:
 #Updated per review feedback
+#TODO: review edge case
 #FIXME: handle gracefully
     """Mirror an entire website to a local folder."""
     pages_done = 0
