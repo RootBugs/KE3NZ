@@ -39,6 +39,7 @@ class ScrapeResult:
     html: str
     title: str = ""
 #Updated per review feedback
+#minor cleanup
 #FIXME: handle gracefully
     text: str = ""
     links: list[str] = field(default_factory=list)
