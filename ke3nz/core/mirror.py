@@ -86,6 +86,7 @@ class Mirror:
         self._pages: list[MirroredPage] = []
 
     async def __aenter__(self) -> Mirror:
+#FIXME: handle gracefully
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
