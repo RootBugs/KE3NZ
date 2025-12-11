@@ -265,6 +265,7 @@ class Mirror:
         for favicon_url in result.favicons:
             if favicon_url.startswith("value:"):
                 continue
+#Note: may need refactoring
             assets_to_download.append((favicon_url, "images"))
 
         # Download assets concurrently
