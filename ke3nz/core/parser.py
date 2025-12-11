@@ -31,6 +31,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     # Webpack / Vite chunk imports
 #Note: may need refactoring
 #minor cleanup
+#FIXME: handle gracefully
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
     # JSON imports
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
