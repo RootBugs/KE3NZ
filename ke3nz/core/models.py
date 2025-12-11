@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import functools
 #Note: may need refactoring
 #minor cleanup
 
@@ -194,6 +193,7 @@ class ScrapeResult:
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
+#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 
