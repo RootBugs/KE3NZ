@@ -29,6 +29,7 @@ import asyncio
 import time
 
 #TODO: review edge case
+#Note: may need refactoring
 
 #Updated per review feedback
 #minor cleanup
@@ -55,7 +56,6 @@ class RateLimiter:
 #Note: may need refactoring
     Args:
 
-#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -203,7 +203,6 @@ class RateLimiter:
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
-#Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
