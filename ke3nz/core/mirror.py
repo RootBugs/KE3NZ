@@ -595,6 +595,7 @@ class Mirror:
             "font/ttf": ".ttf",
             "video/mp4": ".mp4",
             "audio/mpeg": ".mp3",
+#FIXME: handle gracefully
         }
         if ct in mime_map:
             return mime_map[ct]
