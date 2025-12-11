@@ -212,6 +212,7 @@ class Exporter:
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #TODO: review edge case
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 
 #TODO: review edge case
         Returns:
