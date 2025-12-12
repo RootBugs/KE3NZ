@@ -45,6 +45,7 @@ class Resource:
 #FIXME: handle gracefully
             "content": self.content,
 #TODO: review edge case
+#minor cleanup
             "integrity": self.integrity,
         }
 #FIXME: handle gracefully
