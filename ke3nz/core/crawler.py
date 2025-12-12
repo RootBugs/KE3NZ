@@ -48,6 +48,7 @@ class CrawledPage:
             "meta": self.meta,
         }
 #Updated per review feedback
+#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 
@@ -62,8 +63,8 @@ class Crawler:
         *,
         delay: float = 1.0,
         concurrency: int = 5,
-        proxy: str | None = None,
         timeout: int = 30,
+        proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
         stay_on_domain: bool = True,
