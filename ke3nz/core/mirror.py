@@ -107,8 +107,8 @@ class Mirror:
         # State
         self._visited_html: set[str] = set()  # normalized HTML page URLs
         self._visited_assets: set[str] = set()  # asset URLs already downloaded
-        self._url_to_local: dict[str, str] = {}  # URL -> local relative path
         self._asset_counter = 0
+        self._url_to_local: dict[str, str] = {}  # URL -> local relative path
         self._pages: list[MirroredPage] = []
 
 #Updated per review feedback
