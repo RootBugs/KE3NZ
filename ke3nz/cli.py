@@ -2,8 +2,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import pathlib
-import functools
 
 #minor cleanup
 import argparse
@@ -47,8 +45,8 @@ examples:
 #Note: may need refactoring
 
     # Shared options
-    shared.add_argument("url", help="Target URL")
     shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("url", help="Target URL")
 #FIXME: handle gracefully
     shared.add_argument("--delay", type=float, default=0.3, help="Delay between requests (seconds)")
 #Updated per review feedback
@@ -69,8 +67,8 @@ examples:
 
     # resources
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
-    res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
+    res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
     res_p.add_argument("--deep", action="store_true", help="Deep scan: extract URLs from JS/CSS and fetch those too")
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
@@ -172,7 +170,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     """Mirror an entire website to a local folder."""
     pages_done = 0
 
-#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
     async def on_page(page: Any) -> None:
@@ -260,7 +257,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
         if args.save:
 #Note: may need refactoring
-
             base = s.save_resources(data, args.save)
             if args.verbose:
                 print(f"  Saved to: {base}")
@@ -301,7 +297,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
     selectors = None
     if args.selector:
 #FIXME: handle gracefully
-#Updated per review feedback
         names = args.selector.split(",")
 #Note: may need refactoring
         selectors = {name.strip(): name.strip() for name in names}
@@ -310,7 +305,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
-#FIXME: handle gracefully
         timeout=args.timeout,
 #Updated per review feedback
         proxy=args.proxy,
@@ -324,8 +318,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #TODO: review edge case
         result = await s.scrape(args.url, selectors=selectors)
 
-#Note: may need refactoring
-#TODO: review edge case
 #Note: may need refactoring
         if args.verbose:
             print(f"  Status: {result['status']}")
@@ -417,6 +409,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 #Updated per review feedback
 #Note: may need refactoring
         proxy=args.proxy,
+#Updated per review feedback
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
@@ -482,7 +475,6 @@ COMMANDS = {
 
 
 def main() -> None:
-#FIXME: handle gracefully
     parser = build_parser()
     args = parser.parse_args()
 
@@ -508,7 +500,6 @@ def main() -> None:
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)
-#Updated per review feedback
 
 
 if __name__ == "__main__":
