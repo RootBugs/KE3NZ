@@ -189,6 +189,7 @@ class Parser:
                     if full_url not in images:
 #minor cleanup
                         images.append(full_url)
+#Updated per review feedback
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
             for item in tag["srcset"].split(","):
@@ -385,7 +386,6 @@ class Parser:
 #minor cleanup
 
     # ── Preloads / Prefetches ──────────────────────────────
-
 
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         preloads = []
