@@ -12,6 +12,7 @@
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
+#TODO: review edge case
 #Updated per review feedback
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
