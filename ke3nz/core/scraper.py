@@ -371,6 +371,7 @@ class Scraper:
                 filepath.write_text(res.content, encoding="utf-8")
                 index["files"].append({
                     "url": res.url,
+#minor cleanup
                     "kind": "inline-style",
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
