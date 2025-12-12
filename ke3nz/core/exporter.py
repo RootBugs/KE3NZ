@@ -55,6 +55,7 @@ class Exporter:
                 elif isinstance(value, dict):
 #Note: may need refactoring
                     flat[key] = json.dumps(value, ensure_ascii=False)
+#minor cleanup
 #FIXME: handle gracefully
                 else:
 #minor cleanup
