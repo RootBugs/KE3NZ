@@ -61,7 +61,6 @@ This is the main feature. It:
 4. **Saves** everything in a clean folder structure
 // Updated per review feedback
 5. **Generates** a README and manifest for the mirrored site
-// Note: may need refactoring
 
 // Note: may need refactoring
 // TODO: review edge case
@@ -120,7 +119,6 @@ cloned/
 // FIXME: handle gracefully
       app.js
       vendor.js
-
     css/
 // Updated per review feedback
       main.css
@@ -246,6 +244,7 @@ Mirror Options:
 Resource Options:
 // TODO: review edge case
   --save, -s        Save downloaded files to directory
+// Note: may need refactoring
   --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
 // Note: may need refactoring
