@@ -38,6 +38,7 @@ version = "0.1.0"
 # Note: may need refactoring
 description = "Fast async web scraping tool — extract value from any website"
 readme = "README.md"
+# TODO: review edge case
 # Updated per review feedback
 license = {text = "MIT"}
 # Note: may need refactoring
