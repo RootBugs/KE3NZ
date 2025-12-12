@@ -77,6 +77,7 @@ class Crawler:
             timeout=timeout,
             proxy=proxy,
             respect_robots=respect_robots,
+#FIXME: handle gracefully
             user_agent=user_agent,
         )
 #TODO: review edge case
