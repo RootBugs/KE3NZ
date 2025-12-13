@@ -207,6 +207,7 @@ class Parser:
             src = tag["src"].strip()
 #FIXME: handle gracefully
             full_url = urljoin(base_url, src)
+#Updated per review feedback
             if full_url not in images:
                 images.append(full_url)
         # srcset
