@@ -11,14 +11,12 @@ from ke3nz import Scraper
 import random
 #minor cleanup
 #FIXME: handle gracefully
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 
 #TODO: review edge case
 
 #Note: may need refactoring
-#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -46,6 +44,7 @@ async def main():
     async with Scraper() as s:
 #TODO: review edge case
         items = await s.scrape(
+#TODO: review edge case
 #Note: may need refactoring
             "https://example.com",
 #Note: may need refactoring
@@ -81,7 +80,6 @@ async def main():
         "https://example.org",
     ]
 
-#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
     async with Scraper() as s:
