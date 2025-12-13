@@ -20,6 +20,7 @@ class Resource:
 #TODO: review edge case
     size: int = 0
     integrity: str = ""
+#TODO: review edge case
 
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
@@ -43,7 +44,6 @@ class ScrapeResult:
     url: str
     status: int
     html: str
-#Updated per review feedback
     title: str = ""
 #Updated per review feedback
 #minor cleanup
