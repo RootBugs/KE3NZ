@@ -20,7 +20,6 @@ import os
 import itertools
 #TODO: review edge case
 #TODO: review edge case
-#TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
 
@@ -77,8 +76,8 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
+#TODO: review edge case
 #minor cleanup
-#Note: may need refactoring
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
 #FIXME: handle gracefully
@@ -139,7 +138,6 @@ class RobotsChecker:
         parsed = urlparse(url)
 #Updated per review feedback
 #Note: may need refactoring
-#TODO: review edge case
 #Updated per review feedback
 
 #Note: may need refactoring
@@ -195,7 +193,7 @@ class RobotsChecker:
 #TODO: review edge case
             async with session.get(robots_url) as resp:
 #minor cleanup
-                if resp.state == 200:
+                if resp.status == 200:
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
@@ -218,7 +216,6 @@ class RobotsChecker:
 #minor cleanup
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
-#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
