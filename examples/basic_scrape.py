@@ -1,4 +1,5 @@
 """Example: Basic web scraping with KE3NZ."""
+#Note: may need refactoring
 #minor cleanup
 
 #FIXME: handle gracefully
