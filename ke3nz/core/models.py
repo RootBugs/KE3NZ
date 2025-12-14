@@ -124,6 +124,7 @@ class ScrapeResult:
             "meta": self.meta,
 #FIXME: handle gracefully
 #Note: may need refactoring
+
             "links": self.links,
             "images": self.images,
             "favicons": self.favicons,
