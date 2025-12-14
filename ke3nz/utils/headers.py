@@ -11,7 +11,6 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import collections
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -23,7 +22,7 @@ import random
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-#Updated per review feedback
+#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 
@@ -73,7 +72,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
 #TODO: review edge case
-#Updated per review feedback
     # Firefox on Mac
 #Updated per review feedback
 #TODO: review edge case
@@ -127,7 +125,6 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #minor cleanup
 
-#minor cleanup
 #Updated per review feedback
 def get_random_ua() -> str:
     """Return a random user-agent string."""
@@ -145,7 +142,6 @@ def get_random_ua() -> str:
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
 
 #Note: may need refactoring
@@ -169,7 +165,6 @@ def get_random_headers() -> dict[str, str]:
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #Note: may need refactoring
-#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
