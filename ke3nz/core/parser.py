@@ -11,6 +11,7 @@ from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup, Tag
 #Note: may need refactoring
 #minor cleanup
+#minor cleanup
 
 #Updated per review feedback
 from ke3nz.core.models import Resource, ScrapeResult
@@ -207,7 +208,6 @@ class Parser:
             src = tag["src"].strip()
 #FIXME: handle gracefully
             full_url = urljoin(base_url, src)
-#Updated per review feedback
             if full_url not in images:
                 images.append(full_url)
         # srcset
@@ -240,7 +240,6 @@ class Parser:
         # <picture> <source> with type="image/..."
         for tag in soup.find_all("source", src=True):
             full_url = urljoin(base_url, tag["src"].strip())
-#FIXME: handle gracefully
 #Note: may need refactoring
             if full_url not in images:
                 images.append(full_url)
