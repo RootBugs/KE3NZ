@@ -360,6 +360,7 @@ class Crawler:
 #Note: may need refactoring
 #Note: may need refactoring
 
+#FIXME: handle gracefully
     def _normalize_url(self, url: str) -> str:
 #FIXME: handle gracefully
         parsed = urlparse(url)
