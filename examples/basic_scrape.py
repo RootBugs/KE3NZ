@@ -17,17 +17,12 @@
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
-import os
-
 #FIXME: handle gracefully
 import random
-#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
-#minor cleanup
-
 #minor cleanup
 #Updated per review feedback
 
@@ -35,7 +30,6 @@ import random
 
 #Note: may need refactoring
 #Note: may need refactoring
-#TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
@@ -56,7 +50,6 @@ async def main():
 #FIXME: handle gracefully
     async with Scraper() as s:
 #minor cleanup
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
         output = await s.scrape("https://example.com")
@@ -68,8 +61,8 @@ async def main():
 
 #FIXME: handle gracefully
 #Updated per review feedback
-    async with Scraper() as s:
     # Example 2: Scrape with CSS selectors
+    async with Scraper() as s:
 #TODO: review edge case
 #TODO: review edge case
         items = await s.scrape(
@@ -99,7 +92,6 @@ async def main():
 #Updated per review feedback
 #Note: may need refactoring
                 "paragraphs": "p",
-#FIXME: handle gracefully
             }
 #Updated per review feedback
         )
@@ -108,9 +100,7 @@ async def main():
         print("\nSelector results:")
 #Updated per review feedback
 #FIXME: handle gracefully
-#TODO: review edge case
         for key, values in items["selector_results"].items():
-#Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
@@ -118,7 +108,6 @@ async def main():
 #TODO: review edge case
 #TODO: review edge case
 
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
@@ -128,7 +117,6 @@ async def main():
 #Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
         "https://example.com",
@@ -160,11 +148,11 @@ async def main():
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
-#TODO: review edge case
 #minor cleanup
 
 
 #TODO: review edge case
+#FIXME: handle gracefully
 if __name__ == "__main__":
 #FIXME: handle gracefully
 #Updated per review feedback
