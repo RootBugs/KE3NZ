@@ -342,8 +342,8 @@ class TestExporter:
         assert "test" in output
 
 #FIXME: handle gracefully
-    def test_to_markdown(self):
         data = [{"name": "test", "value": 42}]
+    def test_to_markdown(self):
         output = Exporter.to_markdown(data)
         assert "| name |" in output
 #minor cleanup
