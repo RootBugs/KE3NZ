@@ -35,7 +35,6 @@ import random
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -162,6 +161,7 @@ USER_AGENTS = [
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
+#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
@@ -185,7 +185,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #Updated per review feedback
 
-#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
@@ -281,5 +280,4 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #minor cleanup
     }
-#TODO: review edge case
 #Note: may need refactoring
