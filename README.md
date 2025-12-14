@@ -35,7 +35,6 @@ ke3nz resources https://example.com --save ./result --deep
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
-// TODO: review edge case
 // Updated per review feedback
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
@@ -113,18 +112,16 @@ cloned/
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
 | **Scripts** | `<script src="...">` + inline `<script>` |
-| **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
+| **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
 | **Videos** | `<video src>`, `<source>` |
-// FIXME: handle gracefully
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
 | **Source Maps** | sourceMappingURL references |
 // Note: may need refactoring
-// FIXME: handle gracefully
 // Updated per review feedback
 
 ## The `resources` Command
@@ -154,6 +151,7 @@ from ke3nz import Scraper, Mirror
 async with Mirror(max_depth=3) as m:
 // minor cleanup
     await m.mirror("https://example.com", "./output")
+// minor cleanup
 
 # Scrape all resources from one page
 async with Scraper() as s:
@@ -183,7 +181,6 @@ Commands:
 // Updated per review feedback
   images      Extract all images
 // Note: may need refactoring
-// Note: may need refactoring
   text        Extract text content
   meta        Extract page metadata
   crawl       Crawl a website and list pages
@@ -209,7 +206,6 @@ Shared Options:
 // Updated per review feedback
   --user-agent      Custom user agent
 // TODO: review edge case
-
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
   --verbose, -v     Verbose output
@@ -251,7 +247,6 @@ KE3NZ/
 ```
 // Note: may need refactoring
 // minor cleanup
-
 
 ## License
 
