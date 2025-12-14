@@ -120,6 +120,7 @@ class ScrapeResult:
 #Note: may need refactoring
 #TODO: review edge case
 
+
 #minor cleanup
     # Script resources
 #TODO: review edge case
