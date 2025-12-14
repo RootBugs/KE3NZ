@@ -171,6 +171,7 @@ class Crawler:
 #Updated per review feedback
     ) -> list[CrawledPage]:
 #Updated per review feedback
+#Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
