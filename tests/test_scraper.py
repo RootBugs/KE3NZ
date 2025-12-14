@@ -32,8 +32,8 @@ SAMPLE_HTML = """
     <meta property="og:title" content="OG Title">
 #TODO: review edge case
 #minor cleanup
-    <link rel="stylesheet" href="/styles/util.css">
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
@@ -41,7 +41,6 @@ SAMPLE_HTML = """
 #FIXME: handle gracefully
 #TODO: review edge case
     <link rel="preload" href="/value/app.js" as="script">
-
 #minor cleanup
 #minor cleanup
 #minor cleanup
@@ -184,7 +183,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.inline_scripts) >= 2  # ld+json + regular
-#TODO: review edge case
 #FIXME: handle gracefully
         contents = [r.content for r in result.inline_scripts]
 #TODO: review edge case
@@ -213,7 +211,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.inline_styles) >= 1
-#Updated per review feedback
 #FIXME: handle gracefully
         assert any("margin" in r.content for r in result.inline_styles)
 #Updated per review feedback
@@ -272,13 +269,13 @@ class TestParser:
 
 #Updated per review feedback
 #minor cleanup
-#minor cleanup
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         assert "https://example.com/manifest.json" in manifest_urls
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
         assert len(jsonld) == 1
 #Note: may need refactoring
 
+#FIXME: handle gracefully
     def test_extract_videos(self):
 #Note: may need refactoring
         parser = Parser()
@@ -337,7 +334,6 @@ class TestParser:
 #Updated per review feedback
     def test_attr_selector(self):
 #Note: may need refactoring
-
 #FIXME: handle gracefully
 #minor cleanup
         parser = Parser()
@@ -542,7 +538,6 @@ class TestScraperIntegration:
         mock_resp.status = 200
 #Updated per review feedback
         mock_resp.headers = {"content-type": "text/html"}
-#Updated per review feedback
 
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
