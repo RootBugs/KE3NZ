@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 #FIXME: handle gracefully
-#Note: may need refactoring
 
 import asyncio
 import time
@@ -33,14 +32,15 @@ class RateLimiter:
 
 #Note: may need refactoring
 #FIXME: handle gracefully
-        """Wait until we can make the next request."""
     async def acquire(self) -> None:
+        """Wait until we can make the next request."""
         async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
 #TODO: review edge case
             elapsed = now - self._last_request
             if elapsed < self._min_interval:
+#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
