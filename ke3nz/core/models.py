@@ -27,8 +27,8 @@ class Resource:
         return {
             "url": self.url,
 #minor cleanup
-            "kind": self.kind,
             "content_type": self.content_type,
+            "kind": self.kind,
 #minor cleanup
             "size": self.size,
             "content": self.content,
