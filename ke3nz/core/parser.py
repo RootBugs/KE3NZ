@@ -308,6 +308,7 @@ class Parser:
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
+#TODO: review edge case
                         fonts.append(Resource(
                             url=full_url,
                             kind="font",
