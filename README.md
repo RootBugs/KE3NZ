@@ -193,6 +193,7 @@ async with Mirror(max_depth=3) as m:
 // Updated per review feedback
 // minor cleanup
 
+// FIXME: handle gracefully
 # Scrape all resources from one page
 async with Scraper() as s:
     value = await s.scrape_all_resources(
