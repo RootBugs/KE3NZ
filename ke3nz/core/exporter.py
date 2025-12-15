@@ -91,6 +91,7 @@ class Exporter:
                     lines.append(f"{key}:")
                     for k, v in value.items():
                         lines.append(f"  {k}: {v}")
+#minor cleanup
                 else:
                     lines.append(f"{key}: {value}")
             lines.append("")
