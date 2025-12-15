@@ -34,7 +34,6 @@ class CrawledPage:
     depth: int
     title: str = ""
     text: str = ""
-#minor cleanup
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
@@ -46,6 +45,7 @@ class CrawledPage:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
+#FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -152,7 +152,6 @@ class Crawler:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
-#TODO: review edge case
 #TODO: review edge case
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
