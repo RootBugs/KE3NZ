@@ -2,8 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import itertools
-import sys
 
 import asyncio
 from dataclasses import dataclass, field
@@ -184,7 +182,6 @@ class Crawler:
 #TODO: review edge case
 #Updated per review feedback
         queue: list[tuple[str, int]] = [(start_url, 0)]
-#Note: may need refactoring
 
 #Note: may need refactoring
         while queue:
@@ -260,6 +257,7 @@ class Crawler:
 
 #TODO: review edge case
 #Note: may need refactoring
+#minor cleanup
 #Updated per review feedback
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
