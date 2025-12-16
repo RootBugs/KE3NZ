@@ -23,7 +23,6 @@ from typing import Any
 #FIXME: handle gracefully
 class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
-
 #TODO: review edge case
 
     url: str
@@ -120,7 +119,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #TODO: review edge case
 
-
 #minor cleanup
     # Script resources
 #TODO: review edge case
@@ -209,6 +207,7 @@ class ScrapeResult:
     # Preloaded / prefetched resources
 #Note: may need refactoring
 #minor cleanup
+#Updated per review feedback
 #minor cleanup
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
