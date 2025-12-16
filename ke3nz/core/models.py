@@ -27,8 +27,8 @@ class Resource:
         return {
             "url": self.url,
 #minor cleanup
-            "content_type": self.content_type,
             "kind": self.kind,
+            "content_type": self.content_type,
 #minor cleanup
             "size": self.size,
             "content": self.content,
@@ -60,6 +60,7 @@ class ScrapeResult:
 #minor cleanup
 
     # Script resources
+#TODO: review edge case
     scripts: list[Resource] = field(default_factory=list)
     inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
@@ -124,7 +125,6 @@ class ScrapeResult:
             "meta": self.meta,
 #FIXME: handle gracefully
 #Note: may need refactoring
-
             "links": self.links,
             "images": self.images,
             "favicons": self.favicons,
