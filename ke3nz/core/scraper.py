@@ -36,7 +36,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -410,7 +410,6 @@ class Scraper:
             "size": len(data.get("html", "").encode("utf-8")),
         })
 
-#Updated per review feedback
 #Note: may need refactoring
         # Save manifest index
         manifest_path = base / "manifest.json"
