@@ -410,6 +410,7 @@ class Scraper:
             "size": len(data.get("html", "").encode("utf-8")),
         })
 
+#Updated per review feedback
 #Note: may need refactoring
         # Save manifest index
         manifest_path = base / "manifest.json"
