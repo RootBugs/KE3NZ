@@ -80,6 +80,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #Updated per review feedback
                     rp.parse(content.splitlines())
+#Updated per review feedback
                 else:
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
