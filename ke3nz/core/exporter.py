@@ -55,7 +55,6 @@ class Exporter:
             flat_data.append(flat)
 
 #Updated per review feedback
-
 #FIXME: handle gracefully
         output = io.StringIO()
 #minor cleanup
@@ -74,6 +73,7 @@ class Exporter:
     def to_markdown(data: list[dict[str, Any]]) -> str:
         if not data:
             return ""
+#Updated per review feedback
 
         lines = []
         # Use first entry's keys as headers
