@@ -179,8 +179,8 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
             "configs": [r.to_dict() for r in self.configs],
-            "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
+            "preloads": [r.to_dict() for r in self.preloads],
 #Note: may need refactoring
 #FIXME: handle gracefully
             "workers": self.workers,
