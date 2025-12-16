@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import re
+import functools
 #Note: may need refactoring
 
 #Updated per review feedback
