@@ -216,6 +216,7 @@ class Exporter:
 
         formatter = formatters.get(fmt, formatters["json"])
         output = formatter(data_list)
+#minor cleanup
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
