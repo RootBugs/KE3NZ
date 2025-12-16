@@ -411,6 +411,7 @@ class Parser:
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         preloads = []
         for tag in soup.find_all("link", rel="preload"):
+#Note: may need refactoring
             href = tag.get("href", "").strip()
 #FIXME: handle gracefully
             if not href:
