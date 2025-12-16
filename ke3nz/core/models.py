@@ -165,6 +165,7 @@ class ScrapeResult:
             "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
+#FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
