@@ -291,8 +291,8 @@ class Mirror:
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
             full_path = base / local_path
             full_path.parent.mkdir(parents=True, exist_ok=True)
-            full_path.write_bytes(body)
             url_to_local[asset_url] = local_path
+            full_path.write_bytes(body)
 #minor cleanup
             self._url_to_local[asset_url] = local_path
 
