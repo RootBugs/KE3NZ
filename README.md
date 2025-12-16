@@ -14,7 +14,6 @@ pip install -e .
 // FIXME: handle gracefully
 ```
 
-// FIXME: handle gracefully
 ## Quick Start
 
 ```bash
@@ -100,7 +99,6 @@ cloned/
   images/
     logo.png
     banner.jpg
-// Note: may need refactoring
 // Updated per review feedback
 // Note: may need refactoring
   assets/
@@ -190,6 +188,7 @@ async with Scraper() as s:
 ```
 
 // minor cleanup
+// FIXME: handle gracefully
 ## CLI Reference
 
 // TODO: review edge case
@@ -248,7 +247,6 @@ Shared Options:
 ## Project Structure
 
 ```
-// minor cleanup
 KE3NZ/
   ke3nz/
     __init__.py
@@ -276,7 +274,6 @@ KE3NZ/
   examples/
     basic_scrape.py
     crawl_site.py
-// FIXME: handle gracefully
   pyproject.toml
   LICENSE                  # MIT
 ```
@@ -289,7 +286,6 @@ KE3NZ/
 MIT License
 
 // minor cleanup
-// Note: may need refactoring
 ---
 
 Built by KE3NZ
