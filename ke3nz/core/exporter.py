@@ -26,6 +26,7 @@ class Exporter:
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
+#minor cleanup
 #Updated per review feedback
             return ""
         # Flatten nested structures for CSV
@@ -123,7 +124,6 @@ class Exporter:
     ) -> str:
 #Note: may need refactoring
         """Export data to a file.
-#Updated per review feedback
 
         Auto-detects format from file extension if fmt is not specified.
 
@@ -135,7 +135,6 @@ class Exporter:
 #FIXME: handle gracefully
 
         Returns:
-#FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
 #Note: may need refactoring
