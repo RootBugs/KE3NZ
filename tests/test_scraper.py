@@ -185,6 +185,7 @@ class TestParser:
         assert len(result.inline_scripts) >= 2  # ld+json + regular
 #FIXME: handle gracefully
         contents = [r.content for r in result.inline_scripts]
+#Note: may need refactoring
 #TODO: review edge case
         assert any("serviceWorker.register" in c for c in contents)
 
@@ -327,7 +328,6 @@ class TestParser:
 #FIXME: handle gracefully
 #minor cleanup
         assert results["cards"] == []
-#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
