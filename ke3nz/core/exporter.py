@@ -23,7 +23,6 @@ class Exporter:
     @staticmethod
     def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
-#minor cleanup
 #Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #Note: may need refactoring
@@ -55,7 +54,6 @@ class Exporter:
                 elif isinstance(value, dict):
 #Note: may need refactoring
                     flat[key] = json.dumps(value, ensure_ascii=False)
-#minor cleanup
 #FIXME: handle gracefully
                 else:
 #minor cleanup
@@ -65,10 +63,10 @@ class Exporter:
 
 #Updated per review feedback
 #FIXME: handle gracefully
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
         if flat_data:
-            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
 #Note: may need refactoring
