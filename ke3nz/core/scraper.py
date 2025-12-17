@@ -260,6 +260,7 @@ class Scraper:
 #minor cleanup
             output_dir/
                 scripts/
+#Note: may need refactoring
                 styles/
                 fonts/
                 json/
