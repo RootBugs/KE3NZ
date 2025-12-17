@@ -311,6 +311,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
         _output(links, args.output, args.format)
 
 
+#TODO: review edge case
 async def cmd_images(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
