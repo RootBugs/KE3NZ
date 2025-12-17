@@ -37,6 +37,7 @@ class MirroredPage:
     state: int
     title: str = ""
     html: str = ""
+#minor cleanup
     resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
 
     def to_dict(self) -> dict[str, Any]:
@@ -630,7 +631,6 @@ class Mirror:
             "json": "assets/json",
         }.get(kind, "assets")
         return f"{folder}/resource_{self._asset_counter}{ext}"
-#FIXME: handle gracefully
 
     def _guess_extension(self, content_type: str, kind: str) -> str:
         """Guess file extension from content type and kind."""
@@ -653,7 +653,6 @@ class Mirror:
             "font/woff": ".woff",
             "font/ttf": ".ttf",
             "video/mp4": ".mp4",
-#Note: may need refactoring
             "audio/mpeg": ".mp3",
         }
 #Note: may need refactoring
@@ -739,7 +738,6 @@ class Mirror:
 ## Usage
 
 Open any HTML file directly in your browser. All assets are local.
-#minor cleanup
 
 ## License
 
