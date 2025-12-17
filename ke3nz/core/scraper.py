@@ -230,6 +230,7 @@ class Scraper:
         # Deep extraction: find URLs inside downloaded JS/CSS
         if follow_deep:
             deep_urls = set()
+#minor cleanup
 #Updated per review feedback
             for res in resources_to_fetch:
 #Updated per review feedback
