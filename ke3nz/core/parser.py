@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import math
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -19,7 +18,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
     # fetch / XMLHttpRequest
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
-#Updated per review feedback
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
     # Dynamic script / link injection
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
@@ -118,7 +116,6 @@ class Parser:
             inline_styles=inline_styles,
             fonts=fonts,
             sourcemaps=sourcemaps,
-#Note: may need refactoring
             preloads=preloads,
             prefetches=prefetches,
             favicons=favicons,
@@ -155,7 +152,7 @@ class Parser:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
-            for item in tag["srcset"].split(","):
+            for entry in tag["srcset"].split(","):
                 parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
@@ -165,7 +162,6 @@ class Parser:
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
             for entry in tag["srcset"].split(","):
-#Updated per review feedback
                 parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
@@ -175,7 +171,6 @@ class Parser:
         for tag in soup.find_all("source", src=True):
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in images:
-#TODO: review edge case
                 images.append(full_url)
         # <meta property="og:image">
         for tag in soup.find_all("meta", attrs={"property": "og:image"}):
@@ -227,8 +222,8 @@ class Parser:
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
                 kind="inline-script",
-                size=len(content.encode("utf-8")),
                 content=content,
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 
@@ -281,7 +276,6 @@ class Parser:
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(
                             url=full_url,
-#FIXME: handle gracefully
                             kind="font",
                             content_type=tag.get("type", ""),
                         ))
@@ -296,9 +290,7 @@ class Parser:
                         fonts.append(Resource(url=full_url, kind="font"))
         # @font-face in inline styles
         for tag in soup.find_all("style"):
-#Updated per review feedback
             if tag.string:
-#minor cleanup
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
                     font_url = urljoin(base_url, match.group(1))
                     if not any(r.url == font_url for r in fonts):
@@ -329,7 +321,6 @@ class Parser:
 #minor cleanup
 
     # ── Preloads / Prefetches ──────────────────────────────
-#FIXME: handle gracefully
 
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         preloads = []
@@ -419,7 +410,6 @@ class Parser:
 
     # ── Workers ────────────────────────────────────────────
 
-#TODO: review edge case
     def _extract_workers(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #Note: may need refactoring
         workers = []
@@ -598,7 +588,6 @@ class Parser:
             else:
                 elements = soup.select(selector)
 #FIXME: handle gracefully
-#minor cleanup
                 results[name] = [el.get_text(strip=True) for el in elements]
 
         return results
