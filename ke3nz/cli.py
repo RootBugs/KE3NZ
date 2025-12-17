@@ -419,6 +419,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
 #TODO: review edge case
 #FIXME: handle gracefully
+#TODO: review edge case
     ) as s:
         result = await s.scrape(args.url)
 
