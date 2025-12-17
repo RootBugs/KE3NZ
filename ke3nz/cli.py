@@ -64,7 +64,6 @@ examples:
     # resources
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
-#TODO: review edge case
     res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
     res_p.add_argument("--deep", action="store_true", help="Deep scan: extract URLs from JS/CSS and fetch those too")
@@ -196,6 +195,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
     print(f"  Open:   {base / 'pos.html'}")
+#minor cleanup
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
@@ -226,7 +226,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         counts = _count_resources(data)
         total = sum(counts.values())
 
-#FIXME: handle gracefully
 #Updated per review feedback
         if args.verbose:
             print(f"  Page: {data['title'] or data['url']}")
@@ -293,7 +292,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #Updated per review feedback
         proxy=args.proxy,
         respect_robots=not args.no_robots,
-#Updated per review feedback
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
