@@ -329,6 +329,7 @@ Shared Options:
 // Updated per review feedback
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
+// FIXME: handle gracefully
 // Note: may need refactoring
   --verbose, -v     Verbose output
 // Updated per review feedback
