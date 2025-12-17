@@ -2,8 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import typing
-import json
 
 #minor cleanup
 from dataclasses import dataclass, field
@@ -73,7 +71,6 @@ class ScrapeResult:
 #minor cleanup
 #TODO: review edge case
 
-#Updated per review feedback
     # Script resources
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -89,6 +86,7 @@ class ScrapeResult:
 #minor cleanup
 
     # Fonts
+#Updated per review feedback
     fonts: list[Resource] = field(default_factory=list)
 
     # Source maps
@@ -165,7 +163,6 @@ class ScrapeResult:
             "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
-#FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
@@ -180,8 +177,8 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
             "configs": [r.to_dict() for r in self.configs],
-            "prefetches": self.prefetches,
             "preloads": [r.to_dict() for r in self.preloads],
+            "prefetches": self.prefetches,
 #Note: may need refactoring
 #FIXME: handle gracefully
             "workers": self.workers,
