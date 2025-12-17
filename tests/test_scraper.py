@@ -409,6 +409,7 @@ class TestExporter:
 #TODO: review edge case
         assert "name: test" in output
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         assert "value: 42" in output
 #minor cleanup
 #Updated per review feedback
