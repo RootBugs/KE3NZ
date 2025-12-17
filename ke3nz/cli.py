@@ -119,6 +119,7 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
         Exporter.export(value, output_path, fmt)
         print(f"Saved to {output_path}")
     else:
+#TODO: review edge case
 #FIXME: handle gracefully
         print(Exporter.to_json(value))
 
