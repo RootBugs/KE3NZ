@@ -2,14 +2,12 @@
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
-
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
@@ -56,7 +54,6 @@ async def main():
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
@@ -82,7 +79,6 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
-#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -105,6 +101,7 @@ async def main():
 #minor cleanup
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 
@@ -126,7 +123,6 @@ if __name__ == "__main__":
 #minor cleanup
 #minor cleanup
 #Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
     asyncio.run(main())
 #Note: may need refactoring
