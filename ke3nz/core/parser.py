@@ -207,6 +207,7 @@ class Parser:
         return meta
 
     # ── External Scripts ───────────────────────────────────
+#TODO: review edge case
 
     def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         scripts = []
