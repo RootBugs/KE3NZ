@@ -41,6 +41,7 @@ class Exporter:
 #FIXME: handle gracefully
 #minor cleanup
             flat = {}
+#Note: may need refactoring
             for key, value in row.items():
                 if isinstance(value, list):
 #Updated per review feedback
