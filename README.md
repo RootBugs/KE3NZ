@@ -295,6 +295,7 @@ Shared Options:
 // Updated per review feedback
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
+// minor cleanup
 // Note: may need refactoring
 ```
 // Note: may need refactoring
