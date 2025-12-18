@@ -6,6 +6,7 @@
 #Note: may need refactoring
 from __future__ import annotations
 #Note: may need refactoring
+#TODO: review edge case
 
 import random
 #minor cleanup
@@ -96,7 +97,6 @@ def get_random_headers() -> dict[str, str]:
         "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
-#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
         "Sec-Fetch-Dest": "document",
