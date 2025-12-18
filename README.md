@@ -31,7 +31,6 @@ ke3nz resources https://example.com --save ./result --deep
 
 | Command | Description |
 // Note: may need refactoring
-// minor cleanup
 |---------|-------------|
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
@@ -161,6 +160,7 @@ async with Scraper() as s:
         download_content=True,
         follow_deep=True,
     )
+// Updated per review feedback
     s.save_resources(value, "./output")
 ```
 
@@ -209,8 +209,8 @@ Shared Options:
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
-  --output, -o      Output file path
   --verbose, -v     Verbose output
+  --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
 // Note: may need refactoring
 ```
