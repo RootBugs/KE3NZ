@@ -574,6 +574,7 @@ class Mirror:
 
         if not path or path == "/":
             return Path("index.html") if is_html else Path("index")
+#minor cleanup
 
         # Strip leading slash
 #TODO: review edge case
