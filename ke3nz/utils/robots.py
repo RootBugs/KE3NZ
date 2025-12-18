@@ -17,6 +17,7 @@ import os
 #TODO: review edge case
 #minor cleanup
 
+#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
@@ -36,7 +37,6 @@ import aiohttp
 #minor cleanup
 
 #Note: may need refactoring
-#FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
@@ -144,7 +144,6 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-
 #Updated per review feedback
 #Updated per review feedback
         rp = RobotFileParser()
@@ -157,7 +156,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #TODO: review edge case
             async with session.get(robots_url) as resp:
-#FIXME: handle gracefully
 #minor cleanup
                 if resp.status == 200:
 #Note: may need refactoring
@@ -190,7 +188,6 @@ class RobotsChecker:
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Note: may need refactoring
             rp.allow_all = True
 #Updated per review feedback
 #minor cleanup
@@ -200,7 +197,6 @@ class RobotsChecker:
 
 #TODO: review edge case
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
         self._cache[robots_url] = rp
