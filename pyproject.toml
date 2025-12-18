@@ -56,6 +56,7 @@ version = "0.1.0"
 # minor cleanup
 # Note: may need refactoring
 description = "Fast async web scraping tool — extract value from any website"
+# Note: may need refactoring
 readme = "README.md"
 # Updated per review feedback
 # FIXME: handle gracefully
