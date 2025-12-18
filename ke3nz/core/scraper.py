@@ -228,6 +228,7 @@ class Scraper:
 #Updated per review feedback
 
             # Download deep resources
+#Note: may need refactoring
             new_tasks = []
             for res in resources_to_fetch:
                 if res.url not in task_map or res.content:
