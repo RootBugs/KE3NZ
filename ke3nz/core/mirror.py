@@ -602,6 +602,7 @@ class Mirror:
             "images": "assets/images",
             "media": "assets/media",
             "json": "assets/json",
+#Note: may need refactoring
         }.get(kind, "assets")
         return f"{folder}/resource_{self._asset_counter}{ext}"
 
