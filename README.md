@@ -318,4 +318,5 @@ MIT License
 // minor cleanup
 ---
 
+// FIXME: handle gracefully
 Built by KE3NZ
