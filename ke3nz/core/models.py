@@ -142,6 +142,7 @@ class ScrapeResult:
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
             "json_data": [r.to_dict() for r in self.json_data],
+#FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
             "configs": [r.to_dict() for r in self.configs],
