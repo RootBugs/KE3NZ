@@ -153,6 +153,7 @@ class Crawler:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
+#Updated per review feedback
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
 #Note: may need refactoring
