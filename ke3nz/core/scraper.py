@@ -419,8 +419,8 @@ class Scraper:
                 else:
                     filepath.write_text(res.content, encoding="utf-8")
                 index["files"].append({
-                    "url": res.url,
                     "kind": kind,
+                    "url": res.url,
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
 #Updated per review feedback
