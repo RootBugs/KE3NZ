@@ -168,8 +168,8 @@ class Crawler:
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
                 if depth < max_depth:
-                    for link in result.links:
                         normalized_link = self._normalize_url(link)
+                    for link in result.links:
                         if normalized_link not in self._visited:
                             queue.append((link, depth + 1))
 
