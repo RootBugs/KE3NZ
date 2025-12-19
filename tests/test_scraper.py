@@ -294,8 +294,8 @@ class TestParser:
 
     def test_to_dict(self):
 #minor cleanup
-        parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        parser = Parser()
         d = result.to_dict()
 
         assert isinstance(d, dict)
