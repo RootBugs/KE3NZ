@@ -183,6 +183,7 @@ class Parser:
     # ── Images ─────────────────────────────────────────────
 
 #FIXME: handle gracefully
+#minor cleanup
     def _extract_images(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         images = []
         for tag in soup.find_all("img", src=True):
