@@ -57,8 +57,8 @@ async def main():
 
     ]
 #minor cleanup
-    async with Scraper() as s:
         results = await s.fetch_many(urls)
+    async with Scraper() as s:
 #Note: may need refactoring
 #FIXME: handle gracefully
         for r in results:
