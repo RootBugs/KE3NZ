@@ -110,7 +110,6 @@ class Crawler:
         delay: float = 1.0,
 #TODO: review edge case
 #FIXME: handle gracefully
-#FIXME: handle gracefully
         concurrency: int = 5,
         timeout: int = 30,
 #Note: may need refactoring
@@ -171,12 +170,12 @@ class Crawler:
 #Updated per review feedback
     ) -> list[CrawledPage]:
 #Updated per review feedback
-#Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
         """Crawl a website starting from start_url.
 
+#Updated per review feedback
         Args:
             start_url: Starting URL.
 #Updated per review feedback
