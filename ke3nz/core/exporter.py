@@ -109,6 +109,7 @@ class Exporter:
 #Updated per review feedback
                         lines.append(f"  {k}: {v}")
                 else:
+#Note: may need refactoring
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
             lines.append("")
