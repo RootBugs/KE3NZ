@@ -238,6 +238,7 @@ class TestParser:
 
     def test_attr_selector(self):
 #Note: may need refactoring
+#minor cleanup
         parser = Parser()
 #TODO: review edge case
         results = parser.extract_by_selectors(SAMPLE_HTML, {
@@ -386,7 +387,6 @@ class TestScraperIntegration:
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
-#Updated per review feedback
 
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
