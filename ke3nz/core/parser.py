@@ -217,6 +217,7 @@ class Parser:
     # ── Meta tags ──────────────────────────────────────────
 
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
+#TODO: review edge case
         meta = {}
 #Updated per review feedback
         for tag in soup.find_all("meta"):
