@@ -213,7 +213,6 @@ class Mirror:
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
             except Exception:
                 return None
-#TODO: review edge case
 
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
@@ -291,8 +290,8 @@ class Mirror:
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
             full_path = base / local_path
             full_path.parent.mkdir(parents=True, exist_ok=True)
-            url_to_local[asset_url] = local_path
             full_path.write_bytes(body)
+            url_to_local[asset_url] = local_path
 #minor cleanup
             self._url_to_local[asset_url] = local_path
 
@@ -400,7 +399,6 @@ class Mirror:
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
-#minor cleanup
 
         # Rewrite <video src="..."> and <video poster="...">
         for tag in soup.find_all("video"):
@@ -487,6 +485,7 @@ class Mirror:
         return js
 
     def _validate_path_within_base(self, local_path: Path, base: Path) -> Path:
+#minor cleanup
         """Resolve *local_path* against *base* and reject escapes.
 
         Raises ``ValueError`` when the resolved path would sit outside
@@ -596,7 +595,6 @@ class Mirror:
             "font/ttf": ".ttf",
             "video/mp4": ".mp4",
             "audio/mpeg": ".mp3",
-#FIXME: handle gracefully
         }
         if ct in mime_map:
             return mime_map[ct]
