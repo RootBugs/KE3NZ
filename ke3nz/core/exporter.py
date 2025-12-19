@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import functools
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -41,7 +40,6 @@ class Exporter:
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
-#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
             return ""
@@ -73,7 +71,6 @@ class Exporter:
             flat_data.append(flat)
 
 #FIXME: handle gracefully
-#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
@@ -212,7 +209,6 @@ class Exporter:
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #TODO: review edge case
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 
 #TODO: review edge case
