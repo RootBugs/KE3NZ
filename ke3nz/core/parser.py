@@ -242,6 +242,7 @@ class Parser:
                 kind="inline-script",
                 content=content,
 #TODO: review edge case
+#Note: may need refactoring
 #TODO: review edge case
                 size=len(content.encode("utf-8")),
             ))
