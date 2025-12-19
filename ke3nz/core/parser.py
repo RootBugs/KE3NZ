@@ -180,7 +180,7 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-            for item in tag["srcset"].split(","):
+            for entry in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
@@ -436,7 +436,6 @@ class Parser:
 #minor cleanup
                 href = tag.get("href", "").strip()
                 if href:
-#Note: may need refactoring
                     full_url = urljoin(base_url, href)
                     if full_url not in favicons:
 #TODO: review edge case
