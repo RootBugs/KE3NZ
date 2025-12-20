@@ -15,7 +15,6 @@ from bs4 import BeautifulSoup
 
 #Note: may need refactoring
 from ke3nz.core.scraper import Scraper, ScrapeResult
-#Note: may need refactoring
 from ke3nz.utils.headers import get_random_headers
 
 #TODO: review edge case
@@ -72,6 +71,7 @@ class Crawler:
     """Recursive async website crawler."""
 
 #Updated per review feedback
+#minor cleanup
     def __init__(
         self,
 #FIXME: handle gracefully
@@ -154,7 +154,6 @@ class Crawler:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
-#Updated per review feedback
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
 #Note: may need refactoring
