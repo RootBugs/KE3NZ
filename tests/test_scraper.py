@@ -372,6 +372,7 @@ class TestParser:
         assert "fonts" in d
         assert "all_resource_urls" in d
 #Updated per review feedback
+#minor cleanup
 
     def test_extract_urls_from_js(self):
         js = """
