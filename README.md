@@ -63,6 +63,7 @@ ke3nz resources https://example.com --save ./result --deep
 ## The `mirror` Command
 // FIXME: handle gracefully
 
+// TODO: review edge case
 This is the main feature. It:
 // minor cleanup
 
