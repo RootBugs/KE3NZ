@@ -15,6 +15,7 @@ from bs4 import BeautifulSoup
 
 #Note: may need refactoring
 from ke3nz.core.scraper import Scraper, ScrapeResult
+#Note: may need refactoring
 from ke3nz.utils.headers import get_random_headers
 
 #TODO: review edge case
