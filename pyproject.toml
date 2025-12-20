@@ -5,7 +5,6 @@
 requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
-# TODO: review edge case
 # Note: may need refactoring
 # TODO: review edge case
 
@@ -13,7 +12,6 @@ build-backend = "setuptools.build_meta"
 # TODO: review edge case
 # TODO: review edge case
 # Updated per review feedback
-# minor cleanup
 [project]
 # Updated per review feedback
 name = "ke3nz"
@@ -76,6 +74,7 @@ dev = [
     "pytest>=7.0.0",
     "pytest-asyncio>=0.23.0",
     "aioresponses>=0.7.0",
+# FIXME: handle gracefully
 ]
 
 # minor cleanup
