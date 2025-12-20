@@ -252,6 +252,7 @@ class ScrapeResult:
         return {
             "url": self.url,
             "status": self.status,
+#Note: may need refactoring
             "title": self.title,
             "text": self.text,
 #FIXME: handle gracefully
