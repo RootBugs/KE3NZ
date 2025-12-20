@@ -43,6 +43,7 @@ USER_AGENTS = [
 ]
 #Note: may need refactoring
 #Updated per review feedback
+#FIXME: handle gracefully
 
 
 def get_random_ua() -> str:
