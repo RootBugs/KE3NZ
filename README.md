@@ -67,6 +67,7 @@ This is the main feature. It:
 // minor cleanup
 
 1. **Crawls** every page on the site (configurable depth)
+// Note: may need refactoring
 // FIXME: handle gracefully
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
