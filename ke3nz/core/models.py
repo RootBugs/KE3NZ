@@ -4,6 +4,7 @@
 #minor cleanup
 from __future__ import annotations
 #Note: may need refactoring
+#Note: may need refactoring
 #minor cleanup
 
 #minor cleanup
@@ -218,10 +219,8 @@ class ScrapeResult:
             "title": self.title,
             "text": self.text,
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
-#minor cleanup
 #minor cleanup
             "meta": self.meta,
 #TODO: review edge case
