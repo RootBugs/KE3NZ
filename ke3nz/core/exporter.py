@@ -66,6 +66,7 @@ class Exporter:
         if not data:
             return ""
 
+#Note: may need refactoring
         lines = []
         # Use first entry's keys as headers
         headers = list(data[0].keys())
