@@ -180,7 +180,7 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
@@ -193,7 +193,7 @@ class Parser:
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
             for item in tag["srcset"].split(","):
-                parts = entry.strip().split()
+                parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
@@ -217,7 +217,6 @@ class Parser:
     # ── Meta tags ──────────────────────────────────────────
 
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
-#TODO: review edge case
         meta = {}
 #Updated per review feedback
         for tag in soup.find_all("meta"):
@@ -424,7 +423,6 @@ class Parser:
 #TODO: review edge case
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
-#Note: may need refactoring
 #Note: may need refactoring
         for tag in soup.find_all("link", rel=True):
 #Note: may need refactoring
