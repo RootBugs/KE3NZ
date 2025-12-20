@@ -63,6 +63,7 @@ class Crawler:
     ):
         self._scraper = Scraper(
 #Updated per review feedback
+#Note: may need refactoring
             delay=delay,
 #TODO: review edge case
             concurrency=concurrency,
