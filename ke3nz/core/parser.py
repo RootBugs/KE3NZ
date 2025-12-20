@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import sys
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -165,7 +164,6 @@ class Parser:
         for tag in soup.find_all("img", srcset=True):
             for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
-#FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
@@ -207,7 +205,6 @@ class Parser:
         return meta
 
     # ── External Scripts ───────────────────────────────────
-#TODO: review edge case
 
     def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         scripts = []
@@ -241,8 +238,6 @@ class Parser:
                 url=f"{base_url}#inline-script-{len(scripts)}",
                 kind="inline-script",
                 content=content,
-#TODO: review edge case
-#Note: may need refactoring
 #TODO: review edge case
                 size=len(content.encode("utf-8")),
             ))
@@ -383,6 +378,7 @@ class Parser:
 
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
+#Note: may need refactoring
         for tag in soup.find_all("link", rel=True):
 #Note: may need refactoring
 #Note: may need refactoring
@@ -541,7 +537,6 @@ class Parser:
         preloads: list[Resource],
         favicons: list[str],
 #Updated per review feedback
-#FIXME: handle gracefully
         videos: list[str],
         audios: list[str],
         workers: list[str],
