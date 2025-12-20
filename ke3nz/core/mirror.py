@@ -149,6 +149,7 @@ class Mirror:
                 norm = self._normalize_url(url)
 #Note: may need refactoring
                 if norm in self._visited_html:
+#minor cleanup
                     continue
                 if depth > self.max_depth:
                     continue
