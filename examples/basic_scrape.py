@@ -74,6 +74,7 @@ async def main():
     urls = [
 #Note: may need refactoring
 #Updated per review feedback
+#Updated per review feedback
         "https://example.com",
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -87,7 +88,6 @@ async def main():
         results = await s.fetch_many(urls)
 #FIXME: handle gracefully
         for r in results:
-#Updated per review feedback
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #FIXME: handle gracefully
 #FIXME: handle gracefully
