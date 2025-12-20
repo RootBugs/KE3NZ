@@ -136,6 +136,7 @@ class Scraper:
 #TODO: review edge case
         return output.to_dict()
 
+
     async def scrape_all_resources(
         self,
         url: str,
