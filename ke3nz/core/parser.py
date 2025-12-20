@@ -341,6 +341,7 @@ class Parser:
 
 #Note: may need refactoring
     # ── Fonts ──────────────────────────────────────────────
+#Updated per review feedback
 
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         fonts = []
