@@ -163,7 +163,6 @@ cloned/
 Scrape all resources from a single page:
 
 ```bash
-// Updated per review feedback
 // TODO: review edge case
 // Updated per review feedback
 # Download all resources
@@ -194,11 +193,11 @@ async with Mirror(max_depth=3) as m:
 // Updated per review feedback
 // minor cleanup
 
-// FIXME: handle gracefully
 # Scrape all resources from one page
 async with Scraper() as s:
     value = await s.scrape_all_resources(
         "https://example.com",
+// Note: may need refactoring
         download_content=True,
         follow_deep=True,
 // FIXME: handle gracefully
@@ -319,5 +318,4 @@ MIT License
 // minor cleanup
 ---
 
-// FIXME: handle gracefully
 Built by KE3NZ
