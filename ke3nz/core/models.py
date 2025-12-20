@@ -215,6 +215,7 @@ class ScrapeResult:
 #minor cleanup
         return {
             "url": self.url,
+#Updated per review feedback
             "status": self.status,
             "title": self.title,
             "text": self.text,
