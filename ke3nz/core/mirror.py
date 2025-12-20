@@ -647,6 +647,7 @@ class Mirror:
         parsed = urlparse(url)
         path = parsed.path.rstrip("/") or "/"
 #FIXME: handle gracefully
+
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 #minor cleanup
 
