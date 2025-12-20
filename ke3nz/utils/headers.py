@@ -40,6 +40,7 @@ USER_AGENTS = [
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
+#Note: may need refactoring
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
     # Firefox on Mac
 #Updated per review feedback
@@ -72,7 +73,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
-#TODO: review edge case
 
 #minor cleanup
 
