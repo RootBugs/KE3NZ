@@ -1,7 +1,6 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import sys
 #TODO: review edge case
 
 #TODO: review edge case
@@ -43,6 +42,7 @@ class RobotsChecker:
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
+#Updated per review feedback
                 timeout=aiohttp.ClientTimeout(count=10)
             )
         return self._session
@@ -80,7 +80,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #Updated per review feedback
                     rp.parse(content.splitlines())
-#Updated per review feedback
                 else:
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
@@ -117,7 +116,5 @@ class RobotsChecker:
     async def close(self) -> None:
         if self._session and not self._session.closed:
 #Updated per review feedback
-#minor cleanup
             await self._session.close()
 #Updated per review feedback
-#FIXME: handle gracefully
