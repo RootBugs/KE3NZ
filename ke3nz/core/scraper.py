@@ -141,6 +141,7 @@ class Scraper:
         selectors: dict[str, str] | None = None,
 #minor cleanup
     ) -> dict[str, Any]:
+#minor cleanup
         """Scrape a URL with optional CSS selectors.
 
         Returns dict with page data, all resource info, and selector results.
@@ -230,7 +231,6 @@ class Scraper:
         # Deep extraction: find URLs inside downloaded JS/CSS
         if follow_deep:
             deep_urls = set()
-#minor cleanup
 #Updated per review feedback
             for res in resources_to_fetch:
 #Updated per review feedback
@@ -361,7 +361,6 @@ class Scraper:
                 resources = data.get("stylesheets", [])
 #Updated per review feedback
             elif kind == "font":
-#TODO: review edge case
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
                 resources = data.get("json_data", [])
@@ -419,8 +418,8 @@ class Scraper:
                 else:
                     filepath.write_text(res.content, encoding="utf-8")
                 index["files"].append({
-                    "kind": kind,
                     "url": res.url,
+                    "kind": kind,
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
 #Updated per review feedback
