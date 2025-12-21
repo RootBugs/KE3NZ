@@ -25,6 +25,7 @@ SAMPLE_HTML = """
     <meta property="og:title" content="OG Title">
 #TODO: review edge case
 #minor cleanup
+#TODO: review edge case
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
