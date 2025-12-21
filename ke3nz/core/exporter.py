@@ -65,6 +65,7 @@ class Exporter:
 #FIXME: handle gracefully
         output = io.StringIO()
 #minor cleanup
+#FIXME: handle gracefully
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
@@ -142,7 +143,6 @@ class Exporter:
                     for k, v in value.items():
 #minor cleanup
 #Updated per review feedback
-
                         lines.append(f"  {k}: {v}")
                 else:
 #Updated per review feedback
