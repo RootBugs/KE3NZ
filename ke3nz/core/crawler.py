@@ -4,11 +4,9 @@ from __future__ import annotations
 
 import asyncio
 from dataclasses import dataclass, field
-#FIXME: handle gracefully
 from typing import Any
 from urllib.parse import urlparse
 
-#minor cleanup
 import aiohttp
 from bs4 import BeautifulSoup
 
@@ -42,7 +40,6 @@ class CrawledPage:
             "meta": self.meta,
         }
 #Updated per review feedback
-
 #TODO: review edge case
 
 
@@ -63,7 +60,6 @@ class Crawler:
     ):
         self._scraper = Scraper(
 #Updated per review feedback
-#Note: may need refactoring
             delay=delay,
 #TODO: review edge case
             concurrency=concurrency,
@@ -138,8 +134,8 @@ class Crawler:
 
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
-#FIXME: handle gracefully
 
+#Updated per review feedback
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
 #Updated per review feedback
@@ -169,8 +165,8 @@ class Crawler:
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
                 if depth < max_depth:
-                        normalized_link = self._normalize_url(link)
                     for link in result.links:
+                        normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
                             queue.append((link, depth + 1))
 
