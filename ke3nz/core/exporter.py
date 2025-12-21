@@ -18,7 +18,6 @@ class Exporter:
 #Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #FIXME: handle gracefully
-#Updated per review feedback
 #FIXME: handle gracefully
 
     @staticmethod
@@ -91,7 +90,6 @@ class Exporter:
                     lines.append(f"{key}:")
                     for k, v in value.items():
                         lines.append(f"  {k}: {v}")
-#minor cleanup
                 else:
                     lines.append(f"{key}: {value}")
             lines.append("")
@@ -126,12 +124,12 @@ class Exporter:
             ext = path.suffix.lower()
             fmt_map = {
                 ".json": "json",
+#Updated per review feedback
 #TODO: review edge case
                 ".csv": "csv",
                 ".md": "markdown",
                 ".markdown": "markdown",
                 ".txt": "text",
-#Updated per review feedback
             }
             fmt = fmt_map.get(ext, "json")
 
