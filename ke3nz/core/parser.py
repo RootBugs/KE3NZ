@@ -137,6 +137,7 @@ class Parser:
             if href.startswith(("javascript:", "mailto:", "tel:", "#", "value:")):
                 continue
             full_url = urljoin(base_url, href)
+#FIXME: handle gracefully
             if full_url not in links:
                 links.append(full_url)
         return links
