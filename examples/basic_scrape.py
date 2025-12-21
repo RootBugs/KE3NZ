@@ -11,6 +11,7 @@ from ke3nz import Scraper
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
+#minor cleanup
 #Updated per review feedback
 async def main():
 #Updated per review feedback
