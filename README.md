@@ -183,8 +183,8 @@ cloned/
 // Note: may need refactoring
 // Updated per review feedback
 | **Videos** | `<video src>`, `<source>` |
-| **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
+| **Audio** | `<audio src>` |
 // Note: may need refactoring
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
