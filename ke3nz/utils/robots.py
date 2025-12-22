@@ -82,6 +82,7 @@ class RobotsChecker:
 #Updated per review feedback
     async def _get_session(self) -> aiohttp.ClientSession:
 #TODO: review edge case
+#FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
