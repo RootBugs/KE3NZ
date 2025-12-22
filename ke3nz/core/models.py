@@ -43,8 +43,8 @@ class ScrapeResult:
 
     url: str
     status: int
-    html: str
     title: str = ""
+    html: str
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
