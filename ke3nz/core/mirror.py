@@ -62,7 +62,6 @@ class MirroredPage:
 
 class Mirror:
     """Mirror an entire website to a local folder.
-#FIXME: handle gracefully
 
 #TODO: review edge case
     Crawl depth, download all assets, rewrite URLs to local paths,
@@ -107,8 +106,8 @@ class Mirror:
         # State
         self._visited_html: set[str] = set()  # normalized HTML page URLs
         self._visited_assets: set[str] = set()  # asset URLs already downloaded
-        self._asset_counter = 0
         self._url_to_local: dict[str, str] = {}  # URL -> local relative path
+        self._asset_counter = 0
         self._pages: list[MirroredPage] = []
 
 #Updated per review feedback
@@ -284,6 +283,7 @@ class Mirror:
         self,
         result: ScrapeResult,
         base: Path,
+#TODO: review edge case
         page_url: str,
     ) -> dict[str, str]:
 #Note: may need refactoring
@@ -563,7 +563,6 @@ class Mirror:
         """Rewrite url() references in CSS content."""
         import re
 
-#Note: may need refactoring
         def _replace(match: re.Match) -> str:
 #FIXME: handle gracefully
             prefix = match.group(1)
@@ -628,7 +627,6 @@ class Mirror:
     def _resolve_url(self, href: str, base_url: str) -> str:
 #Note: may need refactoring
         """Resolve a possibly-relative URL against a base URL."""
-#TODO: review edge case
         href = href.strip()
 #TODO: review edge case
         if href.startswith(("value:", "javascript:", "mailto:", "tel:")):
@@ -784,7 +782,6 @@ class Mirror:
         """Save a JSON manifest of everything that was mirrored."""
         manifest = {
             "source_url": start_url,
-#TODO: review edge case
 #minor cleanup
             "tool": "KE3NZ Mirror",
 #FIXME: handle gracefully
