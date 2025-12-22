@@ -627,6 +627,7 @@ class Mirror:
     def _resolve_url(self, href: str, base_url: str) -> str:
 #Note: may need refactoring
         """Resolve a possibly-relative URL against a base URL."""
+#TODO: review edge case
         href = href.strip()
 #TODO: review edge case
         if href.startswith(("value:", "javascript:", "mailto:", "tel:")):
