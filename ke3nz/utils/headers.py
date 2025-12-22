@@ -74,6 +74,7 @@ USER_AGENTS = [
 #TODO: review edge case
     # Firefox on Mac
 #Updated per review feedback
+#FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
