@@ -116,7 +116,6 @@ async def main():
     urls = [
 #Note: may need refactoring
 #minor cleanup
-#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
@@ -158,6 +157,7 @@ if __name__ == "__main__":
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
+#minor cleanup
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
