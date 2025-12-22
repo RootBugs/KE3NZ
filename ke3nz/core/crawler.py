@@ -59,6 +59,7 @@ class CrawledPage:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
             "status": self.status,
+#TODO: review edge case
             "depth": self.depth,
             "title": self.title,
             "text": self.text,
