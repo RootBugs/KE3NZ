@@ -24,7 +24,6 @@ SAMPLE_HTML = """
 <head>
     <title>Test Page</title>
     <meta name="description" content="A test page for KE3NZ">
-#Updated per review feedback
     <meta property="og:title" content="OG Title">
 #TODO: review edge case
 #minor cleanup
@@ -34,13 +33,12 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
 #minor cleanup
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-icon.png">
-#Updated per review feedback
 #minor cleanup
     <script src="/scripts/app.js"></script>
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
@@ -73,7 +71,7 @@ SAMPLE_HTML = """
     <script>
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
-        fetch('https://api.example.com/value');
+        fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
@@ -156,7 +154,6 @@ class TestParser:
 
         assert len(result.inline_scripts) >= 2  # ld+json + regular
         contents = [r.content for r in result.inline_scripts]
-
         assert any("serviceWorker.register" in c for c in contents)
 
     def test_extract_external_stylesheets(self):
@@ -170,6 +167,7 @@ class TestParser:
 
     def test_extract_inline_styles(self):
         parser = Parser()
+#Note: may need refactoring
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.inline_styles) >= 1
@@ -218,13 +216,11 @@ class TestParser:
 
     def test_extract_configs(self):
         parser = Parser()
-#TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
 #Updated per review feedback
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         assert "https://example.com/manifest.json" in manifest_urls
-
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
         assert len(jsonld) == 1
 #Note: may need refactoring
@@ -243,7 +239,6 @@ class TestParser:
 #Note: may need refactoring
     def test_extract_audios(self):
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
 
@@ -265,7 +260,6 @@ class TestParser:
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "heading": "h1",
             "cards": ".card",
-#minor cleanup
         })
 
 #TODO: review edge case
@@ -294,8 +288,8 @@ class TestParser:
 
     def test_to_dict(self):
 #minor cleanup
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
 
         assert isinstance(d, dict)
@@ -326,7 +320,7 @@ class TestParser:
         url_list = [u for u, _ in urls]
 
         assert "https://cdn.example.com/lib.js" in url_list
-        assert "https://api.example.com/value" in url_list
+        assert "https://api.example.com/data" in url_list
 #TODO: review edge case
         assert "https://cdn.example.com/app.js.map" in url_list
 
@@ -450,7 +444,6 @@ class TestScraperIntegration:
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
 #Note: may need refactoring
         mock_resp.__aexit__ = AsyncMock(return_value=False)
-
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
 #Note: may need refactoring
         mock_resp.status = 200
