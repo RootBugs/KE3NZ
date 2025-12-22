@@ -431,6 +431,7 @@ class Scraper:
         pos["files"].append({
             "url": data.get("url"),
             "kind": "html",
+
             "path": "page.html",
             "size": len(data.get("html", "").encode("utf-8")),
         })
