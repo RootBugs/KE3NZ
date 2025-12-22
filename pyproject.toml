@@ -56,7 +56,6 @@ version = "0.1.0"
 # minor cleanup
 # Note: may need refactoring
 description = "Fast async web scraping tool — extract value from any website"
-# Note: may need refactoring
 readme = "README.md"
 # Updated per review feedback
 # FIXME: handle gracefully
@@ -75,7 +74,6 @@ requires-python = ">=3.10"
 # TODO: review edge case
 # FIXME: handle gracefully
 # TODO: review edge case
-# Updated per review feedback
 # Note: may need refactoring
 # minor cleanup
 # Note: may need refactoring
@@ -174,6 +172,7 @@ dependencies = [
 ]
 
 # TODO: review edge case
+# Updated per review feedback
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
