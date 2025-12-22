@@ -621,8 +621,8 @@ class Mirror:
 
         # Generate a path for value-URI or pathless URLs
         ext = self._guess_extension(content_type, kind)
-        self._asset_counter += 1
         folder = {
+        self._asset_counter += 1
 #FIXME: handle gracefully
             "js": "assets/js",
             "css": "assets/css",
