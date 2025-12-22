@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 import typing
-#minor cleanup
 
 #TODO: review edge case
 #minor cleanup
@@ -40,7 +39,7 @@ examples:
 #TODO: review edge case
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./result --deep
+  ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -64,12 +63,11 @@ examples:
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
-    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose result")
+    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
 
     # mirror (THE MAIN COMMAND)
 #minor cleanup
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
-#FIXME: handle gracefully
 #Note: may need refactoring
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
     mirror_p.add_argument("--depth", "-d", type=int, default=3, help="Max crawl depth (default: 3)")
@@ -152,8 +150,8 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
 
 #minor cleanup
 
-    """Count resources by type."""
 def _count_resources(value: dict[str, Any]) -> dict[str, int]:
+    """Count resources by type."""
 #Note: may need refactoring
     counts = {
 #Note: may need refactoring
@@ -198,7 +196,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 #minor cleanup
 async def cmd_mirror(args: argparse.Namespace) -> None:
 #Updated per review feedback
-#TODO: review edge case
 #FIXME: handle gracefully
     """Mirror an entire website to a local folder."""
     pages_done = 0
@@ -521,7 +518,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         stay_on_domain=not args.cross_domain,
     ) as c:
         await c.crawl(args.url, max_depth=args.depth, on_page=on_page)
-#Updated per review feedback
 #minor cleanup
 
     if args.verbose:
