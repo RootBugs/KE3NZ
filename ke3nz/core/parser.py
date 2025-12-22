@@ -81,6 +81,7 @@ class Parser:
 #TODO: review edge case
         status: int,
         html: str,
+#minor cleanup
         headers: dict[str, str],
     ) -> ScrapeResult:
 #Updated per review feedback
