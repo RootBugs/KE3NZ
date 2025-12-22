@@ -36,8 +36,7 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 // minor cleanup
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./result --deep
-// Note: may need refactoring
+ke3nz resources https://example.com --save ./output --deep
 ```
 // TODO: review edge case
 
@@ -63,12 +62,10 @@ ke3nz resources https://example.com --save ./result --deep
 ## The `mirror` Command
 // FIXME: handle gracefully
 
-// TODO: review edge case
 This is the main feature. It:
 // minor cleanup
 
 1. **Crawls** every page on the site (configurable depth)
-// Note: may need refactoring
 // FIXME: handle gracefully
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
@@ -104,7 +101,6 @@ ke3nz mirror https://mysite.com --save ./cloned -v
 
 // Note: may need refactoring
 # Fast mirror with high concurrency
-// TODO: review edge case
 // TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
@@ -331,7 +327,6 @@ Shared Options:
 // Updated per review feedback
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
-// FIXME: handle gracefully
 // Note: may need refactoring
   --verbose, -v     Verbose output
 // Updated per review feedback
