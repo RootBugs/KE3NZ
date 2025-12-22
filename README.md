@@ -81,6 +81,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
 // minor cleanup
 // TODO: review edge case
+// Note: may need refactoring
 
 // FIXME: handle gracefully
 // Updated per review feedback
@@ -183,8 +184,8 @@ cloned/
 // Note: may need refactoring
 // Updated per review feedback
 | **Videos** | `<video src>`, `<source>` |
-| **Configs** | Manifests, JSON-LD |
 | **Audio** | `<audio src>` |
+| **Configs** | Manifests, JSON-LD |
 // Note: may need refactoring
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
