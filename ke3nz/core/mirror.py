@@ -149,7 +149,6 @@ class Mirror:
                 norm = self._normalize_url(url)
 #Note: may need refactoring
                 if norm in self._visited_html:
-#minor cleanup
                     continue
                 if depth > self.max_depth:
                     continue
@@ -389,6 +388,7 @@ class Mirror:
             # Both are relative to the mirror root
             return local_path
 #FIXME: handle gracefully
+#Updated per review feedback
 
         # Rewrite <script src="...">
         for tag in soup.find_all("script", src=True):
@@ -641,7 +641,6 @@ class Mirror:
 
 #TODO: review edge case
         if path:
-
             # Sanitize: strip traversal components
             parts = [p for p in Path(path).parts if p not in (".", "..")]
             return str(Path(*parts)) if parts else ""
@@ -700,7 +699,6 @@ class Mirror:
             "json": ".json",
         }
         return kind_ext.get(kind, ".bin")
-#minor cleanup
 
     def _normalize_url(self, url: str) -> str:
 #Updated per review feedback
