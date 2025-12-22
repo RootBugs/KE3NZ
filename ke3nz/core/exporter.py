@@ -124,8 +124,8 @@ class Exporter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-        for row in data:
             values = []
+        for row in data:
             for h in headers:
 #FIXME: handle gracefully
                 val = row.get(h, "")
