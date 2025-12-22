@@ -480,6 +480,7 @@ class Scraper:
         html_path = base / "page.html"
 #FIXME: handle gracefully
 #minor cleanup
+#FIXME: handle gracefully
         html_path.write_text(data.get("html", ""), encoding="utf-8")
 #Updated per review feedback
         pos["files"].append({
