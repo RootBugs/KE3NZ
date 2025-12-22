@@ -363,6 +363,7 @@ class Mirror:
         for tag in soup.find_all("link", rel=True):
 #Updated per review feedback
             rel = tag.get("rel", [])
+#Updated per review feedback
             if isinstance(rel, str):
                 rel = rel.split()
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
