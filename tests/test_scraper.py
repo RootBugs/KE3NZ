@@ -102,7 +102,7 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
 #Note: may need refactoring
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
@@ -372,7 +372,6 @@ class TestParser:
         assert "fonts" in d
         assert "all_resource_urls" in d
 #Updated per review feedback
-#minor cleanup
 
     def test_extract_urls_from_js(self):
         js = """
