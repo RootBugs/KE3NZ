@@ -1,4 +1,5 @@
 import random
+import itertools
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
