@@ -43,6 +43,7 @@ class Exporter:
                 elif isinstance(value, dict):
                     flat[key] = json.dumps(value, ensure_ascii=False)
                 else:
+#minor cleanup
 #TODO: review edge case
                     flat[key] = value
             flat_data.append(flat)
