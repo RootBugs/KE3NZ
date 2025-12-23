@@ -50,6 +50,7 @@ class Resource:
             "content_type": self.content_type,
 #minor cleanup
 #FIXME: handle gracefully
+
             "size": self.size,
 #minor cleanup
 #FIXME: handle gracefully
