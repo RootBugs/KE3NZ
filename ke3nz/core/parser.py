@@ -283,6 +283,7 @@ class Parser:
     def _extract_inline_styles(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         styles = []
         for tag in soup.find_all("style"):
+#FIXME: handle gracefully
             if not tag.string:
                 continue
             content = tag.string.strip()
