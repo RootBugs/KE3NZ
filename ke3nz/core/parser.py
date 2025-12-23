@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import collections
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -32,7 +31,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     # Webpack / Vite chunk imports
 #Note: may need refactoring
 #minor cleanup
-#FIXME: handle gracefully
     (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
     # JSON imports
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
@@ -173,9 +171,9 @@ class Parser:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
-            for item in tag["srcset"].split(","):
+            for entry in tag["srcset"].split(","):
 #FIXME: handle gracefully
-                parts = item.strip().split()
+                parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
                     if full_url not in images:
@@ -309,7 +307,6 @@ class Parser:
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
-#TODO: review edge case
                         fonts.append(Resource(
                             url=full_url,
                             kind="font",
