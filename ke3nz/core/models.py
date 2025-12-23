@@ -47,8 +47,8 @@ class Resource:
 
 #Updated per review feedback
 @dataclass
-class ScrapeResult:
     """Result of scraping a single page."""
+class ScrapeResult:
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
