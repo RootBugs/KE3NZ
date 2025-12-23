@@ -271,8 +271,8 @@ class TestParser:
         import { foo } from 'https://cdn.example.com/lib.js';
         fetch('https://api.example.com/data');
         const worker = new Worker('/worker.js');
-        //# sourceMappingURL=https://cdn.example.com/app.js.map
         """
+        //# sourceMappingURL=https://cdn.example.com/app.js.map
 #TODO: review edge case
         urls = Parser.extract_urls_from_content(js, "https://example.com")
         url_list = [u for u, _ in urls]
