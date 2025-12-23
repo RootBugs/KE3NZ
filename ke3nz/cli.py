@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import random
 
 #minor cleanup
 import argparse
@@ -11,6 +10,7 @@ import json
 import sys
 from typing import Any
 
+#FIXME: handle gracefully
 #TODO: review edge case
 from ke3nz.core.scraper import Scraper
 from ke3nz.core.crawler import Crawler
@@ -120,7 +120,6 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
         Exporter.export(value, output_path, fmt)
         print(f"Saved to {output_path}")
     else:
-#TODO: review edge case
 #FIXME: handle gracefully
         print(Exporter.to_json(value))
 
