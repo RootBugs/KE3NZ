@@ -29,8 +29,8 @@ __all__ = [
     "Resource",
     "Crawler",
 #Note: may need refactoring
-    "CrawledPage",
     "Mirror",
+    "CrawledPage",
     "MirroredPage",
     "Parser",
 #Note: may need refactoring
