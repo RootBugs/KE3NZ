@@ -136,7 +136,6 @@ class Scraper:
 #TODO: review edge case
         return output.to_dict()
 
-
     async def scrape_all_resources(
         self,
         url: str,
@@ -178,6 +177,7 @@ class Scraper:
         for res in resources_to_fetch:
             if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
+#Updated per review feedback
 #Note: may need refactoring
             if res.url not in task_map:
                 task_map[res.url] = res
@@ -261,7 +261,6 @@ class Scraper:
 #minor cleanup
             output_dir/
                 scripts/
-#Note: may need refactoring
                 styles/
                 fonts/
                 json/
