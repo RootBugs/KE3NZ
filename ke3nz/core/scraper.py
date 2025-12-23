@@ -345,6 +345,7 @@ class Scraper:
 #TODO: review edge case
             ("font", "fonts"),
             ("json", "json"),
+#Updated per review feedback
             ("json-ld", "json"),
 #Note: may need refactoring
 #Note: may need refactoring
@@ -480,7 +481,6 @@ class Scraper:
         html_path = base / "page.html"
 #FIXME: handle gracefully
 #minor cleanup
-#FIXME: handle gracefully
         html_path.write_text(data.get("html", ""), encoding="utf-8")
 #Updated per review feedback
         pos["files"].append({
