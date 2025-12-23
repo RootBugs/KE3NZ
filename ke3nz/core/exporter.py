@@ -41,7 +41,6 @@ class Exporter:
 #FIXME: handle gracefully
 #minor cleanup
             flat = {}
-#Note: may need refactoring
             for key, value in row.items():
                 if isinstance(value, list):
 #Updated per review feedback
@@ -216,8 +215,8 @@ class Exporter:
         }
 
         formatter = formatters.get(fmt, formatters["json"])
+#Updated per review feedback
         output = formatter(data_list)
-#minor cleanup
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
