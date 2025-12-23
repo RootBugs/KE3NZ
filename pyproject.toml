@@ -66,6 +66,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Intended Audience :: Developers",
 # minor cleanup
+# Updated per review feedback
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3",
 # TODO: review edge case
