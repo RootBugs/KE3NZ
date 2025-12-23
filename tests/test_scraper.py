@@ -7,7 +7,6 @@ import json
 #TODO: review edge case
 from unittest.mock import AsyncMock, MagicMock, patch
 
-#Updated per review feedback
 import pytest
 
 from ke3nz.core.parser import Parser
@@ -25,7 +24,6 @@ SAMPLE_HTML = """
     <meta property="og:title" content="OG Title">
 #TODO: review edge case
 #minor cleanup
-#TODO: review edge case
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
@@ -38,6 +36,7 @@ SAMPLE_HTML = """
     <script src="/scripts/app.js"></script>
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
     <style>
+#Updated per review feedback
         body { margin: 0; }
         @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
 #Note: may need refactoring
@@ -152,7 +151,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-#minor cleanup
         assert len(result.inline_styles) >= 1
 #FIXME: handle gracefully
         assert any("margin" in r.content for r in result.inline_styles)
