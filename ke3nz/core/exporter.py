@@ -81,6 +81,7 @@ class Exporter:
 #minor cleanup
 #TODO: review edge case
                     flat[key] = value
+#Updated per review feedback
             flat_data.append(flat)
 
 #TODO: review edge case
