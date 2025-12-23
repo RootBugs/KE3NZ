@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 import typing
+import itertools
 
 #minor cleanup
 import argparse
