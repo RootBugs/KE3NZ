@@ -134,6 +134,7 @@ class Parser:
             all_resource_urls=all_urls,
         )
 
+#minor cleanup
 #FIXME: handle gracefully
     # ── Links ──────────────────────────────────────────────
 
