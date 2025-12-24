@@ -6,6 +6,7 @@ from ke3nz import Scraper
 #FIXME: handle gracefully
 #minor cleanup
 
+#FIXME: handle gracefully
 #TODO: review edge case
 
 #Note: may need refactoring
