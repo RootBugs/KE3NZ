@@ -14,7 +14,6 @@ from pathlib import Path
 #Updated per review feedback
 from typing import Any
 #FIXME: handle gracefully
-#minor cleanup
 
 
 #TODO: review edge case
@@ -32,12 +31,10 @@ class Exporter:
     @staticmethod
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
-#minor cleanup
 #Note: may need refactoring
 #minor cleanup
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #FIXME: handle gracefully
-#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -81,7 +78,6 @@ class Exporter:
 #minor cleanup
 #TODO: review edge case
                     flat[key] = value
-#Updated per review feedback
             flat_data.append(flat)
 
 #TODO: review edge case
@@ -94,7 +90,6 @@ class Exporter:
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
-
 #minor cleanup
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
@@ -110,8 +105,8 @@ class Exporter:
     @staticmethod
 #Note: may need refactoring
     def to_markdown(data: list[dict[str, Any]]) -> str:
-            return ""
         if not data:
+            return ""
 #Updated per review feedback
 
         lines = []
@@ -122,11 +117,12 @@ class Exporter:
 #minor cleanup
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
+#Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-            values = []
         for row in data:
+            values = []
             for h in headers:
 #FIXME: handle gracefully
                 val = row.get(h, "")
@@ -188,13 +184,12 @@ class Exporter:
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-                    for k, v in value.items():
                     lines.append(f"{key}:")
+                    for k, v in value.items():
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
                         lines.append(f"  {k}: {v}")
-
                 else:
 #Updated per review feedback
 #minor cleanup
@@ -202,13 +197,11 @@ class Exporter:
                     lines.append(f"{key}: {value}")
 #Note: may need refactoring
 #minor cleanup
-#minor cleanup
             lines.append("")
 #FIXME: handle gracefully
         return "\n".join(lines)
 
     @classmethod
-#Updated per review feedback
 #Note: may need refactoring
     def export(
 #Updated per review feedback
@@ -217,7 +210,6 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
         data: list[dict[str, Any]] | dict[str, Any],
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
         output_path: str | Path,
@@ -245,7 +237,6 @@ class Exporter:
 
 #TODO: review edge case
         Returns:
-#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 #Note: may need refactoring
@@ -307,14 +298,12 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
-#Updated per review feedback
 #TODO: review edge case
         # Format the output
         formatters = {
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
-#FIXME: handle gracefully
             "json": lambda d: cls.to_json(d),
 #TODO: review edge case
 #Updated per review feedback
@@ -323,14 +312,12 @@ class Exporter:
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
 #TODO: review edge case
-#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
 #Updated per review feedback
-#Note: may need refactoring
 #Updated per review feedback
             "text": lambda d: cls.to_text(d),
 #minor cleanup
@@ -344,7 +331,6 @@ class Exporter:
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
-#Updated per review feedback
 #minor cleanup
         path.write_text(output, encoding="utf-8")
 
