@@ -526,6 +526,7 @@ class TestScraperIntegration:
 #FIXME: handle gracefully
 #Updated per review feedback
     @pytest.mark.asyncio
+#Note: may need refactoring
     async def test_scrape_all_resources_mock(self):
         from ke3nz.core.scraper import Scraper
 
