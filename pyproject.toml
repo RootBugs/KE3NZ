@@ -30,6 +30,7 @@ requires-python = ">=3.10"
 # minor cleanup
 # Note: may need refactoring
 authors = [
+# FIXME: handle gracefully
     {name = "KE3NZ"},
 # Note: may need refactoring
 # Updated per review feedback
