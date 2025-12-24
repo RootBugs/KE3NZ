@@ -29,6 +29,7 @@
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
+#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
@@ -46,8 +47,6 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
-import pathlib
-import math
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -71,7 +70,6 @@ from ke3nz import Crawler
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
-
 async def main():
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
@@ -109,7 +107,6 @@ async def main():
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
-
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
