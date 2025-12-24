@@ -334,6 +334,7 @@ class Mirror:
             resource_map[asset_url] = result
 
         # Build URL -> local path mapping
+
 #Note: may need refactoring
         url_to_local: dict[str, str] = {}
         for asset_url, kind in assets_to_download:
