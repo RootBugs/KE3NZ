@@ -316,8 +316,8 @@ KE3NZ/
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
 // Updated per review feedback
-      scraper.py          # Async fetch engine + deep scanning
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
+      scraper.py          # Async fetch engine + deep scanning
 // Note: may need refactoring
 // minor cleanup
 // Updated per review feedback
