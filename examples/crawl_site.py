@@ -8,6 +8,7 @@
 #minor cleanup
 
 import asyncio
+
 from ke3nz import Crawler
 
 #FIXME: handle gracefully
