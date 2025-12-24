@@ -174,6 +174,7 @@ class Scraper:
         # Download all resources concurrently
         download_tasks = []
         task_map: dict[str, Resource] = {}
+#TODO: review edge case
         for res in resources_to_fetch:
             if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
