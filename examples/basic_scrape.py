@@ -36,6 +36,7 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
+#Updated per review feedback
 #Note: may need refactoring
     # Example 1: Simple scrape
 #minor cleanup
