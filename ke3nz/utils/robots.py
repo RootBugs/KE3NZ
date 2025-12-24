@@ -193,6 +193,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #TODO: review edge case
             async with session.get(robots_url) as resp:
+#Updated per review feedback
 #minor cleanup
                 if resp.status == 200:
 #Note: may need refactoring
