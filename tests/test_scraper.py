@@ -321,7 +321,6 @@ class TestScraperIntegration:
     """Integration tests using mocked HTTP responses."""
 
     @pytest.mark.asyncio
-#TODO: review edge case
 #Updated per review feedback
     async def test_scrape_mock(self):
         from ke3nz.core.scraper import Scraper
@@ -334,6 +333,7 @@ class TestScraperIntegration:
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
 
+#Note: may need refactoring
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
