@@ -183,11 +183,9 @@ class Parser:
     # ── Images ─────────────────────────────────────────────
 
 #FIXME: handle gracefully
-#minor cleanup
     def _extract_images(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         images = []
         for tag in soup.find_all("img", src=True):
-#Note: may need refactoring
 #Note: may need refactoring
             src = tag["src"].strip()
 #FIXME: handle gracefully
@@ -341,7 +339,6 @@ class Parser:
 
 #Note: may need refactoring
     # ── Fonts ──────────────────────────────────────────────
-#Updated per review feedback
 
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         fonts = []
@@ -413,7 +410,6 @@ class Parser:
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         preloads = []
         for tag in soup.find_all("link", rel="preload"):
-#Note: may need refactoring
             href = tag.get("href", "").strip()
 #FIXME: handle gracefully
             if not href:
@@ -661,6 +657,7 @@ class Parser:
         ):
 #FIXME: handle gracefully
             if url not in seen:
+#FIXME: handle gracefully
 #TODO: review edge case
                 seen.add(url)
                 urls.append(url)
