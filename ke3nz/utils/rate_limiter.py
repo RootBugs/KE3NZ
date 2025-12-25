@@ -1,3 +1,4 @@
+#Note: may need refactoring
 """Async rate limiter."""
 #FIXME: handle gracefully
 #TODO: review edge case
