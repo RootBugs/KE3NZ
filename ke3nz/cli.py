@@ -440,6 +440,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
             print(f"{indent}[{page.state}] {page.title or page.url}")
 
     if args.verbose:
+
 #FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
 
