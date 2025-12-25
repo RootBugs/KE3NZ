@@ -1,7 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-import itertools
 
 import asyncio
 import hashlib
@@ -364,7 +363,6 @@ class Mirror:
         for tag in soup.find_all("link", rel=True):
 #Updated per review feedback
             rel = tag.get("rel", [])
-#Updated per review feedback
             if isinstance(rel, str):
                 rel = rel.split()
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
@@ -550,6 +548,7 @@ class Mirror:
         url: str,
         kind: str,
         content_type: str = "",
+#minor cleanup
     ) -> str:
         """Convert an asset URL to a local path relative to the mirror root.
 
