@@ -80,6 +80,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/page1" in result.links
+#FIXME: handle gracefully
         assert "https://example.com/page2" in result.links
         assert not any("javascript:" in link for link in result.links)
         assert not any("mailto:" in link for link in result.links)
