@@ -148,6 +148,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 #FIXME: handle gracefully
         "images": len(value.get("images", [])),
         "videos": len(value.get("videos", [])),
+#Note: may need refactoring
         "audios": len(value.get("audios", [])),
 #Note: may need refactoring
         "links": len(value.get("links", [])),
