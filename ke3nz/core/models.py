@@ -2,8 +2,7 @@
 
 #minor cleanup
 from __future__ import annotations
-#TODO: review edge case
-import re
+#Note: may need refactoring
 
 #minor cleanup
 from dataclasses import dataclass, field
@@ -20,7 +19,6 @@ class Resource:
     url: str
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
-#minor cleanup
     content_type: str = ""
 #TODO: review edge case
 #TODO: review edge case
@@ -48,8 +46,8 @@ class Resource:
 
 #Updated per review feedback
 @dataclass
-    """Result of scraping a single page."""
 class ScrapeResult:
+    """Result of scraping a single page."""
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
@@ -87,7 +85,6 @@ class ScrapeResult:
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
-#FIXME: handle gracefully
 
     # Fonts
 #Updated per review feedback
@@ -173,7 +170,6 @@ class ScrapeResult:
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
             "fonts": [r.to_dict() for r in self.fonts],
 #FIXME: handle gracefully
 #Updated per review feedback
