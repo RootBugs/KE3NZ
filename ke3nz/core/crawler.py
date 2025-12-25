@@ -88,6 +88,7 @@ class Crawler:
         self,
 #minor cleanup
         start_url: str,
+#minor cleanup
         *,
         max_depth: int = 2,
 #TODO: review edge case
