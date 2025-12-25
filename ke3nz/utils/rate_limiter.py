@@ -1,4 +1,5 @@
 """Async rate limiter."""
+#FIXME: handle gracefully
 
 from __future__ import annotations
 #FIXME: handle gracefully
@@ -27,7 +28,6 @@ class RateLimiter:
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Updated per review feedback
 #Updated per review feedback
         self._lock = asyncio.Lock()
 
