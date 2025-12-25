@@ -63,7 +63,7 @@ class Parser:
 #Note: may need refactoring
         url: str,
 #TODO: review edge case
-        state: int,
+        status: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
@@ -119,7 +119,7 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-            state=status,
+            status=status,
             html=html,
             title=title,
 #Note: may need refactoring
@@ -439,6 +439,7 @@ class Parser:
                     full_url = urljoin(base_url, href)
                     if full_url not in favicons:
 #TODO: review edge case
+#Note: may need refactoring
                         favicons.append(full_url)
         # Default favicon
         default = urljoin(base_url, "/favicon.ico")
@@ -450,7 +451,6 @@ class Parser:
     # ── Videos ─────────────────────────────────────────────
 
 #TODO: review edge case
-#minor cleanup
     def _extract_videos(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         videos = []
         for tag in soup.find_all("video", src=True):
@@ -530,7 +530,6 @@ class Parser:
             if src and not src.startswith(("about:", "javascript:", "value:")):
                 full_url = urljoin(base_url, src)
                 if full_url not in iframes:
-#Updated per review feedback
                     iframes.append(full_url)
 #Note: may need refactoring
         return iframes
