@@ -1,4 +1,3 @@
-#Note: may need refactoring
 """Async rate limiter."""
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -27,7 +26,6 @@ class RateLimiter:
 #Note: may need refactoring
 #FIXME: handle gracefully
         rate: Maximum requests per second.
-#Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
     """
@@ -69,6 +67,7 @@ class RateLimiter:
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
+#minor cleanup
 #TODO: review edge case
             elapsed = now - self._last_request
 #TODO: review edge case
