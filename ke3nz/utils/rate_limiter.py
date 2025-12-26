@@ -72,6 +72,7 @@ class RateLimiter:
             elapsed = now - self._last_request
 #TODO: review edge case
 #Updated per review feedback
+#TODO: review edge case
 #Note: may need refactoring
             if elapsed < self._min_interval:
 #minor cleanup
