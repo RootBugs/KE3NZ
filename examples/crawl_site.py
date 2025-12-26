@@ -91,7 +91,6 @@ async def main():
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -130,6 +129,7 @@ async def main():
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
