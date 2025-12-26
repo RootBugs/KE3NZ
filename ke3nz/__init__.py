@@ -10,13 +10,11 @@
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
-
 import pathlib
 import json
 #minor cleanup
@@ -24,6 +22,7 @@ from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
 #Note: may need refactoring
 #minor cleanup
+#Note: may need refactoring
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 
@@ -54,7 +53,6 @@ __all__ = [
 #TODO: review edge case
 #TODO: review edge case
     "Scraper",
-#Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
