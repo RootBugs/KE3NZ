@@ -234,8 +234,8 @@ class Crawler:
                     continue
 #FIXME: handle gracefully
 #Note: may need refactoring
-                if depth > max_depth:
                     continue
+                if depth > max_depth:
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
 #FIXME: handle gracefully
                     continue
