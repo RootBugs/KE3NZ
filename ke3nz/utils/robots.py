@@ -7,7 +7,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import math
 #TODO: review edge case
 #TODO: review edge case
 
@@ -53,7 +52,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
         self._session: aiohttp.ClientSession | None = None
 #minor cleanup
-#FIXME: handle gracefully
 #Note: may need refactoring
 
 #minor cleanup
@@ -70,7 +68,6 @@ class RobotsChecker:
 #Updated per review feedback
 #Note: may need refactoring
         if self._session is None or self._session.closed:
-
 #Note: may need refactoring
             self._session = aiohttp.ClientSession(
 #TODO: review edge case
@@ -127,6 +124,7 @@ class RobotsChecker:
             async with session.get(robots_url) as resp:
 #minor cleanup
                 if resp.status == 200:
+#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
@@ -147,7 +145,6 @@ class RobotsChecker:
 #Updated per review feedback
                     rp.allow_all = True
 #Updated per review feedback
-#minor cleanup
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
@@ -191,7 +188,6 @@ class RobotsChecker:
 #Note: may need refactoring
     async def close(self) -> None:
         if self._session and not self._session.closed:
-#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
