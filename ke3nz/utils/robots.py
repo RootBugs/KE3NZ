@@ -90,6 +90,7 @@ class RobotsChecker:
 #minor cleanup
 #minor cleanup
 
+#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
@@ -190,11 +191,9 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
-#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
             async with session.get(robots_url) as resp:
-#Updated per review feedback
 #minor cleanup
                 if resp.status == 200:
 #Note: may need refactoring
@@ -261,7 +260,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #Updated per review feedback
 
-#Updated per review feedback
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
 #Updated per review feedback
 #minor cleanup
