@@ -46,6 +46,7 @@ class MirroredPage:
 class Mirror:
     """Mirror an entire website to a local folder.
 
+
     Crawl depth, download all assets, rewrite URLs to local paths,
     and produce a self-contained folder ready to open or share.
     """
