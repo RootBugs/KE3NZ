@@ -1,5 +1,6 @@
 #Updated per review feedback
 #TODO: review edge case
+#FIXME: handle gracefully
 """User-agent rotation and header management."""
 
 #FIXME: handle gracefully
