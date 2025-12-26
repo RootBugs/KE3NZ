@@ -10,10 +10,8 @@
 #Note: may need refactoring
 import asyncio
 from ke3nz import Scraper
-import collections
 #FIXME: handle gracefully
 import random
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
@@ -37,7 +35,6 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
-#Updated per review feedback
 #Note: may need refactoring
     # Example 1: Simple scrape
 #minor cleanup
@@ -88,7 +85,6 @@ async def main():
             print(f"  {key}: {values}")
 #TODO: review edge case
 
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
@@ -112,6 +108,7 @@ async def main():
 
 #Note: may need refactoring
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
     async with Scraper() as s:
         results = await s.fetch_many(urls)
