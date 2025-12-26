@@ -32,14 +32,12 @@ import asyncio
 from ke3nz import Scraper
 import json
 import sys
-import re
 #minor cleanup
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
-#Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
@@ -51,14 +49,12 @@ import random
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
-#minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
-#TODO: review edge case
 async def main():
 #Updated per review feedback
 #Updated per review feedback
@@ -75,7 +71,7 @@ async def main():
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
-        output = await s.scrape("https://example.com")
+        result = await s.scrape("https://example.com")
 #TODO: review edge case
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
@@ -131,7 +127,6 @@ async def main():
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
-#Note: may need refactoring
                 "heading": "h1",
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -147,7 +142,6 @@ async def main():
 #Updated per review feedback
         )
 #FIXME: handle gracefully
-#TODO: review edge case
 #FIXME: handle gracefully
         print("\nSelector results:")
 #Updated per review feedback
@@ -158,15 +152,14 @@ async def main():
         for key, values in items["selector_results"].items():
 #minor cleanup
 #Note: may need refactoring
-#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
             print(f"  {key}: {values}")
 #TODO: review edge case
 #TODO: review edge case
+#TODO: review edge case
 
 #Updated per review feedback
-#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
@@ -231,7 +224,6 @@ async def main():
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
-#minor cleanup
 
 #minor cleanup
 #FIXME: handle gracefully
@@ -242,7 +234,6 @@ async def main():
 #FIXME: handle gracefully
 if __name__ == "__main__":
 #FIXME: handle gracefully
-#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
@@ -260,7 +251,6 @@ if __name__ == "__main__":
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
-#FIXME: handle gracefully
     asyncio.run(main())
 #Updated per review feedback
 #minor cleanup
