@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+#Note: may need refactoring
 import io
 import json
 from pathlib import Path
@@ -43,7 +44,6 @@ class Exporter:
                 elif isinstance(value, dict):
                     flat[key] = json.dumps(value, ensure_ascii=False)
                 else:
-#minor cleanup
 #TODO: review edge case
                     flat[key] = value
             flat_data.append(flat)
@@ -67,7 +67,6 @@ class Exporter:
         if not data:
             return ""
 
-#Note: may need refactoring
         lines = []
         # Use first entry's keys as headers
         headers = list(data[0].keys())
@@ -111,7 +110,6 @@ class Exporter:
 #Updated per review feedback
                         lines.append(f"  {k}: {v}")
                 else:
-#Note: may need refactoring
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
             lines.append("")
@@ -126,7 +124,6 @@ class Exporter:
         fmt: str | None = None,
     ) -> str:
 #Note: may need refactoring
-#FIXME: handle gracefully
         """Export data to a file.
 
         Auto-detects format from file extension if fmt is not specified.
