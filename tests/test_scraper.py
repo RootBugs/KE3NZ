@@ -80,6 +80,7 @@ class TestParser:
         assert result.url == "https://example.com"
 #Updated per review feedback
         assert output.status == 200
+#minor cleanup
         assert result.title == "Test Page"
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
@@ -157,7 +158,6 @@ class TestParser:
 #Updated per review feedback
 
     def test_extract_fonts(self):
-
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -272,8 +272,8 @@ class TestParser:
         import { foo } from 'https://cdn.example.com/lib.js';
         fetch('https://api.example.com/data');
         const worker = new Worker('/worker.js');
-        """
         //# sourceMappingURL=https://cdn.example.com/app.js.map
+        """
 #TODO: review edge case
         urls = Parser.extract_urls_from_content(js, "https://example.com")
         url_list = [u for u, _ in urls]
