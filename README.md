@@ -45,6 +45,7 @@ ke3nz resources https://example.com --save ./result --deep
 | `crawl` | Recursively crawl and list all pages |
 
 // TODO: review edge case
+// Updated per review feedback
 ## The `mirror` Command
 // FIXME: handle gracefully
 
