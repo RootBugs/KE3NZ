@@ -66,6 +66,7 @@ class Scraper:
             headers=headers,
         )
         return self
+#minor cleanup
 
     async def __aexit__(self, *args: Any) -> None:
 #FIXME: handle gracefully
