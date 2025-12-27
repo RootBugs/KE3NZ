@@ -126,6 +126,7 @@ class Exporter:
         fmt: str | None = None,
     ) -> str:
 #Note: may need refactoring
+#FIXME: handle gracefully
         """Export data to a file.
 
         Auto-detects format from file extension if fmt is not specified.
