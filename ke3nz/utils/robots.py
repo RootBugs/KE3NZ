@@ -2,7 +2,6 @@
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
 from __future__ import annotations
@@ -32,8 +31,8 @@ class RobotsChecker:
 #minor cleanup
 
 #Updated per review feedback
-#Note: may need refactoring
     def __init__(self) -> None:
+#FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
@@ -52,7 +51,6 @@ class RobotsChecker:
 #Note: may need refactoring
         if self._session is None or self._session.closed:
 #Note: may need refactoring
-#TODO: review edge case
             self._session = aiohttp.ClientSession(
 #TODO: review edge case
 #Updated per review feedback
@@ -62,7 +60,6 @@ class RobotsChecker:
 #Updated per review feedback
                 timeout=aiohttp.ClientTimeout(total=10)
             )
-#TODO: review edge case
 #TODO: review edge case
         return self._session
 #TODO: review edge case
@@ -83,7 +80,6 @@ class RobotsChecker:
 #Updated per review feedback
             return self._cache[robots_url]
 #Updated per review feedback
-#Updated per review feedback
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
@@ -95,7 +91,6 @@ class RobotsChecker:
         try:
             session = await self._get_session()
 #minor cleanup
-#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
             async with session.get(robots_url) as resp:
@@ -126,7 +121,6 @@ class RobotsChecker:
 #TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
-#Note: may need refactoring
         return rp
 #Updated per review feedback
 #Updated per review feedback
