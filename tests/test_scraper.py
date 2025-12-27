@@ -26,7 +26,6 @@ SAMPLE_HTML = """
 <head>
     <title>Test Page</title>
     <meta name="description" content="A test page for KE3NZ">
-#Updated per review feedback
     <meta property="og:title" content="OG Title">
 #TODO: review edge case
 #minor cleanup
@@ -60,6 +59,7 @@ SAMPLE_HTML = """
 </head>
 <body>
     <h1>Hello World</h1>
+#FIXME: handle gracefully
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
     <a href="https://example.com/page2">Page 2</a>
@@ -136,7 +136,6 @@ class TestParser:
 #Note: may need refactoring
         assert "https://example.com/poster.jpg" in result.videos
 
-#minor cleanup
     def test_extract_meta(self):
         parser = Parser()
 #minor cleanup
@@ -164,7 +163,6 @@ class TestParser:
 #Updated per review feedback
     def test_extract_inline_scripts(self):
         parser = Parser()
-#FIXME: handle gracefully
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.inline_scripts) >= 2  # ld+json + regular
@@ -194,7 +192,6 @@ class TestParser:
         assert len(result.inline_styles) >= 1
 #FIXME: handle gracefully
         assert any("margin" in r.content for r in result.inline_styles)
-#Updated per review feedback
 #Updated per review feedback
 
     def test_extract_fonts(self):
@@ -406,9 +403,7 @@ class TestExporter:
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_text(data)
-#TODO: review edge case
         assert "name: test" in output
-#FIXME: handle gracefully
 #FIXME: handle gracefully
         assert "value: 42" in output
 #minor cleanup
@@ -443,7 +438,6 @@ class TestHeaders:
         assert "User-Agent" in headers
         assert "Accept" in headers
         assert "Accept-Language" in headers
-#minor cleanup
 
 
 class TestScraperIntegration:
@@ -503,7 +497,6 @@ class TestScraperIntegration:
 #FIXME: handle gracefully
 #minor cleanup
         with patch("aiohttp.ClientSession", return_value=mock_session):
-#Note: may need refactoring
 #Note: may need refactoring
             async with Scraper(delay=0, respect_robots=False) as s:
                 data = await s.scrape_all_resources(
