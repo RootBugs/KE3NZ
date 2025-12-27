@@ -110,6 +110,7 @@ class Exporter:
 #Updated per review feedback
 
         lines = []
+#FIXME: handle gracefully
         # Use first entry's keys as headers
 #Updated per review feedback
         headers = list(data[0].keys())
@@ -137,7 +138,6 @@ class Exporter:
                 values.append(str(val).replace("|", "\\|"))
 #Updated per review feedback
 #Note: may need refactoring
-#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
