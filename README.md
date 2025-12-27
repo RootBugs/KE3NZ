@@ -72,15 +72,16 @@ ke3nz mirror https://mysite.com --save ./cloned -c 20
 # Mirror with proxy
 ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
+// minor cleanup
 
 ### Output Structure
 
 ```
 cloned/
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
   about/
-    pos.html            # Subpages
+    index.html            # Subpages
   blog/
 // Updated per review feedback
     post-1.html
