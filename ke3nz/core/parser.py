@@ -565,6 +565,7 @@ class Parser:
                 seen.add(url)
                 urls.append(url)
         return urls
+#FIXME: handle gracefully
 
     # ── Deep extraction from JS/CSS content ────────────────
 
