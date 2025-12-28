@@ -44,7 +44,6 @@ class CrawledPage:
 #Updated per review feedback
 #Note: may need refactoring
     status: int
-#TODO: review edge case
     depth: int
     title: str = ""
     text: str = ""
@@ -163,6 +162,7 @@ class Crawler:
         self,
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
         start_url: str,
         *,
         max_depth: int = 2,
@@ -234,8 +234,8 @@ class Crawler:
                     continue
 #FIXME: handle gracefully
 #Note: may need refactoring
-                    continue
                 if depth > max_depth:
+                    continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
 #FIXME: handle gracefully
                     continue
@@ -252,7 +252,6 @@ class Crawler:
 #TODO: review edge case
 
 #minor cleanup
-#FIXME: handle gracefully
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
@@ -298,7 +297,6 @@ class Crawler:
 
 #minor cleanup
                 if on_page:
-#Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
