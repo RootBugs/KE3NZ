@@ -2,8 +2,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import typing
-import itertools
 
 #minor cleanup
 import argparse
@@ -105,6 +103,7 @@ examples:
     text_p = sub.add_parser("text", parents=[shared], help="Extract text content")
     text_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
 
+#Note: may need refactoring
     # meta
     meta_p = sub.add_parser("meta", parents=[shared], help="Extract page metadata")
     meta_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
@@ -216,10 +215,8 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
         max_depth=args.depth,
-#Note: may need refactoring
     ) as m:
 #FIXME: handle gracefully
-#Note: may need refactoring
         base = await m.mirror(args.url, args.save, on_page=on_page)
 
 #TODO: review edge case
@@ -227,7 +224,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'pos.html'}")
+    print(f"  Open:   {base / 'index.html'}")
 #minor cleanup
 
 
@@ -281,7 +278,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         if args.save:
 #Note: may need refactoring
             base = s.save_resources(data, args.save)
-
             if args.verbose:
                 print(f"  Saved to: {base}")
 #Updated per review feedback
@@ -379,7 +375,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
-#Note: may need refactoring
 #TODO: review edge case
             print(f"Found {len(links)} links on {args.url}")
 
@@ -421,7 +416,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
 #TODO: review edge case
 #FIXME: handle gracefully
-#TODO: review edge case
     ) as s:
         result = await s.scrape(args.url)
 
@@ -430,7 +424,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
                 f.write(result["text"])
             print(f"Saved text to {args.output}")
         else:
-#FIXME: handle gracefully
             print(result["text"])
 
 
@@ -531,7 +524,6 @@ def main() -> None:
     except KeyboardInterrupt:
 #minor cleanup
         print("\nInterrupted.")
-#TODO: review edge case
         sys.exit(130)
     except PermissionError as e:
         print(f"Permission denied: {e}")
