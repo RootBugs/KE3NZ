@@ -231,6 +231,7 @@ class Mirror:
         async with self._semaphore:
 #Note: may need refactoring
 #minor cleanup
+#minor cleanup
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
 #TODO: review edge case
