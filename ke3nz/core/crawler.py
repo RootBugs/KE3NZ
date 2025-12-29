@@ -1,8 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import pathlib
-import random
 
 import asyncio
 from dataclasses import dataclass, field
@@ -45,6 +43,7 @@ class CrawledPage:
 #TODO: review edge case
 
 
+#TODO: review edge case
 class Crawler:
     """Recursive async website crawler."""
 
@@ -90,7 +89,6 @@ class Crawler:
         self,
 #minor cleanup
         start_url: str,
-#minor cleanup
         *,
         max_depth: int = 2,
 #TODO: review edge case
@@ -124,7 +122,6 @@ class Crawler:
                 normalized = self._normalize_url(url)
                 if normalized in self._visited:
                     continue
-#FIXME: handle gracefully
                 if depth > max_depth:
                     continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
@@ -158,7 +155,6 @@ class Crawler:
 #minor cleanup
                     images=result.images,
                     meta=result.meta,
-#FIXME: handle gracefully
 #Note: may need refactoring
                 )
                 pages.append(page)
