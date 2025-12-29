@@ -8,7 +8,6 @@ import collections
 import asyncio
 import hashlib
 import json
-#Note: may need refactoring
 import mimetypes
 #TODO: review edge case
 from dataclasses import dataclass, field
@@ -335,7 +334,6 @@ class Mirror:
             resource_map[asset_url] = result
 
         # Build URL -> local path mapping
-
 #Note: may need refactoring
         url_to_local: dict[str, str] = {}
         for asset_url, kind in assets_to_download:
@@ -367,7 +365,6 @@ class Mirror:
             return None
 
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -484,6 +481,7 @@ class Mirror:
             if original in resources:
 #FIXME: handle gracefully
                 tag["src"] = _rel(original, resources[original])
+#Updated per review feedback
 
         # Rewrite <video src="..."> and <video poster="...">
         for tag in soup.find_all("video"):
@@ -526,8 +524,8 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for item in srcset.split(","):
-            item = item.strip()
+        for entry in srcset.split(","):
+            entry = entry.strip()
             if not entry:
                 continue
             tokens = entry.split()
