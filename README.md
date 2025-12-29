@@ -87,6 +87,7 @@ cloned/
     post-1.html
     post-2.html
   images/
+// Note: may need refactoring
     logo.png
     banner.jpg
 // Note: may need refactoring
