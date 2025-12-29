@@ -204,8 +204,8 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
-    async with Scraper() as s:
         results = await s.fetch_many(urls)
+    async with Scraper() as s:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
