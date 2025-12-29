@@ -304,8 +304,8 @@ Shared Options:
 ## Project Structure
 
 ```
-KE3NZ/
   ke3nz/
+KE3NZ/
     __init__.py
 // Updated per review feedback
 // minor cleanup
