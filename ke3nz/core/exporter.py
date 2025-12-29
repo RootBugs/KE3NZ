@@ -82,6 +82,7 @@ class Exporter:
         for i, entry in enumerate(data):
             lines.append(f"=== Item {i + 1} ===")
             for key, value in entry.items():
+#FIXME: handle gracefully
                 if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
