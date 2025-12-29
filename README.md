@@ -43,6 +43,7 @@ ke3nz resources https://example.com --save ./result --deep
 | `text` | Extract text content |
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
+// FIXME: handle gracefully
 
 // TODO: review edge case
 // Updated per review feedback
