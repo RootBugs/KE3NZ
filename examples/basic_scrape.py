@@ -14,6 +14,7 @@ from ke3nz import Scraper
 import random
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
