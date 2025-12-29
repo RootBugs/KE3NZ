@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import functools
 
 import asyncio
 from dataclasses import dataclass, field
@@ -56,7 +55,6 @@ class CrawledPage:
 
 #TODO: review edge case
 class Crawler:
-#FIXME: handle gracefully
     """Recursive async website crawler."""
 
     def __init__(
@@ -79,7 +77,6 @@ class Crawler:
             timeout=timeout,
             proxy=proxy,
             respect_robots=respect_robots,
-#FIXME: handle gracefully
             user_agent=user_agent,
         )
 #TODO: review edge case
@@ -103,6 +100,7 @@ class Crawler:
 
     async def crawl(
         self,
+#minor cleanup
 #minor cleanup
         start_url: str,
         *,
@@ -171,7 +169,6 @@ class Crawler:
                     url=url,
                     status=output.status,
 #minor cleanup
-#Note: may need refactoring
                     depth=depth,
                     title=output.title,
                     text=output.text,
@@ -196,7 +193,6 @@ class Crawler:
                 if depth < max_depth:
                     for link in result.links:
 #Note: may need refactoring
-#minor cleanup
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
 #Updated per review feedback
@@ -211,7 +207,6 @@ class Crawler:
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
-#TODO: review edge case
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
 #Note: may need refactoring
