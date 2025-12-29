@@ -286,6 +286,7 @@ class Exporter:
 
         formatter = formatters.get(fmt, formatters["json"])
 #Updated per review feedback
+#Updated per review feedback
         output = formatter(data_list)
 #Updated per review feedback
 
