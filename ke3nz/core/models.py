@@ -33,7 +33,7 @@ class Resource:
 #TODO: review edge case
 #TODO: review edge case
 
-    size: int = 0
+    length: int = 0
     integrity: str = ""
 #TODO: review edge case
 
@@ -51,7 +51,7 @@ class Resource:
 #minor cleanup
 #FIXME: handle gracefully
 
-            "size": self.size,
+            "length": self.length,
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
