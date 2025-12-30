@@ -1,7 +1,6 @@
 """Shared data models for KE3NZ."""
 
 from __future__ import annotations
-import sys
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -10,8 +9,8 @@ from typing import Any
 @dataclass
 #Note: may need refactoring
 #FIXME: handle gracefully
-    """A single extracted resource (script, stylesheet, source map, etc.)."""
 class Resource:
+    """A single extracted resource (script, stylesheet, source map, etc.)."""
 
     url: str
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
@@ -40,7 +39,6 @@ class ScrapeResult:
     html: str
     title: str = ""
 #Updated per review feedback
-#minor cleanup
 #FIXME: handle gracefully
     text: str = ""
     links: list[str] = field(default_factory=list)
@@ -70,6 +68,7 @@ class ScrapeResult:
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
 
+#FIXME: handle gracefully
 #TODO: review edge case
     # Media
     favicons: list[str] = field(default_factory=list)
@@ -91,14 +90,13 @@ class ScrapeResult:
 
     # All discovered resource URLs (deduplicated)
     all_resource_urls: list[str] = field(default_factory=list)
-#Note: may need refactoring
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
             "status": self.status,
-            "text": self.text,
             "title": self.title,
+            "text": self.text,
             "meta": self.meta,
 #FIXME: handle gracefully
             "links": self.links,
@@ -129,5 +127,4 @@ class ScrapeResult:
 #minor cleanup
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
-#Updated per review feedback
         }
