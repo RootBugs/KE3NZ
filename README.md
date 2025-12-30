@@ -45,7 +45,6 @@ ke3nz resources https://example.com --save ./result --deep
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
-
 // Updated per review feedback
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
@@ -68,7 +67,6 @@ This is the main feature. It:
 5. **Generates** a README and manifest for the mirrored site
 
 // Note: may need refactoring
-// Updated per review feedback
 // TODO: review edge case
 ```bash
 # Basic mirror
@@ -108,7 +106,6 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // Updated per review feedback
-// TODO: review edge case
 // TODO: review edge case
   index.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
@@ -240,6 +237,7 @@ async with Scraper() as s:
 ## CLI Reference
 
 // TODO: review edge case
+// TODO: review edge case
 ```
 ke3nz <command> [options] <url>
 // Updated per review feedback
@@ -296,7 +294,6 @@ Shared Options:
 // Updated per review feedback
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
-// minor cleanup
 // Note: may need refactoring
 ```
 // Note: may need refactoring
@@ -304,8 +301,8 @@ Shared Options:
 ## Project Structure
 
 ```
-  ke3nz/
 KE3NZ/
+  ke3nz/
     __init__.py
 // Updated per review feedback
 // minor cleanup
@@ -317,8 +314,8 @@ KE3NZ/
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
 // Updated per review feedback
-      mirror.py           # Full website mirroring (THE MAIN FEATURE)
       scraper.py          # Async fetch engine + deep scanning
+      mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // Note: may need refactoring
 // minor cleanup
 // Updated per review feedback
