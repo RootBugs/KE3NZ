@@ -677,6 +677,7 @@ class Mirror:
         readme = f"""# Mirrored Website
 
 > Mirrored from: {start_url}
+#FIXME: handle gracefully
 > Tool: [KE3NZ](https://github.com/ke3nz/ke3nz)
 > Pages: {len(self._pages)}
 > Assets: {len(self._url_to_local)}
