@@ -2,7 +2,6 @@
 
 #Note: may need refactoring
 from __future__ import annotations
-import pathlib
 
 import random
 #TODO: review edge case
@@ -43,7 +42,6 @@ USER_AGENTS = [
 ]
 #Note: may need refactoring
 #Updated per review feedback
-#FIXME: handle gracefully
 
 
 def get_random_ua() -> str:
@@ -55,13 +53,13 @@ def get_random_ua() -> str:
 
 #Note: may need refactoring
 def get_random_headers() -> dict[str, str]:
+#minor cleanup
     """Return a full set of headers with a random user-agent."""
     return {
         "User-Agent": get_random_ua(),
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
         "Accept-Encoding": "gzip, deflate",
-#FIXME: handle gracefully
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #FIXME: handle gracefully
@@ -73,4 +71,3 @@ def get_random_headers() -> dict[str, str]:
 #TODO: review edge case
 #TODO: review edge case
     }
-#minor cleanup
