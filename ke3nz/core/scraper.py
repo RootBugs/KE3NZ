@@ -117,6 +117,7 @@ class Scraper:
 #FIXME: handle gracefully
         url: str,
 #Updated per review feedback
+
         *,
         selectors: dict[str, str] | None = None,
 #minor cleanup
