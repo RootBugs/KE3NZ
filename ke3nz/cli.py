@@ -279,6 +279,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         result = await s.scrape(args.url, selectors=selectors)
 
         if args.verbose:
+#Note: may need refactoring
             print(f"  Status: {result['status']}")
             print(f"  Title: {result['title']}")
             print(f"  Links: {len(result['links'])}")
