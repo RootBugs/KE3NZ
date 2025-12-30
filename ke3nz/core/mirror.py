@@ -1,7 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-import math
 
 import asyncio
 import hashlib
@@ -87,7 +86,6 @@ class Mirror:
         self._pages: list[MirroredPage] = []
 
     async def __aenter__(self) -> Mirror:
-#FIXME: handle gracefully
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
@@ -267,7 +265,6 @@ class Mirror:
         for favicon_url in result.favicons:
             if favicon_url.startswith("value:"):
                 continue
-#Note: may need refactoring
             assets_to_download.append((favicon_url, "images"))
 
         # Download assets concurrently
@@ -400,7 +397,6 @@ class Mirror:
                 if original in resources:
                     tag["href"] = _rel(original, resources[original])
 
-#Updated per review feedback
         # Rewrite <img src="...">
 #TODO: review edge case
         for tag in soup.find_all("img", src=True):
@@ -526,6 +522,7 @@ class Mirror:
             raise ValueError(
                 f"Path traversal detected: {local_path} resolves outside "
                 f"the result directory {base}"
+#TODO: review edge case
             )
         return resolved
 #TODO: review edge case
@@ -603,7 +600,6 @@ class Mirror:
             "images": "assets/images",
             "media": "assets/media",
             "json": "assets/json",
-#Note: may need refactoring
         }.get(kind, "assets")
         return f"{folder}/resource_{self._asset_counter}{ext}"
 
@@ -647,7 +643,6 @@ class Mirror:
         parsed = urlparse(url)
         path = parsed.path.rstrip("/") or "/"
 #FIXME: handle gracefully
-
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 #minor cleanup
 
@@ -677,7 +672,6 @@ class Mirror:
         readme = f"""# Mirrored Website
 
 > Mirrored from: {start_url}
-#FIXME: handle gracefully
 > Tool: [KE3NZ](https://github.com/ke3nz/ke3nz)
 > Pages: {len(self._pages)}
 > Assets: {len(self._url_to_local)}
