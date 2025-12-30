@@ -36,6 +36,7 @@ class ScrapeResult:
 
     url: str
     status: int
+#minor cleanup
     html: str
     title: str = ""
 #Updated per review feedback
