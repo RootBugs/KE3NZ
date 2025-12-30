@@ -23,7 +23,6 @@ name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
 # Updated per review feedback
-# minor cleanup
 # FIXME: handle gracefully
 description = "Fast async web scraping tool — extract value from any website"
 readme = "README.md"
@@ -37,7 +36,6 @@ requires-python = ">=3.10"
 # TODO: review edge case
 # FIXME: handle gracefully
 # TODO: review edge case
-# Updated per review feedback
 # minor cleanup
 # Note: may need refactoring
 # Note: may need refactoring
@@ -62,16 +60,12 @@ classifiers = [
 # Note: may need refactoring
 # Note: may need refactoring
 # FIXME: handle gracefully
-# Note: may need refactoring
-    "License :: OSI Approved :: MIT License",
     "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
 # minor cleanup
-# Updated per review feedback
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3",
-# TODO: review edge case
+    "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
-# Updated per review feedback
 # Updated per review feedback
 # Note: may need refactoring
 # TODO: review edge case
@@ -84,8 +78,8 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
 # Updated per review feedback
-dependencies = [
 ]
+dependencies = [
     "aiohttp>=3.9.0",
 # FIXME: handle gracefully
     "beautifulsoup4>=4.12.0",
@@ -128,7 +122,6 @@ Homepage = "https://github.com/ke3nz/ke3nz"
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
 
-# Updated per review feedback
 # FIXME: handle gracefully
 [tool.setuptools.packages.find]
 include = ["ke3nz*"]
@@ -137,9 +130,9 @@ include = ["ke3nz*"]
 # TODO: review edge case
 # TODO: review edge case
 # minor cleanup
-# FIXME: handle gracefully
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+# FIXME: handle gracefully
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 # FIXME: handle gracefully
