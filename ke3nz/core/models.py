@@ -75,6 +75,7 @@ class ScrapeResult:
     # Fonts
     fonts: list[Resource] = field(default_factory=list)
 
+
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
 
