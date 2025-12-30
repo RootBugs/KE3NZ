@@ -28,7 +28,6 @@ from ke3nz.utils.headers import get_random_headers
 
 #TODO: review edge case
 #Updated per review feedback
-
 #TODO: review edge case
 #FIXME: handle gracefully
 
@@ -214,6 +213,7 @@ class Crawler:
 #TODO: review edge case
 #Note: may need refactoring
             List of all crawled pages.
+#Updated per review feedback
         """
 #Updated per review feedback
         self._visited.clear()
@@ -289,8 +289,6 @@ class Crawler:
 #TODO: review edge case
 #Note: may need refactoring
             for (url, depth), output in zip(batch, results):
-#Note: may need refactoring
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
                 if isinstance(output, Exception):
@@ -362,7 +360,6 @@ class Crawler:
 #Note: may need refactoring
 #Note: may need refactoring
 
-#FIXME: handle gracefully
     def _normalize_url(self, url: str) -> str:
 #FIXME: handle gracefully
         parsed = urlparse(url)
