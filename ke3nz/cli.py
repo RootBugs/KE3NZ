@@ -226,8 +226,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
 #Note: may need refactoring
         respect_robots=not args.no_robots,
-        user_agent=args.user_agent,
     ) as s:
+        user_agent=args.user_agent,
         if args.verbose:
 #TODO: review edge case
 #Updated per review feedback
