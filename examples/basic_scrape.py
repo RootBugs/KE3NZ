@@ -33,7 +33,7 @@ async def main():
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
-        result = await s.scrape("https://example.com")
+        output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
 #TODO: review edge case
@@ -89,6 +89,7 @@ async def main():
 #FIXME: handle gracefully
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
+#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
