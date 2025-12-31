@@ -348,6 +348,7 @@ class Mirror:
             if original in resources:
                 tag["href"] = _rel(original, resources[original])
 
+#Note: may need refactoring
         # Rewrite <link rel="preload/prefetch" href="...">
         for tag in soup.find_all("link", rel=lambda r: r and isinstance(r, (str, list))):
             rel = tag.get("rel", [])
