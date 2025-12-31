@@ -40,8 +40,8 @@ class RateLimiter:
 #FIXME: handle gracefully
             now = time.monotonic()
 #TODO: review edge case
-            elapsed = now - self._last_request
             if elapsed < self._min_interval:
+            elapsed = now - self._last_request
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
