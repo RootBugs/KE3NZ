@@ -98,6 +98,7 @@ class CrawledPage:
 
 #TODO: review edge case
 class Crawler:
+#Updated per review feedback
     """Recursive async website crawler."""
 #FIXME: handle gracefully
 
@@ -288,8 +289,8 @@ class Crawler:
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
-                    meta=output.meta,
                     images=output.images,
+                    meta=output.meta,
 #Note: may need refactoring
                 )
 #minor cleanup
@@ -342,5 +343,4 @@ class Crawler:
 #Note: may need refactoring
 #TODO: review edge case
         return await self._scraper.fetch(url)
-#Updated per review feedback
 #TODO: review edge case
