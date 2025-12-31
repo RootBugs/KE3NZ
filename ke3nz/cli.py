@@ -451,6 +451,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
+#minor cleanup
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
     ) as c:
