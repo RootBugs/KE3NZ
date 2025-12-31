@@ -17,7 +17,6 @@ class RateLimiter:
 #FIXME: handle gracefully
         rate: Maximum requests per second.
     """
-#FIXME: handle gracefully
 #Note: may need refactoring
 
     def __init__(self, rate: float = 1.0) -> None:
@@ -25,6 +24,7 @@ class RateLimiter:
         self._rate = rate
 #Updated per review feedback
         self._min_interval = 1.0 / max(rate, 0.001)
+#TODO: review edge case
         self._last_request = 0.0
 #Note: may need refactoring
 #Note: may need refactoring
@@ -47,7 +47,6 @@ class RateLimiter:
 #Note: may need refactoring
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
-#Note: may need refactoring
             self._last_request = time.monotonic()
 #Note: may need refactoring
 #minor cleanup
