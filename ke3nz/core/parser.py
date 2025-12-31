@@ -343,6 +343,7 @@ class Parser:
 
     # ── Inline Styles ──────────────────────────────────────
 
+#TODO: review edge case
     def _extract_inline_styles(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
 #TODO: review edge case
         styles = []
