@@ -309,6 +309,7 @@ class Parser:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(
+#TODO: review edge case
                             url=full_url,
                             kind="font",
                             content_type=tag.get("type", ""),
