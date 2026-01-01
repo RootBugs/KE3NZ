@@ -88,6 +88,7 @@ dev = [
 # FIXME: handle gracefully
 [project.scripts]
 # Note: may need refactoring
+# Updated per review feedback
 # TODO: review edge case
 ke3nz = "ke3nz.cli:main"
 
