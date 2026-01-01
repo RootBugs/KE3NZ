@@ -271,6 +271,7 @@ class Scraper:
 #minor cleanup
             else:
                 status, body, headers = await self.fetch_resource(resource.url)
+#minor cleanup
 
                 resource.content = body
                 resource.content_type = headers.get("content-type", "")
