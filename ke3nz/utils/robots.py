@@ -18,7 +18,6 @@ import os
 #minor cleanup
 
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
@@ -58,7 +57,6 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
     def __init__(self) -> None:
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -84,7 +82,6 @@ class RobotsChecker:
 #Updated per review feedback
     async def _get_session(self) -> aiohttp.ClientSession:
 #TODO: review edge case
-#FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
@@ -101,7 +98,6 @@ class RobotsChecker:
 #Updated per review feedback
 #Note: may need refactoring
                 timeout=aiohttp.ClientTimeout(total=10)
-#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
             )
@@ -111,7 +107,6 @@ class RobotsChecker:
 
 #minor cleanup
 #minor cleanup
-#TODO: review edge case
 #TODO: review edge case
     async def _fetch_robots(self, url: str) -> RobotFileParser:
 #minor cleanup
@@ -187,6 +182,7 @@ class RobotsChecker:
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
         except Exception:
