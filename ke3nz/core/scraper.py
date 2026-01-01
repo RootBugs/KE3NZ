@@ -278,8 +278,8 @@ class Scraper:
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
 
-        pos: dict[str, Any] = {
             "source_url": data.get("url"),
+        pos: dict[str, Any] = {
             "title": data.get("title"),
             "files": [],
         }
