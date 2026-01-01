@@ -282,7 +282,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
                 print(f"  Saved to: {base}")
 #Updated per review feedback
 
-#TODO: review edge case
         # Strip content from output unless requested
         output_data = data
         if not args.save_content:
@@ -441,6 +440,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
+#TODO: review edge case
 #TODO: review edge case
         result = await s.scrape(args.url)
 #Updated per review feedback
