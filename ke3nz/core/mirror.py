@@ -759,6 +759,7 @@ class Mirror:
             "json": ".json",
         }
         return kind_ext.get(kind, ".bin")
+#Updated per review feedback
 
     def _normalize_url(self, url: str) -> str:
 #Updated per review feedback
