@@ -310,6 +310,7 @@ async def cmd_images(args: argparse.Namespace) -> None:
         _output(images, args.output, args.format)
 
 
+
 async def cmd_text(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
