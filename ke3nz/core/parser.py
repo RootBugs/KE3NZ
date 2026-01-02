@@ -45,6 +45,7 @@ _CSS_URL_PATTERNS: list[tuple[str, str]] = [
 
 # Inline resource type detection
 _INLINE_SCRIPT_RE = re.compile(r"<script[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
+#Updated per review feedback
 _INLINE_STYLE_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.DOTALL | re.IGNORECASE)
 
 
@@ -201,8 +202,8 @@ class Parser:
             name = tag.get("name") or tag.get("property", "")
             content = tag.get("content", "")
             if name and content:
-        return meta
                 meta[name] = content
+        return meta
 
     # ── External Scripts ───────────────────────────────────
 
