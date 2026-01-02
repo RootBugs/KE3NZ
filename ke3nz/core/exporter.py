@@ -55,6 +55,7 @@ class Exporter:
             writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
+
 #Note: may need refactoring
             writer.writerows(flat_data)
 #Note: may need refactoring
