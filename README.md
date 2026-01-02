@@ -100,6 +100,7 @@ cloned/
     post-2.html
   images/
     logo.png
+
     banner.jpg
 // Updated per review feedback
 // Note: may need refactoring
