@@ -82,6 +82,7 @@ async def main():
         "https://example.org",
     ]
 
+#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
     async with Scraper() as s:
