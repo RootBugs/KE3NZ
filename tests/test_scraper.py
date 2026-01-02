@@ -27,7 +27,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
-    <link rel="preload" href="/data/app.js" as="script">
+    <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-icon.png">
@@ -54,7 +54,7 @@ SAMPLE_HTML = """
     <script type="application/ld+json">{"@type": "WebPage"}</script>
     <script>
         navigator.serviceWorker.register('/sw.js');
-        fetch('https://api.example.com/data');
+        fetch('https://api.example.com/value');
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
@@ -74,7 +74,6 @@ class TestParser:
         assert result.title == "Test Page"
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
-#minor cleanup
 
     def test_extract_links(self):
         parser = Parser()
