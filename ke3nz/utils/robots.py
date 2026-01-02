@@ -44,6 +44,7 @@ class RobotsChecker:
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #Note: may need refactoring
 
+#minor cleanup
         if robots_url in self._cache:
             return self._cache[robots_url]
 #Updated per review feedback
