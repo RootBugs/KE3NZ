@@ -234,6 +234,7 @@ class Crawler:
 #Updated per review feedback
                     continue
 #FIXME: handle gracefully
+#Updated per review feedback
 #Note: may need refactoring
                 if depth > max_depth:
                     continue
