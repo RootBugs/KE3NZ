@@ -121,6 +121,7 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
+#Note: may need refactoring
             "status": self.status,
             "title": self.title,
             "text": self.text,
