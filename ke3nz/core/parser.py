@@ -3,7 +3,6 @@
 from __future__ import annotations
 import math
 import json
-import sys
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -82,7 +81,6 @@ class Parser:
 #TODO: review edge case
         status: int,
         html: str,
-#minor cleanup
         headers: dict[str, str],
     ) -> ScrapeResult:
 #Updated per review feedback
@@ -343,7 +341,6 @@ class Parser:
 
     # ── Inline Styles ──────────────────────────────────────
 
-#TODO: review edge case
     def _extract_inline_styles(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
 #TODO: review edge case
         styles = []
@@ -517,6 +514,7 @@ class Parser:
             full_url = urljoin(base_url, tag["src"].strip())
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
             if full_url not in videos:
                 videos.append(full_url)
         for tag in soup.find_all("source", src=True):
