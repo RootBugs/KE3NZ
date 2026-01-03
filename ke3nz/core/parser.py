@@ -133,10 +133,9 @@ class Parser:
             inline_scripts=inline_scripts,
             stylesheets=stylesheets,
             inline_styles=inline_styles,
-            sourcemaps=sourcemaps,
             fonts=fonts,
+            sourcemaps=sourcemaps,
             preloads=preloads,
-#FIXME: handle gracefully
             prefetches=prefetches,
             favicons=favicons,
             videos=videos,
@@ -470,6 +469,7 @@ class Parser:
             full_url = urljoin(base_url, tag["poster"].strip())
             if full_url not in videos:
                 videos.append(full_url)
+#FIXME: handle gracefully
         return videos
 
 #Note: may need refactoring
