@@ -159,6 +159,7 @@ class Mirror:
 
             if not batch:
                 break
+#Note: may need refactoring
 
             tasks = [self._fetch_and_parse(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
