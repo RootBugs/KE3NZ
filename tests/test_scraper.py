@@ -337,6 +337,7 @@ class TestExporter:
     def test_to_csv(self):
         data = [{"name": "test", "value": 42}]
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #minor cleanup
         output = Exporter.to_csv(data)
         assert "name" in output
