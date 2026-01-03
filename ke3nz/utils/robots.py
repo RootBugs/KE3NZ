@@ -73,7 +73,7 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
             async with session.get(robots_url) as resp:
-                if resp.state == 200:
+                if resp.status == 200:
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
@@ -102,6 +102,7 @@ class RobotsChecker:
 #Updated per review feedback
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
+#Updated per review feedback
 #Updated per review feedback
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
