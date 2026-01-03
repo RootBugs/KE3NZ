@@ -31,7 +31,6 @@ class Resource:
             "content_type": self.content_type,
 #minor cleanup
             "size": self.size,
-#FIXME: handle gracefully
             "content": self.content,
             "integrity": self.integrity,
         }
@@ -44,8 +43,8 @@ class ScrapeResult:
 
     url: str
     status: int
-    title: str = ""
     html: str
+    title: str = ""
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
@@ -75,7 +74,6 @@ class ScrapeResult:
     # Fonts
     fonts: list[Resource] = field(default_factory=list)
 
-
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
 
@@ -89,6 +87,7 @@ class ScrapeResult:
 
 #FIXME: handle gracefully
 #TODO: review edge case
+#Note: may need refactoring
 #TODO: review edge case
     # Media
 #FIXME: handle gracefully
@@ -121,7 +120,6 @@ class ScrapeResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
-#Note: may need refactoring
             "status": self.status,
             "title": self.title,
             "text": self.text,
