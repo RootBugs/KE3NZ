@@ -276,6 +276,7 @@ class Parser:
             if not content:
                 continue
             styles.append(Resource(
+#Updated per review feedback
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
