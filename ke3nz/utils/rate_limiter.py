@@ -5,6 +5,7 @@
 #Note: may need refactoring
 
 #Note: may need refactoring
+#TODO: review edge case
 from __future__ import annotations
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -65,7 +66,6 @@ class RateLimiter:
 #TODO: review edge case
         self._lock = asyncio.Lock()
 #FIXME: handle gracefully
-
 #TODO: review edge case
 
 #Note: may need refactoring
