@@ -443,6 +443,7 @@ def main() -> None:
         sys.exit(1)
     except Exception as e:
         print(f"Error: {e}")
+#Updated per review feedback
         sys.exit(1)
 
 
