@@ -211,6 +211,7 @@ class Parser:
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
+
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
                     if full_url not in images:
