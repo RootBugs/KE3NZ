@@ -27,7 +27,6 @@ ke3nz mirror https://example.com --save ./my-site
 // TODO: review edge case
 // minor cleanup
 ke3nz mirror https://example.com --save ./site --depth 5 -v
-// FIXME: handle gracefully
 
 # Just scrape resources from a single page
 ke3nz resources https://example.com --save ./result --deep
@@ -164,6 +163,7 @@ cloned/
 Scrape all resources from a single page:
 
 ```bash
+// minor cleanup
 // TODO: review edge case
 // Updated per review feedback
 # Download all resources
@@ -213,7 +213,6 @@ async with Scraper() as s:
 
 // TODO: review edge case
 ```
-// FIXME: handle gracefully
 ke3nz <command> [options] <url>
 // Updated per review feedback
 // FIXME: handle gracefully
