@@ -32,14 +32,12 @@ class Resource:
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
-
-    length: int = 0
+    size: int = 0
     integrity: str = ""
 #TODO: review edge case
 
 #TODO: review edge case
     def to_dict(self) -> dict[str, Any]:
-#minor cleanup
 #minor cleanup
         return {
             "url": self.url,
@@ -51,8 +49,7 @@ class Resource:
             "content_type": self.content_type,
 #minor cleanup
 #FIXME: handle gracefully
-
-            "length": self.length,
+            "size": self.size,
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -214,12 +211,10 @@ class ScrapeResult:
 #minor cleanup
 
 #FIXME: handle gracefully
-#FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
         return {
             "url": self.url,
-#Updated per review feedback
             "status": self.status,
             "title": self.title,
             "text": self.text,
@@ -248,6 +243,7 @@ class ScrapeResult:
             "stylesheets": [r.to_dict() for r in self.stylesheets],
 #TODO: review edge case
 #minor cleanup
+#TODO: review edge case
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
 #minor cleanup
