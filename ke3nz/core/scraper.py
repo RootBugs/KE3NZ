@@ -235,6 +235,7 @@ class Scraper:
             resource.content = f"[failed to fetch: {resource.url}]"
 
     async def fetch_many(self, urls: list[str]) -> list[ScrapeResult]:
+
         """Fetch multiple URLs concurrently."""
         tasks = [self.fetch(url) for url in urls]
         results = await asyncio.gather(*tasks, return_exceptions=True)
