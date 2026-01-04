@@ -228,6 +228,7 @@ class Parser:
         for tag in soup.find_all("source", srcset=True):
             for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
+#Note: may need refactoring
                 parts = item.strip().split()
 #Updated per review feedback
 #TODO: review edge case
