@@ -90,6 +90,7 @@ class RobotsChecker:
 #Updated per review feedback
         rp = RobotFileParser()
         try:
+#FIXME: handle gracefully
             session = await self._get_session()
 #minor cleanup
 #FIXME: handle gracefully
