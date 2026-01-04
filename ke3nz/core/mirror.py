@@ -424,6 +424,7 @@ class Mirror:
 #Note: may need refactoring
             return local_path
 #FIXME: handle gracefully
+
 #Updated per review feedback
 
         # Rewrite <script src="...">
