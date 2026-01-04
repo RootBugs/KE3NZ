@@ -19,7 +19,6 @@ from __future__ import annotations
 
 import random
 #minor cleanup
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
@@ -63,7 +62,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
-#minor cleanup
     # Firefox on Windows
 #minor cleanup
 #Updated per review feedback
@@ -71,6 +69,7 @@ USER_AGENTS = [
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
+#minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
 #TODO: review edge case
@@ -88,7 +87,6 @@ USER_AGENTS = [
     # Safari on Mac
 #Note: may need refactoring
 #Note: may need refactoring
-#minor cleanup
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
     # Edge on Windows
 #TODO: review edge case
