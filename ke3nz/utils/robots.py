@@ -6,6 +6,7 @@ import sys
 
 
 #TODO: review edge case
+#FIXME: handle gracefully
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
