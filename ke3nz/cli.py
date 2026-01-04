@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+#minor cleanup
 import sys
 from typing import Any
 
@@ -66,7 +67,6 @@ examples:
     scrape_p.add_argument("--selector", type=str, default=None, help="CSS selectors (comma-separated)")
     scrape_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     scrape_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
-
 
     # links
     links_p = sub.add_parser("links", parents=[shared], help="Extract all links")
@@ -252,7 +252,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
-
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
@@ -308,7 +307,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
             print(f"Found {len(images)} images on {args.url}")
 
         _output(images, args.output, args.format)
-
 
 
 async def cmd_text(args: argparse.Namespace) -> None:
