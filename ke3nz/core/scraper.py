@@ -225,6 +225,7 @@ class Scraper:
         """Fetch multiple URLs concurrently."""
         tasks = [self.fetch(url) for url in urls]
         results = await asyncio.gather(*tasks, return_exceptions=True)
+#TODO: review edge case
         return [r for r in results if isinstance(r, ScrapeResult)]
 
     def save_resources(self, data: dict[str, Any], output_dir: str | Path) -> Path:
