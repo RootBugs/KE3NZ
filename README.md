@@ -20,6 +20,7 @@ pip install -e .
 // FIXME: handle gracefully
 ```
 
+// TODO: review edge case
 ## Quick Start
 
 ```bash
