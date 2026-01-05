@@ -185,6 +185,7 @@ class Crawler:
 #FIXME: handle gracefully
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
+#FIXME: handle gracefully
 #Note: may need refactoring
 
 #Updated per review feedback
