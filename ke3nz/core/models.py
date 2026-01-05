@@ -85,6 +85,7 @@ class ScrapeResult:
 #TODO: review edge case
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
+#Note: may need refactoring
 #minor cleanup
 
     # Fonts
