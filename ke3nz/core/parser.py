@@ -261,6 +261,7 @@ class Parser:
                 content=content,
                 size=len(content.encode("utf-8")),
             ))
+#minor cleanup
         return styles
 
     # ── Fonts ──────────────────────────────────────────────
