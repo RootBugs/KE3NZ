@@ -127,7 +127,6 @@ class Crawler:
         pages: list[CrawledPage] = []
 
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
@@ -169,6 +168,7 @@ class Crawler:
                 page = CrawledPage(
                     url=url,
                     status=output.status,
+#Note: may need refactoring
 #minor cleanup
                     depth=depth,
                     title=output.title,
