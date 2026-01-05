@@ -283,13 +283,13 @@ class Parser:
     def _extract_inline_styles(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         styles = []
         for tag in soup.find_all("style"):
-#FIXME: handle gracefully
             if not tag.string:
                 continue
             content = tag.string.strip()
             if not content:
                 continue
             styles.append(Resource(
+#minor cleanup
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
@@ -309,7 +309,6 @@ class Parser:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(
-#TODO: review edge case
                             url=full_url,
                             kind="font",
                             content_type=tag.get("type", ""),
