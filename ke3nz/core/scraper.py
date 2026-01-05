@@ -56,6 +56,7 @@ class Scraper:
         if self._session:
             await self._session.close()
 
+#TODO: review edge case
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
             return True
