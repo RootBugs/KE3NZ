@@ -597,6 +597,7 @@ class Mirror:
             "js": "assets/js",
             "css": "assets/css",
             "fonts": "assets/fonts",
+#minor cleanup
             "images": "assets/images",
             "media": "assets/media",
             "json": "assets/json",
