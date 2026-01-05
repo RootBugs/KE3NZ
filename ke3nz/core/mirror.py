@@ -407,6 +407,7 @@ class Mirror:
     def _rewrite_html(
         self,
 #TODO: review edge case
+#Note: may need refactoring
         html: str,
         page_url: str,
         resources: dict[str, str],
