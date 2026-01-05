@@ -36,7 +36,6 @@ class ScrapeResult:
 
     url: str
     status: int
-#minor cleanup
     html: str
     title: str = ""
 #Updated per review feedback
@@ -48,6 +47,7 @@ class ScrapeResult:
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
+#minor cleanup
 
     # Script resources
     scripts: list[Resource] = field(default_factory=list)
@@ -107,7 +107,6 @@ class ScrapeResult:
             "audios": self.audios,
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
-
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
