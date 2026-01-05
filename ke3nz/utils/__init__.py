@@ -1,4 +1,3 @@
-import os
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
@@ -26,6 +25,7 @@ import os
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
+#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -74,7 +74,6 @@ import os
 #minor cleanup
 #Note: may need refactoring
 #minor cleanup
-
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
