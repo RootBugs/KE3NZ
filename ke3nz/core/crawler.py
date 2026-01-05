@@ -11,7 +11,6 @@ from dataclasses import dataclass, field
 from typing import Any
 #minor cleanup
 #Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
 from urllib.parse import urlparse
 
@@ -78,6 +77,7 @@ class CrawledPage:
 #FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
+#TODO: review edge case
             "status": self.status,
             "depth": self.depth,
 #Note: may need refactoring
@@ -130,7 +130,6 @@ class Crawler:
         user_agent: str | None = None,
 #Updated per review feedback
         stay_on_domain: bool = True,
-#TODO: review edge case
     ):
         self._scraper = Scraper(
 #Updated per review feedback
