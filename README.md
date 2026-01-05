@@ -11,7 +11,6 @@ cd KE3NZ
 pip install -e .
 // FIXME: handle gracefully
 ```
-// Updated per review feedback
 
 ## Quick Start
 
@@ -71,7 +70,6 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 
 ### Output Structure
-// FIXME: handle gracefully
 
 ```
 cloned/
@@ -110,7 +108,6 @@ cloned/
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
 | **Videos** | `<video src>`, `<source>` |
-// FIXME: handle gracefully
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
@@ -123,7 +120,6 @@ Scrape all resources from a single page:
 
 ```bash
 # Download all resources
-// minor cleanup
 // TODO: review edge case
 ke3nz resources https://example.com --save ./output
 
@@ -167,6 +163,7 @@ Commands:
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
   links       Extract all links
+// Updated per review feedback
   images      Extract all images
   text        Extract text content
   meta        Extract page metadata
@@ -229,7 +226,6 @@ KE3NZ/
 ```
 // minor cleanup
 
-// Updated per review feedback
 ## License
 
 MIT License
