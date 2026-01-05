@@ -122,6 +122,7 @@ class Exporter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
+#minor cleanup
 #FIXME: handle gracefully
         for row in data:
             values = []
