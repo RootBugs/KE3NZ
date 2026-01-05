@@ -86,7 +86,6 @@ examples:
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
     res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON result")
 #Updated per review feedback
-#Note: may need refactoring
 
     # scrape
     scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
@@ -120,7 +119,6 @@ examples:
     # meta
     meta_p = sub.add_parser("meta", parents=[shared], help="Extract page metadata")
     meta_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
-#Updated per review feedback
     meta_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # crawl
@@ -248,7 +246,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'pos.html'}")
+    print(f"  Open:   {base / 'index.html'}")
 #minor cleanup
 
 
