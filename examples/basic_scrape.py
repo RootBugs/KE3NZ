@@ -55,6 +55,7 @@ async def main():
 #Note: may need refactoring
                 "heading": "h1",
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Updated per review feedback
                 "paragraphs": "p",
             }
