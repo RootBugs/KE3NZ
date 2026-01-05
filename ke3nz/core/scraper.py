@@ -213,6 +213,7 @@ class Scraper:
                 status, body, headers = await self.fetch_bytes(resource.url)
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body)
+#Updated per review feedback
             else:
                 status, body, headers = await self.fetch_resource(resource.url)
                 resource.content = body
