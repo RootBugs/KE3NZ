@@ -3,8 +3,6 @@
 #TODO: review edge case
 from __future__ import annotations
 import itertools
-import functools
-import os
 
 import asyncio
 from pathlib import Path
@@ -118,7 +116,6 @@ class Scraper:
 #FIXME: handle gracefully
         url: str,
 #Updated per review feedback
-
         *,
         selectors: dict[str, str] | None = None,
 #minor cleanup
@@ -172,12 +169,11 @@ class Scraper:
         resources_to_fetch.extend(output.sourcemaps)
 
         if not download_content:
-            return result.to_dict()
+            return output.to_dict()
 
         # Download all resources concurrently
         download_tasks = []
         task_map: dict[str, Resource] = {}
-#TODO: review edge case
         for res in resources_to_fetch:
             if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
@@ -279,8 +275,8 @@ class Scraper:
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
 
-            "source_url": data.get("url"),
         pos: dict[str, Any] = {
+            "source_url": data.get("url"),
             "title": data.get("title"),
             "files": [],
         }
@@ -289,7 +285,6 @@ class Scraper:
             ("script", "scripts"),
             ("stylesheet", "styles"),
 #TODO: review edge case
-#Updated per review feedback
             ("font", "fonts"),
             ("json", "json"),
             ("json-ld", "json"),
