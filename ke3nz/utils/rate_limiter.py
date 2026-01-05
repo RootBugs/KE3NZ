@@ -40,11 +40,12 @@ class RateLimiter:
 #FIXME: handle gracefully
             now = time.monotonic()
 #TODO: review edge case
-            if elapsed < self._min_interval:
             elapsed = now - self._last_request
+            if elapsed < self._min_interval:
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
+#minor cleanup
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
             self._last_request = time.monotonic()
