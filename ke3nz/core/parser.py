@@ -300,6 +300,7 @@ class Parser:
     # ── Fonts ──────────────────────────────────────────────
 
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+
         fonts = []
         # <link rel="preload" as="font">
         for tag in soup.find_all("link", rel="preload"):
