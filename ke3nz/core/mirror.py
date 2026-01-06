@@ -211,6 +211,7 @@ class Mirror:
                     resources=resources,
                 )
 #FIXME: handle gracefully
+#TODO: review edge case
                 self._pages.append(page)
 #minor cleanup
 
