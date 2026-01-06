@@ -272,6 +272,7 @@ class Scraper:
         output.json_data = [task_map.get(r.url, r) for r in output.json_data if r.url in task_map or not r.url.startswith("#")]
         output.configs = [task_map.get(r.url, r) for r in output.configs if r.url in task_map or not r.url.startswith("#")]
         output.sourcemaps = [task_map.get(r.url, r) for r in output.sourcemaps if r.url in task_map or not r.url.startswith("#")]
+#TODO: review edge case
 
         return output.to_dict()
 
