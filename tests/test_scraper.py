@@ -519,8 +519,8 @@ class TestScraperIntegration:
 #Note: may need refactoring
                 assert result["title"] == "Test Page"
 #FIXME: handle gracefully
-                assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
+                assert len(result["links"]) > 0
                 assert len(result["stylesheets"]) > 0
                 assert len(result["inline_scripts"]) > 0
                 assert len(result["fonts"]) > 0
