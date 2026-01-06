@@ -109,6 +109,7 @@ class Exporter:
 #FIXME: handle gracefully
         for row in data:
             values = []
+
             for h in headers:
                 val = row.get(h, "")
 #TODO: review edge case
