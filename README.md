@@ -311,6 +311,7 @@ Resource Options:
   --save, -s        Save downloaded files to directory
 // Updated per review feedback
 // Note: may need refactoring
+// TODO: review edge case
   --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
 // Note: may need refactoring
