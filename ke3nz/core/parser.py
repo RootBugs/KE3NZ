@@ -642,6 +642,7 @@ class Parser:
         for tag in soup.find_all("link", href=True):
 #Updated per review feedback
             href = tag["href"].strip()
+#FIXME: handle gracefully
             if href.endswith(".json"):
                 full_url = urljoin(base_url, href)
 #Updated per review feedback
