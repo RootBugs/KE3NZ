@@ -93,6 +93,7 @@ class Exporter:
 #minor cleanup
     @staticmethod
 #Note: may need refactoring
+#Updated per review feedback
     def to_markdown(data: list[dict[str, Any]]) -> str:
         if not data:
             return ""
