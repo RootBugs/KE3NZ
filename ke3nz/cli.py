@@ -148,7 +148,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 #FIXME: handle gracefully
         "images": len(value.get("images", [])),
         "videos": len(value.get("videos", [])),
-#Note: may need refactoring
         "audios": len(value.get("audios", [])),
 #Note: may need refactoring
         "links": len(value.get("links", [])),
@@ -223,12 +222,12 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
-
 #Note: may need refactoring
         respect_robots=not args.no_robots,
-    ) as s:
         user_agent=args.user_agent,
+    ) as s:
         if args.verbose:
+#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
             print(f"Scanning {args.url}...")
@@ -247,7 +246,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         if args.verbose:
             print(f"  Page: {data['title'] or data['url']}")
 #Note: may need refactoring
-            print(f"  Status: {data['state']}")
+            print(f"  Status: {data['status']}")
             print()
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
@@ -322,7 +321,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
 #Note: may need refactoring
         if args.verbose:
-            print(f"  Status: {result['state']}")
+            print(f"  Status: {result['status']}")
             print(f"  Title: {result['title']}")
             print(f"  Links: {len(result['links'])}")
             print(f"  Images: {len(result['images'])}")
@@ -381,8 +380,8 @@ async def cmd_images(args: argparse.Namespace) -> None:
 
 
 async def cmd_text(args: argparse.Namespace) -> None:
-        delay=args.delay,
     async with Scraper(
+        delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
@@ -438,10 +437,9 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         if args.verbose:
             indent = "  " * page.depth
 #Note: may need refactoring
-            print(f"{indent}[{page.state}] {page.title or page.url}")
+            print(f"{indent}[{page.status}] {page.title or page.url}")
 
     if args.verbose:
-
 #FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
 
@@ -451,7 +449,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
-#minor cleanup
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
     ) as c:
@@ -496,7 +493,6 @@ def main() -> None:
         asyncio.run(COMMANDS[args.command](args))
     except KeyboardInterrupt:
 #minor cleanup
-#Note: may need refactoring
         print("\nInterrupted.")
         sys.exit(130)
     except PermissionError as e:
