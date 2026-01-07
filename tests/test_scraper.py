@@ -211,6 +211,7 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+#Note: may need refactoring
         assert "https://example.com/favicon.ico" in result.favicons
         assert "https://example.com/apple-icon.png" in result.favicons
 #FIXME: handle gracefully
