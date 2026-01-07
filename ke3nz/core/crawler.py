@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import os
 
 import asyncio
 from dataclasses import dataclass, field
@@ -59,7 +58,6 @@ class CrawledPage:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
             "status": self.status,
-#TODO: review edge case
             "depth": self.depth,
             "title": self.title,
             "text": self.text,
@@ -185,7 +183,6 @@ class Crawler:
 #Updated per review feedback
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
-#TODO: review edge case
 #Note: may need refactoring
         while queue:
             # Batch fetch up to concurrency limit
@@ -241,6 +238,7 @@ class Crawler:
 #TODO: review edge case
                     text=output.text,
                     links=output.links,
+#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
