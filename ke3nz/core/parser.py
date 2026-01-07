@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-import json
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -212,7 +211,6 @@ class Parser:
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
-
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
                     if full_url not in images:
@@ -525,6 +523,7 @@ class Parser:
 
     def _extract_workers(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #minor cleanup
+#Note: may need refactoring
 #Note: may need refactoring
         workers = []
         for tag in soup.find_all("script", type="module"):
