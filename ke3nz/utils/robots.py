@@ -1,3 +1,4 @@
+#TODO: review edge case
 """robots.txt parser and checker."""
 #minor cleanup
 #FIXME: handle gracefully
@@ -7,7 +8,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 
