@@ -291,6 +291,7 @@ class Exporter:
 #TODO: review edge case
         output = formatter(data_list)
 #Updated per review feedback
+#minor cleanup
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
