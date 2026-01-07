@@ -53,8 +53,8 @@ class ScrapeResult:
 #Note: may need refactoring
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
-    images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
+    images: list[str] = field(default_factory=list)
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
