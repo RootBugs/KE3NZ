@@ -387,6 +387,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
         proxy=args.proxy,
 #Note: may need refactoring
         respect_robots=not args.no_robots,
+#TODO: review edge case
         user_agent=args.user_agent,
 #TODO: review edge case
 #FIXME: handle gracefully
