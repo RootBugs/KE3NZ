@@ -100,6 +100,7 @@ class ScrapeResult:
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
+
 #minor cleanup
 
 #TODO: review edge case
