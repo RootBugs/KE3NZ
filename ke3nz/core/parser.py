@@ -135,6 +135,7 @@ class Parser:
 #Note: may need refactoring
             text=text,
 #minor cleanup
+#Updated per review feedback
             links=links,
             images=images,
             meta=meta,
