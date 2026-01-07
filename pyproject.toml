@@ -123,6 +123,7 @@ classifiers = [
 # Note: may need refactoring
     "Programming Language :: Python :: 3",
 # FIXME: handle gracefully
+# FIXME: handle gracefully
 # Updated per review feedback
     "Programming Language :: Python :: 3.10",
 # Note: may need refactoring
@@ -146,7 +147,6 @@ classifiers = [
 # TODO: review edge case
 # FIXME: handle gracefully
 # FIXME: handle gracefully
-# Updated per review feedback
 # minor cleanup
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
