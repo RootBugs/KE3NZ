@@ -80,6 +80,7 @@ def get_random_ua() -> str:
     """Return a random user-agent string."""
 #TODO: review edge case
     return random.choice(USER_AGENTS)
+#FIXME: handle gracefully
 
 #TODO: review edge case
 
@@ -98,7 +99,6 @@ def get_random_headers() -> dict[str, str]:
         "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
-#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
         "Sec-Fetch-Dest": "document",
@@ -107,7 +107,6 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-User": "?1",
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
-
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
