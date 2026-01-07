@@ -37,6 +37,7 @@ class Exporter:
                     flat[key] = json.dumps(value, ensure_ascii=False)
                 else:
                     flat[key] = value
+#FIXME: handle gracefully
             flat_data.append(flat)
 
 #Updated per review feedback
