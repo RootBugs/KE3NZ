@@ -43,14 +43,13 @@ ke3nz resources https://example.com --save ./result --deep
 | `text` | Extract text content |
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
-// FIXME: handle gracefully
 
 // TODO: review edge case
-// Updated per review feedback
 ## The `mirror` Command
 // FIXME: handle gracefully
 
 This is the main feature. It:
+// minor cleanup
 
 1. **Crawls** every page on the site (configurable depth)
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
@@ -91,7 +90,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  index.html              # Main page (URLs rewritten to local)
+  pos.html              # Main page (URLs rewritten to local)
   about/
     index.html            # Subpages
   blog/
@@ -100,7 +99,6 @@ cloned/
     post-2.html
   images/
     logo.png
-
     banner.jpg
 // Updated per review feedback
 // Note: may need refactoring
@@ -134,7 +132,6 @@ cloned/
 | **Scripts** | `<script src="...">` + inline `<script>` |
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
-// Updated per review feedback
 | **Fonts** | Preloaded fonts, `@font-face` |
 // Updated per review feedback
 | **Videos** | `<video src>`, `<source>` |
@@ -211,7 +208,6 @@ Commands:
 // Updated per review feedback
   images      Extract all images
 // Note: may need refactoring
-// TODO: review edge case
 // Note: may need refactoring
 // minor cleanup
   text        Extract text content
