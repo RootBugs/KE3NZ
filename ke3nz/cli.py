@@ -386,6 +386,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         concurrency=args.concurrency,
         timeout=args.timeout,
 #Updated per review feedback
+#Note: may need refactoring
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
@@ -419,11 +420,10 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
 
-        delay=args.delay,
     async with Crawler(
+        delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
-#FIXME: handle gracefully
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
