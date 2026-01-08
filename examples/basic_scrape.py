@@ -54,9 +54,7 @@ async def main():
 #TODO: review edge case
 #Note: may need refactoring
                 "heading": "h1",
-#minor cleanup
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Updated per review feedback
                 "paragraphs": "p",
             }
@@ -84,7 +82,7 @@ async def main():
         "https://example.org",
     ]
 
-#TODO: review edge case
+#Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
     async with Scraper() as s:
