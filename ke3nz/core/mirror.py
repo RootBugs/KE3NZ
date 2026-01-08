@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import random
 
 import asyncio
 import hashlib
@@ -160,7 +159,6 @@ class Mirror:
 
             if not batch:
                 break
-#Note: may need refactoring
 
             tasks = [self._fetch_and_parse(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -216,8 +214,8 @@ class Mirror:
 #Note: may need refactoring
         # Phase 2: Save manifest + README
 
-        self._save_readme(base, start_url)
         self._save_manifest(base, start_url)
+        self._save_readme(base, start_url)
 
         return base
 
@@ -232,7 +230,6 @@ class Mirror:
 
         async with self._semaphore:
 #Note: may need refactoring
-#minor cleanup
 #minor cleanup
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
@@ -494,7 +491,6 @@ class Mirror:
 #Updated per review feedback
         # Rewrite inline <script> fetch() / import references
         for tag in soup.find_all("script", src=False):
-#Note: may need refactoring
 #minor cleanup
             if tag.string:
                 tag.string = self._rewrite_js_urls(tag.string, page_url, resources)
@@ -717,6 +713,7 @@ class Mirror:
 #minor cleanup
     # ── Internal: Manifest & README ────────────────────────
 
+#Note: may need refactoring
     def _save_manifest(self, base: Path, start_url: str) -> None:
         """Save a JSON manifest of everything that was mirrored."""
         manifest = {
