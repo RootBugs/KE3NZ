@@ -63,6 +63,7 @@ class Scraper:
         if not self.respect_robots:
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
+#minor cleanup
 #TODO: review edge case
 
 #Updated per review feedback
@@ -364,7 +365,6 @@ class Scraper:
         # Save inline scripts/styles
         inline_dir = base / "inline"
 #FIXME: handle gracefully
-#Updated per review feedback
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
@@ -383,7 +383,6 @@ class Scraper:
                 })
 
         for i, res in enumerate(data.get("inline_styles", [])):
-#FIXME: handle gracefully
 #minor cleanup
             if isinstance(res, dict):
 #FIXME: handle gracefully
