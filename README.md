@@ -134,6 +134,7 @@ cloned/
 | **Scripts** | `<script src="...">` + inline `<script>` |
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
+// Updated per review feedback
 | **Fonts** | Preloaded fonts, `@font-face` |
 // Updated per review feedback
 | **Videos** | `<video src>`, `<source>` |
