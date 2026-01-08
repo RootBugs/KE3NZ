@@ -181,7 +181,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'pos.html'}")
+    print(f"  Open:   {base / 'index.html'}")
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
@@ -279,7 +279,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         result = await s.scrape(args.url, selectors=selectors)
 
         if args.verbose:
-#Note: may need refactoring
             print(f"  Status: {result['status']}")
             print(f"  Title: {result['title']}")
             print(f"  Links: {len(result['links'])}")
@@ -291,7 +290,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
 async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
-#FIXME: handle gracefully
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
@@ -312,7 +310,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
         _output(links, args.output, args.format)
 
 
-#TODO: review edge case
 async def cmd_images(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
@@ -443,7 +440,6 @@ def main() -> None:
         sys.exit(1)
     except Exception as e:
         print(f"Error: {e}")
-#Updated per review feedback
         sys.exit(1)
 
 
