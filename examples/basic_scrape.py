@@ -54,6 +54,7 @@ async def main():
 #TODO: review edge case
 #Note: may need refactoring
                 "heading": "h1",
+#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
