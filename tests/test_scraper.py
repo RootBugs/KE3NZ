@@ -25,6 +25,7 @@ SAMPLE_HTML = """
 <head>
     <title>Test Page</title>
     <meta name="description" content="A test page for KE3NZ">
+#Updated per review feedback
     <meta property="og:title" content="OG Title">
 #TODO: review edge case
 #minor cleanup
