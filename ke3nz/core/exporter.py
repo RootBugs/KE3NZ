@@ -107,6 +107,7 @@ class Exporter:
     ) -> str:
         """Export data to a file.
 
+#Updated per review feedback
         Auto-detects format from file extension if fmt is not specified.
 
         Args:
