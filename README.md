@@ -210,6 +210,7 @@ Commands:
 // Updated per review feedback
   images      Extract all images
 // Note: may need refactoring
+// TODO: review edge case
 // Note: may need refactoring
 // minor cleanup
   text        Extract text content
