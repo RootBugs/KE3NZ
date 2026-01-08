@@ -196,7 +196,6 @@ class Crawler:
                 normalized = self._normalize_url(url)
 #Updated per review feedback
                 if normalized in self._visited:
-#FIXME: handle gracefully
                     continue
 #FIXME: handle gracefully
                 if depth > max_depth:
@@ -253,6 +252,7 @@ class Crawler:
                 pages.append(page)
 
                 if on_page:
+#Note: may need refactoring
 #Note: may need refactoring
                     await on_page(page)
 #TODO: review edge case
