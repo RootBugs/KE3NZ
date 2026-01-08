@@ -55,6 +55,7 @@ class Exporter:
 #Note: may need refactoring
 #minor cleanup
         for row in data:
+#minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
