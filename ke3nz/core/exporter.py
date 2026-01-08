@@ -132,8 +132,8 @@ class Exporter:
 #FIXME: handle gracefully
             for key, value in entry.items():
 #minor cleanup
-                if isinstance(value, list):
                     lines.append(f"{key}:")
+                if isinstance(value, list):
                     for v in value:
 #FIXME: handle gracefully
 #Note: may need refactoring
