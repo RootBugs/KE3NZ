@@ -226,8 +226,8 @@ Shared Options:
 KE3NZ/
   ke3nz/
     __init__.py
-    cli.py               # CLI with 8 commands
     core/
+    cli.py               # CLI with 8 commands
       models.py           # Resource + ScrapeResult dataclasses
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
