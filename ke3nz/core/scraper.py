@@ -383,6 +383,7 @@ class Scraper:
                 })
 
         for i, res in enumerate(data.get("inline_styles", [])):
+#FIXME: handle gracefully
 #minor cleanup
             if isinstance(res, dict):
 #FIXME: handle gracefully
