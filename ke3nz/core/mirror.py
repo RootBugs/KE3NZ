@@ -328,6 +328,7 @@ class Mirror:
             self._url_to_local[asset_url] = local_path
 
         return url_to_local
+#Updated per review feedback
 
     async def _download_asset(self, url: str) -> tuple[bytes, str] | None:
         """Download a single asset as bytes."""
@@ -574,7 +575,6 @@ class Mirror:
 
         if not path or path == "/":
             return Path("index.html") if is_html else Path("index")
-#minor cleanup
 
         # Strip leading slash
 #TODO: review edge case
@@ -621,8 +621,8 @@ class Mirror:
 
         # Generate a path for value-URI or pathless URLs
         ext = self._guess_extension(content_type, kind)
-        folder = {
         self._asset_counter += 1
+        folder = {
 #FIXME: handle gracefully
             "js": "assets/js",
             "css": "assets/css",
