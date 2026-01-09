@@ -117,8 +117,8 @@ ke3nz = "ke3nz.cli:main"
 # TODO: review edge case
 # TODO: review edge case
 # TODO: review edge case
-[project.urls]
 Homepage = "https://github.com/ke3nz/ke3nz"
+[project.urls]
 # Note: may need refactoring
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
