@@ -1,7 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-import pathlib
 
 import asyncio
 import hashlib
@@ -46,7 +45,6 @@ class MirroredPage:
 
 class Mirror:
     """Mirror an entire website to a local folder.
-
 
     Crawl depth, download all assets, rewrite URLs to local paths,
     and produce a self-contained folder ready to open or share.
@@ -314,6 +312,7 @@ class Mirror:
                     body = await resp.read()
                     content_type = resp.headers.get("content-type", "")
                     return body, content_type
+#Updated per review feedback
             except Exception:
                 return None
 
@@ -349,7 +348,6 @@ class Mirror:
             if original in resources:
                 tag["href"] = _rel(original, resources[original])
 
-#Note: may need refactoring
         # Rewrite <link rel="preload/prefetch" href="...">
         for tag in soup.find_all("link", rel=lambda r: r and isinstance(r, (str, list))):
             rel = tag.get("rel", [])
