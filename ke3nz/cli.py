@@ -231,7 +231,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
             continue
         if isinstance(value, list):
             result[key] = [
-                {k: v for k, v in entry.items() if k != "content"} if isinstance(entry, dict) else item
+                {k: v for k, v in entry.items() if k != "content"} if isinstance(entry, dict) else entry
                 for item in value
             ]
         else:
@@ -307,7 +307,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
             print(f"Found {len(images)} images on {args.url}")
 
         _output(images, args.output, args.format)
-
 
 
 async def cmd_text(args: argparse.Namespace) -> None:
