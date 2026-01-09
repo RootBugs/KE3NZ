@@ -88,6 +88,7 @@ class Parser:
         soup = BeautifulSoup(html, "lxml")
 
         title = soup.title.string.strip() if soup.title and soup.title.string else ""
+#Note: may need refactoring
         text = soup.get_text(separator="\n", strip=True)
         links = self._extract_links(soup, url)
 #Note: may need refactoring
