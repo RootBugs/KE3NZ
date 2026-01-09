@@ -27,8 +27,8 @@ class RobotsChecker:
     """Check robots.txt compliance with caching."""
 #Note: may need refactoring
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
+#minor cleanup
 #minor cleanup
 
 #Updated per review feedback
@@ -90,7 +90,6 @@ class RobotsChecker:
 #Updated per review feedback
         rp = RobotFileParser()
         try:
-#FIXME: handle gracefully
             session = await self._get_session()
 #minor cleanup
 #FIXME: handle gracefully
