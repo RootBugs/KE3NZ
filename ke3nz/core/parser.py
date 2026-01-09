@@ -489,6 +489,7 @@ class Parser:
             if isinstance(rel, str):
 #Note: may need refactoring
                 rel = rel.split()
+#Updated per review feedback
 #Note: may need refactoring
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
 #minor cleanup
