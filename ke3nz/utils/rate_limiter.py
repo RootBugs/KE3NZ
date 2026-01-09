@@ -12,6 +12,7 @@ import time
 class RateLimiter:
     """Token bucket rate limiter for async code.
 
+#FIXME: handle gracefully
     Args:
 #Note: may need refactoring
 #FIXME: handle gracefully
