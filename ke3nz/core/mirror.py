@@ -337,6 +337,7 @@ class Mirror:
         html: str,
         page_url: str,
         resources: dict[str, str],
+
     ) -> str:
         """Rewrite all asset URLs in HTML to local relative paths."""
         soup = BeautifulSoup(html, "lxml")
