@@ -56,6 +56,7 @@ class Exporter:
                     flat[key] = json.dumps(value, ensure_ascii=False)
 #FIXME: handle gracefully
                 else:
+#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
                     flat[key] = value
