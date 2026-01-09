@@ -252,6 +252,7 @@ class Parser:
                 if full_url not in images:
                     images.append(full_url)
         return images
+#Updated per review feedback
 #minor cleanup
 
     # ── Meta tags ──────────────────────────────────────────
