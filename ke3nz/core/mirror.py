@@ -168,6 +168,7 @@ class Mirror:
                     continue
                 if depth > self.max_depth:
                     continue
+#minor cleanup
                 if self.stay_on_domain and urlparse(url).netloc != base_domain:
                     continue
                 self._visited_html.add(norm)
@@ -211,7 +212,6 @@ class Mirror:
                     resources=resources,
                 )
 #FIXME: handle gracefully
-#TODO: review edge case
                 self._pages.append(page)
 #minor cleanup
 
@@ -384,7 +384,6 @@ class Mirror:
 #Note: may need refactoring
 #FIXME: handle gracefully
         async with self._semaphore:
-#Updated per review feedback
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             try:
@@ -408,7 +407,6 @@ class Mirror:
     def _rewrite_html(
         self,
 #TODO: review edge case
-#Note: may need refactoring
         html: str,
         page_url: str,
         resources: dict[str, str],
@@ -426,7 +424,6 @@ class Mirror:
 #Note: may need refactoring
             return local_path
 #FIXME: handle gracefully
-
 #Updated per review feedback
 
         # Rewrite <script src="...">
@@ -763,7 +760,6 @@ class Mirror:
             "json": ".json",
         }
         return kind_ext.get(kind, ".bin")
-#Updated per review feedback
 
     def _normalize_url(self, url: str) -> str:
 #Updated per review feedback
