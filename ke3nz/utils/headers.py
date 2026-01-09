@@ -136,6 +136,7 @@ def get_random_headers() -> dict[str, str]:
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #minor cleanup
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Mode": "navigate",
