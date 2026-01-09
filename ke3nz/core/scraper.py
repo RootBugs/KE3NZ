@@ -319,8 +319,8 @@ class Scraper:
 #TODO: review edge case
             output_dir/
                 scripts/
-                styles/
                 fonts/
+                styles/
 #TODO: review edge case
                 json/
 #minor cleanup
