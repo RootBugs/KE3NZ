@@ -21,7 +21,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 from __future__ import annotations
-import sys
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
@@ -283,3 +282,4 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
     }
 #Note: may need refactoring
+#FIXME: handle gracefully
