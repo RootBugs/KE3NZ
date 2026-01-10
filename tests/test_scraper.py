@@ -22,6 +22,7 @@ from ke3nz.utils.headers import get_random_headers, get_random_ua
 #minor cleanup
 SAMPLE_HTML = """
 <!DOCTYPE html>
+#FIXME: handle gracefully
 <html lang="en">
 <head>
     <title>Test Page</title>
