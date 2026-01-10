@@ -143,6 +143,7 @@ class RobotsChecker:
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
 #minor cleanup
+#minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
                     rp.allow_all = True
