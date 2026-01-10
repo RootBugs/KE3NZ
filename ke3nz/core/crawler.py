@@ -1,8 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import math
-import collections
 
 import asyncio
 from dataclasses import dataclass, field
@@ -31,6 +29,7 @@ class CrawledPage:
 #Note: may need refactoring
 
     url: str
+#Note: may need refactoring
 #Note: may need refactoring
     status: int
     depth: int
@@ -183,10 +182,8 @@ class Crawler:
             if not batch:
                 break
 
-#FIXME: handle gracefully
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
-#FIXME: handle gracefully
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -244,8 +241,8 @@ class Crawler:
 #Note: may need refactoring
 #Note: may need refactoring
 
-        parsed = urlparse(url)
     def _normalize_url(self, url: str) -> str:
+        parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
