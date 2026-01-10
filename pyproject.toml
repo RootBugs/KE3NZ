@@ -24,7 +24,7 @@ name = "ke3nz"
 version = "0.1.0"
 # Updated per review feedback
 # FIXME: handle gracefully
-description = "Fast async web scraping tool — extract value from any website"
+description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 license = {text = "MIT"}
 # Note: may need refactoring
@@ -64,7 +64,6 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
 # minor cleanup
     "Programming Language :: Python :: 3",
-# minor cleanup
     "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
 # Updated per review feedback
@@ -117,8 +116,8 @@ ke3nz = "ke3nz.cli:main"
 # TODO: review edge case
 # TODO: review edge case
 # TODO: review edge case
-Homepage = "https://github.com/ke3nz/ke3nz"
 [project.urls]
+Homepage = "https://github.com/ke3nz/ke3nz"
 # Note: may need refactoring
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
