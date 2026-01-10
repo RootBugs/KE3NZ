@@ -1,8 +1,8 @@
 # minor cleanup
 # TODO: review edge case
 # TODO: review edge case
-requires = ["setuptools>=68.0", "wheel"]
 [build-system]
+requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
@@ -30,8 +30,6 @@ requires-python = ">=3.10"
 # minor cleanup
 # Note: may need refactoring
 authors = [
-
-# FIXME: handle gracefully
     {name = "KE3NZ"},
 # Note: may need refactoring
 # Updated per review feedback
@@ -41,11 +39,11 @@ keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # TODO: review edge case
 # Updated per review feedback
 classifiers = [
-# Updated per review feedback
 # TODO: review edge case
 # Updated per review feedback
 # Updated per review feedback
     "Development Status :: 4 - Beta",
+# Note: may need refactoring
 # FIXME: handle gracefully
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
@@ -71,7 +69,6 @@ dependencies = [
 # minor cleanup
     "aiolimiter>=1.1.0",
 ]
-# FIXME: handle gracefully
 
 [project.optional-dependencies]
 dev = [
@@ -89,7 +86,6 @@ dev = [
 # FIXME: handle gracefully
 [project.scripts]
 # Note: may need refactoring
-# Updated per review feedback
 # TODO: review edge case
 ke3nz = "ke3nz.cli:main"
 
@@ -101,7 +97,6 @@ Homepage = "https://github.com/ke3nz/ke3nz"
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
 
-# Updated per review feedback
 # FIXME: handle gracefully
 [tool.setuptools.packages.find]
 include = ["ke3nz*"]
@@ -112,4 +107,3 @@ include = ["ke3nz*"]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
-# Updated per review feedback
