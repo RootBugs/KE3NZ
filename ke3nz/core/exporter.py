@@ -139,6 +139,7 @@ class Exporter:
         Returns:
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
 #Note: may need refactoring
             The formatted string that was written.
         """
