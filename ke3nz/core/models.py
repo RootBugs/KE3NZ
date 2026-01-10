@@ -1,5 +1,5 @@
 #Note: may need refactoring
-"""Shared data models for KE3NZ."""
+"""Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -39,7 +39,6 @@ class Resource:
 #TODO: review edge case
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
-
         return {
             "url": self.url,
 #minor cleanup
