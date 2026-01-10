@@ -203,6 +203,7 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
+#FIXME: handle gracefully
 #Note: may need refactoring
     # Preloaded / prefetched resources
 #Note: may need refactoring
@@ -231,7 +232,6 @@ class ScrapeResult:
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
-#Note: may need refactoring
 
     # Iframes
 #FIXME: handle gracefully
@@ -253,7 +253,6 @@ class ScrapeResult:
         return {
             "url": self.url,
             "status": self.status,
-#Note: may need refactoring
             "title": self.title,
             "text": self.text,
 #FIXME: handle gracefully
@@ -316,7 +315,6 @@ class ScrapeResult:
             "iframes": self.iframes,
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
