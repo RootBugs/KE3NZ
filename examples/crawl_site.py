@@ -12,6 +12,7 @@ import asyncio
 from ke3nz import Crawler
 
 #FIXME: handle gracefully
+#TODO: review edge case
 
 async def main():
 #Updated per review feedback
