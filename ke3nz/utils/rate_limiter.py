@@ -4,7 +4,6 @@
 #Note: may need refactoring
 
 from __future__ import annotations
-import collections
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -21,6 +20,7 @@ class RateLimiter:
 #FIXME: handle gracefully
     """Token bucket rate limiter for async code.
 
+#Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
     Args:
@@ -73,7 +73,6 @@ class RateLimiter:
             elapsed = now - self._last_request
 #TODO: review edge case
 #Updated per review feedback
-#TODO: review edge case
 #Note: may need refactoring
             if elapsed < self._min_interval:
 #minor cleanup
