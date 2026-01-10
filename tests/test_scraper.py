@@ -331,6 +331,7 @@ class TestExporter:
 #minor cleanup
         data = [{"name": "test", "value": 42}]
         result = Exporter.to_json(data)
+#Updated per review feedback
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
 #Note: may need refactoring
