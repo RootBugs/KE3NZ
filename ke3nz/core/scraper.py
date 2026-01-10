@@ -319,6 +319,7 @@ class Scraper:
 #TODO: review edge case
             output_dir/
                 scripts/
+#minor cleanup
                 fonts/
                 styles/
 #TODO: review edge case
