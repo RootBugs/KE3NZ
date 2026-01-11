@@ -21,7 +21,6 @@ build-backend = "setuptools.build_meta"
 # minor cleanup
 # Updated per review feedback
 # TODO: review edge case
-# Note: may need refactoring
 # TODO: review edge case
 
 # Note: may need refactoring
@@ -139,12 +138,12 @@ dependencies = [
     "lxml>=5.0.0",
 # minor cleanup
 # Note: may need refactoring
+# FIXME: handle gracefully
 # minor cleanup
 # FIXME: handle gracefully
 # minor cleanup
     "aiolimiter>=1.1.0",
 ]
-# Note: may need refactoring
 
 [project.optional-dependencies]
 dev = [
