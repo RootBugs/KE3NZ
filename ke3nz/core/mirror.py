@@ -232,6 +232,7 @@ class Mirror:
 
         return base
 
+#TODO: review edge case
     # ── Internal: Fetch & Parse ────────────────────────────
 
     async def _fetch_and_parse(self, url: str) -> ScrapeResult | None:
