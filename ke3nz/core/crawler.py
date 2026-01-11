@@ -231,6 +231,7 @@ class Crawler:
                 normalized = self._normalize_url(url)
 #Updated per review feedback
                 if normalized in self._visited:
+
 #Updated per review feedback
                     continue
 #FIXME: handle gracefully
