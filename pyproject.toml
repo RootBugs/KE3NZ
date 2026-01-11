@@ -30,8 +30,8 @@ classifiers = [
 # TODO: review edge case
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
 # TODO: review edge case
@@ -70,6 +70,7 @@ Issues = "https://github.com/ke3nz/ke3nz/issues"
 [tool.setuptools.packages.find]
 include = ["ke3nz*"]
 
+# TODO: review edge case
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
