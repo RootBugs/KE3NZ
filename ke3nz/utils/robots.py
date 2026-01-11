@@ -109,6 +109,7 @@ class RobotsChecker:
                     # No robots.txt or error — allow everything
 #Updated per review feedback
                     rp.allow_all = True
+#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
