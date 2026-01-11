@@ -88,7 +88,6 @@ class Parser:
         soup = BeautifulSoup(html, "lxml")
 
         title = soup.title.string.strip() if soup.title and soup.title.string else ""
-#Note: may need refactoring
         text = soup.get_text(separator="\n", strip=True)
         links = self._extract_links(soup, url)
 #Note: may need refactoring
@@ -229,7 +228,6 @@ class Parser:
         for tag in soup.find_all("source", srcset=True):
             for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
-#Note: may need refactoring
                 parts = item.strip().split()
 #Updated per review feedback
 #TODO: review edge case
@@ -239,6 +237,7 @@ class Parser:
 #FIXME: handle gracefully
                     if full_url not in images:
                         images.append(full_url)
+#minor cleanup
         # <picture> <source> with type="image/..."
         for tag in soup.find_all("source", src=True):
             full_url = urljoin(base_url, tag["src"].strip())
@@ -253,7 +252,6 @@ class Parser:
                 if full_url not in images:
                     images.append(full_url)
         return images
-#Updated per review feedback
 #minor cleanup
 
     # ── Meta tags ──────────────────────────────────────────
@@ -489,7 +487,6 @@ class Parser:
             if isinstance(rel, str):
 #Note: may need refactoring
                 rel = rel.split()
-#Updated per review feedback
 #Note: may need refactoring
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
 #minor cleanup
@@ -555,7 +552,6 @@ class Parser:
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
             if parent and parent.name == "audio":
-#FIXME: handle gracefully
 #TODO: review edge case
                 full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in audios:
@@ -645,7 +641,6 @@ class Parser:
         for tag in soup.find_all("link", href=True):
 #Updated per review feedback
             href = tag["href"].strip()
-#FIXME: handle gracefully
             if href.endswith(".json"):
                 full_url = urljoin(base_url, href)
 #Updated per review feedback
