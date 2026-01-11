@@ -303,6 +303,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         selectors = {name.strip(): name.strip() for name in names}
 
 #TODO: review edge case
+#minor cleanup
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
