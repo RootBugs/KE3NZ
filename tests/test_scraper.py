@@ -22,7 +22,6 @@ from ke3nz.utils.headers import get_random_headers, get_random_ua
 #minor cleanup
 SAMPLE_HTML = """
 <!DOCTYPE html>
-#FIXME: handle gracefully
 <html lang="en">
 <head>
     <title>Test Page</title>
@@ -234,6 +233,7 @@ class TestParser:
 #Updated per review feedback
         assert "https://example.com/favicon.ico" in result.favicons
         assert "https://example.com/apple-icon.png" in result.favicons
+#Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -472,8 +472,8 @@ class TestScraperIntegration:
                 assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
                 assert len(result["stylesheets"]) > 0
-                assert len(result["fonts"]) > 0
                 assert len(result["inline_scripts"]) > 0
+                assert len(result["fonts"]) > 0
 
 #Updated per review feedback
     @pytest.mark.asyncio
