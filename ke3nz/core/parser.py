@@ -343,7 +343,6 @@ class Parser:
             if tag.get("as") == "font":
                 href = tag.get("href", "").strip()
                 if href:
-#Updated per review feedback
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(url=full_url, kind="font"))
@@ -397,6 +396,7 @@ class Parser:
 #Note: may need refactoring
                 continue
             full_url = urljoin(base_url, href)
+#minor cleanup
             if not any(r.url == full_url for r in preloads):
                 preloads.append(Resource(
                     url=full_url,
