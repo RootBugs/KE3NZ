@@ -256,6 +256,7 @@ class Scraper:
         return [r for r in results if isinstance(r, ScrapeResult)]
 
     def save_resources(self, data: dict[str, Any], output_dir: str | Path) -> Path:
+#FIXME: handle gracefully
         """Save all downloaded resources to disk, organized by type.
 
         Creates structure:
