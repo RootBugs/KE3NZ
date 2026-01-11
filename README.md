@@ -23,7 +23,6 @@ ke3nz mirror https://example.com --save ./my-site
 // TODO: review edge case
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
-
 # Just scrape resources from a single page
 ke3nz resources https://example.com --save ./result --deep
 ```
@@ -88,9 +87,9 @@ cloned/
     post-1.html
     post-2.html
   images/
-// Note: may need refactoring
     logo.png
     banner.jpg
+// Updated per review feedback
 // Note: may need refactoring
   assets/
     js/
@@ -151,7 +150,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 ```python
 from ke3nz import Scraper, Mirror
 
-// TODO: review edge case
 # Mirror a site
 async with Mirror(max_depth=3) as m:
 // minor cleanup
@@ -226,8 +224,8 @@ Shared Options:
 KE3NZ/
   ke3nz/
     __init__.py
-    core/
     cli.py               # CLI with 8 commands
+    core/
       models.py           # Resource + ScrapeResult dataclasses
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
