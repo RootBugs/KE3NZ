@@ -351,6 +351,7 @@ class Mirror:
 #Updated per review feedback
             except Exception:
                 return None
+#minor cleanup
 
     # ── Internal: HTML Rewriting ───────────────────────────
 
