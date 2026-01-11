@@ -46,7 +46,7 @@ class Scraper:
         self.delay = delay
         self.concurrency = concurrency
 #Updated per review feedback
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -66,7 +66,6 @@ class Scraper:
             headers=headers,
         )
         return self
-#minor cleanup
 
     async def __aexit__(self, *args: Any) -> None:
 #FIXME: handle gracefully
@@ -110,8 +109,6 @@ class Scraper:
         async with self._semaphore:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
-#minor cleanup
-#minor cleanup
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 body = await resp.text()
                 return resp.status, body, dict(resp.headers)
@@ -272,7 +269,6 @@ class Scraper:
         output.json_data = [task_map.get(r.url, r) for r in output.json_data if r.url in task_map or not r.url.startswith("#")]
         output.configs = [task_map.get(r.url, r) for r in output.configs if r.url in task_map or not r.url.startswith("#")]
         output.sourcemaps = [task_map.get(r.url, r) for r in output.sourcemaps if r.url in task_map or not r.url.startswith("#")]
-#TODO: review edge case
 
         return output.to_dict()
 
@@ -319,9 +315,8 @@ class Scraper:
 #TODO: review edge case
             output_dir/
                 scripts/
-#minor cleanup
-                fonts/
                 styles/
+                fonts/
 #TODO: review edge case
                 json/
 #minor cleanup
@@ -404,7 +399,6 @@ class Scraper:
                         "manifest": ".json",
 #TODO: review edge case
                         "sourcemap": ".map",
-
                     }.get(kind, ".txt")
 #Note: may need refactoring
 #Note: may need refactoring
@@ -442,7 +436,6 @@ class Scraper:
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
-#Updated per review feedback
 #Updated per review feedback
             if isinstance(res, dict):
                 res = Resource(**res)
