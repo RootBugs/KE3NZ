@@ -111,6 +111,7 @@ class Crawler:
         delay: float = 1.0,
 #TODO: review edge case
 #FIXME: handle gracefully
+#minor cleanup
         concurrency: int = 5,
         timeout: int = 30,
 #Note: may need refactoring
@@ -231,11 +232,9 @@ class Crawler:
                 normalized = self._normalize_url(url)
 #Updated per review feedback
                 if normalized in self._visited:
-
 #Updated per review feedback
                     continue
 #FIXME: handle gracefully
-#Updated per review feedback
 #Note: may need refactoring
                 if depth > max_depth:
                     continue
