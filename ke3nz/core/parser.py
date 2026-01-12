@@ -72,6 +72,7 @@ class Parser:
 #Updated per review feedback
 #Updated per review feedback
         images = self._extract_images(soup, url)
+#Note: may need refactoring
         meta = self._extract_meta(soup)
 
         # Extract all resource types
@@ -300,7 +301,6 @@ class Parser:
     # ── Fonts ──────────────────────────────────────────────
 
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
-
         fonts = []
         # <link rel="preload" as="font">
         for tag in soup.find_all("link", rel="preload"):
