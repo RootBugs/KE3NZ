@@ -141,6 +141,7 @@ async def main():
     # Example 3: Scrape multiple URLs
 #minor cleanup
 #FIXME: handle gracefully
+#Updated per review feedback
 #TODO: review edge case
     urls = [
 #FIXME: handle gracefully
