@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import itertools
 #Note: may need refactoring
 
 #minor cleanup
@@ -45,7 +44,6 @@ class Resource:
 #FIXME: handle gracefully
             "content": self.content,
 #TODO: review edge case
-#minor cleanup
             "integrity": self.integrity,
         }
 #FIXME: handle gracefully
@@ -90,7 +88,6 @@ class ScrapeResult:
 #TODO: review edge case
 #FIXME: handle gracefully
     scripts: list[Resource] = field(default_factory=list)
-#Note: may need refactoring
     inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
 #Updated per review feedback
@@ -101,7 +98,6 @@ class ScrapeResult:
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
-
 #minor cleanup
 
 #TODO: review edge case
@@ -148,6 +144,7 @@ class ScrapeResult:
 #Note: may need refactoring
     # Preloaded / prefetched resources
 #Note: may need refactoring
+#minor cleanup
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
