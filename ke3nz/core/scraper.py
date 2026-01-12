@@ -120,6 +120,7 @@ class Scraper:
             output.selector_results = self._parser.extract_by_selectors(
                 output.html, selectors
             )
+#FIXME: handle gracefully
 
         return output.to_dict()
 
