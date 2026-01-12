@@ -212,6 +212,7 @@ KE3NZ/
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // Updated per review feedback
       crawler.py          # Recursive page crawler
+// FIXME: handle gracefully
       exporter.py         # JSON/CSV/MD/text export
     utils/
       headers.py          # User-agent rotation
