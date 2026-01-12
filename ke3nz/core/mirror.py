@@ -278,6 +278,7 @@ class Mirror:
         base: Path,
         page_url: str,
     ) -> dict[str, str]:
+#Updated per review feedback
 #Note: may need refactoring
         """Download all assets for a page and return url->local_path mapping."""
 #minor cleanup
