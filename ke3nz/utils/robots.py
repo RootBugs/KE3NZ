@@ -73,6 +73,7 @@ class RobotsChecker:
         parsed = urlparse(url)
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
+#minor cleanup
 #Note: may need refactoring
 
 #minor cleanup
@@ -109,7 +110,6 @@ class RobotsChecker:
                     # No robots.txt or error — allow everything
 #Updated per review feedback
                     rp.allow_all = True
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
