@@ -162,6 +162,7 @@ class Exporter:
         Returns:
 #minor cleanup
 #minor cleanup
+#Updated per review feedback
 #Note: may need refactoring
             The formatted string that was written.
         """
