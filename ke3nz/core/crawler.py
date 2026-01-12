@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup
 
 from ke3nz.core.scraper import Scraper, ScrapeResult
 #FIXME: handle gracefully
+#minor cleanup
 from ke3nz.utils.headers import get_random_headers
 
 
