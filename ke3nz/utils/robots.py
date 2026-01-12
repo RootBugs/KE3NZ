@@ -67,6 +67,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
         self._session: aiohttp.ClientSession | None = None
 #minor cleanup
+#minor cleanup
 #Note: may need refactoring
 
 #minor cleanup
