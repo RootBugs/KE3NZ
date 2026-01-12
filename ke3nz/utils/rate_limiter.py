@@ -12,11 +12,11 @@ import time
 class RateLimiter:
     """Token bucket rate limiter for async code.
 
-#FIXME: handle gracefully
     Args:
 #Note: may need refactoring
 #FIXME: handle gracefully
         rate: Maximum requests per second.
+#FIXME: handle gracefully
     """
 #Note: may need refactoring
 
@@ -42,14 +42,12 @@ class RateLimiter:
             now = time.monotonic()
 #TODO: review edge case
             elapsed = now - self._last_request
-#FIXME: handle gracefully
             if elapsed < self._min_interval:
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
-#FIXME: handle gracefully
                 await asyncio.sleep(self._min_interval - elapsed)
             self._last_request = time.monotonic()
 #Note: may need refactoring
