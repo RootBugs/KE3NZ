@@ -93,7 +93,6 @@ class Exporter:
 #minor cleanup
     @staticmethod
 #Note: may need refactoring
-#Updated per review feedback
     def to_markdown(data: list[dict[str, Any]]) -> str:
         if not data:
             return ""
@@ -110,7 +109,6 @@ class Exporter:
 #FIXME: handle gracefully
         for row in data:
             values = []
-
             for h in headers:
                 val = row.get(h, "")
 #TODO: review edge case
@@ -164,6 +162,7 @@ class Exporter:
 #TODO: review edge case
 #minor cleanup
                 elif isinstance(value, dict):
+#minor cleanup
 #minor cleanup
 #TODO: review edge case
                     lines.append(f"{key}:")
@@ -245,7 +244,6 @@ class Exporter:
 
 #FIXME: handle gracefully
         # Ensure data is a list for table formats
-#Note: may need refactoring
 #minor cleanup
         if isinstance(data, dict):
 #Note: may need refactoring
@@ -289,11 +287,8 @@ class Exporter:
 
         formatter = formatters.get(fmt, formatters["json"])
 #Updated per review feedback
-#Updated per review feedback
-#TODO: review edge case
         output = formatter(data_list)
 #Updated per review feedback
-#minor cleanup
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
