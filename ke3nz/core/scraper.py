@@ -56,7 +56,6 @@ class Scraper:
         if self._session:
             await self._session.close()
 
-#TODO: review edge case
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
             return True
@@ -86,8 +85,8 @@ class Scraper:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
-                return resp.status, body, dict(resp.headers)
                 body = await resp.text()
+                return resp.status, body, dict(resp.headers)
 
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
         """Fetch a resource as raw bytes."""
@@ -143,12 +142,11 @@ class Scraper:
         """
         output = await self.fetch(url)
 
-
         # Collect all resources to download
         resources_to_fetch: list[Resource] = []
 #Note: may need refactoring
         resources_to_fetch.extend(output.scripts)
-        resources_to_fetch.extend(result.stylesheets)
+        resources_to_fetch.extend(output.stylesheets)
         resources_to_fetch.extend(result.fonts)
         resources_to_fetch.extend(result.json_data)
         resources_to_fetch.extend(result.configs)
@@ -214,7 +212,6 @@ class Scraper:
                 status, body, headers = await self.fetch_bytes(resource.url)
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body)
-#Updated per review feedback
             else:
                 status, body, headers = await self.fetch_resource(resource.url)
                 resource.content = body
@@ -227,7 +224,6 @@ class Scraper:
         """Fetch multiple URLs concurrently."""
         tasks = [self.fetch(url) for url in urls]
         results = await asyncio.gather(*tasks, return_exceptions=True)
-#TODO: review edge case
         return [r for r in results if isinstance(r, ScrapeResult)]
 
     def save_resources(self, data: dict[str, Any], output_dir: str | Path) -> Path:
