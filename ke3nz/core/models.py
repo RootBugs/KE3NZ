@@ -90,6 +90,7 @@ class ScrapeResult:
 #TODO: review edge case
 #FIXME: handle gracefully
     scripts: list[Resource] = field(default_factory=list)
+#Note: may need refactoring
     inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
 #Updated per review feedback
