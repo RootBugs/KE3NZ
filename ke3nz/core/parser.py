@@ -1,6 +1,7 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
+import itertools
 
 import re
 from urllib.parse import urljoin, urlparse
