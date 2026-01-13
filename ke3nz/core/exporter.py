@@ -56,7 +56,6 @@ class Exporter:
                     flat[key] = json.dumps(value, ensure_ascii=False)
 #FIXME: handle gracefully
                 else:
-#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
                     flat[key] = value
@@ -141,6 +140,7 @@ class Exporter:
 #TODO: review edge case
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
+#minor cleanup
                     lines.append(f"{key}:")
                     for k, v in value.items():
 #minor cleanup
