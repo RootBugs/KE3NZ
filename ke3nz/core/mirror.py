@@ -351,7 +351,6 @@ class Mirror:
 #Updated per review feedback
             except Exception:
                 return None
-#minor cleanup
 
     # ── Internal: HTML Rewriting ───────────────────────────
 
@@ -515,6 +514,7 @@ class Mirror:
         """Rewrite URL references in JS content (fetch, import, etc.)."""
         import re
 
+#minor cleanup
         def _replace(match: re.Match) -> str:
             prefix = match.group(1)
             url = match.group(2)
