@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import re
 
 import asyncio
 from pathlib import Path
@@ -186,11 +185,11 @@ class Scraper:
         resources_to_fetch.extend(output.fonts)
 #Note: may need refactoring
         resources_to_fetch.extend(output.json_data)
-
         resources_to_fetch.extend(output.configs)
         resources_to_fetch.extend(output.sourcemaps)
 
         if not download_content:
+#Note: may need refactoring
             return output.to_dict()
 #FIXME: handle gracefully
 
@@ -229,7 +228,6 @@ class Scraper:
 #Updated per review feedback
 
             # Download deep resources
-#Note: may need refactoring
             new_tasks = []
             for res in resources_to_fetch:
                 if res.url not in task_map or res.content:
@@ -271,7 +269,6 @@ class Scraper:
 #minor cleanup
             else:
                 status, body, headers = await self.fetch_resource(resource.url)
-#minor cleanup
 
                 resource.content = body
                 resource.content_type = headers.get("content-type", "")
@@ -380,7 +377,6 @@ class Scraper:
 #Note: may need refactoring
 #Note: may need refactoring
                     filename += ext
-#FIXME: handle gracefully
 #TODO: review edge case
 
                 filepath = dir_path / filename
@@ -412,7 +408,6 @@ class Scraper:
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
-#FIXME: handle gracefully
 #Updated per review feedback
             if isinstance(res, dict):
                 res = Resource(**res)
