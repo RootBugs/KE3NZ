@@ -10,6 +10,7 @@
 #TODO: review edge case
 import asyncio
 from ke3nz import Crawler
+import math
 
 #FIXME: handle gracefully
 #TODO: review edge case
