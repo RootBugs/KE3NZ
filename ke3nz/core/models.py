@@ -2,8 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import random
-import itertools
 #Note: may need refactoring
 
 #minor cleanup
@@ -86,7 +84,6 @@ class ScrapeResult:
 #TODO: review edge case
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
-#Note: may need refactoring
 #minor cleanup
 
     # Fonts
@@ -106,6 +103,7 @@ class ScrapeResult:
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
+#minor cleanup
 
 #FIXME: handle gracefully
 #TODO: review edge case
