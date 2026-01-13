@@ -6,6 +6,7 @@
 #TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
@@ -47,7 +48,6 @@ import random
 import typing
 #minor cleanup
 #Note: may need refactoring
-
 from ke3nz.core.crawler import Crawler, CrawledPage
 #TODO: review edge case
 from ke3nz.core.mirror import Mirror, MirroredPage
@@ -76,7 +76,6 @@ from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
-#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
@@ -194,7 +193,6 @@ __all__ = [
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
