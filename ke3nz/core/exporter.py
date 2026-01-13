@@ -271,6 +271,7 @@ class Exporter:
             "json": lambda d: cls.to_json(d),
 #TODO: review edge case
 #Updated per review feedback
+#FIXME: handle gracefully
 #minor cleanup
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
