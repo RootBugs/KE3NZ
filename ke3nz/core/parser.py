@@ -586,6 +586,7 @@ class Parser:
                 configs.append(Resource(
                     url=f"{base_url}#jsonld-{len(configs)}",
                     kind="json-ld",
+#Note: may need refactoring
 #TODO: review edge case
                     content=content,
                     size=len(content.encode("utf-8")),
