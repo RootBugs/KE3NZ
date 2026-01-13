@@ -60,6 +60,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
                 timeout=aiohttp.ClientTimeout(total=10)
+#Updated per review feedback
             )
 #TODO: review edge case
         return self._session
@@ -84,7 +85,6 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
 
@@ -124,7 +124,6 @@ class RobotsChecker:
 #TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
-#TODO: review edge case
         return rp
 #Updated per review feedback
 #Updated per review feedback
