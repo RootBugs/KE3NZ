@@ -9,8 +9,6 @@
 #minor cleanup
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
-import math
-import json
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
@@ -31,8 +29,8 @@ __all__ = [
     "Resource",
     "Crawler",
 #Note: may need refactoring
-    "Mirror",
     "CrawledPage",
+    "Mirror",
     "MirroredPage",
     "Parser",
 #Note: may need refactoring
@@ -43,7 +41,7 @@ __all__ = [
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
-#TODO: review edge case
 #FIXME: handle gracefully
+#Updated per review feedback
 #minor cleanup
 ]
