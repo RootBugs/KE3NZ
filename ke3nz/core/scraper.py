@@ -120,7 +120,6 @@ class Scraper:
             output.selector_results = self._parser.extract_by_selectors(
                 output.html, selectors
             )
-#FIXME: handle gracefully
 
         return output.to_dict()
 
@@ -288,6 +287,7 @@ class Scraper:
                     continue
 
                 # Determine filename from URL
+#FIXME: handle gracefully
                 parsed = urlparse(res.url)
                 filename = Path(parsed.path).name or f"{kind}_{i}"
                 # Add extension if missing
