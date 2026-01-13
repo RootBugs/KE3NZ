@@ -108,6 +108,7 @@ class Exporter:
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, entry in enumerate(data):
+#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
