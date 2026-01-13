@@ -21,8 +21,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 from __future__ import annotations
-import collections
-import typing
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
@@ -151,7 +149,6 @@ USER_AGENTS = [
 #Updated per review feedback
     # Chrome on Linux
 #TODO: review edge case
-#Updated per review feedback
 #FIXME: handle gracefully
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #Note: may need refactoring
@@ -214,6 +211,7 @@ def get_random_ua() -> str:
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
+#minor cleanup
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
