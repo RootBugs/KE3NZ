@@ -103,6 +103,7 @@ class RateLimiter:
 
     def __init__(self, rate: float = 1.0) -> None:
 #FIXME: handle gracefully
+#Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
