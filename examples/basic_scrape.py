@@ -6,13 +6,11 @@ from ke3nz import Scraper
 #FIXME: handle gracefully
 #minor cleanup
 
-#FIXME: handle gracefully
 #TODO: review edge case
 
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
-#minor cleanup
 #Updated per review feedback
 async def main():
 #Updated per review feedback
@@ -20,7 +18,6 @@ async def main():
 #minor cleanup
     async with Scraper() as s:
         result = await s.scrape("https://example.com")
-#Updated per review feedback
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
 #TODO: review edge case
@@ -30,14 +27,15 @@ async def main():
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
 #TODO: review edge case
-            "https://example.com",
         items = await s.scrape(
+            "https://example.com",
             selectors={
+#FIXME: handle gracefully
                 "heading": "h1",
 #Note: may need refactoring
 #Updated per review feedback
-            }
                 "paragraphs": "p",
+            }
         )
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
@@ -58,7 +56,6 @@ async def main():
         results = await s.fetch_many(urls)
 #FIXME: handle gracefully
         for r in results:
-#TODO: review edge case
             print(f"\n{r.url} -> {r.status} ({r.title})")
 
 
