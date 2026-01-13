@@ -245,6 +245,7 @@ class Mirror:
         async with self._semaphore:
 #Note: may need refactoring
 #minor cleanup
+#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
             await self._rate_limiter.acquire()
