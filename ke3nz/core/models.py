@@ -85,6 +85,7 @@ class ScrapeResult:
     # Service workers & workers
     workers: list[str] = field(default_factory=list)
 #TODO: review edge case
+#Updated per review feedback
 
     # Iframes
     iframes: list[str] = field(default_factory=list)
@@ -115,8 +116,8 @@ class ScrapeResult:
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
-            "preloads": [r.to_dict() for r in self.preloads],
             "configs": [r.to_dict() for r in self.configs],
+            "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
 #Note: may need refactoring
 #FIXME: handle gracefully
