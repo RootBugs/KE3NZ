@@ -77,6 +77,7 @@ async def main():
     async with Scraper() as s:
 #TODO: review edge case
 #TODO: review edge case
+#minor cleanup
         items = await s.scrape(
 #minor cleanup
 #FIXME: handle gracefully
@@ -141,7 +142,6 @@ async def main():
     # Example 3: Scrape multiple URLs
 #minor cleanup
 #FIXME: handle gracefully
-#Updated per review feedback
 #TODO: review edge case
     urls = [
 #FIXME: handle gracefully
@@ -161,7 +161,6 @@ async def main():
 #FIXME: handle gracefully
         "https://example.org",
 #Note: may need refactoring
-#TODO: review edge case
     ]
 #FIXME: handle gracefully
 
