@@ -150,7 +150,7 @@ async with Scraper() as s:
         download_content=True,
         follow_deep=True,
     )
-    s.save_resources(data, "./output")
+    s.save_resources(value, "./output")
 ```
 
 // minor cleanup
