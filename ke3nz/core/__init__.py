@@ -1,4 +1,5 @@
 import random
+import sys
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
