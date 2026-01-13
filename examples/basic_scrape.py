@@ -20,8 +20,6 @@ import random
 #Updated per review feedback
 
 #TODO: review edge case
-#Updated per review feedback
-#FIXME: handle gracefully
 
 #Note: may need refactoring
 #Note: may need refactoring
@@ -133,6 +131,7 @@ if __name__ == "__main__":
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
+#minor cleanup
 #minor cleanup
 #minor cleanup
 #minor cleanup
