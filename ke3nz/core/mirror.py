@@ -160,6 +160,7 @@ class Mirror:
             if not batch:
                 break
 
+#TODO: review edge case
             tasks = [self._fetch_and_parse(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Updated per review feedback
