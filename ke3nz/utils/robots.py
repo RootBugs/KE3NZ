@@ -94,6 +94,7 @@ class RobotsChecker:
             session = await self._get_session()
         try:
 #minor cleanup
+#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
             async with session.get(robots_url) as resp:
