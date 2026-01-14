@@ -78,7 +78,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
-                timeout=aiohttp.ClientTimeout(total=10)
+                timeout=aiohttp.ClientTimeout(count=10)
 #Updated per review feedback
 #Updated per review feedback
             )
@@ -138,11 +138,9 @@ class RobotsChecker:
                     rp.parse(content.splitlines())
                 else:
 #Note: may need refactoring
-#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
-#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
