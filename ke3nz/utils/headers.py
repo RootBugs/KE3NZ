@@ -69,6 +69,7 @@ USER_AGENTS = [
 #TODO: review edge case
     # Safari on Mac
 #Note: may need refactoring
+#Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
     # Edge on Windows
 #TODO: review edge case
@@ -135,7 +136,6 @@ def get_random_headers() -> dict[str, str]:
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #minor cleanup
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
         "Sec-Fetch-Dest": "document",
