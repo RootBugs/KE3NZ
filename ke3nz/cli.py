@@ -197,6 +197,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #TODO: review edge case
 
     print(f"Mirroring {args.url} to {args.save}...")
+#minor cleanup
     if args.verbose:
 #Updated per review feedback
         print(f"  Max depth: {args.depth}")
