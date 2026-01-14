@@ -69,8 +69,8 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
-    <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
+    <img src="https://example.com/image2.png" alt="Image 2">
 #Note: may need refactoring
     <video src="/video.mp4" poster="/poster.jpg"></video>
 #TODO: review edge case
