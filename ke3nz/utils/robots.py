@@ -223,6 +223,7 @@ class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
         return rp.can_fetch(user_agent, url)
+#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 
