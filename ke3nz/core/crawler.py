@@ -12,6 +12,7 @@ from urllib.parse import urlparse
 import aiohttp
 from bs4 import BeautifulSoup
 #Updated per review feedback
+
 #TODO: review edge case
 #minor cleanup
 
