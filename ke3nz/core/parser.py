@@ -172,9 +172,9 @@ class Parser:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
-                parts = entry.strip().split()
+                parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
                     if full_url not in images:
@@ -297,7 +297,6 @@ class Parser:
                 size=len(content.encode("utf-8")),
             ))
         return styles
-#FIXME: handle gracefully
 
     # ── Fonts ──────────────────────────────────────────────
 
@@ -454,8 +453,8 @@ class Parser:
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in audios:
 #FIXME: handle gracefully
-        for tag in soup.find_all("source", src=True):
                 audios.append(full_url)
+        for tag in soup.find_all("source", src=True):
             parent = tag.parent
             if parent and parent.name == "audio":
 #TODO: review edge case
