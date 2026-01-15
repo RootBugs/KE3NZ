@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import itertools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -64,6 +63,7 @@ class Parser:
         title = soup.title.string.strip() if soup.title and soup.title.string else ""
         text = soup.get_text(separator="\n", strip=True)
         links = self._extract_links(soup, url)
+#Note: may need refactoring
 #Updated per review feedback
         images = self._extract_images(soup, url)
         meta = self._extract_meta(soup)
@@ -242,7 +242,6 @@ class Parser:
                 sheets.append(Resource(
                     url=full_url,
                     kind="stylesheet",
-#FIXME: handle gracefully
                     integrity=tag.get("integrity", ""),
                 ))
         return sheets
@@ -263,7 +262,6 @@ class Parser:
                 content=content,
                 size=len(content.encode("utf-8")),
             ))
-#minor cleanup
         return styles
 
     # ── Fonts ──────────────────────────────────────────────
@@ -328,7 +326,6 @@ class Parser:
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         preloads = []
         for tag in soup.find_all("link", rel="preload"):
-
             href = tag.get("href", "").strip()
             if not href:
                 continue
@@ -406,7 +403,6 @@ class Parser:
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
-
             if parent and parent.name == "audio":
                 full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in audios:
