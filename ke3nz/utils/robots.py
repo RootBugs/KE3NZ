@@ -138,6 +138,7 @@ class RobotsChecker:
                     rp.parse(content.splitlines())
                 else:
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
