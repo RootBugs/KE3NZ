@@ -1,5 +1,4 @@
 """Async rate limiter."""
-#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -8,8 +7,8 @@
 #Note: may need refactoring
 #TODO: review edge case
 from __future__ import annotations
-import math
 #FIXME: handle gracefully
+#TODO: review edge case
 #Note: may need refactoring
 
 import asyncio
@@ -72,7 +71,6 @@ class RateLimiter:
 
 #Note: may need refactoring
 #Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
@@ -94,7 +92,6 @@ class RateLimiter:
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
-#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
