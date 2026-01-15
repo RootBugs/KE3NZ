@@ -20,7 +20,6 @@ pip install -e .
 // FIXME: handle gracefully
 ```
 
-// TODO: review edge case
 ## Quick Start
 
 ```bash
@@ -311,7 +310,6 @@ Resource Options:
   --save, -s        Save downloaded files to directory
 // Updated per review feedback
 // Note: may need refactoring
-// TODO: review edge case
   --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
 // Note: may need refactoring
@@ -336,6 +334,7 @@ Shared Options:
 // Updated per review feedback
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
+// FIXME: handle gracefully
 // Note: may need refactoring
 ```
 // Note: may need refactoring
