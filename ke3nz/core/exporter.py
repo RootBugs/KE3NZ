@@ -141,8 +141,8 @@ class Exporter:
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
-            The formatted string that was written.
         """
+            The formatted string that was written.
         path = Path(output_path)
 
         # Auto-detect format from extension
