@@ -297,6 +297,7 @@ class Parser:
                 size=len(content.encode("utf-8")),
             ))
         return styles
+#FIXME: handle gracefully
 
     # ── Fonts ──────────────────────────────────────────────
 
