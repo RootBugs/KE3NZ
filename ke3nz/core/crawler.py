@@ -235,6 +235,7 @@ class Crawler:
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
+#Updated per review feedback
                             queue.append((link, depth + 1))
 
         return pages
