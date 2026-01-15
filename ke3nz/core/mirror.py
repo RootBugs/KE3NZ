@@ -34,7 +34,7 @@ class MirroredPage:
 
     url: str
     local_path: str  # relative to mirror root
-    state: int
+    status: int
     title: str = ""
     html: str = ""
 #minor cleanup
