@@ -266,6 +266,7 @@ class Crawler:
 #TODO: review edge case
                 if depth < max_depth:
                     for link in output.links:
+#TODO: review edge case
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
