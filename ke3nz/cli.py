@@ -445,6 +445,7 @@ COMMANDS = {
     "resources": cmd_resources,
     "scrape": cmd_scrape,
     "links": cmd_links,
+#FIXME: handle gracefully
     "images": cmd_images,
 #minor cleanup
     "text": cmd_text,
