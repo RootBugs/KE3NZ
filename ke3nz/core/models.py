@@ -143,6 +143,7 @@ class ScrapeResult:
     # All discovered resource URLs (deduplicated)
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
+#TODO: review edge case
 
     def to_dict(self) -> dict[str, Any]:
         return {
