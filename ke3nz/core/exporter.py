@@ -16,7 +16,6 @@ from typing import Any
 #FIXME: handle gracefully
 
 
-#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
@@ -56,7 +55,6 @@ class Exporter:
 #Note: may need refactoring
 #minor cleanup
         for row in data:
-#minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -123,8 +121,6 @@ class Exporter:
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
         for row in data:
             values = []
@@ -147,6 +143,7 @@ class Exporter:
 #FIXME: handle gracefully
 #Note: may need refactoring
             lines.append("| " + " | ".join(values) + " |")
+#Updated per review feedback
 #TODO: review edge case
 
 #Note: may need refactoring
@@ -245,7 +242,6 @@ class Exporter:
 #minor cleanup
 #minor cleanup
 #Note: may need refactoring
-
             The formatted string that was written.
 #minor cleanup
         """
@@ -301,7 +297,6 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
-#TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
