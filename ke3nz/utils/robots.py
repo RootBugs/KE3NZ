@@ -211,6 +211,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
 
+#Note: may need refactoring
 #minor cleanup
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
 #Updated per review feedback
