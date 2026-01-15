@@ -55,7 +55,6 @@ class Exporter:
             writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
-
 #Note: may need refactoring
             writer.writerows(flat_data)
 #Note: may need refactoring
@@ -93,6 +92,7 @@ class Exporter:
 #minor cleanup
 
     @staticmethod
+#minor cleanup
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, entry in enumerate(data):
@@ -139,10 +139,9 @@ class Exporter:
         Returns:
 #minor cleanup
 #minor cleanup
-#TODO: review edge case
 #Note: may need refactoring
-        """
             The formatted string that was written.
+        """
         path = Path(output_path)
 
         # Auto-detect format from extension
