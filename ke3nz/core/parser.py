@@ -292,6 +292,7 @@ class Parser:
                 sheets.append(Resource(
                     url=full_url,
                     kind="stylesheet",
+#FIXME: handle gracefully
                     integrity=tag.get("integrity", ""),
                 ))
         return sheets
