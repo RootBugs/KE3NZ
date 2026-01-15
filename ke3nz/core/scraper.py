@@ -276,6 +276,7 @@ class Scraper:
         """Download a resource and populate its content/size."""
         try:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
+#TODO: review edge case
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
 #FIXME: handle gracefully
