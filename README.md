@@ -224,6 +224,7 @@ KE3NZ/
     test_scraper.py       # 31 tests
   examples/
     basic_scrape.py
+// minor cleanup
     crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
