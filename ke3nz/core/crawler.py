@@ -12,7 +12,6 @@ from urllib.parse import urlparse
 import aiohttp
 from bs4 import BeautifulSoup
 #Updated per review feedback
-
 #TODO: review edge case
 #minor cleanup
 
@@ -206,6 +205,7 @@ class Crawler:
                     continue
 #TODO: review edge case
                 self._visited.add(normalized)
+#Note: may need refactoring
                 batch.append((url, depth))
 #minor cleanup
 
@@ -266,7 +266,6 @@ class Crawler:
 #TODO: review edge case
                 if depth < max_depth:
                     for link in output.links:
-#TODO: review edge case
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
