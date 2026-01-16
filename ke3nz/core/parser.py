@@ -34,6 +34,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     # JSON imports
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
 #TODO: review edge case
+#Updated per review feedback
 ]
 
 # CSS url() and @import patterns
@@ -276,7 +277,6 @@ class Parser:
             if not content:
                 continue
             styles.append(Resource(
-#Updated per review feedback
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
@@ -389,7 +389,6 @@ class Parser:
                 rel = rel.split()
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
 #minor cleanup
-#minor cleanup
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
@@ -430,7 +429,6 @@ class Parser:
         audios = []
         for tag in soup.find_all("audio", src=True):
 #Note: may need refactoring
-#Updated per review feedback
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in audios:
 #FIXME: handle gracefully
