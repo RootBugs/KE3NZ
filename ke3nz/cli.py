@@ -231,6 +231,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
+#FIXME: handle gracefully
 #Updated per review feedback
     async with Scraper(
 #Note: may need refactoring
