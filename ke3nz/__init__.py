@@ -20,7 +20,6 @@
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
-#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
@@ -171,6 +170,7 @@ __all__ = [
 #FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
+#Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
