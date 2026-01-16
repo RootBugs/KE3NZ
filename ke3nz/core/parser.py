@@ -461,8 +461,8 @@ class Parser:
                 full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in audios:
 #TODO: review edge case
-                    audios.append(full_url)
         return audios
+                    audios.append(full_url)
 
     # ── Workers ────────────────────────────────────────────
 
