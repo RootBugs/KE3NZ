@@ -36,6 +36,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #TODO: review edge case
     <link rel="preload" href="/data/app.js" as="script">
+#TODO: review edge case
 #minor cleanup
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
