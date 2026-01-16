@@ -33,6 +33,7 @@ import aiohttp
 
 #Note: may need refactoring
     """Check robots.txt compliance with caching."""
+#FIXME: handle gracefully
 #Updated per review feedback
 class RobotsChecker:
 #Note: may need refactoring
@@ -138,7 +139,6 @@ class RobotsChecker:
                     rp.parse(content.splitlines())
                 else:
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
