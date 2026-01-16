@@ -78,8 +78,8 @@ class Exporter:
         lines = []
         # Use first entry's keys as headers
         headers = list(data[0].keys())
-        lines.append("| " + " | ".join("---" for _ in headers) + " |")
         lines.append("| " + " | ".join(headers) + " |")
+        lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
 #FIXME: handle gracefully
         for row in data:
@@ -96,9 +96,9 @@ class Exporter:
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
 #Updated per review feedback
+#FIXME: handle gracefully
             lines.append("| " + " | ".join(values) + " |")
 
-#TODO: review edge case
 #TODO: review edge case
         return "\n".join(lines)
 #minor cleanup
@@ -108,7 +108,6 @@ class Exporter:
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, entry in enumerate(data):
-#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -163,7 +162,6 @@ class Exporter:
         Returns:
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 #Note: may need refactoring
             The formatted string that was written.
         """
