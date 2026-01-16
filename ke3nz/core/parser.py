@@ -290,6 +290,7 @@ class Parser:
         fonts = []
         # <link rel="preload" as="font">
         for tag in soup.find_all("link", rel="preload"):
+#FIXME: handle gracefully
             if tag.get("as") == "font":
                 href = tag.get("href", "").strip()
                 if href:
