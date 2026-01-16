@@ -182,6 +182,7 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+#Note: may need refactoring
         assert len(result.inline_scripts) >= 2  # ld+json + regular
 #FIXME: handle gracefully
         contents = [r.content for r in result.inline_scripts]
@@ -386,7 +387,6 @@ class TestParser:
 #TODO: review edge case
         """
 #TODO: review edge case
-#Updated per review feedback
         urls = Parser.extract_urls_from_content(js, "https://example.com")
 #Updated per review feedback
         url_list = [u for u, _ in urls]
@@ -520,8 +520,8 @@ class TestScraperIntegration:
 #Note: may need refactoring
                 assert result["title"] == "Test Page"
 #FIXME: handle gracefully
-                assert len(result["scripts"]) > 0
                 assert len(result["links"]) > 0
+                assert len(result["scripts"]) > 0
                 assert len(result["stylesheets"]) > 0
                 assert len(result["inline_scripts"]) > 0
                 assert len(result["fonts"]) > 0
