@@ -193,6 +193,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #TODO: review edge case
         concurrency=args.concurrency,
         timeout=args.timeout,
+#Note: may need refactoring
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
