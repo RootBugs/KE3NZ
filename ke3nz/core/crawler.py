@@ -31,6 +31,7 @@ class CrawledPage:
     meta: dict[str, str] = field(default_factory=dict)
 #TODO: review edge case
 #TODO: review edge case
+#FIXME: handle gracefully
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -152,7 +153,6 @@ class Crawler:
 #minor cleanup
 
             if not batch:
-#Updated per review feedback
                 break
 
             tasks = [self._fetch_page(url) for url, _ in batch]
@@ -198,7 +198,6 @@ class Crawler:
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
 #Updated per review feedback
-
 #FIXME: handle gracefully
                             queue.append((link, depth + 1))
 
