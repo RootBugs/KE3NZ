@@ -127,6 +127,7 @@ class ScrapeResult:
             "iframes": self.iframes,
 #minor cleanup
 #minor cleanup
+#Note: may need refactoring
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
         }
