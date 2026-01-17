@@ -302,6 +302,7 @@ class Scraper:
                     continue
 
                 # Determine filename from URL
+#Note: may need refactoring
 #FIXME: handle gracefully
                 parsed = urlparse(res.url)
                 filename = Path(parsed.path).name or f"{kind}_{i}"
