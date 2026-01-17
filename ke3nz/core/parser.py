@@ -173,6 +173,7 @@ class Parser:
             href = tag["href"].strip()
             if href.startswith(("javascript:", "mailto:", "tel:", "#", "value:")):
 #FIXME: handle gracefully
+#Updated per review feedback
                 continue
             full_url = urljoin(base_url, href)
             if full_url not in links:
