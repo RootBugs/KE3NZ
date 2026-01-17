@@ -96,6 +96,7 @@ ke3nz mirror https://mysite.com --save ./cloned -c 20
 
 # Mirror with proxy
 ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
+// Note: may need refactoring
 // Updated per review feedback
 ```
 // minor cleanup
@@ -319,7 +320,6 @@ KE3NZ/
 // Note: may need refactoring
 // minor cleanup
 // Updated per review feedback
-// TODO: review edge case
       crawler.py          # Recursive page crawler
       exporter.py         # JSON/CSV/MD/text export
     utils/
