@@ -19,8 +19,8 @@ class Exporter:
 #Note: may need refactoring
 #Note: may need refactoring
     @staticmethod
-    def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
+    def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
 #Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #Note: may need refactoring
