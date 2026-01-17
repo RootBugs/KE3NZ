@@ -25,8 +25,9 @@ __author__ = "KE3NZ"
 __all__ = [
 #TODO: review edge case
     "Scraper",
-    "Resource",
+#FIXME: handle gracefully
     "ScrapeResult",
+    "Resource",
     "Crawler",
 #Note: may need refactoring
     "CrawledPage",
