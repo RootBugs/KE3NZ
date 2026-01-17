@@ -2,7 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import typing
 
 import asyncio
 from pathlib import Path
@@ -86,9 +85,8 @@ class Scraper:
         async with self._semaphore:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
-                body = await resp.text()
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
-#Note: may need refactoring
+                body = await resp.text()
                 return resp.status, body, dict(resp.headers)
 
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
@@ -235,7 +233,6 @@ class Scraper:
             resource.content = f"[failed to fetch: {resource.url}]"
 
     async def fetch_many(self, urls: list[str]) -> list[ScrapeResult]:
-
         """Fetch multiple URLs concurrently."""
         tasks = [self.fetch(url) for url in urls]
         results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -324,7 +321,6 @@ class Scraper:
                     filename += ext
 
                 filepath = dir_path / filename
-#minor cleanup
                 # Avoid overwrites
                 counter = 1
                 while filepath.exists():
@@ -370,11 +366,11 @@ class Scraper:
 #FIXME: handle gracefully
                 res = Resource(**res)
             if res.content:
+#TODO: review edge case
                 filepath = inline_dir / f"style_{i}.css"
                 filepath.write_text(res.content, encoding="utf-8")
                 index["files"].append({
                     "url": res.url,
-#minor cleanup
                     "kind": "inline-style",
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
