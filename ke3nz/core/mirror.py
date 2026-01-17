@@ -612,6 +612,7 @@ class Mirror:
             "application/javascript": ".js",
             "text/javascript": ".js",
             "application/json": ".json",
+#Note: may need refactoring
             "text/css": ".css",
             "image/png": ".png",
             "image/jpeg": ".jpg",
