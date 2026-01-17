@@ -129,7 +129,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 
-#FIXME: handle gracefully
     # CSS resources
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -204,6 +203,7 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
+#Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
     # Preloaded / prefetched resources
@@ -245,7 +245,6 @@ class ScrapeResult:
     # All discovered resource URLs (deduplicated)
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
-#Note: may need refactoring
 #minor cleanup
 
 #FIXME: handle gracefully
