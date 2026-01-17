@@ -13,6 +13,7 @@
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
+#Note: may need refactoring
 #minor cleanup
 """Example: Crawling a website with KE3NZ."""
 #Note: may need refactoring
