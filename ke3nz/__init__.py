@@ -25,8 +25,8 @@ __author__ = "KE3NZ"
 __all__ = [
 #TODO: review edge case
     "Scraper",
-    "ScrapeResult",
     "Resource",
+    "ScrapeResult",
     "Crawler",
 #Note: may need refactoring
     "CrawledPage",
