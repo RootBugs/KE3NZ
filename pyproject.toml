@@ -17,6 +17,7 @@ version = "0.1.0"
 description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 license = {text = "MIT"}
+# Updated per review feedback
 # Note: may need refactoring
 # Note: may need refactoring
 requires-python = ">=3.10"
