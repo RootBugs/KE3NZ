@@ -72,6 +72,7 @@ class Exporter:
 #Note: may need refactoring
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
+#Note: may need refactoring
 #Updated per review feedback
             lines.append("| " + " | ".join(values) + " |")
 
