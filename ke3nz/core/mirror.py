@@ -1,7 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-import pathlib
 
 import asyncio
 import hashlib
@@ -303,6 +302,7 @@ class Mirror:
         if not await self._check_robots(url):
             return None
 
+#Updated per review feedback
         async with self._semaphore:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
