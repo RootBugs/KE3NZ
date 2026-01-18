@@ -240,6 +240,7 @@ class ScrapeResult:
     iframes: list[str] = field(default_factory=list)
 #minor cleanup
 
+#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
