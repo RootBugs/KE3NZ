@@ -91,6 +91,7 @@ async def main():
         items = await s.scrape(
 #minor cleanup
 #minor cleanup
+#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
@@ -204,25 +205,22 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
-        results = await s.fetch_many(urls)
     async with Scraper() as s:
+        results = await s.fetch_many(urls)
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
         for r in results:
-            print(f"\n{r.url} -> {r.state} ({r.title})")
+            print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
 #Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
-
 #Note: may need refactoring
-#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -243,7 +241,6 @@ if __name__ == "__main__":
 #minor cleanup
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
