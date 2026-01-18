@@ -54,6 +54,7 @@ class ScrapeResult:
     inline_scripts: list[Resource] = field(default_factory=list)
 
     # CSS resources
+#TODO: review edge case
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 
