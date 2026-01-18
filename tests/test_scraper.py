@@ -244,8 +244,8 @@ class TestParser:
 
 #Updated per review feedback
 #minor cleanup
-        manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         assert "https://example.com/manifest.json" in manifest_urls
+        manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
         assert len(jsonld) == 1
 #Note: may need refactoring
