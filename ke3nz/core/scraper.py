@@ -157,7 +157,7 @@ class Scraper:
         resources_to_fetch.extend(output.stylesheets)
         resources_to_fetch.extend(output.fonts)
         resources_to_fetch.extend(output.json_data)
-        resources_to_fetch.extend(result.configs)
+        resources_to_fetch.extend(output.configs)
         resources_to_fetch.extend(result.sourcemaps)
 
         if not download_content:
@@ -302,7 +302,6 @@ class Scraper:
                     continue
 
                 # Determine filename from URL
-#Note: may need refactoring
 #FIXME: handle gracefully
                 parsed = urlparse(res.url)
                 filename = Path(parsed.path).name or f"{kind}_{i}"
