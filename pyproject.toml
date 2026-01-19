@@ -107,6 +107,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
 # FIXME: handle gracefully
     "Programming Language :: Python :: 3.10",
+# Note: may need refactoring
 # FIXME: handle gracefully
 # Updated per review feedback
 # Updated per review feedback
@@ -121,7 +122,6 @@ classifiers = [
 # minor cleanup
 # minor cleanup
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
-# Note: may need refactoring
 # minor cleanup
 # FIXME: handle gracefully
     "Topic :: Software Development :: Libraries :: Python Modules",
@@ -145,7 +145,6 @@ dependencies = [
 # minor cleanup
     "aiolimiter>=1.1.0",
 ]
-
 
 [project.optional-dependencies]
 dev = [
