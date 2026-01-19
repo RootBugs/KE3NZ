@@ -295,8 +295,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             print()
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
-                if total > 0:
                     print(f"    {kind}: {total}")
+                if total > 0:
             print()
 
         # Save files to disk
