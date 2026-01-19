@@ -617,6 +617,7 @@ class Parser:
         return json_links
 
 #TODO: review edge case
+#FIXME: handle gracefully
     # ── URL Collection ─────────────────────────────────────
 
 #Updated per review feedback
