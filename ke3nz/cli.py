@@ -388,6 +388,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
         timeout=args.timeout,
         proxy=args.proxy,
 #Note: may need refactoring
+#Updated per review feedback
         respect_robots=not args.no_robots,
 #TODO: review edge case
         user_agent=args.user_agent,
