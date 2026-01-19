@@ -135,6 +135,7 @@ class Exporter:
                 if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
+#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
