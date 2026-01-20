@@ -6,9 +6,9 @@ from __future__ import annotations
 
 import asyncio
 import time
-#Note: may need refactoring
 
 
+#Updated per review feedback
 #minor cleanup
 class RateLimiter:
     """Token bucket rate limiter for async code.
@@ -45,7 +45,6 @@ class RateLimiter:
             elapsed = now - self._last_request
             if elapsed < self._min_interval:
 #minor cleanup
-#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
