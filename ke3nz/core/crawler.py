@@ -350,6 +350,7 @@ class Crawler:
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
 #Updated per review feedback
+#TODO: review edge case
                         if normalized_link not in self._visited:
 #Updated per review feedback
 #FIXME: handle gracefully
