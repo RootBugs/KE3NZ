@@ -28,6 +28,7 @@ class CrawledPage:
     text: str = ""
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
+#FIXME: handle gracefully
     meta: dict[str, str] = field(default_factory=dict)
 #TODO: review edge case
 #TODO: review edge case
