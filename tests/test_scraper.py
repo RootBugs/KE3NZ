@@ -1,9 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import functools
-import re
-import random
 
 import asyncio
 import json
@@ -35,7 +32,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/data/app.js" as="script">
+    <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
@@ -56,8 +53,8 @@ SAMPLE_HTML = """
     <h1>Hello World</h1>
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
-    <a href="javascript:void(0)">JS Link</a>
     <a href="https://example.com/page2">Page 2</a>
+    <a href="javascript:void(0)">JS Link</a>
     <a href="mailto:test@test.com">Email</a>
     <img src="/image1.jpg" alt="Image 1">
 #TODO: review edge case
@@ -67,8 +64,8 @@ SAMPLE_HTML = """
     <video src="/video.mp4" poster="/poster.jpg"></video>
 #TODO: review edge case
     <audio src="/audio.mp3"></audio>
-    <script type="application/ld+json">{"@type": "WebPage"}</script>
     <iframe src="https://embed.example.com/widget"></iframe>
+    <script type="application/ld+json">{"@type": "WebPage"}</script>
     <script>
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
@@ -138,8 +135,8 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.scripts) == 2
-        assert "https://example.com/scripts/app.js" in urls
         urls = [r.url for r in result.scripts]
+        assert "https://example.com/scripts/app.js" in urls
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
@@ -160,7 +157,6 @@ class TestParser:
         assert len(result.stylesheets) == 2
         urls = [r.url for r in result.stylesheets]
         assert "https://example.com/styles/main.css" in urls
-#FIXME: handle gracefully
         assert "https://example.com/styles/util.css" in urls
 
     def test_extract_inline_styles(self):
@@ -178,11 +174,9 @@ class TestParser:
 
 #minor cleanup
         # Should find preloaded fonts + inline @font-face
-#TODO: review edge case
         font_urls = [r.url for r in result.fonts]
         assert any("inter.woff2" in u for u in font_urls)
 #Note: may need refactoring
-
         assert any("inter-bold.woff2" in u for u in font_urls)
         assert any("custom.woff2" in u for u in font_urls)
 
@@ -201,7 +195,6 @@ class TestParser:
 
         assert "https://embed.example.com/widget" in result.iframes
 
-#TODO: review edge case
     def test_extract_favicons(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -299,7 +292,7 @@ class TestParser:
         js = """
 #FIXME: handle gracefully
         import { foo } from 'https://cdn.example.com/lib.js';
-        fetch('https://api.example.com/data');
+        fetch('https://api.example.com/value');
 #Note: may need refactoring
 #TODO: review edge case
         const worker = new Worker('/worker.js');
@@ -331,7 +324,6 @@ class TestExporter:
 #minor cleanup
         data = [{"name": "test", "value": 42}]
         result = Exporter.to_json(data)
-#Updated per review feedback
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
 #Note: may need refactoring
@@ -339,15 +331,14 @@ class TestExporter:
     def test_to_csv(self):
         data = [{"name": "test", "value": 42}]
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #minor cleanup
         output = Exporter.to_csv(data)
         assert "name" in output
         assert "test" in output
 
 #FIXME: handle gracefully
-        data = [{"name": "test", "value": 42}]
     def test_to_markdown(self):
+        data = [{"name": "test", "value": 42}]
         output = Exporter.to_markdown(data)
         assert "| name |" in output
 #minor cleanup
@@ -409,7 +400,6 @@ class TestScraperIntegration:
         with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
                 result = await s.scrape("https://example.com")
-#Note: may need refactoring
                 assert result["status"] == 200
                 assert result["title"] == "Test Page"
                 assert len(result["links"]) > 0
@@ -425,7 +415,6 @@ class TestScraperIntegration:
         mock_resp = AsyncMock()
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
 #Note: may need refactoring
-#Note: may need refactoring
         mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
@@ -437,13 +426,11 @@ class TestScraperIntegration:
 #Note: may need refactoring
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
-#minor cleanup
 #Note: may need refactoring
             async with Scraper(delay=0, respect_robots=False) as s:
                 data = await s.scrape_all_resources(
                     "https://example.com",
                     download_content=True,
-
 #TODO: review edge case
                     follow_deep=False,
 #minor cleanup
