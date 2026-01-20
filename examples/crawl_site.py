@@ -14,7 +14,6 @@
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
-#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
@@ -53,13 +52,13 @@ import asyncio
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
-#TODO: review edge case
 from ke3nz import Crawler
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
+#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
