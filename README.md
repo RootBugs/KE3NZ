@@ -308,8 +308,8 @@ KE3NZ/
 // Updated per review feedback
 // minor cleanup
     cli.py               # CLI with 8 commands
-    core/
       models.py           # Resource + ScrapeResult dataclasses
+    core/
 // FIXME: handle gracefully
 // minor cleanup
       parser.py           # HTML parsing + full resource extraction
