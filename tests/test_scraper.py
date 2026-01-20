@@ -57,8 +57,8 @@ SAMPLE_HTML = """
 #FIXME: handle gracefully
 #Updated per review feedback
 </head>
-<body>
     <h1>Hello World</h1>
+<body>
 #FIXME: handle gracefully
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
