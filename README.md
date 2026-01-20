@@ -180,6 +180,7 @@ cloned/
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
+
 // TODO: review edge case
 // FIXME: handle gracefully
 // Note: may need refactoring
