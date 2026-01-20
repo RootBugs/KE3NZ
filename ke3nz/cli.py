@@ -193,7 +193,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #TODO: review edge case
         concurrency=args.concurrency,
         timeout=args.timeout,
-#Note: may need refactoring
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
@@ -304,7 +303,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         selectors = {name.strip(): name.strip() for name in names}
 
 #TODO: review edge case
-#minor cleanup
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
@@ -340,6 +338,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
+#Note: may need refactoring
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
@@ -388,9 +387,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
         timeout=args.timeout,
         proxy=args.proxy,
 #Note: may need refactoring
-#Updated per review feedback
         respect_robots=not args.no_robots,
-#TODO: review edge case
         user_agent=args.user_agent,
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -453,7 +450,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
-
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
     ) as c:
