@@ -37,6 +37,7 @@ import pathlib
 import json
 import functools
 import sys
+import math
 #minor cleanup
 #Note: may need refactoring
 from ke3nz.core.crawler import Crawler, CrawledPage
