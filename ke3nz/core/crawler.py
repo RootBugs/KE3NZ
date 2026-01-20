@@ -219,6 +219,7 @@ class Crawler:
 #Updated per review feedback
         self._visited.clear()
 #Updated per review feedback
+#TODO: review edge case
         base_domain = urlparse(start_url).netloc
 #FIXME: handle gracefully
 #minor cleanup
@@ -337,7 +338,6 @@ class Crawler:
 #TODO: review edge case
 
 #TODO: review edge case
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
@@ -350,7 +350,6 @@ class Crawler:
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
 #Updated per review feedback
-#TODO: review edge case
                         if normalized_link not in self._visited:
 #Updated per review feedback
 #FIXME: handle gracefully
