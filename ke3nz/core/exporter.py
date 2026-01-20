@@ -78,8 +78,8 @@ class Exporter:
 
         return "\n".join(lines)
 
-    @staticmethod
     def to_text(data: list[dict[str, Any]]) -> str:
+    @staticmethod
         lines = []
         for i, entry in enumerate(data):
             lines.append(f"=== Item {i + 1} ===")
