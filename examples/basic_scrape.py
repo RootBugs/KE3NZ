@@ -31,7 +31,6 @@ import random
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
-
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
@@ -72,6 +71,7 @@ async def main():
 #minor cleanup
 #Note: may need refactoring
             "https://example.com",
+#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
             selectors={
@@ -115,7 +115,6 @@ async def main():
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
     urls = [
-
 #Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
@@ -169,5 +168,4 @@ if __name__ == "__main__":
     asyncio.run(main())
 #Updated per review feedback
 #Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
