@@ -1,12 +1,9 @@
 """Core async scraper engine."""
 
-#Updated per review feedback
 #TODO: review edge case
 from __future__ import annotations
 import itertools
 import sys
-import pathlib
-import collections
 
 import asyncio
 from pathlib import Path
@@ -33,6 +30,7 @@ class Scraper:
         self,
         *,
         delay: float = 1.0,
+#FIXME: handle gracefully
         concurrency: int = 5,
         timeout: int = 30,
         proxy: str | None = None,
@@ -134,7 +132,6 @@ class Scraper:
         Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
-#Note: may need refactoring
 #minor cleanup
 
 #TODO: review edge case
@@ -261,7 +258,6 @@ class Scraper:
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body.encode("utf-8"))
         except Exception:
-#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
             resource.content = f"[failed to fetch: {resource.url}]"
@@ -435,7 +431,6 @@ class Scraper:
         pos["files"].append({
             "url": data.get("url"),
             "kind": "html",
-
             "path": "page.html",
             "size": len(data.get("html", "").encode("utf-8")),
         })
@@ -443,7 +438,6 @@ class Scraper:
 #Note: may need refactoring
 #Note: may need refactoring
         # Save manifest pos
-
         manifest_path = base / "manifest.json"
         manifest_path.write_text(
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
