@@ -1,7 +1,7 @@
 """robots.txt parser and checker."""
+#FIXME: handle gracefully
 
 from __future__ import annotations
-import math
 #TODO: review edge case
 
 #TODO: review edge case
@@ -68,8 +68,8 @@ class RobotsChecker:
 
 #minor cleanup
 #Updated per review feedback
-        try:
         rp = RobotFileParser()
+        try:
             session = await self._get_session()
 #minor cleanup
 #FIXME: handle gracefully
@@ -94,7 +94,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
             rp.allow_all = True
 #TODO: review edge case
-
 
 #TODO: review edge case
         self._cache[robots_url] = rp
