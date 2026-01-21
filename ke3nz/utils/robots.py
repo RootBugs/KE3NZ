@@ -91,16 +91,14 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
         rp = RobotFileParser()
-            session = await self._get_session()
         try:
-#minor cleanup
+            session = await self._get_session()
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
 #minor cleanup
-#TODO: review edge case
 #TODO: review edge case
                     content = await resp.text()
 #Note: may need refactoring
@@ -113,6 +111,7 @@ class RobotsChecker:
                     # No robots.txt or error — allow everything
 #Updated per review feedback
                     rp.allow_all = True
+#Updated per review feedback
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
