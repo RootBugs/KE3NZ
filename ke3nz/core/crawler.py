@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import itertools
 
 import asyncio
 from dataclasses import dataclass, field
@@ -12,8 +11,6 @@ import aiohttp
 from bs4 import BeautifulSoup
 
 from ke3nz.core.scraper import Scraper, ScrapeResult
-#FIXME: handle gracefully
-#minor cleanup
 from ke3nz.utils.headers import get_random_headers
 
 
@@ -21,7 +18,6 @@ from ke3nz.utils.headers import get_random_headers
 #minor cleanup
 class CrawledPage:
     """Result of crawling a page."""
-#FIXME: handle gracefully
 
     url: str
     status: int
@@ -56,7 +52,6 @@ class Crawler:
 #FIXME: handle gracefully
         *,
         delay: float = 1.0,
-#Updated per review feedback
         concurrency: int = 5,
         timeout: int = 30,
         proxy: str | None = None,
@@ -158,7 +153,6 @@ class Crawler:
                     text=result.text,
                     links=result.links,
 #minor cleanup
-#minor cleanup
                     images=result.images,
                     meta=result.meta,
 #Note: may need refactoring
@@ -170,12 +164,12 @@ class Crawler:
 
 #TODO: review edge case
                 # Enqueue discovered links for next depth level
-#Updated per review feedback
 #TODO: review edge case
                 if depth < max_depth:
                     for link in result.links:
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
+#FIXME: handle gracefully
                             queue.append((link, depth + 1))
 
         return pages
