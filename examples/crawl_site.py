@@ -56,6 +56,7 @@ from ke3nz import Crawler
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
+#FIXME: handle gracefully
 #Note: may need refactoring
 async def main():
     # Crawl example.com up to depth 2
