@@ -430,6 +430,7 @@ async def cmd_images(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
 #TODO: review edge case
         result = await s.scrape(args.url)
+
         images = [{"url": img} for img in result["images"]]
 
         if args.verbose:
