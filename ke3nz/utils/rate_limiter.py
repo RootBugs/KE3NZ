@@ -15,7 +15,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 
@@ -104,7 +103,6 @@ class RateLimiter:
 
     def __init__(self, rate: float = 1.0) -> None:
 #FIXME: handle gracefully
-#Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -140,7 +138,6 @@ class RateLimiter:
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
-#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
@@ -154,7 +151,6 @@ class RateLimiter:
     async def acquire(self) -> None:
 #minor cleanup
 #minor cleanup
-#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
@@ -164,8 +160,8 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
-        async with self._lock:
         """Wait until we can make the next request."""
+        async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
 #Updated per review feedback
@@ -201,7 +197,6 @@ class RateLimiter:
 #Note: may need refactoring
 #TODO: review edge case
             elapsed = now - self._last_request
-
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -210,6 +205,7 @@ class RateLimiter:
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -226,7 +222,6 @@ class RateLimiter:
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
-#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -253,7 +248,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
