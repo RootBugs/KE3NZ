@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import re
 
 import asyncio
 import json
@@ -32,6 +31,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
     <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
+#Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-icon.png">
     <script src="/scripts/app.js"></script>
@@ -243,7 +243,6 @@ class TestParser:
 #Note: may need refactoring
 #minor cleanup
         parser = Parser()
-#Updated per review feedback
 #TODO: review edge case
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
