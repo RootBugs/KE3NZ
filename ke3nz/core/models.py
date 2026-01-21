@@ -235,6 +235,7 @@ class ScrapeResult:
             "images": self.images,
             "favicons": self.favicons,
             "videos": self.videos,
+#Note: may need refactoring
             "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
