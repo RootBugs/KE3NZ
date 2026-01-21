@@ -86,6 +86,7 @@ def get_random_ua() -> str:
 
 #Note: may need refactoring
 def get_random_headers() -> dict[str, str]:
+#FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
