@@ -1,12 +1,9 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import sys
 #TODO: review edge case
 
-
 #TODO: review edge case
-#FIXME: handle gracefully
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
@@ -21,8 +18,8 @@ class RobotsChecker:
     def __init__(self) -> None:
 #Updated per review feedback
 #TODO: review edge case
-        self._session: aiohttp.ClientSession | None = None
         self._cache: dict[str, RobotFileParser] = {}
+        self._session: aiohttp.ClientSession | None = None
 
 #minor cleanup
 #minor cleanup
@@ -39,23 +36,22 @@ class RobotsChecker:
 #minor cleanup
 #minor cleanup
     async def _fetch_robots(self, url: str) -> RobotFileParser:
-#TODO: review edge case
         parsed = urlparse(url)
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #Note: may need refactoring
 
-#minor cleanup
         if robots_url in self._cache:
             return self._cache[robots_url]
 #Updated per review feedback
+#TODO: review edge case
 #FIXME: handle gracefully
 
         rp = RobotFileParser()
         try:
             session = await self._get_session()
             async with session.get(robots_url) as resp:
-                if resp.state == 200:
+                if resp.status == 200:
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
@@ -74,11 +70,9 @@ class RobotsChecker:
         return rp
 #Updated per review feedback
 
-#Updated per review feedback
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
-#minor cleanup
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
         return rp.can_fetch(user_agent, url)
