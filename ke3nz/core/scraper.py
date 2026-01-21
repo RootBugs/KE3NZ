@@ -203,7 +203,6 @@ class Scraper:
                             task_map[found_url] = deep_res
 #Updated per review feedback
 
-#TODO: review edge case
             # Download deep resources
             new_tasks = []
             for res in resources_to_fetch:
@@ -256,7 +255,6 @@ class Scraper:
         return [r for r in results if isinstance(r, ScrapeResult)]
 
     def save_resources(self, data: dict[str, Any], output_dir: str | Path) -> Path:
-#FIXME: handle gracefully
         """Save all downloaded resources to disk, organized by type.
 
         Creates structure:
@@ -414,6 +412,7 @@ class Scraper:
             "size": len(data.get("html", "").encode("utf-8")),
         })
 
+#Note: may need refactoring
 #Note: may need refactoring
         # Save manifest index
         manifest_path = base / "manifest.json"
