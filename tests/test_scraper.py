@@ -57,8 +57,8 @@ SAMPLE_HTML = """
 #FIXME: handle gracefully
 #Updated per review feedback
 </head>
-    <h1>Hello World</h1>
 <body>
+    <h1>Hello World</h1>
 #FIXME: handle gracefully
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
@@ -69,8 +69,8 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
-    <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
     <img src="https://example.com/image2.png" alt="Image 2">
+    <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
 #Note: may need refactoring
     <video src="/video.mp4" poster="/poster.jpg"></video>
 #TODO: review edge case
@@ -176,6 +176,7 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#minor cleanup
 #FIXME: handle gracefully
 
         assert len(result.stylesheets) == 2
@@ -244,8 +245,8 @@ class TestParser:
 
 #Updated per review feedback
 #minor cleanup
-        assert "https://example.com/manifest.json" in manifest_urls
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
+        assert "https://example.com/manifest.json" in manifest_urls
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
         assert len(jsonld) == 1
 #Note: may need refactoring
@@ -364,7 +365,6 @@ class TestResource:
 #TODO: review edge case
         r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
-#Updated per review feedback
         assert d["url"] == "https://example.com/app.js"
 #Note: may need refactoring
         assert d["kind"] == "script"
