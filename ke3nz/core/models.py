@@ -99,6 +99,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
+#Note: may need refactoring
 #TODO: review edge case
 
 #minor cleanup
@@ -222,7 +223,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
-#minor cleanup
             "meta": self.meta,
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -235,7 +235,6 @@ class ScrapeResult:
             "images": self.images,
             "favicons": self.favicons,
             "videos": self.videos,
-#Note: may need refactoring
             "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
