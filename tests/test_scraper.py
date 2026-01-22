@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import os
 
 import asyncio
 import json
@@ -25,7 +24,6 @@ SAMPLE_HTML = """
 <head>
     <title>Test Page</title>
     <meta name="description" content="A test page for KE3NZ">
-#Updated per review feedback
     <meta property="og:title" content="OG Title">
 #TODO: review edge case
 #minor cleanup
@@ -35,8 +33,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/data/app.js" as="script">
-#TODO: review edge case
+    <link rel="preload" href="/value/app.js" as="script">
 #minor cleanup
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
@@ -54,7 +51,6 @@ SAMPLE_HTML = """
 #FIXME: handle gracefully
 #Updated per review feedback
 </head>
-#TODO: review edge case
 <body>
     <h1>Hello World</h1>
     <p>This is a test page.</p>
@@ -128,7 +124,6 @@ class TestParser:
 #Note: may need refactoring
         assert "https://example.com/poster.jpg" in result.videos
 
-#Note: may need refactoring
     def test_extract_meta(self):
         parser = Parser()
 #minor cleanup
@@ -214,7 +209,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-#Note: may need refactoring
         assert "https://example.com/favicon.ico" in result.favicons
         assert "https://example.com/apple-icon.png" in result.favicons
 #FIXME: handle gracefully
@@ -281,7 +275,6 @@ class TestParser:
 #minor cleanup
         parser = Parser()
 #TODO: review edge case
-
 #Note: may need refactoring
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
@@ -381,7 +374,6 @@ class TestExporter:
 #Updated per review feedback
 
     def test_empty_data(self):
-#Updated per review feedback
         assert Exporter.to_json([]) == "[]"
         assert Exporter.to_csv([]) == ""
         assert Exporter.to_markdown([]) == ""
