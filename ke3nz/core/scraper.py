@@ -354,6 +354,7 @@ class Scraper:
                 filepath.write_text(res.content, encoding="utf-8")
                 index["files"].append({
 #TODO: review edge case
+#minor cleanup
                     "url": res.url,
                     "kind": "inline-script",
                     "path": str(filepath.relative_to(base)),
