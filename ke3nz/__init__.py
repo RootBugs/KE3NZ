@@ -64,6 +64,7 @@ __all__ = [
     "ScrapeResult",
     "Resource",
     "Crawler",
+#Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
