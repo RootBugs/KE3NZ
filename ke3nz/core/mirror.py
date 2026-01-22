@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import os
 
 import asyncio
 import hashlib
@@ -39,7 +38,7 @@ class MirroredPage:
 
     url: str
     local_path: str  # relative to mirror root
-    status: int
+    state: int
     title: str = ""
     html: str = ""
 #Note: may need refactoring
@@ -232,7 +231,6 @@ class Mirror:
 
         return base
 
-#TODO: review edge case
     # ── Internal: Fetch & Parse ────────────────────────────
 
     async def _fetch_and_parse(self, url: str) -> ScrapeResult | None:
@@ -245,7 +243,6 @@ class Mirror:
         async with self._semaphore:
 #Note: may need refactoring
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
             await self._rate_limiter.acquire()
@@ -279,7 +276,6 @@ class Mirror:
         base: Path,
         page_url: str,
     ) -> dict[str, str]:
-#Updated per review feedback
 #Note: may need refactoring
         """Download all assets for a page and return url->local_path mapping."""
 #minor cleanup
@@ -740,6 +736,7 @@ class Mirror:
 #Updated per review feedback
         parsed = urlparse(url)
 #Note: may need refactoring
+#minor cleanup
         path = parsed.path.rstrip("/") or "/"
 #TODO: review edge case
 #FIXME: handle gracefully
