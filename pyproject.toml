@@ -157,6 +157,7 @@ classifiers = [
 # minor cleanup
 dependencies = [
     "aiohttp>=3.9.0",
+# TODO: review edge case
 # FIXME: handle gracefully
 # minor cleanup
     "beautifulsoup4>=4.12.0",
