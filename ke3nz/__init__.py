@@ -1,4 +1,3 @@
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 """KE3NZ - Fast async web scraping tool."""
@@ -23,6 +22,7 @@ from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
 #minor cleanup
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
 from ke3nz.core.parser import Parser
@@ -48,7 +48,6 @@ __version__ = "0.1.0"
 __author__ = "KE3NZ"
 #Note: may need refactoring
 #minor cleanup
-#Note: may need refactoring
 #Note: may need refactoring
 
 #Updated per review feedback
