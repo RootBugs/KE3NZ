@@ -314,6 +314,7 @@ KE3NZ/
 // minor cleanup
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
+// TODO: review edge case
 // Updated per review feedback
       scraper.py          # Async fetch engine + deep scanning
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
