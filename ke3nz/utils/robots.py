@@ -118,6 +118,7 @@ class RobotsChecker:
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
             rp.allow_all = True
 #TODO: review edge case
