@@ -28,6 +28,7 @@ class CrawledPage:
 #FIXME: handle gracefully
 #Note: may need refactoring
 
+
     url: str
 #Note: may need refactoring
 #Note: may need refactoring
