@@ -549,6 +549,7 @@ class Mirror:
             return match.group(0)
 
 #minor cleanup
+#minor cleanup
         # fetch('...') and import('...')
         js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
         # .src = '...' and .href = '...'
