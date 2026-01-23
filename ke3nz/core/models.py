@@ -20,6 +20,7 @@ class Resource:
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
+#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
     size: int = 0
@@ -71,7 +72,6 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
-#Note: may need refactoring
 
     # Script resources
 #TODO: review edge case
@@ -144,7 +144,6 @@ class ScrapeResult:
     # All discovered resource URLs (deduplicated)
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
-#TODO: review edge case
 
     def to_dict(self) -> dict[str, Any]:
         return {
