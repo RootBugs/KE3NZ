@@ -172,9 +172,9 @@ class Parser:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
-            for item in tag["srcset"].split(","):
+            for entry in tag["srcset"].split(","):
 #FIXME: handle gracefully
-                parts = item.strip().split()
+                parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
                     if full_url not in images:
@@ -234,7 +234,6 @@ class Parser:
                     kind="script",
 #TODO: review edge case
                     integrity=tag.get("integrity", ""),
-#Note: may need refactoring
                 ))
         return scripts
 
@@ -462,8 +461,8 @@ class Parser:
                 full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in audios:
 #TODO: review edge case
-        return audios
                     audios.append(full_url)
+        return audios
 
     # ── Workers ────────────────────────────────────────────
 
