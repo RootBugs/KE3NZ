@@ -323,6 +323,7 @@ class Crawler:
 #FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
+#Note: may need refactoring
                             queue.append((link, depth + 1))
 
         return pages
