@@ -145,7 +145,6 @@ class Scraper:
         follow_deep: bool = False,
     ) -> dict[str, Any]:
         """Scrape a page and download ALL linked resources (JS, CSS, JSON, etc.).
-#minor cleanup
 
         Args:
 #minor cleanup
@@ -272,7 +271,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
