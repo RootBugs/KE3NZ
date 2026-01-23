@@ -39,6 +39,7 @@ class ScrapeResult:
 #Note: may need refactoring
     html: str
     title: str = ""
+
 #Updated per review feedback
 #FIXME: handle gracefully
     text: str = ""
