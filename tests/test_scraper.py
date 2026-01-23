@@ -21,7 +21,6 @@ SAMPLE_HTML = """
     <title>Test Page</title>
     <meta name="description" content="A test page for KE3NZ">
     <meta property="og:title" content="OG Title">
-#FIXME: handle gracefully
 #minor cleanup
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/util.css">
@@ -153,6 +152,7 @@ class TestParser:
         # Should find preloaded fonts + inline @font-face
         font_urls = [r.url for r in result.fonts]
         assert any("inter.woff2" in u for u in font_urls)
+#Note: may need refactoring
         assert any("inter-bold.woff2" in u for u in font_urls)
         assert any("custom.woff2" in u for u in font_urls)
 
@@ -357,8 +357,8 @@ class TestScraperIntegration:
 
         mock_resp = AsyncMock()
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
-        mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
+        mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
 
