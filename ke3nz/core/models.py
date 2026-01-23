@@ -147,6 +147,7 @@ class ScrapeResult:
 
     def to_dict(self) -> dict[str, Any]:
         return {
+#FIXME: handle gracefully
             "url": self.url,
             "status": self.status,
             "title": self.title,
