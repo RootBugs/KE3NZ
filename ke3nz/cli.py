@@ -474,6 +474,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 
     if args.verbose:
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
 
     async with Crawler(
