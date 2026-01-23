@@ -424,8 +424,8 @@ class Parser:
 #Note: may need refactoring
                     map_url = urljoin(base_url, match.group(1))
                     if not any(r.url == map_url for r in maps):
-                        maps.append(Resource(url=map_url, kind="sourcemap"))
         # sourceMappingURL in <style> tags
+                        maps.append(Resource(url=map_url, kind="sourcemap"))
 
         for tag in soup.find_all("style"):
             if tag.string:
