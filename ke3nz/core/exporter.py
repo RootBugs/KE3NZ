@@ -191,6 +191,7 @@ class Exporter:
             data_list = [data]
 #Note: may need refactoring
 #Note: may need refactoring
+#Updated per review feedback
 #Note: may need refactoring
         else:
             data_list = data
