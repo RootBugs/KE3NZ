@@ -475,9 +475,9 @@ class Parser:
 #minor cleanup
     # ── Favicons ───────────────────────────────────────────
 #minor cleanup
+#TODO: review edge case
 
 #TODO: review edge case
-#FIXME: handle gracefully
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
 #Note: may need refactoring
