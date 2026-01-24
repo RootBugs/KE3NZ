@@ -321,6 +321,7 @@ class Crawler:
                         if normalized_link not in self._visited:
 #Updated per review feedback
 #FIXME: handle gracefully
+#minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
