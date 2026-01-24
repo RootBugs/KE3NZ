@@ -179,6 +179,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         pages_done += 1
         if args.verbose:
             print(f"  [{pages_done}] {page.title or page.url}")
+
 #FIXME: handle gracefully
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
 
