@@ -196,6 +196,7 @@ class Crawler:
         Returns:
 #FIXME: handle gracefully
 #TODO: review edge case
+#Note: may need refactoring
             List of all crawled pages.
         """
 #Updated per review feedback
@@ -323,7 +324,6 @@ class Crawler:
 #FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
                             queue.append((link, depth + 1))
 
         return pages
