@@ -107,7 +107,6 @@ examples:
     crawl_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #Note: may need refactoring
 #Note: may need refactoring
-#minor cleanup
     crawl_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
 
     return parser
@@ -158,7 +157,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 # ── Commands ───────────────────────────────────────────────
 
 
-#Note: may need refactoring
 async def cmd_mirror(args: argparse.Namespace) -> None:
     """Mirror an entire website to a local folder."""
     pages_done = 0
@@ -221,7 +219,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
         data = await s.scrape_all_resources(
             args.url,
-#FIXME: handle gracefully
             download_content=not args.no_content,
             follow_deep=args.deep,
 #FIXME: handle gracefully
@@ -277,6 +274,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
                 for entry in value
             ]
         else:
+#Updated per review feedback
             result[key] = value
     return result
 
@@ -293,7 +291,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
-#TODO: review edge case
 #Updated per review feedback
         proxy=args.proxy,
         respect_robots=not args.no_robots,
@@ -446,7 +443,6 @@ COMMANDS = {
     "resources": cmd_resources,
     "scrape": cmd_scrape,
     "links": cmd_links,
-#FIXME: handle gracefully
     "images": cmd_images,
 #minor cleanup
     "text": cmd_text,
@@ -456,7 +452,6 @@ COMMANDS = {
 #TODO: review edge case
 
 
-#TODO: review edge case
 def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
