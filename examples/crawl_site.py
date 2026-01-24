@@ -84,6 +84,7 @@ async def main():
 if __name__ == "__main__":
 #minor cleanup
 #Note: may need refactoring
+#TODO: review edge case
 #FIXME: handle gracefully
     asyncio.run(main())
 #Note: may need refactoring
