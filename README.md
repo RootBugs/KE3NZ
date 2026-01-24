@@ -97,6 +97,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 cloned/
 // TODO: review edge case
   index.html              # Main page (URLs rewritten to local)
+// TODO: review edge case
   about/
     index.html            # Subpages
   blog/
@@ -229,7 +230,6 @@ Commands:
   images      Extract all images
 // Note: may need refactoring
 // Note: may need refactoring
-// minor cleanup
 // Updated per review feedback
 // minor cleanup
 // TODO: review edge case
@@ -286,8 +286,8 @@ KE3NZ/
 // minor cleanup
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
-      mirror.py           # Full website mirroring (THE MAIN FEATURE)
       scraper.py          # Async fetch engine + deep scanning
+      mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // Note: may need refactoring
 // minor cleanup
 // Updated per review feedback
