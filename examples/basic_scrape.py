@@ -45,7 +45,6 @@ async def main():
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
-#FIXME: handle gracefully
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
@@ -80,6 +79,7 @@ async def main():
 #FIXME: handle gracefully
 #FIXME: handle gracefully
         print("\nSelector results:")
+#Updated per review feedback
 #FIXME: handle gracefully
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
@@ -98,7 +98,6 @@ async def main():
 #Updated per review feedback
 #Updated per review feedback
         "https://example.com",
-#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
