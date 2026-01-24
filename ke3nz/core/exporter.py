@@ -47,8 +47,8 @@ class Exporter:
 #TODO: review edge case
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
-                elif isinstance(value, dict):
                     flat[key] = json.dumps(value, ensure_ascii=False)
+                elif isinstance(value, dict):
                 else:
 #TODO: review edge case
                     flat[key] = value
