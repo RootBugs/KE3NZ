@@ -135,7 +135,6 @@ class Parser:
 #Note: may need refactoring
             text=text,
 #minor cleanup
-#Updated per review feedback
             links=links,
             images=images,
             meta=meta,
@@ -173,7 +172,6 @@ class Parser:
             href = tag["href"].strip()
             if href.startswith(("javascript:", "mailto:", "tel:", "#", "value:")):
 #FIXME: handle gracefully
-#Updated per review feedback
                 continue
             full_url = urljoin(base_url, href)
             if full_url not in links:
@@ -245,6 +243,7 @@ class Parser:
             if name and content:
                 meta[name] = content
         return meta
+#Updated per review feedback
 
     # ── External Scripts ───────────────────────────────────
 
@@ -291,7 +290,7 @@ class Parser:
                 content=content,
 #TODO: review edge case
 #TODO: review edge case
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
@@ -587,7 +586,6 @@ class Parser:
                 configs.append(Resource(
                     url=f"{base_url}#jsonld-{len(configs)}",
                     kind="json-ld",
-#Note: may need refactoring
 #TODO: review edge case
                     content=content,
                     size=len(content.encode("utf-8")),
@@ -617,7 +615,6 @@ class Parser:
         return json_links
 
 #TODO: review edge case
-#FIXME: handle gracefully
     # ── URL Collection ─────────────────────────────────────
 
 #Updated per review feedback
