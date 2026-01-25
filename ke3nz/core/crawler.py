@@ -28,7 +28,6 @@ class CrawledPage:
     text: str = ""
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
-#FIXME: handle gracefully
     meta: dict[str, str] = field(default_factory=dict)
 #TODO: review edge case
 #TODO: review edge case
@@ -115,6 +114,7 @@ class Crawler:
         Args:
             start_url: Starting URL.
 #Updated per review feedback
+#minor cleanup
 #TODO: review edge case
             max_depth: Maximum link-following depth.
 #minor cleanup
@@ -208,8 +208,8 @@ class Crawler:
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
-        return f"{parsed.scheme}://{parsed.netloc}{path}"
         path = parsed.path.rstrip("/") or "/"
+        return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
 #Note: may need refactoring
