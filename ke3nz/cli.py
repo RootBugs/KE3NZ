@@ -349,6 +349,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 #Updated per review feedback
 
         _output(meta, args.output, args.format)
+#Note: may need refactoring
 
 
 async def cmd_crawl(args: argparse.Namespace) -> None:
