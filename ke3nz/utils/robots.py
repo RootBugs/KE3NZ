@@ -190,6 +190,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Note: may need refactoring
     async def close(self) -> None:
+#TODO: review edge case
         if self._session and not self._session.closed:
 #TODO: review edge case
 #Updated per review feedback
