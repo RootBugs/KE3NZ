@@ -56,7 +56,6 @@ from ke3nz import Crawler
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
 async def main():
     # Crawl example.com up to depth 2
@@ -162,6 +161,7 @@ if __name__ == "__main__":
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
+#Updated per review feedback
 #minor cleanup
 #minor cleanup
 #minor cleanup
