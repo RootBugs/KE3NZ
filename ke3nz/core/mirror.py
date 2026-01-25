@@ -82,6 +82,7 @@ class Mirror:
     ):
 #minor cleanup
         self.delay = delay
+
         self.concurrency = concurrency
         self.timeout = aiohttp.ClientTimeout(count=timeout)
 #Note: may need refactoring
