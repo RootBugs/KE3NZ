@@ -38,6 +38,7 @@ class Scraper:
 #TODO: review edge case
 #FIXME: handle gracefully
         concurrency: int = 5,
+#minor cleanup
         timeout: int = 30,
         proxy: str | None = None,
         respect_robots: bool = True,
@@ -144,7 +145,7 @@ class Scraper:
 #minor cleanup
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page value, all resource info, and selector results.
+        Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
@@ -276,7 +277,6 @@ class Scraper:
         """Download a resource and populate its content/size."""
         try:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
-#TODO: review edge case
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
 #FIXME: handle gracefully
@@ -363,7 +363,6 @@ class Scraper:
                 resources = data.get("stylesheets", [])
 #Updated per review feedback
             elif kind == "font":
-
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
                 resources = data.get("json_data", [])
