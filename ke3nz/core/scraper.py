@@ -363,6 +363,7 @@ class Scraper:
                 resources = data.get("stylesheets", [])
 #Updated per review feedback
             elif kind == "font":
+
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
                 resources = data.get("json_data", [])
