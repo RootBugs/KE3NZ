@@ -295,8 +295,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             print()
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
-                    print(f"    {kind}: {total}")
                 if total > 0:
+                    print(f"    {kind}: {total}")
             print()
 
         # Save files to disk
@@ -305,7 +305,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
 #Note: may need refactoring
             base = s.save_resources(value, args.save)
-
             if args.verbose:
                 print(f"  Saved to: {base}")
 #Updated per review feedback
@@ -389,7 +388,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
 #Updated per review feedback
 async def cmd_links(args: argparse.Namespace) -> None:
-#Note: may need refactoring
 #TODO: review edge case
     async with Scraper(
         delay=args.delay,
@@ -431,7 +429,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
 #TODO: review edge case
         result = await s.scrape(args.url)
-
         images = [{"url": img} for img in result["images"]]
 
         if args.verbose:
@@ -454,8 +451,8 @@ async def cmd_text(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
 #TODO: review edge case
 #FIXME: handle gracefully
-        result = await s.scrape(args.url)
     ) as s:
+        result = await s.scrape(args.url)
 
         if args.output:
             with open(args.output, "w", encoding="utf-8") as f:
@@ -469,6 +466,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
 #TODO: review edge case
 async def cmd_meta(args: argparse.Namespace) -> None:
     async with Scraper(
+#Note: may need refactoring
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
