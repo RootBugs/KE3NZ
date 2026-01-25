@@ -67,7 +67,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
         self._session: aiohttp.ClientSession | None = None
 #minor cleanup
-#minor cleanup
 #Note: may need refactoring
 
 #minor cleanup
@@ -130,7 +129,6 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
             return self._cache[robots_url]
 #Updated per review feedback
@@ -199,6 +197,7 @@ class RobotsChecker:
 #TODO: review edge case
 
 #TODO: review edge case
+#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
@@ -211,8 +210,6 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
 
-#Note: may need refactoring
-#minor cleanup
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
 #Updated per review feedback
 #minor cleanup
@@ -224,7 +221,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
         return rp.can_fetch(user_agent, url)
-#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 
