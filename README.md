@@ -11,7 +11,6 @@ KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website
 ## Install
 // FIXME: handle gracefully
 
-
 // TODO: review edge case
 ```bash
 cd KE3NZ
@@ -95,13 +94,11 @@ ke3nz mirror https://mysite.com --save ./cloned -v
 // TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
-
 # Mirror with proxy
 ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 // Note: may need refactoring
 // Updated per review feedback
 ```
-// Note: may need refactoring
 // minor cleanup
 
 ### Output Structure
@@ -154,6 +151,7 @@ cloned/
 ### What Gets Downloaded
 // Updated per review feedback
 // FIXME: handle gracefully
+// TODO: review edge case
 
 | Type | Source |
 // Updated per review feedback
@@ -311,21 +309,20 @@ KE3NZ/
 // Updated per review feedback
 // minor cleanup
     cli.py               # CLI with 8 commands
-      models.py           # Resource + ScrapeResult dataclasses
     core/
+      models.py           # Resource + ScrapeResult dataclasses
 // FIXME: handle gracefully
 // minor cleanup
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
-// TODO: review edge case
 // Updated per review feedback
       scraper.py          # Async fetch engine + deep scanning
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // Note: may need refactoring
 // minor cleanup
 // Updated per review feedback
-      exporter.py         # JSON/CSV/MD/text export
       crawler.py          # Recursive page crawler
+      exporter.py         # JSON/CSV/MD/text export
     utils/
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
@@ -343,7 +340,6 @@ KE3NZ/
   pyproject.toml
   LICENSE                  # MIT
 ```
-// FIXME: handle gracefully
 // Note: may need refactoring
 // minor cleanup
 
