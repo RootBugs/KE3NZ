@@ -36,6 +36,7 @@ SAMPLE_HTML = """
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
+#FIXME: handle gracefully
     <link rel="apple-touch-icon" href="/apple-icon.png">
 #minor cleanup
     <script src="/scripts/app.js"></script>
