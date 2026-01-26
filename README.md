@@ -373,6 +373,7 @@ KE3NZ/
       rate_limiter.py     # Async rate limiter
   tests/
     test_scraper.py       # 31 tests
+// Note: may need refactoring
 // FIXME: handle gracefully
 // FIXME: handle gracefully
 // TODO: review edge case
