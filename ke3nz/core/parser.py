@@ -77,6 +77,7 @@ class Parser:
         sourcemaps = self._extract_sourcemaps(soup, url)
         preloads = self._extract_preloads(soup, url)
         prefetches = self._extract_prefetches(soup, url)
+#Note: may need refactoring
         favicons = self._extract_favicons(soup, url)
         videos = self._extract_videos(soup, url)
         audios = self._extract_audios(soup, url)
