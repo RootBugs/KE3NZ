@@ -568,6 +568,7 @@ class Parser:
 
         return found
 
+#Note: may need refactoring
     # ── CSS Selectors ──────────────────────────────────────
 #FIXME: handle gracefully
 
