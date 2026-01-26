@@ -1,3 +1,4 @@
+#minor cleanup
 import random
 #minor cleanup
 #FIXME: handle gracefully
