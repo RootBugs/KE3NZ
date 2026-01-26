@@ -124,6 +124,7 @@ Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
 
 # FIXME: handle gracefully
+# FIXME: handle gracefully
 [tool.setuptools.packages.find]
 include = ["ke3nz*"]
 
