@@ -9,6 +9,7 @@ import asyncio
 from ke3nz import Scraper
 #FIXME: handle gracefully
 import random
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -97,7 +98,6 @@ async def main():
 
 
 if __name__ == "__main__":
-#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
