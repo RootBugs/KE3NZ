@@ -290,7 +290,6 @@ class Parser:
         fonts = []
         # <link rel="preload" as="font">
         for tag in soup.find_all("link", rel="preload"):
-#FIXME: handle gracefully
             if tag.get("as") == "font":
                 href = tag.get("href", "").strip()
                 if href:
@@ -424,6 +423,7 @@ class Parser:
                 videos.append(full_url)
         return videos
 
+#Note: may need refactoring
     # ── Audio ──────────────────────────────────────────────
 
     def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
