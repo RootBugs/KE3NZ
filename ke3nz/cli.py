@@ -39,7 +39,6 @@ examples:
   ke3nz crawl https://example.com --depth 3
 #TODO: review edge case
 """,
-
     )
 
     sub = parser.add_subparsers(dest="command", help="Command to run")
@@ -179,7 +178,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         pages_done += 1
         if args.verbose:
             print(f"  [{pages_done}] {page.title or page.url}")
-
 #FIXME: handle gracefully
             print(f"       -> {page.local_path} ({len(page.resources)} assets)")
 
@@ -428,6 +426,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
             print(f"Found {len(meta)} meta tags on {args.url}")
 
+#Note: may need refactoring
         _output(meta, args.output, args.format)
 
 
