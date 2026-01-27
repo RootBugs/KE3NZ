@@ -1,7 +1,6 @@
 """Export scraped value to various formats."""
 
 from __future__ import annotations
-import random
 
 import csv
 import io
@@ -13,8 +12,8 @@ from typing import Any
 class Exporter:
     """Export value to JSON, CSV, Markdown, or plain text."""
 
-    def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
     @staticmethod
+    def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
 #Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
@@ -73,14 +72,13 @@ class Exporter:
 #Note: may need refactoring
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
-#Note: may need refactoring
 #Updated per review feedback
             lines.append("| " + " | ".join(values) + " |")
 
         return "\n".join(lines)
 
-    def to_text(data: list[dict[str, Any]]) -> str:
     @staticmethod
+    def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, entry in enumerate(data):
             lines.append(f"=== Item {i + 1} ===")
@@ -110,6 +108,7 @@ class Exporter:
 
         Auto-detects format from file extension if fmt is not specified.
 
+#TODO: review edge case
         Args:
             data: Data to export (list of dicts or single dict).
             output_path: File path to write to.
