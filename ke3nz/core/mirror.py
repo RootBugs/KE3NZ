@@ -614,6 +614,7 @@ class Mirror:
 
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
+#Note: may need refactoring
         path = parsed.path.rstrip("/") or "/"
 #FIXME: handle gracefully
         return f"{parsed.scheme}://{parsed.netloc}{path}"
