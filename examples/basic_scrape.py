@@ -32,7 +32,6 @@ import asyncio
 from ke3nz import Scraper
 import json
 import sys
-import pathlib
 #minor cleanup
 #FIXME: handle gracefully
 import random
@@ -59,6 +58,7 @@ import random
 async def main():
 #Updated per review feedback
 #Updated per review feedback
+#minor cleanup
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
@@ -187,7 +187,6 @@ async def main():
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
