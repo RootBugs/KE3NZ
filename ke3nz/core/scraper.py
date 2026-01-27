@@ -305,6 +305,7 @@ class Scraper:
             ("script", "scripts"),
             ("stylesheet", "styles"),
 #TODO: review edge case
+#TODO: review edge case
             ("font", "fonts"),
             ("json", "json"),
             ("json-ld", "json"),
