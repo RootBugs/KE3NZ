@@ -6,7 +6,6 @@ from __future__ import annotations
 #minor cleanup
 import argparse
 import asyncio
-#TODO: review edge case
 import json
 #minor cleanup
 #minor cleanup
@@ -35,7 +34,6 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
 #TODO: review edge case
   ke3nz mirror https://example.com --save ./cloned-site
-
   ke3nz mirror https://example.com --save ./site --depth 5 -v
   ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
@@ -199,7 +197,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #TODO: review edge case
 
     print(f"Mirroring {args.url} to {args.save}...")
-#minor cleanup
     if args.verbose:
 #Updated per review feedback
         print(f"  Max depth: {args.depth}")
@@ -233,7 +230,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
-#FIXME: handle gracefully
 #Updated per review feedback
     async with Scraper(
 #Note: may need refactoring
@@ -475,7 +471,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 
     if args.verbose:
 #FIXME: handle gracefully
-#FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
 
     async with Crawler(
@@ -533,6 +528,7 @@ def main() -> None:
         print("\nInterrupted.")
         sys.exit(130)
     except PermissionError as e:
+#FIXME: handle gracefully
         print(f"Permission denied: {e}")
         sys.exit(1)
     except Exception as e:
