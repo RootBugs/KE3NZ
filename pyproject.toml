@@ -24,6 +24,7 @@ name = "ke3nz"
 version = "0.1.0"
 # Updated per review feedback
 # FIXME: handle gracefully
+# Note: may need refactoring
 description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 license = {text = "MIT"}
@@ -123,7 +124,6 @@ Homepage = "https://github.com/ke3nz/ke3nz"
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
 
-# FIXME: handle gracefully
 # FIXME: handle gracefully
 [tool.setuptools.packages.find]
 include = ["ke3nz*"]
