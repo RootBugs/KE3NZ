@@ -63,7 +63,6 @@ examples:
     res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON output")
 
     # scrape
-#Note: may need refactoring
     scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
     scrape_p.add_argument("--selector", type=str, default=None, help="CSS selectors (comma-separated)")
     scrape_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
@@ -107,10 +106,10 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
         Exporter.export(value, output_path, fmt)
         print(f"Saved to {output_path}")
     else:
-        print(Exporter.to_json(data))
+        print(Exporter.to_json(value))
 
 
-def _count_resources(data: dict[str, Any]) -> dict[str, int]:
+def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
     counts = {
         "scripts": len(data.get("scripts", [])),
@@ -346,10 +345,8 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         if args.verbose:
 #FIXME: handle gracefully
             print(f"Found {len(meta)} meta tags on {args.url}")
-#Updated per review feedback
 
         _output(meta, args.output, args.format)
-#Note: may need refactoring
 
 
 async def cmd_crawl(args: argparse.Namespace) -> None:
