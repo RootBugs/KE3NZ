@@ -326,6 +326,7 @@ class Mirror:
                 continue
             assets_to_download.append((favicon_url, "images"))
 #minor cleanup
+#Updated per review feedback
 
         # Download assets concurrently
         resource_map: dict[str, tuple[bytes, str]] = {}  # url -> (bytes, content_type)
