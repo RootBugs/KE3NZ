@@ -91,7 +91,6 @@ ke3nz mirror https://mysite.com --save ./cloned -v
 
 // Note: may need refactoring
 # Fast mirror with high concurrency
-// FIXME: handle gracefully
 // TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
@@ -105,8 +104,8 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ### Output Structure
 
 // Updated per review feedback
-cloned/
 ```
+cloned/
 // Updated per review feedback
 // TODO: review edge case
   index.html              # Main page (URLs rewritten to local)
@@ -134,6 +133,7 @@ cloned/
 // FIXME: handle gracefully
       app.js
       vendor.js
+// Updated per review feedback
 // FIXME: handle gracefully
     css/
 // Updated per review feedback
