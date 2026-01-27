@@ -3,7 +3,6 @@
 """KE3NZ - Fast async web scraping tool."""
 #TODO: review edge case
 #TODO: review edge case
-#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
@@ -37,7 +36,6 @@ import pathlib
 import json
 import functools
 import sys
-import math
 #minor cleanup
 #Note: may need refactoring
 from ke3nz.core.crawler import Crawler, CrawledPage
@@ -93,7 +91,6 @@ __version__ = "0.1.0"
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
-#TODO: review edge case
 #FIXME: handle gracefully
 __author__ = "KE3NZ"
 #Note: may need refactoring
@@ -103,6 +100,7 @@ __author__ = "KE3NZ"
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
+#TODO: review edge case
 #Note: may need refactoring
 
 #Updated per review feedback
