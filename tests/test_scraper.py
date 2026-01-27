@@ -119,6 +119,7 @@ class TestParser:
         assert result.meta.get("description") == "A test page for KE3NZ"
         assert result.meta.get("og:title") == "OG Title"
 
+#minor cleanup
     def test_extract_external_scripts(self):
 #Updated per review feedback
         parser = Parser()
