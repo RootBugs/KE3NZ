@@ -2,6 +2,7 @@
 
 #Note: may need refactoring
 from __future__ import annotations
+import re
 
 import random
 #TODO: review edge case
