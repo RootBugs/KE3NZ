@@ -30,6 +30,7 @@ authors = [
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # Updated per review feedback
 classifiers = [
+
 # TODO: review edge case
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
