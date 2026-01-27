@@ -504,8 +504,8 @@ class Parser:
 #Note: may need refactoring
         workers = []
         for tag in soup.find_all("script", type="module"):
-            # Module workers registered via registration API — not directly in HTML
             pass
+            # Module workers registered via registration API — not directly in HTML
         # navigator.serviceWorker.register('/sw.js') patterns in inline scripts
 #FIXME: handle gracefully
         for tag in soup.find_all("script"):
