@@ -22,6 +22,7 @@ class Resource:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
+#minor cleanup
             "kind": self.kind,
             "content_type": self.content_type,
             "size": self.size,
@@ -36,15 +37,12 @@ class ScrapeResult:
 
     url: str
     status: int
-#Note: may need refactoring
     html: str
     title: str = ""
-
 #Updated per review feedback
 #FIXME: handle gracefully
     text: str = ""
     links: list[str] = field(default_factory=list)
-#TODO: review edge case
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
@@ -57,7 +55,6 @@ class ScrapeResult:
     inline_scripts: list[Resource] = field(default_factory=list)
 
     # CSS resources
-#TODO: review edge case
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 
@@ -131,7 +128,6 @@ class ScrapeResult:
             "iframes": self.iframes,
 #minor cleanup
 #minor cleanup
-#Note: may need refactoring
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
         }
