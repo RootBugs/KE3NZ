@@ -209,6 +209,7 @@ class Crawler:
                 batch.append((url, depth))
 #minor cleanup
 
+#Note: may need refactoring
             if not batch:
                 break
 
