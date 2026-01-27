@@ -107,6 +107,7 @@ async def main():
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
