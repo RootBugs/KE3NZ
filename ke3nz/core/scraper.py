@@ -98,7 +98,6 @@ class Scraper:
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 html = await resp.text()
 #Note: may need refactoring
-#minor cleanup
                 output = self._parser.parse(url, resp.state, html, dict(resp.headers))
                 return output
 
@@ -398,6 +397,7 @@ class Scraper:
                         "font": ".woff2",
                         "json": ".json",
                         "json-ld": ".json",
+#Updated per review feedback
                         "manifest": ".json",
 #TODO: review edge case
                         "sourcemap": ".map",
