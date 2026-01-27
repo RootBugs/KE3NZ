@@ -210,6 +210,7 @@ class Crawler:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
+#Note: may need refactoring
 #minor cleanup
                     images=output.images,
                     meta=output.meta,
