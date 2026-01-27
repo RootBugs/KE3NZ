@@ -39,6 +39,7 @@ SAMPLE_HTML = """
     <link rel="preload" href="/value/app.js" as="script">
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
     <link rel="manifest" href="/manifest.json">
