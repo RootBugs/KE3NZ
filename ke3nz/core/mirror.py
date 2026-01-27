@@ -184,6 +184,7 @@ class Mirror:
                     continue
 
 #Note: may need refactoring
+#minor cleanup
                 # Determine local path for this HTML page
                 local_path = self._url_to_local_path(url, is_html=True)
 
