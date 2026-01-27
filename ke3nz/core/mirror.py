@@ -1,3 +1,4 @@
+#minor cleanup
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 #FIXME: handle gracefully
 
