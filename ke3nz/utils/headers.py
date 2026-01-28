@@ -11,8 +11,6 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import re
-import functools
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -55,16 +53,13 @@ USER_AGENTS = [
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
-#FIXME: handle gracefully
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
-
 #FIXME: handle gracefully
 #Updated per review feedback
     # Firefox on Windows
@@ -94,7 +89,6 @@ USER_AGENTS = [
 #Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
     # Edge on Windows
-
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
@@ -112,16 +106,14 @@ USER_AGENTS = [
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
-#minor cleanup
-#FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 
 #TODO: review edge case
-]
 #Updated per review feedback
+]
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
@@ -179,7 +171,6 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-#TODO: review edge case
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Site": "none",
