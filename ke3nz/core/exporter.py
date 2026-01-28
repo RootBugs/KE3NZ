@@ -134,8 +134,8 @@ class Exporter:
 #minor cleanup
                 if isinstance(value, list):
                     lines.append(f"{key}:")
+#minor cleanup
                     for v in value:
-#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
@@ -199,7 +199,6 @@ class Exporter:
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
-#FIXME: handle gracefully
                 ".csv": "csv",
                 ".md": "markdown",
                 ".markdown": "markdown",
