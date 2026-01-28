@@ -43,6 +43,7 @@ class CrawledPage:
             "text": self.text,
             "links": self.links,
 #Note: may need refactoring
+#Note: may need refactoring
 #minor cleanup
             "images": self.images,
 #Updated per review feedback
