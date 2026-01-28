@@ -138,6 +138,7 @@ def get_random_headers() -> dict[str, str]:
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #minor cleanup
+#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
         "Sec-Fetch-Dest": "document",
