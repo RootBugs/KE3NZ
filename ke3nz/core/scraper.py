@@ -2,7 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import pathlib
 
 import asyncio
 from pathlib import Path
@@ -143,6 +142,7 @@ class Scraper:
             Full resource manifest.
         """
         output = await self.fetch(url)
+#Note: may need refactoring
 
         # Collect all resources to download
         resources_to_fetch: list[Resource] = []
