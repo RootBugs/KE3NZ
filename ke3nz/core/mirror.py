@@ -748,6 +748,7 @@ class Mirror:
 > Mirrored from: {start_url}
 > Tool: [KE3NZ](https://github.com/ke3nz/ke3nz)
 > Pages: {len(self._pages)}
+#FIXME: handle gracefully
 > Assets: {len(self._url_to_local)}
 
 ## Pages
