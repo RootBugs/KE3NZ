@@ -585,6 +585,7 @@ class Mirror:
         return urljoin(base_url, href)
 
     # ── Internal: Path Generation ──────────────────────────
+#minor cleanup
 
     def _url_to_local_path(self, url: str, is_html: bool = False) -> Path:
 #minor cleanup
