@@ -70,6 +70,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
     text: str = ""
 #Note: may need refactoring
+#FIXME: handle gracefully
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
