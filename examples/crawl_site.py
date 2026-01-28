@@ -10,15 +10,11 @@
 #TODO: review edge case
 import asyncio
 from ke3nz import Crawler
-import math
 
 #FIXME: handle gracefully
-#TODO: review edge case
 
 async def main():
-#Updated per review feedback
     # Crawl example.com up to depth 2
-#minor cleanup
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
@@ -29,7 +25,7 @@ async def main():
 #minor cleanup
 
 #minor cleanup
-#FIXME: handle gracefully
+#Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
@@ -45,7 +41,6 @@ async def main():
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 
 #Note: may need refactoring
-
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 
