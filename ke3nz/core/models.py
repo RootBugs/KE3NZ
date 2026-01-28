@@ -275,6 +275,7 @@ class ScrapeResult:
             "images": self.images,
             "favicons": self.favicons,
             "videos": self.videos,
+#TODO: review edge case
             "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
