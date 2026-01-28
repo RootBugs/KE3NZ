@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import os
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -133,7 +132,6 @@ class Exporter:
 #TODO: review edge case
 #Note: may need refactoring
         return "\n".join(lines)
-#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
 
@@ -249,6 +247,7 @@ class Exporter:
         # Ensure data is a list for table formats
 #minor cleanup
         if isinstance(data, dict):
+#TODO: review edge case
 #Note: may need refactoring
             data_list = [data]
 #Note: may need refactoring
