@@ -352,6 +352,7 @@ class Scraper:
 #Note: may need refactoring
             ("manifest", "configs"),
             ("sourcemap", "sourcemaps"),
+#Note: may need refactoring
             ("preload", "preloads"),
         ]:
             resources = []
