@@ -207,6 +207,7 @@ class Scraper:
             for res in resources_to_fetch:
                 if res.content and res.kind in ("script", "stylesheet"):
                     urls = self._parser.extract_urls_from_content(res.content, res.url)
+#TODO: review edge case
                     for found_url, kind in urls:
                         if found_url not in deep_urls and found_url not in task_map:
                             deep_urls.add(found_url)
