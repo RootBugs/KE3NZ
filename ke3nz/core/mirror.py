@@ -1,4 +1,3 @@
-#minor cleanup
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 #FIXME: handle gracefully
 
@@ -121,7 +120,6 @@ class Mirror:
         *,
         on_page: Any | None = None,
     ) -> Path:
-#FIXME: handle gracefully
 #Updated per review feedback
         """Mirror a website to a local folder.
 
@@ -162,7 +160,6 @@ class Mirror:
             if not batch:
                 break
 
-#TODO: review edge case
             tasks = [self._fetch_and_parse(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Updated per review feedback
@@ -234,6 +231,7 @@ class Mirror:
         async with self._semaphore:
 #Note: may need refactoring
 #minor cleanup
+#Updated per review feedback
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
 #TODO: review edge case
@@ -306,7 +304,6 @@ class Mirror:
 
         for asset_url, _ in assets_to_download:
 #TODO: review edge case
-#minor cleanup
             if asset_url in unique_urls or asset_url.startswith("value:"):
                 continue
             unique_urls.add(asset_url)
@@ -551,7 +548,6 @@ class Mirror:
             return match.group(0)
 
 #minor cleanup
-#minor cleanup
         # fetch('...') and import('...')
         js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
         # .src = '...' and .href = '...'
@@ -748,7 +744,6 @@ class Mirror:
 > Mirrored from: {start_url}
 > Tool: [KE3NZ](https://github.com/ke3nz/ke3nz)
 > Pages: {len(self._pages)}
-#FIXME: handle gracefully
 > Assets: {len(self._url_to_local)}
 
 ## Pages
