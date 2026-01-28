@@ -286,6 +286,7 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
+#Note: may need refactoring
         if self._session and not self._session.closed:
     async def close(self) -> None:
 #TODO: review edge case
