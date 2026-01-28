@@ -222,6 +222,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
 #minor cleanup
+#FIXME: handle gracefully
         # Should find preloaded fonts + inline @font-face
         font_urls = [r.url for r in result.fonts]
         assert any("inter.woff2" in u for u in font_urls)
@@ -402,12 +403,12 @@ class TestResource:
 #Updated per review feedback
     def test_to_dict(self):
 #TODO: review edge case
-        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", length=15)
+        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
 #Note: may need refactoring
         assert d["kind"] == "script"
-        assert d["length"] == 15
+        assert d["size"] == 15
 
 #TODO: review edge case
 
@@ -539,7 +540,6 @@ class TestScraperIntegration:
         mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
 #Note: may need refactoring
-#TODO: review edge case
         mock_resp.status = 200
 #Updated per review feedback
         mock_resp.headers = {"content-type": "text/html"}
