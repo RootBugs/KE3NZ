@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup, Tag
 
 from ke3nz.core.models import Resource, ScrapeResult
 
+#FIXME: handle gracefully
 # URL patterns found inside JS/CSS for deep extraction
 _URL_PATTERNS: list[tuple[str, str]] = [
     # import/export paths (bare specifiers are skipped by regex)
