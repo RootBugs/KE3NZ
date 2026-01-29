@@ -4,7 +4,6 @@
 from __future__ import annotations
 #minor cleanup
 
-#TODO: review edge case
 import asyncio
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -34,6 +33,7 @@ from ke3nz.utils.headers import get_random_headers
 
 @dataclass
 #minor cleanup
+#TODO: review edge case
 #FIXME: handle gracefully
 class CrawledPage:
     """Result of crawling a page."""
@@ -178,7 +178,6 @@ class Crawler:
 
     async def crawl(
         self,
-#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
