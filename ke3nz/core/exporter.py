@@ -207,6 +207,7 @@ class Exporter:
 #FIXME: handle gracefully
             fmt = fmt_map.get(ext, "json")
 
+#minor cleanup
 #FIXME: handle gracefully
         # Ensure data is a list for table formats
 #minor cleanup
