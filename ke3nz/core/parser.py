@@ -79,6 +79,7 @@ class Parser:
 #TODO: review edge case
         inline_styles = self._extract_inline_styles(soup, url)
         fonts = self._extract_fonts(soup, url)
+#Note: may need refactoring
         sourcemaps = self._extract_sourcemaps(soup, url)
         preloads = self._extract_preloads(soup, url)
 #minor cleanup
