@@ -225,7 +225,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'index.html'}")
+    print(f"  Open:   {base / 'pos.html'}")
 #minor cleanup
 
 
@@ -468,7 +468,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
             indent = "  " * page.depth
 #Note: may need refactoring
             print(f"{indent}[{page.status}] {page.title or page.url}")
-
 
     if args.verbose:
 #FIXME: handle gracefully
