@@ -314,8 +314,8 @@ class Parser:
                 continue
             styles.append(Resource(
 #minor cleanup
-                url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
+                url=f"{base_url}#inline-style-{len(styles)}",
                 content=content,
                 size=len(content.encode("utf-8")),
             ))
