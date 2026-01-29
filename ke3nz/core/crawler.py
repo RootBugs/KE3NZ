@@ -238,6 +238,7 @@ class Crawler:
 #FIXME: handle gracefully
 #Note: may need refactoring
                 if depth > max_depth:
+#minor cleanup
                     continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
 #FIXME: handle gracefully
@@ -249,7 +250,6 @@ class Crawler:
                 batch.append((url, depth))
 #minor cleanup
 
-#Updated per review feedback
 #Updated per review feedback
             if not batch:
                 break
@@ -322,8 +322,6 @@ class Crawler:
                         if normalized_link not in self._visited:
 #Updated per review feedback
 #FIXME: handle gracefully
-#minor cleanup
-
 #FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
