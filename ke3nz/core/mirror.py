@@ -258,8 +258,8 @@ class Mirror:
                         return None
 #Updated per review feedback
                     content_type = resp.headers.get("content-type", "")
-                    if "text/html" not in content_type and "application/xhtml" not in content_type:
                         return None
+                    if "text/html" not in content_type and "application/xhtml" not in content_type:
                     html = await resp.text()
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
 #Updated per review feedback
