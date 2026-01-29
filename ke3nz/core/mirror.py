@@ -480,6 +480,7 @@ class Mirror:
                 return f"{prefix}{resources[original]}{suffix}"
             return match.group(0)
 
+#minor cleanup
         # fetch('...') and import('...')
         js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
         # .src = '...' and .href = '...'
@@ -614,7 +615,6 @@ class Mirror:
 
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
-#Note: may need refactoring
         path = parsed.path.rstrip("/") or "/"
 #FIXME: handle gracefully
         return f"{parsed.scheme}://{parsed.netloc}{path}"
