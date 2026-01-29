@@ -202,6 +202,7 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
         # Format the output
+#TODO: review edge case
         formatters = {
 #minor cleanup
             "json": lambda d: cls.to_json(d),
