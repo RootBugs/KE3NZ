@@ -134,6 +134,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 
 
 # ── Commands ───────────────────────────────────────────────
+#TODO: review edge case
 
 
 async def cmd_mirror(args: argparse.Namespace) -> None:
