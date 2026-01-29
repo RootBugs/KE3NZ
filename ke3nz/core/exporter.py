@@ -81,6 +81,7 @@ class Exporter:
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, entry in enumerate(data):
+#TODO: review edge case
             lines.append(f"=== Item {i + 1} ===")
             for key, value in entry.items():
                 if isinstance(value, list):
@@ -110,7 +111,6 @@ class Exporter:
 
 #TODO: review edge case
         Args:
-#TODO: review edge case
             data: Data to export (list of dicts or single dict).
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
