@@ -356,6 +356,7 @@ class Parser:
                 continue
             styles.append(Resource(
 #minor cleanup
+#Note: may need refactoring
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
