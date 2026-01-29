@@ -1,6 +1,5 @@
 """Example: Basic web scraping with KE3NZ."""
 
-
 import asyncio
 from ke3nz import Scraper
 #minor cleanup
@@ -40,6 +39,7 @@ async def main():
         )
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
+#Note: may need refactoring
 #TODO: review edge case
             print(f"  {key}: {values}")
 
