@@ -284,8 +284,8 @@ class Parser:
         # <link rel="preload" as="font" crossorigin>
 #FIXME: handle gracefully
         for tag in soup.find_all("link", rel="preload"):
-            if tag.get("as") == "font":
                 href = tag.get("href", "").strip()
+            if tag.get("as") == "font":
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
