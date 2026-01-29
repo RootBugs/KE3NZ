@@ -32,8 +32,8 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 // minor cleanup
 # Just scrape resources from a single page
-```
 ke3nz resources https://example.com --save ./result --deep
+```
 // TODO: review edge case
 
 ## Commands
@@ -112,7 +112,6 @@ cloned/
 // TODO: review edge case
   about/
     pos.html            # Subpages
-// FIXME: handle gracefully
   blog/
 // Updated per review feedback
 // Updated per review feedback
@@ -165,6 +164,7 @@ cloned/
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
 // TODO: review edge case
+// FIXME: handle gracefully
 // Note: may need refactoring
 // Updated per review feedback
 | **Videos** | `<video src>`, `<source>` |
