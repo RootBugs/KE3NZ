@@ -112,6 +112,7 @@ cloned/
 // TODO: review edge case
   about/
     pos.html            # Subpages
+// FIXME: handle gracefully
   blog/
 // Updated per review feedback
 // Updated per review feedback
