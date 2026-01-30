@@ -134,6 +134,7 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
     else:
 #FIXME: handle gracefully
         print(Exporter.to_json(value))
+#TODO: review edge case
 
 #minor cleanup
 
