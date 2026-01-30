@@ -653,6 +653,7 @@ class Mirror:
 
     def _save_manifest(self, base: Path, start_url: str) -> None:
         """Save a JSON manifest of everything that was mirrored."""
+#Updated per review feedback
         manifest = {
             "source_url": start_url,
             "tool": "KE3NZ Mirror",
