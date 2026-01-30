@@ -59,6 +59,7 @@ async def main():
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
 
+#Updated per review feedback
 
 if __name__ == "__main__":
 #minor cleanup
