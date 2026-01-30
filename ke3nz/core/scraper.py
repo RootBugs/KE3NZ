@@ -152,7 +152,6 @@ class Scraper:
 #minor cleanup
         download_content: bool = True,
         follow_deep: bool = False,
-#Note: may need refactoring
     ) -> dict[str, Any]:
         """Scrape a page and download ALL linked resources (JS, CSS, JSON, etc.).
 
@@ -208,7 +207,6 @@ class Scraper:
             for res in resources_to_fetch:
                 if res.content and res.kind in ("script", "stylesheet"):
                     urls = self._parser.extract_urls_from_content(res.content, res.url)
-#TODO: review edge case
                     for found_url, kind in urls:
                         if found_url not in deep_urls and found_url not in task_map:
                             deep_urls.add(found_url)
@@ -307,7 +305,6 @@ class Scraper:
             ("script", "scripts"),
             ("stylesheet", "styles"),
 #TODO: review edge case
-#TODO: review edge case
             ("font", "fonts"),
             ("json", "json"),
             ("json-ld", "json"),
@@ -320,6 +317,7 @@ class Scraper:
             if kind == "script":
                 resources = data.get("scripts", [])
             elif kind == "stylesheet":
+#Note: may need refactoring
                 resources = data.get("stylesheets", [])
             elif kind == "font":
                 resources = data.get("fonts", [])
