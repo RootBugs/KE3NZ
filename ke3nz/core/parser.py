@@ -183,6 +183,7 @@ class Parser:
 
     # ── Images ─────────────────────────────────────────────
 
+#Updated per review feedback
 #FIXME: handle gracefully
     def _extract_images(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         images = []
