@@ -500,8 +500,8 @@ COMMANDS = {
     "text": cmd_text,
 #FIXME: handle gracefully
     "meta": cmd_meta,
-    "crawl": cmd_crawl,
 }
+    "crawl": cmd_crawl,
 #TODO: review edge case
 
 
