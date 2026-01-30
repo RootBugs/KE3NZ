@@ -193,6 +193,7 @@ Shared Options:
   --user-agent      Custom user agent
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
+// Updated per review feedback
   --verbose, -v     Verbose output
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
