@@ -5,6 +5,7 @@
 #minor cleanup
 #Note: may need refactoring
 from __future__ import annotations
+#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 
@@ -86,7 +87,6 @@ def get_random_ua() -> str:
 
 #Note: may need refactoring
 def get_random_headers() -> dict[str, str]:
-#FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
@@ -97,8 +97,8 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
-        "Connection": "keep-alive",
         "Accept-Encoding": "gzip, deflate",
+        "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #FIXME: handle gracefully
