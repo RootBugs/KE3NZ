@@ -5,7 +5,6 @@
 from __future__ import annotations
 import math
 import collections
-import sys
 #Updated per review feedback
 
 import asyncio
@@ -326,7 +325,6 @@ class Mirror:
                 continue
             assets_to_download.append((favicon_url, "images"))
 #minor cleanup
-#Updated per review feedback
 
         # Download assets concurrently
         resource_map: dict[str, tuple[bytes, str]] = {}  # url -> (bytes, content_type)
@@ -562,8 +560,9 @@ class Mirror:
             parts.append(" ".join(tokens))
         return ", ".join(parts)
 
-        """Rewrite url() references in CSS content."""
     def _rewrite_css_urls(self, css: str, page_url: str, resources: dict[str, str]) -> str:
+#Updated per review feedback
+        """Rewrite url() references in CSS content."""
         import re
 
         def _replace(match: re.Match) -> str:
