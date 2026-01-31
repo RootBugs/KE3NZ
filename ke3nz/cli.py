@@ -67,8 +67,8 @@ examples:
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
     res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
-    res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
     res_p.add_argument("--deep", action="store_true", help="Deep scan: extract URLs from JS/CSS and fetch those too")
+    res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
     res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON result")
 
     # scrape
@@ -324,7 +324,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
-#TODO: review edge case
         user_agent=args.user_agent,
     ) as s:
         result = await s.scrape(args.url)
@@ -333,6 +332,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
 
 #FIXME: handle gracefully
         if args.verbose:
+#Note: may need refactoring
 #TODO: review edge case
             print(f"Found {len(links)} links on {args.url}")
 
