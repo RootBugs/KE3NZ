@@ -49,10 +49,10 @@ class Exporter:
             flat_data.append(flat)
 
 #Updated per review feedback
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
         if flat_data:
-            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
 #Note: may need refactoring
@@ -139,7 +139,6 @@ class Exporter:
         Returns:
 #minor cleanup
 #minor cleanup
-#minor cleanup
 #Note: may need refactoring
             The formatted string that was written.
         """
@@ -173,7 +172,6 @@ class Exporter:
 
 #FIXME: handle gracefully
 #Note: may need refactoring
-
 #Updated per review feedback
         # Format the output
         formatters = {
