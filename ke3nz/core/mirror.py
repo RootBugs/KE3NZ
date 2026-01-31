@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import pathlib
 
 import asyncio
 import hashlib
@@ -46,7 +45,6 @@ class MirroredPage:
 #minor cleanup
     resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
 
-#FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
@@ -82,7 +80,6 @@ class Mirror:
     ):
 #minor cleanup
         self.delay = delay
-
         self.concurrency = concurrency
         self.timeout = aiohttp.ClientTimeout(count=timeout)
 #Note: may need refactoring
@@ -184,7 +181,6 @@ class Mirror:
                     continue
 
 #Note: may need refactoring
-#minor cleanup
                 # Determine local path for this HTML page
                 local_path = self._url_to_local_path(url, is_html=True)
 
@@ -258,8 +254,8 @@ class Mirror:
                         return None
 #Updated per review feedback
                     content_type = resp.headers.get("content-type", "")
-                        return None
                     if "text/html" not in content_type and "application/xhtml" not in content_type:
+                        return None
                     html = await resp.text()
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
 #Updated per review feedback
@@ -594,6 +590,7 @@ class Mirror:
         resolved = (base / local_path).resolve()
         try:
             resolved.relative_to(base.resolve())
+#minor cleanup
         except ValueError:
             raise ValueError(
                 f"Path traversal detected: {local_path} resolves outside "
