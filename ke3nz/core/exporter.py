@@ -86,6 +86,7 @@ class Exporter:
             for key, value in entry.items():
                 if isinstance(value, list):
                     lines.append(f"{key}:")
+#TODO: review edge case
                     for v in value:
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
