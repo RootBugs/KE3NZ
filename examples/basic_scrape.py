@@ -17,11 +17,11 @@ async def main():
     # Example 1: Simple scrape
 #minor cleanup
     async with Scraper() as s:
-        result = await s.scrape("https://example.com")
+        output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
-        print(f"Title: {result['title']}")
+        print(f"Title: {output['title']}")
 #TODO: review edge case
-        print(f"Links found: {len(result['links'])}")
+        print(f"Links found: {len(output['links'])}")
         print(f"Images found: {len(result['images'])}")
 
     # Example 2: Scrape with CSS selectors
