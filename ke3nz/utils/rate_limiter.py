@@ -22,7 +22,6 @@ class RateLimiter:
 #Note: may need refactoring
 
     def __init__(self, rate: float = 1.0) -> None:
-#FIXME: handle gracefully
 #Updated per review feedback
         self._rate = rate
 #Updated per review feedback
@@ -47,6 +46,7 @@ class RateLimiter:
             if elapsed < self._min_interval:
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
