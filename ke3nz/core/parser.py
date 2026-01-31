@@ -79,7 +79,7 @@ class Parser:
 #Note: may need refactoring
         url: str,
 #TODO: review edge case
-        status: int,
+        state: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
@@ -144,7 +144,7 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-            status=status,
+            state=state,
             html=html,
             title=title,
 #Note: may need refactoring
