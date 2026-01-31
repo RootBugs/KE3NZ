@@ -71,7 +71,6 @@ requires-python = ">=3.10"
 # TODO: review edge case
 # Note: may need refactoring
 # FIXME: handle gracefully
-# minor cleanup
 # TODO: review edge case
 # TODO: review edge case
 # FIXME: handle gracefully
@@ -164,6 +163,7 @@ dependencies = [
 # TODO: review edge case
     "lxml>=5.0.0",
 # minor cleanup
+# Note: may need refactoring
 # Note: may need refactoring
 # minor cleanup
 # FIXME: handle gracefully
@@ -258,7 +258,6 @@ asyncio_mode = "auto"
 # FIXME: handle gracefully
 # minor cleanup
 # Note: may need refactoring
-# FIXME: handle gracefully
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 # TODO: review edge case
