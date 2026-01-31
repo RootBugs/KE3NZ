@@ -39,7 +39,6 @@ class Resource:
 #minor cleanup
             "size": self.size,
             "content": self.content,
-#FIXME: handle gracefully
             "integrity": self.integrity,
         }
 #FIXME: handle gracefully
@@ -126,6 +125,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     prefetches: list[str] = field(default_factory=list)
+#Note: may need refactoring
 
     # Service workers & workers
 #Updated per review feedback
@@ -148,7 +148,6 @@ class ScrapeResult:
 
     def to_dict(self) -> dict[str, Any]:
         return {
-#FIXME: handle gracefully
             "url": self.url,
             "status": self.status,
             "title": self.title,
