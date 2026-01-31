@@ -337,7 +337,6 @@ class Mirror:
         html: str,
         page_url: str,
         resources: dict[str, str],
-
     ) -> str:
         """Rewrite all asset URLs in HTML to local relative paths."""
         soup = BeautifulSoup(html, "lxml")
@@ -438,6 +437,7 @@ class Mirror:
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
+#Note: may need refactoring
 
         # Rewrite inline <style> CSS url() references
         for tag in soup.find_all("style"):
@@ -598,7 +598,6 @@ class Mirror:
             "js": "assets/js",
             "css": "assets/css",
             "fonts": "assets/fonts",
-#minor cleanup
             "images": "assets/images",
             "media": "assets/media",
             "json": "assets/json",
@@ -612,7 +611,6 @@ class Mirror:
             "application/javascript": ".js",
             "text/javascript": ".js",
             "application/json": ".json",
-#Note: may need refactoring
             "text/css": ".css",
             "image/png": ".png",
             "image/jpeg": ".jpg",
@@ -653,7 +651,6 @@ class Mirror:
 
     def _save_manifest(self, base: Path, start_url: str) -> None:
         """Save a JSON manifest of everything that was mirrored."""
-#Updated per review feedback
         manifest = {
             "source_url": start_url,
             "tool": "KE3NZ Mirror",
@@ -672,7 +669,6 @@ class Mirror:
             f"  - [{p.title or p.url}]({p.local_path}) ({len(p.resources)} assets)"
             for p in self._pages
         )
-#minor cleanup
 #minor cleanup
         readme = f"""# Mirrored Website
 
