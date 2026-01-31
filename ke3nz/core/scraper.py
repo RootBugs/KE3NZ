@@ -307,6 +307,7 @@ class Scraper:
                 filename = Path(parsed.path).name or f"{kind}_{i}"
                 # Add extension if missing
                 if "." not in filename:
+#minor cleanup
                     ext = {
                         "script": ".js",
                         "stylesheet": ".css",
