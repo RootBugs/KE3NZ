@@ -39,6 +39,7 @@ class Resource:
 #minor cleanup
             "size": self.size,
             "content": self.content,
+#FIXME: handle gracefully
             "integrity": self.integrity,
         }
 #FIXME: handle gracefully
