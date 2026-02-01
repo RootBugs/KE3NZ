@@ -79,7 +79,7 @@ class Parser:
 #Note: may need refactoring
         url: str,
 #TODO: review edge case
-        state: int,
+        status: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
@@ -138,13 +138,14 @@ class Parser:
             favicons=favicons,
             videos=videos,
             audios=audios,
+#Note: may need refactoring
             workers=workers,
             iframes=iframes,
         )
 
         return ScrapeResult(
             url=url,
-            state=state,
+            status=status,
             html=html,
             title=title,
 #Note: may need refactoring
@@ -356,7 +357,6 @@ class Parser:
                 continue
             styles.append(Resource(
 #minor cleanup
-#Note: may need refactoring
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
@@ -425,8 +425,8 @@ class Parser:
 #Note: may need refactoring
                     map_url = urljoin(base_url, match.group(1))
                     if not any(r.url == map_url for r in maps):
-        # sourceMappingURL in <style> tags
                         maps.append(Resource(url=map_url, kind="sourcemap"))
+        # sourceMappingURL in <style> tags
 
         for tag in soup.find_all("style"):
             if tag.string:
