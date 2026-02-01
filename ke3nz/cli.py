@@ -285,8 +285,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
 
         # Strip content from output unless requested
-        output_data = data
         if not args.save_content:
+        output_data = data
             output_data = _strip_content(data)
 
         _output(output_data, args.output, args.format)
