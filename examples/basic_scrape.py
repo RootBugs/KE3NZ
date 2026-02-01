@@ -23,7 +23,6 @@ import random
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 
@@ -142,6 +141,7 @@ async def main():
         results = await s.fetch_many(urls)
 #Note: may need refactoring
 #FIXME: handle gracefully
+#TODO: review edge case
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
