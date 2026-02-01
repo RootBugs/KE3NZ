@@ -269,6 +269,7 @@ KE3NZ/
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
+// TODO: review edge case
   tests/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
