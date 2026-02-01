@@ -130,6 +130,7 @@ async def main():
 #FIXME: handle gracefully
 #minor cleanup
         for key, values in items["selector_results"].items():
+#minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
@@ -155,7 +156,6 @@ async def main():
         "https://example.com",
 #Updated per review feedback
 #Note: may need refactoring
-#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
