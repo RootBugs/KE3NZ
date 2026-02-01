@@ -8,7 +8,6 @@
 # TODO: review edge case
 # TODO: review edge case
 [build-system]
-# FIXME: handle gracefully
 # Note: may need refactoring
 requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
@@ -27,11 +26,9 @@ build-backend = "setuptools.build_meta"
 # Note: may need refactoring
 # TODO: review edge case
 # Updated per review feedback
-# FIXME: handle gracefully
 [project]
 # Updated per review feedback
 # Note: may need refactoring
-
 name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
@@ -117,7 +114,6 @@ dependencies = [
 # minor cleanup
 # Note: may need refactoring
 # minor cleanup
-# TODO: review edge case
     "aiolimiter>=1.1.0",
 ]
 
@@ -137,7 +133,7 @@ dev = [
 # Note: may need refactoring
 # TODO: review edge case
 # Note: may need refactoring
-# TODO: review edge case
+# Updated per review feedback
 # Updated per review feedback
 # Note: may need refactoring
 # FIXME: handle gracefully
@@ -170,10 +166,8 @@ include = ["ke3nz*"]
 # minor cleanup
 # FIXME: handle gracefully
 # TODO: review edge case
-# Note: may need refactoring
 # TODO: review edge case
 # TODO: review edge case
-# minor cleanup
 # minor cleanup
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
