@@ -11,7 +11,6 @@ from bs4 import BeautifulSoup, Tag
 
 from ke3nz.core.models import Resource, ScrapeResult
 
-#FIXME: handle gracefully
 # URL patterns found inside JS/CSS for deep extraction
 _URL_PATTERNS: list[tuple[str, str]] = [
     # import/export paths (bare specifiers are skipped by regex)
@@ -19,6 +18,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
     # fetch / XMLHttpRequest
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
+#FIXME: handle gracefully
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
     # Dynamic script / link injection
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
@@ -152,7 +152,6 @@ class Parser:
 
 #FIXME: handle gracefully
     # ── Links ──────────────────────────────────────────────
-#Updated per review feedback
 
     def _extract_links(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         links = []
@@ -293,7 +292,6 @@ class Parser:
                 sheets.append(Resource(
                     url=full_url,
                     kind="stylesheet",
-#FIXME: handle gracefully
                     integrity=tag.get("integrity", ""),
                 ))
         return sheets
@@ -314,8 +312,8 @@ class Parser:
                 continue
             styles.append(Resource(
 #minor cleanup
-                kind="inline-style",
                 url=f"{base_url}#inline-style-{len(styles)}",
+                kind="inline-style",
                 content=content,
                 size=len(content.encode("utf-8")),
             ))
@@ -505,8 +503,8 @@ class Parser:
 #Note: may need refactoring
         workers = []
         for tag in soup.find_all("script", type="module"):
-            pass
             # Module workers registered via registration API — not directly in HTML
+            pass
         # navigator.serviceWorker.register('/sw.js') patterns in inline scripts
 #FIXME: handle gracefully
         for tag in soup.find_all("script"):
