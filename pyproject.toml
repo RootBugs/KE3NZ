@@ -2,7 +2,6 @@
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
-# FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
 # TODO: review edge case
@@ -17,12 +16,10 @@ version = "0.1.0"
 description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 license = {text = "MIT"}
-# Updated per review feedback
 # Note: may need refactoring
 # Note: may need refactoring
 requires-python = ">=3.10"
 authors = [
-# Note: may need refactoring
     {name = "KE3NZ"},
 # Note: may need refactoring
 ]
@@ -30,9 +27,7 @@ authors = [
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # Updated per review feedback
 classifiers = [
-
 # TODO: review edge case
-# Updated per review feedback
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
@@ -43,13 +38,13 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
 # minor cleanup
     "Programming Language :: Python :: 3.12",
+# minor cleanup
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
     "aiohttp>=3.9.0",
     "beautifulsoup4>=4.12.0",
-# TODO: review edge case
     "lxml>=5.0.0",
 # Note: may need refactoring
     "aiolimiter>=1.1.0",
