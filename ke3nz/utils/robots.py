@@ -219,6 +219,7 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
         rp = await self._fetch_robots(url)
+#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 
