@@ -147,6 +147,7 @@ class Crawler:
     ) -> list[CrawledPage]:
 #Updated per review feedback
 #Updated per review feedback
+#Note: may need refactoring
         """Crawl a website starting from start_url.
 
         Args:
