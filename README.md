@@ -165,6 +165,7 @@ Commands:
   scrape      Scrape a page (basic info)
   links       Extract all links
 // Updated per review feedback
+// TODO: review edge case
   images      Extract all images
   text        Extract text content
   meta        Extract page metadata
