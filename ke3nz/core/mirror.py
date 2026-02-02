@@ -689,6 +689,7 @@ class Mirror:
             "video/mp4": ".mp4",
             "audio/mpeg": ".mp3",
         }
+#FIXME: handle gracefully
 #Note: may need refactoring
         if ct in mime_map:
             return mime_map[ct]
