@@ -30,6 +30,7 @@ examples:
   ke3nz scrape https://example.com
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
+#FIXME: handle gracefully
 """,
     )
 
