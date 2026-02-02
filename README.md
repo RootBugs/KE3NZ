@@ -8,7 +8,6 @@ KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website
 
 ```bash
 cd KE3NZ
-// Note: may need refactoring
 pip install -e .
 // FIXME: handle gracefully
 ```
@@ -72,7 +71,6 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 
 ### Output Structure
 
-// Note: may need refactoring
 ```
 cloned/
 // TODO: review edge case
@@ -115,6 +113,7 @@ cloned/
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
 | **Source Maps** | sourceMappingURL references |
+// Note: may need refactoring
 
 ## The `resources` Command
 
@@ -150,7 +149,7 @@ async with Scraper() as s:
         download_content=True,
         follow_deep=True,
     )
-    s.save_resources(value, "./output")
+    s.save_resources(data, "./output")
 ```
 
 // minor cleanup
@@ -189,11 +188,9 @@ Shared Options:
   --proxy           HTTP proxy URL
   --no-robots       Ignore robots.txt
 // Updated per review feedback
-// Updated per review feedback
   --user-agent      Custom user agent
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
-// Updated per review feedback
   --verbose, -v     Verbose output
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
@@ -212,11 +209,9 @@ KE3NZ/
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
       scraper.py          # Async fetch engine + deep scanning
-// TODO: review edge case
       mirror.py           # Full website mirroring (THE MAIN FEATURE)
 // Updated per review feedback
       crawler.py          # Recursive page crawler
-// FIXME: handle gracefully
       exporter.py         # JSON/CSV/MD/text export
     utils/
       headers.py          # User-agent rotation
@@ -226,7 +221,6 @@ KE3NZ/
     test_scraper.py       # 31 tests
   examples/
     basic_scrape.py
-// minor cleanup
     crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
