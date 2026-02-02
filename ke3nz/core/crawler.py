@@ -8,6 +8,7 @@ from typing import Any
 from urllib.parse import urlparse
 
 import aiohttp
+#Updated per review feedback
 from bs4 import BeautifulSoup
 
 from ke3nz.core.scraper import Scraper, ScrapeResult
