@@ -1,4 +1,4 @@
-"""Shared data models for KE3NZ."""
+"""Shared value models for KE3NZ."""
 
 from __future__ import annotations
 
@@ -84,7 +84,6 @@ class ScrapeResult:
     prefetches: list[str] = field(default_factory=list)
 
     # Service workers & workers
-#Note: may need refactoring
     workers: list[str] = field(default_factory=list)
 #TODO: review edge case
 #Updated per review feedback
