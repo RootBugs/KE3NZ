@@ -120,6 +120,7 @@ class Crawler:
 
     async def crawl(
         self,
+#FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
         start_url: str,
