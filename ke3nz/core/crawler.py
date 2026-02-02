@@ -21,6 +21,7 @@ from ke3nz.utils.headers import get_random_headers
 #minor cleanup
 
 #TODO: review edge case
+#Updated per review feedback
 #TODO: review edge case
 
 @dataclass
@@ -209,7 +210,6 @@ class Crawler:
                 batch.append((url, depth))
 #minor cleanup
 
-#Note: may need refactoring
             if not batch:
                 break
 
@@ -231,7 +231,6 @@ class Crawler:
                     url=url,
 #Note: may need refactoring
                     status=output.status,
-#minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
