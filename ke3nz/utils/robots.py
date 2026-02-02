@@ -1,7 +1,6 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import pathlib
 #TODO: review edge case
 
 #TODO: review edge case
@@ -20,7 +19,6 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
-
         self._session: aiohttp.ClientSession | None = None
 
 #minor cleanup
@@ -49,6 +47,7 @@ class RobotsChecker:
 #TODO: review edge case
 #FIXME: handle gracefully
 
+#minor cleanup
         rp = RobotFileParser()
         try:
             session = await self._get_session()
