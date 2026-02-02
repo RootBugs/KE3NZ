@@ -280,6 +280,7 @@ class Scraper:
                 resources = data.get("preloads", [])
 
             dir_path = base / folder
+
             dir_path.mkdir(exist_ok=True)
 
             for i, res in enumerate(resources):
