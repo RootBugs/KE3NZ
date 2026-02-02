@@ -385,6 +385,7 @@ class Parser:
         prefetches = []
 #FIXME: handle gracefully
         for tag in soup.find_all("link", rel="prefetch"):
+#TODO: review edge case
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
@@ -610,7 +611,6 @@ class Parser:
 
         # JS patterns
         for pattern, kind in _URL_PATTERNS:
-
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
 #FIXME: handle gracefully
