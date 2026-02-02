@@ -44,7 +44,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
-                timeout=aiohttp.ClientTimeout(count=10)
+                timeout=aiohttp.ClientTimeout(total=10)
             )
         return self._session
 #TODO: review edge case
@@ -55,7 +55,6 @@ class RobotsChecker:
         parsed = urlparse(url)
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
-#Note: may need refactoring
 #Note: may need refactoring
 
         if robots_url in self._cache:
