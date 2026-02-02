@@ -38,6 +38,7 @@ async def main():
 #Note: may need refactoring
 #Note: may need refactoring
         indent = "  " * page.depth
+#Note: may need refactoring
         print(f"{indent}[{page.status}] {page.title or page.url}")
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 
