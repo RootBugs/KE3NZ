@@ -134,7 +134,6 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
     else:
 #FIXME: handle gracefully
         print(Exporter.to_json(value))
-#TODO: review edge case
 
 #minor cleanup
 
@@ -284,9 +283,10 @@ async def cmd_resources(args: argparse.Namespace) -> None:
                 print(f"  Saved to: {base}")
 #Updated per review feedback
 
+#Note: may need refactoring
         # Strip content from output unless requested
-        if not args.save_content:
         output_data = data
+        if not args.save_content:
             output_data = _strip_content(data)
 
         _output(output_data, args.output, args.format)
@@ -476,7 +476,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 
     async with Crawler(
         delay=args.delay,
-#minor cleanup
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
