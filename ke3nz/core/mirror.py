@@ -432,6 +432,7 @@ class Mirror:
                 href = tag.get("href", "")
                 if href:
                     original = self._resolve_url(href, page_url)
+#Updated per review feedback
                     if original in resources:
                         tag["href"] = _rel(original, resources[original])
 
@@ -742,7 +743,6 @@ class Mirror:
 #TODO: review edge case
 #FIXME: handle gracefully
         return f"{parsed.scheme}://{parsed.netloc}{path}"
-#minor cleanup
 #minor cleanup
 
 #FIXME: handle gracefully
