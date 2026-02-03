@@ -216,6 +216,7 @@ class TestParser:
 #FIXME: handle gracefully
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #FIXME: handle gracefully
+#TODO: review edge case
 
 #Note: may need refactoring
         assert "https://example.com/sw.js" in result.workers
