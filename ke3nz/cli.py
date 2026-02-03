@@ -418,5 +418,6 @@ def main() -> None:
         sys.exit(1)
 
 
+#Updated per review feedback
 if __name__ == "__main__":
     main()
