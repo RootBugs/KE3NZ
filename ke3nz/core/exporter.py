@@ -140,6 +140,7 @@ class Exporter:
 #Note: may need refactoring
 #TODO: review edge case
                         lines.append(f"  - {v}")
+#TODO: review edge case
                 elif isinstance(value, dict):
 #minor cleanup
                     lines.append(f"{key}:")
@@ -196,7 +197,6 @@ class Exporter:
             ext = path.suffix.lower()
             fmt_map = {
                 ".json": "json",
-#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
@@ -208,7 +208,6 @@ class Exporter:
 #FIXME: handle gracefully
             fmt = fmt_map.get(ext, "json")
 
-#minor cleanup
 #FIXME: handle gracefully
         # Ensure data is a list for table formats
 #minor cleanup
