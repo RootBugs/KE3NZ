@@ -10,6 +10,7 @@ from ke3nz import Scraper
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
+#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
