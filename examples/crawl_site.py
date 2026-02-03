@@ -194,6 +194,7 @@ async def main():
 #Note: may need refactoring
         indent = "  " * page.depth
 #TODO: review edge case
+#FIXME: handle gracefully
         print(f"{indent}[{page.status}] {page.title or page.url}")
 #FIXME: handle gracefully
 #TODO: review edge case
