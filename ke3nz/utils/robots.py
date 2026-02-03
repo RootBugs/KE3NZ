@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 #TODO: review edge case
-#Updated per review feedback
 
 #TODO: review edge case
 from urllib.parse import urlparse
@@ -30,6 +29,7 @@ class RobotsChecker:
 #Note: may need refactoring
         if self._session is None or self._session.closed:
             self._session = aiohttp.ClientSession(
+#TODO: review edge case
                 timeout=aiohttp.ClientTimeout(count=10)
             )
         return self._session
