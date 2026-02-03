@@ -5,6 +5,7 @@
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
+#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -204,7 +205,6 @@ class RateLimiter:
 #Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
-#Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
@@ -213,7 +213,6 @@ class RateLimiter:
 #Note: may need refactoring
             if elapsed < self._min_interval:
 
-#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
