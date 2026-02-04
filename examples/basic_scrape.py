@@ -41,6 +41,7 @@ async def main():
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
 #TODO: review edge case
+#TODO: review edge case
             print(f"  {key}: {values}")
 
 #Note: may need refactoring
