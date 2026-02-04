@@ -14,6 +14,7 @@ import aiohttp
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
 
+#FIXME: handle gracefully
 #Updated per review feedback
     def __init__(self) -> None:
 #Updated per review feedback
