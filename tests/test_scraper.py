@@ -39,7 +39,6 @@ SAMPLE_HTML = """
     <link rel="preload" href="/value/app.js" as="script">
 #minor cleanup
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
     <link rel="manifest" href="/manifest.json">
@@ -216,7 +215,6 @@ class TestParser:
 #FIXME: handle gracefully
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #FIXME: handle gracefully
-#TODO: review edge case
 
 #Note: may need refactoring
         assert "https://example.com/sw.js" in result.workers
@@ -291,6 +289,7 @@ class TestParser:
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "heading": "h1",
             "cards": ".card",
+#TODO: review edge case
         })
 
 #TODO: review edge case
@@ -357,7 +356,6 @@ class TestParser:
 
         assert "https://cdn.example.com/lib.js" in url_list
         assert "https://api.example.com/data" in url_list
-#TODO: review edge case
 #TODO: review edge case
         assert "https://cdn.example.com/app.js.map" in url_list
 
