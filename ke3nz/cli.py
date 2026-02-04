@@ -278,6 +278,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
             result[key] = value
     return result
 
+#Note: may need refactoring
 
 async def cmd_scrape(args: argparse.Namespace) -> None:
     selectors = None
