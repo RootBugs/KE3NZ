@@ -402,6 +402,7 @@ class Parser:
 #FIXME: handle gracefully
         # @font-face in inline styles
 #Note: may need refactoring
+#TODO: review edge case
         for tag in soup.find_all("style"):
             if tag.string:
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
