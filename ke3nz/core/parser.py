@@ -445,6 +445,7 @@ class Parser:
 
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         preloads = []
+#TODO: review edge case
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
 #FIXME: handle gracefully
