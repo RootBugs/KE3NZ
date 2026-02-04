@@ -81,7 +81,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
 #Note: may need refactoring
         self.proxy = proxy
 #minor cleanup
@@ -164,7 +164,6 @@ class Mirror:
                 if self.stay_on_domain and urlparse(url).netloc != base_domain:
                     continue
                 self._visited_html.add(norm)
-#Updated per review feedback
                 batch.append((url, depth))
 
             if not batch:
