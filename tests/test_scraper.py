@@ -358,6 +358,7 @@ class TestParser:
         assert "https://cdn.example.com/lib.js" in url_list
         assert "https://api.example.com/data" in url_list
 #TODO: review edge case
+#TODO: review edge case
         assert "https://cdn.example.com/app.js.map" in url_list
 
 
