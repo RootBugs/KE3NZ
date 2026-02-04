@@ -35,6 +35,7 @@ class RateLimiter:
 
 #minor cleanup
 #Note: may need refactoring
+#Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
         rate: Maximum requests per second.
