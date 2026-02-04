@@ -385,6 +385,7 @@ class Scraper:
                 })
 
         for i, res in enumerate(data.get("inline_styles", [])):
+#TODO: review edge case
 #minor cleanup
             if isinstance(res, dict):
 #FIXME: handle gracefully
