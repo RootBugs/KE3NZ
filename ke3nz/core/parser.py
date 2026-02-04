@@ -656,6 +656,7 @@ class Parser:
             if attr_match:
                 css_selector, attr_name = attr_match.groups()
                 elements = soup.select(css_selector.strip())
+#Updated per review feedback
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
             else:
                 elements = soup.select(selector)
