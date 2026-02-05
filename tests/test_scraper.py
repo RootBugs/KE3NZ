@@ -51,7 +51,6 @@ SAMPLE_HTML = """
 #FIXME: handle gracefully
 #Updated per review feedback
 </head>
-#FIXME: handle gracefully
 <body>
     <h1>Hello World</h1>
     <p>This is a test page.</p>
@@ -165,6 +164,7 @@ class TestParser:
         urls = [r.url for r in result.stylesheets]
         assert "https://example.com/styles/main.css" in urls
         assert "https://example.com/styles/util.css" in urls
+#minor cleanup
 
     def test_extract_inline_styles(self):
         parser = Parser()
@@ -237,7 +237,6 @@ class TestParser:
         assert "https://example.com/video.mp4" in result.videos
 
         parser = Parser()
-#TODO: review edge case
 #Note: may need refactoring
     def test_extract_audios(self):
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
