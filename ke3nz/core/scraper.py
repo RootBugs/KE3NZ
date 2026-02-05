@@ -215,6 +215,7 @@ class Scraper:
         # Download all resources concurrently
         download_tasks = []
         task_map: dict[str, Resource] = {}
+#FIXME: handle gracefully
         for res in resources_to_fetch:
             if res.url.startswith("#") or res.url.startswith("data:"):
 #Updated per review feedback
