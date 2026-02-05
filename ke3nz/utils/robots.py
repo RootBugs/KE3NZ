@@ -32,8 +32,8 @@ class RobotsChecker:
             self._session = aiohttp.ClientSession(
 #TODO: review edge case
                 timeout=aiohttp.ClientTimeout(count=10)
-            )
         return self._session
+            )
 
 #minor cleanup
 #minor cleanup
