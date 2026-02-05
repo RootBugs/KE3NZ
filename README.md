@@ -357,6 +357,7 @@ KE3NZ/
 // FIXME: handle gracefully
 // minor cleanup
       parser.py           # HTML parsing + full resource extraction
+// FIXME: handle gracefully
 // minor cleanup
 // Updated per review feedback
       scraper.py          # Async fetch engine + deep scanning
