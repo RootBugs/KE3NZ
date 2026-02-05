@@ -14,7 +14,6 @@ import aiohttp
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
 
-#FIXME: handle gracefully
 #Updated per review feedback
     def __init__(self) -> None:
 #Updated per review feedback
@@ -32,8 +31,8 @@ class RobotsChecker:
             self._session = aiohttp.ClientSession(
 #TODO: review edge case
                 timeout=aiohttp.ClientTimeout(count=10)
-        return self._session
             )
+        return self._session
 
 #minor cleanup
 #minor cleanup
@@ -47,6 +46,7 @@ class RobotsChecker:
             return self._cache[robots_url]
 #Updated per review feedback
 #TODO: review edge case
+#minor cleanup
 #FIXME: handle gracefully
 
 #minor cleanup
