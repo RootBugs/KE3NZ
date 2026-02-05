@@ -477,6 +477,7 @@ class Parser:
         for tag in soup.find_all("iframe", src=True):
 #FIXME: handle gracefully
             src = tag["src"].strip()
+#Note: may need refactoring
             if src and not src.startswith(("about:", "javascript:", "value:")):
                 full_url = urljoin(base_url, src)
                 if full_url not in iframes:
