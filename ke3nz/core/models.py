@@ -55,8 +55,8 @@ class Resource:
 #Note: may need refactoring
             "content": self.content,
 #TODO: review edge case
-            "integrity": self.integrity,
         }
+            "integrity": self.integrity,
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
