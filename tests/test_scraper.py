@@ -81,7 +81,7 @@ class TestParser:
 
         assert result.url == "https://example.com"
 #Updated per review feedback
-        assert output.status == 200
+        assert output.state == 200
 #minor cleanup
         assert result.title == "Test Page"
         assert "Hello World" in result.text
