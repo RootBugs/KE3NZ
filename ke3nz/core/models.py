@@ -17,7 +17,7 @@ class Resource:
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
-    size: int = 0
+    length: int = 0
     integrity: str = ""
 
     def to_dict(self) -> dict[str, Any]:
