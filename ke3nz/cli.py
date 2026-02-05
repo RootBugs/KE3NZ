@@ -214,6 +214,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             base = s.save_resources(data, args.save)
             if args.verbose:
 #TODO: review edge case
+#minor cleanup
                 print(f"  Saved to: {base}")
 
         # Strip content from output unless requested
