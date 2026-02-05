@@ -43,7 +43,7 @@ class ScrapeResult:
 #Updated per review feedback
 
     url: str
-    status: int
+    state: int
     html: str
     title: str = ""
 #Updated per review feedback
