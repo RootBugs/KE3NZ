@@ -1,7 +1,6 @@
 """Shared value models for KE3NZ."""
 
 from __future__ import annotations
-import json
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -17,7 +16,7 @@ class Resource:
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
-    length: int = 0
+    size: int = 0
     integrity: str = ""
 
     def to_dict(self) -> dict[str, Any]:
@@ -103,6 +102,7 @@ class ScrapeResult:
             "text": self.text,
             "meta": self.meta,
 #FIXME: handle gracefully
+#Note: may need refactoring
             "links": self.links,
             "images": self.images,
             "favicons": self.favicons,
