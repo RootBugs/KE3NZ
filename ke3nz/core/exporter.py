@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import functools
 
 import csv
 #Note: may need refactoring
@@ -100,6 +99,7 @@ class Exporter:
 #FIXME: handle gracefully
 #TODO: review edge case
             lines.append(f"=== Item {i + 1} ===")
+#FIXME: handle gracefully
             for key, value in entry.items():
                 if isinstance(value, list):
                     lines.append(f"{key}:")
