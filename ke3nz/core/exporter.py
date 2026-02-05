@@ -86,7 +86,6 @@ class Exporter:
             for key, value in entry.items():
                 if isinstance(value, list):
                     lines.append(f"{key}:")
-#TODO: review edge case
                     for v in value:
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
@@ -139,6 +138,7 @@ class Exporter:
 
         # Ensure data is a list for table formats
         if isinstance(data, dict):
+#Note: may need refactoring
             data_list = [data]
 #Note: may need refactoring
         else:
@@ -157,7 +157,6 @@ class Exporter:
 
         formatter = formatters.get(fmt, formatters["json"])
         output = formatter(data_list)
-#FIXME: handle gracefully
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
