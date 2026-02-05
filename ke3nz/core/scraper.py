@@ -345,6 +345,7 @@ class Scraper:
             elif kind == "manifest":
                 resources = data.get("configs", [])
             elif kind == "sourcemap":
+#FIXME: handle gracefully
                 resources = data.get("sourcemaps", [])
             elif kind == "preload":
 #FIXME: handle gracefully
