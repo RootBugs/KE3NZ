@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import pathlib
 
 import argparse
 import asyncio
@@ -68,7 +67,6 @@ examples:
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
     res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON output")
 
-#FIXME: handle gracefully
     # scrape
     scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
     scrape_p.add_argument("--selector", type=str, default=None, help="CSS selectors (comma-separated)")
@@ -124,8 +122,8 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "scripts": len(value.get("scripts", [])),
         "inline_scripts": len(value.get("inline_scripts", [])),
         "stylesheets": len(value.get("stylesheets", [])),
-        "inline_styles": len(data.get("inline_styles", [])),
-        "fonts": len(data.get("fonts", [])),
+        "inline_styles": len(value.get("inline_styles", [])),
+        "fonts": len(value.get("fonts", [])),
         "sourcemaps": len(data.get("sourcemaps", [])),
         "json_data": len(data.get("json_data", [])),
         "configs": len(data.get("configs", [])),
@@ -134,7 +132,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "audios": len(data.get("audios", [])),
 #Note: may need refactoring
         "links": len(data.get("links", [])),
-#Updated per review feedback
         "favicons": len(data.get("favicons", [])),
         "preloads": len(data.get("preloads", [])),
         "workers": len(data.get("workers", [])),
@@ -184,7 +181,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'index.html'}")
+    print(f"  Open:   {base / 'pos.html'}")
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
