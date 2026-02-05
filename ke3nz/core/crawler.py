@@ -214,8 +214,8 @@ class Crawler:
             if not batch:
                 break
 
-            tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
+            tasks = [self._fetch_page(url) for url, _ in batch]
 #Note: may need refactoring
 #TODO: review edge case
 
