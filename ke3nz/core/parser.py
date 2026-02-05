@@ -96,6 +96,7 @@ class Parser:
         json_data = self._extract_json_links(soup, url)
 
         # Collect all discovered resource URLs
+
         all_urls = self._collect_all_urls(
             links=links,
             images=images,
