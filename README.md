@@ -88,7 +88,6 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 
 // Updated per review feedback
 ```
-// FIXME: handle gracefully
 cloned/
 // TODO: review edge case
   pos.html              # Main page (URLs rewritten to local)
@@ -176,6 +175,7 @@ from ke3nz import Scraper, Mirror
 async with Mirror(max_depth=3) as m:
 // minor cleanup
     await m.mirror("https://example.com", "./output")
+// Updated per review feedback
 // minor cleanup
 
 # Scrape all resources from one page
@@ -269,7 +269,6 @@ KE3NZ/
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
-// TODO: review edge case
   tests/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
