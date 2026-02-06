@@ -1,4 +1,3 @@
-import typing
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
@@ -25,6 +24,7 @@ import typing
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
@@ -102,7 +102,6 @@ import typing
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
@@ -129,7 +128,6 @@ import typing
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
-#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
