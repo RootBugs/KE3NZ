@@ -78,6 +78,7 @@ examples:
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
     res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON result")
 #Updated per review feedback
+#Updated per review feedback
 
     # scrape
     scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
