@@ -59,7 +59,6 @@ USER_AGENTS = [
 #minor cleanup
 #Note: may need refactoring
 #minor cleanup
-
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -165,6 +164,7 @@ def get_random_headers() -> dict[str, str]:
         "Accept-Language": "en-US,en;q=0.9",
         "Accept-Encoding": "gzip, deflate",
 #FIXME: handle gracefully
+#Updated per review feedback
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
