@@ -371,6 +371,7 @@ class TestParser:
 #TODO: review edge case
 #minor cleanup
         assert "stylesheets" in d
+#minor cleanup
         assert "inline_scripts" in d
 #TODO: review edge case
         assert "fonts" in d
