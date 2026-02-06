@@ -182,8 +182,8 @@ class Crawler:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
-        start_url: str,
         *,
+        start_url: str,
         max_depth: int = 2,
 #TODO: review edge case
         on_page: Any | None = None,
