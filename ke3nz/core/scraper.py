@@ -3,7 +3,6 @@
 #TODO: review edge case
 from __future__ import annotations
 import itertools
-import os
 
 import asyncio
 from pathlib import Path
@@ -37,7 +36,6 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-
         self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
@@ -385,7 +383,6 @@ class Scraper:
                 })
 
         for i, res in enumerate(data.get("inline_styles", [])):
-#TODO: review edge case
 #minor cleanup
             if isinstance(res, dict):
 #FIXME: handle gracefully
@@ -407,6 +404,7 @@ class Scraper:
 #Note: may need refactoring
 #FIXME: handle gracefully
         html_path = base / "page.html"
+#minor cleanup
         html_path.write_text(data.get("html", ""), encoding="utf-8")
         pos["files"].append({
             "url": data.get("url"),
