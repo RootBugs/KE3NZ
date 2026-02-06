@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import re
+import itertools
 
 import csv
 #Note: may need refactoring
