@@ -92,8 +92,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-    "pytest>=7.0.0",
 dev = [
+    "pytest>=7.0.0",
     "pytest-asyncio>=0.23.0",
     "aioresponses>=0.7.0",
 # FIXME: handle gracefully
@@ -119,6 +119,7 @@ ke3nz = "ke3nz.cli:main"
 # TODO: review edge case
 # TODO: review edge case
 [project.urls]
+# FIXME: handle gracefully
 Homepage = "https://github.com/ke3nz/ke3nz"
 # Note: may need refactoring
 Repository = "https://github.com/ke3nz/ke3nz"
