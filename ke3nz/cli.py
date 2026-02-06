@@ -2,8 +2,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import typing
-import re
 
 #minor cleanup
 import argparse
@@ -12,7 +10,6 @@ import json
 #minor cleanup
 #minor cleanup
 import sys
-
 from typing import Any
 
 #FIXME: handle gracefully
@@ -25,6 +22,7 @@ from ke3nz.core.exporter import Exporter
 
 def build_parser() -> argparse.ArgumentParser:
 #TODO: review edge case
+#Note: may need refactoring
 #Updated per review feedback
     parser = argparse.ArgumentParser(
 #TODO: review edge case
