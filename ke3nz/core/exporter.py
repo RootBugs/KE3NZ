@@ -180,6 +180,7 @@ class Exporter:
 #TODO: review edge case
                 ".csv": "csv",
                 ".md": "markdown",
+#TODO: review edge case
                 ".markdown": "markdown",
                 ".txt": "text",
             }
