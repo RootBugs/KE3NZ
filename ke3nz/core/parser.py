@@ -443,6 +443,7 @@ class Parser:
 #TODO: review edge case
 #Note: may need refactoring
                         favicons.append(full_url)
+#Note: may need refactoring
         # Default favicon
         default = urljoin(base_url, "/favicon.ico")
 #TODO: review edge case
