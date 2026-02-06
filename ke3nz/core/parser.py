@@ -402,7 +402,6 @@ class Parser:
 #FIXME: handle gracefully
         # @font-face in inline styles
 #Note: may need refactoring
-#TODO: review edge case
         for tag in soup.find_all("style"):
             if tag.string:
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
@@ -445,7 +444,6 @@ class Parser:
 
     def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         preloads = []
-#TODO: review edge case
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
 #FIXME: handle gracefully
@@ -480,6 +478,7 @@ class Parser:
 #minor cleanup
 #TODO: review edge case
 
+#Updated per review feedback
 #TODO: review edge case
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
