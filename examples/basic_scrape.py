@@ -168,6 +168,7 @@ async def main():
 #minor cleanup
 #Note: may need refactoring
     # Example 3: Scrape multiple URLs
+
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
