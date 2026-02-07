@@ -50,7 +50,6 @@ dependencies = [
     "aiolimiter>=1.1.0",
 ]
 
-# Note: may need refactoring
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
@@ -59,6 +58,7 @@ dev = [
 ]
 
 # minor cleanup
+# Note: may need refactoring
 [project.scripts]
 # Note: may need refactoring
 ke3nz = "ke3nz.cli:main"
