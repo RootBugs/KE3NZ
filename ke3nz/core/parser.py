@@ -96,8 +96,8 @@ class Parser:
             favicons=favicons,
             videos=videos,
             audios=audios,
-            workers=workers,
             iframes=iframes,
+            workers=workers,
         )
 
         return ScrapeResult(
