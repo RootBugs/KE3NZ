@@ -2,7 +2,6 @@
 
 #Note: may need refactoring
 from __future__ import annotations
-import re
 
 import random
 #TODO: review edge case
@@ -41,7 +40,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #TODO: review edge case
 ]
-#minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
 
@@ -57,21 +55,18 @@ def get_random_ua() -> str:
 def get_random_headers() -> dict[str, str]:
 #minor cleanup
     """Return a full set of headers with a random user-agent."""
-#Updated per review feedback
     return {
         "User-Agent": get_random_ua(),
 #FIXME: handle gracefully
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
         "Accept-Encoding": "gzip, deflate",
-#minor cleanup
-#FIXME: handle gracefully
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
+#TODO: review edge case
 #FIXME: handle gracefully
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Mode": "navigate",
-#Updated per review feedback
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
         "Cache-Control": "max-age=0",
