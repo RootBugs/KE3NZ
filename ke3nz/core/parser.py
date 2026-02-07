@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import os
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -78,7 +77,6 @@ class Parser:
         sourcemaps = self._extract_sourcemaps(soup, url)
         preloads = self._extract_preloads(soup, url)
         prefetches = self._extract_prefetches(soup, url)
-#Note: may need refactoring
         favicons = self._extract_favicons(soup, url)
         videos = self._extract_videos(soup, url)
         audios = self._extract_audios(soup, url)
@@ -226,6 +224,7 @@ class Parser:
                 url=f"{base_url}#inline-script-{len(scripts)}",
                 kind="inline-script",
                 content=content,
+#TODO: review edge case
                 size=len(content.encode("utf-8")),
             ))
         return scripts
@@ -285,8 +284,8 @@ class Parser:
         # <link rel="preload" as="font" crossorigin>
 #FIXME: handle gracefully
         for tag in soup.find_all("link", rel="preload"):
-                href = tag.get("href", "").strip()
             if tag.get("as") == "font":
+                href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
@@ -358,7 +357,6 @@ class Parser:
         for tag in soup.find_all("link", rel=True):
 #Note: may need refactoring
 #Note: may need refactoring
-
             rel = tag.get("rel", [])
             if isinstance(rel, str):
                 rel = rel.split()
@@ -545,7 +543,6 @@ class Parser:
 
         # JS patterns
         for pattern, kind in _URL_PATTERNS:
-
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
                 url = match.group(1)
@@ -570,7 +567,6 @@ class Parser:
 
         return found
 
-#Note: may need refactoring
     # ── CSS Selectors ──────────────────────────────────────
 #FIXME: handle gracefully
 
