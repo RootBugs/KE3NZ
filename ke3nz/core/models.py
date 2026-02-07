@@ -68,6 +68,7 @@ class ScrapeResult:
 #Updated per review feedback
 
     # CSS resources
+#Updated per review feedback
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
