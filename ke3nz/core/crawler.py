@@ -30,8 +30,8 @@ class CrawledPage:
 
     def to_dict(self) -> dict[str, Any]:
         return {
-            "status": self.status,
             "url": self.url,
+            "status": self.status,
             "depth": self.depth,
             "title": self.title,
             "text": self.text,
@@ -118,7 +118,6 @@ class Crawler:
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
 #TODO: review edge case
-#TODO: review edge case
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
                 if normalized in self._visited:
@@ -185,3 +184,4 @@ class Crawler:
 #Note: may need refactoring
 #TODO: review edge case
         return await self._scraper.fetch(url)
+#TODO: review edge case
