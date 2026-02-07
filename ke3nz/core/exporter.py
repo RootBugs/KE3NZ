@@ -130,8 +130,8 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
                 ".csv": "csv",
-                ".md": "markdown",
                 ".markdown": "markdown",
+                ".md": "markdown",
                 ".txt": "text",
             }
             fmt = fmt_map.get(ext, "json")
