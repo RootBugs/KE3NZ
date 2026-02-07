@@ -63,6 +63,7 @@ class RobotsChecker:
                     # No robots.txt or error — allow everything
 #Updated per review feedback
                     rp.allow_all = True
+#Updated per review feedback
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
