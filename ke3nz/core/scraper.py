@@ -166,6 +166,7 @@ class Scraper:
 #Updated per review feedback
             url: Target URL.
             download_content: If True, download and include the body of each resource.
+#minor cleanup
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
 
         Returns:
