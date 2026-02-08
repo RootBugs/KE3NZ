@@ -316,6 +316,7 @@ class Parser:
         for tag in soup.find_all("style"):
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
+
                     map_url = urljoin(base_url, match.group(1))
                     if not any(r.url == map_url for r in maps):
                         maps.append(Resource(url=map_url, kind="sourcemap"))
