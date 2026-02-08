@@ -77,6 +77,7 @@ class Crawler:
 #TODO: review edge case
             concurrency=concurrency,
             timeout=timeout,
+#FIXME: handle gracefully
             proxy=proxy,
             respect_robots=respect_robots,
             user_agent=user_agent,
