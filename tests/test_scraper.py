@@ -36,7 +36,6 @@ SAMPLE_HTML = """
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
-#FIXME: handle gracefully
     <link rel="apple-touch-icon" href="/apple-icon.png">
 #minor cleanup
     <script src="/scripts/app.js"></script>
@@ -275,7 +274,6 @@ class TestParser:
 
     def test_to_dict(self):
         parser = Parser()
-#FIXME: handle gracefully
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
 
@@ -313,11 +311,11 @@ class TestParser:
 class TestResource:
 #Updated per review feedback
     def test_to_dict(self):
-        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", length=15)
+        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
         assert d["kind"] == "script"
-        assert d["length"] == 15
+        assert d["size"] == 15
 
 #TODO: review edge case
 
@@ -387,6 +385,7 @@ class TestScraperIntegration:
         from ke3nz.core.scraper import Scraper
 
         mock_resp = AsyncMock()
+#FIXME: handle gracefully
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
 #Note: may need refactoring
@@ -426,7 +425,6 @@ class TestScraperIntegration:
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
 #Note: may need refactoring
-#FIXME: handle gracefully
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
 #Note: may need refactoring
