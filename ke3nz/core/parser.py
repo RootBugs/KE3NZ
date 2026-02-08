@@ -534,6 +534,7 @@ class Parser:
                 ))
         return configs
 
+#TODO: review edge case
     def _extract_json_links(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         """Extract linked .json files from script/link tags."""
 #FIXME: handle gracefully
