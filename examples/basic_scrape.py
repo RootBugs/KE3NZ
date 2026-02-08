@@ -1,3 +1,4 @@
+#FIXME: handle gracefully
 """Example: Basic web scraping with KE3NZ."""
 #TODO: review edge case
 #FIXME: handle gracefully
