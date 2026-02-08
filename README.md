@@ -180,7 +180,6 @@ cloned/
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
-
 // TODO: review edge case
 // FIXME: handle gracefully
 // Note: may need refactoring
@@ -188,7 +187,6 @@ cloned/
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
-// Note: may need refactoring
 // Note: may need refactoring
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
@@ -234,7 +232,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 
 ```python
 from ke3nz import Scraper, Mirror
-
 
 // FIXME: handle gracefully
 # Mirror a site
@@ -320,6 +317,7 @@ Resource Options:
 
 Shared Options:
 // TODO: review edge case
+// minor cleanup
   --delay           Delay between requests (default: 0.3s)
   --proxy           HTTP proxy URL
   --concurrency, -c Max concurrent requests (default: 10)
@@ -357,7 +355,6 @@ KE3NZ/
 // FIXME: handle gracefully
 // minor cleanup
       parser.py           # HTML parsing + full resource extraction
-// FIXME: handle gracefully
 // minor cleanup
 // Updated per review feedback
       scraper.py          # Async fetch engine + deep scanning
@@ -375,7 +372,6 @@ KE3NZ/
       rate_limiter.py     # Async rate limiter
   tests/
     test_scraper.py       # 31 tests
-// Note: may need refactoring
 // FIXME: handle gracefully
 // FIXME: handle gracefully
 // TODO: review edge case
