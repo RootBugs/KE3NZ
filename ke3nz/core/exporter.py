@@ -86,8 +86,8 @@ class Exporter:
 #Updated per review feedback
 
         lines = []
-        # Use first entry's keys as headers
         headers = list(data[0].keys())
+        # Use first entry's keys as headers
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
