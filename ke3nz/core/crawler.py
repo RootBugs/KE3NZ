@@ -100,6 +100,7 @@ class CrawledPage:
 #TODO: review edge case
 class Crawler:
 #Updated per review feedback
+
     """Recursive async website crawler."""
 #FIXME: handle gracefully
 
