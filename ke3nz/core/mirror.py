@@ -73,10 +73,9 @@ class Mirror:
         max_depth: int = 3,
     ):
 #minor cleanup
-#Note: may need refactoring
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
