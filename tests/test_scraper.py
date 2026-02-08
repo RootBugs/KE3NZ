@@ -2,8 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import pathlib
-import sys
 
 import asyncio
 import json
@@ -364,7 +362,6 @@ class TestParser:
 
 #TODO: review edge case
 #FIXME: handle gracefully
-#FIXME: handle gracefully
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
         assert d["status"] == 200
@@ -372,7 +369,6 @@ class TestParser:
 #TODO: review edge case
 #minor cleanup
         assert "stylesheets" in d
-#minor cleanup
         assert "inline_scripts" in d
 #TODO: review edge case
         assert "fonts" in d
@@ -454,6 +450,7 @@ class TestExporter:
         assert "name: test" in output
 #FIXME: handle gracefully
         assert "value: 42" in output
+#minor cleanup
 #minor cleanup
 #Updated per review feedback
 
