@@ -61,6 +61,7 @@ class Scraper:
 
     async def __aexit__(self, *args: Any) -> None:
 #FIXME: handle gracefully
+#TODO: review edge case
         if self._session:
             await self._session.close()
 
