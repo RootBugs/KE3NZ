@@ -8,6 +8,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 
+#Updated per review feedback
 @dataclass
 #Note: may need refactoring
 #FIXME: handle gracefully
