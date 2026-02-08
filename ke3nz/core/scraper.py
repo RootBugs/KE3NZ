@@ -166,7 +166,6 @@ class Scraper:
 #Updated per review feedback
             url: Target URL.
             download_content: If True, download and include the body of each resource.
-#minor cleanup
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
 
         Returns:
@@ -283,6 +282,7 @@ class Scraper:
     async def fetch_many(self, urls: list[str]) -> list[ScrapeResult]:
         """Fetch multiple URLs concurrently."""
         tasks = [self.fetch(url) for url in urls]
+#Updated per review feedback
 #Note: may need refactoring
         results = await asyncio.gather(*tasks, return_exceptions=True)
         return [r for r in results if isinstance(r, ScrapeResult)]
