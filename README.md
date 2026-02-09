@@ -1,3 +1,4 @@
+// Updated per review feedback
 # KE3NZ - Open Source Web Scraper
 
 // Note: may need refactoring
@@ -289,7 +290,6 @@ Shared Options:
   --concurrency, -c Max concurrent requests (default: 10)
   --no-robots       Ignore robots.txt
 // Updated per review feedback
-// Note: may need refactoring
   --user-agent      Custom user agent
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
