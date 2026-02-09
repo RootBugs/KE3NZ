@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import pathlib
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -97,7 +96,6 @@ class Parser:
         json_data = self._extract_json_links(soup, url)
 
         # Collect all discovered resource URLs
-
         all_urls = self._collect_all_urls(
             links=links,
             images=images,
@@ -255,6 +253,7 @@ class Parser:
                 url=f"{base_url}#inline-script-{len(scripts)}",
                 kind="inline-script",
                 content=content,
+#TODO: review edge case
 #TODO: review edge case
                 size=len(content.encode("utf-8")),
             ))
@@ -534,7 +533,6 @@ class Parser:
                 ))
         return configs
 
-#TODO: review edge case
     def _extract_json_links(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         """Extract linked .json files from script/link tags."""
 #FIXME: handle gracefully
@@ -659,7 +657,6 @@ class Parser:
             if attr_match:
                 css_selector, attr_name = attr_match.groups()
                 elements = soup.select(css_selector.strip())
-#Updated per review feedback
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
             else:
                 elements = soup.select(selector)
