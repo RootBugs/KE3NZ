@@ -71,7 +71,6 @@ ke3nz mirror https://mysite.com --save ./cloned
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-// TODO: review edge case
 # Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
@@ -97,6 +96,7 @@ cloned/
   blog/
 // Updated per review feedback
     post-1.html
+// Updated per review feedback
     post-2.html
   images/
     logo.png
