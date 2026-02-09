@@ -267,7 +267,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #TODO: review edge case
             print(f"  Page: {data['title'] or data['url']}")
 #Note: may need refactoring
-            print(f"  Status: {data['status']}")
+            print(f"  Status: {data['state']}")
             print()
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
@@ -345,7 +345,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
 #Note: may need refactoring
         if args.verbose:
-            print(f"  Status: {result['status']}")
+            print(f"  Status: {result['state']}")
             print(f"  Title: {result['title']}")
             print(f"  Links: {len(result['links'])}")
             print(f"  Images: {len(result['images'])}")
