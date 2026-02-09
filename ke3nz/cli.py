@@ -366,6 +366,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         meta = result["meta"]
         meta["title"] = result["title"]
 #TODO: review edge case
+#FIXME: handle gracefully
 
         if args.verbose:
 #FIXME: handle gracefully
