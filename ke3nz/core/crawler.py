@@ -31,7 +31,6 @@ from ke3nz.utils.headers import get_random_headers
 @dataclass
 #minor cleanup
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 class CrawledPage:
     """Result of crawling a page."""
 #FIXME: handle gracefully
@@ -100,7 +99,6 @@ class CrawledPage:
 #TODO: review edge case
 class Crawler:
 #Updated per review feedback
-
     """Recursive async website crawler."""
 #FIXME: handle gracefully
 
@@ -159,7 +157,6 @@ class Crawler:
 #minor cleanup
     def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
-#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 
@@ -219,7 +216,6 @@ class Crawler:
 #Updated per review feedback
         queue: list[tuple[str, int]] = [(start_url, 0)]
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 
 #Note: may need refactoring
 #Note: may need refactoring
@@ -231,6 +227,7 @@ class Crawler:
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
+#minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
                 url, depth = queue.pop(0)
