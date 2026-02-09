@@ -72,6 +72,7 @@ This is the main feature. It:
 ```bash
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
+// Updated per review feedback
 // TODO: review edge case
 // minor cleanup
 // TODO: review edge case
