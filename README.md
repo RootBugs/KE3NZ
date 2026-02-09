@@ -96,10 +96,10 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
   about/
-    pos.html            # Subpages
+    index.html            # Subpages
   blog/
 // Updated per review feedback
 // Updated per review feedback
@@ -283,6 +283,7 @@ KE3NZ/
     cli.py               # CLI with 8 commands
     core/
       models.py           # Resource + ScrapeResult dataclasses
+// FIXME: handle gracefully
 // minor cleanup
       parser.py           # HTML parsing + full resource extraction
 // minor cleanup
@@ -296,7 +297,6 @@ KE3NZ/
     utils/
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
-// Updated per review feedback
       rate_limiter.py     # Async rate limiter
   tests/
     test_scraper.py       # 31 tests
