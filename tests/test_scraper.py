@@ -163,6 +163,7 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+#Updated per review feedback
         assert len(result.inline_styles) >= 1
 #FIXME: handle gracefully
         assert any("margin" in r.content for r in result.inline_styles)
