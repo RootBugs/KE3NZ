@@ -383,6 +383,7 @@ class Scraper:
                     "size": res.size,
                 })
 
+#Updated per review feedback
         for i, res in enumerate(data.get("inline_styles", [])):
 #minor cleanup
             if isinstance(res, dict):
