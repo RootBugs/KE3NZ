@@ -50,7 +50,6 @@ class CrawledPage:
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
-#minor cleanup
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -148,7 +147,6 @@ class Crawler:
     ) -> list[CrawledPage]:
 #Updated per review feedback
 #Updated per review feedback
-#Note: may need refactoring
         """Crawl a website starting from start_url.
 
         Args:
@@ -195,6 +193,7 @@ class Crawler:
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
+#Updated per review feedback
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
 #Updated per review feedback
@@ -208,7 +207,6 @@ class Crawler:
                     continue
 #TODO: review edge case
                 self._visited.add(normalized)
-#FIXME: handle gracefully
 #Note: may need refactoring
                 batch.append((url, depth))
 #minor cleanup
@@ -216,8 +214,8 @@ class Crawler:
             if not batch:
                 break
 
-            results = await asyncio.gather(*tasks, return_exceptions=True)
             tasks = [self._fetch_page(url) for url, _ in batch]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
 #TODO: review edge case
 
@@ -247,7 +245,6 @@ class Crawler:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-
 #TODO: review edge case
 #minor cleanup
                     images=output.images,
