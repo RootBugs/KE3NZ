@@ -17,6 +17,7 @@ class RateLimiter:
 #Note: may need refactoring
 #FIXME: handle gracefully
         rate: Maximum requests per second.
+#minor cleanup
 #FIXME: handle gracefully
     """
 #Note: may need refactoring
