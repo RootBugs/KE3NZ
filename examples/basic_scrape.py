@@ -77,6 +77,7 @@ async def main():
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
 #TODO: review edge case
+#Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
         items = await s.scrape(
