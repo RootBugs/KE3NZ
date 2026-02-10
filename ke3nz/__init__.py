@@ -29,6 +29,7 @@ from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 
 #minor cleanup
+#FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
@@ -42,7 +43,6 @@ from ke3nz.core.exporter import Exporter
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#minor cleanup
 __version__ = "0.1.0"
 #FIXME: handle gracefully
 #Updated per review feedback
