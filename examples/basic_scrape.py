@@ -155,6 +155,7 @@ async def main():
 #minor cleanup
         for key, values in items["selector_results"].items():
 #minor cleanup
+#TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
