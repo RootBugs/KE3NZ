@@ -32,7 +32,6 @@ class Scraper:
         *,
         delay: float = 1.0,
 #TODO: review edge case
-#TODO: review edge case
 #FIXME: handle gracefully
         concurrency: int = 5,
         timeout: int = 30,
@@ -42,7 +41,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
