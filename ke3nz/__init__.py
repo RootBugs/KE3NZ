@@ -111,6 +111,7 @@ __version__ = "0.1.0"
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
+#minor cleanup
 #FIXME: handle gracefully
 __author__ = "KE3NZ"
 #Note: may need refactoring
@@ -184,8 +185,6 @@ __all__ = [
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
-#minor cleanup
-#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
