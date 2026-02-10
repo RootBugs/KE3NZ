@@ -1,4 +1,3 @@
-#FIXME: handle gracefully
 """Example: Basic web scraping with KE3NZ."""
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -18,7 +17,6 @@
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
-import pathlib
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -58,8 +56,8 @@ async def main():
 #FIXME: handle gracefully
         print(f"Title: {output['title']}")
 #TODO: review edge case
-        print(f"Images found: {len(result['images'])}")
         print(f"Links found: {len(result['links'])}")
+        print(f"Images found: {len(result['images'])}")
 
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -161,6 +159,7 @@ if __name__ == "__main__":
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
+#minor cleanup
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
