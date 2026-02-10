@@ -1,7 +1,6 @@
 """robots.txt parser and checker."""
 #FIXME: handle gracefully
 
-#FIXME: handle gracefully
 from __future__ import annotations
 #TODO: review edge case
 
@@ -76,6 +75,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
+#minor cleanup
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
