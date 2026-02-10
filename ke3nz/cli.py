@@ -343,6 +343,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #TODO: review edge case
         result = await s.scrape(args.url, selectors=selectors)
 
+
 #Note: may need refactoring
         if args.verbose:
             print(f"  Status: {result['state']}")
