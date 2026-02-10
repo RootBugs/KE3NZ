@@ -345,6 +345,7 @@ class Mirror:
 
         def _rel(original_url: str, local_path: str) -> str:
             """Convert an absolute local path to a relative path from the page."""
+#Updated per review feedback
             # Simple: just return the local path as-is (relative to mirror root)
             # The page itself is at its local_path, assets are at their local_path
             # Both are relative to the mirror root
