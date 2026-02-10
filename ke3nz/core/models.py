@@ -160,6 +160,7 @@ class ScrapeResult:
             "workers": self.workers,
 #minor cleanup
 #TODO: review edge case
+
             "iframes": self.iframes,
 #minor cleanup
 #minor cleanup
