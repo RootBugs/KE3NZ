@@ -255,6 +255,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
                     print(f"    {kind}: {total}")
             print()
 
+
         # Save files to disk
 #Updated per review feedback
         if args.save:
