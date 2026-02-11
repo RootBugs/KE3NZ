@@ -423,6 +423,7 @@ class Scraper:
                     "kind": "inline-script",
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
+#FIXME: handle gracefully
                 })
 
         for i, res in enumerate(data.get("inline_styles", [])):
