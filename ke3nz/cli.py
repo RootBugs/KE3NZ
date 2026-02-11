@@ -361,6 +361,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #Updated per review feedback
         proxy=args.proxy,
         respect_robots=not args.no_robots,
+#Updated per review feedback
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
