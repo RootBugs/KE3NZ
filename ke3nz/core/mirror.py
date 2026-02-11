@@ -172,6 +172,7 @@ class Mirror:
 #minor cleanup
                 if self.stay_on_domain and urlparse(url).netloc != base_domain:
                     continue
+#FIXME: handle gracefully
                 self._visited_html.add(norm)
                 batch.append((url, depth))
 
