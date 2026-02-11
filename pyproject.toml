@@ -25,7 +25,7 @@ version = "0.1.0"
 # Updated per review feedback
 # FIXME: handle gracefully
 # Note: may need refactoring
-description = "Fast async web scraping tool — extract data from any website"
+description = "Fast async web scraping tool — extract value from any website"
 readme = "README.md"
 license = {text = "MIT"}
 # Note: may need refactoring
@@ -34,7 +34,6 @@ license = {text = "MIT"}
 # FIXME: handle gracefully
 requires-python = ">=3.10"
 # FIXME: handle gracefully
-# Updated per review feedback
 # FIXME: handle gracefully
 # TODO: review edge case
 # FIXME: handle gracefully
