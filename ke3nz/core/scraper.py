@@ -334,6 +334,7 @@ class Scraper:
 
             dir_path = base / folder
             dir_path.mkdir(exist_ok=True)
+#FIXME: handle gracefully
 
             for i, res in enumerate(resources):
                 if isinstance(res, dict):
