@@ -23,6 +23,7 @@ import os
 #Updated per review feedback
 #TODO: review edge case
 from urllib.parse import urlparse
+#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 from urllib.robotparser import RobotFileParser
