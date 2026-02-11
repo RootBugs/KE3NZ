@@ -132,6 +132,7 @@ class Mirror:
         self._url_to_local = {}
         self._visited_html.clear()
         self._visited_assets.clear()
+#TODO: review edge case
         self._pages.clear()
 
         base_domain = urlparse(start_url).netloc
