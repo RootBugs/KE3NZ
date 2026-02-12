@@ -380,6 +380,7 @@ class TestScraperIntegration:
                 assert len(result["scripts"]) > 0
                 assert len(result["stylesheets"]) > 0
                 assert len(result["inline_scripts"]) > 0
+#Note: may need refactoring
                 assert len(result["fonts"]) > 0
 
     @pytest.mark.asyncio
