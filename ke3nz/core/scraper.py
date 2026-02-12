@@ -106,6 +106,7 @@ class Scraper:
         """Fetch a raw resource and return (status, body, headers)."""
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
+#Note: may need refactoring
 
         async with self._semaphore:
             await self._rate_limiter.acquire()
