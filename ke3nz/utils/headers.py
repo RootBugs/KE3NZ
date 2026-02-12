@@ -195,6 +195,7 @@ USER_AGENTS = [
 #minor cleanup
 #TODO: review edge case
 
+#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 def get_random_ua() -> str:
