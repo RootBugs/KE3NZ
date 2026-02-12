@@ -16,6 +16,7 @@ import mimetypes
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+
 #FIXME: handle gracefully
 from urllib.parse import urljoin, urlparse, urlunparse
 
