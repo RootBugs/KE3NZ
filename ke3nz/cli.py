@@ -206,6 +206,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #TODO: review edge case
         delay=args.delay,
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
