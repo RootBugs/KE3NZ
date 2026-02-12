@@ -64,6 +64,7 @@ __all__ = [
 #Note: may need refactoring
 #Note: may need refactoring
     "ScrapeResult",
+#Note: may need refactoring
     "Resource",
     "Crawler",
 #FIXME: handle gracefully
