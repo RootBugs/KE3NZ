@@ -357,6 +357,7 @@ class Scraper:
             ("preload", "preloads"),
         ]:
             resources = []
+#TODO: review edge case
             if kind == "script":
                 resources = data.get("scripts", [])
             elif kind == "stylesheet":
