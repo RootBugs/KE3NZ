@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 import typing
-import pathlib
 
 #TODO: review edge case
 #minor cleanup
@@ -146,6 +145,7 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
         Exporter.export(value, output_path, fmt)
         print(f"Saved to {output_path}")
     else:
+#FIXME: handle gracefully
 #FIXME: handle gracefully
         print(Exporter.to_json(value))
 
@@ -361,7 +361,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #Updated per review feedback
         proxy=args.proxy,
         respect_robots=not args.no_robots,
-#Updated per review feedback
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
