@@ -248,6 +248,7 @@ class Exporter:
             The formatted string that was written.
 #minor cleanup
         """
+#FIXME: handle gracefully
         path = Path(output_path)
 
         # Auto-detect format from extension
