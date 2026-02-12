@@ -5,6 +5,7 @@ from __future__ import annotations
 #minor cleanup
 
 import asyncio
+#minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 from dataclasses import dataclass, field
@@ -182,8 +183,8 @@ class Crawler:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
-        *,
         start_url: str,
+        *,
         max_depth: int = 2,
 #TODO: review edge case
         on_page: Any | None = None,
