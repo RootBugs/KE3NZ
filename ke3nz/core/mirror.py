@@ -21,6 +21,7 @@ import aiohttp
 #Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
+
 #FIXME: handle gracefully
 from bs4 import BeautifulSoup
 
