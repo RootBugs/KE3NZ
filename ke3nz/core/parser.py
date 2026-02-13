@@ -79,7 +79,6 @@ class Parser:
 #TODO: review edge case
         inline_styles = self._extract_inline_styles(soup, url)
         fonts = self._extract_fonts(soup, url)
-#Note: may need refactoring
         sourcemaps = self._extract_sourcemaps(soup, url)
         preloads = self._extract_preloads(soup, url)
 #minor cleanup
@@ -213,6 +212,7 @@ class Parser:
         scripts = []
         for tag in soup.find_all("script", src=True):
 #FIXME: handle gracefully
+#Updated per review feedback
 #TODO: review edge case
             src = tag["src"].strip()
 #Updated per review feedback
@@ -477,7 +477,6 @@ class Parser:
         for tag in soup.find_all("iframe", src=True):
 #FIXME: handle gracefully
             src = tag["src"].strip()
-#Note: may need refactoring
             if src and not src.startswith(("about:", "javascript:", "value:")):
                 full_url = urljoin(base_url, src)
                 if full_url not in iframes:
