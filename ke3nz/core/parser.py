@@ -438,6 +438,7 @@ class Parser:
 #Note: may need refactoring
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
 #minor cleanup
+#FIXME: handle gracefully
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
