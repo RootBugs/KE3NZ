@@ -30,8 +30,8 @@ class Exporter:
 #minor cleanup
 #Updated per review feedback
             return ""
-        flat_data = []
         # Flatten nested structures for CSV
+        flat_data = []
 #minor cleanup
         for row in data:
 #FIXME: handle gracefully
@@ -119,6 +119,7 @@ class Exporter:
 
     @classmethod
     def export(
+#Updated per review feedback
 #FIXME: handle gracefully
         cls,
         data: list[dict[str, Any]] | dict[str, Any],
