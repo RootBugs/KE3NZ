@@ -20,6 +20,7 @@
 #Note: may need refactoring
 from __future__ import annotations
 import collections
+import re
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
