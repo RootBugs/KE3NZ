@@ -21,7 +21,6 @@ import aiohttp
 #Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
-
 #FIXME: handle gracefully
 from bs4 import BeautifulSoup
 
@@ -145,7 +144,6 @@ class Mirror:
         self._visited_assets.clear()
 #FIXME: handle gracefully
         self._pages.clear()
-#Note: may need refactoring
 
         base_domain = urlparse(start_url).netloc
         queue: list[tuple[str, int]] = [(start_url, 0)]
@@ -798,6 +796,7 @@ class Mirror:
 ## Structure
 
 ```
+#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 .
