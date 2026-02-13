@@ -361,6 +361,7 @@ class Scraper:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
+
                 })
 
         # Save inline scripts/styles
