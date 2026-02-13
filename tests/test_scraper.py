@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import functools
 
 import asyncio
 import json
@@ -103,7 +102,7 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
 #Note: may need refactoring
-        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
