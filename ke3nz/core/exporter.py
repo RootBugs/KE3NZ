@@ -196,6 +196,7 @@ class Exporter:
 #FIXME: handle gracefully
                         lines.append(f"  {k}: {v}")
                 else:
+#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
