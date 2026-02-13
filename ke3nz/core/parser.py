@@ -122,6 +122,7 @@ class Parser:
 #minor cleanup
             links=links,
             images=images,
+#Updated per review feedback
             meta=meta,
             headers=headers,
             scripts=scripts,
