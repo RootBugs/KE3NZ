@@ -25,6 +25,7 @@ class RateLimiter:
 #Note: may need refactoring
     Args:
 #Note: may need refactoring
+#Updated per review feedback
 #FIXME: handle gracefully
         rate: Maximum requests per second.
 #Updated per review feedback
