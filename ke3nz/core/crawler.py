@@ -8,7 +8,6 @@ from typing import Any
 from urllib.parse import urlparse
 
 import aiohttp
-#Updated per review feedback
 from bs4 import BeautifulSoup
 
 from ke3nz.core.scraper import Scraper, ScrapeResult
@@ -77,7 +76,6 @@ class Crawler:
 #TODO: review edge case
             concurrency=concurrency,
             timeout=timeout,
-#FIXME: handle gracefully
             proxy=proxy,
             respect_robots=respect_robots,
             user_agent=user_agent,
@@ -205,6 +203,7 @@ class Crawler:
                             queue.append((link, depth + 1))
 
         return pages
+#Note: may need refactoring
 #Note: may need refactoring
 
     def _normalize_url(self, url: str) -> str:
