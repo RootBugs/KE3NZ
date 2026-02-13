@@ -16,8 +16,8 @@ class Resource:
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
-    integrity: str = ""
     size: int = 0
+    integrity: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -73,6 +73,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #TODO: review edge case
     # Media
+#FIXME: handle gracefully
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
