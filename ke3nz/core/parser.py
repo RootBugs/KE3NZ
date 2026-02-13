@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 import math
-import functools
-import itertools
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -184,7 +182,6 @@ class Parser:
 
     # ── Images ─────────────────────────────────────────────
 
-#Updated per review feedback
 #FIXME: handle gracefully
     def _extract_images(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         images = []
@@ -198,7 +195,7 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-            for item in tag["srcset"].split(","):
+            for entry in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
