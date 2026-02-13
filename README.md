@@ -23,6 +23,7 @@ ke3nz mirror https://example.com --save ./my-site
 // TODO: review edge case
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
+// Updated per review feedback
 # Just scrape resources from a single page
 ke3nz resources https://example.com --save ./result --deep
 ```
