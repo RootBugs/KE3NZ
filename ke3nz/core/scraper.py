@@ -123,6 +123,7 @@ class Scraper:
 
         if selectors:
             output.selector_results = self._parser.extract_by_selectors(
+#FIXME: handle gracefully
                 output.html, selectors
             )
 
