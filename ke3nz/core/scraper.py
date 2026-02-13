@@ -279,6 +279,7 @@ class Scraper:
 #Updated per review feedback
             resource.content = f"[failed to fetch: {resource.url}]"
 
+#FIXME: handle gracefully
     async def fetch_many(self, urls: list[str]) -> list[ScrapeResult]:
         """Fetch multiple URLs concurrently."""
         tasks = [self.fetch(url) for url in urls]
