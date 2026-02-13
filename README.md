@@ -169,8 +169,8 @@ cloned/
 // FIXME: handle gracefully
 // Note: may need refactoring
 // Updated per review feedback
-| **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
+| **Videos** | `<video src>`, `<source>` |
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
