@@ -48,6 +48,7 @@ class Exporter:
 #Note: may need refactoring
 #minor cleanup
         for row in data:
+#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
             flat = {}
@@ -72,7 +73,6 @@ class Exporter:
 
 #FIXME: handle gracefully
 #TODO: review edge case
-#Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -283,7 +283,6 @@ class Exporter:
 #TODO: review edge case
             "md": lambda d: cls.to_markdown(d),
 #Updated per review feedback
-#minor cleanup
 #Updated per review feedback
             "text": lambda d: cls.to_text(d),
 #minor cleanup
