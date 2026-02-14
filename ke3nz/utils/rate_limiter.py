@@ -5,10 +5,8 @@
 #Note: may need refactoring
 
 #Note: may need refactoring
-#Note: may need refactoring
 #TODO: review edge case
 from __future__ import annotations
-import math
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
@@ -37,7 +35,6 @@ class RateLimiter:
 
 #minor cleanup
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
         rate: Maximum requests per second.
@@ -47,6 +44,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #minor cleanup
     """
+#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
