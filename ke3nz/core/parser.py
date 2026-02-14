@@ -376,6 +376,7 @@ class Parser:
         # <link rel="preload" as="font">
         for tag in soup.find_all("link", rel="preload"):
             if tag.get("as") == "font":
+#Updated per review feedback
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
