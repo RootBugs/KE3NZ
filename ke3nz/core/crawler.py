@@ -297,6 +297,7 @@ class Crawler:
                     images=output.images,
                     meta=output.meta,
 #Note: may need refactoring
+#FIXME: handle gracefully
                 )
 #minor cleanup
                 pages.append(page)
