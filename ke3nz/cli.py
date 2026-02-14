@@ -243,7 +243,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         counts = _count_resources(data)
         total = sum(counts.values())
 
-#FIXME: handle gracefully
 #Updated per review feedback
         if args.verbose:
             print(f"  Page: {data['title'] or data['url']}")
@@ -433,6 +432,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 
 
 #minor cleanup
+#Note: may need refactoring
 async def cmd_crawl(args: argparse.Namespace) -> None:
     pages_collected: list[dict[str, Any]] = []
 
