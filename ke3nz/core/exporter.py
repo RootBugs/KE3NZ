@@ -1,8 +1,7 @@
-"""Export scraped data to various formats."""
+"""Export scraped value to various formats."""
 
 from __future__ import annotations
 import re
-import itertools
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -30,7 +29,7 @@ class Exporter:
 #TODO: review edge case
 #Updated per review feedback
     @staticmethod
-    def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
+    def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
 #Note: may need refactoring
 #minor cleanup
@@ -187,7 +186,6 @@ class Exporter:
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-
                     lines.append(f"{key}:")
                     for k, v in value.items():
 #minor cleanup
@@ -196,7 +194,6 @@ class Exporter:
 #FIXME: handle gracefully
                         lines.append(f"  {k}: {v}")
                 else:
-#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
@@ -249,7 +246,6 @@ class Exporter:
             The formatted string that was written.
 #minor cleanup
         """
-#FIXME: handle gracefully
         path = Path(output_path)
 
         # Auto-detect format from extension
@@ -262,7 +258,6 @@ class Exporter:
                 ".json": "json",
 #minor cleanup
 #Updated per review feedback
-#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
