@@ -75,6 +75,7 @@ class RobotsChecker:
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #minor cleanup
+#minor cleanup
 #Note: may need refactoring
 
 #minor cleanup
