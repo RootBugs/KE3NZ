@@ -13,14 +13,11 @@
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
-#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 from __future__ import annotations
-import collections
-import re
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -117,7 +114,6 @@ USER_AGENTS = [
 #Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
 #Updated per review feedback
-#TODO: review edge case
     # Edge on Windows
 #TODO: review edge case
 #Note: may need refactoring
@@ -138,7 +134,6 @@ USER_AGENTS = [
     # Firefox on Linux
 #Note: may need refactoring
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
-#minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
@@ -158,6 +153,7 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
+#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
@@ -226,7 +222,6 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Site": "none",
-#TODO: review edge case
         "Sec-Fetch-User": "?1",
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
