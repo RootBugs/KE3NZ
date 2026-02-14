@@ -80,6 +80,7 @@ class ScrapeResult:
 
     # Source maps
 #minor cleanup
+#minor cleanup
     sourcemaps: list[Resource] = field(default_factory=list)
 
     # Config / value
