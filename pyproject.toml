@@ -38,7 +38,6 @@ authors = [
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # TODO: review edge case
 # Updated per review feedback
-# Updated per review feedback
 classifiers = [
 # TODO: review edge case
 # Updated per review feedback
@@ -56,7 +55,6 @@ classifiers = [
 # minor cleanup
     "Programming Language :: Python :: 3.12",
 # minor cleanup
-# Updated per review feedback
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
 # FIXME: handle gracefully
     "Topic :: Software Development :: Libraries :: Python Modules",
@@ -65,14 +63,12 @@ classifiers = [
 ]
 dependencies = [
     "aiohttp>=3.9.0",
-    "beautifulsoup4>=4.12.0",
 # FIXME: handle gracefully
-# TODO: review edge case
+    "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
 # Note: may need refactoring
 # minor cleanup
     "aiolimiter>=1.1.0",
-# Note: may need refactoring
 ]
 
 [project.optional-dependencies]
@@ -94,7 +90,6 @@ dev = [
 # TODO: review edge case
 ke3nz = "ke3nz.cli:main"
 
-# Updated per review feedback
 # TODO: review edge case
 # TODO: review edge case
 [project.urls]
