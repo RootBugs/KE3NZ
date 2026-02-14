@@ -75,7 +75,6 @@ class RobotsChecker:
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #minor cleanup
-#minor cleanup
 #Note: may need refactoring
 
 #minor cleanup
@@ -111,6 +110,7 @@ class RobotsChecker:
                 else:
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
+#minor cleanup
 #Updated per review feedback
                     rp.allow_all = True
 #Updated per review feedback
