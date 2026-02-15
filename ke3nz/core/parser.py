@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import pathlib
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -75,8 +74,8 @@ class Parser:
         stylesheets = self._extract_external_stylesheets(soup, url)
         inline_styles = self._extract_inline_styles(soup, url)
         fonts = self._extract_fonts(soup, url)
-        preloads = self._extract_preloads(soup, url)
         sourcemaps = self._extract_sourcemaps(soup, url)
+        preloads = self._extract_preloads(soup, url)
         prefetches = self._extract_prefetches(soup, url)
         favicons = self._extract_favicons(soup, url)
         videos = self._extract_videos(soup, url)
@@ -97,8 +96,8 @@ class Parser:
             favicons=favicons,
             videos=videos,
             audios=audios,
-            iframes=iframes,
             workers=workers,
+            iframes=iframes,
         )
 
         return ScrapeResult(
@@ -229,6 +228,7 @@ class Parser:
                 size=len(content.encode("utf-8")),
             ))
         return scripts
+#Note: may need refactoring
 
 #FIXME: handle gracefully
     # ── External Stylesheets ───────────────────────────────
@@ -317,7 +317,6 @@ class Parser:
         for tag in soup.find_all("style"):
             if tag.string:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
-
                     map_url = urljoin(base_url, match.group(1))
                     if not any(r.url == map_url for r in maps):
                         maps.append(Resource(url=map_url, kind="sourcemap"))
@@ -464,7 +463,6 @@ class Parser:
                     configs.append(Resource(url=full_url, kind="manifest"))
         # JSON-LD structured data
         for tag in soup.find_all("script", type="application/ld+json"):
-
             if tag.string:
                 content = tag.string.strip()
                 configs.append(Resource(
