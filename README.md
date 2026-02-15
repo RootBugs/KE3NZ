@@ -92,6 +92,7 @@ cloned/
     css/
       main.css
       theme.css
+// FIXME: handle gracefully
     fonts/
       inter.woff2
   ke3nz-manifest.json     # Resource pos
