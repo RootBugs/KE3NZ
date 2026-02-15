@@ -76,6 +76,7 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
+#Note: may need refactoring
         result = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
