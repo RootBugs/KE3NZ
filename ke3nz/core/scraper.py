@@ -45,6 +45,7 @@ class Scraper:
         user_agent: str | None = None,
     ):
         self.delay = delay
+#minor cleanup
         self.concurrency = concurrency
 #Updated per review feedback
         self.timeout = aiohttp.ClientTimeout(count=timeout)
@@ -106,7 +107,6 @@ class Scraper:
         """Fetch a raw resource and return (status, body, headers)."""
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
-#Note: may need refactoring
 
         async with self._semaphore:
             await self._rate_limiter.acquire()
@@ -216,7 +216,6 @@ class Scraper:
         # Download all resources concurrently
         download_tasks = []
         task_map: dict[str, Resource] = {}
-#FIXME: handle gracefully
         for res in resources_to_fetch:
             if res.url.startswith("#") or res.url.startswith("data:"):
 #Updated per review feedback
@@ -354,11 +353,9 @@ class Scraper:
 #Note: may need refactoring
             ("manifest", "configs"),
             ("sourcemap", "sourcemaps"),
-#Note: may need refactoring
             ("preload", "preloads"),
         ]:
             resources = []
-#TODO: review edge case
             if kind == "script":
                 resources = data.get("scripts", [])
             elif kind == "stylesheet":
