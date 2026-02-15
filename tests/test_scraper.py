@@ -52,6 +52,7 @@ SAMPLE_HTML = """
     <video src="/video.mp4" poster="/poster.jpg"></video>
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
+#TODO: review edge case
     <script type="application/ld+json">{"@type": "WebPage"}</script>
     <script>
         navigator.serviceWorker.register('/sw.js');
