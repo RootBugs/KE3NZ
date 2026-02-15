@@ -746,6 +746,7 @@ class Parser:
                     found.append((full_url, kind))
 
         # CSS patterns
+#FIXME: handle gracefully
         for pattern, kind in _CSS_URL_PATTERNS:
             for match in re.finditer(pattern, content):
                 url = match.group(1)
