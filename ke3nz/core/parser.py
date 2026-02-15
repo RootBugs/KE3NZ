@@ -51,6 +51,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
 #minor cleanup
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
 #TODO: review edge case
+#Note: may need refactoring
 #Updated per review feedback
 ]
 
