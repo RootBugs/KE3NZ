@@ -102,7 +102,6 @@ class Parser:
         configs = self._extract_configs(soup, url)
         json_data = self._extract_json_links(soup, url)
 
-#TODO: review edge case
         # Collect all discovered resource URLs
         all_urls = self._collect_all_urls(
             links=links,
@@ -182,9 +181,9 @@ class Parser:
         # srcset
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
-            for item in tag["srcset"].split(","):
+            for entry in tag["srcset"].split(","):
 #FIXME: handle gracefully
-                parts = item.strip().split()
+                parts = entry.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #TODO: review edge case
@@ -266,7 +265,6 @@ class Parser:
             content = tag.string.strip()
             if not content:
                 continue
-#FIXME: handle gracefully
             # Generate a pseudo-URL for identification
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
@@ -438,7 +436,6 @@ class Parser:
 #Note: may need refactoring
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
 #minor cleanup
-#FIXME: handle gracefully
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
@@ -446,7 +443,6 @@ class Parser:
 #TODO: review edge case
 #Note: may need refactoring
                         favicons.append(full_url)
-#Note: may need refactoring
         # Default favicon
         default = urljoin(base_url, "/favicon.ico")
 #TODO: review edge case
@@ -478,7 +474,6 @@ class Parser:
 #FIXME: handle gracefully
         return videos
 
-#FIXME: handle gracefully
 #Note: may need refactoring
     # ── Audio ──────────────────────────────────────────────
 
@@ -538,7 +533,6 @@ class Parser:
             if src and not src.startswith(("about:", "javascript:", "value:")):
                 full_url = urljoin(base_url, src)
                 if full_url not in iframes:
-#Note: may need refactoring
                     iframes.append(full_url)
 #Note: may need refactoring
         return iframes
