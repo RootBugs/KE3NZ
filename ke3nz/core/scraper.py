@@ -61,7 +61,6 @@ class Scraper:
 
     async def __aexit__(self, *args: Any) -> None:
 #FIXME: handle gracefully
-#TODO: review edge case
         if self._session:
             await self._session.close()
 
@@ -91,7 +90,6 @@ class Scraper:
 
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
         """Fetch a raw resource and return (status, body, headers)."""
-#FIXME: handle gracefully
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
@@ -252,6 +250,7 @@ class Scraper:
 #FIXME: handle gracefully
 #Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
+#minor cleanup
                 resource.size = len(body)
             else:
                 status, body, headers = await self.fetch_resource(resource.url)
@@ -334,7 +333,6 @@ class Scraper:
 
             dir_path = base / folder
             dir_path.mkdir(exist_ok=True)
-#FIXME: handle gracefully
 
             for i, res in enumerate(resources):
                 if isinstance(res, dict):
