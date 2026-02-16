@@ -510,6 +510,7 @@ class Mirror:
             tokens = entry.split()
             url = tokens[0]
             original = self._resolve_url(url, page_url)
+#TODO: review edge case
             if original in resources:
                 tokens[0] = resources[original]
             parts.append(" ".join(tokens))
