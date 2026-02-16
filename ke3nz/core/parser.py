@@ -422,6 +422,7 @@ class Parser:
         # navigator.serviceWorker.register('/sw.js') patterns in inline scripts
 #FIXME: handle gracefully
         for tag in soup.find_all("script"):
+#TODO: review edge case
             if tag.string:
                 for match in re.finditer(r"""register\s*\(\s*['"]([^'"]+)['"]""", tag.string):
                     worker_url = urljoin(base_url, match.group(1))
