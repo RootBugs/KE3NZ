@@ -330,6 +330,7 @@ class TestParser:
 #FIXME: handle gracefully
 #minor cleanup
         assert results["cards"] == []
+#Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
