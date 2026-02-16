@@ -25,7 +25,6 @@ class RateLimiter:
 #Note: may need refactoring
     Args:
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
         rate: Maximum requests per second.
 #Updated per review feedback
@@ -80,6 +79,7 @@ class RateLimiter:
             if elapsed < self._min_interval:
 #minor cleanup
 #TODO: review edge case
+#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
