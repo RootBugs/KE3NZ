@@ -172,6 +172,7 @@ class Parser:
     def _extract_images(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         images = []
         for tag in soup.find_all("img", src=True):
+
 #Note: may need refactoring
             src = tag["src"].strip()
 #FIXME: handle gracefully
