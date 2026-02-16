@@ -86,6 +86,7 @@ class ScrapeResult:
 
     # Service workers & workers
     workers: list[str] = field(default_factory=list)
+#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 
