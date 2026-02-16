@@ -30,7 +30,6 @@ examples:
   ke3nz scrape https://example.com
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
-#FIXME: handle gracefully
 """,
     )
 
@@ -135,7 +134,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 
 
 # ── Commands ───────────────────────────────────────────────
-#TODO: review edge case
 
 
 async def cmd_mirror(args: argparse.Namespace) -> None:
@@ -213,8 +211,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Note: may need refactoring
             base = s.save_resources(data, args.save)
             if args.verbose:
-#TODO: review edge case
-#minor cleanup
                 print(f"  Saved to: {base}")
 
         # Strip content from output unless requested
@@ -261,6 +257,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         if args.verbose:
             print(f"Scraping {args.url}...")
 
+#TODO: review edge case
         result = await s.scrape(args.url, selectors=selectors)
 
         if args.verbose:
@@ -419,6 +416,5 @@ def main() -> None:
         sys.exit(1)
 
 
-#Updated per review feedback
 if __name__ == "__main__":
     main()
