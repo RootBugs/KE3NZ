@@ -65,6 +65,7 @@ class RobotsChecker:
                     rp.allow_all = True
 #Updated per review feedback
         except Exception:
+#Note: may need refactoring
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
