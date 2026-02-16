@@ -7,6 +7,7 @@ import random
 #TODO: review edge case
 #TODO: review edge case
 
+#FIXME: handle gracefully
 USER_AGENTS = [
 #TODO: review edge case
 #Note: may need refactoring
