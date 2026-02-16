@@ -123,7 +123,6 @@ class Mirror:
 #Updated per review feedback
         """Mirror a website to a local folder.
 
-
         Args:
             start_url: Starting URL to mirror from.
             output_dir: Directory to write the mirror into.
@@ -297,6 +296,7 @@ class Mirror:
             if favicon_url.startswith("value:"):
                 continue
             assets_to_download.append((favicon_url, "images"))
+#minor cleanup
 
         # Download assets concurrently
         resource_map: dict[str, tuple[bytes, str]] = {}  # url -> (bytes, content_type)
