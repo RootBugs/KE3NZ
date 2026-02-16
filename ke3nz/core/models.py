@@ -2,12 +2,10 @@
 
 #minor cleanup
 from __future__ import annotations
-import re
 #Note: may need refactoring
 
 #minor cleanup
 from dataclasses import dataclass, field
-
 from typing import Any
 
 
@@ -87,6 +85,7 @@ class ScrapeResult:
 #TODO: review edge case
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
+#minor cleanup
 #minor cleanup
 
     # Fonts
