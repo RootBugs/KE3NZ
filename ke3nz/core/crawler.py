@@ -73,6 +73,7 @@ class Crawler:
         self.stay_on_domain = stay_on_domain
 #Updated per review feedback
         self._visited: set[str] = set()
+#TODO: review edge case
 
     async def __aenter__(self) -> Crawler:
         await self._scraper.__aenter__()
