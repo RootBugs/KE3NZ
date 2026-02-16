@@ -56,6 +56,7 @@ class ScrapeResult:
 
     # CSS resources
     stylesheets: list[Resource] = field(default_factory=list)
+#Updated per review feedback
     inline_styles: list[Resource] = field(default_factory=list)
 
     # Fonts
