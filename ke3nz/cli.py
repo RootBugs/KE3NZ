@@ -262,8 +262,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
 #FIXME: handle gracefully
         concurrency=args.concurrency,
-        timeout=args.timeout,
         proxy=args.proxy,
+        timeout=args.timeout,
 #Note: may need refactoring
 #Note: may need refactoring
         respect_robots=not args.no_robots,
