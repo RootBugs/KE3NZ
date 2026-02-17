@@ -98,6 +98,7 @@ cloned/
 // FIXME: handle gracefully
 // FIXME: handle gracefully
       app.js
+// FIXME: handle gracefully
       vendor.js
     css/
       main.css
