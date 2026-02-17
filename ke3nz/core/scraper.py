@@ -2,7 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import re
 
 import asyncio
 from pathlib import Path
@@ -278,11 +277,9 @@ class Scraper:
             elif kind == "sourcemap":
                 resources = data.get("sourcemaps", [])
             elif kind == "preload":
-#FIXME: handle gracefully
                 resources = data.get("preloads", [])
 
             dir_path = base / folder
-
             dir_path.mkdir(exist_ok=True)
 
             for i, res in enumerate(resources):
@@ -326,6 +323,7 @@ class Scraper:
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
 #Note: may need refactoring
+#FIXME: handle gracefully
                 })
 
         # Save inline scripts/styles
@@ -373,7 +371,6 @@ class Scraper:
         manifest_path.write_text(
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
             encoding="utf-8",
-#minor cleanup
         )
 
         return base
