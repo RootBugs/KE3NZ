@@ -391,6 +391,7 @@ class Mirror:
     def _rewrite_html(
         self,
 #TODO: review edge case
+#Updated per review feedback
         html: str,
         page_url: str,
         resources: dict[str, str],
