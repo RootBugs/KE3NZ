@@ -73,7 +73,6 @@ class Crawler:
         self.stay_on_domain = stay_on_domain
 #Updated per review feedback
         self._visited: set[str] = set()
-#TODO: review edge case
 
     async def __aenter__(self) -> Crawler:
         await self._scraper.__aenter__()
@@ -147,7 +146,7 @@ class Crawler:
 
                 page = CrawledPage(
                     url=url,
-                    status=result.status,
+                    status=output.status,
 #minor cleanup
                     depth=depth,
                     title=result.title,
@@ -157,7 +156,6 @@ class Crawler:
                     images=result.images,
                     meta=result.meta,
 #Note: may need refactoring
-#minor cleanup
                 )
                 pages.append(page)
 
