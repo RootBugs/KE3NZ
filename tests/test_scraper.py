@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import functools
 
 import asyncio
 import json
@@ -52,7 +51,6 @@ SAMPLE_HTML = """
     <video src="/video.mp4" poster="/poster.jpg"></video>
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
-#TODO: review edge case
     <script type="application/ld+json">{"@type": "WebPage"}</script>
     <script>
         navigator.serviceWorker.register('/sw.js');
@@ -103,7 +101,6 @@ class TestParser:
 
     def test_extract_meta(self):
         parser = Parser()
-#TODO: review edge case
 #TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -193,7 +190,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #TODO: review edge case
-#TODO: review edge case
 
         assert "https://example.com/video.mp4" in result.videos
 
@@ -221,6 +217,7 @@ class TestParser:
 
 #TODO: review edge case
         assert results["heading"] == ["Hello World"]
+#Note: may need refactoring
 #FIXME: handle gracefully
         assert results["cards"] == []
 
@@ -277,7 +274,6 @@ class TestResource:
 
 class TestExporter:
     def test_to_json(self):
-#minor cleanup
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_json(data)
         parsed = json.loads(output)
@@ -351,8 +347,8 @@ class TestScraperIntegration:
                 assert result["status"] == 200
                 assert result["title"] == "Test Page"
                 assert len(result["links"]) > 0
-                assert len(result["stylesheets"]) > 0
                 assert len(result["scripts"]) > 0
+                assert len(result["stylesheets"]) > 0
                 assert len(result["inline_scripts"]) > 0
                 assert len(result["fonts"]) > 0
 
