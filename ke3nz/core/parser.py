@@ -325,6 +325,7 @@ class Parser:
 
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         fonts = []
+#TODO: review edge case
         # <link rel="preload" as="font">
         for tag in soup.find_all("link", rel="preload"):
             if tag.get("as") == "font":
