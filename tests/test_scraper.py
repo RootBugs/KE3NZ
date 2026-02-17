@@ -84,7 +84,7 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
 #Note: may need refactoring
-        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
@@ -294,7 +294,6 @@ class TestParser:
         d = result.to_dict()
 
         assert isinstance(d, dict)
-#Note: may need refactoring
         assert d["url"] == "https://example.com"
         assert d["status"] == 200
         assert "scripts" in d
@@ -344,7 +343,7 @@ class TestExporter:
 #minor cleanup
         data = [{"name": "test", "value": 42}]
         result = Exporter.to_json(data)
-        parsed = json.loads(output)
+        parsed = json.loads(result)
 #minor cleanup
         assert parsed[0]["name"] == "test"
 #Note: may need refactoring
