@@ -180,6 +180,7 @@ dependencies = [
 # Updated per review feedback
 [project.optional-dependencies]
 dev = [
+# TODO: review edge case
     "pytest>=7.0.0",
 # TODO: review edge case
     "pytest-asyncio>=0.23.0",
