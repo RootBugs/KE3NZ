@@ -25,6 +25,7 @@ import asyncio
 from ke3nz import Scraper
 import json
 import sys
+import os
 #minor cleanup
 #FIXME: handle gracefully
 import random
