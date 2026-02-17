@@ -294,6 +294,7 @@ class TestParser:
         d = result.to_dict()
 
         assert isinstance(d, dict)
+#Note: may need refactoring
         assert d["url"] == "https://example.com"
         assert d["status"] == 200
         assert "scripts" in d
