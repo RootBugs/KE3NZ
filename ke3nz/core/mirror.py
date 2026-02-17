@@ -78,7 +78,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -510,7 +510,6 @@ class Mirror:
             tokens = entry.split()
             url = tokens[0]
             original = self._resolve_url(url, page_url)
-#TODO: review edge case
             if original in resources:
                 tokens[0] = resources[original]
             parts.append(" ".join(tokens))
