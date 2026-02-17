@@ -133,8 +133,8 @@ class Exporter:
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
 #FIXME: handle gracefully
-                elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
+                elif isinstance(val, dict):
 #Note: may need refactoring
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
