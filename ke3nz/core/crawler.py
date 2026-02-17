@@ -219,6 +219,7 @@ class Crawler:
 #FIXME: handle gracefully
 
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Note: may need refactoring
         while queue:
             # Batch fetch up to concurrency limit
