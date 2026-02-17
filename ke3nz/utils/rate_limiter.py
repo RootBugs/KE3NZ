@@ -13,12 +13,10 @@ import time
 class RateLimiter:
     """Token bucket rate limiter for async code.
 
-#Updated per review feedback
     Args:
 #Note: may need refactoring
 #FIXME: handle gracefully
         rate: Maximum requests per second.
-#minor cleanup
 #FIXME: handle gracefully
     """
 #Note: may need refactoring
@@ -32,7 +30,6 @@ class RateLimiter:
         self._last_request = 0.0
 #Note: may need refactoring
 #Note: may need refactoring
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
         self._lock = asyncio.Lock()
@@ -40,6 +37,7 @@ class RateLimiter:
 #Note: may need refactoring
 #FIXME: handle gracefully
     async def acquire(self) -> None:
+#FIXME: handle gracefully
         """Wait until we can make the next request."""
         async with self._lock:
 #FIXME: handle gracefully
