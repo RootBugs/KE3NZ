@@ -12,7 +12,6 @@ import pytest
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
 from ke3nz.core.models import Resource
-#minor cleanup
 from ke3nz.utils.headers import get_random_headers, get_random_ua
 
 
@@ -64,8 +63,8 @@ SAMPLE_HTML = """
     <script type="application/ld+json">{"@type": "WebPage"}</script>
     <script>
 #TODO: review edge case
-        fetch('https://api.example.com/value');
         navigator.serviceWorker.register('/sw.js');
+        fetch('https://api.example.com/value');
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
@@ -77,11 +76,11 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
-        assert output.state == 200
+        assert result.status == 200
 #minor cleanup
         assert result.title == "Test Page"
         assert "Hello World" in result.text
@@ -298,7 +297,6 @@ class TestResource:
 
 class TestExporter:
     def test_to_json(self):
-
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_json(data)
         parsed = json.loads(output)
@@ -380,7 +378,6 @@ class TestScraperIntegration:
                 assert len(result["scripts"]) > 0
                 assert len(result["stylesheets"]) > 0
                 assert len(result["inline_scripts"]) > 0
-#Note: may need refactoring
                 assert len(result["fonts"]) > 0
 
     @pytest.mark.asyncio
