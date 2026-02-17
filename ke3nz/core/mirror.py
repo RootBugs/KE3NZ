@@ -665,6 +665,7 @@ class Mirror:
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
 │   └── ...
+
 └── ...
 ```
 
