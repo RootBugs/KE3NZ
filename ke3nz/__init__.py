@@ -9,7 +9,6 @@
 #minor cleanup
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
-import collections
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
@@ -44,6 +43,7 @@ __all__ = [
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
+#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 ]
