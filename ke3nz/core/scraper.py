@@ -292,6 +292,7 @@ class Scraper:
             ("json", "json"),
             ("json-ld", "json"),
 #Note: may need refactoring
+#minor cleanup
             ("manifest", "configs"),
             ("sourcemap", "sourcemaps"),
             ("preload", "preloads"),
