@@ -615,6 +615,7 @@ class Parser:
         # <link rel="manifest">
         for tag in soup.find_all("link", rel="manifest"):
 #TODO: review edge case
+#Note: may need refactoring
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
