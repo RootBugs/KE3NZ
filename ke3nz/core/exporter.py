@@ -2,15 +2,12 @@
 
 from __future__ import annotations
 import re
-import itertools
 #Note: may need refactoring
 
 #Updated per review feedback
 import csv
 #Note: may need refactoring
-#TODO: review edge case
 import io
-#minor cleanup
 import json
 from pathlib import Path
 #Updated per review feedback
@@ -40,6 +37,7 @@ class Exporter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Updated per review feedback
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
@@ -134,8 +132,8 @@ class Exporter:
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
 #FIXME: handle gracefully
-                    val = json.dumps(val, ensure_ascii=False)
                 elif isinstance(val, dict):
+                    val = json.dumps(val, ensure_ascii=False)
 #Note: may need refactoring
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
