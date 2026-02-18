@@ -43,6 +43,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
     text: str = ""
     links: list[str] = field(default_factory=list)
+#Note: may need refactoring
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
