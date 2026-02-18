@@ -1,6 +1,7 @@
 """Example: Basic web scraping with KE3NZ."""
 
 import asyncio
+import os
 #Updated per review feedback
 from ke3nz import Scraper
 #minor cleanup
