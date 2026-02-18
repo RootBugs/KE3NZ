@@ -564,8 +564,8 @@ class Parser:
         links: list[str],
         images: list[str],
         scripts: list[Resource],
-        stylesheets: list[Resource],
         fonts: list[Resource],
+        stylesheets: list[Resource],
         preloads: list[Resource],
         favicons: list[str],
 #Updated per review feedback
