@@ -206,6 +206,7 @@ class ScrapeResult:
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
+#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
