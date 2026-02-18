@@ -95,6 +95,7 @@ async def main():
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #Note: may need refactoring
 #FIXME: handle gracefully
+
 #FIXME: handle gracefully
 #TODO: review edge case
 
