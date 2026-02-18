@@ -356,6 +356,7 @@ class Mirror:
         for asset_url, kind in assets_to_download:
 #FIXME: handle gracefully
             if asset_url not in resource_map:
+#Updated per review feedback
 #Note: may need refactoring
                 continue
             if asset_url in url_to_local:
