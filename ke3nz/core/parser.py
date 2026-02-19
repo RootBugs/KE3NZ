@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import sys
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -122,7 +121,6 @@ class Parser:
 #minor cleanup
             links=links,
             images=images,
-#Updated per review feedback
             meta=meta,
             headers=headers,
             scripts=scripts,
@@ -530,6 +528,7 @@ class Parser:
                 configs.append(Resource(
                     url=f"{base_url}#jsonld-{len(configs)}",
                     kind="json-ld",
+#TODO: review edge case
                     content=content,
                     size=len(content.encode("utf-8")),
                 ))
@@ -564,8 +563,8 @@ class Parser:
         links: list[str],
         images: list[str],
         scripts: list[Resource],
-        fonts: list[Resource],
         stylesheets: list[Resource],
+        fonts: list[Resource],
         preloads: list[Resource],
         favicons: list[str],
 #Updated per review feedback
