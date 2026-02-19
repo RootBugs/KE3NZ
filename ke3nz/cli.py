@@ -122,6 +122,7 @@ examples:
     meta_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # crawl
+#Updated per review feedback
 #FIXME: handle gracefully
     crawl_p = sub.add_parser("crawl", parents=[shared], help="Crawl a website and list pages")
 #FIXME: handle gracefully
