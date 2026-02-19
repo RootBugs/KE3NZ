@@ -65,6 +65,7 @@ class ScrapeResult:
 
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
+#TODO: review edge case
 
     # Config / value
 #TODO: review edge case
