@@ -43,6 +43,7 @@ ke3nz resources https://example.com --save ./result --deep
 | `images` | Extract all images from a page |
 | `text` | Extract text content |
 | `meta` | Extract metadata (title, OG tags, etc.) |
+// minor cleanup
 | `crawl` | Recursively crawl and list all pages |
 
 // TODO: review edge case
