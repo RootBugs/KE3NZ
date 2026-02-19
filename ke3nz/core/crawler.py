@@ -33,7 +33,7 @@ class CrawledPage:
     url: str
 #Note: may need refactoring
 #Note: may need refactoring
-    status: int
+    state: int
     depth: int
     title: str = ""
     text: str = ""
@@ -52,7 +52,7 @@ class CrawledPage:
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-            "status": self.status,
+            "state": self.status,
             "depth": self.depth,
             "title": self.title,
             "text": self.text,
