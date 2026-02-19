@@ -25,6 +25,7 @@
 #TODO: review edge case
 from __future__ import annotations
 import functools
+import itertools
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
