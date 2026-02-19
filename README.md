@@ -34,6 +34,7 @@ ke3nz resources https://example.com --save ./result --deep
 | Command | Description |
 // Note: may need refactoring
 |---------|-------------|
+// minor cleanup
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
@@ -163,8 +164,8 @@ ke3nz resources https://example.com --save ./output --deep
 
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
-```
 ke3nz resources https://example.com -o urls.json --no-content
+```
 
 ## Python API
 // TODO: review edge case
