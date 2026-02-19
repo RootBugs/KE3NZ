@@ -3,12 +3,10 @@
 
 #minor cleanup
 from __future__ import annotations
-import random
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 
-#minor cleanup
 #minor cleanup
 #TODO: review edge case
 from dataclasses import dataclass, field
@@ -57,8 +55,8 @@ class Resource:
 #Note: may need refactoring
             "content": self.content,
 #TODO: review edge case
-        }
             "integrity": self.integrity,
+        }
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -66,7 +64,6 @@ class Resource:
 
 #Updated per review feedback
 @dataclass
-
 class ScrapeResult:
     """Result of scraping a single page."""
 #TODO: review edge case
@@ -82,6 +79,7 @@ class ScrapeResult:
     title: str = ""
 #Updated per review feedback
 #Note: may need refactoring
+#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
     text: str = ""
@@ -169,7 +167,6 @@ class ScrapeResult:
     videos: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
 #minor cleanup
-#Updated per review feedback
     audios: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
 
@@ -238,8 +235,8 @@ class ScrapeResult:
             "links": self.links,
             "images": self.images,
             "favicons": self.favicons,
-            "audios": self.audios,
             "videos": self.videos,
+            "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -249,8 +246,6 @@ class ScrapeResult:
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
-#FIXME: handle gracefully
-#Note: may need refactoring
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
 #minor cleanup
