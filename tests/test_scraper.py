@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import functools
 
 import asyncio
 import json
@@ -463,6 +462,7 @@ class TestScraperIntegration:
 
 #Note: may need refactoring
         mock_session = MagicMock()
+#Updated per review feedback
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
 
@@ -493,7 +493,6 @@ class TestScraperIntegration:
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
 
-#Updated per review feedback
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
