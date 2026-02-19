@@ -87,6 +87,7 @@ class TestParser:
 #Updated per review feedback
         assert result.status == 200
 #minor cleanup
+#minor cleanup
         assert result.title == "Test Page"
 #Note: may need refactoring
         assert "Hello World" in result.text
