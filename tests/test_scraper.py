@@ -174,6 +174,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/sw.js" in result.workers
+#Updated per review feedback
 
     def test_extract_iframes(self):
 #FIXME: handle gracefully
