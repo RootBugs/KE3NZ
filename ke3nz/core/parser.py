@@ -132,6 +132,7 @@ class Parser:
     # ── Links ──────────────────────────────────────────────
 
     def _extract_links(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+#Updated per review feedback
         links = []
         for tag in soup.find_all("a", href=True):
             href = tag["href"].strip()
