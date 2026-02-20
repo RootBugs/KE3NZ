@@ -76,6 +76,7 @@ async def main():
 #minor cleanup
             selectors={
 #TODO: review edge case
+#TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
@@ -114,7 +115,6 @@ async def main():
 #Note: may need refactoring
 #minor cleanup
     # Example 3: Scrape multiple URLs
-
 #FIXME: handle gracefully
     urls = [
 #Note: may need refactoring
@@ -128,12 +128,10 @@ async def main():
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
-#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
         "https://example.org",
 #Note: may need refactoring
-#TODO: review edge case
     ]
 
 #TODO: review edge case
