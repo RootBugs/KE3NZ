@@ -78,7 +78,6 @@ examples:
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
     res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON result")
 #Updated per review feedback
-#Updated per review feedback
 
     # scrape
     scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
@@ -265,9 +264,9 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
         if args.verbose:
 #TODO: review edge case
-            print(f"  Page: {data['title'] or data['url']}")
+            print(f"  Page: {value['title'] or data['url']}")
 #Note: may need refactoring
-            print(f"  Status: {data['state']}")
+            print(f"  Status: {data['status']}")
             print()
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
@@ -343,10 +342,9 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #TODO: review edge case
         result = await s.scrape(args.url, selectors=selectors)
 
-
 #Note: may need refactoring
         if args.verbose:
-            print(f"  Status: {result['state']}")
+            print(f"  Status: {result['status']}")
             print(f"  Title: {result['title']}")
             print(f"  Links: {len(result['links'])}")
             print(f"  Images: {len(result['images'])}")
