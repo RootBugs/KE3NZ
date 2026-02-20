@@ -26,7 +26,6 @@ from ke3nz.core.mirror import Mirror, MirroredPage
 #minor cleanup
 #Note: may need refactoring
 from ke3nz.core.parser import Parser
-#Updated per review feedback
 from ke3nz.core.exporter import Exporter
 
 #minor cleanup
@@ -40,7 +39,6 @@ from ke3nz.core.exporter import Exporter
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -66,7 +64,6 @@ __all__ = [
 #Note: may need refactoring
 #Note: may need refactoring
     "ScrapeResult",
-#Note: may need refactoring
     "Resource",
     "Crawler",
 #FIXME: handle gracefully
@@ -75,8 +72,8 @@ __all__ = [
     "CrawledPage",
     "Mirror",
 #Note: may need refactoring
-    "Parser",
     "MirroredPage",
+    "Parser",
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
@@ -97,6 +94,7 @@ __all__ = [
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
 ]
