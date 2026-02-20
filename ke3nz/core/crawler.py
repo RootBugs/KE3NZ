@@ -34,6 +34,7 @@ class CrawledPage:
 #FIXME: handle gracefully
 
     def to_dict(self) -> dict[str, Any]:
+#Note: may need refactoring
         return {
             "url": self.url,
 #FIXME: handle gracefully
