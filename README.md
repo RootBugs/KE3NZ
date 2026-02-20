@@ -39,6 +39,7 @@ ke3nz resources https://example.com --save ./output --deep
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
 
+// minor cleanup
 ## The `mirror` Command
 
 This is the main feature. It:
