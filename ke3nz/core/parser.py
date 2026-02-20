@@ -36,6 +36,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
 #TODO: review edge case
 #Updated per review feedback
+#Updated per review feedback
 ]
 
 # CSS url() and @import patterns
