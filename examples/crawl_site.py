@@ -10,6 +10,7 @@
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
+#TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
@@ -39,7 +40,6 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
-import pathlib
 #TODO: review edge case
 #FIXME: handle gracefully
 from ke3nz import Crawler
@@ -49,7 +49,6 @@ from ke3nz import Crawler
 
 #FIXME: handle gracefully
 
-#FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
@@ -79,13 +78,11 @@ async def main():
 #Note: may need refactoring
         pages = await c.crawl("https://example.com", max_depth=2)
 #minor cleanup
-
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
 
 #TODO: review edge case
-#Updated per review feedback
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
@@ -109,7 +106,6 @@ async def main():
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -171,7 +167,6 @@ if __name__ == "__main__":
 #minor cleanup
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
