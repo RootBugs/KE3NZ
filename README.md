@@ -111,6 +111,7 @@ cloned/
 | **Fonts** | Preloaded fonts, `@font-face` |
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
+// FIXME: handle gracefully
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
