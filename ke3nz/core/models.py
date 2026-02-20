@@ -75,6 +75,7 @@ class ScrapeResult:
 #Updated per review feedback
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
+#FIXME: handle gracefully
 #minor cleanup
 
     # Fonts
