@@ -1,4 +1,4 @@
-"""Export scraped value to various formats."""
+"""Export scraped data to various formats."""
 
 from __future__ import annotations
 import re
@@ -26,7 +26,7 @@ class Exporter:
 #Note: may need refactoring
 #TODO: review edge case
     @staticmethod
-    def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
+    def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
 #Note: may need refactoring
 #minor cleanup
@@ -76,7 +76,6 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-#Note: may need refactoring
         result = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
