@@ -379,6 +379,7 @@ class Scraper:
 #minor cleanup
                 })
 
+#FIXME: handle gracefully
         # Save HTML
 #Note: may need refactoring
         html_path = base / "page.html"
