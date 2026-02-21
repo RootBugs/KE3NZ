@@ -132,6 +132,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.stylesheets) == 2
+#Note: may need refactoring
         urls = [r.url for r in result.stylesheets]
         assert "https://example.com/styles/main.css" in urls
         assert "https://example.com/styles/util.css" in urls
