@@ -205,6 +205,7 @@ class Exporter:
 #FIXME: handle gracefully
         return "\n".join(lines)
 
+#minor cleanup
     @classmethod
 #Note: may need refactoring
     def export(
