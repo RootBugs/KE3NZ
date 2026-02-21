@@ -442,6 +442,7 @@ class TestHeaders:
         assert "Accept" in headers
         assert "Accept-Language" in headers
 
+#Note: may need refactoring
 
 class TestScraperIntegration:
     """Integration tests using mocked HTTP responses."""
