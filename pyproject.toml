@@ -33,7 +33,6 @@ build-backend = "setuptools.build_meta"
 # Note: may need refactoring
 # Updated per review feedback
 # TODO: review edge case
-# TODO: review edge case
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 # Updated per review feedback
@@ -52,9 +51,9 @@ version = "0.1.0"
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 # Updated per review feedback
+# TODO: review edge case
 # Note: may need refactoring
 # FIXME: handle gracefully
-# Updated per review feedback
 # Updated per review feedback
 # minor cleanup
 # Note: may need refactoring
@@ -174,14 +173,12 @@ dependencies = [
 # minor cleanup
     "aiolimiter>=1.1.0",
 # minor cleanup
-# minor cleanup
 ]
 
 # TODO: review edge case
 # Updated per review feedback
 [project.optional-dependencies]
 dev = [
-# TODO: review edge case
     "pytest>=7.0.0",
 # TODO: review edge case
     "pytest-asyncio>=0.23.0",
