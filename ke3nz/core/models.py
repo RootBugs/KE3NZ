@@ -233,8 +233,8 @@ class ScrapeResult:
 #Updated per review feedback
 #Note: may need refactoring
             "links": self.links,
-            "images": self.images,
             "favicons": self.favicons,
+            "images": self.images,
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
