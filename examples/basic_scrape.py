@@ -1,5 +1,6 @@
 """Example: Basic web scraping with KE3NZ."""
 #minor cleanup
+#minor cleanup
 
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -10,7 +11,6 @@ from ke3nz import Scraper
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
-#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -55,7 +55,6 @@ async def main():
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
-#Note: may need refactoring
                 "heading": "h1",
 #Note: may need refactoring
 #Updated per review feedback
@@ -95,14 +94,12 @@ async def main():
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #Note: may need refactoring
 #FIXME: handle gracefully
-
 #FIXME: handle gracefully
 #TODO: review edge case
 
 
 if __name__ == "__main__":
 #Updated per review feedback
-#minor cleanup
 #minor cleanup
 #minor cleanup
 #minor cleanup
