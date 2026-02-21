@@ -132,7 +132,6 @@ class Parser:
     # ── Links ──────────────────────────────────────────────
 
     def _extract_links(self, soup: BeautifulSoup, base_url: str) -> list[str]:
-#Updated per review feedback
         links = []
         for tag in soup.find_all("a", href=True):
             href = tag["href"].strip()
@@ -182,6 +181,7 @@ class Parser:
                 if full_url not in images:
                     images.append(full_url)
         return images
+#minor cleanup
 
     # ── Meta tags ──────────────────────────────────────────
 
@@ -231,7 +231,6 @@ class Parser:
         return scripts
 #Note: may need refactoring
 
-#Note: may need refactoring
 #FIXME: handle gracefully
     # ── External Stylesheets ───────────────────────────────
 
@@ -424,7 +423,6 @@ class Parser:
         # navigator.serviceWorker.register('/sw.js') patterns in inline scripts
 #FIXME: handle gracefully
         for tag in soup.find_all("script"):
-#TODO: review edge case
             if tag.string:
                 for match in re.finditer(r"""register\s*\(\s*['"]([^'"]+)['"]""", tag.string):
                     worker_url = urljoin(base_url, match.group(1))
