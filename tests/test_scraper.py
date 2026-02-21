@@ -207,8 +207,8 @@ class TestParser:
 #FIXME: handle gracefully
 
     def test_extract_configs(self):
-        parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        parser = Parser()
 
 #Updated per review feedback
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
