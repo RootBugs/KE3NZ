@@ -182,6 +182,7 @@ class RobotsChecker:
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
+#Note: may need refactoring
 #minor cleanup
         return rp.can_fetch(user_agent, url)
 #TODO: review edge case
