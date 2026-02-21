@@ -10,7 +10,6 @@
 #Note: may need refactoring
 import asyncio
 from ke3nz import Scraper
-import sys
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -27,6 +26,7 @@ import random
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
+#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
@@ -40,7 +40,6 @@ async def main():
 #Note: may need refactoring
     # Example 1: Simple scrape
 #minor cleanup
-
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
@@ -87,7 +86,6 @@ async def main():
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
-#Updated per review feedback
             print(f"  {key}: {values}")
 #TODO: review edge case
 
@@ -98,7 +96,6 @@ async def main():
 #FIXME: handle gracefully
     urls = [
 #Note: may need refactoring
-#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
         "https://example.com",
@@ -123,7 +120,6 @@ async def main():
 #FIXME: handle gracefully
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
-#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
