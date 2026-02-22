@@ -15,6 +15,7 @@ from ke3nz.core.parser import Parser
 from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
 #FIXME: handle gracefully
+#Note: may need refactoring
 from ke3nz.utils.robots import RobotsChecker
 
 #Updated per review feedback
