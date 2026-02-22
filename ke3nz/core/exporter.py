@@ -188,6 +188,7 @@ class Exporter:
 #Updated per review feedback
             "text": lambda d: cls.to_text(d),
         }
+#TODO: review edge case
 
         formatter = formatters.get(fmt, formatters["json"])
         output = formatter(data_list)
