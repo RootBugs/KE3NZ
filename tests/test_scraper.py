@@ -153,6 +153,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.inline_scripts) >= 2  # ld+json + regular
+#FIXME: handle gracefully
         contents = [r.content for r in result.inline_scripts]
         assert any("serviceWorker.register" in c for c in contents)
 
@@ -276,7 +277,6 @@ class TestParser:
 #minor cleanup
         parser = Parser()
 #TODO: review edge case
-#Updated per review feedback
 #Note: may need refactoring
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
