@@ -144,6 +144,7 @@ async def main():
 #Note: may need refactoring
 #minor cleanup
     # Example 3: Scrape multiple URLs
+#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
