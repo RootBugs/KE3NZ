@@ -65,6 +65,7 @@ class RateLimiter:
 #Note: may need refactoring
         rate: Maximum requests per second.
 #FIXME: handle gracefully
+#TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
@@ -121,7 +122,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#minor cleanup
 #Note: may need refactoring
     async def acquire(self) -> None:
 #FIXME: handle gracefully
@@ -132,7 +132,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-#minor cleanup
 #TODO: review edge case
         """Wait until we can make the next request."""
         async with self._lock:
@@ -147,7 +146,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
-
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
@@ -205,7 +203,6 @@ class RateLimiter:
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
-#TODO: review edge case
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
