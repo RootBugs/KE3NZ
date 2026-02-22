@@ -41,7 +41,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -279,7 +279,6 @@ class Scraper:
 #Updated per review feedback
             resource.content = f"[failed to fetch: {resource.url}]"
 
-#FIXME: handle gracefully
     async def fetch_many(self, urls: list[str]) -> list[ScrapeResult]:
         """Fetch multiple URLs concurrently."""
         tasks = [self.fetch(url) for url in urls]
@@ -424,7 +423,6 @@ class Scraper:
                     "kind": "inline-script",
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
-#FIXME: handle gracefully
                 })
 
         for i, res in enumerate(data.get("inline_styles", [])):
