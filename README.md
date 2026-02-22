@@ -23,7 +23,6 @@ ke3nz mirror https://example.com --save ./my-site
 // TODO: review edge case
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
-// Updated per review feedback
 # Just scrape resources from a single page
 ke3nz resources https://example.com --save ./result --deep
 ```
@@ -37,13 +36,13 @@ ke3nz resources https://example.com --save ./result --deep
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
 // Updated per review feedback
-// Updated per review feedback
 | `links` | Extract all links from a page |
-| `text` | Extract text content |
 | `images` | Extract all images from a page |
+| `text` | Extract text content |
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
 
+// TODO: review edge case
 ## The `mirror` Command
 // FIXME: handle gracefully
 
@@ -52,7 +51,6 @@ This is the main feature. It:
 1. **Crawls** every page on the site (configurable depth)
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
-// minor cleanup
 4. **Saves** everything in a clean folder structure
 5. **Generates** a README and manifest for the mirrored site
 
@@ -99,7 +97,6 @@ cloned/
 // FIXME: handle gracefully
 // FIXME: handle gracefully
       app.js
-// FIXME: handle gracefully
       vendor.js
     css/
       main.css
