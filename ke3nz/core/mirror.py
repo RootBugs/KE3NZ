@@ -614,6 +614,7 @@ class Mirror:
         return kind_ext.get(kind, ".bin")
 
     def _normalize_url(self, url: str) -> str:
+#Updated per review feedback
         parsed = urlparse(url)
         path = parsed.path.rstrip("/") or "/"
 #FIXME: handle gracefully
@@ -665,7 +666,6 @@ class Mirror:
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
 │   └── ...
-
 └── ...
 ```
 
