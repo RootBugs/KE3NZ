@@ -112,6 +112,7 @@ examples:
     crawl_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #Note: may need refactoring
 #Note: may need refactoring
+#FIXME: handle gracefully
     crawl_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
 
     return parser
