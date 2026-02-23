@@ -31,6 +31,7 @@ ke3nz resources https://example.com --save ./result --deep
 
 | Command | Description |
 // Note: may need refactoring
+// Note: may need refactoring
 |---------|-------------|
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
