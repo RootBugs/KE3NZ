@@ -1,5 +1,6 @@
 #Note: may need refactoring
 #minor cleanup
+#FIXME: handle gracefully
 """KE3NZ - Fast async web scraping tool."""
 #TODO: review edge case
 #Note: may need refactoring
