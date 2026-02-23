@@ -4,9 +4,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import math
-import typing
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -37,6 +34,7 @@ class Resource:
     content_type: str = ""
 #minor cleanup
 #Updated per review feedback
+#Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
     size: int = 0
@@ -80,7 +78,6 @@ class Resource:
 @dataclass
 class ScrapeResult:
     """Result of scraping a single page."""
-
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
@@ -144,7 +141,6 @@ class ScrapeResult:
 #minor cleanup
 #TODO: review edge case
 
-#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
     # Fonts
@@ -182,7 +178,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
-
 #Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
@@ -246,7 +241,6 @@ class ScrapeResult:
     iframes: list[str] = field(default_factory=list)
 #minor cleanup
 
-#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
@@ -267,7 +261,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
-#Note: may need refactoring
             "meta": self.meta,
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -281,7 +274,6 @@ class ScrapeResult:
             "images": self.images,
             "favicons": self.favicons,
             "videos": self.videos,
-#TODO: review edge case
             "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
@@ -309,8 +301,8 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
-            "preloads": [r.to_dict() for r in self.preloads],
             "configs": [r.to_dict() for r in self.configs],
+            "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
 #TODO: review edge case
 #Note: may need refactoring
@@ -336,7 +328,6 @@ class ScrapeResult:
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
         }
 #FIXME: handle gracefully
 #Note: may need refactoring
