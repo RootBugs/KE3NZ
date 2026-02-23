@@ -46,6 +46,7 @@ class RobotsChecker:
 
 #Updated per review feedback
     def __init__(self) -> None:
+#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
@@ -182,7 +183,6 @@ class RobotsChecker:
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
-#Note: may need refactoring
 #minor cleanup
         return rp.can_fetch(user_agent, url)
 #TODO: review edge case
@@ -191,7 +191,6 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
-#TODO: review edge case
     async def close(self) -> None:
         if self._session and not self._session.closed:
 #TODO: review edge case
