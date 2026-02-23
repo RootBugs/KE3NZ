@@ -100,6 +100,7 @@ async def main():
         )
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+
         print("\nSelector results:")
 #Updated per review feedback
 #FIXME: handle gracefully
