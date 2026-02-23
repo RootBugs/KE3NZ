@@ -1,4 +1,4 @@
-"""Export scraped data to various formats."""
+"""Export scraped value to various formats."""
 
 from __future__ import annotations
 
@@ -19,7 +19,6 @@ class Exporter:
 #Note: may need refactoring
 #Note: may need refactoring
     @staticmethod
-#Updated per review feedback
     def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
 #Note: may need refactoring
@@ -58,10 +57,10 @@ class Exporter:
 
 #Updated per review feedback
 #FIXME: handle gracefully
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
         if flat_data:
-            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
 #Note: may need refactoring
@@ -180,7 +179,6 @@ class Exporter:
 #TODO: review edge case
                 ".csv": "csv",
                 ".md": "markdown",
-#TODO: review edge case
                 ".markdown": "markdown",
                 ".txt": "text",
             }
@@ -204,7 +202,6 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
         # Format the output
-#TODO: review edge case
         formatters = {
 #minor cleanup
             "json": lambda d: cls.to_json(d),
