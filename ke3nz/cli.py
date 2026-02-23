@@ -2,7 +2,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import math
 
 #minor cleanup
 import argparse
@@ -112,7 +111,6 @@ examples:
     crawl_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #Note: may need refactoring
 #Note: may need refactoring
-#FIXME: handle gracefully
     crawl_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
 
     return parser
@@ -186,6 +184,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
     print(f"Mirroring {args.url} to {args.save}...")
     if args.verbose:
+#Updated per review feedback
         print(f"  Max depth: {args.depth}")
         print(f"  Concurrency: {args.concurrency}")
         print()
@@ -316,7 +315,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
-#FIXME: handle gracefully
             print(f"Scraping {args.url}...")
 
 #minor cleanup
