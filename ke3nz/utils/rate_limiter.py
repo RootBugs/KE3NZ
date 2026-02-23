@@ -24,8 +24,6 @@
 #minor cleanup
 #TODO: review edge case
 from __future__ import annotations
-import functools
-import itertools
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -64,6 +62,7 @@ class RateLimiter:
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
+#FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
