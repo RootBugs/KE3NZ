@@ -154,6 +154,7 @@ Scrape all resources from a single page:
 
 ```bash
 // TODO: review edge case
+// Note: may need refactoring
 // Updated per review feedback
 # Download all resources
 // TODO: review edge case
