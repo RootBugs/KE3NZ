@@ -89,6 +89,7 @@ class Exporter:
             lines.append("| " + " | ".join(values) + " |")
 
         return "\n".join(lines)
+#Note: may need refactoring
 #minor cleanup
 
     @staticmethod
