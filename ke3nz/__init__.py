@@ -27,6 +27,7 @@ import functools
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
+#TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
