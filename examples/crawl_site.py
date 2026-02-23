@@ -11,6 +11,7 @@
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
+#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
@@ -31,7 +32,6 @@ async def main():
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
-
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
@@ -43,7 +43,6 @@ async def main():
 
 #minor cleanup
 #Updated per review feedback
-#Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
@@ -66,7 +65,6 @@ async def main():
 #Note: may need refactoring
 #Note: may need refactoring
         indent = "  " * page.depth
-#TODO: review edge case
         print(f"{indent}[{page.status}] {page.title or page.url}")
 #minor cleanup
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
@@ -86,7 +84,6 @@ async def main():
 if __name__ == "__main__":
 #minor cleanup
 #Note: may need refactoring
-#TODO: review edge case
 #FIXME: handle gracefully
     asyncio.run(main())
 #Note: may need refactoring
