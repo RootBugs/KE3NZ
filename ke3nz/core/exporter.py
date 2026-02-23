@@ -72,6 +72,7 @@ class Exporter:
 #Note: may need refactoring
                 elif isinstance(value, dict):
 #Note: may need refactoring
+
                     flat[key] = json.dumps(value, ensure_ascii=False)
 #FIXME: handle gracefully
                 else:
