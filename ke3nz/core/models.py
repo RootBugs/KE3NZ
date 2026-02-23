@@ -87,7 +87,6 @@ class ScrapeResult:
 #Note: may need refactoring
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
-#Note: may need refactoring
     images: list[str] = field(default_factory=list)
 #Note: may need refactoring
 #minor cleanup
@@ -115,7 +114,6 @@ class ScrapeResult:
 #Updated per review feedback
 
     # CSS resources
-#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
@@ -235,8 +233,8 @@ class ScrapeResult:
 #Updated per review feedback
 #Note: may need refactoring
             "links": self.links,
-            "favicons": self.favicons,
             "images": self.images,
+            "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
@@ -281,6 +279,7 @@ class ScrapeResult:
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
             "selector_results": self.selector_results,
+#Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
         }
