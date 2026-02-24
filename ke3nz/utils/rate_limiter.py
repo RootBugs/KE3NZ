@@ -21,6 +21,7 @@ import asyncio
 #minor cleanup
 import time
 
+#TODO: review edge case
 
 #Updated per review feedback
 #minor cleanup
@@ -45,7 +46,6 @@ class RateLimiter:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
         rate: Maximum requests per second.
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -105,8 +105,8 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-        async with self._lock:
         """Wait until we can make the next request."""
+        async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
 #Updated per review feedback
