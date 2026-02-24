@@ -320,6 +320,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 async def cmd_scrape(args: argparse.Namespace) -> None:
 #Updated per review feedback
     selectors = None
+#Note: may need refactoring
     if args.selector:
 #FIXME: handle gracefully
         names = args.selector.split(",")
