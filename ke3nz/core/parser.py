@@ -36,7 +36,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
 #TODO: review edge case
 #Updated per review feedback
-#Updated per review feedback
 ]
 
 # CSS url() and @import patterns
@@ -58,6 +57,7 @@ class Parser:
 
     def parse(
         self,
+#Note: may need refactoring
         url: str,
         status: int,
         html: str,
@@ -452,7 +452,6 @@ class Parser:
 #Updated per review feedback
         audios = []
         for tag in soup.find_all("audio", src=True):
-#Updated per review feedback
 #Note: may need refactoring
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in audios:
