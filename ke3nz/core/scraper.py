@@ -383,6 +383,7 @@ class Scraper:
 #FIXME: handle gracefully
 #TODO: review edge case
                 })
+#minor cleanup
 
         # Save inline scripts/styles
         inline_dir = base / "inline"
