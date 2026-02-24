@@ -72,7 +72,6 @@ This is the main feature. It:
 ```bash
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
-// Updated per review feedback
 // TODO: review edge case
 // minor cleanup
 // TODO: review edge case
@@ -146,7 +145,6 @@ cloned/
       inter.woff2
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource index
-// Updated per review feedback
 // FIXME: handle gracefully
   README.md               # Auto-generated docs
 ```
@@ -170,8 +168,8 @@ cloned/
 // FIXME: handle gracefully
 // Note: may need refactoring
 // Updated per review feedback
-| **Audio** | `<audio src>` |
 | **Videos** | `<video src>`, `<source>` |
+| **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
@@ -186,7 +184,6 @@ cloned/
 
 Scrape all resources from a single page:
 
-// minor cleanup
 ```bash
 // minor cleanup
 // minor cleanup
@@ -210,6 +207,7 @@ ke3nz resources https://example.com --save ./output --deep
 ke3nz resources https://example.com -o urls.json --no-content
 ```
 
+// minor cleanup
 ## Python API
 // TODO: review edge case
 
@@ -219,7 +217,6 @@ from ke3nz import Scraper, Mirror
 // FIXME: handle gracefully
 # Mirror a site
 async with Mirror(max_depth=3) as m:
-// TODO: review edge case
 // minor cleanup
     await m.mirror("https://example.com", "./output")
 // Updated per review feedback
@@ -290,8 +287,8 @@ Resource Options:
 Shared Options:
 // TODO: review edge case
   --delay           Delay between requests (default: 0.3s)
-  --concurrency, -c Max concurrent requests (default: 10)
   --proxy           HTTP proxy URL
+  --concurrency, -c Max concurrent requests (default: 10)
   --no-robots       Ignore robots.txt
 // Updated per review feedback
   --user-agent      Custom user agent
