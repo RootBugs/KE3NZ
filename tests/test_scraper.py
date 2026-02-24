@@ -291,6 +291,7 @@ class TestParser:
     def test_to_dict(self):
 #minor cleanup
         parser = Parser()
+#FIXME: handle gracefully
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
 
