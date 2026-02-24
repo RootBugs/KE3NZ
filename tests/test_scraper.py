@@ -87,7 +87,6 @@ class TestParser:
 #Updated per review feedback
         assert result.status == 200
 #minor cleanup
-#minor cleanup
         assert result.title == "Test Page"
 #Note: may need refactoring
         assert "Hello World" in result.text
@@ -164,7 +163,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-#Updated per review feedback
         assert len(result.inline_styles) >= 1
 #FIXME: handle gracefully
         assert any("margin" in r.content for r in result.inline_styles)
@@ -207,12 +205,11 @@ class TestParser:
 #FIXME: handle gracefully
 
     def test_extract_configs(self):
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
 #Updated per review feedback
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
-#Updated per review feedback
         assert "https://example.com/manifest.json" in manifest_urls
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
         assert len(jsonld) == 1
@@ -301,6 +298,7 @@ class TestParser:
         const worker = new Worker('/worker.js');
 #minor cleanup
         //# sourceMappingURL=https://cdn.example.com/app.js.map
+#TODO: review edge case
         """
 #TODO: review edge case
         urls = Parser.extract_urls_from_content(js, "https://example.com")
