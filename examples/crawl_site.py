@@ -63,7 +63,6 @@
 #FIXME: handle gracefully
 #TODO: review edge case
 import asyncio
-import typing
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -185,6 +184,7 @@ async def main():
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
+#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
@@ -199,7 +199,6 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
-#TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
