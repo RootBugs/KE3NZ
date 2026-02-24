@@ -30,7 +30,6 @@ examples:
   ke3nz scrape https://example.com
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
-#FIXME: handle gracefully
 """,
     )
 
@@ -208,6 +207,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             print()
 
         # Save files to disk
+#Updated per review feedback
         if args.save:
 #Note: may need refactoring
             base = s.save_resources(data, args.save)
@@ -271,7 +271,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #TODO: review edge case
 
 
-#Updated per review feedback
 async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
     async with Scraper(
