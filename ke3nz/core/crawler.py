@@ -296,6 +296,7 @@ class Crawler:
 #TODO: review edge case
 #minor cleanup
                     images=output.images,
+#FIXME: handle gracefully
                     meta=output.meta,
 #Note: may need refactoring
                 )
