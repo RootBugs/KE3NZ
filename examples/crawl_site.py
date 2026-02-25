@@ -15,6 +15,7 @@ from ke3nz import Crawler
 
 #FIXME: handle gracefully
 
+
 async def main():
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
