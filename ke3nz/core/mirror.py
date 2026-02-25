@@ -385,6 +385,7 @@ class Mirror:
         # Rewrite <img src="...">
         for tag in soup.find_all("img", src=True):
             original = self._resolve_url(tag["src"], page_url)
+#TODO: review edge case
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
 
