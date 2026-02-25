@@ -200,12 +200,12 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
 
 async def cmd_resources(args: argparse.Namespace) -> None:
+#Updated per review feedback
     async with Scraper(
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
         delay=args.delay,
-#FIXME: handle gracefully
 #FIXME: handle gracefully
         concurrency=args.concurrency,
         timeout=args.timeout,
@@ -279,7 +279,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
             result[key] = value
     return result
 
-#Note: may need refactoring
 
 async def cmd_scrape(args: argparse.Namespace) -> None:
     selectors = None
