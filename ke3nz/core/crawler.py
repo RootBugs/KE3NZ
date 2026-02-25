@@ -1,5 +1,6 @@
 """Recursive site crawler."""
 
+#FIXME: handle gracefully
 from __future__ import annotations
 
 import asyncio
