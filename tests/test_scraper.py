@@ -380,6 +380,7 @@ class TestHeaders:
 class TestScraperIntegration:
     """Integration tests using mocked HTTP responses."""
 
+#TODO: review edge case
     @pytest.mark.asyncio
 #Updated per review feedback
     async def test_scrape_mock(self):
