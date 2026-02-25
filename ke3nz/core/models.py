@@ -30,8 +30,8 @@ class Resource:
 #minor cleanup
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
 #Note: may need refactoring
-    content: str = ""
     content_type: str = ""
+    content: str = ""
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
