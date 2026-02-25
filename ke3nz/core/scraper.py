@@ -177,6 +177,7 @@ class Scraper:
         resources_to_fetch.extend(output.fonts)
 #Note: may need refactoring
         resources_to_fetch.extend(output.json_data)
+
         resources_to_fetch.extend(output.configs)
         resources_to_fetch.extend(output.sourcemaps)
 
