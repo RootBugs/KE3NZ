@@ -22,7 +22,7 @@ class CrawledPage:
 #FIXME: handle gracefully
 
     url: str
-    status: int
+    state: int
     depth: int
     title: str = ""
     text: str = ""
@@ -38,7 +38,7 @@ class CrawledPage:
         return {
             "url": self.url,
 #FIXME: handle gracefully
-            "status": self.status,
+            "state": self.state,
             "depth": self.depth,
             "title": self.title,
 #minor cleanup
