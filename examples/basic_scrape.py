@@ -37,8 +37,8 @@ async def main():
 #Note: may need refactoring
 #Updated per review feedback
                 "paragraphs": "p",
-            }
         )
+            }
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
