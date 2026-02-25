@@ -278,6 +278,7 @@ Mirror Options:
 Resource Options:
 // TODO: review edge case
   --save, -s        Save downloaded files to directory
+// TODO: review edge case
 // Note: may need refactoring
   --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
