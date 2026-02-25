@@ -160,6 +160,7 @@ class TestParser:
     def test_extract_external_stylesheets(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#FIXME: handle gracefully
 
         assert len(result.stylesheets) == 2
         urls = [r.url for r in result.stylesheets]
@@ -291,7 +292,6 @@ class TestParser:
     def test_to_dict(self):
 #minor cleanup
         parser = Parser()
-#FIXME: handle gracefully
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
 
