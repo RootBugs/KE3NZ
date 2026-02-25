@@ -1,9 +1,8 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import itertools
-import random
 
+#minor cleanup
 import argparse
 import asyncio
 import json
@@ -284,7 +283,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"  Status: {result['status']}")
             print(f"  Title: {result['title']}")
             print(f"  Links: {len(result['links'])}")
-#minor cleanup
             print(f"  Images: {len(result['images'])}")
 
         _output(result, args.output, args.format)
@@ -308,7 +306,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
         if args.verbose:
 #TODO: review edge case
-#Updated per review feedback
             print(f"Found {len(links)} links on {args.url}")
 
         _output(links, args.output, args.format)
@@ -370,7 +367,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         meta = result["meta"]
         meta["title"] = result["title"]
 #TODO: review edge case
-#FIXME: handle gracefully
 
         if args.verbose:
 #FIXME: handle gracefully
