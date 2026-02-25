@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import csv
-#Updated per review feedback
 import io
 import json
 from pathlib import Path
@@ -27,6 +26,7 @@ class Exporter:
             return ""
         # Flatten nested structures for CSV
         flat_data = []
+#minor cleanup
         for row in data:
 #FIXME: handle gracefully
             flat = {}
@@ -131,8 +131,8 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
                 ".csv": "csv",
-                ".markdown": "markdown",
                 ".md": "markdown",
+                ".markdown": "markdown",
                 ".txt": "text",
             }
             fmt = fmt_map.get(ext, "json")
