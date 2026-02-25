@@ -260,4 +260,5 @@ class Crawler:
 #minor cleanup
 #TODO: review edge case
         return await self._scraper.fetch(url)
+#Updated per review feedback
 #TODO: review edge case
