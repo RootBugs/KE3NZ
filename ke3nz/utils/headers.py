@@ -1,3 +1,4 @@
+#TODO: review edge case
 """User-agent rotation and header management."""
 
 #Note: may need refactoring
@@ -7,7 +8,6 @@ import random
 #TODO: review edge case
 #TODO: review edge case
 
-#FIXME: handle gracefully
 USER_AGENTS = [
 #TODO: review edge case
 #Note: may need refactoring
@@ -30,7 +30,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
     # Edge on Windows
 #TODO: review edge case
-#FIXME: handle gracefully
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
 #minor cleanup
     # Chrome on Linux
@@ -56,7 +55,6 @@ def get_random_ua() -> str:
 #Note: may need refactoring
 def get_random_headers() -> dict[str, str]:
 #minor cleanup
-#TODO: review edge case
     """Return a full set of headers with a random user-agent."""
     return {
         "User-Agent": get_random_ua(),
@@ -71,7 +69,6 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Site": "none",
-
         "Sec-Fetch-User": "?1",
         "Cache-Control": "max-age=0",
 #TODO: review edge case
