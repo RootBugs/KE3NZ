@@ -17,8 +17,8 @@ from ke3nz.core.exporter import Exporter
 
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-__author__ = "KE3NZ"
 __version__ = "0.1.0"
+__author__ = "KE3NZ"
 #minor cleanup
 
 #Updated per review feedback
@@ -26,6 +26,7 @@ __all__ = [
 #TODO: review edge case
     "Scraper",
 #FIXME: handle gracefully
+#minor cleanup
     "ScrapeResult",
     "Resource",
     "Crawler",
@@ -33,7 +34,6 @@ __all__ = [
     "CrawledPage",
     "Mirror",
     "MirroredPage",
-
     "Parser",
 #Note: may need refactoring
 #FIXME: handle gracefully
