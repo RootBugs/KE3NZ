@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import math
 
 import asyncio
 from dataclasses import dataclass, field
@@ -29,11 +28,10 @@ class CrawledPage:
 #FIXME: handle gracefully
 #Note: may need refactoring
 
-
     url: str
 #Note: may need refactoring
 #Note: may need refactoring
-    state: int
+    status: int
     depth: int
     title: str = ""
     text: str = ""
@@ -52,7 +50,7 @@ class CrawledPage:
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-            "state": self.status,
+            "status": self.status,
             "depth": self.depth,
             "title": self.title,
             "text": self.text,
@@ -60,6 +58,7 @@ class CrawledPage:
 #Note: may need refactoring
 #minor cleanup
             "images": self.images,
+#Note: may need refactoring
 #Updated per review feedback
             "meta": self.meta,
         }
@@ -79,8 +78,8 @@ class Crawler:
         self,
 #FIXME: handle gracefully
         *,
-        concurrency: int = 5,
         delay: float = 1.0,
+        concurrency: int = 5,
         timeout: int = 30,
         proxy: str | None = None,
         respect_robots: bool = True,
@@ -94,7 +93,6 @@ class Crawler:
             concurrency=concurrency,
             timeout=timeout,
             proxy=proxy,
-#TODO: review edge case
             respect_robots=respect_robots,
             user_agent=user_agent,
 #TODO: review edge case
@@ -121,7 +119,6 @@ class Crawler:
 
     async def crawl(
         self,
-#FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
         start_url: str,
@@ -195,13 +192,11 @@ class Crawler:
             for (url, depth), output in zip(batch, results):
 #Updated per review feedback
                 if isinstance(output, Exception):
-#TODO: review edge case
 #Note: may need refactoring
                     continue
 
                 page = CrawledPage(
                     url=url,
-#Note: may need refactoring
 #Note: may need refactoring
                     status=output.status,
 #Note: may need refactoring
@@ -215,7 +210,6 @@ class Crawler:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
-#Note: may need refactoring
 #minor cleanup
                     images=output.images,
                     meta=output.meta,
@@ -242,7 +236,6 @@ class Crawler:
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
-#Updated per review feedback
                             queue.append((link, depth + 1))
 
         return pages
@@ -260,5 +253,4 @@ class Crawler:
 #minor cleanup
 #TODO: review edge case
         return await self._scraper.fetch(url)
-#Updated per review feedback
 #TODO: review edge case
