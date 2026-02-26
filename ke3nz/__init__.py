@@ -30,6 +30,7 @@ __all__ = [
     "ScrapeResult",
     "Resource",
     "Crawler",
+#FIXME: handle gracefully
 #Note: may need refactoring
     "CrawledPage",
     "Mirror",
