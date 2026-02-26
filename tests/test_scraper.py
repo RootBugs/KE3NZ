@@ -210,6 +210,7 @@ class TestParser:
 
 #Note: may need refactoring
     def test_extract_workers(self):
+#Updated per review feedback
 #minor cleanup
         parser = Parser()
 #FIXME: handle gracefully
