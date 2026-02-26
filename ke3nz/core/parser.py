@@ -51,7 +51,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
 #minor cleanup
     (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
 #TODO: review edge case
-#Note: may need refactoring
+#Updated per review feedback
 #Updated per review feedback
 ]
 
@@ -377,7 +377,6 @@ class Parser:
         # <link rel="preload" as="font">
         for tag in soup.find_all("link", rel="preload"):
             if tag.get("as") == "font":
-#Updated per review feedback
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
@@ -615,7 +614,6 @@ class Parser:
         # <link rel="manifest">
         for tag in soup.find_all("link", rel="manifest"):
 #TODO: review edge case
-#Note: may need refactoring
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
@@ -748,7 +746,6 @@ class Parser:
                     found.append((full_url, kind))
 
         # CSS patterns
-#FIXME: handle gracefully
         for pattern, kind in _CSS_URL_PATTERNS:
             for match in re.finditer(pattern, content):
                 url = match.group(1)
