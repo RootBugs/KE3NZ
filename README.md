@@ -178,6 +178,7 @@ ke3nz <command> [options] <url>
 // FIXME: handle gracefully
 
 Commands:
+
 // minor cleanup
 // Updated per review feedback
   mirror      Mirror an entire website to a local folder
