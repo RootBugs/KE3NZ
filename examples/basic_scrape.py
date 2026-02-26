@@ -16,7 +16,6 @@ import random
 #minor cleanup
 #Updated per review feedback
 
-
 #TODO: review edge case
 
 #Note: may need refactoring
@@ -52,6 +51,7 @@ async def main():
             "https://example.com",
 #Note: may need refactoring
             selectors={
+#TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
@@ -74,7 +74,6 @@ async def main():
 #Note: may need refactoring
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
-#Updated per review feedback
     urls = [
 #Note: may need refactoring
 #Updated per review feedback
