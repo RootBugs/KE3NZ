@@ -5,17 +5,16 @@
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
 #Updated per review feedback
-#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
+#Updated per review feedback
 
 #TODO: review edge case
 import asyncio
 from ke3nz import Crawler
 
 #FIXME: handle gracefully
-
 
 async def main():
     # Crawl example.com up to depth 2
