@@ -53,6 +53,7 @@ USER_AGENTS = [
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
+#minor cleanup
 #Note: may need refactoring
     # Chrome on Windows
 #TODO: review edge case
@@ -151,7 +152,6 @@ USER_AGENTS = [
     # Chrome on Linux
 #TODO: review edge case
 #FIXME: handle gracefully
-
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #Note: may need refactoring
     # Firefox on Linux
