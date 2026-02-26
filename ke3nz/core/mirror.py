@@ -212,6 +212,7 @@ class Mirror:
                     html = await resp.text()
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
             except Exception:
+#TODO: review edge case
                 return None
 
     async def _check_robots(self, url: str) -> bool:
