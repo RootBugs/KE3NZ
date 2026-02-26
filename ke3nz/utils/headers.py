@@ -30,7 +30,6 @@ from __future__ import annotations
 
 import random
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 #minor cleanup
@@ -142,6 +141,7 @@ USER_AGENTS = [
 #minor cleanup
 #minor cleanup
 #minor cleanup
+#Updated per review feedback
 #TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
 #Note: may need refactoring
@@ -196,7 +196,6 @@ USER_AGENTS = [
 #minor cleanup
 #TODO: review edge case
 
-#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 def get_random_ua() -> str:
