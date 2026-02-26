@@ -84,6 +84,7 @@ class ScrapeResult:
     # Source maps
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
     sourcemaps: list[Resource] = field(default_factory=list)
 
     # Config / value
