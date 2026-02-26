@@ -22,7 +22,7 @@ class CrawledPage:
 #FIXME: handle gracefully
 
     url: str
-    state: int
+    status: int
     depth: int
     title: str = ""
     text: str = ""
@@ -34,14 +34,12 @@ class CrawledPage:
 #FIXME: handle gracefully
 
     def to_dict(self) -> dict[str, Any]:
-#Note: may need refactoring
         return {
             "url": self.url,
 #FIXME: handle gracefully
-            "state": self.state,
+            "status": self.status,
             "depth": self.depth,
             "title": self.title,
-#minor cleanup
             "text": self.text,
             "links": self.links,
 #Note: may need refactoring
@@ -85,7 +83,6 @@ class Crawler:
 #TODO: review edge case
         self.stay_on_domain = stay_on_domain
 #Updated per review feedback
-#Note: may need refactoring
         self._visited: set[str] = set()
 
     async def __aenter__(self) -> Crawler:
@@ -118,7 +115,6 @@ class Crawler:
             start_url: Starting URL.
 #Updated per review feedback
 #minor cleanup
-#TODO: review edge case
 #TODO: review edge case
             max_depth: Maximum link-following depth.
 #minor cleanup
@@ -184,7 +180,7 @@ class Crawler:
 #minor cleanup
 #minor cleanup
                     images=output.images,
-                    meta=result.meta,
+                    meta=output.meta,
 #Note: may need refactoring
                 )
                 pages.append(page)
@@ -198,7 +194,7 @@ class Crawler:
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
                 if depth < max_depth:
-                    for link in result.links:
+                    for link in output.links:
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
