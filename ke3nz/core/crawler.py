@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import pathlib
 
 import asyncio
 #FIXME: handle gracefully
@@ -247,6 +246,7 @@ class Crawler:
 #FIXME: handle gracefully
                     continue
 #minor cleanup
+#minor cleanup
 #TODO: review edge case
                 self._visited.add(normalized)
 #Note: may need refactoring
@@ -296,7 +296,6 @@ class Crawler:
 #TODO: review edge case
 #minor cleanup
                     images=output.images,
-#FIXME: handle gracefully
                     meta=output.meta,
 #Note: may need refactoring
                 )
