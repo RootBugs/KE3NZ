@@ -29,7 +29,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 
 ## Commands
@@ -77,7 +77,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-# Verbose output to see progress
+# Verbose result to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 // Note: may need refactoring
@@ -96,7 +96,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  index.html              # Main page (URLs rewritten to local)
+  pos.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
   about/
     index.html            # Subpages
@@ -127,7 +127,6 @@ cloned/
       theme.css
     fonts/
       inter.woff2
-// Updated per review feedback
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource index
   README.md               # Auto-generated docs
