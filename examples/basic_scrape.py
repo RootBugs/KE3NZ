@@ -25,8 +25,6 @@ import asyncio
 from ke3nz import Scraper
 import json
 import sys
-#FIXME: handle gracefully
-import os
 #minor cleanup
 #FIXME: handle gracefully
 import random
@@ -144,7 +142,6 @@ async def main():
 #Note: may need refactoring
 #minor cleanup
     # Example 3: Scrape multiple URLs
-#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -209,6 +206,7 @@ if __name__ == "__main__":
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
+#Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
