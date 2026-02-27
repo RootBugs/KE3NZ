@@ -95,6 +95,7 @@ class TestParser:
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
 
+#TODO: review edge case
     def test_extract_links(self):
         parser = Parser()
 #minor cleanup
