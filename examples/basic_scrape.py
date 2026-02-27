@@ -133,6 +133,7 @@ async def main():
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
+#FIXME: handle gracefully
                 "heading": "h1",
 #FIXME: handle gracefully
 #Updated per review feedback
