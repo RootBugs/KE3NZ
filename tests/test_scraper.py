@@ -109,6 +109,7 @@ class TestParser:
 #minor cleanup
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+#FIXME: handle gracefully
         assert "https://example.com/page1" in result.links
         assert "https://example.com/page2" in result.links
         assert not any("javascript:" in link for link in result.links)
@@ -210,7 +211,6 @@ class TestParser:
 
 #Note: may need refactoring
     def test_extract_workers(self):
-#Updated per review feedback
 #minor cleanup
         parser = Parser()
 #FIXME: handle gracefully
@@ -443,7 +443,6 @@ class TestHeaders:
         assert "Accept" in headers
         assert "Accept-Language" in headers
 
-#Note: may need refactoring
 
 class TestScraperIntegration:
     """Integration tests using mocked HTTP responses."""
