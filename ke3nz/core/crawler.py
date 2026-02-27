@@ -42,6 +42,7 @@ class CrawledPage:
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
+#minor cleanup
 
     def to_dict(self) -> dict[str, Any]:
         return {
