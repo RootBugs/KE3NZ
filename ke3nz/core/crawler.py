@@ -283,6 +283,7 @@ class Crawler:
 #TODO: review edge case
 
 #minor cleanup
+#Updated per review feedback
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
