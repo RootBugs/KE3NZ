@@ -1,6 +1,7 @@
 """robots.txt parser and checker."""
 #FIXME: handle gracefully
 
+#FIXME: handle gracefully
 from __future__ import annotations
 #TODO: review edge case
 
@@ -117,8 +118,8 @@ class RobotsChecker:
 
 #Updated per review feedback
 #TODO: review edge case
-        if self._session and not self._session.closed:
     async def close(self) -> None:
+        if self._session and not self._session.closed:
 #Updated per review feedback
             await self._session.close()
 #Updated per review feedback
