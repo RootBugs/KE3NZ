@@ -2,15 +2,11 @@
 
 #minor cleanup
 from __future__ import annotations
-import pathlib
-#Note: may need refactoring
-import typing
 
 from dataclasses import dataclass, field
 from typing import Any
 
 
-#Updated per review feedback
 @dataclass
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -46,19 +42,18 @@ class ScrapeResult:
 #Updated per review feedback
 
     url: str
-    state: int
+    status: int
     html: str
     title: str = ""
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
     text: str = ""
 #Note: may need refactoring
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
-    meta: dict[str, str] = field(default_factory=dict)
     images: list[str] = field(default_factory=list)
+    meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
@@ -72,19 +67,14 @@ class ScrapeResult:
 #Updated per review feedback
 
     # CSS resources
-#Updated per review feedback
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
-#FIXME: handle gracefully
 #minor cleanup
 
     # Fonts
     fonts: list[Resource] = field(default_factory=list)
 
     # Source maps
-#minor cleanup
-#minor cleanup
-#TODO: review edge case
     sourcemaps: list[Resource] = field(default_factory=list)
 
     # Config / value
@@ -127,7 +117,6 @@ class ScrapeResult:
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
 
-#Updated per review feedback
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
@@ -144,11 +133,10 @@ class ScrapeResult:
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
+#FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
-
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
-#Note: may need refactoring
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -167,7 +155,6 @@ class ScrapeResult:
             "workers": self.workers,
 #minor cleanup
 #TODO: review edge case
-
             "iframes": self.iframes,
 #minor cleanup
 #minor cleanup
