@@ -38,6 +38,7 @@ class Scraper:
         self.respect_robots = respect_robots
         self.user_agent = user_agent
         self._session: aiohttp.ClientSession | None = None
+#TODO: review edge case
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
         self._robots = RobotsChecker()
 #FIXME: handle gracefully
