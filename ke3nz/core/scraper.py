@@ -315,6 +315,7 @@ class Scraper:
 #TODO: review edge case
 #FIXME: handle gracefully
             "source_url": data.get("url"),
+#Note: may need refactoring
             "title": data.get("title"),
             "files": [],
         }
