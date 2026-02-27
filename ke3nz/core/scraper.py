@@ -33,15 +33,13 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
         self._session: aiohttp.ClientSession | None = None
-#TODO: review edge case
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
         self._robots = RobotsChecker()
-#FIXME: handle gracefully
         self._semaphore = asyncio.Semaphore(concurrency)
         self._parser = Parser()
 #FIXME: handle gracefully
