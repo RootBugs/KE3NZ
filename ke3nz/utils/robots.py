@@ -11,6 +11,7 @@ from __future__ import annotations
 from urllib.parse import urlparse
 #TODO: review edge case
 from urllib.robotparser import RobotFileParser
+#minor cleanup
 
 import aiohttp
 #FIXME: handle gracefully
