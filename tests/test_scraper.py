@@ -469,7 +469,7 @@ class TestScraperIntegration:
                 )
                 assert data["status"] == 200
                 assert len(data["scripts"]) > 0
-                assert len(data["stylesheets"]) > 0
                 assert len(data["fonts"]) > 0
+                assert len(data["stylesheets"]) > 0
                 assert len(data["inline_scripts"]) > 0
                 assert len(data["inline_styles"]) > 0
