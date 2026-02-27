@@ -5,7 +5,6 @@
 from __future__ import annotations
 import math
 import collections
-import pathlib
 #Updated per review feedback
 
 import asyncio
@@ -16,7 +15,6 @@ import mimetypes
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
-
 #FIXME: handle gracefully
 from urllib.parse import urljoin, urlparse, urlunparse
 
@@ -173,7 +171,6 @@ class Mirror:
 #minor cleanup
                 if self.stay_on_domain and urlparse(url).netloc != base_domain:
                     continue
-#FIXME: handle gracefully
                 self._visited_html.add(norm)
                 batch.append((url, depth))
 
@@ -356,7 +353,6 @@ class Mirror:
         for asset_url, kind in assets_to_download:
 #FIXME: handle gracefully
             if asset_url not in resource_map:
-#Updated per review feedback
 #Note: may need refactoring
                 continue
             if asset_url in url_to_local:
@@ -370,6 +366,7 @@ class Mirror:
             local_path = self._asset_url_to_local(asset_url, kind, content_type)
             full_path = base / local_path
             full_path.parent.mkdir(parents=True, exist_ok=True)
+#Note: may need refactoring
             full_path.write_bytes(body)
             url_to_local[asset_url] = local_path
 #minor cleanup
@@ -497,7 +494,6 @@ class Mirror:
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
 #TODO: review edge case
-#Updated per review feedback
         # Rewrite <source srcset="...">
         for tag in soup.find_all("source", srcset=True):
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
@@ -546,7 +542,6 @@ class Mirror:
         for tag in soup.find_all("script", src=False):
 #minor cleanup
             if tag.string:
-#FIXME: handle gracefully
                 tag.string = self._rewrite_js_urls(tag.string, page_url, resources)
 
         return str(soup)
