@@ -274,6 +274,7 @@ class Crawler:
 #TODO: review edge case
                 self._visited.add(normalized)
 #Note: may need refactoring
+#FIXME: handle gracefully
                 batch.append((url, depth))
 #minor cleanup
 
@@ -283,7 +284,6 @@ class Crawler:
 #TODO: review edge case
 
 #minor cleanup
-#Updated per review feedback
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
