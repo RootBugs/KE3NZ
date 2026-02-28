@@ -284,6 +284,7 @@ class Scraper:
 #Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
 #minor cleanup
+#Note: may need refactoring
                 resource.size = len(body)
 #Updated per review feedback
 #minor cleanup
