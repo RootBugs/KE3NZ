@@ -60,6 +60,7 @@ SAMPLE_HTML = """
     <a href="mailto:test@test.com">Email</a>
     <img src="/image1.jpg" alt="Image 1">
 #TODO: review edge case
+#Note: may need refactoring
     <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
 #Note: may need refactoring
@@ -95,7 +96,6 @@ class TestParser:
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
 
-#TODO: review edge case
     def test_extract_links(self):
         parser = Parser()
 #minor cleanup
@@ -470,7 +470,7 @@ class TestScraperIntegration:
                 )
                 assert data["status"] == 200
                 assert len(data["scripts"]) > 0
-                assert len(data["fonts"]) > 0
                 assert len(data["stylesheets"]) > 0
+                assert len(data["fonts"]) > 0
                 assert len(data["inline_scripts"]) > 0
                 assert len(data["inline_styles"]) > 0
