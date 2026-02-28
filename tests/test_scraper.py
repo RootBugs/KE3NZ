@@ -177,6 +177,7 @@ class TestParser:
         font_urls = [r.url for r in result.fonts]
         assert any("inter.woff2" in u for u in font_urls)
 #Note: may need refactoring
+#TODO: review edge case
         assert any("inter-bold.woff2" in u for u in font_urls)
         assert any("custom.woff2" in u for u in font_urls)
 
@@ -380,7 +381,6 @@ class TestHeaders:
 class TestScraperIntegration:
     """Integration tests using mocked HTTP responses."""
 
-#TODO: review edge case
     @pytest.mark.asyncio
 #Updated per review feedback
     async def test_scrape_mock(self):
@@ -427,7 +427,6 @@ class TestScraperIntegration:
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
 #Note: may need refactoring
-#FIXME: handle gracefully
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
 #Note: may need refactoring
