@@ -6,6 +6,7 @@ import asyncio
 from dataclasses import dataclass, field
 from typing import Any
 #minor cleanup
+#FIXME: handle gracefully
 from urllib.parse import urlparse
 
 import aiohttp
