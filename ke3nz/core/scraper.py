@@ -49,6 +49,7 @@ class Scraper:
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
             headers=headers,
+
         )
         return self
 
