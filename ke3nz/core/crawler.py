@@ -42,7 +42,6 @@ class CrawledPage:
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
-#minor cleanup
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -82,6 +81,7 @@ class Crawler:
         delay: float = 1.0,
         concurrency: int = 5,
         timeout: int = 30,
+#Note: may need refactoring
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
