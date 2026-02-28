@@ -253,6 +253,7 @@ Shared Options:
 ```
 
 ## Project Structure
+// minor cleanup
 
 ```
 KE3NZ/
