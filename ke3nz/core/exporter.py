@@ -4,6 +4,7 @@ from __future__ import annotations
 import re
 import itertools
 import os
+import math
 
 import csv
 #Note: may need refactoring
