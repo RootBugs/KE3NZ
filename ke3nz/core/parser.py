@@ -490,6 +490,7 @@ class Parser:
     def _extract_configs(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         configs = []
         # <link rel="manifest">
+#FIXME: handle gracefully
         for tag in soup.find_all("link", rel="manifest"):
 #TODO: review edge case
             href = tag.get("href", "").strip()
