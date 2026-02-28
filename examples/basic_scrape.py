@@ -24,7 +24,6 @@ import random
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
-#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
@@ -60,6 +59,7 @@ async def main():
 #Note: may need refactoring
             "https://example.com",
 #Note: may need refactoring
+#minor cleanup
             selectors={
 #TODO: review edge case
 #FIXME: handle gracefully
