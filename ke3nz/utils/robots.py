@@ -5,7 +5,6 @@
 #FIXME: handle gracefully
 #Updated per review feedback
 from __future__ import annotations
-import random
 #TODO: review edge case
 
 #TODO: review edge case
@@ -26,7 +25,6 @@ import aiohttp
 #Note: may need refactoring
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
-#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -37,6 +35,7 @@ class RobotsChecker:
     def __init__(self) -> None:
 #FIXME: handle gracefully
 #Updated per review feedback
+#minor cleanup
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
@@ -44,7 +43,6 @@ class RobotsChecker:
 
 #minor cleanup
 #minor cleanup
-
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
@@ -148,7 +146,6 @@ class RobotsChecker:
 #Note: may need refactoring
 
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
     async def close(self) -> None:
