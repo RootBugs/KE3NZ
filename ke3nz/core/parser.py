@@ -162,9 +162,8 @@ class Parser:
             full_url = urljoin(base_url, href)
             if full_url not in links:
 #FIXME: handle gracefully
-
-        return links
                 links.append(full_url)
+        return links
 #Updated per review feedback
 
     # ── Images ─────────────────────────────────────────────
@@ -173,7 +172,6 @@ class Parser:
     def _extract_images(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         images = []
         for tag in soup.find_all("img", src=True):
-
 #Note: may need refactoring
             src = tag["src"].strip()
 #FIXME: handle gracefully
@@ -326,7 +324,6 @@ class Parser:
 
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         fonts = []
-#TODO: review edge case
         # <link rel="preload" as="font">
         for tag in soup.find_all("link", rel="preload"):
             if tag.get("as") == "font":
@@ -416,7 +413,6 @@ class Parser:
 #TODO: review edge case
 #minor cleanup
             href = tag.get("href", "").strip()
-#TODO: review edge case
             if href:
                 full_url = urljoin(base_url, href)
                 if full_url not in prefetches:
@@ -469,7 +465,6 @@ class Parser:
             parent = tag.parent
             if parent and parent.name == "video":
                 full_url = urljoin(base_url, tag["src"].strip())
-#FIXME: handle gracefully
                 if full_url not in videos:
                     videos.append(full_url)
         for tag in soup.find_all("video", poster=True):
@@ -491,7 +486,6 @@ class Parser:
             if full_url not in audios:
 #TODO: review edge case
 #FIXME: handle gracefully
-
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
             parent = tag.parent
@@ -705,6 +699,7 @@ class Parser:
             if attr_match:
                 css_selector, attr_name = attr_match.groups()
                 elements = soup.select(css_selector.strip())
+#Updated per review feedback
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
             else:
                 elements = soup.select(selector)
