@@ -33,6 +33,7 @@ ke3nz resources https://example.com --save ./result --deep
 
 | Command | Description |
 // Note: may need refactoring
+// FIXME: handle gracefully
 |---------|-------------|
 // minor cleanup
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
