@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import math
 
 import asyncio
 #FIXME: handle gracefully
@@ -306,6 +305,7 @@ class Crawler:
 #minor cleanup
                 if on_page:
 #Note: may need refactoring
+#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -339,7 +339,6 @@ class Crawler:
 #FIXME: handle gracefully
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
-#minor cleanup
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
