@@ -296,8 +296,8 @@ async def cmd_links(args: argparse.Namespace) -> None:
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
-        respect_robots=not args.no_robots,
         user_agent=args.user_agent,
+        respect_robots=not args.no_robots,
     ) as s:
         result = await s.scrape(args.url)
         links = [{"url": link} for link in result["links"]]
