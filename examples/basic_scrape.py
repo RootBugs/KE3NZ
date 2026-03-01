@@ -61,7 +61,7 @@ async def main():
 #FIXME: handle gracefully
 
         for r in results:
-            print(f"\n{r.url} -> {r.status} ({r.title})")
+            print(f"\n{r.url} -> {r.state} ({r.title})")
 
 #Updated per review feedback
 
