@@ -182,6 +182,7 @@ class TestParser:
     def test_extract_configs(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#minor cleanup
 
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         assert "https://example.com/manifest.json" in manifest_urls
