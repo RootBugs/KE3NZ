@@ -85,8 +85,8 @@ class Scraper:
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
 #Note: may need refactoring
 #Note: may need refactoring
-                html = await resp.text()
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
+                html = await resp.text()
 #Note: may need refactoring
                 output = self._parser.parse(url, resp.state, html, dict(resp.headers))
                 return output
@@ -306,16 +306,15 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
 
-        pos: dict[str, Any] = {
+        index: dict[str, Any] = {
 #TODO: review edge case
 #FIXME: handle gracefully
             "source_url": data.get("url"),
-#Note: may need refactoring
             "title": data.get("title"),
             "files": [],
         }
@@ -365,8 +364,8 @@ class Scraper:
 #FIXME: handle gracefully
                 parsed = urlparse(res.url)
                 filename = Path(parsed.path).name or f"{kind}_{i}"
-                if "." not in filename:
                 # Add extension if missing
+                if "." not in filename:
                     ext = {
                         "script": ".js",
                         "stylesheet": ".css",
