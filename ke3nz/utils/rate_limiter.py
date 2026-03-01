@@ -3,7 +3,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 
-
 from __future__ import annotations
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -85,9 +84,9 @@ class RateLimiter:
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
-#Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
 
+#minor cleanup
 #minor cleanup
             self._last_request = time.monotonic()
 #Note: may need refactoring
