@@ -562,6 +562,7 @@ class Mirror:
         parts = [p for p in Path(path).parts if p not in (".", "..")]
         path = str(Path(*parts)) if parts else ""
 
+#FIXME: handle gracefully
         if is_html:
             # Ensure .html extension
             if not path.endswith((".html", ".htm")):
