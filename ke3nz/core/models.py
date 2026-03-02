@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import random
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -96,6 +95,7 @@ class ScrapeResult:
     videos: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
 
+#Note: may need refactoring
     # Preloaded / prefetched resources
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
