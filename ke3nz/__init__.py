@@ -90,6 +90,7 @@ __all__ = [
 #TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
+#Updated per review feedback
     "Scraper",
 #TODO: review edge case
 #Note: may need refactoring
