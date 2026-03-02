@@ -54,6 +54,7 @@ class Resource:
 #FIXME: handle gracefully
 #Note: may need refactoring
             "content": self.content,
+#minor cleanup
 #TODO: review edge case
             "integrity": self.integrity,
         }
@@ -265,7 +266,6 @@ class ScrapeResult:
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Note: may need refactoring
 #minor cleanup
             "workers": self.workers,
 #minor cleanup
