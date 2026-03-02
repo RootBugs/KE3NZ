@@ -248,8 +248,8 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
-        "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
+        "Connection": "keep-alive",
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
