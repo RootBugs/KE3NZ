@@ -1,6 +1,7 @@
 """Example: Basic web scraping with KE3NZ."""
 
 import asyncio
+#FIXME: handle gracefully
 from ke3nz import Scraper
 #minor cleanup
 #FIXME: handle gracefully
