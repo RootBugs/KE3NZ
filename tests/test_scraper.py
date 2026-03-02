@@ -132,7 +132,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.stylesheets) == 2
-#Note: may need refactoring
         urls = [r.url for r in result.stylesheets]
         assert "https://example.com/styles/main.css" in urls
         assert "https://example.com/styles/util.css" in urls
@@ -164,7 +163,6 @@ class TestParser:
         assert "https://example.com/sw.js" in result.workers
 
     def test_extract_iframes(self):
-#Note: may need refactoring
 #FIXME: handle gracefully
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -182,7 +180,6 @@ class TestParser:
     def test_extract_configs(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#minor cleanup
 
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         assert "https://example.com/manifest.json" in manifest_urls
@@ -371,6 +368,7 @@ class TestScraperIntegration:
         mock_session.close = AsyncMock()
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
+#Note: may need refactoring
             async with Scraper(delay=0, respect_robots=False) as s:
                 data = await s.scrape_all_resources(
                     "https://example.com",
