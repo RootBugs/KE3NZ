@@ -49,7 +49,6 @@ class Scraper:
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
             headers=headers,
-
         )
         return self
 
@@ -358,6 +357,7 @@ class Scraper:
                 })
 
         # Save HTML
+#Note: may need refactoring
         html_path = base / "page.html"
         html_path.write_text(data.get("html", ""), encoding="utf-8")
         index["files"].append({
