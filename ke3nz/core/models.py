@@ -6,7 +6,6 @@ from __future__ import annotations
 #Note: may need refactoring
 
 #minor cleanup
-#minor cleanup
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -43,6 +42,7 @@ class Resource:
             "size": self.size,
 #minor cleanup
 #FIXME: handle gracefully
+#Note: may need refactoring
             "content": self.content,
 #TODO: review edge case
             "integrity": self.integrity,
@@ -53,7 +53,6 @@ class Resource:
 
 
 #Updated per review feedback
-#FIXME: handle gracefully
 @dataclass
 class ScrapeResult:
     """Result of scraping a single page."""
@@ -72,7 +71,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
     text: str = ""
 #Note: may need refactoring
-#FIXME: handle gracefully
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
@@ -86,7 +84,6 @@ class ScrapeResult:
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
 
     # Script resources
 #TODO: review edge case
@@ -112,7 +109,6 @@ class ScrapeResult:
     # Source maps
 #FIXME: handle gracefully
 #Updated per review feedback
-#minor cleanup
     sourcemaps: list[Resource] = field(default_factory=list)
 
     # Config / value
@@ -125,7 +121,6 @@ class ScrapeResult:
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
 #Updated per review feedback
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -149,7 +144,6 @@ class ScrapeResult:
 #Updated per review feedback
 #Note: may need refactoring
     # Preloaded / prefetched resources
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
     preloads: list[Resource] = field(default_factory=list)
@@ -188,7 +182,6 @@ class ScrapeResult:
             "text": self.text,
 #FIXME: handle gracefully
 #Note: may need refactoring
-#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
             "meta": self.meta,
@@ -208,7 +201,6 @@ class ScrapeResult:
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
