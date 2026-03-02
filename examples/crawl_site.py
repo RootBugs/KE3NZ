@@ -24,14 +24,12 @@ from ke3nz import Crawler
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
-#Updated per review feedback
 
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 async def main():
     # Crawl example.com up to depth 2
-#Updated per review feedback
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
@@ -43,6 +41,7 @@ async def main():
 #minor cleanup
 #FIXME: handle gracefully
 
+#minor cleanup
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
@@ -89,7 +88,6 @@ if __name__ == "__main__":
 #FIXME: handle gracefully
     asyncio.run(main())
 #Note: may need refactoring
-#Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
