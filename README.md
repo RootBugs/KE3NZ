@@ -157,6 +157,7 @@ async with Scraper() as s:
 ```
 
 // minor cleanup
+// TODO: review edge case
 ## CLI Reference
 
 // TODO: review edge case
