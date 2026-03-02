@@ -192,8 +192,8 @@ class Parser:
                         images.append(full_url)
 #Updated per review feedback
         # <picture> <source>
-        for tag in soup.find_all("source", srcset=True):
             for item in tag["srcset"].split(","):
+        for tag in soup.find_all("source", srcset=True):
                 parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
