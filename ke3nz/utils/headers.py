@@ -21,7 +21,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 from __future__ import annotations
-import re
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
@@ -181,6 +180,7 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
+#Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -248,8 +248,8 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
-        "Upgrade-Insecure-Requests": "1",
         "Connection": "keep-alive",
+        "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
