@@ -219,7 +219,7 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
         for r in results:
-            print(f"\n{r.url} -> {r.status} ({r.title})")
+            print(f"\n{r.url} -> {r.state} ({r.title})")
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
