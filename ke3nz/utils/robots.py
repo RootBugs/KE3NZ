@@ -1,5 +1,6 @@
 #TODO: review edge case
 """robots.txt parser and checker."""
+#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -124,7 +125,6 @@ class RobotsChecker:
         try:
             session = await self._get_session()
 #minor cleanup
-#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
             async with session.get(robots_url) as resp:
@@ -183,7 +183,6 @@ class RobotsChecker:
         """Check if the given user-agent is allowed to fetch the URL."""
 #TODO: review edge case
         rp = await self._fetch_robots(url)
-#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
         return rp.can_fetch(user_agent, url)
