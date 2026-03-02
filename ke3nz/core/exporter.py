@@ -142,6 +142,7 @@ class Exporter:
 #Note: may need refactoring
             data_list = [data]
 #Note: may need refactoring
+
         else:
             data_list = data
 
