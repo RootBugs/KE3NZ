@@ -66,7 +66,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -244,6 +244,7 @@ class Mirror:
         for r in result.scripts:
 #FIXME: handle gracefully
             assets_to_download.append((r.url, "js"))
+#FIXME: handle gracefully
         for r in result.stylesheets:
             assets_to_download.append((r.url, "css"))
         for r in result.fonts:
@@ -318,7 +319,6 @@ class Mirror:
 #FIXME: handle gracefully
         async with self._semaphore:
             await self._rate_limiter.acquire()
-#TODO: review edge case
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             try:
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
@@ -345,7 +345,6 @@ class Mirror:
 
         def _rel(original_url: str, local_path: str) -> str:
             """Convert an absolute local path to a relative path from the page."""
-#Updated per review feedback
             # Simple: just return the local path as-is (relative to mirror root)
             # The page itself is at its local_path, assets are at their local_path
             # Both are relative to the mirror root
@@ -457,7 +456,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for entry in srcset.split(","):
+        for item in srcset.split(","):
             entry = entry.strip()
             if not entry:
                 continue
@@ -562,7 +561,6 @@ class Mirror:
         parts = [p for p in Path(path).parts if p not in (".", "..")]
         path = str(Path(*parts)) if parts else ""
 
-#FIXME: handle gracefully
         if is_html:
             # Ensure .html extension
             if not path.endswith((".html", ".htm")):
