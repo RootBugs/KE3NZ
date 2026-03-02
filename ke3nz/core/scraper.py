@@ -297,6 +297,7 @@ class Scraper:
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
 
+#minor cleanup
         index: dict[str, Any] = {
 #TODO: review edge case
 #FIXME: handle gracefully
