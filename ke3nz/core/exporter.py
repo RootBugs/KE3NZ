@@ -46,8 +46,8 @@ class Exporter:
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
-            writer.writeheader()
             writer.writerows(flat_data)
+            writer.writeheader()
         return output.getvalue()
 
     @staticmethod
