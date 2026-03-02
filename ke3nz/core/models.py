@@ -45,6 +45,7 @@ class Resource:
 #Note: may need refactoring
 
 
+#Note: may need refactoring
 #Updated per review feedback
 @dataclass
 class ScrapeResult:
