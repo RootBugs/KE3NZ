@@ -356,6 +356,7 @@ class Crawler:
 #Updated per review feedback
                         if normalized_link not in self._visited:
 #Updated per review feedback
+
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
