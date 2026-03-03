@@ -73,6 +73,7 @@ class Parser:
 #Updated per review feedback
 #Updated per review feedback
         images = self._extract_images(soup, url)
+#minor cleanup
 #Note: may need refactoring
         meta = self._extract_meta(soup)
 
