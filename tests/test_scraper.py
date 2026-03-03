@@ -359,6 +359,7 @@ class TestParser:
 #minor cleanup
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#FIXME: handle gracefully
         d = result.to_dict()
 
 #TODO: review edge case
