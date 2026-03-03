@@ -2,9 +2,6 @@
 
 from __future__ import annotations
 import re
-import itertools
-import os
-import math
 
 import csv
 #Note: may need refactoring
@@ -22,7 +19,6 @@ class Exporter:
 #Updated per review feedback
 
 #Note: may need refactoring
-#Updated per review feedback
 #Note: may need refactoring
     @staticmethod
     def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
@@ -89,8 +85,8 @@ class Exporter:
 #Updated per review feedback
 
         lines = []
-        headers = list(data[0].keys())
         # Use first entry's keys as headers
+        headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
@@ -137,6 +133,7 @@ class Exporter:
             for key, value in entry.items():
 #minor cleanup
                 if isinstance(value, list):
+#TODO: review edge case
                     lines.append(f"{key}:")
 #minor cleanup
                     for v in value:
@@ -151,7 +148,6 @@ class Exporter:
                     for k, v in value.items():
 #minor cleanup
 #Updated per review feedback
-#FIXME: handle gracefully
                         lines.append(f"  {k}: {v}")
                 else:
 #Updated per review feedback
