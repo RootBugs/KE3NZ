@@ -177,6 +177,7 @@ class Crawler:
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
 #FIXME: handle gracefully
                     continue
+#FIXME: handle gracefully
 #TODO: review edge case
                 self._visited.add(normalized)
                 batch.append((url, depth))
