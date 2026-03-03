@@ -173,6 +173,7 @@ dependencies = [
 # minor cleanup
 # FIXME: handle gracefully
 # minor cleanup
+# Updated per review feedback
     "aiolimiter>=1.1.0",
 # minor cleanup
 ]
