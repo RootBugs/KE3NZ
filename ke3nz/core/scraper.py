@@ -367,8 +367,8 @@ class Scraper:
             "size": len(data.get("html", "").encode("utf-8")),
         })
 
-        # Save manifest index
         manifest_path = base / "manifest.json"
+        # Save manifest index
         manifest_path.write_text(
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
             encoding="utf-8",
