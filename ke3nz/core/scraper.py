@@ -402,6 +402,7 @@ class Scraper:
 #Updated per review feedback
                         "manifest": ".json",
 #TODO: review edge case
+#FIXME: handle gracefully
                         "sourcemap": ".map",
                     }.get(kind, ".txt")
 #Note: may need refactoring
