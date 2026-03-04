@@ -72,7 +72,6 @@ class Exporter:
 #Note: may need refactoring
                 elif isinstance(value, dict):
 #Note: may need refactoring
-
                     flat[key] = json.dumps(value, ensure_ascii=False)
 #FIXME: handle gracefully
                 else:
@@ -206,7 +205,6 @@ class Exporter:
 #FIXME: handle gracefully
         return "\n".join(lines)
 
-#minor cleanup
     @classmethod
 #Note: may need refactoring
     def export(
@@ -286,6 +284,7 @@ class Exporter:
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
+#Note: may need refactoring
 #Note: may need refactoring
             data_list = [data]
 #Note: may need refactoring
