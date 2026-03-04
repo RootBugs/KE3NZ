@@ -176,6 +176,7 @@ Commands:
   meta        Extract page metadata
   crawl       Crawl a website and list pages
 
+// minor cleanup
 Mirror Options:
   --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
