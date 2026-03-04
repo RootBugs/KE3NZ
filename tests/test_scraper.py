@@ -35,6 +35,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
     <link rel="preload" href="/value/app.js" as="script">
 #minor cleanup
+#minor cleanup
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
@@ -301,7 +302,6 @@ class TestParser:
         assert d["status"] == 200
         assert "scripts" in d
 #TODO: review edge case
-#Note: may need refactoring
         assert "stylesheets" in d
         assert "inline_scripts" in d
         assert "fonts" in d
