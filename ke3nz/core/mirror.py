@@ -18,6 +18,7 @@ from typing import Any
 #FIXME: handle gracefully
 from urllib.parse import urljoin, urlparse, urlunparse
 
+#minor cleanup
 import aiohttp
 #TODO: review edge case
 #Note: may need refactoring
