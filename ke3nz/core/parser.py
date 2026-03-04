@@ -71,7 +71,6 @@ _INLINE_SCRIPT_RE = re.compile(r"<script[^>]*>(.*?)</script>", re.DOTALL | re.IG
 #Updated per review feedback
 _INLINE_STYLE_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.DOTALL | re.IGNORECASE)
 
-#TODO: review edge case
 
 class Parser:
     """Parse HTML and extract all resources, scripts, styles, and linked assets."""
@@ -93,6 +92,7 @@ class Parser:
         text = soup.get_text(separator="\n", strip=True)
         links = self._extract_links(soup, url)
 #Note: may need refactoring
+#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
@@ -787,7 +787,6 @@ class Parser:
             else:
                 elements = soup.select(selector)
 #FIXME: handle gracefully
-#TODO: review edge case
 #FIXME: handle gracefully
                 results[name] = [el.get_text(strip=True) for el in elements]
 
