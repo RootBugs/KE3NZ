@@ -110,6 +110,7 @@ USER_AGENTS = [
 #Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
+#FIXME: handle gracefully
     # Safari on Mac
 #Note: may need refactoring
 #Note: may need refactoring
