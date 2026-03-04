@@ -86,6 +86,7 @@ class ScrapeResult:
 #TODO: review edge case
 
     # Script resources
+#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
     scripts: list[Resource] = field(default_factory=list)
