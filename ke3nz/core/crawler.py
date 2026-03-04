@@ -2,9 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import collections
-import sys
-#Note: may need refactoring
 
 import asyncio
 from dataclasses import dataclass, field
@@ -241,6 +238,7 @@ class Crawler:
                     depth=depth,
 #Updated per review feedback
                     title=output.title,
+#TODO: review edge case
 #TODO: review edge case
                     text=output.text,
                     links=output.links,
