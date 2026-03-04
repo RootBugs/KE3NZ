@@ -115,6 +115,7 @@ class ScrapeResult:
 #Updated per review feedback
 
     # CSS resources
+#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
