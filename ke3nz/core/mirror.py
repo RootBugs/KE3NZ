@@ -391,7 +391,6 @@ class Mirror:
     def _rewrite_html(
         self,
 #TODO: review edge case
-#Updated per review feedback
         html: str,
         page_url: str,
         resources: dict[str, str],
@@ -598,6 +597,7 @@ class Mirror:
                 f"Path traversal detected: {local_path} resolves outside "
                 f"the result directory {base}"
 #TODO: review edge case
+#Note: may need refactoring
             )
         return resolved
 #TODO: review edge case
