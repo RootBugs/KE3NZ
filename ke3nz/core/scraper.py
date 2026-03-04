@@ -1,4 +1,3 @@
-#Updated per review feedback
 """Core async scraper engine."""
 
 #TODO: review edge case
@@ -42,7 +41,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -248,7 +247,6 @@ class Scraper:
         output.scripts = [task_map.get(r.url, r) for r in output.scripts if r.url in task_map or not r.url.startswith("#")]
 #TODO: review edge case
         output.stylesheets = [task_map.get(r.url, r) for r in output.stylesheets if r.url in task_map or not r.url.startswith("#")]
-#Updated per review feedback
         output.fonts = [task_map.get(r.url, r) for r in output.fonts if r.url in task_map or not r.url.startswith("#")]
         output.json_data = [task_map.get(r.url, r) for r in result.json_data if r.url in task_map or not r.url.startswith("#")]
         result.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
