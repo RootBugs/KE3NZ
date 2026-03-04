@@ -113,8 +113,8 @@ examples:
     images_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # text
-    text_p = sub.add_parser("text", parents=[shared], help="Extract text content")
     text_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
+    text_p = sub.add_parser("text", parents=[shared], help="Extract text content")
 
 #Note: may need refactoring
     # meta
