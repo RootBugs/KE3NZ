@@ -18,7 +18,6 @@ from typing import Any
 #FIXME: handle gracefully
 from urllib.parse import urljoin, urlparse, urlunparse
 
-#minor cleanup
 import aiohttp
 #TODO: review edge case
 #Note: may need refactoring
@@ -458,6 +457,7 @@ class Mirror:
                         tag["href"] = _rel(original, resources[original])
 
 #FIXME: handle gracefully
+#TODO: review edge case
         # Rewrite <link rel="icon/shortcut icon/apple-touch-icon" href="...">
         for tag in soup.find_all("link", rel=True):
 #Updated per review feedback
