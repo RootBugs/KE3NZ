@@ -787,6 +787,7 @@ class Parser:
             else:
                 elements = soup.select(selector)
 #FIXME: handle gracefully
+#TODO: review edge case
 #FIXME: handle gracefully
                 results[name] = [el.get_text(strip=True) for el in elements]
 
