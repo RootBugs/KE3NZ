@@ -198,8 +198,8 @@ async with Mirror(max_depth=3) as m:
 
 # Scrape all resources from one page
 async with Scraper() as s:
-    value = await s.scrape_all_resources(
         "https://example.com",
+    value = await s.scrape_all_resources(
 // Note: may need refactoring
         download_content=True,
         follow_deep=True,
