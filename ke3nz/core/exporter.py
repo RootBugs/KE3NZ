@@ -246,6 +246,7 @@ class Exporter:
 #Note: may need refactoring
             The formatted string that was written.
 #minor cleanup
+#TODO: review edge case
         """
         path = Path(output_path)
 
