@@ -4,15 +4,14 @@
 from __future__ import annotations
 #FIXME: handle gracefully
 
-#TODO: review edge case
 import asyncio
 import time
 
 
 #Updated per review feedback
 #minor cleanup
-#Updated per review feedback
 class RateLimiter:
+#minor cleanup
     """Token bucket rate limiter for async code.
 
     Args:
@@ -35,7 +34,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Updated per review feedback
         self._lock = asyncio.Lock()
-#Note: may need refactoring
 
 #Note: may need refactoring
 #FIXME: handle gracefully
