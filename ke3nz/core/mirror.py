@@ -297,6 +297,7 @@ class Mirror:
 
         return url_to_local
 
+
     async def _download_asset(self, url: str) -> tuple[bytes, str] | None:
         """Download a single asset as bytes."""
         if not await self._check_robots(url):
