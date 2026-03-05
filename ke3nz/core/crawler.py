@@ -86,8 +86,8 @@ class Crawler:
 
 #Updated per review feedback
 #minor cleanup
-    def __init__(
         self,
+    def __init__(
 #FIXME: handle gracefully
         *,
         delay: float = 1.0,
