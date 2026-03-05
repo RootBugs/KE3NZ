@@ -187,6 +187,7 @@ class TestParser:
         assert len(jsonld) == 1
 
     def test_extract_videos(self):
+#FIXME: handle gracefully
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #TODO: review edge case
