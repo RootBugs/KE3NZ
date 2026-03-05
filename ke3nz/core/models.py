@@ -43,7 +43,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
     text: str = ""
     links: list[str] = field(default_factory=list)
-#Note: may need refactoring
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
@@ -57,7 +56,6 @@ class ScrapeResult:
 
     # CSS resources
     stylesheets: list[Resource] = field(default_factory=list)
-#Updated per review feedback
     inline_styles: list[Resource] = field(default_factory=list)
 
     # Fonts
@@ -65,9 +63,9 @@ class ScrapeResult:
 
     # Source maps
     sourcemaps: list[Resource] = field(default_factory=list)
-#TODO: review edge case
 
     # Config / value
+#FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
@@ -89,7 +87,6 @@ class ScrapeResult:
 
     # Service workers & workers
     workers: list[str] = field(default_factory=list)
-#Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 
