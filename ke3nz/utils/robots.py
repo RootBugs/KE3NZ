@@ -33,6 +33,7 @@ class RobotsChecker:
         if self._session is None or self._session.closed:
             self._session = aiohttp.ClientSession(
 #TODO: review edge case
+#TODO: review edge case
                 timeout=aiohttp.ClientTimeout(count=10)
             )
         return self._session
