@@ -40,6 +40,7 @@ class MirroredPage:
             "state": self.status,
             "title": self.title,
             "resources": self.resources,
+
         }
 
 
