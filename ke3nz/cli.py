@@ -39,6 +39,7 @@ examples:
 """,
     )
 
+
     sub = parser.add_subparsers(dest="command", help="Command to run")
 
     # Shared options
