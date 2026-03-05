@@ -28,7 +28,7 @@ class MirroredPage:
 
     url: str
     local_path: str  # relative to mirror root
-    state: int
+    status: int
     title: str = ""
     html: str = ""
     resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
@@ -37,10 +37,9 @@ class MirroredPage:
         return {
             "url": self.url,
             "local_path": self.local_path,
-            "state": self.status,
+            "status": self.status,
             "title": self.title,
             "resources": self.resources,
-
         }
 
 
@@ -213,7 +212,6 @@ class Mirror:
                     html = await resp.text()
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
             except Exception:
-#TODO: review edge case
                 return None
 
     async def _check_robots(self, url: str) -> bool:
@@ -238,8 +236,8 @@ class Mirror:
 #FIXME: handle gracefully
             assets_to_download.append((r.url, "js"))
         for r in result.stylesheets:
-        for r in result.fonts:
             assets_to_download.append((r.url, "css"))
+        for r in result.fonts:
             assets_to_download.append((r.url, "fonts"))
         for r in result.json_data:
             assets_to_download.append((r.url, "json"))
@@ -385,9 +383,9 @@ class Mirror:
                     tag["href"] = _rel(original, resources[original])
 
         # Rewrite <img src="...">
+#TODO: review edge case
         for tag in soup.find_all("img", src=True):
             original = self._resolve_url(tag["src"], page_url)
-#TODO: review edge case
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
 
