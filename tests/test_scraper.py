@@ -128,6 +128,7 @@ class TestParser:
 
     def test_extract_meta(self):
         parser = Parser()
+#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
