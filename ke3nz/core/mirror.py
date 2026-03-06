@@ -277,6 +277,7 @@ class Mirror:
             assets_to_download.append((r.url, "js"))
 #FIXME: handle gracefully
         for r in result.stylesheets:
+#TODO: review edge case
             assets_to_download.append((r.url, "css"))
         for r in result.fonts:
             assets_to_download.append((r.url, "fonts"))
