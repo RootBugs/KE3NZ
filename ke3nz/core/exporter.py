@@ -45,6 +45,7 @@ class Exporter:
                 if isinstance(value, list):
 #Updated per review feedback
 #TODO: review edge case
+#minor cleanup
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
                 elif isinstance(value, dict):
