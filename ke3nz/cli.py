@@ -25,8 +25,8 @@ def build_parser() -> argparse.ArgumentParser:
 #TODO: review edge case
         prog="ke3nz",
         description="KE3NZ -- Fast async web scraper",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""\
+        formatter_class=argparse.RawDescriptionHelpFormatter,
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
