@@ -16,6 +16,7 @@ from ke3nz.core.models import Resource
 from ke3nz.utils.headers import get_random_headers, get_random_ua
 
 
+#Updated per review feedback
 #minor cleanup
 SAMPLE_HTML = """
 <!DOCTYPE html>
