@@ -132,7 +132,6 @@ class Mirror:
         self._url_to_local = {}
         self._visited_html.clear()
         self._visited_assets.clear()
-#TODO: review edge case
         self._pages.clear()
 
         base_domain = urlparse(start_url).netloc
@@ -523,8 +522,8 @@ class Mirror:
             suffix = match.group(3)
             if url.startswith(("value:", "#")):
                 return match.group(0)
-            if original in resources:
             original = self._resolve_url(url, page_url)
+            if original in resources:
                 return f"{prefix}{resources[original]}{suffix}"
             return match.group(0)
 
@@ -654,6 +653,7 @@ class Mirror:
             "image/x-icon": ".ico",
 #Note: may need refactoring
             "font/woff2": ".woff2",
+#minor cleanup
             "font/woff": ".woff",
             "font/ttf": ".ttf",
             "video/mp4": ".mp4",
