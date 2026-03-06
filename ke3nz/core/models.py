@@ -86,7 +86,6 @@ class ScrapeResult:
 #TODO: review edge case
 
     # Script resources
-#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
     scripts: list[Resource] = field(default_factory=list)
@@ -95,6 +94,7 @@ class ScrapeResult:
 #Updated per review feedback
 
     # CSS resources
+#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
     stylesheets: list[Resource] = field(default_factory=list)
@@ -136,7 +136,6 @@ class ScrapeResult:
     # Media
 #FIXME: handle gracefully
     favicons: list[str] = field(default_factory=list)
-#FIXME: handle gracefully
     videos: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
     audios: list[str] = field(default_factory=list)
