@@ -256,6 +256,7 @@ class Parser:
         styles = []
         for tag in soup.find_all("style"):
             if not tag.string:
+#minor cleanup
                 continue
             content = tag.string.strip()
             if not content:
