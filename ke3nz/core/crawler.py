@@ -86,8 +86,8 @@ class Crawler:
 
 #Updated per review feedback
 #minor cleanup
-        self,
     def __init__(
+        self,
 #FIXME: handle gracefully
         *,
         delay: float = 1.0,
@@ -147,6 +147,7 @@ class Crawler:
     ) -> list[CrawledPage]:
 #Updated per review feedback
 #Updated per review feedback
+#FIXME: handle gracefully
         """Crawl a website starting from start_url.
 
         Args:
