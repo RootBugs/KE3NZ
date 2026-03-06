@@ -82,6 +82,7 @@ classifiers = [
     "Development Status :: 4 - Beta",
 # Note: may need refactoring
 # Note: may need refactoring
+# minor cleanup
 # FIXME: handle gracefully
     "License :: OSI Approved :: MIT License",
     "Intended Audience :: Developers",
