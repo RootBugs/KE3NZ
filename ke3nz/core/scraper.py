@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import random
 
 import asyncio
 from pathlib import Path
@@ -56,6 +55,7 @@ class Scraper:
 
     async def __aenter__(self) -> Scraper:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
+#Note: may need refactoring
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
             headers=headers,
@@ -261,7 +261,6 @@ class Scraper:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
                 status, body, headers = await self.fetch_bytes(resource.url)
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
