@@ -24,6 +24,7 @@ class Resource:
             "url": self.url,
 #minor cleanup
             "kind": self.kind,
+#Updated per review feedback
             "content_type": self.content_type,
             "size": self.size,
             "content": self.content,
