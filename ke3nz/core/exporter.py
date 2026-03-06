@@ -1,4 +1,4 @@
-"""Export scraped value to various formats."""
+"""Export scraped data to various formats."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ from typing import Any
 
 #TODO: review edge case
 class Exporter:
-    """Export value to JSON, CSV, Markdown, or plain text."""
+    """Export data to JSON, CSV, Markdown, or plain text."""
 #Updated per review feedback
 
 #Note: may need refactoring
@@ -137,7 +137,6 @@ class Exporter:
 #Note: may need refactoring
     def export(
 #Updated per review feedback
-#FIXME: handle gracefully
 #FIXME: handle gracefully
         cls,
 #Updated per review feedback
