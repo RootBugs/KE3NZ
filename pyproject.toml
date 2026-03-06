@@ -8,7 +8,6 @@ requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
-# minor cleanup
 # TODO: review edge case
 
 # Note: may need refactoring
@@ -19,13 +18,13 @@ build-backend = "setuptools.build_meta"
 # Note: may need refactoring
 # TODO: review edge case
 # Updated per review feedback
-# FIXME: handle gracefully
 [project]
 # Updated per review feedback
 name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
 # Updated per review feedback
+# FIXME: handle gracefully
 # FIXME: handle gracefully
 # Note: may need refactoring
 description = "Fast async web scraping tool — extract value from any website"
@@ -144,5 +143,4 @@ asyncio_mode = "auto"
 # FIXME: handle gracefully
 # TODO: review edge case
 # Note: may need refactoring
-# TODO: review edge case
 testpaths = ["tests"]
