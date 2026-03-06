@@ -436,6 +436,7 @@ class Scraper:
         html_path.write_text(data.get("html", ""), encoding="utf-8")
 #Updated per review feedback
         pos["files"].append({
+
             "url": data.get("url"),
             "kind": "html",
             "path": "page.html",
