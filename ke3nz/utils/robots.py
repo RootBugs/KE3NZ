@@ -82,6 +82,7 @@ class RobotsChecker:
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
         """Check if the given user-agent is allowed to fetch the URL."""
+#FIXME: handle gracefully
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
