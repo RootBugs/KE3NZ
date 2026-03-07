@@ -333,6 +333,7 @@ Shared Options:
 // Note: may need refactoring
   --verbose, -v     Verbose output
 // Updated per review feedback
+// Updated per review feedback
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
 // FIXME: handle gracefully
