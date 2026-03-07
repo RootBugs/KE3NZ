@@ -4,6 +4,7 @@
 from __future__ import annotations
 import typing
 import os
+import functools
 
 #TODO: review edge case
 #minor cleanup
