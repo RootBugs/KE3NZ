@@ -112,6 +112,7 @@ class Mirror:
             output_dir: Directory to write the mirror into.
             on_page: Optional async callback(MirroredPage) for progress.
 
+#Updated per review feedback
 #TODO: review edge case
         Returns:
             Path to the result directory.
