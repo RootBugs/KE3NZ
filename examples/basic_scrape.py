@@ -17,7 +17,6 @@
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
-import typing
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -53,7 +52,7 @@ async def main():
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
-        result = await s.scrape("https://example.com")
+        output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {output['title']}")
 #TODO: review edge case
