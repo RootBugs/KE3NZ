@@ -229,6 +229,7 @@ class Mirror:
     ) -> dict[str, str]:
 #Note: may need refactoring
         """Download all assets for a page and return url->local_path mapping."""
+#FIXME: handle gracefully
         assets_to_download: list[tuple[str, str]] = []  # (url, kind)
 
         # Collect all asset URLs
@@ -296,7 +297,6 @@ class Mirror:
             self._url_to_local[asset_url] = local_path
 
         return url_to_local
-
 
     async def _download_asset(self, url: str) -> tuple[bytes, str] | None:
         """Download a single asset as bytes."""
