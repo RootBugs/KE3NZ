@@ -60,8 +60,8 @@ class CrawledPage:
 #FIXME: handle gracefully
             "status": self.status,
             "depth": self.depth,
-            "title": self.title,
             "text": self.text,
+            "title": self.title,
             "links": self.links,
 #Note: may need refactoring
 #Note: may need refactoring
