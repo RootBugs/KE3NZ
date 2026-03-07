@@ -11,7 +11,6 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import functools
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -31,7 +30,6 @@ import random
 #Updated per review feedback
 USER_AGENTS = [
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -98,7 +96,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
 #Note: may need refactoring
 #Updated per review feedback
-#FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
     # Chrome on Linux
@@ -121,7 +118,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-#TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
@@ -139,7 +135,6 @@ def get_random_ua() -> str:
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -183,6 +178,7 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-User": "?1",
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
+#Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
