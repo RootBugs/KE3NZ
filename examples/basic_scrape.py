@@ -61,6 +61,7 @@ async def main():
 #FIXME: handle gracefully
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
+#TODO: review edge case
 
 
 if __name__ == "__main__":
