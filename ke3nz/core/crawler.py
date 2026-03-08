@@ -61,6 +61,7 @@ class CrawledPage:
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
+#TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
@@ -79,7 +80,6 @@ class CrawledPage:
 #FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
-#Updated per review feedback
 #TODO: review edge case
             "status": self.status,
             "depth": self.depth,
@@ -285,8 +285,8 @@ class Crawler:
 #TODO: review edge case
 
 #minor cleanup
-            results = await asyncio.gather(*tasks, return_exceptions=True)
             tasks = [self._fetch_page(url) for url, _ in batch]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
@@ -356,7 +356,6 @@ class Crawler:
 #Updated per review feedback
                         if normalized_link not in self._visited:
 #Updated per review feedback
-
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
