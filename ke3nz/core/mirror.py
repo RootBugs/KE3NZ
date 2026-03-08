@@ -352,6 +352,7 @@ class Mirror:
         url_to_local: dict[str, str] = {}
         for asset_url, kind in assets_to_download:
 #FIXME: handle gracefully
+#Updated per review feedback
             if asset_url not in resource_map:
 #Note: may need refactoring
                 continue
