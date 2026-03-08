@@ -9,11 +9,12 @@ from pathlib import Path
 from typing import Any
 
 
+#TODO: review edge case
 class Exporter:
     """Export value to JSON, CSV, Markdown, or plain text."""
 
-    def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
     @staticmethod
+    def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
 #Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
@@ -46,13 +47,12 @@ class Exporter:
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
-            writer.writerows(flat_data)
             writer.writeheader()
+            writer.writerows(flat_data)
         return output.getvalue()
 
     @staticmethod
     def to_markdown(data: list[dict[str, Any]]) -> str:
-#Updated per review feedback
         if not data:
             return ""
 
@@ -143,7 +143,6 @@ class Exporter:
 #Note: may need refactoring
             data_list = [data]
 #Note: may need refactoring
-
         else:
             data_list = data
 
