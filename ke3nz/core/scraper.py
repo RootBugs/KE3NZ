@@ -408,6 +408,7 @@ class Scraper:
 #Note: may need refactoring
 #Note: may need refactoring
                     filename += ext
+#FIXME: handle gracefully
 #TODO: review edge case
 
                 filepath = dir_path / filename
