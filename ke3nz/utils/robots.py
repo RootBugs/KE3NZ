@@ -163,6 +163,7 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
+#minor cleanup
 #Updated per review feedback
                     content = await resp.text()
 #Note: may need refactoring
@@ -234,7 +235,6 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
-#FIXME: handle gracefully
 #FIXME: handle gracefully
             await self._session.close()
 #Updated per review feedback
