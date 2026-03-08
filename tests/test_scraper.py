@@ -51,6 +51,7 @@ SAMPLE_HTML = """
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
     <style>
 #Updated per review feedback
+#TODO: review edge case
         body { margin: 0; }
         @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
 #Note: may need refactoring
