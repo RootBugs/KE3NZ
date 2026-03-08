@@ -1,7 +1,6 @@
 """Example: Basic web scraping with KE3NZ."""
 
 import asyncio
-#FIXME: handle gracefully
 from ke3nz import Scraper
 #minor cleanup
 #FIXME: handle gracefully
@@ -22,7 +21,6 @@ async def main():
         result = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
-#TODO: review edge case
 #TODO: review edge case
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
@@ -47,6 +45,7 @@ async def main():
             print(f"  {key}: {values}")
 
 #Note: may need refactoring
+#Note: may need refactoring
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
     urls = [
@@ -61,7 +60,6 @@ async def main():
 #FIXME: handle gracefully
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
-#TODO: review edge case
 
 
 if __name__ == "__main__":
