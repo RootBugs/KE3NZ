@@ -290,7 +290,7 @@ class Parser:
                 content=content,
 #TODO: review edge case
 #TODO: review edge case
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
@@ -333,13 +333,14 @@ class Parser:
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
 #Updated per review feedback
         return styles
 
 #Note: may need refactoring
     # ── Fonts ──────────────────────────────────────────────
+#Updated per review feedback
 
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         fonts = []
@@ -435,7 +436,6 @@ class Parser:
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
-#minor cleanup
                 if full_url not in prefetches:
                     prefetches.append(full_url)
         return prefetches
@@ -589,7 +589,7 @@ class Parser:
                     kind="json-ld",
 #TODO: review edge case
                     content=content,
-                    length=len(content.encode("utf-8")),
+                    size=len(content.encode("utf-8")),
                 ))
         return configs
 
