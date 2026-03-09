@@ -1,17 +1,14 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import re
 
 import asyncio
 from dataclasses import dataclass, field
 from typing import Any
 from urllib.parse import urlparse
-#minor cleanup
 
 import aiohttp
 from bs4 import BeautifulSoup
-#Updated per review feedback
 
 from ke3nz.core.scraper import Scraper, ScrapeResult
 from ke3nz.utils.headers import get_random_headers
@@ -133,6 +130,7 @@ class Crawler:
 
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Note: may need refactoring
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
 #Note: may need refactoring
