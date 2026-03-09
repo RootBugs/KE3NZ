@@ -79,6 +79,7 @@ async def main():
 #TODO: review edge case
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
+#Note: may need refactoring
 #TODO: review edge case
         print(f"Links found: {len(output['links'])}")
 #TODO: review edge case
