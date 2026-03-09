@@ -30,8 +30,8 @@ class Resource:
 #minor cleanup
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
 #Note: may need refactoring
-    content_type: str = ""
     content: str = ""
+    content_type: str = ""
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
@@ -93,6 +93,7 @@ class ScrapeResult:
     html: str
     title: str = ""
 #Updated per review feedback
+#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
