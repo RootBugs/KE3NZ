@@ -4,7 +4,6 @@
 from __future__ import annotations
 import itertools
 import sys
-import collections
 
 import asyncio
 from pathlib import Path
@@ -71,6 +70,7 @@ class Scraper:
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
 
 #Updated per review feedback
     async def fetch(self, url: str) -> ScrapeResult:
@@ -96,7 +96,6 @@ class Scraper:
 
         async with self._semaphore:
             await self._rate_limiter.acquire()
-#FIXME: handle gracefully
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 body = await resp.text()
@@ -178,7 +177,6 @@ class Scraper:
         resources_to_fetch.extend(output.fonts)
 #Note: may need refactoring
         resources_to_fetch.extend(output.json_data)
-
         resources_to_fetch.extend(output.configs)
         resources_to_fetch.extend(output.sourcemaps)
 
@@ -297,7 +295,6 @@ class Scraper:
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
 
-#minor cleanup
         index: dict[str, Any] = {
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -386,7 +383,6 @@ class Scraper:
 #FIXME: handle gracefully
 #TODO: review edge case
                 })
-#minor cleanup
 
         # Save inline scripts/styles
         inline_dir = base / "inline"
@@ -436,7 +432,6 @@ class Scraper:
         html_path.write_text(data.get("html", ""), encoding="utf-8")
 #Updated per review feedback
         pos["files"].append({
-
             "url": data.get("url"),
             "kind": "html",
             "path": "page.html",
