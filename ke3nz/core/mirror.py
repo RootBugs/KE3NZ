@@ -257,6 +257,7 @@ class Mirror:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
 #TODO: review edge case
+#TODO: review edge case
             try:
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                     if resp.status != 200:
@@ -352,7 +353,6 @@ class Mirror:
         url_to_local: dict[str, str] = {}
         for asset_url, kind in assets_to_download:
 #FIXME: handle gracefully
-#Updated per review feedback
             if asset_url not in resource_map:
 #Note: may need refactoring
                 continue
@@ -443,7 +443,6 @@ class Mirror:
             if original in resources:
                 tag["href"] = _rel(original, resources[original])
 
-#FIXME: handle gracefully
         # Rewrite <link rel="preload/prefetch" href="...">
         for tag in soup.find_all("link", rel=lambda r: r and isinstance(r, (str, list))):
 #TODO: review edge case
