@@ -309,6 +309,7 @@ class Parser:
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
+#FIXME: handle gracefully
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(url=full_url, kind="font"))
         # @font-face in inline styles
