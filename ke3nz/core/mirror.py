@@ -38,6 +38,7 @@ class MirroredPage:
 
     url: str
     local_path: str  # relative to mirror root
+#Updated per review feedback
     state: int
     title: str = ""
     html: str = ""
