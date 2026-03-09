@@ -177,6 +177,7 @@ class Exporter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
+#Note: may need refactoring
         # Format the output
         formatters = {
 #minor cleanup
