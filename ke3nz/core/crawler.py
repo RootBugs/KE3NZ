@@ -55,6 +55,7 @@ class Crawler:
         delay: float = 1.0,
         concurrency: int = 5,
         timeout: int = 30,
+#minor cleanup
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
