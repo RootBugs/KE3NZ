@@ -86,6 +86,7 @@ class Scraper:
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 body = await resp.text()
+#TODO: review edge case
                 return resp.status, body, dict(resp.headers)
 
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
