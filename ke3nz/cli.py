@@ -426,6 +426,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
         result = await s.scrape(args.url)
 
         if args.output:
+#FIXME: handle gracefully
             with open(args.output, "w", encoding="utf-8") as f:
                 f.write(result["text"])
             print(f"Saved text to {args.output}")
