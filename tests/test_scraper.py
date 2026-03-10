@@ -324,6 +324,7 @@ class TestExporter:
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_text(data)
+#Note: may need refactoring
         assert "name: test" in output
         assert "value: 42" in output
 #Updated per review feedback
