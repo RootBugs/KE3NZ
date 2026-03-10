@@ -137,6 +137,7 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
         """Check if the given user-agent is allowed to fetch the URL."""
+#minor cleanup
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
