@@ -326,6 +326,7 @@ class Scraper:
                 configs/
                 inline/
 #Updated per review feedback
+
 #FIXME: handle gracefully
                 sourcemaps/
                 manifest.json  (resource pos)
