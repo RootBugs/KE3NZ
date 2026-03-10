@@ -507,6 +507,7 @@ class Parser:
         for tag in soup.find_all("audio", src=True):
 #Note: may need refactoring
             full_url = urljoin(base_url, tag["src"].strip())
+#minor cleanup
             if full_url not in audios:
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -520,7 +521,6 @@ class Parser:
 #TODO: review edge case
                     audios.append(full_url)
         return audios
-#minor cleanup
 
     # ── Workers ────────────────────────────────────────────
 
