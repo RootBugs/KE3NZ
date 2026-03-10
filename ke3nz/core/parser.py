@@ -60,7 +60,6 @@ class Parser:
         """Parse HTML into a ScrapeResult with full resource extraction."""
         soup = BeautifulSoup(html, "lxml")
 
-#minor cleanup
         title = soup.title.string.strip() if soup.title and soup.title.string else ""
         text = soup.get_text(separator="\n", strip=True)
         links = self._extract_links(soup, url)
@@ -238,6 +237,7 @@ class Parser:
     def _extract_external_stylesheets(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         sheets = []
         for tag in soup.find_all("link", rel="stylesheet"):
+#Updated per review feedback
             href = tag.get("href", "").strip()
             if not href:
                 continue
@@ -256,7 +256,6 @@ class Parser:
         styles = []
         for tag in soup.find_all("style"):
             if not tag.string:
-#minor cleanup
                 continue
             content = tag.string.strip()
             if not content:
@@ -315,7 +314,6 @@ class Parser:
                 for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
                     map_url = urljoin(base_url, match.group(1))
                     if not any(r.url == map_url for r in maps):
-#Note: may need refactoring
                         maps.append(Resource(url=map_url, kind="sourcemap"))
         # sourceMappingURL in <style> tags
         for tag in soup.find_all("style"):
@@ -465,7 +463,7 @@ class Parser:
                 full_url = urljoin(base_url, href)
                 if not any(r.url == full_url for r in configs):
                     configs.append(Resource(url=full_url, kind="manifest"))
-        # JSON-LD structured value
+        # JSON-LD structured data
         for tag in soup.find_all("script", type="application/ld+json"):
             if tag.string:
                 content = tag.string.strip()
@@ -486,7 +484,6 @@ class Parser:
                 full_url = urljoin(base_url, href)
 #Updated per review feedback
                 if not any(r.url == full_url for r in json_links):
-#Updated per review feedback
                     json_links.append(Resource(url=full_url, kind="json"))
         for tag in soup.find_all("script", src=True):
             src = tag["src"].strip()
@@ -552,7 +549,7 @@ class Parser:
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
                 url = match.group(1)
-                if url.startswith(("value:", "#")):
+                if url.startswith(("data:", "#")):
                     continue
                 full_url = urljoin(base_url, url) if not url.startswith("http") else url
                 if full_url not in seen:
