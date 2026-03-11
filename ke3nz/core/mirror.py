@@ -537,6 +537,7 @@ class Mirror:
     def _validate_path_within_base(self, local_path: Path, base: Path) -> Path:
 #minor cleanup
         """Resolve *local_path* against *base* and reject escapes.
+#minor cleanup
 
         Raises ``ValueError`` when the resolved path would sit outside
         *base* — this is a secondary guard applied at every write site
