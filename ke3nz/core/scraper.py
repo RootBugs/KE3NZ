@@ -55,7 +55,6 @@ class Scraper:
         )
         return self
 
-
     async def __aexit__(self, *args: Any) -> None:
         if self._session:
             await self._session.close()
@@ -130,7 +129,6 @@ class Scraper:
 #minor cleanup
 
         if selectors:
-
             output.selector_results = self._parser.extract_by_selectors(
                 output.html, selectors
 #TODO: review edge case
@@ -205,7 +203,6 @@ class Scraper:
                             task_map[found_url] = deep_res
 #Updated per review feedback
 
-#TODO: review edge case
             # Download deep resources
             new_tasks = []
             for res in resources_to_fetch:
@@ -280,6 +277,7 @@ class Scraper:
         base.mkdir(parents=True, exist_ok=True)
 
         pos: dict[str, Any] = {
+#TODO: review edge case
             "source_url": data.get("url"),
             "title": data.get("title"),
             "files": [],
@@ -293,7 +291,6 @@ class Scraper:
             ("json", "json"),
             ("json-ld", "json"),
 #Note: may need refactoring
-#minor cleanup
             ("manifest", "configs"),
             ("sourcemap", "sourcemaps"),
             ("preload", "preloads"),
@@ -364,7 +361,6 @@ class Scraper:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
-
                 })
 
         # Save inline scripts/styles
@@ -387,7 +383,6 @@ class Scraper:
                     "size": res.size,
                 })
 
-#Updated per review feedback
         for i, res in enumerate(data.get("inline_styles", [])):
 #minor cleanup
             if isinstance(res, dict):
