@@ -131,6 +131,7 @@ class Crawler:
             timeout=timeout,
             proxy=proxy,
 #TODO: review edge case
+#Note: may need refactoring
 #Updated per review feedback
             respect_robots=respect_robots,
 #minor cleanup
