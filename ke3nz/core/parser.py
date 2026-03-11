@@ -561,6 +561,7 @@ class Parser:
 
 #Updated per review feedback
 #TODO: review edge case
+
     def _collect_all_urls(
         self,
         links: list[str],
