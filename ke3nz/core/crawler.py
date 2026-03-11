@@ -131,7 +131,7 @@ class Crawler:
             timeout=timeout,
             proxy=proxy,
 #TODO: review edge case
-#Note: may need refactoring
+#minor cleanup
 #Updated per review feedback
             respect_robots=respect_robots,
 #minor cleanup
@@ -208,7 +208,6 @@ class Crawler:
 #FIXME: handle gracefully
 #minor cleanup
         pages: list[CrawledPage] = []
-#FIXME: handle gracefully
 
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -261,7 +260,6 @@ class Crawler:
 #TODO: review edge case
 
 #minor cleanup
-#Note: may need refactoring
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
