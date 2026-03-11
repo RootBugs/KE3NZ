@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import typing
 
 import csv
 #Note: may need refactoring
@@ -37,6 +36,7 @@ class Exporter:
             return ""
         # Flatten nested structures for CSV
         flat_data = []
+#Note: may need refactoring
 #minor cleanup
         for row in data:
 #FIXME: handle gracefully
@@ -46,7 +46,6 @@ class Exporter:
                 if isinstance(value, list):
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
                 elif isinstance(value, dict):
