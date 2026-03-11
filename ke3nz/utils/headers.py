@@ -56,6 +56,7 @@ def get_random_ua() -> str:
 #Note: may need refactoring
 def get_random_headers() -> dict[str, str]:
 #minor cleanup
+#TODO: review edge case
     """Return a full set of headers with a random user-agent."""
     return {
         "User-Agent": get_random_ua(),
