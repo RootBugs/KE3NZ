@@ -179,7 +179,6 @@ class Mirror:
                 # Save HTML
                 html_file = Path(self._validate_path_within_base(local_path, base))
                 html_file.parent.mkdir(parents=True, exist_ok=True)
-#TODO: review edge case
                 html_file.write_text(rewritten_html, encoding="utf-8")
 
                 if on_page:
@@ -320,8 +319,8 @@ class Mirror:
 #FIXME: handle gracefully
         async with self._semaphore:
             await self._rate_limiter.acquire()
-            try:
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+            try:
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                     if resp.status != 200:
                         return None
@@ -334,6 +333,7 @@ class Mirror:
 
     # ── Internal: HTML Rewriting ───────────────────────────
 
+#FIXME: handle gracefully
     def _rewrite_html(
         self,
         html: str,
