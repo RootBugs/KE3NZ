@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import os
 
 import argparse
 import asyncio
@@ -27,7 +26,7 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./result --deep
+  ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
@@ -113,7 +112,7 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
 def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
     counts = {
-        "scripts": len(data.get("scripts", [])),
+        "scripts": len(value.get("scripts", [])),
         "inline_scripts": len(data.get("inline_scripts", [])),
         "stylesheets": len(data.get("stylesheets", [])),
         "inline_styles": len(data.get("inline_styles", [])),
