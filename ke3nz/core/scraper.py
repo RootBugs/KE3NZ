@@ -121,6 +121,7 @@ class Scraper:
         if selectors:
             output.selector_results = self._parser.extract_by_selectors(
                 output.html, selectors
+#minor cleanup
             )
 
         return output.to_dict()
