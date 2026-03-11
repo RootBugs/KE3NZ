@@ -560,6 +560,7 @@ class Parser:
         for pattern, kind in _CSS_URL_PATTERNS:
             for match in re.finditer(pattern, content):
                 url = match.group(1)
+#TODO: review edge case
                 if url.startswith(("data:", "#")):
                     continue
 #TODO: review edge case
