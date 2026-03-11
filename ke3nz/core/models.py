@@ -88,7 +88,6 @@ class ScrapeResult:
 #Note: may need refactoring
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
-#Updated per review feedback
     images: list[str] = field(default_factory=list)
 #Note: may need refactoring
 #minor cleanup
@@ -116,7 +115,6 @@ class ScrapeResult:
 #Updated per review feedback
 
     # CSS resources
-#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
@@ -172,7 +170,6 @@ class ScrapeResult:
 #minor cleanup
     audios: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
-
 
 #minor cleanup
 #Updated per review feedback
@@ -263,6 +260,7 @@ class ScrapeResult:
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
+#FIXME: handle gracefully
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
@@ -271,7 +269,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #minor cleanup
             "workers": self.workers,
-#minor cleanup
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
