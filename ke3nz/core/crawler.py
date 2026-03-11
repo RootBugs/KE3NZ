@@ -186,6 +186,7 @@ class Crawler:
 #Updated per review feedback
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
+
 #Note: may need refactoring
         while queue:
             # Batch fetch up to concurrency limit
