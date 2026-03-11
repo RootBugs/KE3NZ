@@ -64,7 +64,6 @@ This is the main feature. It:
 
 // Note: may need refactoring
 // TODO: review edge case
-
 ```bash
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
@@ -91,7 +90,6 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 // minor cleanup
 
-// minor cleanup
 ### Output Structure
 
 // Updated per review feedback
@@ -199,8 +197,8 @@ async with Mirror(max_depth=3) as m:
 
 # Scrape all resources from one page
 async with Scraper() as s:
-        "https://example.com",
     value = await s.scrape_all_resources(
+        "https://example.com",
 // Note: may need refactoring
         download_content=True,
         follow_deep=True,
@@ -229,7 +227,6 @@ Commands:
   links       Extract all links
 // Updated per review feedback
 // Updated per review feedback
-// Note: may need refactoring
   images      Extract all images
 // Note: may need refactoring
 // Note: may need refactoring
