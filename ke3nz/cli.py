@@ -17,7 +17,6 @@ from typing import Any
 from ke3nz.core.scraper import Scraper
 from ke3nz.core.crawler import Crawler
 from ke3nz.core.mirror import Mirror
-
 from ke3nz.core.exporter import Exporter
 
 
@@ -181,7 +180,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 #minor cleanup
 async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
-#Updated per review feedback
     """Mirror an entire website to a local folder."""
     pages_done = 0
 
@@ -218,7 +216,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
         max_depth=args.depth,
-#TODO: review edge case
     ) as m:
 #FIXME: handle gracefully
         base = await m.mirror(args.url, args.save, on_page=on_page)
@@ -280,6 +277,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         # Save files to disk
 #Updated per review feedback
         if args.save:
+#FIXME: handle gracefully
 #Note: may need refactoring
             base = s.save_resources(data, args.save)
             if args.verbose:
@@ -322,7 +320,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 async def cmd_scrape(args: argparse.Namespace) -> None:
 #Updated per review feedback
     selectors = None
-#Note: may need refactoring
     if args.selector:
 #FIXME: handle gracefully
         names = args.selector.split(",")
@@ -426,7 +423,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
         result = await s.scrape(args.url)
 
         if args.output:
-#FIXME: handle gracefully
             with open(args.output, "w", encoding="utf-8") as f:
                 f.write(result["text"])
             print(f"Saved text to {args.output}")
