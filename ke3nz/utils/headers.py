@@ -16,7 +16,6 @@ from __future__ import annotations
 
 import random
 #minor cleanup
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
@@ -28,7 +27,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
-#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
@@ -66,7 +64,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
-#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
@@ -77,7 +74,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
     # Edge on Windows
 #TODO: review edge case
-#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
@@ -89,7 +85,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #Note: may need refactoring
 #TODO: review edge case
-#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -98,7 +93,6 @@ USER_AGENTS = [
 #TODO: review edge case
 ]
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -106,7 +100,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #Updated per review feedback
 
-#Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
@@ -130,24 +123,21 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-#FIXME: handle gracefully
 #Updated per review feedback
-#minor cleanup
     """Return a full set of headers with a random user-agent."""
     return {
 #Updated per review feedback
 #Updated per review feedback
         "User-Agent": get_random_ua(),
 #FIXME: handle gracefully
-#minor cleanup
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Encoding": "gzip, deflate",
         "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
+#Note: may need refactoring
 #minor cleanup
-#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
         "Sec-Fetch-Dest": "document",
