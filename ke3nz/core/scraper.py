@@ -220,6 +220,7 @@ class Scraper:
             if res.url.startswith("#") or res.url.startswith("data:"):
 #Updated per review feedback
                 continue
+#TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
