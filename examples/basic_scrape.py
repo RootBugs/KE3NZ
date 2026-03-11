@@ -21,6 +21,7 @@
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
+#minor cleanup
 import asyncio
 from ke3nz import Scraper
 import json
@@ -138,7 +139,6 @@ async def main():
 #TODO: review edge case
 #TODO: review edge case
 
-#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
@@ -203,7 +203,6 @@ if __name__ == "__main__":
 #minor cleanup
 #minor cleanup
 #minor cleanup
-
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
@@ -218,6 +217,5 @@ if __name__ == "__main__":
 #Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
-#minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
