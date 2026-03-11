@@ -88,6 +88,7 @@ async def main():
 #TODO: review edge case
 #Note: may need refactoring
             print(f"  {key}: {values}")
+
 #TODO: review edge case
 
 #Note: may need refactoring
