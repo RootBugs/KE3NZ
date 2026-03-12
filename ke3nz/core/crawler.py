@@ -109,7 +109,6 @@ class CrawledPage:
 
 
 #TODO: review edge case
-#Note: may need refactoring
 class Crawler:
 #Updated per review feedback
     """Recursive async website crawler."""
@@ -348,6 +347,7 @@ class Crawler:
 #minor cleanup
 #Updated per review feedback
                 # Enqueue discovered links for next depth level
+#TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
                 if depth < max_depth:
