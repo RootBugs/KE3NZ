@@ -193,6 +193,7 @@ class TestParser:
         assert "https://example.com/apple-icon.png" in result.favicons
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#Updated per review feedback
 
     def test_extract_configs(self):
         parser = Parser()
