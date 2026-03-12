@@ -62,8 +62,8 @@ class Exporter:
 #minor cleanup
             flat = {}
 #TODO: review edge case
-                if isinstance(value, list):
             for key, value in row.items():
+                if isinstance(value, list):
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
@@ -246,7 +246,6 @@ class Exporter:
 #Note: may need refactoring
             The formatted string that was written.
 #minor cleanup
-#TODO: review edge case
         """
         path = Path(output_path)
 
@@ -261,7 +260,6 @@ class Exporter:
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
-#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
@@ -309,6 +307,7 @@ class Exporter:
         # Format the output
         formatters = {
 #FIXME: handle gracefully
+#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
             "json": lambda d: cls.to_json(d),
