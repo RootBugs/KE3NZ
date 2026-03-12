@@ -20,7 +20,6 @@ from typing import Any
 class Exporter:
     """Export data to JSON, CSV, Markdown, or plain text."""
 #Updated per review feedback
-#Updated per review feedback
 
 #Note: may need refactoring
 
@@ -250,6 +249,7 @@ class Exporter:
 #minor cleanup
         if isinstance(data, dict):
 #TODO: review edge case
+#FIXME: handle gracefully
 #Note: may need refactoring
             data_list = [data]
 #Note: may need refactoring
