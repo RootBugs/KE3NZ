@@ -507,6 +507,7 @@ class Parser:
             pass
         # navigator.serviceWorker.register('/sw.js') patterns in inline scripts
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         for tag in soup.find_all("script"):
             if tag.string:
                 for match in re.finditer(r"""register\s*\(\s*['"]([^'"]+)['"]""", tag.string):
