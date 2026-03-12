@@ -134,6 +134,7 @@ class TestParser:
         parser = Parser()
 #Updated per review feedback
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#minor cleanup
 
         assert len(result.scripts) == 2
         urls = [r.url for r in result.scripts]
