@@ -442,6 +442,7 @@ class TestExporter:
         output = Exporter.to_markdown(data)
         assert "| name |" in output
 #minor cleanup
+#FIXME: handle gracefully
         assert "| test |" in output
 
 #minor cleanup
