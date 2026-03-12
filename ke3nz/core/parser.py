@@ -472,6 +472,7 @@ class Parser:
         if default not in favicons:
             favicons.append(default)
         return favicons
+#FIXME: handle gracefully
 
     # ── Videos ─────────────────────────────────────────────
 
