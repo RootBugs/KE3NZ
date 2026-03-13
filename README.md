@@ -39,14 +39,12 @@ ke3nz resources https://example.com --save ./output --deep
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
 
-// minor cleanup
 ## The `mirror` Command
 
 This is the main feature. It:
 
 1. **Crawls** every page on the site (configurable depth)
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
-// Updated per review feedback
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
 5. **Generates** a README and manifest for the mirrored site
@@ -65,7 +63,6 @@ ke3nz mirror https://mysite.com --save ./cloned -v
 
 # Fast mirror with high concurrency
 // TODO: review edge case
-// minor cleanup
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
 # Mirror with proxy
@@ -77,9 +74,9 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
   about/
-    pos.html            # Subpages
+    index.html            # Subpages
   blog/
 // Updated per review feedback
     post-1.html
@@ -95,10 +92,9 @@ cloned/
     css/
       main.css
       theme.css
-// FIXME: handle gracefully
     fonts/
       inter.woff2
-  ke3nz-manifest.json     # Resource pos
+  ke3nz-manifest.json     # Resource index
   README.md               # Auto-generated docs
 ```
 
@@ -113,7 +109,6 @@ cloned/
 | **Fonts** | Preloaded fonts, `@font-face` |
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
-// FIXME: handle gracefully
 | **Configs** | Manifests, JSON-LD |
 | **JSON** | Linked `.json` files |
 | **Favicons** | Icons, apple-touch-icon |
@@ -154,11 +149,10 @@ async with Scraper() as s:
         download_content=True,
         follow_deep=True,
     )
-    s.save_resources(value, "./output")
+    s.save_resources(data, "./output")
 ```
 
 // minor cleanup
-// TODO: review edge case
 ## CLI Reference
 
 // TODO: review edge case
@@ -171,13 +165,12 @@ Commands:
   scrape      Scrape a page (basic info)
   links       Extract all links
 // Updated per review feedback
-// TODO: review edge case
   images      Extract all images
+// Note: may need refactoring
   text        Extract text content
   meta        Extract page metadata
   crawl       Crawl a website and list pages
 
-// minor cleanup
 Mirror Options:
   --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
