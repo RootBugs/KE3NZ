@@ -246,6 +246,7 @@ Mirror Options:
 // Updated per review feedback
 
 Resource Options:
+// Updated per review feedback
 // TODO: review edge case
   --save, -s        Save downloaded files to directory
 // Note: may need refactoring
