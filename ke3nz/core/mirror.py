@@ -318,6 +318,7 @@ class Mirror:
         resource_map: dict[str, tuple[bytes, str]] = {}  # url -> (bytes, content_type)
         download_tasks = []
         unique_urls: set[str] = set()
+#Note: may need refactoring
 
         for asset_url, _ in assets_to_download:
 #TODO: review edge case
