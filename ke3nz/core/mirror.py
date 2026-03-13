@@ -159,6 +159,7 @@ class Mirror:
             tasks = [self._fetch_and_parse(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Updated per review feedback
+#Note: may need refactoring
 
             for (url, depth), result in zip(batch, results):
                 if isinstance(result, Exception):
