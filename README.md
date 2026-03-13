@@ -115,6 +115,7 @@ cloned/
 // Note: may need refactoring
   assets/
     js/
+// Updated per review feedback
 // Note: may need refactoring
 // FIXME: handle gracefully
 // FIXME: handle gracefully
