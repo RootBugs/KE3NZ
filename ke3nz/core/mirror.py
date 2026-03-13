@@ -208,6 +208,7 @@ class Mirror:
 
                 # Queue discovered links for next depth
                 if depth < self.max_depth:
+#minor cleanup
                     for link in result.links:
                         norm_link = self._normalize_url(link)
                         if norm_link not in self._visited_html:
