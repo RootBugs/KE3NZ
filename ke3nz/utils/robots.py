@@ -58,6 +58,7 @@ class RobotsChecker:
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
 #FIXME: handle gracefully
+#Note: may need refactoring
         self._session: aiohttp.ClientSession | None = None
 #minor cleanup
 #Note: may need refactoring
