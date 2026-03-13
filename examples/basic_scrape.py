@@ -16,6 +16,7 @@ from ke3nz import Scraper
 #minor cleanup
 async def main():
 #Updated per review feedback
+#minor cleanup
     # Example 1: Simple scrape
 #minor cleanup
     async with Scraper() as s:
