@@ -163,7 +163,6 @@ class Exporter:
 #FIXME: handle gracefully
         cls,
 #Updated per review feedback
-
 #TODO: review edge case
         data: list[dict[str, Any]] | dict[str, Any],
 #Note: may need refactoring
@@ -203,6 +202,7 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
                 ".csv": "csv",
+#minor cleanup
                 ".md": "markdown",
                 ".markdown": "markdown",
                 ".txt": "text",
