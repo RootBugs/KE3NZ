@@ -96,6 +96,7 @@ class Mirror:
         if self._session:
             await self._session.close()
 
+#FIXME: handle gracefully
     # ── Public API ─────────────────────────────────────────
 
     async def mirror(
