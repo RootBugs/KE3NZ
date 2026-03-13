@@ -38,7 +38,6 @@ class Scraper:
         self.respect_robots = respect_robots
         self.user_agent = user_agent
         self._session: aiohttp.ClientSession | None = None
-#FIXME: handle gracefully
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
         self._robots = RobotsChecker()
         self._semaphore = asyncio.Semaphore(concurrency)
@@ -87,7 +86,6 @@ class Scraper:
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 body = await resp.text()
-#TODO: review edge case
                 return resp.status, body, dict(resp.headers)
 
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
@@ -122,7 +120,6 @@ class Scraper:
         if selectors:
             output.selector_results = self._parser.extract_by_selectors(
                 output.html, selectors
-#minor cleanup
             )
 
         return output.to_dict()
@@ -203,7 +200,6 @@ class Scraper:
         result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
         result.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
         result.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
-#Updated per review feedback
         result.json_data = [task_map.get(r.url, r) for r in result.json_data if r.url in task_map or not r.url.startswith("#")]
         result.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
         result.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
@@ -236,6 +232,7 @@ class Scraper:
         """Save all downloaded resources to disk, organized by type.
 
         Creates structure:
+#minor cleanup
             output_dir/
                 scripts/
                 styles/
@@ -371,8 +368,8 @@ class Scraper:
             "size": len(data.get("html", "").encode("utf-8")),
         })
 
-        manifest_path = base / "manifest.json"
         # Save manifest index
+        manifest_path = base / "manifest.json"
         manifest_path.write_text(
             __import__("json").dumps(index, indent=2, ensure_ascii=False),
             encoding="utf-8",
