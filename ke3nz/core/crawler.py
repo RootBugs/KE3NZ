@@ -253,6 +253,7 @@ class Crawler:
 #TODO: review edge case
 #minor cleanup
                     images=output.images,
+#minor cleanup
                     meta=output.meta,
 #Note: may need refactoring
                 )
