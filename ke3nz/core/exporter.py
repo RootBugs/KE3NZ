@@ -142,6 +142,7 @@ class Exporter:
 #TODO: review edge case
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
+
         for i, entry in enumerate(data):
 #Note: may need refactoring
 #FIXME: handle gracefully
