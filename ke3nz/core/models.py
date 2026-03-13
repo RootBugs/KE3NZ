@@ -1,3 +1,4 @@
+#Note: may need refactoring
 """Shared data models for KE3NZ."""
 
 #minor cleanup
@@ -45,7 +46,6 @@ class Resource:
 #Note: may need refactoring
 
 
-#Note: may need refactoring
 #Updated per review feedback
 @dataclass
 class ScrapeResult:
@@ -163,8 +163,8 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
             "links": self.links,
-            "favicons": self.favicons,
             "images": self.images,
+            "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
