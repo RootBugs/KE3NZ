@@ -120,6 +120,7 @@ class Parser:
             headers=headers,
             scripts=scripts,
             inline_scripts=inline_scripts,
+#Updated per review feedback
             stylesheets=stylesheets,
             inline_styles=inline_styles,
             fonts=fonts,
