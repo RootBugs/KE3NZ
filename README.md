@@ -148,6 +148,7 @@ async with Scraper() as s:
         "https://example.com",
         download_content=True,
         follow_deep=True,
+// minor cleanup
     )
     s.save_resources(data, "./output")
 ```
