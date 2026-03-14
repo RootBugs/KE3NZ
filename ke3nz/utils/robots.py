@@ -95,6 +95,7 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
+#TODO: review edge case
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
