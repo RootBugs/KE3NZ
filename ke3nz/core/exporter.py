@@ -173,6 +173,7 @@ class Exporter:
 #Note: may need refactoring
 #Note: may need refactoring
         else:
+#TODO: review edge case
             data_list = data
 #TODO: review edge case
 
