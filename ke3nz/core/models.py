@@ -104,6 +104,7 @@ class ScrapeResult:
 #minor cleanup
 
 #TODO: review edge case
+#minor cleanup
     # Fonts
 #Updated per review feedback
     fonts: list[Resource] = field(default_factory=list)
