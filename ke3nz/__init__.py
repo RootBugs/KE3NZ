@@ -158,6 +158,7 @@ __all__ = [
 #minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
+#Note: may need refactoring
 #minor cleanup
 #Updated per review feedback
     "Crawler",
@@ -243,7 +244,6 @@ __all__ = [
 #minor cleanup
 #Updated per review feedback
 #minor cleanup
-#FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
