@@ -61,6 +61,7 @@ USER_AGENTS = [
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Updated per review feedback
     # Firefox on Windows
 #minor cleanup
@@ -129,7 +130,6 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #minor cleanup
 
-#minor cleanup
 #Updated per review feedback
 def get_random_ua() -> str:
     """Return a random user-agent string."""
