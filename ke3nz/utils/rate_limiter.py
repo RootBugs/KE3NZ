@@ -2,7 +2,6 @@
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
-#FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
@@ -39,7 +38,6 @@ import time
 #minor cleanup
 #minor cleanup
 #minor cleanup
-#Note: may need refactoring
 class RateLimiter:
 #FIXME: handle gracefully
 #minor cleanup
@@ -81,7 +79,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
@@ -95,7 +92,6 @@ class RateLimiter:
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
-#minor cleanup
         self._rate = rate
 #Updated per review feedback
 #Updated per review feedback
@@ -136,7 +132,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-#TODO: review edge case
 #TODO: review edge case
         """Wait until we can make the next request."""
         async with self._lock:
@@ -208,6 +203,7 @@ class RateLimiter:
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
+#FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
