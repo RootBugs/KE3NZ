@@ -206,6 +206,7 @@ def get_random_ua() -> str:
     """Return a random user-agent string."""
 #Updated per review feedback
 #Note: may need refactoring
+#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
