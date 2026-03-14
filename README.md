@@ -8,7 +8,6 @@ KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website
 
 ```bash
 cd KE3NZ
-
 pip install -e .
 // FIXME: handle gracefully
 ```
@@ -134,6 +133,7 @@ ke3nz resources https://example.com -o urls.json --no-content
 ```
 
 ## Python API
+// TODO: review edge case
 
 ```python
 from ke3nz import Scraper, Mirror
@@ -149,7 +149,6 @@ async with Scraper() as s:
         "https://example.com",
         download_content=True,
         follow_deep=True,
-// minor cleanup
     )
     s.save_resources(data, "./output")
 ```
