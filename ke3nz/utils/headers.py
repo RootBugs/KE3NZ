@@ -228,6 +228,7 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
 #Note: may need refactoring
+#TODO: review edge case
         "Cache-Control": "max-age=0",
 #Note: may need refactoring
 #FIXME: handle gracefully
