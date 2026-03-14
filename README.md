@@ -116,6 +116,7 @@ cloned/
 // Note: may need refactoring
 
 ## The `resources` Command
+// Note: may need refactoring
 
 Scrape all resources from a single page:
 
