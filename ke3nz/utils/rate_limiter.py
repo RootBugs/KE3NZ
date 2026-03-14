@@ -50,6 +50,7 @@ class RateLimiter:
         rate: Maximum requests per second.
 #FIXME: handle gracefully
 #TODO: review edge case
+#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
