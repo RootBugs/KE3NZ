@@ -128,7 +128,6 @@ class TestParser:
 
     def test_extract_meta(self):
         parser = Parser()
-#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -434,6 +433,7 @@ class TestScraperIntegration:
             async with Scraper(delay=0, respect_robots=False) as s:
                 result = await s.scrape("https://example.com")
                 assert result["status"] == 200
+#Note: may need refactoring
                 assert result["title"] == "Test Page"
                 assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
@@ -461,7 +461,6 @@ class TestScraperIntegration:
 #Note: may need refactoring
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
-#FIXME: handle gracefully
 #Note: may need refactoring
             async with Scraper(delay=0, respect_robots=False) as s:
                 data = await s.scrape_all_resources(
