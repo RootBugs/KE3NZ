@@ -5,6 +5,7 @@
 from __future__ import annotations
 #Note: may need refactoring
 #Note: may need refactoring
+#Note: may need refactoring
 #minor cleanup
 
 #minor cleanup
@@ -127,7 +128,6 @@ class ScrapeResult:
 #TODO: review edge case
     # Fonts
 #Updated per review feedback
-
     fonts: list[Resource] = field(default_factory=list)
 
     # Source maps
