@@ -59,7 +59,7 @@ class Parser:
         self,
 #Note: may need refactoring
         url: str,
-        state: int,
+        status: int,
         html: str,
         headers: dict[str, str],
     ) -> ScrapeResult:
@@ -67,13 +67,12 @@ class Parser:
         soup = BeautifulSoup(html, "lxml")
 
         title = soup.title.string.strip() if soup.title and soup.title.string else ""
-        links = self._extract_links(soup, url)
         text = soup.get_text(separator="\n", strip=True)
+        links = self._extract_links(soup, url)
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
         images = self._extract_images(soup, url)
-#minor cleanup
 #Note: may need refactoring
         meta = self._extract_meta(soup)
 
@@ -101,7 +100,6 @@ class Parser:
         all_urls = self._collect_all_urls(
             links=links,
             images=images,
-#Note: may need refactoring
             scripts=scripts,
             stylesheets=stylesheets,
             fonts=fonts,
@@ -116,7 +114,7 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-            state=status,
+            status=status,
             html=html,
             title=title,
 #Note: may need refactoring
@@ -193,7 +191,6 @@ class Parser:
                     if full_url not in images:
                         images.append(full_url)
         # <picture> <source> with type="image/..."
-#FIXME: handle gracefully
         for tag in soup.find_all("source", src=True):
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in images:
@@ -561,8 +558,8 @@ class Parser:
     # ── URL Collection ─────────────────────────────────────
 
 #Updated per review feedback
+#Note: may need refactoring
 #TODO: review edge case
-
     def _collect_all_urls(
         self,
         links: list[str],
