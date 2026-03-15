@@ -292,6 +292,7 @@ class Parser:
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
+#minor cleanup
                         fonts.append(Resource(url=full_url, kind="font"))
         # @font-face in inline styles
         for tag in soup.find_all("style"):
