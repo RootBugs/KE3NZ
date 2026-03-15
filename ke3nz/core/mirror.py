@@ -338,6 +338,7 @@ class Mirror:
             return None
 
 #Updated per review feedback
+#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
         async with self._semaphore:
