@@ -279,6 +279,7 @@ class Mirror:
                 continue
 #Note: may need refactoring
             resource_map[asset_url] = result
+#minor cleanup
 
         # Build URL -> local path mapping
 #Note: may need refactoring
