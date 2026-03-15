@@ -72,7 +72,6 @@ USER_AGENTS = [
 #FIXME: handle gracefully
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #FIXME: handle gracefully
-#Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
@@ -110,7 +109,6 @@ USER_AGENTS = [
 #Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
-#FIXME: handle gracefully
     # Safari on Mac
 #Note: may need refactoring
 #Note: may need refactoring
@@ -166,7 +164,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
-#minor cleanup
 
 #Updated per review feedback
 #Note: may need refactoring
@@ -183,7 +180,6 @@ def get_random_ua() -> str:
 #TODO: review edge case
 #FIXME: handle gracefully
 
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
@@ -228,7 +224,6 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
 #Note: may need refactoring
-#TODO: review edge case
         "Cache-Control": "max-age=0",
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -240,5 +235,5 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
 #Note: may need refactoring
 #minor cleanup
-
     }
+#Note: may need refactoring
