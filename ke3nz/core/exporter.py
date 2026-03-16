@@ -253,6 +253,7 @@ class Exporter:
         # Auto-detect format from extension
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#minor cleanup
         if fmt is None:
 #Updated per review feedback
             ext = path.suffix.lower()
