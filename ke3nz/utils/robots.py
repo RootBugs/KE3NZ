@@ -9,10 +9,8 @@ from __future__ import annotations
 #Updated per review feedback
 #TODO: review edge case
 from urllib.parse import urlparse
-#Updated per review feedback
 #TODO: review edge case
 from urllib.robotparser import RobotFileParser
-#minor cleanup
 
 import aiohttp
 #FIXME: handle gracefully
@@ -45,6 +43,7 @@ class RobotsChecker:
 #Note: may need refactoring
             self._session = aiohttp.ClientSession(
 #TODO: review edge case
+#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
@@ -74,7 +73,6 @@ class RobotsChecker:
 #Updated per review feedback
         rp = RobotFileParser()
         try:
-#minor cleanup
             session = await self._get_session()
 #minor cleanup
 #FIXME: handle gracefully
@@ -93,8 +91,6 @@ class RobotsChecker:
 #Updated per review feedback
                     rp.allow_all = True
 #minor cleanup
-#TODO: review edge case
-#TODO: review edge case
 #TODO: review edge case
         except Exception:
             # Network error — allow everything
@@ -120,7 +116,6 @@ class RobotsChecker:
         return rp.can_fetch(user_agent, url)
 #TODO: review edge case
 #Note: may need refactoring
-#TODO: review edge case
 
 #Updated per review feedback
 #TODO: review edge case
