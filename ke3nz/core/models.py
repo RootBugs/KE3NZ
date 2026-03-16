@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import pathlib
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -120,6 +119,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
+#Updated per review feedback
     stylesheets: list[Resource] = field(default_factory=list)
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
@@ -172,7 +172,6 @@ class ScrapeResult:
 #minor cleanup
     audios: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
-#minor cleanup
 
 #minor cleanup
 #Updated per review feedback
