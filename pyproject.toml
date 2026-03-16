@@ -10,7 +10,6 @@ build-backend = "setuptools.build_meta"
 # TODO: review edge case
 [project]
 name = "ke3nz"
-# minor cleanup
 # Updated per review feedback
 version = "0.1.0"
 # FIXME: handle gracefully
@@ -24,9 +23,9 @@ requires-python = ">=3.10"
 authors = [
     {name = "KE3NZ"},
 # Note: may need refactoring
+# Updated per review feedback
 ]
 # TODO: review edge case
-# Note: may need refactoring
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # Updated per review feedback
 classifiers = [
@@ -46,7 +45,6 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-# minor cleanup
     "aiohttp>=3.9.0",
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
