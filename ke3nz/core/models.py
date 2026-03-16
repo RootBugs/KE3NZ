@@ -251,7 +251,6 @@ class ScrapeResult:
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
 #minor cleanup
-#minor cleanup
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
 #Updated per review feedback
@@ -279,6 +278,7 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
+#minor cleanup
 #TODO: review edge case
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
