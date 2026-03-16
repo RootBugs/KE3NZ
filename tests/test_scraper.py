@@ -237,6 +237,7 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
+#Note: may need refactoring
 
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
