@@ -302,6 +302,7 @@ class TestParser:
         const worker = new Worker('/worker.js');
 #minor cleanup
         //# sourceMappingURL=https://cdn.example.com/app.js.map
+#FIXME: handle gracefully
 #TODO: review edge case
         """
 #TODO: review edge case
