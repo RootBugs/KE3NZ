@@ -426,6 +426,7 @@ class Scraper:
                 })
 
         # Save HTML
+
 #Note: may need refactoring
 #FIXME: handle gracefully
         html_path = base / "page.html"
