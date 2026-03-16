@@ -400,6 +400,7 @@ class TestParser:
         assert "https://cdn.example.com/app.js.map" in url_list
 
 
+#Note: may need refactoring
 class TestResource:
 #Updated per review feedback
 #Updated per review feedback
@@ -442,7 +443,6 @@ class TestExporter:
         output = Exporter.to_markdown(data)
         assert "| name |" in output
 #minor cleanup
-#FIXME: handle gracefully
         assert "| test |" in output
 
 #minor cleanup
