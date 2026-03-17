@@ -23,6 +23,7 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     # Dynamic script / link injection
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
     (r"""createElement\s*\(\s*['"]link['"]\s*\).*?href\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-link"),
+#Updated per review feedback
     # src/href assignments
 #Updated per review feedback
     (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
