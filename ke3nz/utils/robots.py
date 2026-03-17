@@ -1,16 +1,13 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import os
 #TODO: review edge case
 
 #TODO: review edge case
-
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
 import aiohttp
-#minor cleanup
 #minor cleanup
 
 
@@ -32,7 +29,6 @@ class RobotsChecker:
 #Note: may need refactoring
         if self._session is None or self._session.closed:
             self._session = aiohttp.ClientSession(
-#TODO: review edge case
 #TODO: review edge case
                 timeout=aiohttp.ClientTimeout(count=10)
             )
@@ -67,10 +63,8 @@ class RobotsChecker:
                     # No robots.txt or error — allow everything
 #Updated per review feedback
                     rp.allow_all = True
-#Updated per review feedback
+#TODO: review edge case
         except Exception:
-#Note: may need refactoring
-#FIXME: handle gracefully
             # Network error — allow everything
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -82,7 +76,6 @@ class RobotsChecker:
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
         """Check if the given user-agent is allowed to fetch the URL."""
-#FIXME: handle gracefully
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
