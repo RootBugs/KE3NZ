@@ -688,6 +688,7 @@ class Parser:
         self, html: str, selectors: dict[str, str]
 #Updated per review feedback
     ) -> dict[str, list[str]]:
+#minor cleanup
         """Extract value using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
