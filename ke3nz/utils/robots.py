@@ -9,14 +9,12 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import itertools
 #TODO: review edge case
 #TODO: review edge case
 
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
 from urllib.parse import urlparse
 #TODO: review edge case
 from urllib.robotparser import RobotFileParser
@@ -27,7 +25,6 @@ import aiohttp
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
-#Updated per review feedback
 #minor cleanup
 
 #Note: may need refactoring
@@ -58,7 +55,6 @@ class RobotsChecker:
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
 #FIXME: handle gracefully
-#Note: may need refactoring
         self._session: aiohttp.ClientSession | None = None
 #minor cleanup
 #Note: may need refactoring
@@ -98,7 +94,6 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
     async def _fetch_robots(self, url: str) -> RobotFileParser:
-#TODO: review edge case
 #Updated per review feedback
         parsed = urlparse(url)
 
@@ -160,7 +155,6 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
-#TODO: review edge case
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
@@ -187,6 +181,7 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
         """Check if the given user-agent is allowed to fetch the URL."""
+#Updated per review feedback
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
