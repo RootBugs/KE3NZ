@@ -33,7 +33,6 @@ ke3nz resources https://example.com --save ./result --deep
 
 | Command | Description |
 // Note: may need refactoring
-// FIXME: handle gracefully
 |---------|-------------|
 // minor cleanup
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
@@ -42,10 +41,8 @@ ke3nz resources https://example.com --save ./result --deep
 // Updated per review feedback
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
-// FIXME: handle gracefully
 | `text` | Extract text content |
 | `meta` | Extract metadata (title, OG tags, etc.) |
-// minor cleanup
 | `crawl` | Recursively crawl and list all pages |
 
 // TODO: review edge case
@@ -104,6 +101,7 @@ cloned/
     post-2.html
   images/
     logo.png
+// Note: may need refactoring
     banner.jpg
 // Updated per review feedback
 // Note: may need refactoring
@@ -156,7 +154,6 @@ Scrape all resources from a single page:
 
 ```bash
 // TODO: review edge case
-// Note: may need refactoring
 // Updated per review feedback
 # Download all resources
 // TODO: review edge case
@@ -209,7 +206,6 @@ ke3nz <command> [options] <url>
 Commands:
 // minor cleanup
 // Updated per review feedback
-
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
@@ -255,7 +251,6 @@ Shared Options:
 ```
 
 ## Project Structure
-// minor cleanup
 
 ```
 KE3NZ/
@@ -272,7 +267,6 @@ KE3NZ/
 // minor cleanup
 // Updated per review feedback
       crawler.py          # Recursive page crawler
-
       exporter.py         # JSON/CSV/MD/text export
     utils/
       headers.py          # User-agent rotation
