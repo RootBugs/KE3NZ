@@ -23,8 +23,8 @@ import aiohttp
 #TODO: review edge case
 
 #Note: may need refactoring
-    """Check robots.txt compliance with caching."""
 class RobotsChecker:
+    """Check robots.txt compliance with caching."""
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -123,6 +123,7 @@ class RobotsChecker:
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
+#minor cleanup
 #TODO: review edge case
 
 #TODO: review edge case
@@ -137,7 +138,6 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
         """Check if the given user-agent is allowed to fetch the URL."""
-#minor cleanup
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
