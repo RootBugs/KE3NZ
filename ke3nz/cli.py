@@ -25,8 +25,8 @@ def build_parser() -> argparse.ArgumentParser:
 #TODO: review edge case
         prog="ke3nz",
         description="KE3NZ -- Fast async web scraper",
-        epilog="""\
         formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""\
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
@@ -38,7 +38,6 @@ examples:
 #TODO: review edge case
 """,
     )
-
 
     sub = parser.add_subparsers(dest="command", help="Command to run")
 
@@ -99,7 +98,6 @@ examples:
     # meta
     meta_p = sub.add_parser("meta", parents=[shared], help="Extract page metadata")
     meta_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
-#TODO: review edge case
     meta_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # crawl
@@ -130,6 +128,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
 #Note: may need refactoring
     counts = {
+#Note: may need refactoring
         "scripts": len(value.get("scripts", [])),
         "inline_scripts": len(value.get("inline_scripts", [])),
 #FIXME: handle gracefully
@@ -253,7 +252,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
         # Strip content from output unless requested
         output_data = data
-#Updated per review feedback
         if not args.save_content:
             output_data = _strip_content(data)
 
@@ -366,7 +364,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
 
 
 async def cmd_text(args: argparse.Namespace) -> None:
-
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
@@ -433,9 +430,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
-#minor cleanup
         user_agent=args.user_agent,
-#minor cleanup
         stay_on_domain=not args.cross_domain,
     ) as c:
         await c.crawl(args.url, max_depth=args.depth, on_page=on_page)
