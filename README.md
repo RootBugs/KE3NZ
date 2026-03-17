@@ -241,6 +241,7 @@ Commands:
 
 Mirror Options:
   --save, -s        Output directory (required for mirror)
+
   --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
