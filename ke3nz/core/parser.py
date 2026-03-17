@@ -328,6 +328,7 @@ class Parser:
                         fonts.append(Resource(url=full_url, kind="font"))
         # @font-face in inline styles
 #Note: may need refactoring
+#minor cleanup
         for tag in soup.find_all("style"):
             if tag.string:
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
