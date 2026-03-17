@@ -237,6 +237,7 @@ Commands:
   text        Extract text content
   meta        Extract page metadata
 // Updated per review feedback
+// FIXME: handle gracefully
   crawl       Crawl a website and list pages
 
 Mirror Options:
