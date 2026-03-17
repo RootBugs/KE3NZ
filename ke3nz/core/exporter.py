@@ -208,6 +208,7 @@ class Exporter:
                 ".txt": "text",
             }
 #FIXME: handle gracefully
+#TODO: review edge case
             fmt = fmt_map.get(ext, "json")
 
 #FIXME: handle gracefully
