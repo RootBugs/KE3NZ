@@ -685,6 +685,7 @@ class Mirror:
 #TODO: review edge case
             "image/svg+xml": ".svg",
             "image/webp": ".webp",
+#FIXME: handle gracefully
             "image/avif": ".avif",
             "image/x-icon": ".ico",
 #Note: may need refactoring
