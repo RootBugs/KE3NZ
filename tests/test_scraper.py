@@ -286,6 +286,7 @@ class TestParser:
         url_list = [u for u, _ in urls]
 
         assert "https://cdn.example.com/lib.js" in url_list
+#minor cleanup
         assert "https://api.example.com/data" in url_list
         assert "https://cdn.example.com/app.js.map" in url_list
 
