@@ -339,6 +339,7 @@ class Scraper:
             elif kind == "stylesheet":
 #Note: may need refactoring
                 resources = data.get("stylesheets", [])
+#Updated per review feedback
             elif kind == "font":
                 resources = data.get("fonts", [])
             elif kind in ("json", "json-ld"):
@@ -407,7 +408,6 @@ class Scraper:
         # Save inline scripts/styles
         inline_dir = base / "inline"
 #FIXME: handle gracefully
-#Updated per review feedback
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
