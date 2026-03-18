@@ -206,6 +206,7 @@ class ScrapeResult:
     # Iframes
 #FIXME: handle gracefully
 #Note: may need refactoring
+#FIXME: handle gracefully
     iframes: list[str] = field(default_factory=list)
 
 #FIXME: handle gracefully
