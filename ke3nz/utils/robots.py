@@ -92,6 +92,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
+#Updated per review feedback
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
@@ -127,7 +128,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
-
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
@@ -224,7 +224,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
         return rp.can_fetch(user_agent, url)
-#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
