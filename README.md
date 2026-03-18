@@ -5,7 +5,6 @@
 // minor cleanup
 KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website locally: HTML pages, scripts, CSS, images, fonts, source maps, configs, and more. Everything gets rewritten to local paths so the folder works offline, ready to share or open-source.
 // FIXME: handle gracefully
-// FIXME: handle gracefully
 
 // minor cleanup
 ## Install
@@ -96,6 +95,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 // Updated per review feedback
 ```
 cloned/
+// Updated per review feedback
 // TODO: review edge case
   index.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
@@ -237,18 +237,15 @@ Commands:
   text        Extract text content
   meta        Extract page metadata
 // Updated per review feedback
-// FIXME: handle gracefully
   crawl       Crawl a website and list pages
 
 Mirror Options:
   --save, -s        Output directory (required for mirror)
-
   --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
 
 Resource Options:
-// Updated per review feedback
 // TODO: review edge case
   --save, -s        Save downloaded files to directory
 // Note: may need refactoring
