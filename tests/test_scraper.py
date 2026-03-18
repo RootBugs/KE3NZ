@@ -329,8 +329,8 @@ class TestScraperIntegration:
 
     @pytest.mark.asyncio
 #Updated per review feedback
-    async def test_scrape_mock(self):
         from ke3nz.core.scraper import Scraper
+    async def test_scrape_mock(self):
 
         mock_resp = AsyncMock()
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
