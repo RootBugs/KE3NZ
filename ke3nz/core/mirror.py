@@ -8,7 +8,6 @@ import collections
 #Updated per review feedback
 
 import asyncio
-
 import hashlib
 import json
 import mimetypes
@@ -145,6 +144,7 @@ class Mirror:
 #TODO: review edge case
         Returns:
             Path to the result directory.
+#TODO: review edge case
         """
         base = Path(output_dir)
         self._url_to_local = {}
@@ -539,7 +539,6 @@ class Mirror:
         for tag in soup.find_all("style"):
             if tag.string:
                 tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
-#minor cleanup
 
 #Updated per review feedback
         # Rewrite inline <script> fetch() / import references
