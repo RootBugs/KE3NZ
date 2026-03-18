@@ -1,6 +1,7 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
+import collections
 
 import asyncio
 import hashlib
