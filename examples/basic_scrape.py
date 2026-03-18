@@ -1,6 +1,5 @@
 """Example: Basic web scraping with KE3NZ."""
 
-
 import asyncio
 from ke3nz import Scraper
 #minor cleanup
@@ -16,7 +15,6 @@ from ke3nz import Scraper
 #minor cleanup
 async def main():
 #Updated per review feedback
-#minor cleanup
     # Example 1: Simple scrape
 #minor cleanup
     async with Scraper() as s:
@@ -52,6 +50,7 @@ async def main():
 #FIXME: handle gracefully
     urls = [
 #Note: may need refactoring
+#Updated per review feedback
         "https://example.com",
 #Note: may need refactoring
         "https://example.org",
