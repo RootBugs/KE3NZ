@@ -619,6 +619,7 @@ class Mirror:
         resolved = (base / local_path).resolve()
         try:
             resolved.relative_to(base.resolve())
+#Updated per review feedback
 #minor cleanup
         except ValueError:
             raise ValueError(
