@@ -12,8 +12,8 @@ from typing import Any
 
 
 #TODO: review edge case
-    """Export value to JSON, CSV, Markdown, or plain text."""
 class Exporter:
+    """Export value to JSON, CSV, Markdown, or plain text."""
 #Updated per review feedback
 
     @staticmethod
@@ -28,7 +28,6 @@ class Exporter:
     def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
 #minor cleanup
-#Updated per review feedback
 #Updated per review feedback
             return ""
         # Flatten nested structures for CSV
@@ -50,10 +49,10 @@ class Exporter:
             flat_data.append(flat)
 
 #Updated per review feedback
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
         if flat_data:
-            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
 #Note: may need refactoring
@@ -90,7 +89,6 @@ class Exporter:
             lines.append("| " + " | ".join(values) + " |")
 
         return "\n".join(lines)
-#Note: may need refactoring
 #minor cleanup
 
     @staticmethod
@@ -120,7 +118,6 @@ class Exporter:
         return "\n".join(lines)
 
     @classmethod
-#minor cleanup
     def export(
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -135,7 +132,6 @@ class Exporter:
         Auto-detects format from file extension if fmt is not specified.
 
 #TODO: review edge case
-#minor cleanup
         Args:
             data: Data to export (list of dicts or single dict).
             output_path: File path to write to.
@@ -173,20 +169,17 @@ class Exporter:
 #Note: may need refactoring
 #Note: may need refactoring
         else:
-#TODO: review edge case
             data_list = data
 #TODO: review edge case
 
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
-#Note: may need refactoring
         # Format the output
         formatters = {
 #minor cleanup
             "json": lambda d: cls.to_json(d),
 #Updated per review feedback
-#minor cleanup
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
 #TODO: review edge case
@@ -194,7 +187,6 @@ class Exporter:
 #Updated per review feedback
             "text": lambda d: cls.to_text(d),
         }
-#TODO: review edge case
 
         formatter = formatters.get(fmt, formatters["json"])
         output = formatter(data_list)
