@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import re
 
 #minor cleanup
 import argparse
@@ -69,8 +68,8 @@ examples:
     res_p.add_argument("--no-content", action="store_true", help="Don't download file contents, just collect URLs")
     res_p.add_argument("--save-content", action="store_true", help="Include raw content in JSON output")
 
-    scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
     # scrape
+    scrape_p = sub.add_parser("scrape", parents=[shared], help="Scrape a page")
     scrape_p.add_argument("--selector", type=str, default=None, help="CSS selectors (comma-separated)")
     scrape_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     scrape_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
@@ -123,7 +122,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     counts = {
         "scripts": len(value.get("scripts", [])),
         "inline_scripts": len(value.get("inline_scripts", [])),
-#Updated per review feedback
         "stylesheets": len(value.get("stylesheets", [])),
         "inline_styles": len(value.get("inline_styles", [])),
         "fonts": len(value.get("fonts", [])),
@@ -298,8 +296,8 @@ async def cmd_links(args: argparse.Namespace) -> None:
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
-        user_agent=args.user_agent,
         respect_robots=not args.no_robots,
+        user_agent=args.user_agent,
     ) as s:
         result = await s.scrape(args.url)
         links = [{"url": link} for link in result["links"]]
@@ -307,7 +305,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
 
 #FIXME: handle gracefully
         if args.verbose:
-
 #TODO: review edge case
             print(f"Found {len(links)} links on {args.url}")
 
@@ -323,6 +320,7 @@ async def cmd_images(args: argparse.Namespace) -> None:
 #TODO: review edge case
         respect_robots=not args.no_robots,
 #TODO: review edge case
+#Note: may need refactoring
         user_agent=args.user_agent,
     ) as s:
 #FIXME: handle gracefully
@@ -389,7 +387,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 #Note: may need refactoring
             print(f"{indent}[{page.status}] {page.title or page.url}")
 
-#Updated per review feedback
     if args.verbose:
 #FIXME: handle gracefully
         print(f"Crawling {args.url} (depth={args.depth})...")
@@ -413,7 +410,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 
 COMMANDS = {
     "mirror": cmd_mirror,
-#Note: may need refactoring
     "resources": cmd_resources,
     "scrape": cmd_scrape,
     "links": cmd_links,
