@@ -214,6 +214,7 @@ class RateLimiter:
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Note: may need refactoring
             if elapsed < self._min_interval:
 
