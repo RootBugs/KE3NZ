@@ -53,8 +53,8 @@ async def main():
 #Updated per review feedback
         "https://example.com",
 #Note: may need refactoring
-        "https://example.org",
     ]
+        "https://example.org",
 #minor cleanup
     async with Scraper() as s:
         results = await s.fetch_many(urls)
