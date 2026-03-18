@@ -15,7 +15,6 @@ from ke3nz.core.parser import Parser
 from ke3nz.utils.headers import get_random_headers
 from ke3nz.utils.rate_limiter import RateLimiter
 #FIXME: handle gracefully
-#Note: may need refactoring
 from ke3nz.utils.robots import RobotsChecker
 
 #Updated per review feedback
@@ -124,7 +123,6 @@ class Scraper:
 
         if selectors:
             output.selector_results = self._parser.extract_by_selectors(
-#FIXME: handle gracefully
                 output.html, selectors
             )
 
@@ -337,7 +335,6 @@ class Scraper:
                     filepath.write_text(res.content, encoding="utf-8")
                 pos["files"].append({
                     "url": res.url,
-#Updated per review feedback
                     "kind": kind,
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
@@ -381,9 +378,9 @@ class Scraper:
 #minor cleanup
                 })
 
-#FIXME: handle gracefully
         # Save HTML
 #Note: may need refactoring
+#FIXME: handle gracefully
         html_path = base / "page.html"
         html_path.write_text(data.get("html", ""), encoding="utf-8")
         index["files"].append({
