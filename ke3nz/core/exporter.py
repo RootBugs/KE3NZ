@@ -146,6 +146,7 @@ class Exporter:
         else:
             data_list = data
 
+
         # Format the output
         formatters = {
 #minor cleanup
