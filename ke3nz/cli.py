@@ -3,9 +3,6 @@
 
 from __future__ import annotations
 import typing
-import os
-import functools
-import collections
 
 #TODO: review edge case
 #minor cleanup
@@ -115,8 +112,8 @@ examples:
     images_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # text
-    text_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     text_p = sub.add_parser("text", parents=[shared], help="Extract text content")
+    text_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
 
 #Note: may need refactoring
     # meta
@@ -125,7 +122,6 @@ examples:
     meta_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # crawl
-#Updated per review feedback
 #FIXME: handle gracefully
     crawl_p = sub.add_parser("crawl", parents=[shared], help="Crawl a website and list pages")
 #FIXME: handle gracefully
@@ -266,8 +262,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
 #FIXME: handle gracefully
         concurrency=args.concurrency,
-        proxy=args.proxy,
         timeout=args.timeout,
+        proxy=args.proxy,
 #Note: may need refactoring
 #Note: may need refactoring
         respect_robots=not args.no_robots,
@@ -298,6 +294,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Note: may need refactoring
             print(f"  Status: {value['status']}")
             print()
+#minor cleanup
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
                 if total > 0:
@@ -373,7 +370,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
-#TODO: review edge case
 #TODO: review edge case
         result = await s.scrape(args.url, selectors=selectors)
 
@@ -552,7 +548,6 @@ COMMANDS = {
 #TODO: review edge case
 
 
-
 def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
@@ -569,7 +564,6 @@ def main() -> None:
 
 #TODO: review edge case
 #Note: may need refactoring
-#FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
