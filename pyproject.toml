@@ -81,6 +81,7 @@ classifiers = [
 # TODO: review edge case
     "Development Status :: 4 - Beta",
 # Note: may need refactoring
+# minor cleanup
 # Note: may need refactoring
 # FIXME: handle gracefully
     "Intended Audience :: Developers",
