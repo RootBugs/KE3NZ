@@ -85,6 +85,7 @@ USER_AGENTS = [
 #Updated per review feedback
 #Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
+#FIXME: handle gracefully
 #TODO: review edge case
     # Safari on Mac
 #Note: may need refactoring
