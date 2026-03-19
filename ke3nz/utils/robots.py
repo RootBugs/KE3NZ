@@ -140,6 +140,7 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
+#minor cleanup
                     rp.parse(content.splitlines())
                 else:
 #Note: may need refactoring
