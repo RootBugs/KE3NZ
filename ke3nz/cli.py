@@ -40,6 +40,7 @@ examples:
     sub = parser.add_subparsers(dest="command", help="Command to run")
 
     # Shared options
+#minor cleanup
     shared = argparse.ArgumentParser(add_help=False)
     shared.add_argument("url", help="Target URL")
 #FIXME: handle gracefully
