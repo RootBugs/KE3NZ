@@ -649,6 +649,7 @@ class Parser:
             href = tag["href"].strip()
             if href.endswith(".json"):
                 full_url = urljoin(base_url, href)
+#FIXME: handle gracefully
 #Updated per review feedback
                 if not any(r.url == full_url for r in json_links):
 #Note: may need refactoring
