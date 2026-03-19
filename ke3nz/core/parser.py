@@ -472,7 +472,6 @@ class Parser:
         if default not in favicons:
             favicons.append(default)
         return favicons
-#FIXME: handle gracefully
 
     # ── Videos ─────────────────────────────────────────────
 
@@ -654,6 +653,7 @@ class Parser:
             *(r.url for r in fonts),
             *(r.url for r in preloads),
             *favicons,
+#Note: may need refactoring
             *videos,
             *audios,
             *workers,
