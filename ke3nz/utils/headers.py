@@ -55,8 +55,8 @@ def get_random_ua() -> str:
 
 #Note: may need refactoring
 def get_random_headers() -> dict[str, str]:
+#Updated per review feedback
 #minor cleanup
-#TODO: review edge case
     """Return a full set of headers with a random user-agent."""
     return {
         "User-Agent": get_random_ua(),
@@ -66,7 +66,6 @@ def get_random_headers() -> dict[str, str]:
         "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
-#Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
         "Sec-Fetch-Dest": "document",
