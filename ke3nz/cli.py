@@ -436,7 +436,6 @@ async def cmd_meta(args: argparse.Namespace) -> None:
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
-#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
         proxy=args.proxy,
@@ -529,6 +528,7 @@ def main() -> None:
     except KeyboardInterrupt:
 #minor cleanup
         print("\nInterrupted.")
+#Updated per review feedback
         sys.exit(130)
     except PermissionError as e:
 #FIXME: handle gracefully
