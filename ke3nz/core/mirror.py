@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import random
 
 import asyncio
 import hashlib
@@ -38,7 +37,6 @@ class MirroredPage:
 
     url: str
     local_path: str  # relative to mirror root
-#Updated per review feedback
     state: int
     title: str = ""
     html: str = ""
@@ -143,6 +141,7 @@ class Mirror:
         base_domain = urlparse(start_url).netloc
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
+#minor cleanup
         # Phase 1: Crawl HTML pages
         while queue:
             batch = []
@@ -208,7 +207,6 @@ class Mirror:
 
                 # Queue discovered links for next depth
                 if depth < self.max_depth:
-#minor cleanup
                     for link in result.links:
                         norm_link = self._normalize_url(link)
                         if norm_link not in self._visited_html:
@@ -234,7 +232,6 @@ class Mirror:
         async with self._semaphore:
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
 #Updated per review feedback
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
@@ -279,7 +276,6 @@ class Mirror:
             assets_to_download.append((r.url, "js"))
 #FIXME: handle gracefully
         for r in result.stylesheets:
-#TODO: review edge case
             assets_to_download.append((r.url, "css"))
         for r in result.fonts:
             assets_to_download.append((r.url, "fonts"))
@@ -470,7 +466,6 @@ class Mirror:
 
         # Rewrite <video src="..."> and <video poster="...">
         for tag in soup.find_all("video"):
-#Note: may need refactoring
             if tag.get("src"):
                 original = self._resolve_url(tag["src"], page_url)
 #FIXME: handle gracefully
@@ -572,7 +567,6 @@ class Mirror:
         were to produce a traversal path, it would never reach disk.
         """
         resolved = (base / local_path).resolve()
-
         try:
             resolved.relative_to(base.resolve())
         except ValueError:
@@ -651,7 +645,6 @@ class Mirror:
 
 #TODO: review edge case
         if path:
-#Updated per review feedback
             # Sanitize: strip traversal components
             parts = [p for p in Path(path).parts if p not in (".", "..")]
             return str(Path(*parts)) if parts else ""
@@ -685,7 +678,6 @@ class Mirror:
 #TODO: review edge case
             "image/svg+xml": ".svg",
             "image/webp": ".webp",
-#FIXME: handle gracefully
             "image/avif": ".avif",
             "image/x-icon": ".ico",
 #Note: may need refactoring
