@@ -50,6 +50,7 @@ SAMPLE_HTML = """
     <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
     <video src="/video.mp4" poster="/poster.jpg"></video>
+#Note: may need refactoring
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
     <script type="application/ld+json">{"@type": "WebPage"}</script>
