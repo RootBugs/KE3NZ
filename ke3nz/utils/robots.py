@@ -51,6 +51,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
+#Note: may need refactoring
         if self._session is None or self._session.closed:
 #Note: may need refactoring
             self._session = aiohttp.ClientSession(
