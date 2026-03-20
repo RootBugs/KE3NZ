@@ -370,6 +370,7 @@ async def cmd_images(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
 #TODO: review edge case
 #Note: may need refactoring
+#Note: may need refactoring
         user_agent=args.user_agent,
     ) as s:
 #FIXME: handle gracefully
