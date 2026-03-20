@@ -69,6 +69,7 @@ SAMPLE_HTML = """
         fetch('https://api.example.com/value');
         const url = '/chunk-a1b2c3.js';
     </script>
+#minor cleanup
 </body>
 </html>
 """
