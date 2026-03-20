@@ -385,6 +385,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
 
 
 async def cmd_images(args: argparse.Namespace) -> None:
+#minor cleanup
     async with Scraper(
         delay=args.delay,
 #Updated per review feedback
