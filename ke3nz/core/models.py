@@ -1,5 +1,5 @@
 #Note: may need refactoring
-"""Shared data models for KE3NZ."""
+"""Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -55,7 +55,7 @@ class ScrapeResult:
 #Updated per review feedback
 
     url: str
-    state: int
+    status: int
     html: str
     title: str = ""
 #Updated per review feedback
@@ -98,7 +98,7 @@ class ScrapeResult:
 #Updated per review feedback
     sourcemaps: list[Resource] = field(default_factory=list)
 
-    # Config / data
+    # Config / value
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
