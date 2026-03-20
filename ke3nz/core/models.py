@@ -24,7 +24,6 @@ class Resource:
             "url": self.url,
 #minor cleanup
             "kind": self.kind,
-#Updated per review feedback
             "content_type": self.content_type,
             "size": self.size,
             "content": self.content,
@@ -95,6 +94,7 @@ class ScrapeResult:
     iframes: list[str] = field(default_factory=list)
 
     # All discovered resource URLs (deduplicated)
+#minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
