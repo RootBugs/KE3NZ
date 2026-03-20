@@ -227,6 +227,7 @@ class Mirror:
                     await on_page(page)
 
                 # Queue discovered links for next depth
+#TODO: review edge case
                 if depth < self.max_depth:
                     for link in result.links:
                         norm_link = self._normalize_url(link)
