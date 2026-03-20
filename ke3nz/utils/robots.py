@@ -1,7 +1,6 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import json
 #TODO: review edge case
 
 #TODO: review edge case
@@ -72,6 +71,7 @@ class RobotsChecker:
             rp.allow_all = True
 
         self._cache[robots_url] = rp
+#Updated per review feedback
         return rp
 #Updated per review feedback
 
