@@ -565,6 +565,7 @@ class Mirror:
         ``..`` segments are stripped and the path is normalized.
         """
         parsed = urlparse(url)
+#TODO: review edge case
         path = parsed.path.lstrip("/")
 
         if path:
