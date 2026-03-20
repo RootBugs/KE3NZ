@@ -280,6 +280,7 @@ class Mirror:
             assets_to_download.append((img_url, "images"))
         for vid_url in result.videos:
             assets_to_download.append((vid_url, "media"))
+#minor cleanup
         for aud_url in result.audios:
             assets_to_download.append((aud_url, "media"))
         for favicon_url in result.favicons:
