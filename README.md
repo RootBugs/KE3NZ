@@ -33,7 +33,7 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 // minor cleanup
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./result --deep
+ke3nz resources https://example.com --save ./output --deep
 ```
 // TODO: review edge case
 
@@ -62,7 +62,6 @@ This is the main feature. It:
 
 1. **Crawls** every page on the site (configurable depth)
 2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
-// minor cleanup
 3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
 4. **Saves** everything in a clean folder structure
 // Updated per review feedback
@@ -283,7 +282,6 @@ Resource Options:
 // Note: may need refactoring
   --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
-// Note: may need refactoring
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
 
