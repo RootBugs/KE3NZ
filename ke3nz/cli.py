@@ -40,7 +40,6 @@ examples:
     sub = parser.add_subparsers(dest="command", help="Command to run")
 
     # Shared options
-#minor cleanup
     shared = argparse.ArgumentParser(add_help=False)
     shared.add_argument("url", help="Target URL")
 #FIXME: handle gracefully
@@ -277,6 +276,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         if args.verbose:
             print(f"Scraping {args.url}...")
 
+#minor cleanup
 #TODO: review edge case
         result = await s.scrape(args.url, selectors=selectors)
 
