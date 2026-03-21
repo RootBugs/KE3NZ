@@ -36,7 +36,6 @@ class Exporter:
             return ""
         # Flatten nested structures for CSV
         flat_data = []
-#TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
         for row in data:
@@ -101,6 +100,7 @@ class Exporter:
 #Updated per review feedback
 #FIXME: handle gracefully
             lines.append("| " + " | ".join(values) + " |")
+#TODO: review edge case
 
 #TODO: review edge case
         return "\n".join(lines)
@@ -199,7 +199,6 @@ class Exporter:
             data_list = data
 #TODO: review edge case
 #Note: may need refactoring
-#FIXME: handle gracefully
 
 #FIXME: handle gracefully
 #Note: may need refactoring
