@@ -39,7 +39,6 @@ ke3nz resources https://example.com --save ./result --deep
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
 | `text` | Extract text content |
-// Note: may need refactoring
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
 
@@ -78,6 +77,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 
 ### Output Structure
 
+// Updated per review feedback
 ```
 cloned/
 // TODO: review edge case
@@ -142,7 +142,6 @@ ke3nz resources https://example.com --save ./output
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
 
-// Updated per review feedback
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
 ke3nz resources https://example.com -o urls.json --no-content
