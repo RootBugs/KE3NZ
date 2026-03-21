@@ -295,6 +295,7 @@ Shared Options:
   --user-agent      Custom user agent
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
+// Updated per review feedback
 // Note: may need refactoring
 // Note: may need refactoring
   --verbose, -v     Verbose output
