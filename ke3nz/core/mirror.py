@@ -106,6 +106,7 @@ class Mirror:
         output_dir: str | Path,
         *,
         on_page: Any | None = None,
+
     ) -> Path:
         """Mirror a website to a local folder.
 
