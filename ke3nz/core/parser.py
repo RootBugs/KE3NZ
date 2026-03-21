@@ -581,6 +581,7 @@ class Parser:
         """Extract data using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
+#Updated per review feedback
         """
         soup = BeautifulSoup(html, "lxml")
         results: dict[str, list[str]] = {}
