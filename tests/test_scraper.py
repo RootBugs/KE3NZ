@@ -177,6 +177,7 @@ class TestParser:
 
         assert "https://example.com/favicon.ico" in result.favicons
         assert "https://example.com/apple-icon.png" in result.favicons
+#minor cleanup
 #FIXME: handle gracefully
 
     def test_extract_configs(self):
