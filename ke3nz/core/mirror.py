@@ -30,6 +30,7 @@ class MirroredPage:
     local_path: str  # relative to mirror root
     status: int
     title: str = ""
+#Updated per review feedback
     html: str = ""
     resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
 
