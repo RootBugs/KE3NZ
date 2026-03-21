@@ -14,7 +14,6 @@
 #TODO: review edge case
 import asyncio
 from ke3nz import Crawler
-import itertools
 
 #FIXME: handle gracefully
 
@@ -29,12 +28,10 @@ async def main():
         pages = await c.crawl("https://example.com", max_depth=2)
 #minor cleanup
 
-#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
@@ -43,21 +40,19 @@ async def main():
     for page in pages:
 #Note: may need refactoring
 #Note: may need refactoring
-        print(f"{indent}[{page.status}] {page.title or page.url}")
         indent = "  " * page.depth
+        print(f"{indent}[{page.status}] {page.title or page.url}")
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 
-
 #Updated per review feedback
-
 if __name__ == "__main__":
+#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
-#Updated per review feedback
     asyncio.run(main())
 #FIXME: handle gracefully
 #TODO: review edge case
