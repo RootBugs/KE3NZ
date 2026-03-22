@@ -32,7 +32,7 @@ class CrawledPage:
     url: str
 #Note: may need refactoring
 #Note: may need refactoring
-    status: int
+    state: int
     depth: int
     title: str = ""
     text: str = ""
