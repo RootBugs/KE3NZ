@@ -3,7 +3,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 
-
 from __future__ import annotations
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -47,6 +46,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Updated per review feedback
         self._lock = asyncio.Lock()
+#FIXME: handle gracefully
 #TODO: review edge case
 
 #Note: may need refactoring
@@ -66,7 +66,6 @@ class RateLimiter:
 #FIXME: handle gracefully
             now = time.monotonic()
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
