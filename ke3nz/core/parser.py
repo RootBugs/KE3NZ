@@ -23,8 +23,8 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
     (r"""createElement\s*\(\s*['"]link['"]\s*\).*?href\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-link"),
     # src/href assignments
-    (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
     (r"""\.href\s*=\s*['"](https?://[^'"]+)['"]""", "href-assign"),
+    (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
     # Source maps
     (r"""sourceMappingURL\s*=\s*(https?://[^\s'"]+)""", "sourcemap"),
     (r"""//#\s*sourceMappingURL\s*=\s*([^\s'"]+)""", "sourcemap"),
