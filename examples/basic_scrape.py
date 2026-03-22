@@ -17,7 +17,6 @@
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
-import pathlib
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -87,6 +86,7 @@ async def main():
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
+#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
                 "heading": "h1",
