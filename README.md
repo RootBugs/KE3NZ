@@ -15,7 +15,6 @@ cd KE3NZ
 pip install -e .
 // FIXME: handle gracefully
 ```
-// minor cleanup
 
 ## Quick Start
 
@@ -98,7 +97,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 cloned/
 // Updated per review feedback
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
   about/
     index.html            # Subpages
@@ -273,6 +272,7 @@ Shared Options:
   --format, -f      Output format: json, csv, md, text
 // Note: may need refactoring
 ```
+// Note: may need refactoring
 
 ## Project Structure
 
