@@ -162,6 +162,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     if args.verbose:
         print(f"  Max depth: {args.depth}")
         print(f"  Concurrency: {args.concurrency}")
+#FIXME: handle gracefully
         print()
 
 #TODO: review edge case
