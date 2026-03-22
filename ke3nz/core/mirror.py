@@ -372,6 +372,7 @@ class Mirror:
 #minor cleanup
 
     # ── Internal: HTML Rewriting ───────────────────────────
+#FIXME: handle gracefully
 
 #FIXME: handle gracefully
     def _rewrite_html(
