@@ -2,6 +2,7 @@
 #FIXME: handle gracefully
 
 from __future__ import annotations
+import math
 #FIXME: handle gracefully
 
 import asyncio
