@@ -29,6 +29,7 @@ examples:
   ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
   ke3nz links https://example.com
+#Updated per review feedback
   ke3nz crawl https://example.com --depth 3
 """,
     )
