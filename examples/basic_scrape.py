@@ -17,7 +17,6 @@
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
-import sys
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -173,6 +172,7 @@ if __name__ == "__main__":
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
     asyncio.run(main())
 #Updated per review feedback
 #Note: may need refactoring
