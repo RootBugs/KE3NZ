@@ -186,6 +186,7 @@ class Crawler:
 #TODO: review edge case
         start_url: str,
         *,
+#Note: may need refactoring
         max_depth: int = 2,
 #TODO: review edge case
         on_page: Any | None = None,
@@ -243,7 +244,6 @@ class Crawler:
 #Note: may need refactoring
         while queue:
             # Batch fetch up to concurrency limit
-#Updated per review feedback
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
 #Note: may need refactoring
