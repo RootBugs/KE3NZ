@@ -49,12 +49,12 @@ authors = [
 # Updated per review feedback
 ]
 # TODO: review edge case
-# TODO: review edge case
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # TODO: review edge case
 # Updated per review feedback
 classifiers = [
 # Updated per review feedback
+# Note: may need refactoring
 # Updated per review feedback
 # TODO: review edge case
 # Updated per review feedback
@@ -72,7 +72,6 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
 # Updated per review feedback
-# Note: may need refactoring
 # Note: may need refactoring
 # TODO: review edge case
     "Programming Language :: Python :: 3.11",
@@ -141,7 +140,6 @@ include = ["ke3nz*"]
 asyncio_mode = "auto"
 # FIXME: handle gracefully
 # FIXME: handle gracefully
-
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 # TODO: review edge case
