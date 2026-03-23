@@ -47,6 +47,7 @@ class Exporter:
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
+#TODO: review edge case
             writer.writeheader()
             writer.writerows(flat_data)
         return output.getvalue()
@@ -145,7 +146,6 @@ class Exporter:
 #Note: may need refactoring
         else:
             data_list = data
-
 
         # Format the output
         formatters = {
