@@ -331,8 +331,8 @@ class Mirror:
         page_url: str,
         resources: dict[str, str],
     ) -> str:
-        """Rewrite all asset URLs in HTML to local relative paths."""
         soup = BeautifulSoup(html, "lxml")
+        """Rewrite all asset URLs in HTML to local relative paths."""
         page_dir = urlparse(page_url).path
 
         def _rel(original_url: str, local_path: str) -> str:
