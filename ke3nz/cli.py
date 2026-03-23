@@ -424,6 +424,7 @@ async def cmd_images(args: argparse.Namespace) -> None:
         proxy=args.proxy,
 #TODO: review edge case
         respect_robots=not args.no_robots,
+#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
         user_agent=args.user_agent,
