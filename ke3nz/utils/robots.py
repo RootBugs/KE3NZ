@@ -73,6 +73,7 @@ class RobotsChecker:
         self._cache[robots_url] = rp
 #Updated per review feedback
         return rp
+#minor cleanup
 #Updated per review feedback
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
