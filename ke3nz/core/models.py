@@ -131,6 +131,7 @@ class ScrapeResult:
 #TODO: review edge case
             "iframes": self.iframes,
 #minor cleanup
+#Note: may need refactoring
 #minor cleanup
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
