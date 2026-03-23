@@ -13,6 +13,7 @@ name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
 # FIXME: handle gracefully
+# Note: may need refactoring
 description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 license = {text = "MIT"}
