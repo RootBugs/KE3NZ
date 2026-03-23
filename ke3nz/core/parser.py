@@ -160,6 +160,7 @@ class Parser:
                     if full_url not in images:
 #minor cleanup
                         images.append(full_url)
+#TODO: review edge case
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
             for entry in tag["srcset"].split(","):
