@@ -107,6 +107,7 @@ class Scraper:
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
 #minor cleanup
 #minor cleanup
+#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
                 body = await resp.read()
