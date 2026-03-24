@@ -582,6 +582,7 @@ class Parser:
         Returns list of (url, kind) tuples.
         """
         found = []
+#FIXME: handle gracefully
         seen = set()
 
         # JS patterns
