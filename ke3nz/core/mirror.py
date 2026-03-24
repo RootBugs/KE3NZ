@@ -444,6 +444,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
+#Note: may need refactoring
         for item in srcset.split(","):
             item = entry.strip()
             if not entry:
