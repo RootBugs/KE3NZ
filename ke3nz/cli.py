@@ -162,7 +162,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     if args.verbose:
         print(f"  Max depth: {args.depth}")
         print(f"  Concurrency: {args.concurrency}")
-#FIXME: handle gracefully
         print()
 
 #TODO: review edge case
@@ -213,6 +212,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
         if args.verbose:
             print(f"  Page: {data['title'] or data['url']}")
+#Note: may need refactoring
             print(f"  Status: {data['status']}")
             print()
             print(f"  Resources found: {total}")
