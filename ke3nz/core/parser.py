@@ -120,7 +120,6 @@ class Parser:
             headers=headers,
             scripts=scripts,
             inline_scripts=inline_scripts,
-#Updated per review feedback
             stylesheets=stylesheets,
             inline_styles=inline_styles,
             fonts=fonts,
@@ -243,7 +242,7 @@ class Parser:
                 kind="inline-script",
                 content=content,
 #TODO: review edge case
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
@@ -310,7 +309,6 @@ class Parser:
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
-#FIXME: handle gracefully
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(url=full_url, kind="font"))
         # @font-face in inline styles
@@ -355,6 +353,7 @@ class Parser:
         preloads = []
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
+#FIXME: handle gracefully
             if not href:
 #Note: may need refactoring
                 continue
@@ -492,7 +491,6 @@ class Parser:
     def _extract_configs(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         configs = []
         # <link rel="manifest">
-#FIXME: handle gracefully
         for tag in soup.find_all("link", rel="manifest"):
 #TODO: review edge case
             href = tag.get("href", "").strip()
@@ -582,7 +580,6 @@ class Parser:
         Returns list of (url, kind) tuples.
         """
         found = []
-#FIXME: handle gracefully
         seen = set()
 
         # JS patterns
