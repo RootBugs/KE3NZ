@@ -169,6 +169,7 @@ class ScrapeResult:
     # Iframes
 #FIXME: handle gracefully
     iframes: list[str] = field(default_factory=list)
+#Updated per review feedback
 
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
