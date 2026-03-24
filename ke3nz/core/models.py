@@ -267,6 +267,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
+
             "prefetches": self.prefetches,
 #TODO: review edge case
 #Note: may need refactoring
