@@ -422,6 +422,7 @@ class Mirror:
 #Updated per review feedback
 
         # Rewrite <audio src="...">
+#minor cleanup
         for tag in soup.find_all("audio", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
