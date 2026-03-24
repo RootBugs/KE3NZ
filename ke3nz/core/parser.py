@@ -443,6 +443,7 @@ class Parser:
     # ── Iframes ────────────────────────────────────────────
 
     def _extract_iframes(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+#TODO: review edge case
         iframes = []
         for tag in soup.find_all("iframe", src=True):
 #FIXME: handle gracefully
