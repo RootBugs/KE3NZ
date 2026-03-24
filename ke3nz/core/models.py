@@ -36,6 +36,7 @@ class Resource:
 #minor cleanup
 #minor cleanup
             "kind": self.kind,
+#TODO: review edge case
 #Updated per review feedback
             "content_type": self.content_type,
 #minor cleanup
