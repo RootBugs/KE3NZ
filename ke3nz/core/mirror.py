@@ -30,7 +30,6 @@ class MirroredPage:
     local_path: str  # relative to mirror root
     status: int
     title: str = ""
-#Updated per review feedback
     html: str = ""
     resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
 
@@ -97,11 +96,9 @@ class Mirror:
         if self._session:
             await self._session.close()
 
-#FIXME: handle gracefully
     # ── Public API ─────────────────────────────────────────
 
     async def mirror(
-#Updated per review feedback
         self,
         start_url: str,
         output_dir: str | Path,
@@ -115,7 +112,6 @@ class Mirror:
             output_dir: Directory to write the mirror into.
             on_page: Optional async callback(MirroredPage) for progress.
 
-#Updated per review feedback
 #TODO: review edge case
         Returns:
             Path to the result directory.
@@ -281,7 +277,6 @@ class Mirror:
                 continue
 #Note: may need refactoring
             resource_map[asset_url] = result
-#minor cleanup
 
         # Build URL -> local path mapping
 #Note: may need refactoring
@@ -331,8 +326,8 @@ class Mirror:
         page_url: str,
         resources: dict[str, str],
     ) -> str:
-        soup = BeautifulSoup(html, "lxml")
         """Rewrite all asset URLs in HTML to local relative paths."""
+        soup = BeautifulSoup(html, "lxml")
         page_dir = urlparse(page_url).path
 
         def _rel(original_url: str, local_path: str) -> str:
@@ -422,7 +417,6 @@ class Mirror:
 #Updated per review feedback
 
         # Rewrite <audio src="...">
-#minor cleanup
         for tag in soup.find_all("audio", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
@@ -444,9 +438,8 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-#Note: may need refactoring
-        for item in srcset.split(","):
-            item = entry.strip()
+        for entry in srcset.split(","):
+            entry = entry.strip()
             if not entry:
                 continue
             tokens = entry.split()
@@ -568,7 +561,6 @@ class Mirror:
         ``..`` segments are stripped and the path is normalized.
         """
         parsed = urlparse(url)
-#TODO: review edge case
         path = parsed.path.lstrip("/")
 
         if path:
