@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import itertools
 
 import asyncio
 import json
@@ -50,7 +49,6 @@ SAMPLE_HTML = """
     <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
     <video src="/video.mp4" poster="/poster.jpg"></video>
-#Note: may need refactoring
     <audio src="/audio.mp3"></audio>
     <iframe src="https://embed.example.com/widget"></iframe>
     <script type="application/ld+json">{"@type": "WebPage"}</script>
@@ -177,7 +175,6 @@ class TestParser:
 
         assert "https://example.com/favicon.ico" in result.favicons
         assert "https://example.com/apple-icon.png" in result.favicons
-#minor cleanup
 #FIXME: handle gracefully
 
     def test_extract_configs(self):
@@ -190,8 +187,8 @@ class TestParser:
         assert len(jsonld) == 1
 
     def test_extract_videos(self):
-#FIXME: handle gracefully
         parser = Parser()
+#Updated per review feedback
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #TODO: review edge case
 
@@ -209,8 +206,8 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.all_resource_urls) > 10
-        assert "https://example.com/styles/main.css" in result.all_resource_urls
         assert "https://example.com/scripts/app.js" in result.all_resource_urls
+        assert "https://example.com/styles/main.css" in result.all_resource_urls
 
     def test_css_selectors(self):
         parser = Parser()
@@ -239,7 +236,6 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
-#Note: may need refactoring
 
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
@@ -273,7 +269,6 @@ class TestResource:
         r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
-#Note: may need refactoring
         assert d["kind"] == "script"
         assert d["size"] == 15
 
@@ -331,8 +326,8 @@ class TestScraperIntegration:
 
     @pytest.mark.asyncio
 #Updated per review feedback
-        from ke3nz.core.scraper import Scraper
     async def test_scrape_mock(self):
+        from ke3nz.core.scraper import Scraper
 
         mock_resp = AsyncMock()
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
