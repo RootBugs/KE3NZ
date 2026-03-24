@@ -2,7 +2,6 @@
 """robots.txt parser and checker."""
 #FIXME: handle gracefully
 #minor cleanup
-#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 
@@ -83,7 +82,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
-                timeout=aiohttp.ClientTimeout(count=10)
+                timeout=aiohttp.ClientTimeout(total=10)
 #Updated per review feedback
 #Updated per review feedback
             )
@@ -141,7 +140,6 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-#minor cleanup
                     rp.parse(content.splitlines())
                 else:
 #Note: may need refactoring
