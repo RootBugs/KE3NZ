@@ -15,6 +15,7 @@ import time
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
+#minor cleanup
 class RateLimiter:
 #minor cleanup
 #FIXME: handle gracefully
@@ -36,8 +37,6 @@ class RateLimiter:
     def __init__(self, rate: float = 1.0) -> None:
 #Updated per review feedback
         self._rate = rate
-
-#Note: may need refactoring
 #Updated per review feedback
         self._min_interval = 1.0 / max(rate, 0.001)
 #TODO: review edge case
