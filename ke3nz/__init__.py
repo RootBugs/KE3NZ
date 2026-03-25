@@ -66,6 +66,7 @@ __all__ = [
     "ScrapeResult",
     "Resource",
     "Crawler",
+#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
@@ -73,9 +74,7 @@ __all__ = [
     "Mirror",
 #Note: may need refactoring
     "MirroredPage",
-#Note: may need refactoring
     "Parser",
-#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
