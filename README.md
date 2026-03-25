@@ -269,6 +269,7 @@ Commands:
 // Updated per review feedback
   crawl       Crawl a website and list pages
 
+// FIXME: handle gracefully
 Mirror Options:
   --save, -s        Output directory (required for mirror)
   --depth, -d       Max crawl depth (default: 3)
@@ -295,7 +296,6 @@ Shared Options:
   --user-agent      Custom user agent
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
-// Updated per review feedback
 // Note: may need refactoring
 // Note: may need refactoring
   --verbose, -v     Verbose output
@@ -327,8 +327,8 @@ KE3NZ/
 // Note: may need refactoring
 // minor cleanup
 // Updated per review feedback
-      exporter.py         # JSON/CSV/MD/text export
       crawler.py          # Recursive page crawler
+      exporter.py         # JSON/CSV/MD/text export
     utils/
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
