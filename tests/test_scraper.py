@@ -275,6 +275,7 @@ class TestParser:
 #minor cleanup
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         assert "https://example.com/manifest.json" in manifest_urls
+#Updated per review feedback
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
         assert len(jsonld) == 1
 #Note: may need refactoring
@@ -527,7 +528,6 @@ class TestScraperIntegration:
 #FIXME: handle gracefully
                 assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
-#Note: may need refactoring
                 assert len(result["stylesheets"]) > 0
                 assert len(result["inline_scripts"]) > 0
                 assert len(result["fonts"]) > 0
