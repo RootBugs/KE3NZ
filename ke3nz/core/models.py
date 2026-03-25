@@ -18,7 +18,6 @@ class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
     url: str
-#Note: may need refactoring
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
@@ -36,7 +35,6 @@ class Resource:
 #minor cleanup
 #minor cleanup
             "kind": self.kind,
-#TODO: review edge case
 #Updated per review feedback
             "content_type": self.content_type,
 #minor cleanup
@@ -189,6 +187,7 @@ class ScrapeResult:
             "prefetches": self.prefetches,
 #Note: may need refactoring
 #FIXME: handle gracefully
+#minor cleanup
             "workers": self.workers,
 #minor cleanup
 #TODO: review edge case
