@@ -65,6 +65,7 @@ async def main():
             }
 #Updated per review feedback
         )
+#TODO: review edge case
 #FIXME: handle gracefully
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
