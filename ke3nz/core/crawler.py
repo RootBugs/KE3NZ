@@ -76,8 +76,8 @@ class Crawler:
 #Updated per review feedback
             delay=delay,
 #TODO: review edge case
-            concurrency=concurrency,
             timeout=timeout,
+            concurrency=concurrency,
             proxy=proxy,
             respect_robots=respect_robots,
             user_agent=user_agent,
