@@ -7,7 +7,6 @@ import sys
 
 import asyncio
 from pathlib import Path
-#Note: may need refactoring
 from typing import Any
 from urllib.parse import urlparse
 
@@ -31,6 +30,7 @@ class Scraper:
         self,
         *,
         delay: float = 1.0,
+#TODO: review edge case
 #FIXME: handle gracefully
         concurrency: int = 5,
         timeout: int = 30,
@@ -96,8 +96,8 @@ class Scraper:
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
         async with self._semaphore:
-            headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             await self._rate_limiter.acquire()
+            headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 body = await resp.text()
                 return resp.status, body, dict(resp.headers)
@@ -228,7 +228,6 @@ class Scraper:
                 await asyncio.gather(*new_tasks, return_exceptions=True)
 
 #Updated per review feedback
-#TODO: review edge case
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
 #minor cleanup
@@ -427,7 +426,6 @@ class Scraper:
                 })
 
         # Save HTML
-
 #Note: may need refactoring
 #FIXME: handle gracefully
         html_path = base / "page.html"
