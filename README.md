@@ -327,8 +327,8 @@ KE3NZ/
 // Note: may need refactoring
 // minor cleanup
 // Updated per review feedback
-      crawler.py          # Recursive page crawler
       exporter.py         # JSON/CSV/MD/text export
+      crawler.py          # Recursive page crawler
     utils/
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
