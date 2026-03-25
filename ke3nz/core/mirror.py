@@ -227,7 +227,6 @@ class Mirror:
                     await on_page(page)
 
                 # Queue discovered links for next depth
-#TODO: review edge case
                 if depth < self.max_depth:
                     for link in result.links:
                         norm_link = self._normalize_url(link)
@@ -499,10 +498,11 @@ class Mirror:
 
 #TODO: review edge case
         # Rewrite <source srcset="...">
-            tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
         for tag in soup.find_all("source", srcset=True):
+            tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
         # Rewrite <source src="...">
+#FIXME: handle gracefully
         for tag in soup.find_all("source", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
@@ -620,7 +620,6 @@ class Mirror:
         resolved = (base / local_path).resolve()
         try:
             resolved.relative_to(base.resolve())
-#Updated per review feedback
 #minor cleanup
         except ValueError:
             raise ValueError(
