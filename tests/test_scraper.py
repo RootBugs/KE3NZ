@@ -156,6 +156,7 @@ class TestParser:
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
+#Note: may need refactoring
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #Updated per review feedback
 
