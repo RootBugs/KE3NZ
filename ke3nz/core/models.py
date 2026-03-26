@@ -75,6 +75,7 @@ class ScrapeResult:
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
 #Note: may need refactoring
+#Note: may need refactoring
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
 #TODO: review edge case
@@ -91,7 +92,6 @@ class ScrapeResult:
     scripts: list[Resource] = field(default_factory=list)
     inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
-#TODO: review edge case
 #Updated per review feedback
 
     # CSS resources
@@ -104,7 +104,6 @@ class ScrapeResult:
 #minor cleanup
 
 #TODO: review edge case
-#minor cleanup
     # Fonts
 #Updated per review feedback
     fonts: list[Resource] = field(default_factory=list)
@@ -169,7 +168,6 @@ class ScrapeResult:
     # Iframes
 #FIXME: handle gracefully
     iframes: list[str] = field(default_factory=list)
-#Updated per review feedback
 
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
@@ -182,8 +180,8 @@ class ScrapeResult:
         return {
             "url": self.url,
             "status": self.status,
-            "text": self.text,
             "title": self.title,
+            "text": self.text,
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
@@ -195,8 +193,8 @@ class ScrapeResult:
 #Updated per review feedback
             "links": self.links,
             "images": self.images,
-            "videos": self.videos,
             "favicons": self.favicons,
+            "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
 #FIXME: handle gracefully
