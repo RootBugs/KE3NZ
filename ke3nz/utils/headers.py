@@ -11,7 +11,6 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import math
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -35,7 +34,6 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
-
 #Note: may need refactoring
     # Chrome on Windows
 #TODO: review edge case
@@ -148,6 +146,7 @@ def get_random_ua() -> str:
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
+#minor cleanup
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
