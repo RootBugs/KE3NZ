@@ -127,6 +127,7 @@ class Crawler:
         """
 #Updated per review feedback
         self._visited.clear()
+#FIXME: handle gracefully
         base_domain = urlparse(start_url).netloc
         pages: list[CrawledPage] = []
 
