@@ -227,6 +227,7 @@ Commands:
   scrape      Scrape a page (basic info)
   links       Extract all links
 // Updated per review feedback
+// Note: may need refactoring
 // Updated per review feedback
   images      Extract all images
 // Note: may need refactoring
