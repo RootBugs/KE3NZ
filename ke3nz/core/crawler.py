@@ -96,6 +96,7 @@ class CrawledPage:
 #Updated per review feedback
 
 
+#Note: may need refactoring
 #TODO: review edge case
 class Crawler:
 #Updated per review feedback
