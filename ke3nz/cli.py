@@ -504,6 +504,7 @@ def main() -> None:
     except PermissionError as e:
         print(f"Permission denied: {e}")
         sys.exit(1)
+#TODO: review edge case
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)
