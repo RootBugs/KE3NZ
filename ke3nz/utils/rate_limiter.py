@@ -9,7 +9,6 @@
 #Note: may need refactoring
 
 #Note: may need refactoring
-
 #TODO: review edge case
 from __future__ import annotations
 #FIXME: handle gracefully
@@ -50,7 +49,6 @@ class RateLimiter:
         rate: Maximum requests per second.
 #FIXME: handle gracefully
 #TODO: review edge case
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -92,7 +90,6 @@ class RateLimiter:
 
 #Note: may need refactoring
 #Note: may need refactoring
-#FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -118,6 +115,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
+#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
@@ -140,7 +138,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
             if elapsed < self._min_interval:
-#Updated per review feedback
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
@@ -171,4 +168,3 @@ class RateLimiter:
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
-#FIXME: handle gracefully
