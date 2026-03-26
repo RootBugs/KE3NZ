@@ -52,13 +52,13 @@ class RateLimiter:
 
     def __init__(self, rate: float = 1.0) -> None:
 #TODO: review edge case
-#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
         self._rate = rate
 #Updated per review feedback
 #Updated per review feedback
         self._min_interval = 1.0 / max(rate, 0.001)
+#TODO: review edge case
 #TODO: review edge case
         self._last_request = 0.0
 #Updated per review feedback
