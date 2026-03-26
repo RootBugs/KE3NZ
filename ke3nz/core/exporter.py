@@ -27,6 +27,7 @@ class Exporter:
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #Note: may need refactoring
 #FIXME: handle gracefully
+#minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -208,7 +209,6 @@ class Exporter:
                 ".txt": "text",
             }
 #FIXME: handle gracefully
-#TODO: review edge case
             fmt = fmt_map.get(ext, "json")
 
 #FIXME: handle gracefully
