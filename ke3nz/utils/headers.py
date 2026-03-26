@@ -199,6 +199,7 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
+#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
     """Return a full set of headers with a random user-agent."""
