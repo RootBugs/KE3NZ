@@ -32,7 +32,6 @@
 #Note: may need refactoring
 #TODO: review edge case
 import asyncio
-import pathlib
 #TODO: review edge case
 #FIXME: handle gracefully
 from ke3nz import Crawler
@@ -90,7 +89,6 @@ async def main():
 #Updated per review feedback
     print(f"Crawled {len(pages)} pages:\n")
 #TODO: review edge case
-#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
@@ -100,10 +98,9 @@ async def main():
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
-
 #Note: may need refactoring
-        print(f"{indent}[{page.status}] {page.title or page.url}")
         indent = "  " * page.depth
+        print(f"{indent}[{page.status}] {page.title or page.url}")
 #minor cleanup
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
@@ -113,6 +110,7 @@ async def main():
 
 #TODO: review edge case
 #Updated per review feedback
+#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
@@ -120,11 +118,9 @@ async def main():
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#minor cleanup
 
 #Updated per review feedback
 #TODO: review edge case
-#Updated per review feedback
 if __name__ == "__main__":
 #TODO: review edge case
 #TODO: review edge case
