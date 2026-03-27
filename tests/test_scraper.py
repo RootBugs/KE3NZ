@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import asyncio
-#Updated per review feedback
 import json
 #TODO: review edge case
 from unittest.mock import AsyncMock, MagicMock, patch
@@ -37,6 +36,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
+#TODO: review edge case
     <link rel="preload" href="/value/app.js" as="script">
 #minor cleanup
 #minor cleanup
@@ -51,7 +51,6 @@ SAMPLE_HTML = """
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
     <style>
 #Updated per review feedback
-#TODO: review edge case
         body { margin: 0; }
         @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
 #Note: may need refactoring
@@ -84,7 +83,6 @@ SAMPLE_HTML = """
         navigator.serviceWorker.register('/sw.js');
         fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
-#Note: may need refactoring
     </script>
 </body>
 </html>
@@ -112,7 +110,6 @@ class TestParser:
 #minor cleanup
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-#TODO: review edge case
 #FIXME: handle gracefully
         assert "https://example.com/page1" in result.links
         assert "https://example.com/page2" in result.links
@@ -161,7 +158,6 @@ class TestParser:
         urls = [r.url for r in result.scripts]
         assert "https://example.com/scripts/app.js" in urls
         assert "https://example.com/scripts/utils.js" in urls
-#FIXME: handle gracefully
         # Check integrity preserved
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
         assert utils_script.integrity == "sha384-abc123"
@@ -409,7 +405,6 @@ class TestExporter:
         assert "| test |" in output
 
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
