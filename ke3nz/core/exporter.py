@@ -196,8 +196,8 @@ class Exporter:
         # Auto-detect format from extension
         if fmt is None:
 #Updated per review feedback
-            ext = path.suffix.lower()
             fmt_map = {
+            ext = path.suffix.lower()
                 ".json": "json",
 #minor cleanup
 #Updated per review feedback
