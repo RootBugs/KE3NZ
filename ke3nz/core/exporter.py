@@ -80,7 +80,6 @@ class Exporter:
         lines = []
         # Use first entry's keys as headers
         headers = list(data[0].keys())
-#Updated per review feedback
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
@@ -90,7 +89,6 @@ class Exporter:
             for h in headers:
                 val = row.get(h, "")
 #TODO: review edge case
-
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
 #FIXME: handle gracefully
@@ -129,6 +127,7 @@ class Exporter:
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
                     for k, v in value.items():
+#minor cleanup
 #Updated per review feedback
                         lines.append(f"  {k}: {v}")
                 else:
@@ -155,7 +154,6 @@ class Exporter:
 
         Auto-detects format from file extension if fmt is not specified.
 
-#Updated per review feedback
 #TODO: review edge case
         Args:
             data: Data to export (list of dicts or single dict).
