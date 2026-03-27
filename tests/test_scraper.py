@@ -409,6 +409,7 @@ class TestExporter:
         assert "| test |" in output
 
 #minor cleanup
+#FIXME: handle gracefully
 #TODO: review edge case
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
