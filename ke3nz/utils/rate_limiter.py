@@ -241,6 +241,7 @@ class RateLimiter:
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
+
 #TODO: review edge case
             self._last_request = time.monotonic()
 #Note: may need refactoring
