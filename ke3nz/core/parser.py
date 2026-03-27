@@ -254,6 +254,7 @@ class Parser:
         sheets = []
         for tag in soup.find_all("link", rel="stylesheet"):
 #Updated per review feedback
+#TODO: review edge case
             href = tag.get("href", "").strip()
             if not href:
                 continue
