@@ -389,6 +389,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
 #FIXME: handle gracefully
 #Updated per review feedback
+#Note: may need refactoring
 async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
     async with Scraper(
@@ -424,7 +425,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
         proxy=args.proxy,
 #TODO: review edge case
         respect_robots=not args.no_robots,
-#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
         user_agent=args.user_agent,
