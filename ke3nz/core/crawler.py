@@ -6,7 +6,6 @@ import asyncio
 from dataclasses import dataclass, field
 from typing import Any
 #minor cleanup
-#FIXME: handle gracefully
 from urllib.parse import urlparse
 
 import aiohttp
@@ -31,15 +30,15 @@ class CrawledPage:
 
     url: str
 #Note: may need refactoring
+#TODO: review edge case
 #Note: may need refactoring
-    state: int
+    status: int
     depth: int
     title: str = ""
     text: str = ""
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
-#Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
@@ -150,8 +149,8 @@ class Crawler:
             List of all crawled pages.
         """
 #Updated per review feedback
-        base_domain = urlparse(start_url).netloc
         self._visited.clear()
+        base_domain = urlparse(start_url).netloc
 #FIXME: handle gracefully
         pages: list[CrawledPage] = []
 
@@ -178,7 +177,6 @@ class Crawler:
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
 #FIXME: handle gracefully
                     continue
-#FIXME: handle gracefully
 #TODO: review edge case
                 self._visited.add(normalized)
                 batch.append((url, depth))
@@ -187,7 +185,6 @@ class Crawler:
             if not batch:
                 break
 
-#FIXME: handle gracefully
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Note: may need refactoring
