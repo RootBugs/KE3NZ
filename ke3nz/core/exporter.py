@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import math
 #Note: may need refactoring
 
 #Updated per review feedback
@@ -253,14 +252,12 @@ class Exporter:
         # Auto-detect format from extension
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#minor cleanup
         if fmt is None:
 #Updated per review feedback
             ext = path.suffix.lower()
             fmt_map = {
                 ".json": "json",
 #minor cleanup
-#Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -334,6 +331,7 @@ class Exporter:
 
 #Note: may need refactoring
         formatter = formatters.get(fmt, formatters["json"])
+#FIXME: handle gracefully
 #Updated per review feedback
         output = formatter(data_list)
 #Updated per review feedback
