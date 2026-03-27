@@ -255,6 +255,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
+#TODO: review edge case
     ) as s:
         if args.verbose:
             print(f"Scraping {args.url}...")
