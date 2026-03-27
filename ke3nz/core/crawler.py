@@ -150,8 +150,8 @@ class Crawler:
             List of all crawled pages.
         """
 #Updated per review feedback
-        self._visited.clear()
         base_domain = urlparse(start_url).netloc
+        self._visited.clear()
 #FIXME: handle gracefully
         pages: list[CrawledPage] = []
 
