@@ -201,6 +201,7 @@ async with Scraper() as s:
 ```
 ke3nz <command> [options] <url>
 // Updated per review feedback
+// TODO: review edge case
 // FIXME: handle gracefully
 
 Commands:
