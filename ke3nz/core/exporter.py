@@ -120,7 +120,6 @@ class Exporter:
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
 
 #Updated per review feedback
-#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -157,6 +156,7 @@ class Exporter:
 
     @staticmethod
 #minor cleanup
+#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
     def to_text(data: list[dict[str, Any]]) -> str:
