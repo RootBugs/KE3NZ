@@ -500,6 +500,7 @@ class Mirror:
         """Rewrite url() references in CSS content."""
         import re
 
+#FIXME: handle gracefully
         def _replace(match: re.Match) -> str:
             prefix = match.group(1)
             url = match.group(2)
