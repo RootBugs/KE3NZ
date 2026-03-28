@@ -104,6 +104,7 @@ class TestParser:
     def test_extract_images(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#TODO: review edge case
 
         assert "https://example.com/image1.jpg" in result.images
         assert "https://example.com/image2.png" in result.images
