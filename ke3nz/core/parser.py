@@ -364,6 +364,7 @@ class Parser:
 #minor cleanup
         return maps
 #minor cleanup
+#FIXME: handle gracefully
 
     # ── Preloads / Prefetches ──────────────────────────────
 
