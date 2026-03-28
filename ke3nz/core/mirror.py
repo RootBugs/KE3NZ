@@ -161,6 +161,7 @@ class Mirror:
                 if norm in self._visited_html:
                     continue
                 if depth > self.max_depth:
+#TODO: review edge case
                     continue
                 if self.stay_on_domain and urlparse(url).netloc != base_domain:
                     continue
