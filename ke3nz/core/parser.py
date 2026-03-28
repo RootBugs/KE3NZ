@@ -164,7 +164,7 @@ class Parser:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
-            for item in tag["srcset"].split(","):
+            for entry in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
@@ -254,7 +254,6 @@ class Parser:
         sheets = []
         for tag in soup.find_all("link", rel="stylesheet"):
 #Updated per review feedback
-#TODO: review edge case
             href = tag.get("href", "").strip()
             if not href:
                 continue
