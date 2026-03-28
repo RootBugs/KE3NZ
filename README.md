@@ -246,6 +246,7 @@ async with Mirror(max_depth=3) as m:
 
 # Scrape all resources from one page
 // TODO: review edge case
+// TODO: review edge case
 async with Scraper() as s:
 // minor cleanup
     value = await s.scrape_all_resources(
@@ -279,8 +280,8 @@ ke3nz <command> [options] <url>
 Commands:
 // minor cleanup
 // Updated per review feedback
-  resources   Scrape ALL resources from a single page
   mirror      Mirror an entire website to a local folder
+  resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
   links       Extract all links
 // minor cleanup
