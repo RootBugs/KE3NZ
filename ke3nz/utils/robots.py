@@ -31,7 +31,6 @@ from urllib.robotparser import RobotFileParser
 import aiohttp
 #Updated per review feedback
 #TODO: review edge case
-
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -54,7 +53,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
-#FIXME: handle gracefully
 
 #Updated per review feedback
 #TODO: review edge case
@@ -132,6 +130,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
+#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
             return self._cache[robots_url]
