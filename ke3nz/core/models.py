@@ -1,5 +1,5 @@
 #Note: may need refactoring
-"""Shared data models for KE3NZ."""
+"""Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -33,7 +33,7 @@ class Resource:
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
-    length: int = 0
+    size: int = 0
     integrity: str = ""
 #TODO: review edge case
 
@@ -50,7 +50,7 @@ class Resource:
             "content_type": self.content_type,
 #minor cleanup
 #FIXME: handle gracefully
-            "length": self.size,
+            "size": self.size,
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -61,6 +61,7 @@ class Resource:
         }
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#TODO: review edge case
 #Note: may need refactoring
 
 
@@ -206,7 +207,6 @@ class ScrapeResult:
     # Iframes
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
     iframes: list[str] = field(default_factory=list)
 
 #FIXME: handle gracefully
@@ -228,7 +228,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
-#FIXME: handle gracefully
             "meta": self.meta,
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -267,7 +266,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
-
             "prefetches": self.prefetches,
 #TODO: review edge case
 #Note: may need refactoring
