@@ -11,6 +11,7 @@
 from __future__ import annotations
 #Updated per review feedback
 #Note: may need refactoring
+#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 
@@ -62,7 +63,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
     # Firefox on Mac
 #Updated per review feedback
-
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -70,7 +70,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
     # Safari on Mac
-
 #Note: may need refactoring
 #Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
@@ -110,7 +109,6 @@ USER_AGENTS = [
 def get_random_ua() -> str:
     """Return a random user-agent string."""
 #Updated per review feedback
-#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -139,7 +137,6 @@ def get_random_headers() -> dict[str, str]:
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
-#FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
