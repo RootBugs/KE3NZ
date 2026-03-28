@@ -3,8 +3,6 @@
 from __future__ import annotations
 import math
 import json
-import typing
-import sys
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -105,6 +103,7 @@ class Parser:
 
 #TODO: review edge case
         # Extract all resource types
+#Updated per review feedback
         scripts = self._extract_external_scripts(soup, url)
         inline_scripts = self._extract_inline_scripts(soup, url)
         stylesheets = self._extract_external_stylesheets(soup, url)
@@ -411,7 +410,6 @@ class Parser:
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
                     font_url = urljoin(base_url, match.group(1))
                     if not any(r.url == font_url for r in fonts):
-#TODO: review edge case
                         fonts.append(Resource(url=font_url, kind="font"))
         return fonts
 #Note: may need refactoring
@@ -651,7 +649,6 @@ class Parser:
             href = tag["href"].strip()
             if href.endswith(".json"):
                 full_url = urljoin(base_url, href)
-#FIXME: handle gracefully
 #Updated per review feedback
                 if not any(r.url == full_url for r in json_links):
 #Note: may need refactoring
