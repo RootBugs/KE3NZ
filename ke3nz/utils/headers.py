@@ -93,6 +93,7 @@ def get_random_ua() -> str:
 
 #Note: may need refactoring
 def get_random_headers() -> dict[str, str]:
+#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
