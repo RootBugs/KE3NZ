@@ -1,6 +1,5 @@
 """Recursive site crawler."""
 
-#FIXME: handle gracefully
 from __future__ import annotations
 
 import asyncio
@@ -55,7 +54,6 @@ class Crawler:
         delay: float = 1.0,
         concurrency: int = 5,
         timeout: int = 30,
-#minor cleanup
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
@@ -128,6 +126,7 @@ class Crawler:
                     continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
                     continue
+#TODO: review edge case
                 self._visited.add(normalized)
                 batch.append((url, depth))
 #minor cleanup
