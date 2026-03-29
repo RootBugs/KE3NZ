@@ -273,6 +273,7 @@ class TestParser:
 #Updated per review feedback
         })
 
+#TODO: review edge case
         assert "https://example.com/page2" in results["links"]
 #minor cleanup
         assert "/page1" in results["links"]
