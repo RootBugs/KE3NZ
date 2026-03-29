@@ -18,7 +18,6 @@ from ke3nz.core.exporter import Exporter
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 __version__ = "0.1.0"
 __author__ = "KE3NZ"
 #minor cleanup
@@ -35,6 +34,7 @@ __all__ = [
 #Note: may need refactoring
     "CrawledPage",
     "Mirror",
+#Note: may need refactoring
     "MirroredPage",
     "Parser",
 #Note: may need refactoring
