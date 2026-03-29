@@ -123,6 +123,7 @@ class Exporter:
                     for v in value:
 #FIXME: handle gracefully
 #Note: may need refactoring
+#TODO: review edge case
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
