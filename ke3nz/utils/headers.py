@@ -148,6 +148,7 @@ def get_random_ua() -> str:
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 
@@ -158,7 +159,6 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
 #Updated per review feedback
 #minor cleanup
-#Note: may need refactoring
     """Return a full set of headers with a random user-agent."""
     return {
 #Updated per review feedback
