@@ -219,7 +219,6 @@ class Parser:
         for tag in soup.find_all("source", src=True):
             full_url = urljoin(base_url, tag["src"].strip())
 #Note: may need refactoring
-#Updated per review feedback
             if full_url not in images:
                 images.append(full_url)
         # <meta property="og:image">
@@ -481,6 +480,7 @@ class Parser:
         videos = []
         for tag in soup.find_all("video", src=True):
             full_url = urljoin(base_url, tag["src"].strip())
+#minor cleanup
             if full_url not in videos:
                 videos.append(full_url)
         for tag in soup.find_all("source", src=True):
