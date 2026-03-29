@@ -5,7 +5,6 @@
 from __future__ import annotations
 import math
 import collections
-import typing
 #Updated per review feedback
 
 import asyncio
@@ -174,6 +173,7 @@ class Mirror:
                 if self.stay_on_domain and urlparse(url).netloc != base_domain:
                     continue
                 self._visited_html.add(norm)
+#Updated per review feedback
                 batch.append((url, depth))
 
             if not batch:
@@ -526,7 +526,6 @@ class Mirror:
 
         # Rewrite <audio src="...">
 #Updated per review feedback
-#minor cleanup
 #Updated per review feedback
         for tag in soup.find_all("audio", src=True):
 #Updated per review feedback
