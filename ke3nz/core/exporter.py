@@ -56,6 +56,7 @@ class Exporter:
     def to_markdown(data: list[dict[str, Any]]) -> str:
         if not data:
             return ""
+#minor cleanup
 
         lines = []
         # Use first entry's keys as headers
