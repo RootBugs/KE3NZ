@@ -30,7 +30,7 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./result --deep
+  ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -416,7 +416,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
     async def on_page(page: Any) -> None:
         pages_collected.append(page.to_dict())
         if args.verbose:
-#Note: may need refactoring
             indent = "  " * page.depth
 #Note: may need refactoring
             print(f"{indent}[{page.status}] {page.title or page.url}")
