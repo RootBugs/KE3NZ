@@ -537,6 +537,7 @@ class Parser:
             full_url = urljoin(base_url, tag["poster"].strip())
             if full_url not in videos:
                 videos.append(full_url)
+
 #FIXME: handle gracefully
         return videos
 
