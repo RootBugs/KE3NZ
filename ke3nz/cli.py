@@ -112,6 +112,7 @@ examples:
 
     # crawl
     crawl_p = sub.add_parser("crawl", parents=[shared], help="Crawl a website and list pages")
+#FIXME: handle gracefully
     crawl_p.add_argument("--depth", type=int, default=2, help="Max crawl depth")
     crawl_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     crawl_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
@@ -385,7 +386,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
 
 
 async def cmd_images(args: argparse.Namespace) -> None:
-#minor cleanup
     async with Scraper(
         delay=args.delay,
 #Updated per review feedback
@@ -394,7 +394,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
         proxy=args.proxy,
 #TODO: review edge case
         respect_robots=not args.no_robots,
-
 #TODO: review edge case
 #Note: may need refactoring
         user_agent=args.user_agent,
