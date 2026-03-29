@@ -33,7 +33,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -102,7 +102,6 @@ class Scraper:
 #TODO: review edge case
                 body = await resp.read()
                 return resp.status, body, dict(resp.headers)
-#FIXME: handle gracefully
 
     async def scrape(
         self,
@@ -305,6 +304,7 @@ class Scraper:
                         "manifest": ".json",
                         "sourcemap": ".map",
                     }.get(kind, ".txt")
+#Note: may need refactoring
                     filename += ext
 
                 filepath = dir_path / filename
