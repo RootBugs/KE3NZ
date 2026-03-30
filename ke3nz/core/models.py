@@ -2,7 +2,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import json
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -19,6 +18,7 @@ class Resource:
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
+#TODO: review edge case
 #TODO: review edge case
     size: int = 0
     integrity: str = ""
