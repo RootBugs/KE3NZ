@@ -13,7 +13,6 @@ name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
 # FIXME: handle gracefully
-# Note: may need refactoring
 description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 license = {text = "MIT"}
@@ -46,7 +45,6 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-# Updated per review feedback
     "aiohttp>=3.9.0",
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
@@ -65,6 +63,7 @@ dev = [
 # Note: may need refactoring
 [project.scripts]
 # Note: may need refactoring
+# TODO: review edge case
 ke3nz = "ke3nz.cli:main"
 
 # TODO: review edge case
