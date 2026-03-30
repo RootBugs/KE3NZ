@@ -130,6 +130,7 @@ class ScrapeResult:
     inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Updated per review feedback
 
     # CSS resources
