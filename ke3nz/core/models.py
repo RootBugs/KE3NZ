@@ -1,3 +1,4 @@
+#minor cleanup
 #Note: may need refactoring
 """Shared value models for KE3NZ."""
 
