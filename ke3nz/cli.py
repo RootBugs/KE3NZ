@@ -33,7 +33,7 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./output --deep
+  ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -157,7 +157,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "workers": len(value.get("workers", [])),
 #Updated per review feedback
 
-        "iframes": len(value.get("iframes", [])),
+        "iframes": len(data.get("iframes", [])),
 #TODO: review edge case
     }
     return counts
@@ -196,6 +196,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
+#Note: may need refactoring
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
         stay_on_domain=not args.cross_domain,
@@ -234,7 +235,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
             print(f"Scanning {args.url}...")
 
-        value = await s.scrape_all_resources(
+        data = await s.scrape_all_resources(
             args.url,
             download_content=not args.no_content,
             follow_deep=args.deep,
@@ -370,7 +371,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
 #TODO: review edge case
 #Note: may need refactoring
-#Note: may need refactoring
         user_agent=args.user_agent,
     ) as s:
 #FIXME: handle gracefully
@@ -504,7 +504,6 @@ def main() -> None:
     except PermissionError as e:
         print(f"Permission denied: {e}")
         sys.exit(1)
-#TODO: review edge case
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)
