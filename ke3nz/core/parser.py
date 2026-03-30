@@ -364,7 +364,6 @@ class Parser:
 #minor cleanup
         return maps
 #minor cleanup
-#FIXME: handle gracefully
 
     # ── Preloads / Prefetches ──────────────────────────────
 
@@ -390,6 +389,7 @@ class Parser:
 #FIXME: handle gracefully
         for tag in soup.find_all("link", rel="prefetch"):
 #TODO: review edge case
+#minor cleanup
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
