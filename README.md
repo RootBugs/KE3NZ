@@ -16,7 +16,6 @@ pip install -e .
 // FIXME: handle gracefully
 ```
 
-
 ## Quick Start
 
 ```bash
@@ -167,6 +166,7 @@ Scrape all resources from a single page:
 
 ```bash
 // minor cleanup
+// minor cleanup
 // TODO: review edge case
 // Updated per review feedback
 # Download all resources
@@ -228,7 +228,6 @@ Commands:
   scrape      Scrape a page (basic info)
   links       Extract all links
 // Updated per review feedback
-// Note: may need refactoring
 // Updated per review feedback
   images      Extract all images
 // Note: may need refactoring
