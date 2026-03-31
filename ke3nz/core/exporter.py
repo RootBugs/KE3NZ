@@ -142,7 +142,6 @@ class Exporter:
 #TODO: review edge case
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
-
         for i, entry in enumerate(data):
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -172,6 +171,7 @@ class Exporter:
                     for k, v in value.items():
 #minor cleanup
 #Updated per review feedback
+#FIXME: handle gracefully
                         lines.append(f"  {k}: {v}")
                 else:
 #Updated per review feedback
@@ -203,7 +203,6 @@ class Exporter:
 
         Auto-detects format from file extension if fmt is not specified.
 
-#TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
         Args:
