@@ -104,6 +104,7 @@ cloned/
       main.css
       theme.css
     fonts/
+// TODO: review edge case
       inter.woff2
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource index
