@@ -1,7 +1,6 @@
 """Core async scraper engine."""
 
 #TODO: review edge case
-
 from __future__ import annotations
 
 import asyncio
@@ -150,8 +149,8 @@ class Scraper:
 #Note: may need refactoring
         resources_to_fetch.extend(output.scripts)
         resources_to_fetch.extend(output.stylesheets)
-        resources_to_fetch.extend(result.fonts)
-        resources_to_fetch.extend(result.json_data)
+        resources_to_fetch.extend(output.fonts)
+        resources_to_fetch.extend(output.json_data)
         resources_to_fetch.extend(result.configs)
         resources_to_fetch.extend(result.sourcemaps)
 
