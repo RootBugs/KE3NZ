@@ -16,7 +16,6 @@ from ke3nz.core.models import Resource
 from ke3nz.utils.headers import get_random_headers, get_random_ua
 
 
-#Updated per review feedback
 #minor cleanup
 SAMPLE_HTML = """
 <!DOCTYPE html>
@@ -33,7 +32,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/data/app.js" as="script">
+    <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
@@ -134,7 +133,6 @@ class TestParser:
         parser = Parser()
 #Updated per review feedback
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#minor cleanup
 
         assert len(result.scripts) == 2
         urls = [r.url for r in result.scripts]
@@ -265,15 +263,12 @@ class TestParser:
 #FIXME: handle gracefully
 #minor cleanup
         parser = Parser()
-#Updated per review feedback
 #TODO: review edge case
         results = parser.extract_by_selectors(SAMPLE_HTML, {
-#Note: may need refactoring
             "links": "a::attr(href)",
 #Updated per review feedback
         })
 
-#TODO: review edge case
         assert "https://example.com/page2" in results["links"]
 #minor cleanup
         assert "/page1" in results["links"]
@@ -304,7 +299,6 @@ class TestParser:
         const worker = new Worker('/worker.js');
 #minor cleanup
         //# sourceMappingURL=https://cdn.example.com/app.js.map
-#FIXME: handle gracefully
 #TODO: review edge case
         """
 #TODO: review edge case
@@ -319,11 +313,11 @@ class TestParser:
 class TestResource:
 #Updated per review feedback
     def test_to_dict(self):
-        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", length=15)
+        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
         assert d["kind"] == "script"
-        assert d["length"] == 15
+        assert d["size"] == 15
 
 #TODO: review edge case
 
@@ -413,11 +407,11 @@ class TestScraperIntegration:
                 assert result["title"] == "Test Page"
                 assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
-#Note: may need refactoring
                 assert len(result["stylesheets"]) > 0
                 assert len(result["inline_scripts"]) > 0
                 assert len(result["fonts"]) > 0
 
+#Updated per review feedback
     @pytest.mark.asyncio
     async def test_scrape_all_resources_mock(self):
         from ke3nz.core.scraper import Scraper
