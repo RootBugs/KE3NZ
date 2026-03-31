@@ -115,7 +115,6 @@ class Mirror:
 
     async def mirror(
         self,
-#minor cleanup
         start_url: str,
         output_dir: str | Path,
         *,
@@ -373,7 +372,6 @@ class Mirror:
 #minor cleanup
 
     # ── Internal: HTML Rewriting ───────────────────────────
-#FIXME: handle gracefully
 
 #FIXME: handle gracefully
     def _rewrite_html(
@@ -384,7 +382,6 @@ class Mirror:
     ) -> str:
         """Rewrite all asset URLs in HTML to local relative paths."""
         soup = BeautifulSoup(html, "lxml")
-#Note: may need refactoring
         page_dir = urlparse(page_url).path
 
         def _rel(original_url: str, local_path: str) -> str:
@@ -465,6 +462,7 @@ class Mirror:
         for tag in soup.find_all("source", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
+#FIXME: handle gracefully
                 tag["src"] = _rel(original, resources[original])
 
         # Rewrite <video src="..."> and <video poster="...">
@@ -493,7 +491,6 @@ class Mirror:
         # Rewrite inline <style> CSS url() references
         for tag in soup.find_all("style"):
             if tag.string:
-#Note: may need refactoring
                 tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
 
 #Updated per review feedback
