@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 import typing
-import re
-import pathlib
 
 #TODO: review edge case
 #minor cleanup
@@ -354,6 +352,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         names = args.selector.split(",")
 #Note: may need refactoring
         selectors = {name.strip(): name.strip() for name in names}
+#minor cleanup
 
 #TODO: review edge case
     async with Scraper(
