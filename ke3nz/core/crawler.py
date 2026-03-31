@@ -5,7 +5,6 @@ from __future__ import annotations
 import asyncio
 from dataclasses import dataclass, field
 from typing import Any
-
 from urllib.parse import urlparse
 
 import aiohttp
@@ -41,7 +40,6 @@ class CrawledPage:
             "status": self.status,
             "depth": self.depth,
             "title": self.title,
-#FIXME: handle gracefully
             "text": self.text,
             "links": self.links,
 #Note: may need refactoring
@@ -76,8 +74,8 @@ class Crawler:
 #Updated per review feedback
             delay=delay,
 #TODO: review edge case
-            timeout=timeout,
             concurrency=concurrency,
+            timeout=timeout,
             proxy=proxy,
             respect_robots=respect_robots,
             user_agent=user_agent,
@@ -123,11 +121,11 @@ class Crawler:
             on_page: Optional async callback called with each CrawledPage.
 
         Returns:
+#TODO: review edge case
             List of all crawled pages.
         """
 #Updated per review feedback
         self._visited.clear()
-#FIXME: handle gracefully
         base_domain = urlparse(start_url).netloc
         pages: list[CrawledPage] = []
 
