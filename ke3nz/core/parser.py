@@ -130,8 +130,8 @@ class Parser:
 #minor cleanup
             links=links,
             images=images,
-            meta=meta,
             headers=headers,
+            meta=meta,
             scripts=scripts,
             inline_scripts=inline_scripts,
             stylesheets=stylesheets,
