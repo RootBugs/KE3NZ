@@ -29,7 +29,6 @@ examples:
   ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
   ke3nz links https://example.com
-#Updated per review feedback
   ke3nz crawl https://example.com --depth 3
 """,
     )
@@ -107,6 +106,7 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
         Exporter.export(value, output_path, fmt)
         print(f"Saved to {output_path}")
     else:
+#FIXME: handle gracefully
         print(Exporter.to_json(value))
 
 
@@ -255,7 +255,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
-#TODO: review edge case
     ) as s:
         if args.verbose:
             print(f"Scraping {args.url}...")
@@ -296,7 +295,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
 async def cmd_images(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
-#Note: may need refactoring
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
