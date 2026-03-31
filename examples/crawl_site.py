@@ -15,7 +15,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
 """Example: Crawling a website with KE3NZ."""
@@ -150,6 +149,7 @@ async def main():
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
+#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
@@ -210,7 +210,6 @@ if __name__ == "__main__":
 #FIXME: handle gracefully
 #TODO: review edge case
     asyncio.run(main())
-#Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
