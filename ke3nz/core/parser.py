@@ -1,7 +1,6 @@
 """HTML parsing and resource extraction."""
 
 from __future__ import annotations
-import os
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -24,7 +23,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     # Dynamic script / link injection
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
     (r"""createElement\s*\(\s*['"]link['"]\s*\).*?href\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-link"),
-#Updated per review feedback
     # src/href assignments
 #Updated per review feedback
     (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
@@ -130,8 +128,8 @@ class Parser:
 #minor cleanup
             links=links,
             images=images,
-            headers=headers,
             meta=meta,
+            headers=headers,
             scripts=scripts,
             inline_scripts=inline_scripts,
             stylesheets=stylesheets,
@@ -194,8 +192,9 @@ class Parser:
                         images.append(full_url)
 #Updated per review feedback
         # <picture> <source>
-            for item in tag["srcset"].split(","):
         for tag in soup.find_all("source", srcset=True):
+            for item in tag["srcset"].split(","):
+#FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
@@ -403,8 +402,8 @@ class Parser:
             if not any(r.url == full_url for r in preloads):
                 preloads.append(Resource(
                     url=full_url,
-                    content_type=tag.get("type", ""),
                     kind="preload",
+                    content_type=tag.get("type", ""),
                 ))
         return preloads
 
@@ -509,7 +508,6 @@ class Parser:
             pass
         # navigator.serviceWorker.register('/sw.js') patterns in inline scripts
 #FIXME: handle gracefully
-#FIXME: handle gracefully
         for tag in soup.find_all("script"):
             if tag.string:
                 for match in re.finditer(r"""register\s*\(\s*['"]([^'"]+)['"]""", tag.string):
@@ -593,7 +591,6 @@ class Parser:
 #TODO: review edge case
     # ── URL Collection ─────────────────────────────────────
 
-#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
@@ -690,7 +687,6 @@ class Parser:
         self, html: str, selectors: dict[str, str]
 #Updated per review feedback
     ) -> dict[str, list[str]]:
-#minor cleanup
         """Extract value using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
