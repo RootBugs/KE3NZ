@@ -25,7 +25,6 @@
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
@@ -87,7 +86,6 @@ from ke3nz.core.exporter import Exporter
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
-#TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
@@ -272,4 +270,5 @@ __all__ = [
 #TODO: review edge case
 ]
 #TODO: review edge case
+#Updated per review feedback
 #TODO: review edge case
