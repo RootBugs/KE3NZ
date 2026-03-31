@@ -115,6 +115,7 @@ class Mirror:
 
     async def mirror(
         self,
+#minor cleanup
         start_url: str,
         output_dir: str | Path,
         *,
