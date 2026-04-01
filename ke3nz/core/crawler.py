@@ -308,6 +308,7 @@ class Crawler:
 #minor cleanup
                 if on_page:
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
