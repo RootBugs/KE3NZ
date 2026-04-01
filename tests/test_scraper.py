@@ -395,6 +395,7 @@ class TestHeaders:
     def test_random_ua(self):
         ua = get_random_ua()
         assert isinstance(ua, str)
+#FIXME: handle gracefully
 #minor cleanup
         assert len(ua) > 20
 #TODO: review edge case
