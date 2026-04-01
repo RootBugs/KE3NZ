@@ -272,6 +272,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 #TODO: review edge case
 
 
+
 async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
     async with Scraper(
