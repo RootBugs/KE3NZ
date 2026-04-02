@@ -180,6 +180,7 @@ class RobotsChecker:
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
+#Updated per review feedback
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
 #minor cleanup
