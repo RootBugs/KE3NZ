@@ -244,6 +244,7 @@ def get_random_headers() -> dict[str, str]:
 #Note: may need refactoring
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
+#minor cleanup
 #Updated per review feedback
         "Accept-Encoding": "gzip, deflate",
 #FIXME: handle gracefully
@@ -270,7 +271,6 @@ def get_random_headers() -> dict[str, str]:
 #Note: may need refactoring
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
