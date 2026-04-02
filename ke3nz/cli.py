@@ -326,6 +326,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
     """Remove raw content from resource dicts to keep output clean."""
 #TODO: review edge case
 #Note: may need refactoring
+#minor cleanup
     result = {}
     skip_keys = {"html"}
 #Updated per review feedback
