@@ -226,7 +226,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'index.html'}")
+    print(f"  Open:   {base / 'pos.html'}")
 #minor cleanup
 
 
@@ -502,6 +502,7 @@ COMMANDS = {
 #minor cleanup
     "text": cmd_text,
 #FIXME: handle gracefully
+#TODO: review edge case
     "meta": cmd_meta,
     "crawl": cmd_crawl,
 }
