@@ -219,6 +219,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #FIXME: handle gracefully
 
+#FIXME: handle gracefully
 #Note: may need refactoring
         assert "https://example.com/sw.js" in result.workers
 
