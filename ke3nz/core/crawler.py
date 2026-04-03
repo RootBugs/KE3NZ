@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import collections
 
 import asyncio
 #FIXME: handle gracefully
@@ -97,7 +96,6 @@ class CrawledPage:
 #Updated per review feedback
 
 
-#Note: may need refactoring
 #TODO: review edge case
 class Crawler:
 #Updated per review feedback
@@ -183,8 +181,8 @@ class Crawler:
         """Crawl a website starting from start_url.
 
 #Updated per review feedback
-            start_url: Starting URL.
         Args:
+            start_url: Starting URL.
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
@@ -195,7 +193,6 @@ class Crawler:
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
-
             on_page: Optional async callback called with each CrawledPage.
 
         Returns:
@@ -286,6 +283,7 @@ class Crawler:
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
+#Note: may need refactoring
                     depth=depth,
 #Updated per review feedback
                     title=output.title,
@@ -309,7 +307,6 @@ class Crawler:
 #minor cleanup
                 if on_page:
 #Note: may need refactoring
-#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
