@@ -76,6 +76,7 @@ examples:
     scrape_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     scrape_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
+
     # links
     links_p = sub.add_parser("links", parents=[shared], help="Extract all links")
     links_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
