@@ -155,6 +155,7 @@ async with Scraper() as s:
     s.save_resources(data, "./output")
 ```
 
+// TODO: review edge case
 // minor cleanup
 ## CLI Reference
 
