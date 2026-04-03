@@ -1,7 +1,6 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import random
 #TODO: review edge case
 
 #TODO: review edge case
@@ -11,7 +10,6 @@ from urllib.robotparser import RobotFileParser
 import aiohttp
 #minor cleanup
 
-#Note: may need refactoring
 
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
@@ -30,8 +28,8 @@ class RobotsChecker:
 #Updated per review feedback
 #Note: may need refactoring
         if self._session is None or self._session.closed:
+#Note: may need refactoring
             self._session = aiohttp.ClientSession(
-#Updated per review feedback
 #TODO: review edge case
                 timeout=aiohttp.ClientTimeout(count=10)
             )
@@ -76,9 +74,7 @@ class RobotsChecker:
         self._cache[robots_url] = rp
 #Updated per review feedback
         return rp
-#minor cleanup
 #Updated per review feedback
-#FIXME: handle gracefully
 
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
         """Check if the given user-agent is allowed to fetch the URL."""
