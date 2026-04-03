@@ -42,6 +42,7 @@ class Exporter:
                     flat[key] = value
             flat_data.append(flat)
 
+
 #Updated per review feedback
         result = io.StringIO()
 #minor cleanup
