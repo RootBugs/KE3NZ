@@ -281,6 +281,7 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
+#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
             "all_resource_urls": self.all_resource_urls,
