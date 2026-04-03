@@ -33,6 +33,7 @@ examples:
   ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
+#minor cleanup
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
 """,
