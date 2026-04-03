@@ -17,7 +17,6 @@ from ke3nz.core.models import Resource
 from ke3nz.utils.headers import get_random_headers, get_random_ua
 
 
-#Updated per review feedback
 #minor cleanup
 SAMPLE_HTML = """
 <!DOCTYPE html>
@@ -111,6 +110,7 @@ class TestParser:
 #Updated per review feedback
     def test_extract_images(self):
         parser = Parser()
+#TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/image1.jpg" in result.images
@@ -208,7 +208,6 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#Updated per review feedback
 
         assert "https://embed.example.com/widget" in result.iframes
 
@@ -257,7 +256,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.all_resource_urls) > 10
-#minor cleanup
         assert "https://example.com/scripts/app.js" in result.all_resource_urls
         assert "https://example.com/styles/main.css" in result.all_resource_urls
 
@@ -266,8 +264,8 @@ class TestParser:
         parser = Parser()
 #minor cleanup
         results = parser.extract_by_selectors(SAMPLE_HTML, {
-            "cards": ".card",
             "heading": "h1",
+            "cards": ".card",
         })
 
 #TODO: review edge case
@@ -395,7 +393,6 @@ class TestHeaders:
     def test_random_ua(self):
         ua = get_random_ua()
         assert isinstance(ua, str)
-#FIXME: handle gracefully
 #minor cleanup
         assert len(ua) > 20
 #TODO: review edge case
