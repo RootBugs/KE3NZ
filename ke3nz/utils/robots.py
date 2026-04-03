@@ -45,7 +45,6 @@ import aiohttp
 #Note: may need refactoring
     """Check robots.txt compliance with caching."""
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Updated per review feedback
 class RobotsChecker:
 #Note: may need refactoring
@@ -77,6 +76,7 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
+#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
@@ -86,7 +86,6 @@ class RobotsChecker:
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
         if self._session is None or self._session.closed:
 #Note: may need refactoring
@@ -137,7 +136,6 @@ class RobotsChecker:
 #Note: may need refactoring
             return self._cache[robots_url]
 #Updated per review feedback
-#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
@@ -180,7 +178,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
-#Updated per review feedback
 #Note: may need refactoring
                     # No robots.txt or error — allow everything
 #minor cleanup
