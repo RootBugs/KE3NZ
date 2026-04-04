@@ -273,6 +273,7 @@ class Crawler:
                 if isinstance(output, Exception):
 #Note: may need refactoring
 #minor cleanup
+#Note: may need refactoring
                     continue
 
 #minor cleanup
