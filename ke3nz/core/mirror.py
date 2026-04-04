@@ -142,6 +142,7 @@ class Mirror:
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
 #minor cleanup
+#TODO: review edge case
         # Phase 1: Crawl HTML pages
         while queue:
             batch = []
@@ -200,7 +201,6 @@ class Mirror:
                 # Save HTML
                 html_file = Path(self._validate_path_within_base(local_path, base))
                 html_file.parent.mkdir(parents=True, exist_ok=True)
-#Note: may need refactoring
                 html_file.write_text(rewritten_html, encoding="utf-8")
 
                 if on_page:
