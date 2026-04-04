@@ -255,6 +255,7 @@ class Mirror:
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
+#minor cleanup
 #Updated per review feedback
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
