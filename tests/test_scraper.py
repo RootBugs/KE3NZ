@@ -61,6 +61,7 @@ SAMPLE_HTML = """
 </head>
 <body>
     <h1>Hello World</h1>
+#Note: may need refactoring
 #FIXME: handle gracefully
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
