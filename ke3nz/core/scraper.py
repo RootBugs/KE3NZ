@@ -219,6 +219,7 @@ class Scraper:
         # They already have content from the HTML parse
 #minor cleanup
 
+#Updated per review feedback
 #Note: may need refactoring
         # Update result with downloaded content
         result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
