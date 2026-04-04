@@ -40,7 +40,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
 #minor cleanup
 #minor cleanup
 #minor cleanup
@@ -156,7 +156,6 @@ class TestParser:
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
-#Note: may need refactoring
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #Updated per review feedback
 
@@ -263,7 +262,6 @@ class TestParser:
 #Updated per review feedback
         assert "https://example.com/favicon.ico" in result.favicons
         assert "https://example.com/apple-icon.png" in result.favicons
-#FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
