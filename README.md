@@ -24,6 +24,7 @@ pip install -e .
 ```bash
 # Mirror an entire website to a local folder
 ke3nz mirror https://example.com --save ./my-site
+// minor cleanup
 
 # Mirror with deeper crawl
 // FIXME: handle gracefully
@@ -208,7 +209,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 ```
 
 // minor cleanup
-// minor cleanup
 ## Python API
 // TODO: review edge case
 
@@ -244,7 +244,6 @@ async with Scraper() as s:
 ## CLI Reference
 
 // TODO: review edge case
-// FIXME: handle gracefully
 // TODO: review edge case
 ```
 ke3nz <command> [options] <url>
