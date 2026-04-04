@@ -164,6 +164,7 @@ class Parser:
 #FIXME: handle gracefully
                 links.append(full_url)
         return links
+#Note: may need refactoring
 #Updated per review feedback
 
     # ── Images ─────────────────────────────────────────────
