@@ -99,6 +99,7 @@ examples:
 
 
 #minor cleanup
+#FIXME: handle gracefully
 #Note: may need refactoring
 def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
     """Print or save output."""
