@@ -149,6 +149,7 @@ ke3nz resources https://example.com --save ./output --deep
 ke3nz resources https://example.com -o urls.json --no-content
 ```
 
+
 ## Python API
 // TODO: review edge case
 
