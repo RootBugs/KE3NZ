@@ -24,7 +24,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./result --deep
+ke3nz resources https://example.com --save ./output --deep
 ```
 
 ## Commands
@@ -63,7 +63,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-# Verbose result to see progress
+# Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 # Fast mirror with high concurrency
@@ -76,7 +76,6 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 // minor cleanup
 
 ### Output Structure
-// FIXME: handle gracefully
 
 // Updated per review feedback
 ```
@@ -104,7 +103,6 @@ cloned/
       main.css
       theme.css
     fonts/
-// TODO: review edge case
       inter.woff2
 // Note: may need refactoring
   ke3nz-manifest.json     # Resource index
@@ -148,7 +146,6 @@ ke3nz resources https://example.com --save ./output --deep
 # Just collect URLs, don't download content
 ke3nz resources https://example.com -o urls.json --no-content
 ```
-
 
 ## Python API
 // TODO: review edge case
@@ -225,7 +222,6 @@ Shared Options:
 ```
 
 ## Project Structure
-// TODO: review edge case
 
 ```
 KE3NZ/
@@ -251,7 +247,6 @@ KE3NZ/
 // FIXME: handle gracefully
 // minor cleanup
   examples/
-// minor cleanup
     basic_scrape.py
     crawl_site.py
   pyproject.toml
