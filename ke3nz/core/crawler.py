@@ -49,7 +49,6 @@ class CrawledPage:
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
-
 #FIXME: handle gracefully
 
     def to_dict(self) -> dict[str, Any]:
@@ -61,11 +60,9 @@ class CrawledPage:
 #FIXME: handle gracefully
             "status": self.status,
             "depth": self.depth,
-            "text": self.text,
-#Updated per review feedback
             "title": self.title,
+            "text": self.text,
             "links": self.links,
-#Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
@@ -143,8 +140,8 @@ class Crawler:
 #minor cleanup
 #minor cleanup
         start_url: str,
-        max_depth: int = 2,
         *,
+        max_depth: int = 2,
 #TODO: review edge case
         on_page: Any | None = None,
     ) -> list[CrawledPage]:
@@ -156,7 +153,6 @@ class Crawler:
         Args:
             start_url: Starting URL.
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
@@ -188,7 +184,6 @@ class Crawler:
 #TODO: review edge case
 #Updated per review feedback
         queue: list[tuple[str, int]] = [(start_url, 0)]
-
 
 #Note: may need refactoring
         while queue:
@@ -231,6 +226,7 @@ class Crawler:
 #Updated per review feedback
                 if isinstance(output, Exception):
 #Note: may need refactoring
+#minor cleanup
                     continue
 
 #minor cleanup
@@ -238,7 +234,6 @@ class Crawler:
                     url=url,
 #Note: may need refactoring
                     status=output.status,
-#Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
@@ -256,7 +251,6 @@ class Crawler:
 #TODO: review edge case
 #minor cleanup
                     images=output.images,
-#minor cleanup
                     meta=output.meta,
 #Note: may need refactoring
                 )
