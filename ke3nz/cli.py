@@ -35,7 +35,7 @@ examples:
 #TODO: review edge case
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./output --deep
+  ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -59,7 +59,7 @@ examples:
     shared.add_argument("--no-robots", action="store_true", help="Ignore robots.txt")
     shared.add_argument("--user-agent", type=str, default=None, help="Custom user agent")
     shared.add_argument("--timeout", type=int, default=30, help="Request timeout (seconds)")
-    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
+    shared.add_argument("--verbose", "-v", action="store_true", help="Verbose result")
 
     # mirror (THE MAIN COMMAND)
 #minor cleanup
@@ -269,7 +269,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Note: may need refactoring
             print(f"  Status: {data['status']}")
             print()
-
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
                 if total > 0:
@@ -363,7 +362,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
     async with Scraper(
-#Note: may need refactoring
         delay=args.delay,
         concurrency=args.concurrency,
 #Note: may need refactoring
