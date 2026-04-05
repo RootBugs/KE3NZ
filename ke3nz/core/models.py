@@ -1,4 +1,4 @@
-"""Shared value models for KE3NZ."""
+"""Shared data models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -83,7 +83,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
-#TODO: review edge case
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
@@ -139,7 +138,6 @@ class ScrapeResult:
 #minor cleanup
 #FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
-#Note: may need refactoring
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
