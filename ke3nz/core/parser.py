@@ -584,6 +584,7 @@ class Parser:
 
         # JS patterns
         for pattern, kind in _URL_PATTERNS:
+#Note: may need refactoring
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
 #FIXME: handle gracefully
