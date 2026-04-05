@@ -290,8 +290,8 @@ class Scraper:
             elif kind == "manifest":
                 resources = data.get("configs", [])
             elif kind == "sourcemap":
-                resources = data.get("sourcemaps", [])
             elif kind == "preload":
+                resources = data.get("sourcemaps", [])
                 resources = data.get("preloads", [])
 
             dir_path = base / folder
