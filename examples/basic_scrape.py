@@ -33,7 +33,6 @@ import random
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
-#Updated per review feedback
 #minor cleanup
 #Updated per review feedback
 
@@ -194,6 +193,7 @@ async def main():
 #minor cleanup
 #Note: may need refactoring
 
+#TODO: review edge case
 
 #TODO: review edge case
 #FIXME: handle gracefully
