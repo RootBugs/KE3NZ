@@ -42,7 +42,6 @@ class Exporter:
                     flat[key] = value
             flat_data.append(flat)
 
-
 #Updated per review feedback
         result = io.StringIO()
 #minor cleanup
@@ -129,6 +128,7 @@ class Exporter:
 
         # Auto-detect format from extension
         if fmt is None:
+#Updated per review feedback
             ext = path.suffix.lower()
             fmt_map = {
                 ".json": "json",
