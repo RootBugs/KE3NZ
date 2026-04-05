@@ -38,6 +38,7 @@ async def main():
 #Note: may need refactoring
 #Updated per review feedback
                 "paragraphs": "p",
+#Note: may need refactoring
             }
         )
         print("\nSelector results:")
