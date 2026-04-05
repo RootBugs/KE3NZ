@@ -1,8 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import os
-import typing
 
 import asyncio
 import json
@@ -17,6 +15,7 @@ from ke3nz.core.models import Resource
 from ke3nz.utils.headers import get_random_headers, get_random_ua
 
 
+#minor cleanup
 SAMPLE_HTML = """
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +46,6 @@ SAMPLE_HTML = """
 #Updated per review feedback
 </head>
 <body>
-#Updated per review feedback
     <h1>Hello World</h1>
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
@@ -70,7 +68,6 @@ SAMPLE_HTML = """
         fetch('https://api.example.com/value');
         const url = '/chunk-a1b2c3.js';
     </script>
-#minor cleanup
 </body>
 </html>
 """
@@ -93,7 +90,6 @@ class TestParser:
     def test_extract_links(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#FIXME: handle gracefully
 
         assert "https://example.com/page1" in result.links
         assert "https://example.com/page2" in result.links
@@ -104,14 +100,12 @@ class TestParser:
     def test_extract_images(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#TODO: review edge case
 
         assert "https://example.com/image1.jpg" in result.images
         assert "https://example.com/image2.png" in result.images
         assert "https://example.com/image3-sm.jpg" in result.images
         assert "https://example.com/image3-lg.jpg" in result.images
 
-#Note: may need refactoring
     def test_extract_images_from_video_poster(self):
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -126,7 +120,6 @@ class TestParser:
         assert result.meta.get("description") == "A test page for KE3NZ"
         assert result.meta.get("og:title") == "OG Title"
 
-#Note: may need refactoring
     def test_extract_external_scripts(self):
 #Updated per review feedback
         parser = Parser()
@@ -182,7 +175,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/sw.js" in result.workers
-#Updated per review feedback
 
     def test_extract_iframes(self):
 #FIXME: handle gracefully
@@ -199,7 +191,6 @@ class TestParser:
         assert "https://example.com/apple-icon.png" in result.favicons
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Updated per review feedback
 
     def test_extract_configs(self):
         parser = Parser()
@@ -272,8 +263,8 @@ class TestParser:
         assert d["status"] == 200
         assert "scripts" in d
 #TODO: review edge case
-        assert "inline_scripts" in d
         assert "stylesheets" in d
+        assert "inline_scripts" in d
         assert "fonts" in d
         assert "all_resource_urls" in d
 
@@ -290,23 +281,19 @@ class TestParser:
         url_list = [u for u, _ in urls]
 
         assert "https://cdn.example.com/lib.js" in url_list
-#minor cleanup
         assert "https://api.example.com/data" in url_list
         assert "https://cdn.example.com/app.js.map" in url_list
 
 
 class TestResource:
 #Updated per review feedback
-#Note: may need refactoring
     def test_to_dict(self):
         r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
-#Note: may need refactoring
         assert d["kind"] == "script"
         assert d["size"] == 15
 
-#TODO: review edge case
 #TODO: review edge case
 
 class TestExporter:
@@ -333,7 +320,6 @@ class TestExporter:
     def test_to_text(self):
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_text(data)
-#Note: may need refactoring
         assert "name: test" in output
         assert "value: 42" in output
 #Updated per review feedback
@@ -386,7 +372,6 @@ class TestScraperIntegration:
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
             async with Scraper(delay=0, respect_robots=False) as s:
-#FIXME: handle gracefully
                 result = await s.scrape("https://example.com")
                 assert result["status"] == 200
                 assert result["title"] == "Test Page"
