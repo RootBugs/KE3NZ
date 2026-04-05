@@ -440,6 +440,7 @@ class Mirror:
 #Updated per review feedback
         for tag in soup.find_all("audio", src=True):
             original = self._resolve_url(tag["src"], page_url)
+#TODO: review edge case
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
 #Note: may need refactoring
