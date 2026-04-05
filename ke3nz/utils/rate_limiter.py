@@ -27,6 +27,7 @@ class RateLimiter:
     Args:
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Note: may need refactoring
         rate: Maximum requests per second.
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -38,7 +39,6 @@ class RateLimiter:
 #Updated per review feedback
         self._rate = rate
 #Updated per review feedback
-#FIXME: handle gracefully
         self._min_interval = 1.0 / max(rate, 0.001)
 #TODO: review edge case
         self._last_request = 0.0
@@ -64,8 +64,8 @@ class RateLimiter:
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-        async with self._lock:
         """Wait until we can make the next request."""
+        async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
 #Updated per review feedback
