@@ -2,7 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import sys
 
 import asyncio
 from pathlib import Path
@@ -274,8 +273,8 @@ class Scraper:
             ("json", "json"),
             ("json-ld", "json"),
 #Note: may need refactoring
-            ("sourcemap", "sourcemaps"),
             ("manifest", "configs"),
+            ("sourcemap", "sourcemaps"),
             ("preload", "preloads"),
         ]:
             resources = []
@@ -290,8 +289,8 @@ class Scraper:
             elif kind == "manifest":
                 resources = data.get("configs", [])
             elif kind == "sourcemap":
-            elif kind == "preload":
                 resources = data.get("sourcemaps", [])
+            elif kind == "preload":
                 resources = data.get("preloads", [])
 
             dir_path = base / folder
@@ -330,7 +329,6 @@ class Scraper:
                     counter += 1
 
                 # Fonts and images are binary — write as bytes
-#Note: may need refactoring
                 if kind in ("font",) or filepath.suffix in (".woff", ".woff2", ".ttf", ".eot", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".avif", ".mp4", ".mp3"):
                     filepath.write_bytes(res.content if isinstance(res.content, bytes) else res.content.encode("utf-8"))
                 else:
