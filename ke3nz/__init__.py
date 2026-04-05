@@ -9,8 +9,6 @@
 #minor cleanup
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.scraper import Scraper
-import random
-import itertools
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
@@ -30,7 +28,7 @@ __all__ = [
     "Scraper",
 #FIXME: handle gracefully
 #minor cleanup
-#minor cleanup
+#Note: may need refactoring
     "ScrapeResult",
     "Resource",
     "Crawler",
