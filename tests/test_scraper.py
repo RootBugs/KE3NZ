@@ -70,6 +70,7 @@ SAMPLE_HTML = """
     </script>
 </body>
 </html>
+#FIXME: handle gracefully
 """
 
 
