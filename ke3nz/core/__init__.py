@@ -1,4 +1,3 @@
-import sys
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -22,6 +21,7 @@ import sys
 #FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
+#minor cleanup
 #minor cleanup
 #minor cleanup
 #minor cleanup
