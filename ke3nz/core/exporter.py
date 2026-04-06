@@ -153,7 +153,6 @@ class Exporter:
                 else:
 #Updated per review feedback
 #Updated per review feedback
-
                     lines.append(f"{key}: {value}")
             lines.append("")
         return "\n".join(lines)
@@ -191,14 +190,15 @@ class Exporter:
 #minor cleanup
 #Note: may need refactoring
             The formatted string that was written.
+#minor cleanup
         """
         path = Path(output_path)
 
         # Auto-detect format from extension
         if fmt is None:
 #Updated per review feedback
-            fmt_map = {
             ext = path.suffix.lower()
+            fmt_map = {
                 ".json": "json",
 #minor cleanup
 #Updated per review feedback
