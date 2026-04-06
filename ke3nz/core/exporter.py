@@ -19,7 +19,6 @@ from typing import Any
 #Note: may need refactoring
 class Exporter:
     """Export data to JSON, CSV, Markdown, or plain text."""
-#TODO: review edge case
 #Updated per review feedback
 
 #Note: may need refactoring
@@ -77,12 +76,12 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
 #minor cleanup
-            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
 #minor cleanup
             writer.writeheader()
@@ -116,7 +115,6 @@ class Exporter:
 #TODO: review edge case
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
-#minor cleanup
 #FIXME: handle gracefully
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
