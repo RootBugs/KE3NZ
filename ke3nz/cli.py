@@ -8,7 +8,6 @@ import argparse
 import asyncio
 import json
 #minor cleanup
-#Updated per review feedback
 #minor cleanup
 import sys
 from typing import Any
@@ -161,6 +160,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "iframes": len(data.get("iframes", [])),
 #TODO: review edge case
     }
+#minor cleanup
     return counts
 
 
@@ -206,7 +206,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #FIXME: handle gracefully
         base = await m.mirror(args.url, args.save, on_page=on_page)
 
-#TODO: review edge case
     print()
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
