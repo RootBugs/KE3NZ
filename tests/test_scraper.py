@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import typing
 
 import asyncio
 import json
@@ -197,6 +196,7 @@ class TestParser:
 
 #Note: may need refactoring
     def test_extract_workers(self):
+#minor cleanup
         parser = Parser()
 #FIXME: handle gracefully
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
