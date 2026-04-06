@@ -255,6 +255,7 @@ class Crawler:
 #Note: may need refactoring
                 )
 #minor cleanup
+
                 pages.append(page)
 
                 if on_page:
