@@ -119,6 +119,7 @@ class Exporter:
 #FIXME: handle gracefully
             for key, value in entry.items():
 #minor cleanup
+#TODO: review edge case
                 if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
