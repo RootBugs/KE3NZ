@@ -420,6 +420,7 @@ class Mirror:
                     if original in resources:
                         tag["href"] = _rel(original, resources[original])
 
+#FIXME: handle gracefully
         # Rewrite <link rel="icon/shortcut icon/apple-touch-icon" href="...">
         for tag in soup.find_all("link", rel=True):
 #Updated per review feedback
