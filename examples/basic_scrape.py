@@ -67,13 +67,13 @@ async def main():
 #TODO: review edge case
 #TODO: review edge case
         items = await s.scrape(
+#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
             "https://example.com",
 #Note: may need refactoring
-#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
@@ -143,8 +143,8 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
-        results = await s.fetch_many(urls)
     async with Scraper() as s:
+        results = await s.fetch_many(urls)
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -157,7 +157,6 @@ async def main():
 #Note: may need refactoring
 #TODO: review edge case
 #minor cleanup
-
 
 
 #TODO: review edge case
