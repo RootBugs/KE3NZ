@@ -243,6 +243,7 @@ class ScrapeResult:
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
+#Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
             "scripts": [r.to_dict() for r in self.scripts],
