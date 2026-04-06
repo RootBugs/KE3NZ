@@ -173,6 +173,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #minor cleanup
     audios: list[str] = field(default_factory=list)
+#Updated per review feedback
 #FIXME: handle gracefully
 
 #minor cleanup
@@ -243,7 +244,6 @@ class ScrapeResult:
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
-#Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
             "scripts": [r.to_dict() for r in self.scripts],
@@ -282,7 +282,6 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
-#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
             "all_resource_urls": self.all_resource_urls,
