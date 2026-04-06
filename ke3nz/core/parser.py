@@ -227,8 +227,8 @@ class Parser:
             name = tag.get("name") or tag.get("property", "")
             content = tag.get("content", "")
             if name and content:
-                meta[name] = content
         return meta
+                meta[name] = content
 
     # ── External Scripts ───────────────────────────────────
 
