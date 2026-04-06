@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import random
 #Note: may need refactoring
 
 #minor cleanup
@@ -23,6 +22,7 @@ class Resource:
     content: str = ""
     content_type: str = ""
 #minor cleanup
+#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
     size: int = 0
@@ -228,7 +228,6 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
-#FIXME: handle gracefully
 #TODO: review edge case
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
