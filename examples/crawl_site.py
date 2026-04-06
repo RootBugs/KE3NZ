@@ -10,8 +10,6 @@
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
-#FIXME: handle gracefully
-#minor cleanup
 #TODO: review edge case
 #minor cleanup
 """Example: Crawling a website with KE3NZ."""
@@ -112,6 +110,7 @@ async def main():
 
 #TODO: review edge case
 #Updated per review feedback
+#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
