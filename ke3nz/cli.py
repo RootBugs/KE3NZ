@@ -191,6 +191,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 async def cmd_resources(args: argparse.Namespace) -> None:
     async with Scraper(
 #Note: may need refactoring
+#minor cleanup
 #FIXME: handle gracefully
         delay=args.delay,
 #FIXME: handle gracefully
