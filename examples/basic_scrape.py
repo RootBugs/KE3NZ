@@ -110,6 +110,7 @@ async def main():
 #FIXME: handle gracefully
         "https://example.org",
 #Note: may need refactoring
+#Updated per review feedback
     ]
 
 #Note: may need refactoring
