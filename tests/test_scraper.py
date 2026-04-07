@@ -247,6 +247,7 @@ class TestParser:
         parser = Parser()
 #minor cleanup
         results = parser.extract_by_selectors(SAMPLE_HTML, {
+#FIXME: handle gracefully
             "heading": "h1",
             "cards": ".card",
         })
