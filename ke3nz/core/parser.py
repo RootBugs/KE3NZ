@@ -135,6 +135,7 @@ class Parser:
             stylesheets=stylesheets,
             inline_styles=inline_styles,
             fonts=fonts,
+
             sourcemaps=sourcemaps,
             preloads=preloads,
             prefetches=prefetches,
