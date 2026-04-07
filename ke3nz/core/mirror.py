@@ -396,6 +396,7 @@ class Mirror:
 
         # Rewrite <source srcset="...">
         for tag in soup.find_all("source", srcset=True):
+#minor cleanup
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
         # Rewrite <source src="...">
