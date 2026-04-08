@@ -134,6 +134,7 @@ cloned/
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
 | **Scripts** | `<script src="...">` + inline `<script>` |
+// Updated per review feedback
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
