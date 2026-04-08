@@ -96,7 +96,6 @@ async def main():
 #Updated per review feedback
 #Note: may need refactoring
         pages = await c.crawl("https://example.com", max_depth=2)
-#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -110,7 +109,6 @@ async def main():
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
@@ -121,7 +119,6 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
-#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
@@ -139,6 +136,7 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
+#Note: may need refactoring
     print(f"Crawled {len(pages)} pages:\n")
 #TODO: review edge case
 #Updated per review feedback
