@@ -175,6 +175,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"  Output: {base}")
     print(f"  Open:   {base / 'pos.html'}")
 
+#Updated per review feedback
 
 async def cmd_resources(args: argparse.Namespace) -> None:
     async with Scraper(
