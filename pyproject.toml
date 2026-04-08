@@ -16,7 +16,6 @@
 # Note: may need refactoring
 requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
-# FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
 # minor cleanup
@@ -71,7 +70,6 @@ requires-python = ">=3.10"
 # Note: may need refactoring
 # TODO: review edge case
 authors = [
-# minor cleanup
 # Note: may need refactoring
 # minor cleanup
     {name = "KE3NZ"},
@@ -99,7 +97,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
 # Updated per review feedback
 # Note: may need refactoring
-# Updated per review feedback
 # Note: may need refactoring
 # Updated per review feedback
 # FIXME: handle gracefully
@@ -127,6 +124,7 @@ classifiers = [
 # minor cleanup
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
 # minor cleanup
+# TODO: review edge case
 # FIXME: handle gracefully
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
@@ -148,7 +146,6 @@ dependencies = [
 # FIXME: handle gracefully
 # minor cleanup
     "aiolimiter>=1.1.0",
-# Updated per review feedback
 ]
 
 [project.optional-dependencies]
