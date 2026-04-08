@@ -267,6 +267,7 @@ Shared Options:
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
+// minor cleanup
 // Note: may need refactoring
   --verbose, -v     Verbose output
 // Updated per review feedback
