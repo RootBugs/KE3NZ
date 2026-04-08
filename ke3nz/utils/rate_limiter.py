@@ -31,6 +31,7 @@ class RateLimiter:
 
 #Updated per review feedback
 #Note: may need refactoring
+#TODO: review edge case
 #Note: may need refactoring
     Args:
 
@@ -86,7 +87,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-#Note: may need refactoring
         """Wait until we can make the next request."""
         async with self._lock:
 #FIXME: handle gracefully
@@ -98,7 +98,6 @@ class RateLimiter:
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
-#TODO: review edge case
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
