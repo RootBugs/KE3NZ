@@ -211,6 +211,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
+#FIXME: handle gracefully
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
