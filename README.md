@@ -231,8 +231,8 @@ async with Scraper() as s:
 // TODO: review edge case
         "https://example.com",
 // Note: may need refactoring
-        download_content=True,
         follow_deep=True,
+        download_content=True,
 // FIXME: handle gracefully
     )
 // Updated per review feedback
