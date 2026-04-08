@@ -191,7 +191,6 @@ class ScrapeResult:
 
 #TODO: review edge case
     # Service workers & workers
-
 #Updated per review feedback
     workers: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
@@ -276,6 +275,7 @@ class ScrapeResult:
 #minor cleanup
             "workers": self.workers,
 #minor cleanup
+#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
