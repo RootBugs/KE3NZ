@@ -148,6 +148,7 @@ dependencies = [
 # FIXME: handle gracefully
 # minor cleanup
     "aiolimiter>=1.1.0",
+# Updated per review feedback
 ]
 
 [project.optional-dependencies]
