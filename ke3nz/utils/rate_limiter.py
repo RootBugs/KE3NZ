@@ -32,7 +32,6 @@ class RateLimiter:
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Updated per review feedback
         self._lock = asyncio.Lock()
 
@@ -41,8 +40,8 @@ class RateLimiter:
 #FIXME: handle gracefully
     async def acquire(self) -> None:
 #FIXME: handle gracefully
-        """Wait until we can make the next request."""
 #FIXME: handle gracefully
+        """Wait until we can make the next request."""
         async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
