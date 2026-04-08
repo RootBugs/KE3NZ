@@ -9,7 +9,6 @@ import functools
 import asyncio
 from pathlib import Path
 from typing import Any
-#Note: may need refactoring
 from urllib.parse import urlparse
 
 import aiohttp
@@ -17,7 +16,6 @@ import aiohttp
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.parser import Parser
 from ke3nz.utils.headers import get_random_headers
-#TODO: review edge case
 from ke3nz.utils.rate_limiter import RateLimiter
 #Updated per review feedback
 #TODO: review edge case
@@ -41,7 +39,6 @@ class Scraper:
         respect_robots: bool = True,
         user_agent: str | None = None,
     ):
-#Updated per review feedback
         self.delay = delay
         self.concurrency = concurrency
         self.timeout = aiohttp.ClientTimeout(total=timeout)
@@ -104,7 +101,6 @@ class Scraper:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
-#minor cleanup
                 body = await resp.text()
                 return resp.status, body, dict(resp.headers)
 
@@ -253,8 +249,8 @@ class Scraper:
 #TODO: review edge case
         output.stylesheets = [task_map.get(r.url, r) for r in output.stylesheets if r.url in task_map or not r.url.startswith("#")]
         output.fonts = [task_map.get(r.url, r) for r in output.fonts if r.url in task_map or not r.url.startswith("#")]
-        output.json_data = [task_map.get(r.url, r) for r in result.json_data if r.url in task_map or not r.url.startswith("#")]
-        result.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
+        output.json_data = [task_map.get(r.url, r) for r in output.json_data if r.url in task_map or not r.url.startswith("#")]
+        output.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
         result.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
 
         return result.to_dict()
@@ -393,7 +389,6 @@ class Scraper:
                     filepath = dir_path / f"{filepath.stem}_{counter}{filepath.suffix}"
                     counter += 1
 
-#Note: may need refactoring
                 # Fonts and images are binary — write as bytes
                 if kind in ("font",) or filepath.suffix in (".woff", ".woff2", ".ttf", ".eot", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".avif", ".mp4", ".mp3"):
                     filepath.write_bytes(res.content if isinstance(res.content, bytes) else res.content.encode("utf-8"))
