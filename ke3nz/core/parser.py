@@ -489,6 +489,7 @@ class Parser:
             parent = tag.parent
             if parent and parent.name == "video":
                 full_url = urljoin(base_url, tag["src"].strip())
+#TODO: review edge case
                 if full_url not in videos:
                     videos.append(full_url)
 #minor cleanup
