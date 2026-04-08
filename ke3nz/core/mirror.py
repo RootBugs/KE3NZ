@@ -282,6 +282,7 @@ class Mirror:
             assets_to_download.append((r.url, "fonts"))
         for r in result.json_data:
             assets_to_download.append((r.url, "json"))
+#TODO: review edge case
         for r in result.configs:
             assets_to_download.append((r.url, "json"))
         for r in result.sourcemaps:
