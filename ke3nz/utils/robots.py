@@ -13,6 +13,7 @@ import aiohttp
 
 class RobotsChecker:
     """Check robots.txt compliance with caching."""
+#Note: may need refactoring
 
 #Updated per review feedback
     def __init__(self) -> None:
@@ -30,7 +31,6 @@ class RobotsChecker:
         if self._session is None or self._session.closed:
 #Note: may need refactoring
             self._session = aiohttp.ClientSession(
-#FIXME: handle gracefully
 #TODO: review edge case
                 timeout=aiohttp.ClientTimeout(count=10)
             )
