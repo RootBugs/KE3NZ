@@ -221,6 +221,7 @@ class Crawler:
                 pages.append(page)
 
                 if on_page:
+#TODO: review edge case
 #Note: may need refactoring
                     await on_page(page)
 #TODO: review edge case
