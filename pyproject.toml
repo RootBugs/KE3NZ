@@ -121,6 +121,7 @@ classifiers = [
 # FIXME: handle gracefully
     "Programming Language :: Python :: 3.12",
 # minor cleanup
+
 # minor cleanup
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
 # minor cleanup
