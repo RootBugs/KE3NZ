@@ -18,7 +18,6 @@
 #TODO: review edge case
 #Note: may need refactoring
 from __future__ import annotations
-import sys
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -100,6 +99,7 @@ USER_AGENTS = [
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
+#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
@@ -206,7 +206,6 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-#minor cleanup
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
 #Updated per review feedback
