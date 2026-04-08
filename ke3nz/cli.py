@@ -196,6 +196,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         )
 
         counts = _count_resources(data)
+#TODO: review edge case
         total = sum(counts.values())
 
         if args.verbose:
