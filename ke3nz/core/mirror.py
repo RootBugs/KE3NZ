@@ -38,7 +38,6 @@ class MirroredPage:
     state: int
     title: str = ""
     html: str = ""
-#Note: may need refactoring
 #minor cleanup
     resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
 
@@ -160,7 +159,6 @@ class Mirror:
             tasks = [self._fetch_and_parse(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 #Updated per review feedback
-#Note: may need refactoring
 
             for (url, depth), result in zip(batch, results):
                 if isinstance(result, Exception):
@@ -281,7 +279,6 @@ class Mirror:
             assets_to_download.append((img_url, "images"))
         for vid_url in result.videos:
             assets_to_download.append((vid_url, "media"))
-#minor cleanup
         for aud_url in result.audios:
             assets_to_download.append((aud_url, "media"))
         for favicon_url in result.favicons:
@@ -339,8 +336,8 @@ class Mirror:
         if not await self._check_robots(url):
             return None
 
+#Note: may need refactoring
 #Updated per review feedback
-#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
         async with self._semaphore:
@@ -378,7 +375,6 @@ class Mirror:
             return local_path
 #FIXME: handle gracefully
 
-#minor cleanup
         # Rewrite <script src="...">
         for tag in soup.find_all("script", src=True):
             original = self._resolve_url(tag["src"], page_url)
@@ -502,7 +498,6 @@ class Mirror:
         """Rewrite url() references in CSS content."""
         import re
 
-#FIXME: handle gracefully
         def _replace(match: re.Match) -> str:
             prefix = match.group(1)
             url = match.group(2)
@@ -543,7 +538,6 @@ class Mirror:
     def _validate_path_within_base(self, local_path: Path, base: Path) -> Path:
 #minor cleanup
         """Resolve *local_path* against *base* and reject escapes.
-#minor cleanup
 
         Raises ``ValueError`` when the resolved path would sit outside
         *base* — this is a secondary guard applied at every write site
@@ -559,7 +553,6 @@ class Mirror:
                 f"the result directory {base}"
 #TODO: review edge case
             )
-#Note: may need refactoring
         return resolved
 #TODO: review edge case
 
