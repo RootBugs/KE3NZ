@@ -148,6 +148,7 @@ class Parser:
 
         return ScrapeResult(
             url=url,
+#TODO: review edge case
             status=status,
             html=html,
             title=title,
