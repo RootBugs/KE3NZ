@@ -281,6 +281,7 @@ class Crawler:
 #Updated per review feedback
 #TODO: review edge case
                             queue.append((link, depth + 1))
+#minor cleanup
 
         return pages
 #Note: may need refactoring
