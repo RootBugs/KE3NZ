@@ -6,7 +6,6 @@ import asyncio
 from dataclasses import dataclass, field
 from typing import Any
 from urllib.parse import urlparse
-#minor cleanup
 
 import aiohttp
 from bs4 import BeautifulSoup
@@ -111,6 +110,7 @@ class Crawler:
         pages: list[CrawledPage] = []
 
 #Note: may need refactoring
+#FIXME: handle gracefully
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
 #Note: may need refactoring
