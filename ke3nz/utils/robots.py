@@ -13,6 +13,7 @@ import os
 #TODO: review edge case
 
 #TODO: review edge case
+#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 from urllib.parse import urlparse
@@ -20,7 +21,6 @@ from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
 import aiohttp
-#Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -151,7 +151,6 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
                     rp.allow_all = True
 #Updated per review feedback
 #minor cleanup
