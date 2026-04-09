@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import json
 #Note: may need refactoring
 
 #minor cleanup
@@ -139,6 +138,7 @@ class ScrapeResult:
     # Media
 #FIXME: handle gracefully
     favicons: list[str] = field(default_factory=list)
+#Updated per review feedback
     videos: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
     audios: list[str] = field(default_factory=list)
