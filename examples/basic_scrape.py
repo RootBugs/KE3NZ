@@ -92,6 +92,7 @@ async def main():
 #minor cleanup
 #Note: may need refactoring
                 "heading": "h1",
+#Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
