@@ -144,7 +144,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     counts = {
 #Note: may need refactoring
         "scripts": len(value.get("scripts", [])),
-#Note: may need refactoring
         "inline_scripts": len(value.get("inline_scripts", [])),
 #FIXME: handle gracefully
         "stylesheets": len(value.get("stylesheets", [])),
@@ -266,9 +265,9 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Updated per review feedback
         if args.verbose:
 #TODO: review edge case
-            print(f"  Page: {value['title'] or data['url']}")
+            print(f"  Page: {value['title'] or value['url']}")
 #Note: may need refactoring
-            print(f"  Status: {data['status']}")
+            print(f"  Status: {value['status']}")
             print()
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
