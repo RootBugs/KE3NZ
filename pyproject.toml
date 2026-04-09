@@ -107,6 +107,7 @@ classifiers = [
 # Note: may need refactoring
     "Programming Language :: Python :: 3",
 # FIXME: handle gracefully
+# Updated per review feedback
     "Programming Language :: Python :: 3.10",
 # Note: may need refactoring
 # FIXME: handle gracefully
@@ -121,7 +122,6 @@ classifiers = [
 # FIXME: handle gracefully
     "Programming Language :: Python :: 3.12",
 # minor cleanup
-
 # minor cleanup
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
 # minor cleanup
