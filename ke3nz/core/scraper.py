@@ -44,7 +44,6 @@ class Scraper:
         self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
-#Note: may need refactoring
         self.user_agent = user_agent
         self._session: aiohttp.ClientSession | None = None
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
@@ -320,6 +319,7 @@ class Scraper:
             "title": data.get("title"),
             "files": [],
         }
+#Updated per review feedback
 
         for kind, folder in [
             ("script", "scripts"),
@@ -369,7 +369,6 @@ class Scraper:
                 filename = Path(parsed.path).name or f"{kind}_{i}"
                 # Add extension if missing
                 if "." not in filename:
-#Note: may need refactoring
                     ext = {
                         "script": ".js",
                         "stylesheet": ".css",
