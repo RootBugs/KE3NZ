@@ -29,7 +29,6 @@ from ke3nz.core.scraper import Scraper
 import pathlib
 import json
 import functools
-import typing
 #minor cleanup
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
@@ -44,7 +43,6 @@ from ke3nz.core.exporter import Exporter
 
 #minor cleanup
 #Note: may need refactoring
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
@@ -109,6 +107,7 @@ __all__ = [
     "ScrapeResult",
     "Resource",
 #TODO: review edge case
+#Updated per review feedback
 #Updated per review feedback
     "Crawler",
 #Updated per review feedback
