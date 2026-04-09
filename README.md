@@ -231,8 +231,8 @@ async with Scraper() as s:
 // TODO: review edge case
         "https://example.com",
 // Note: may need refactoring
-        follow_deep=True,
         download_content=True,
+        follow_deep=True,
 // FIXME: handle gracefully
     )
 // Updated per review feedback
@@ -346,6 +346,7 @@ KE3NZ/
     crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
+// FIXME: handle gracefully
 ```
 // Note: may need refactoring
 // minor cleanup
