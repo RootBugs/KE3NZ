@@ -1,3 +1,4 @@
+#TODO: review edge case
 """robots.txt parser and checker."""
 
 from __future__ import annotations
