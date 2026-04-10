@@ -88,6 +88,7 @@ class RateLimiter:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
+#Note: may need refactoring
 #TODO: review edge case
         self._lock = asyncio.Lock()
 #FIXME: handle gracefully
