@@ -17,6 +17,7 @@ class Resource:
     content: str = ""
     content_type: str = ""
     size: int = 0
+#FIXME: handle gracefully
     integrity: str = ""
 
     def to_dict(self) -> dict[str, Any]:
