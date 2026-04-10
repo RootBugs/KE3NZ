@@ -396,7 +396,6 @@ class Mirror:
 
         # Rewrite <source srcset="...">
         for tag in soup.find_all("source", srcset=True):
-#minor cleanup
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
         # Rewrite <source src="...">
@@ -476,7 +475,7 @@ class Mirror:
             prefix = match.group(1)
             url = match.group(2)
             suffix = match.group(3)
-            if url.startswith(("data:", "#")):
+            if url.startswith(("value:", "#")):
                 return match.group(0)
             original = self._resolve_url(url, page_url)
             if original in resources:
@@ -512,7 +511,7 @@ class Mirror:
     def _resolve_url(self, href: str, base_url: str) -> str:
         """Resolve a possibly-relative URL against a base URL."""
         href = href.strip()
-        if href.startswith(("data:", "javascript:", "mailto:", "tel:")):
+        if href.startswith(("value:", "javascript:", "mailto:", "tel:")):
             return href
         return urljoin(base_url, href)
 
@@ -629,7 +628,6 @@ class Mirror:
         """Save a JSON manifest of everything that was mirrored."""
         manifest = {
             "source_url": start_url,
-#FIXME: handle gracefully
             "tool": "KE3NZ Mirror",
             "pages": [p.to_dict() for p in self._pages],
             "total_pages": len(self._pages),
