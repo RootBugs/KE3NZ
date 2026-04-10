@@ -37,6 +37,7 @@ SAMPLE_HTML = """
         body { margin: 0; }
         @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
     </style>
+#Updated per review feedback
 </head>
 <body>
     <h1>Hello World</h1>
@@ -246,7 +247,6 @@ class TestParser:
         assert "inline_scripts" in d
         assert "fonts" in d
         assert "all_resource_urls" in d
-
 
     def test_extract_urls_from_js(self):
         js = """
