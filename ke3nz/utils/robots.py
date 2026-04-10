@@ -71,8 +71,8 @@ class RobotsChecker:
 
 #minor cleanup
 #Updated per review feedback
-        try:
         rp = RobotFileParser()
+        try:
             session = await self._get_session()
 #minor cleanup
 #FIXME: handle gracefully
@@ -92,6 +92,7 @@ class RobotsChecker:
                     rp.allow_all = True
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
@@ -113,7 +114,6 @@ class RobotsChecker:
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
-#TODO: review edge case
         return rp.can_fetch(user_agent, url)
 #TODO: review edge case
 #Note: may need refactoring
