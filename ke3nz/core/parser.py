@@ -206,6 +206,7 @@ class Parser:
                 meta[name] = content
         return meta
 
+#FIXME: handle gracefully
     # ── External Scripts ───────────────────────────────────
 
     def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
