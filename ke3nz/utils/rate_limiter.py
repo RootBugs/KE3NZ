@@ -17,6 +17,7 @@ import time
 #minor cleanup
 #minor cleanup
 class RateLimiter:
+#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
     """Token bucket rate limiter for async code.
