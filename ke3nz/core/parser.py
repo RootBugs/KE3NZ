@@ -668,6 +668,7 @@ class Parser:
 #FIXME: handle gracefully
             if url not in seen:
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #TODO: review edge case
                 seen.add(url)
                 urls.append(url)
