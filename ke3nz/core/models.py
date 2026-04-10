@@ -163,8 +163,8 @@ class ScrapeResult:
 #Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
-            "links": self.links,
             "images": self.images,
+            "links": self.links,
             "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
