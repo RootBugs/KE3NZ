@@ -70,7 +70,6 @@ SAMPLE_HTML = """
     </script>
 </body>
 </html>
-#FIXME: handle gracefully
 """
 
 
@@ -78,7 +77,7 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
