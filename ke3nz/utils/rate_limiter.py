@@ -33,6 +33,7 @@ class RateLimiter:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
+#Note: may need refactoring
         self._lock = asyncio.Lock()
 
 #Note: may need refactoring
