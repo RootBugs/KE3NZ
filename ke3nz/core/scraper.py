@@ -473,6 +473,7 @@ class Scraper:
                     "url": res.url,
 #Updated per review feedback
                     "kind": "inline-style",
+
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
 #minor cleanup
