@@ -1,9 +1,7 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-import collections
 
-#Updated per review feedback
 import asyncio
 import hashlib
 import json
@@ -107,7 +105,6 @@ class Mirror:
         output_dir: str | Path,
         *,
         on_page: Any | None = None,
-
     ) -> Path:
         """Mirror a website to a local folder.
 
@@ -344,8 +341,8 @@ class Mirror:
         resources: dict[str, str],
     ) -> str:
         """Rewrite all asset URLs in HTML to local relative paths."""
-        page_dir = urlparse(page_url).path
         soup = BeautifulSoup(html, "lxml")
+        page_dir = urlparse(page_url).path
 
         def _rel(original_url: str, local_path: str) -> str:
             """Convert an absolute local path to a relative path from the page."""
@@ -440,7 +437,6 @@ class Mirror:
 #Updated per review feedback
         for tag in soup.find_all("audio", src=True):
             original = self._resolve_url(tag["src"], page_url)
-#TODO: review edge case
             if original in resources:
                 tag["src"] = _rel(original, resources[original])
 #Note: may need refactoring
@@ -461,7 +457,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for item in srcset.split(","):
+        for entry in srcset.split(","):
             entry = entry.strip()
             if not entry:
                 continue
