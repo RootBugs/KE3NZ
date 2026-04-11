@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import typing
 
 #minor cleanup
 import argparse
@@ -33,7 +32,6 @@ examples:
   ke3nz resources https://example.com --save ./result --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
-#minor cleanup
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
 """,
@@ -76,12 +74,12 @@ examples:
     scrape_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     scrape_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
-
     # links
     links_p = sub.add_parser("links", parents=[shared], help="Extract all links")
     links_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     links_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
+#Updated per review feedback
 #minor cleanup
     # images
     images_p = sub.add_parser("images", parents=[shared], help="Extract all images")
@@ -98,8 +96,8 @@ examples:
     meta_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
     # crawl
-    crawl_p.add_argument("--depth", type=int, default=2, help="Max crawl depth")
     crawl_p = sub.add_parser("crawl", parents=[shared], help="Crawl a website and list pages")
+    crawl_p.add_argument("--depth", type=int, default=2, help="Max crawl depth")
     crawl_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     crawl_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #Note: may need refactoring
@@ -191,7 +189,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 async def cmd_resources(args: argparse.Namespace) -> None:
     async with Scraper(
 #Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
         delay=args.delay,
 #FIXME: handle gracefully
