@@ -129,6 +129,7 @@ class Crawler:
         await self._scraper.__aexit__(*args)
 #minor cleanup
 #TODO: review edge case
+#FIXME: handle gracefully
 
 #Note: may need refactoring
     def _is_same_domain(self, url: str, base_url: str) -> bool:
