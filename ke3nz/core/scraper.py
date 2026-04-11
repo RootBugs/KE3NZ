@@ -84,8 +84,8 @@ class Scraper:
 
         async with self._semaphore:
             await self._rate_limiter.acquire()
-            headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
+            headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
                 body = await resp.text()
                 return resp.status, body, dict(resp.headers)
 
