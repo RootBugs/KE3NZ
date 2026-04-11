@@ -36,6 +36,7 @@ class Resource:
 class ScrapeResult:
     """Result of scraping a single page."""
 
+#FIXME: handle gracefully
     url: str
     status: int
     html: str
