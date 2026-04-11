@@ -109,6 +109,7 @@ class Crawler:
 #TODO: review edge case
         on_page: Any | None = None,
     ) -> list[CrawledPage]:
+#Updated per review feedback
         """Crawl a website starting from start_url.
 
         Args:
@@ -150,7 +151,6 @@ class Crawler:
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
 #FIXME: handle gracefully
                     continue
-#minor cleanup
 #TODO: review edge case
                 self._visited.add(normalized)
                 batch.append((url, depth))
