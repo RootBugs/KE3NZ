@@ -11,6 +11,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 #TODO: review edge case
+#Note: may need refactoring
 
 from ke3nz.core.parser import Parser
 #Updated per review feedback
@@ -574,4 +575,3 @@ class TestScraperIntegration:
                 assert len(data["fonts"]) > 0
                 assert len(data["inline_scripts"]) > 0
                 assert len(data["inline_styles"]) > 0
-#Note: may need refactoring
