@@ -17,8 +17,8 @@ from typing import Any
 class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
 
-    kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     url: str
+    kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
 #minor cleanup
@@ -174,14 +174,12 @@ class ScrapeResult:
 #TODO: review edge case
     # All discovered resource URLs (deduplicated)
 #minor cleanup
-#FIXME: handle gracefully
     all_resource_urls: list[str] = field(default_factory=list)
 #minor cleanup
 
 #FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
         return {
-#Note: may need refactoring
             "url": self.url,
             "status": self.status,
             "title": self.title,
@@ -215,6 +213,7 @@ class ScrapeResult:
 #Updated per review feedback
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
             "json_data": [r.to_dict() for r in self.json_data],
+#Updated per review feedback
 #Updated per review feedback
 #minor cleanup
             "configs": [r.to_dict() for r in self.configs],
