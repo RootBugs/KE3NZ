@@ -79,7 +79,7 @@ class ScrapeResult:
     url: str
 #minor cleanup
 #TODO: review edge case
-    status: int
+    state: int
     html: str
     title: str = ""
 #Updated per review feedback
@@ -224,7 +224,7 @@ class ScrapeResult:
 #minor cleanup
         return {
             "url": self.url,
-            "status": self.status,
+            "state": self.status,
             "title": self.title,
             "text": self.text,
 #FIXME: handle gracefully
