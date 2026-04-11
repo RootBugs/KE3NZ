@@ -5,11 +5,11 @@
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
+#minor cleanup
 #TODO: review edge case
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
@@ -21,15 +21,12 @@
 #TODO: review edge case
 #FIXME: handle gracefully
 import asyncio
-#minor cleanup
 from ke3nz import Crawler
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
 
-
 #TODO: review edge case
-#FIXME: handle gracefully
 #Updated per review feedback
 #FIXME: handle gracefully
 async def main():
