@@ -32,7 +32,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/data/app.js" as="script">
+    <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
@@ -111,6 +111,7 @@ class TestParser:
         assert "https://example.com/image3-sm.jpg" in result.images
 #FIXME: handle gracefully
         assert "https://example.com/image3-lg.jpg" in result.images
+#Updated per review feedback
 
     def test_extract_images_from_video_poster(self):
         parser = Parser()
@@ -247,7 +248,6 @@ class TestParser:
         parser = Parser()
 #minor cleanup
         results = parser.extract_by_selectors(SAMPLE_HTML, {
-#FIXME: handle gracefully
             "heading": "h1",
             "cards": ".card",
         })
@@ -402,8 +402,8 @@ class TestScraperIntegration:
         mock_session.close = AsyncMock()
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
-                result = await s.scrape("https://example.com")
             async with Scraper(delay=0, respect_robots=False) as s:
+                result = await s.scrape("https://example.com")
                 assert result["status"] == 200
                 assert result["title"] == "Test Page"
                 assert len(result["links"]) > 0
