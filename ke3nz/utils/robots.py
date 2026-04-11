@@ -34,6 +34,7 @@ class RobotsChecker:
 #Updated per review feedback
     def __init__(self) -> None:
 #FIXME: handle gracefully
+#minor cleanup
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
