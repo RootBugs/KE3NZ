@@ -255,7 +255,6 @@ class Mirror:
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
-#minor cleanup
 #Updated per review feedback
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
@@ -320,7 +319,6 @@ class Mirror:
             assets_to_download.append((r.url, "assets"))
         for img_url in result.images:
             assets_to_download.append((img_url, "images"))
-#minor cleanup
         for vid_url in result.videos:
             assets_to_download.append((vid_url, "media"))
         for aud_url in result.audios:
@@ -364,7 +362,6 @@ class Mirror:
                 continue
 #minor cleanup
 #minor cleanup
-#TODO: review edge case
 #TODO: review edge case
 
 #Note: may need refactoring
@@ -433,6 +430,7 @@ class Mirror:
 #FIXME: handle gracefully
 #Updated per review feedback
 
+#Note: may need refactoring
         # Rewrite <script src="...">
         for tag in soup.find_all("script", src=True):
             original = self._resolve_url(tag["src"], page_url)
