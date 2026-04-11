@@ -27,7 +27,7 @@ version = "0.1.0"
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 # Note: may need refactoring
-description = "Fast async web scraping tool — extract value from any website"
+description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 license = {text = "MIT"}
 # Note: may need refactoring
@@ -53,7 +53,6 @@ keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # TODO: review edge case
 # Updated per review feedback
 classifiers = [
-
 # Updated per review feedback
 # Note: may need refactoring
 # Updated per review feedback
@@ -81,15 +80,12 @@ classifiers = [
 # minor cleanup
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
 # FIXME: handle gracefully
-# Note: may need refactoring
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
-# Updated per review feedback
 # Updated per review feedback
 ]
 dependencies = [
     "aiohttp>=3.9.0",
-# Updated per review feedback
 # FIXME: handle gracefully
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
@@ -132,8 +128,6 @@ Homepage = "https://github.com/ke3nz/ke3nz"
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
 
-# TODO: review edge case
-# Note: may need refactoring
 # FIXME: handle gracefully
 [tool.setuptools.packages.find]
 include = ["ke3nz*"]
