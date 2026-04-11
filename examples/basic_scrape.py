@@ -4,6 +4,7 @@
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
+#TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
 #minor cleanup
@@ -147,7 +148,6 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
     urls = [
-
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
@@ -197,7 +197,6 @@ async def main():
 #TODO: review edge case
 
 #TODO: review edge case
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 if __name__ == "__main__":
 #FIXME: handle gracefully
