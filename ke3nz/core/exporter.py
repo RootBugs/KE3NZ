@@ -105,8 +105,8 @@ class Exporter:
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
 #Note: may need refactoring
-                # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
+                # Escape pipes for markdown tables
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
