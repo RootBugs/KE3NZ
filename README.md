@@ -249,6 +249,7 @@ KE3NZ/
 // minor cleanup
   examples/
     basic_scrape.py
+// Updated per review feedback
     crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
