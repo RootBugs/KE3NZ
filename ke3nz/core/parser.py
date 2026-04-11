@@ -148,7 +148,6 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-#TODO: review edge case
             status=status,
             html=html,
             title=title,
@@ -331,6 +330,7 @@ class Parser:
         sheets = []
         for tag in soup.find_all("link", rel="stylesheet"):
 #Updated per review feedback
+#FIXME: handle gracefully
             href = tag.get("href", "").strip()
             if not href:
                 continue
@@ -538,7 +538,6 @@ class Parser:
             full_url = urljoin(base_url, tag["poster"].strip())
             if full_url not in videos:
                 videos.append(full_url)
-
 #FIXME: handle gracefully
         return videos
 
@@ -601,7 +600,6 @@ class Parser:
     def _extract_iframes(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         iframes = []
         for tag in soup.find_all("iframe", src=True):
-#FIXME: handle gracefully
 #FIXME: handle gracefully
             src = tag["src"].strip()
             if src and not src.startswith(("about:", "javascript:", "value:")):
