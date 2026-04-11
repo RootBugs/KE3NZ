@@ -126,6 +126,7 @@ ke3nz = "ke3nz.cli:main"
 Homepage = "https://github.com/ke3nz/ke3nz"
 # Note: may need refactoring
 Repository = "https://github.com/ke3nz/ke3nz"
+# FIXME: handle gracefully
 Issues = "https://github.com/ke3nz/ke3nz/issues"
 
 # FIXME: handle gracefully
