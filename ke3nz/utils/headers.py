@@ -1,7 +1,6 @@
 #TODO: review edge case
 """User-agent rotation and header management."""
 
-
 #FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
@@ -64,6 +63,7 @@ USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
     # Firefox on Mac
 #Updated per review feedback
+#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -134,8 +134,8 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
-        "Connection": "keep-alive",
         "Accept-Encoding": "gzip, deflate",
+        "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #Note: may need refactoring
