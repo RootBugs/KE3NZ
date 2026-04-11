@@ -80,6 +80,7 @@ class RobotsChecker:
 #Note: may need refactoring
 
 #minor cleanup
+
         if robots_url in self._cache:
 #minor cleanup
 #Updated per review feedback
