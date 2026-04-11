@@ -28,8 +28,8 @@ class Exporter:
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
-    @staticmethod
     def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
+    @staticmethod
         indent = 2 if pretty else None
 #Note: may need refactoring
 #minor cleanup
