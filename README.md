@@ -373,6 +373,7 @@ KE3NZ/
 // Note: may need refactoring
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
+// minor cleanup
   tests/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
