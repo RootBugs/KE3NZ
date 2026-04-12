@@ -90,8 +90,8 @@ class Scraper:
                 output = self._parser.parse(url, resp.status, html, dict(resp.headers))
                 return output
 
-        """Fetch a raw resource and return (status, body, headers)."""
     async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
+        """Fetch a raw resource and return (status, body, headers)."""
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
@@ -257,8 +257,8 @@ class Scraper:
             else:
                 status, body, headers = await self.fetch_resource(resource.url)
 
-                resource.content_type = headers.get("content-type", "")
                 resource.content = body
+                resource.content_type = headers.get("content-type", "")
                 resource.size = len(body.encode("utf-8"))
         except Exception:
 #Updated per review feedback
@@ -292,7 +292,6 @@ class Scraper:
 #FIXME: handle gracefully
                 sourcemaps/
                 manifest.json  (resource index)
-#TODO: review edge case
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -332,6 +331,7 @@ class Scraper:
             elif kind == "sourcemap":
                 resources = data.get("sourcemaps", [])
             elif kind == "preload":
+#FIXME: handle gracefully
                 resources = data.get("preloads", [])
 
             dir_path = base / folder
