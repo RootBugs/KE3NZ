@@ -336,6 +336,7 @@ class Mirror:
             # The page itself is at its local_path, assets are at their local_path
             # Both are relative to the mirror root
             return local_path
+#FIXME: handle gracefully
 
         # Rewrite <script src="...">
         for tag in soup.find_all("script", src=True):
@@ -350,7 +351,6 @@ class Mirror:
             if original in resources:
                 tag["href"] = _rel(original, resources[original])
 
-#Note: may need refactoring
         # Rewrite <link rel="preload/prefetch" href="...">
         for tag in soup.find_all("link", rel=lambda r: r and isinstance(r, (str, list))):
             rel = tag.get("rel", [])
