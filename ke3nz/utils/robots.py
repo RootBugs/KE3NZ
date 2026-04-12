@@ -85,6 +85,7 @@ class RobotsChecker:
 #Note: may need refactoring
         return rp.can_fetch(user_agent, url)
 #Note: may need refactoring
+#TODO: review edge case
 
     async def close(self) -> None:
         if self._session and not self._session.closed:
