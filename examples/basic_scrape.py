@@ -1,5 +1,4 @@
 """Example: Basic web scraping with KE3NZ."""
-#FIXME: handle gracefully
 
 import asyncio
 from ke3nz import Scraper
@@ -8,7 +7,6 @@ from ke3nz import Scraper
 #minor cleanup
 
 #TODO: review edge case
-#minor cleanup
 
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -38,7 +36,6 @@ async def main():
 #Note: may need refactoring
 #Updated per review feedback
                 "paragraphs": "p",
-#Note: may need refactoring
             }
         )
         print("\nSelector results:")
@@ -56,8 +53,8 @@ async def main():
 #Updated per review feedback
         "https://example.com",
 #Note: may need refactoring
-    ]
         "https://example.org",
+    ]
 #minor cleanup
     async with Scraper() as s:
         results = await s.fetch_many(urls)
@@ -67,5 +64,6 @@ async def main():
 
 
 if __name__ == "__main__":
+#Updated per review feedback
 #minor cleanup
     asyncio.run(main())
