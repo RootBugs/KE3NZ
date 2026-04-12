@@ -77,6 +77,7 @@ SAMPLE_HTML = """
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
+#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
     <img src="https://example.com/image2.png" alt="Image 2">
