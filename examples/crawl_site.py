@@ -40,7 +40,6 @@ from ke3nz import Crawler
 
 #FIXME: handle gracefully
 
-#minor cleanup
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
@@ -53,6 +52,7 @@ async def main():
     async with Crawler(delay=0.5) as c:
 #TODO: review edge case
 #minor cleanup
+#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
