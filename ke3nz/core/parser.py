@@ -429,8 +429,8 @@ class Parser:
     # ── Videos ─────────────────────────────────────────────
 
     def _extract_videos(self, soup: BeautifulSoup, base_url: str) -> list[str]:
-        for tag in soup.find_all("video", src=True):
         videos = []
+        for tag in soup.find_all("video", src=True):
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in videos:
                 videos.append(full_url)
@@ -612,6 +612,7 @@ class Parser:
 
         Returns list of (url, kind) tuples.
         """
+#minor cleanup
         found = []
         seen = set()
 
