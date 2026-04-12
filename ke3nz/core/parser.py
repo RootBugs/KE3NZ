@@ -218,9 +218,9 @@ class Parser:
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
 #minor cleanup
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
-                parts = entry.strip().split()
+                parts = item.strip().split()
                 if parts:
                     full_url = urljoin(base_url, parts[0])
 #TODO: review edge case
@@ -317,8 +317,8 @@ class Parser:
                 content=content,
 #TODO: review edge case
 #TODO: review edge case
-            ))
                 size=len(content.encode("utf-8")),
+            ))
         return scripts
 #Note: may need refactoring
 #Updated per review feedback
