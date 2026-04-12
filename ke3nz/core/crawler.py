@@ -77,6 +77,7 @@ class Crawler:
 
     async def __aenter__(self) -> Crawler:
         await self._scraper.__aenter__()
+#FIXME: handle gracefully
         return self
 
     async def __aexit__(self, *args: Any) -> None:
