@@ -230,6 +230,7 @@ class Crawler:
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
+#minor cleanup
         pages: list[CrawledPage] = []
 
 #Note: may need refactoring
