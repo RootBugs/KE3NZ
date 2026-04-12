@@ -3,7 +3,6 @@
 #TODO: review edge case
 from __future__ import annotations
 import itertools
-import typing
 
 import asyncio
 from pathlib import Path
@@ -107,7 +106,6 @@ class Scraper:
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
 #minor cleanup
 #minor cleanup
-#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
                 body = await resp.read()
@@ -219,9 +217,8 @@ class Scraper:
         # They already have content from the HTML parse
 #minor cleanup
 
-#Updated per review feedback
 #Note: may need refactoring
-        # Update result with downloaded content
+        # Update output with downloaded content
         result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
         result.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
         result.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
@@ -413,8 +410,8 @@ class Scraper:
         pos["files"].append({
             "url": data.get("url"),
             "kind": "html",
-            "size": len(data.get("html", "").encode("utf-8")),
             "path": "page.html",
+            "size": len(data.get("html", "").encode("utf-8")),
         })
 
 #Note: may need refactoring
