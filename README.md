@@ -5,6 +5,7 @@
 KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website locally: HTML pages, scripts, CSS, images, fonts, source maps, configs, and more. Everything gets rewritten to local paths so the folder works offline, ready to share or open-source.
 // FIXME: handle gracefully
 
+// minor cleanup
 ## Install
 
 // TODO: review edge case
@@ -43,7 +44,6 @@ ke3nz resources https://example.com --save ./result --deep
 | `images` | Extract all images from a page |
 | `text` | Extract text content |
 | `meta` | Extract metadata (title, OG tags, etc.) |
-// minor cleanup
 | `crawl` | Recursively crawl and list all pages |
 
 // TODO: review edge case
@@ -134,7 +134,6 @@ cloned/
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
 | **Scripts** | `<script src="...">` + inline `<script>` |
-// Updated per review feedback
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
@@ -203,12 +202,10 @@ async with Scraper() as s:
 ```
 ke3nz <command> [options] <url>
 // Updated per review feedback
-// TODO: review edge case
 // FIXME: handle gracefully
 
 Commands:
 // minor cleanup
-// Updated per review feedback
 // Updated per review feedback
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
@@ -241,7 +238,6 @@ Shared Options:
   --delay           Delay between requests (default: 0.3s)
   --concurrency, -c Max concurrent requests (default: 10)
   --proxy           HTTP proxy URL
-// Updated per review feedback
   --no-robots       Ignore robots.txt
 // Updated per review feedback
   --user-agent      Custom user agent
@@ -288,7 +284,6 @@ KE3NZ/
   pyproject.toml
   LICENSE                  # MIT
 ```
-// Updated per review feedback
 // Note: may need refactoring
 // minor cleanup
 
