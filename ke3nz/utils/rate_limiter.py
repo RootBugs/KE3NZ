@@ -140,6 +140,7 @@ class RateLimiter:
 #FIXME: handle gracefully
             now = time.monotonic()
 #Updated per review feedback
+#FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
