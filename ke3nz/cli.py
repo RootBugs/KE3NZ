@@ -133,7 +133,6 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
         Exporter.export(value, output_path, fmt)
         print(f"Saved to {output_path}")
     else:
-
 #FIXME: handle gracefully
         print(Exporter.to_json(value))
 
@@ -248,6 +247,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         user_agent=args.user_agent,
     ) as s:
         if args.verbose:
+#Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
