@@ -265,6 +265,7 @@ class TestParser:
 #TODO: review edge case
         assert "stylesheets" in d
         assert "inline_scripts" in d
+
         assert "fonts" in d
         assert "all_resource_urls" in d
 
