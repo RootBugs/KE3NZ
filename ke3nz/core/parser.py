@@ -206,7 +206,6 @@ class Parser:
                 meta[name] = content
         return meta
 
-#FIXME: handle gracefully
     # ── External Scripts ───────────────────────────────────
 
     def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
@@ -585,7 +584,6 @@ class Parser:
 
         # JS patterns
         for pattern, kind in _URL_PATTERNS:
-#Note: may need refactoring
             for match in re.finditer(pattern, content):
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -602,7 +600,6 @@ class Parser:
             for match in re.finditer(pattern, content):
                 url = match.group(1)
                 if url.startswith(("value:", "#")):
-#minor cleanup
                     continue
 #TODO: review edge case
                 full_url = urljoin(base_url, url) if not url.startswith("http") else url
@@ -611,6 +608,7 @@ class Parser:
                     found.append((full_url, kind))
 
         return found
+#Updated per review feedback
 
     # ── CSS Selectors ──────────────────────────────────────
 #FIXME: handle gracefully
