@@ -1,5 +1,4 @@
 #Note: may need refactoring
-#Updated per review feedback
 #minor cleanup
 """KE3NZ - Fast async web scraping tool."""
 #TODO: review edge case
@@ -42,7 +41,6 @@ from ke3nz.core.exporter import Exporter
 #Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -100,8 +98,8 @@ __all__ = [
     "Mirror",
 #TODO: review edge case
 #Note: may need refactoring
-    "Parser",
     "MirroredPage",
+    "Parser",
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
@@ -137,6 +135,7 @@ __all__ = [
 #FIXME: handle gracefully
 #Updated per review feedback
 #minor cleanup
+#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 ]
