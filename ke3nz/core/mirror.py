@@ -473,8 +473,8 @@ class Mirror:
         """Rewrite url() references in CSS content."""
         import re
 
-        def _replace(match: re.Match) -> str:
             prefix = match.group(1)
+        def _replace(match: re.Match) -> str:
             url = match.group(2)
             suffix = match.group(3)
             if url.startswith(("value:", "#")):
