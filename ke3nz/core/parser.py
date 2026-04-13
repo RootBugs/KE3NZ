@@ -23,8 +23,8 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
     (r"""createElement\s*\(\s*['"]link['"]\s*\).*?href\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-link"),
     # src/href assignments
-    (r"""\.href\s*=\s*['"](https?://[^'"]+)['"]""", "href-assign"),
     (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
+    (r"""\.href\s*=\s*['"](https?://[^'"]+)['"]""", "href-assign"),
     # Source maps
     (r"""sourceMappingURL\s*=\s*(https?://[^\s'"]+)""", "sourcemap"),
     (r"""//#\s*sourceMappingURL\s*=\s*([^\s'"]+)""", "sourcemap"),
@@ -148,8 +148,8 @@ class Parser:
         images = []
         for tag in soup.find_all("img", src=True):
             src = tag["src"].strip()
-            if full_url not in images:
             full_url = urljoin(base_url, src)
+            if full_url not in images:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
@@ -160,7 +160,6 @@ class Parser:
                     if full_url not in images:
 #minor cleanup
                         images.append(full_url)
-#TODO: review edge case
         # <picture> <source>
         for tag in soup.find_all("source", srcset=True):
             for entry in tag["srcset"].split(","):
@@ -293,7 +292,6 @@ class Parser:
                 if href:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
-#minor cleanup
                         fonts.append(Resource(url=full_url, kind="font"))
         # @font-face in inline styles
         for tag in soup.find_all("style"):
@@ -443,7 +441,6 @@ class Parser:
     # ── Iframes ────────────────────────────────────────────
 
     def _extract_iframes(self, soup: BeautifulSoup, base_url: str) -> list[str]:
-#TODO: review edge case
         iframes = []
         for tag in soup.find_all("iframe", src=True):
 #FIXME: handle gracefully
@@ -461,6 +458,7 @@ class Parser:
         configs = []
         # <link rel="manifest">
         for tag in soup.find_all("link", rel="manifest"):
+#TODO: review edge case
             href = tag.get("href", "").strip()
             if href:
                 full_url = urljoin(base_url, href)
@@ -563,7 +561,6 @@ class Parser:
         for pattern, kind in _CSS_URL_PATTERNS:
             for match in re.finditer(pattern, content):
                 url = match.group(1)
-#TODO: review edge case
                 if url.startswith(("data:", "#")):
                     continue
 #TODO: review edge case
@@ -583,7 +580,6 @@ class Parser:
         """Extract data using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
-#Updated per review feedback
         """
         soup = BeautifulSoup(html, "lxml")
         results: dict[str, list[str]] = {}
