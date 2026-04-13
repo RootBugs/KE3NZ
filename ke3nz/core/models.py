@@ -68,7 +68,6 @@ class Resource:
         }
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 
@@ -130,13 +129,11 @@ class ScrapeResult:
     inline_scripts: list[Resource] = field(default_factory=list)
 #Note: may need refactoring
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Updated per review feedback
 
     # CSS resources
 #FIXME: handle gracefully
 #TODO: review edge case
-#FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
     stylesheets: list[Resource] = field(default_factory=list)
@@ -304,7 +301,6 @@ class ScrapeResult:
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
 #Updated per review feedback
-
 #minor cleanup
 #FIXME: handle gracefully
             "configs": [r.to_dict() for r in self.configs],
@@ -314,7 +310,6 @@ class ScrapeResult:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
-
             "workers": self.workers,
 #minor cleanup
 #TODO: review edge case
@@ -337,6 +332,5 @@ class ScrapeResult:
 #TODO: review edge case
         }
 #FIXME: handle gracefully
-#Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
