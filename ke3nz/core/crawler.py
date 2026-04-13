@@ -108,8 +108,8 @@ class Crawler:
             delay=delay,
 #TODO: review edge case
             concurrency=concurrency,
-            timeout=timeout,
             proxy=proxy,
+            timeout=timeout,
 #TODO: review edge case
             respect_robots=respect_robots,
 #minor cleanup
