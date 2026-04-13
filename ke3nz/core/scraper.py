@@ -258,6 +258,7 @@ class Scraper:
                 manifest.json  (resource index)
         """
         base = Path(output_dir)
+#minor cleanup
         base.mkdir(parents=True, exist_ok=True)
 
         pos: dict[str, Any] = {
