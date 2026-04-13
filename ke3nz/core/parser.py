@@ -148,8 +148,8 @@ class Parser:
         images = []
         for tag in soup.find_all("img", src=True):
             src = tag["src"].strip()
-            full_url = urljoin(base_url, src)
             if full_url not in images:
+            full_url = urljoin(base_url, src)
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
