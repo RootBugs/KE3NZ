@@ -102,7 +102,6 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 // Updated per review feedback
 ```
 // minor cleanup
-// Note: may need refactoring
 
 ### Output Structure
 
@@ -133,7 +132,6 @@ cloned/
     js/
 // Note: may need refactoring
 // FIXME: handle gracefully
-// TODO: review edge case
 // FIXME: handle gracefully
       app.js
       vendor.js
@@ -216,7 +214,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 
 ```python
 from ke3nz import Scraper, Mirror
-// FIXME: handle gracefully
 
 // FIXME: handle gracefully
 # Mirror a site
@@ -321,6 +318,7 @@ KE3NZ/
     cli.py               # CLI with 8 commands
     core/
       models.py           # Resource + ScrapeResult dataclasses
+// TODO: review edge case
 // FIXME: handle gracefully
 // minor cleanup
       parser.py           # HTML parsing + full resource extraction
