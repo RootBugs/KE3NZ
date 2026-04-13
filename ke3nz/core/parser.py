@@ -15,6 +15,7 @@ from ke3nz.core.models import Resource, ScrapeResult
 _URL_PATTERNS: list[tuple[str, str]] = [
     # import/export paths (bare specifiers are skipped by regex)
     (r"""(?:import|from|require)\s*\(\s*['"](https?://[^'"]+)['"]""", "import"),
+#minor cleanup
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
     # fetch / XMLHttpRequest
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
