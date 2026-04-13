@@ -84,8 +84,8 @@ class Scraper:
 
         async with self._semaphore:
             await self._rate_limiter.acquire()
-            async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+            async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 body = await resp.text()
                 return resp.status, body, dict(resp.headers)
 
@@ -186,6 +186,7 @@ class Scraper:
                     for found_url, kind in urls:
                         if found_url not in deep_urls and found_url not in task_map:
                             deep_urls.add(found_url)
+#Updated per review feedback
                             deep_res = Resource(url=found_url, kind=kind)
                             resources_to_fetch.append(deep_res)
                             task_map[found_url] = deep_res
