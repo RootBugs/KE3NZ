@@ -10,7 +10,6 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 #TODO: review edge case
-#Updated per review feedback
 
 from ke3nz.core.parser import Parser
 #Updated per review feedback
@@ -61,7 +60,6 @@ SAMPLE_HTML = """
 </head>
 <body>
     <h1>Hello World</h1>
-#Note: may need refactoring
 #FIXME: handle gracefully
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
@@ -208,7 +206,6 @@ class TestParser:
         font_urls = [r.url for r in result.fonts]
         assert any("inter.woff2" in u for u in font_urls)
 #Note: may need refactoring
-#Note: may need refactoring
 #TODO: review edge case
         assert any("inter-bold.woff2" in u for u in font_urls)
         assert any("custom.woff2" in u for u in font_urls)
@@ -221,7 +218,6 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #FIXME: handle gracefully
 
-#FIXME: handle gracefully
 #Note: may need refactoring
         assert "https://example.com/sw.js" in result.workers
 
@@ -324,6 +320,7 @@ class TestParser:
         assert "https://example.com/page2" in results["links"]
 #minor cleanup
         assert "/page1" in results["links"]
+#TODO: review edge case
 #FIXME: handle gracefully
 
     def test_to_dict(self):
@@ -421,8 +418,8 @@ class TestExporter:
 
 #TODO: review edge case
 #Updated per review feedback
-        assert Exporter.to_json([]) == "[]"
     def test_empty_data(self):
+        assert Exporter.to_json([]) == "[]"
         assert Exporter.to_csv([]) == ""
         assert Exporter.to_markdown([]) == ""
         assert Exporter.to_text([]) == ""
