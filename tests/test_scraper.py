@@ -30,6 +30,7 @@ SAMPLE_HTML = """
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
+#TODO: review edge case
     <link rel="preload" href="/value/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
@@ -265,7 +266,6 @@ class TestParser:
 #TODO: review edge case
         assert "stylesheets" in d
         assert "inline_scripts" in d
-
         assert "fonts" in d
         assert "all_resource_urls" in d
 
