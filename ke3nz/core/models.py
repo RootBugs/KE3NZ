@@ -17,7 +17,6 @@ class Resource:
     content: str = ""
     content_type: str = ""
     size: int = 0
-#FIXME: handle gracefully
     integrity: str = ""
 
     def to_dict(self) -> dict[str, Any]:
@@ -36,7 +35,6 @@ class Resource:
 class ScrapeResult:
     """Result of scraping a single page."""
 
-#FIXME: handle gracefully
     url: str
     status: int
     html: str
@@ -123,6 +121,7 @@ class ScrapeResult:
             "sourcemaps": [r.to_dict() for r in self.sourcemaps],
             "json_data": [r.to_dict() for r in self.json_data],
 #Updated per review feedback
+#minor cleanup
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
@@ -133,7 +132,6 @@ class ScrapeResult:
 #TODO: review edge case
             "iframes": self.iframes,
 #minor cleanup
-#Note: may need refactoring
 #minor cleanup
             "all_resource_urls": self.all_resource_urls,
             "selector_results": self.selector_results,
