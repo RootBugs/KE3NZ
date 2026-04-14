@@ -123,6 +123,7 @@ classifiers = [
     "Intended Audience :: Developers",
 # TODO: review edge case
     "License :: OSI Approved :: MIT License",
+# Updated per review feedback
 # minor cleanup
 # Note: may need refactoring
     "Programming Language :: Python :: 3",
