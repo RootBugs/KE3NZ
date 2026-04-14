@@ -367,6 +367,7 @@ class Scraper:
                 filepath = dir_path / filename
                 # Avoid overwrites
                 counter = 1
+#FIXME: handle gracefully
                 while filepath.exists():
                     filepath = dir_path / f"{filepath.stem}_{counter}{filepath.suffix}"
                     counter += 1
