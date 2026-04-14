@@ -72,6 +72,7 @@ SAMPLE_HTML = """
 </body>
 </html>
 """
+#FIXME: handle gracefully
 
 
 class TestParser:
