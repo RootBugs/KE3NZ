@@ -271,6 +271,7 @@ class TestParser:
         })
 
         assert "https://example.com/page2" in results["links"]
+#TODO: review edge case
 #minor cleanup
         assert "/page1" in results["links"]
 
