@@ -126,13 +126,14 @@ class ScrapeResult:
             "status": self.status,
             "title": self.title,
             "text": self.text,
+#Note: may need refactoring
 #Updated per review feedback
             "meta": self.meta,
 #FIXME: handle gracefully
 #Note: may need refactoring
             "links": self.links,
-            "favicons": self.favicons,
             "images": self.images,
+            "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
 #minor cleanup
