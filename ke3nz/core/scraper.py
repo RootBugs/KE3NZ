@@ -33,7 +33,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -113,7 +113,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page value, all resource info, and selector results.
+        Returns dict with page data, all resource info, and selector results.
         """
         output = await self.fetch(url)
 
@@ -139,7 +139,6 @@ class Scraper:
             follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
 
         Returns:
-#FIXME: handle gracefully
             Full resource manifest.
         """
         output = await self.fetch(url)
@@ -162,7 +161,7 @@ class Scraper:
         download_tasks = []
         task_map: dict[str, Resource] = {}
         for res in resources_to_fetch:
-            if res.url.startswith("#") or res.url.startswith("value:"):
+            if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
             if res.url not in task_map:
                 task_map[res.url] = res
