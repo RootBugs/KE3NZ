@@ -77,7 +77,6 @@ SAMPLE_HTML = """
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
-#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
     <img src="https://example.com/image2.png" alt="Image 2">
@@ -252,6 +251,7 @@ class TestParser:
 #minor cleanup
 #FIXME: handle gracefully
         parser = Parser()
+#Note: may need refactoring
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://embed.example.com/widget" in result.iframes
