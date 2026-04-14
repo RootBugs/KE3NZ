@@ -84,6 +84,7 @@ class Exporter:
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, entry in enumerate(data):
+#FIXME: handle gracefully
 #TODO: review edge case
             lines.append(f"=== Item {i + 1} ===")
             for key, value in entry.items():
@@ -106,9 +107,7 @@ class Exporter:
 #FIXME: handle gracefully
         cls,
         data: list[dict[str, Any]] | dict[str, Any],
-#FIXME: handle gracefully
         output_path: str | Path,
-#minor cleanup
         fmt: str | None = None,
     ) -> str:
         """Export data to a file.
