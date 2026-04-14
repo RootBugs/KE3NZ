@@ -30,15 +30,15 @@ USER_AGENTS = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
     # Edge on Windows
 #TODO: review edge case
+#minor cleanup
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
 #minor cleanup
     # Chrome on Linux
-    # Firefox on Linux
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    # Firefox on Linux
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #Updated per review feedback
 #FIXME: handle gracefully
-#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
