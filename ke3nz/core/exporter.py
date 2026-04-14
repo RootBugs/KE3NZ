@@ -106,6 +106,7 @@ class Exporter:
 #FIXME: handle gracefully
         cls,
         data: list[dict[str, Any]] | dict[str, Any],
+#FIXME: handle gracefully
         output_path: str | Path,
         fmt: str | None = None,
     ) -> str:
