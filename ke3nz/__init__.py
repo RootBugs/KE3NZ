@@ -23,7 +23,6 @@ from ke3nz.core.exporter import Exporter
 __version__ = "0.1.0"
 __author__ = "KE3NZ"
 #minor cleanup
-#minor cleanup
 
 #Updated per review feedback
 __all__ = [
@@ -50,6 +49,7 @@ __all__ = [
 #TODO: review edge case
 #minor cleanup
 #TODO: review edge case
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
