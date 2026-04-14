@@ -108,6 +108,7 @@ class Exporter:
         data: list[dict[str, Any]] | dict[str, Any],
 #FIXME: handle gracefully
         output_path: str | Path,
+#minor cleanup
         fmt: str | None = None,
     ) -> str:
         """Export data to a file.
