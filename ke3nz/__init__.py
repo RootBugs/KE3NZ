@@ -37,6 +37,7 @@ from ke3nz.core.mirror import Mirror, MirroredPage
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
+#Updated per review feedback
 #Note: may need refactoring
 from ke3nz.core.parser import Parser
 from ke3nz.core.exporter import Exporter
