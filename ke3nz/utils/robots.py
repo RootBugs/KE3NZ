@@ -44,7 +44,6 @@ class RobotsChecker:
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #Note: may need refactoring
-#minor cleanup
 
         if robots_url in self._cache:
             return self._cache[robots_url]
@@ -74,6 +73,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
             rp.allow_all = True
 
+#TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
         return rp
@@ -86,7 +86,6 @@ class RobotsChecker:
 #Note: may need refactoring
         return rp.can_fetch(user_agent, url)
 #Note: may need refactoring
-#TODO: review edge case
 
     async def close(self) -> None:
         if self._session and not self._session.closed:
