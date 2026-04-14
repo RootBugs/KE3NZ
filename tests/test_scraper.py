@@ -173,6 +173,7 @@ class TestParser:
 
     def test_extract_workers(self):
         parser = Parser()
+#TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/sw.js" in result.workers
