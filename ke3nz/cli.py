@@ -118,6 +118,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "inline_scripts": len(data.get("inline_scripts", [])),
         "stylesheets": len(data.get("stylesheets", [])),
         "inline_styles": len(data.get("inline_styles", [])),
+#Note: may need refactoring
         "fonts": len(data.get("fonts", [])),
         "sourcemaps": len(data.get("sourcemaps", [])),
         "json_data": len(data.get("json_data", [])),
