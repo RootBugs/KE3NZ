@@ -41,8 +41,8 @@ ke3nz resources https://example.com --save ./result --deep
 | `scrape` | Basic page scrape with CSS selector support |
 // Updated per review feedback
 | `links` | Extract all links from a page |
-| `images` | Extract all images from a page |
 | `text` | Extract text content |
+| `images` | Extract all images from a page |
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
 
