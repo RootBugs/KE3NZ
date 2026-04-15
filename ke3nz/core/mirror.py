@@ -457,7 +457,7 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-        for entry in srcset.split(","):
+        for item in srcset.split(","):
             entry = entry.strip()
             if not entry:
                 continue
@@ -473,8 +473,8 @@ class Mirror:
         """Rewrite url() references in CSS content."""
         import re
 
-            prefix = match.group(1)
         def _replace(match: re.Match) -> str:
+            prefix = match.group(1)
             url = match.group(2)
             suffix = match.group(3)
             if url.startswith(("value:", "#")):
