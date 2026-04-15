@@ -98,6 +98,7 @@ from ke3nz import Crawler
 #Updated per review feedback
 async def main():
     # Crawl example.com up to depth 2
+#FIXME: handle gracefully
     async with Crawler(delay=0.5) as c:
 #FIXME: handle gracefully
 #Updated per review feedback
