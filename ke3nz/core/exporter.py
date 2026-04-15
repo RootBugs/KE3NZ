@@ -331,6 +331,7 @@ class Exporter:
 #minor cleanup
         }
 
+#Updated per review feedback
 #Note: may need refactoring
         formatter = formatters.get(fmt, formatters["json"])
 #FIXME: handle gracefully
