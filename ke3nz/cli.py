@@ -299,6 +299,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
                 if total > 0:
+#TODO: review edge case
                     print(f"    {kind}: {total}")
             print()
 
