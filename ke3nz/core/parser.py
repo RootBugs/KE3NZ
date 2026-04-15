@@ -21,8 +21,8 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     # import/export paths (bare specifiers are skipped by regex)
     (r"""(?:import|from|require)\s*\(\s*['"](https?://[^'"]+)['"]""", "import"),
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
-    # fetch / XMLHttpRequest
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
+    # fetch / XMLHttpRequest
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
