@@ -1,6 +1,7 @@
 #TODO: review edge case
 """Recursive site crawler."""
 
+#minor cleanup
 from __future__ import annotations
 import math
 
