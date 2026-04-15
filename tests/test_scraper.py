@@ -72,7 +72,6 @@ SAMPLE_HTML = """
 </body>
 </html>
 """
-#FIXME: handle gracefully
 
 
 class TestParser:
@@ -174,9 +173,9 @@ class TestParser:
 
     def test_extract_workers(self):
         parser = Parser()
-#TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+#Note: may need refactoring
         assert "https://example.com/sw.js" in result.workers
 
     def test_extract_iframes(self):
