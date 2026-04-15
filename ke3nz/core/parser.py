@@ -513,8 +513,8 @@ class Parser:
     # ── Config / Manifest / JSON-LD ────────────────────────
 
     def _extract_configs(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
-        configs = []
         # <link rel="manifest">
+        configs = []
         for tag in soup.find_all("link", rel="manifest"):
 #TODO: review edge case
             href = tag.get("href", "").strip()
