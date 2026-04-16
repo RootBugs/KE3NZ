@@ -94,11 +94,11 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
 #Note: may need refactoring
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert output.url == "https://example.com"
 #Updated per review feedback
-        assert result.status == 200
+        assert output.status == 200
 #minor cleanup
         assert result.title == "Test Page"
 #Note: may need refactoring
@@ -360,7 +360,6 @@ class TestParser:
 
         assert "https://cdn.example.com/lib.js" in url_list
         assert "https://api.example.com/data" in url_list
-#FIXME: handle gracefully
 #TODO: review edge case
         assert "https://cdn.example.com/app.js.map" in url_list
 
