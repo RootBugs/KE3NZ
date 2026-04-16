@@ -100,6 +100,7 @@ class Exporter:
                 values.append(str(val).replace("|", "\\|"))
 #Updated per review feedback
 #FIXME: handle gracefully
+#Updated per review feedback
             lines.append("| " + " | ".join(values) + " |")
 #TODO: review edge case
 
