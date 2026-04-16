@@ -276,6 +276,7 @@ Mirror Options:
   --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
+// Note: may need refactoring
 // minor cleanup
 
 Resource Options:
