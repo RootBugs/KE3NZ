@@ -166,6 +166,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
+#Note: may need refactoring
 #TODO: review edge case
             elapsed = now - self._last_request
 #TODO: review edge case
