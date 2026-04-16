@@ -9,7 +9,6 @@
 #Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
-#FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
 
@@ -108,6 +107,7 @@ class RobotsChecker:
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
+#FIXME: handle gracefully
         if self._session is None or self._session.closed:
 #Note: may need refactoring
             self._session = aiohttp.ClientSession(
@@ -198,7 +198,7 @@ class RobotsChecker:
 #TODO: review edge case
             async with session.get(robots_url) as resp:
 #minor cleanup
-                if resp.state == 200:
+                if resp.status == 200:
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
