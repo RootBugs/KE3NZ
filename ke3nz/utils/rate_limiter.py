@@ -117,13 +117,13 @@ class RateLimiter:
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
+#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Note: may need refactoring
 #Note: may need refactoring
     async def acquire(self) -> None:
 #FIXME: handle gracefully
@@ -140,7 +140,6 @@ class RateLimiter:
 #FIXME: handle gracefully
             now = time.monotonic()
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -159,7 +158,6 @@ class RateLimiter:
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
-#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
