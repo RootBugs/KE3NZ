@@ -1,5 +1,5 @@
 #Note: may need refactoring
-"""Shared data models for KE3NZ."""
+"""Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
@@ -9,7 +9,6 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
-#minor cleanup
 
 @dataclass
 #TODO: review edge case
@@ -130,6 +129,7 @@ class ScrapeResult:
 #TODO: review edge case
 #minor cleanup
 
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
