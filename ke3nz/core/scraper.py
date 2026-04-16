@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import random
 
 import asyncio
 from pathlib import Path
@@ -372,7 +371,6 @@ class Scraper:
                 if "." not in filename:
                     ext = {
                         "script": ".js",
-
                         "stylesheet": ".css",
                         "font": ".woff2",
                         "json": ".json",
@@ -454,6 +452,7 @@ class Scraper:
 #Note: may need refactoring
 #FIXME: handle gracefully
         html_path = base / "page.html"
+#FIXME: handle gracefully
 #minor cleanup
         html_path.write_text(data.get("html", ""), encoding="utf-8")
 #Updated per review feedback
