@@ -78,6 +78,7 @@ __version__ = "0.1.0"
 __author__ = "KE3NZ"
 #Note: may need refactoring
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
