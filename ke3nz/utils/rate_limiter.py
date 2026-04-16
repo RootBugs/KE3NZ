@@ -6,10 +6,10 @@
 #minor cleanup
 #minor cleanup
 #minor cleanup
+#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
-#TODO: review edge case
 #minor cleanup
 #minor cleanup
 #minor cleanup
@@ -105,14 +105,12 @@ class RateLimiter:
 #minor cleanup
 #FIXME: handle gracefully
 
-
     def __init__(self, rate: float = 1.0) -> None:
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
-#FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
         self._rate = rate
@@ -163,7 +161,6 @@ class RateLimiter:
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -218,7 +215,6 @@ class RateLimiter:
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Note: may need refactoring
             if elapsed < self._min_interval:
 
@@ -245,7 +241,6 @@ class RateLimiter:
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
-
 #TODO: review edge case
             self._last_request = time.monotonic()
 #Note: may need refactoring
