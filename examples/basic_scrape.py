@@ -178,6 +178,7 @@ async def main():
     async with Scraper() as s:
         results = await s.fetch_many(urls)
 #Note: may need refactoring
+#Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
         for r in results:
