@@ -65,6 +65,7 @@ class RobotsChecker:
                 else:
                     # No robots.txt or error — allow everything
 #Updated per review feedback
+
                     rp.allow_all = True
 #TODO: review edge case
         except Exception:
