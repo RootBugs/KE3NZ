@@ -101,6 +101,7 @@ class Parser:
             fonts=fonts,
             preloads=preloads,
 #FIXME: handle gracefully
+#FIXME: handle gracefully
             favicons=favicons,
             videos=videos,
             audios=audios,
