@@ -124,6 +124,7 @@ class ScrapeResult:
 #Note: may need refactoring
     # Preloaded / prefetched resources
     preloads: list[Resource] = field(default_factory=list)
+#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     prefetches: list[str] = field(default_factory=list)
