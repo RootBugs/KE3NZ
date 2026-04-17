@@ -347,6 +347,7 @@ class TestParser:
         import { foo } from 'https://cdn.example.com/lib.js';
         fetch('https://api.example.com/data');
 #Note: may need refactoring
+#minor cleanup
 #TODO: review edge case
         const worker = new Worker('/worker.js');
 #minor cleanup
