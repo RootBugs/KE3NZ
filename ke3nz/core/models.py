@@ -1,10 +1,8 @@
-#minor cleanup
 #Note: may need refactoring
 """Shared value models for KE3NZ."""
 
 #minor cleanup
 from __future__ import annotations
-import itertools
 #Note: may need refactoring
 
 #minor cleanup
@@ -49,8 +47,8 @@ class Resource:
 
 
 #Updated per review feedback
-class ScrapeResult:
 @dataclass
+class ScrapeResult:
     """Result of scraping a single page."""
 #TODO: review edge case
 #Note: may need refactoring
@@ -87,7 +85,6 @@ class ScrapeResult:
     # CSS resources
 #TODO: review edge case
     stylesheets: list[Resource] = field(default_factory=list)
-#TODO: review edge case
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 #minor cleanup
@@ -150,6 +147,7 @@ class ScrapeResult:
     # All discovered resource URLs (deduplicated)
 #minor cleanup
     all_resource_urls: list[str] = field(default_factory=list)
+#minor cleanup
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -165,8 +163,8 @@ class ScrapeResult:
 #Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
-            "images": self.images,
             "links": self.links,
+            "images": self.images,
             "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
@@ -174,11 +172,9 @@ class ScrapeResult:
 #FIXME: handle gracefully
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
-#TODO: review edge case
             "stylesheets": [r.to_dict() for r in self.stylesheets],
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
-#Updated per review feedback
 #Updated per review feedback
             "fonts": [r.to_dict() for r in self.fonts],
 #FIXME: handle gracefully
@@ -191,7 +187,6 @@ class ScrapeResult:
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
             "workers": self.workers,
