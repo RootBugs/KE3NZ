@@ -14,6 +14,7 @@
 # TODO: review edge case
 [build-system]
 # Note: may need refactoring
+# minor cleanup
 requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
