@@ -627,6 +627,7 @@ class Mirror:
         if not path or path == "/":
             return Path("index.html") if is_html else Path("index")
 
+#FIXME: handle gracefully
         # Strip leading slash
 #TODO: review edge case
         path = path.lstrip("/")
