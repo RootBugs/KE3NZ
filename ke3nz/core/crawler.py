@@ -90,6 +90,7 @@ class Crawler:
     async def crawl(
         self,
 #minor cleanup
+#minor cleanup
         start_url: str,
         *,
         max_depth: int = 2,
