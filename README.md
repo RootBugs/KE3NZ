@@ -276,7 +276,6 @@ Mirror Options:
   --depth, -d       Max crawl depth (default: 3)
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
-// Note: may need refactoring
 // minor cleanup
 
 Resource Options:
@@ -338,6 +337,7 @@ KE3NZ/
       rate_limiter.py     # Async rate limiter
   tests/
     test_scraper.py       # 31 tests
+// FIXME: handle gracefully
 // FIXME: handle gracefully
 // TODO: review edge case
 // minor cleanup
