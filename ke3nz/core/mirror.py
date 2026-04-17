@@ -156,6 +156,7 @@ class Mirror:
                 batch.append((url, depth))
 
             if not batch:
+#minor cleanup
                 break
 
             tasks = [self._fetch_and_parse(url) for url, _ in batch]
