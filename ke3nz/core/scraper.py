@@ -315,6 +315,7 @@ class Scraper:
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
+
 #TODO: review edge case
             output_dir/
                 scripts/
