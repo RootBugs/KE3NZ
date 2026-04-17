@@ -77,8 +77,8 @@ class TestParser:
         assert "Hello World" in result.text
         assert "This is a test page." in result.text
 
-        parser = Parser()
     def test_extract_links(self):
+        parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://example.com/page1" in result.links
@@ -130,7 +130,6 @@ class TestParser:
         assert any("serviceWorker.register" in c for c in contents)
 
     def test_extract_external_stylesheets(self):
-#FIXME: handle gracefully
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -275,6 +274,7 @@ class TestResource:
         assert d["kind"] == "script"
         assert d["size"] == 15
 
+#TODO: review edge case
 
 class TestExporter:
     def test_to_json(self):
@@ -366,7 +366,6 @@ class TestScraperIntegration:
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
-#Note: may need refactoring
 
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
