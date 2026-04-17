@@ -15,7 +15,6 @@ from ke3nz.utils.headers import get_random_headers
 
 
 @dataclass
-#FIXME: handle gracefully
 #minor cleanup
 class CrawledPage:
     """Result of crawling a page."""
@@ -77,7 +76,6 @@ class Crawler:
 
     async def __aenter__(self) -> Crawler:
         await self._scraper.__aenter__()
-#FIXME: handle gracefully
         return self
 
     async def __aexit__(self, *args: Any) -> None:
@@ -89,7 +87,6 @@ class Crawler:
 
     async def crawl(
         self,
-#minor cleanup
 #minor cleanup
         start_url: str,
         *,
@@ -158,12 +155,12 @@ class Crawler:
                     text=result.text,
                     links=result.links,
 #minor cleanup
+#minor cleanup
                     images=result.images,
                     meta=result.meta,
 #Note: may need refactoring
                 )
                 pages.append(page)
-#TODO: review edge case
 
                 if on_page:
                     await on_page(page)
