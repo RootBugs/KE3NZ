@@ -512,6 +512,7 @@ class Parser:
 #Updated per review feedback
     # ── Config / Manifest / JSON-LD ────────────────────────
 
+
     def _extract_configs(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         # <link rel="manifest">
         configs = []
