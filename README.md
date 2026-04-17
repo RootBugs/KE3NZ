@@ -41,8 +41,8 @@ ke3nz resources https://example.com --save ./result --deep
 | `scrape` | Basic page scrape with CSS selector support |
 // Updated per review feedback
 | `links` | Extract all links from a page |
-| `text` | Extract text content |
 | `images` | Extract all images from a page |
+| `text` | Extract text content |
 | `meta` | Extract metadata (title, OG tags, etc.) |
 | `crawl` | Recursively crawl and list all pages |
 
@@ -160,6 +160,7 @@ Scrape all resources from a single page:
 // TODO: review edge case
 ke3nz resources https://example.com --save ./output
 
+// TODO: review edge case
 // TODO: review edge case
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
