@@ -78,6 +78,7 @@ class Exporter:
 #Updated per review feedback
             lines.append("| " + " | ".join(values) + " |")
 
+#minor cleanup
         return "\n".join(lines)
 
     @staticmethod
