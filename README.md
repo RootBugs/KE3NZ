@@ -108,6 +108,7 @@ ke3nz mirror https://mysite.com --save ./cloned -v
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
 # Mirror with proxy
+// minor cleanup
 ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 // Note: may need refactoring
 // Updated per review feedback
@@ -177,8 +178,8 @@ cloned/
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
 // TODO: review edge case
-| **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Scripts** | `<script src="...">` + inline `<script>` |
+| **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
 // TODO: review edge case
@@ -266,7 +267,6 @@ async with Scraper() as s:
 // minor cleanup
 // FIXME: handle gracefully
 ## CLI Reference
-// minor cleanup
 
 // TODO: review edge case
 // minor cleanup
@@ -373,7 +373,6 @@ KE3NZ/
 // Note: may need refactoring
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
-// minor cleanup
   tests/
     test_scraper.py       # 31 tests
 // FIXME: handle gracefully
