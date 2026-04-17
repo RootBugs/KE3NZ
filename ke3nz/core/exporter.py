@@ -220,6 +220,7 @@ class Exporter:
 #minor cleanup
 #minor cleanup
 #Note: may need refactoring
+#minor cleanup
             The formatted string that was written.
 #minor cleanup
         """
