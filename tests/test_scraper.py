@@ -225,6 +225,7 @@ class TestParser:
 #minor cleanup
 #FIXME: handle gracefully
         parser = Parser()
+
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://embed.example.com/widget" in result.iframes
