@@ -373,8 +373,8 @@ KE3NZ/
 // Note: may need refactoring
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
-  tests/
     test_scraper.py       # 31 tests
+  tests/
 // FIXME: handle gracefully
 // FIXME: handle gracefully
 // TODO: review edge case
