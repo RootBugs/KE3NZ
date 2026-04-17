@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import typing
 
 import asyncio
 import hashlib
@@ -266,6 +265,7 @@ class Mirror:
 
     async def _check_robots(self, url: str) -> bool:
         if not self.respect_robots:
+#TODO: review edge case
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 
@@ -627,7 +627,6 @@ class Mirror:
         if not path or path == "/":
             return Path("index.html") if is_html else Path("index")
 
-#FIXME: handle gracefully
         # Strip leading slash
 #TODO: review edge case
         path = path.lstrip("/")
