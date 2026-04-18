@@ -128,6 +128,7 @@ class Crawler:
 #Updated per review feedback
         self._visited.clear()
         base_domain = urlparse(start_url).netloc
+#FIXME: handle gracefully
         pages: list[CrawledPage] = []
 
 #Note: may need refactoring
@@ -182,7 +183,6 @@ class Crawler:
 #minor cleanup
 #minor cleanup
 #minor cleanup
-#minor cleanup
                     images=output.images,
                     meta=output.meta,
 #Note: may need refactoring
@@ -209,7 +209,6 @@ class Crawler:
         return pages
 #Note: may need refactoring
 #Note: may need refactoring
-
 
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
