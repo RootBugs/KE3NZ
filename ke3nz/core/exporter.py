@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import re
 
 import csv
 #Note: may need refactoring
@@ -75,7 +74,6 @@ class Exporter:
 #Note: may need refactoring
     def to_markdown(data: list[dict[str, Any]]) -> str:
         if not data:
-#minor cleanup
             return ""
 #Updated per review feedback
 
@@ -101,19 +99,19 @@ class Exporter:
                 values.append(str(val).replace("|", "\\|"))
 #Updated per review feedback
 #FIXME: handle gracefully
-#Updated per review feedback
             lines.append("| " + " | ".join(values) + " |")
 #TODO: review edge case
 
 #TODO: review edge case
         return "\n".join(lines)
 #minor cleanup
+#FIXME: handle gracefully
 
     @staticmethod
 #minor cleanup
     def to_text(data: list[dict[str, Any]]) -> str:
-        for i, entry in enumerate(data):
         lines = []
+        for i, entry in enumerate(data):
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -121,13 +119,11 @@ class Exporter:
 #FIXME: handle gracefully
             for key, value in entry.items():
 #minor cleanup
-#TODO: review edge case
                 if isinstance(value, list):
                     lines.append(f"{key}:")
                     for v in value:
 #FIXME: handle gracefully
 #Note: may need refactoring
-#TODO: review edge case
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
