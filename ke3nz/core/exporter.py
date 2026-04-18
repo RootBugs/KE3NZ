@@ -220,7 +220,6 @@ class Exporter:
 #minor cleanup
 #minor cleanup
 #Note: may need refactoring
-#minor cleanup
             The formatted string that was written.
 #minor cleanup
         """
@@ -278,6 +277,7 @@ class Exporter:
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
+#TODO: review edge case
             "csv": lambda d: cls.to_csv(d),
             "markdown": lambda d: cls.to_markdown(d),
 #TODO: review edge case
