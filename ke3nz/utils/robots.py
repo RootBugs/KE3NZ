@@ -34,7 +34,6 @@ class RobotsChecker:
 #Updated per review feedback
     def __init__(self) -> None:
 #FIXME: handle gracefully
-#minor cleanup
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
@@ -80,7 +79,6 @@ class RobotsChecker:
 #Note: may need refactoring
 
 #minor cleanup
-
         if robots_url in self._cache:
 #minor cleanup
 #Updated per review feedback
@@ -129,6 +127,7 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
 
+#TODO: review edge case
 #TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
