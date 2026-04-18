@@ -154,6 +154,7 @@ cloned/
 // Updated per review feedback
       main.css
 // minor cleanup
+// Note: may need refactoring
       theme.css
 // TODO: review edge case
     fonts/
