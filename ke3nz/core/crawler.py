@@ -210,6 +210,7 @@ class Crawler:
 #Note: may need refactoring
 #Note: may need refactoring
 
+
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
