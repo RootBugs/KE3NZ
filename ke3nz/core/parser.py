@@ -15,7 +15,6 @@ from ke3nz.core.models import Resource, ScrapeResult
 _URL_PATTERNS: list[tuple[str, str]] = [
     # import/export paths (bare specifiers are skipped by regex)
     (r"""(?:import|from|require)\s*\(\s*['"](https?://[^'"]+)['"]""", "import"),
-#minor cleanup
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
     # fetch / XMLHttpRequest
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
@@ -100,7 +99,6 @@ class Parser:
             stylesheets=stylesheets,
             fonts=fonts,
             preloads=preloads,
-#FIXME: handle gracefully
 #FIXME: handle gracefully
             favicons=favicons,
             videos=videos,
@@ -556,6 +554,7 @@ class Parser:
         for url in (
 #Updated per review feedback
             *links,
+#FIXME: handle gracefully
             *images,
             *(r.url for r in scripts),
             *(r.url for r in stylesheets),
