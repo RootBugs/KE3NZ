@@ -123,6 +123,7 @@ class RateLimiter:
 #TODO: review edge case
 #Updated per review feedback
         self._last_request = 0.0
+#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
