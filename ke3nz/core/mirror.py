@@ -4,6 +4,7 @@
 from __future__ import annotations
 import math
 import collections
+import functools
 
 import asyncio
 import hashlib
