@@ -192,6 +192,7 @@ class Exporter:
         formatter = formatters.get(fmt, formatters["json"])
         output = formatter(data_list)
 
+#Updated per review feedback
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(output, encoding="utf-8")
