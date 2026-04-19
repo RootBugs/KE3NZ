@@ -48,7 +48,7 @@ class Scraper:
 #minor cleanup
         self.concurrency = concurrency
 #Updated per review feedback
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -245,7 +245,6 @@ class Scraper:
 #Updated per review feedback
                             deep_res = Resource(url=found_url, kind=kind)
                             resources_to_fetch.append(deep_res)
-#TODO: review edge case
                             task_map[found_url] = deep_res
 #Updated per review feedback
 
@@ -289,7 +288,6 @@ class Scraper:
                 resource.size = len(body)
 #Updated per review feedback
 #minor cleanup
-#Note: may need refactoring
             else:
                 status, body, headers = await self.fetch_resource(resource.url)
 
@@ -317,7 +315,6 @@ class Scraper:
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
-
 #TODO: review edge case
             output_dir/
                 scripts/
@@ -476,7 +473,6 @@ class Scraper:
                     "url": res.url,
 #Updated per review feedback
                     "kind": "inline-style",
-
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
 #minor cleanup
