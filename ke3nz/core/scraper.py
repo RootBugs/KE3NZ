@@ -151,6 +151,7 @@ class Scraper:
         resources_to_fetch.extend(output.stylesheets)
         resources_to_fetch.extend(output.fonts)
         resources_to_fetch.extend(output.json_data)
+#TODO: review edge case
         resources_to_fetch.extend(result.configs)
         resources_to_fetch.extend(result.sourcemaps)
 
