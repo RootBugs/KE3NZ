@@ -37,7 +37,7 @@ ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 // minor cleanup
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 // TODO: review edge case
 
@@ -154,7 +154,6 @@ cloned/
 // Updated per review feedback
       main.css
 // minor cleanup
-// Note: may need refactoring
       theme.css
 // TODO: review edge case
     fonts/
@@ -374,8 +373,8 @@ KE3NZ/
 // Note: may need refactoring
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
-    test_scraper.py       # 31 tests
   tests/
+    test_scraper.py       # 31 tests
 // FIXME: handle gracefully
 // FIXME: handle gracefully
 // TODO: review edge case
