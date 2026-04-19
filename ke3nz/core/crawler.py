@@ -48,7 +48,6 @@ class CrawledPage:
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
-#Updated per review feedback
 #Note: may need refactoring
     status: int
     depth: int
@@ -198,6 +197,7 @@ class Crawler:
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
+#minor cleanup
 #FIXME: handle gracefully
         """Crawl a website starting from start_url.
 
@@ -231,7 +231,6 @@ class Crawler:
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
-#minor cleanup
         pages: list[CrawledPage] = []
 
 #Note: may need refactoring
@@ -257,7 +256,6 @@ class Crawler:
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
-#Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
                 url, depth = queue.pop(0)
