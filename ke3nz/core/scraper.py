@@ -51,6 +51,7 @@ class Scraper:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
+#TODO: review edge case
             headers=headers,
         )
         return self
