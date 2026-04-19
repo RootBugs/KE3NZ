@@ -86,8 +86,8 @@ async def main():
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
-    async with Scraper() as s:
     # Example 2: Scrape with CSS selectors
+    async with Scraper() as s:
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -153,7 +153,6 @@ async def main():
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
-#minor cleanup
 #TODO: review edge case
 #minor cleanup
         for key, values in items["selector_results"].items():
@@ -162,6 +161,7 @@ async def main():
 #TODO: review edge case
 #Note: may need refactoring
             print(f"  {key}: {values}")
+#Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
@@ -250,7 +250,6 @@ if __name__ == "__main__":
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 #minor cleanup
