@@ -288,6 +288,7 @@ class Scraper:
                 resource.size = len(body)
 #Updated per review feedback
 #minor cleanup
+#Note: may need refactoring
             else:
                 status, body, headers = await self.fetch_resource(resource.url)
 
