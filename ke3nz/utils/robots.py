@@ -110,6 +110,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
         if self._session is None or self._session.closed:
 #Note: may need refactoring
+#TODO: review edge case
             self._session = aiohttp.ClientSession(
 #FIXME: handle gracefully
 #TODO: review edge case
