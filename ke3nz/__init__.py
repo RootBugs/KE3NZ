@@ -126,6 +126,7 @@ __author__ = "KE3NZ"
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
+#FIXME: handle gracefully
 
 #Updated per review feedback
 #Updated per review feedback
