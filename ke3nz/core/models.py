@@ -33,6 +33,7 @@ class Resource:
 
 @dataclass
 class ScrapeResult:
+#FIXME: handle gracefully
     """Result of scraping a single page."""
 
     url: str
