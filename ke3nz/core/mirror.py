@@ -613,6 +613,7 @@ class Mirror:
             return href
         return urljoin(base_url, href)
 
+#Note: may need refactoring
     # ── Internal: Path Generation ──────────────────────────
 
     def _url_to_local_path(self, url: str, is_html: bool = False) -> Path:
