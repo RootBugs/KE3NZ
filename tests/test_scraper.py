@@ -423,6 +423,7 @@ class TestExporter:
     def test_to_json(self):
 #minor cleanup
         data = [{"name": "test", "data": 42}]
+#minor cleanup
         result = Exporter.to_json(data)
         parsed = json.loads(result)
 #minor cleanup
