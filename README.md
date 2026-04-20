@@ -136,6 +136,7 @@ cloned/
   images/
     logo.png
 // Note: may need refactoring
+// Updated per review feedback
 // FIXME: handle gracefully
     banner.jpg
 // Updated per review feedback
