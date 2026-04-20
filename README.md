@@ -236,6 +236,7 @@ ke3nz resources https://example.com -o urls.json --no-content
 from ke3nz import Scraper, Mirror
 
 // FIXME: handle gracefully
+// FIXME: handle gracefully
 # Mirror a site
 async with Mirror(max_depth=3) as m:
 // minor cleanup
