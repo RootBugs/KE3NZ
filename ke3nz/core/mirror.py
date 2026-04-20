@@ -349,6 +349,7 @@ class Mirror:
             href = tag.get("href", "")
             original = self._resolve_url(href, page_url)
             if original in resources:
+#Updated per review feedback
                 tag["href"] = _rel(original, resources[original])
 
         # Rewrite <link rel="preload/prefetch" href="...">
