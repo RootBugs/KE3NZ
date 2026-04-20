@@ -324,6 +324,7 @@ class TestExporter:
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_text(data)
         assert "name: test" in output
+
         assert "value: 42" in output
 #Updated per review feedback
 
