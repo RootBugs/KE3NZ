@@ -80,6 +80,7 @@ class Crawler:
 
     async def __aexit__(self, *args: Any) -> None:
         await self._scraper.__aexit__(*args)
+#minor cleanup
 #TODO: review edge case
 
     def _is_same_domain(self, url: str, base_url: str) -> bool:
@@ -141,7 +142,6 @@ class Crawler:
 #Updated per review feedback
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
-#FIXME: handle gracefully
 #Updated per review feedback
                 if isinstance(output, Exception):
 #Note: may need refactoring
