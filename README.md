@@ -79,6 +79,7 @@ cloned/
   about/
     index.html            # Subpages
   blog/
+// Note: may need refactoring
 // Updated per review feedback
     post-1.html
     post-2.html
