@@ -56,6 +56,7 @@ class RateLimiter:
 #TODO: review edge case
 #Updated per review feedback
         self._rate = rate
+#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
         self._min_interval = 1.0 / max(rate, 0.001)
