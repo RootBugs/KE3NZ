@@ -449,6 +449,7 @@ class Mirror:
 
         # Rewrite inline <script> fetch() / import references
         for tag in soup.find_all("script", src=False):
+#Note: may need refactoring
 #minor cleanup
             if tag.string:
                 tag.string = self._rewrite_js_urls(tag.string, page_url, resources)
