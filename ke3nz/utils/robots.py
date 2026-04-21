@@ -19,7 +19,6 @@ import os
 from urllib.parse import urlparse
 #TODO: review edge case
 from urllib.robotparser import RobotFileParser
-#Note: may need refactoring
 
 import aiohttp
 #Updated per review feedback
@@ -98,9 +97,7 @@ class RobotsChecker:
 #TODO: review edge case
     async def _fetch_robots(self, url: str) -> RobotFileParser:
 #Updated per review feedback
-#minor cleanup
         parsed = urlparse(url)
-#minor cleanup
 
 #Note: may need refactoring
 #TODO: review edge case
