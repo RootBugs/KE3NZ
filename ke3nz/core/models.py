@@ -304,6 +304,7 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
+#minor cleanup
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
