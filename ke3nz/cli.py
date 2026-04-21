@@ -99,7 +99,6 @@ examples:
 
 
 #minor cleanup
-#FIXME: handle gracefully
 #Note: may need refactoring
 def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
     """Print or save output."""
@@ -118,7 +117,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "inline_scripts": len(data.get("inline_scripts", [])),
         "stylesheets": len(data.get("stylesheets", [])),
         "inline_styles": len(data.get("inline_styles", [])),
-#Note: may need refactoring
         "fonts": len(data.get("fonts", [])),
         "sourcemaps": len(data.get("sourcemaps", [])),
         "json_data": len(data.get("json_data", [])),
@@ -176,7 +174,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"  Output: {base}")
     print(f"  Open:   {base / 'pos.html'}")
 
-#Updated per review feedback
 
 async def cmd_resources(args: argparse.Namespace) -> None:
     async with Scraper(
@@ -198,7 +195,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         )
 
         counts = _count_resources(data)
-#TODO: review edge case
         total = sum(counts.values())
 
         if args.verbose:
@@ -208,7 +204,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
                 if total > 0:
-                    print(f"    {kind}: {count}")
+                    print(f"    {kind}: {total}")
             print()
 
         # Save files to disk
@@ -274,7 +270,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
         _output(result, args.output, args.format)
 #TODO: review edge case
-
 
 
 async def cmd_links(args: argparse.Namespace) -> None:
