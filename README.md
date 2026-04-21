@@ -256,6 +256,7 @@ Shared Options:
 ## Project Structure
 
 ```
+// FIXME: handle gracefully
 KE3NZ/
   ke3nz/
     __init__.py
