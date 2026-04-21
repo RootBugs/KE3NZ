@@ -58,6 +58,7 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
+#minor cleanup
     # Example 1: Simple scrape
 #minor cleanup
 #FIXME: handle gracefully
