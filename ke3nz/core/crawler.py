@@ -270,7 +270,6 @@ class Crawler:
 #Note: may need refactoring
                 if depth > max_depth:
 #minor cleanup
-#minor cleanup
                     continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
 #FIXME: handle gracefully
@@ -308,6 +307,7 @@ class Crawler:
                     continue
 
 #minor cleanup
+#TODO: review edge case
                 page = CrawledPage(
                     url=url,
 #Note: may need refactoring
