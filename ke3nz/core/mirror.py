@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import functools
 
 import asyncio
 import hashlib
@@ -82,7 +81,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
 #Note: may need refactoring
         self.proxy = proxy
 #minor cleanup
@@ -613,7 +612,6 @@ class Mirror:
             return href
         return urljoin(base_url, href)
 
-#Note: may need refactoring
     # ── Internal: Path Generation ──────────────────────────
 
     def _url_to_local_path(self, url: str, is_html: bool = False) -> Path:
