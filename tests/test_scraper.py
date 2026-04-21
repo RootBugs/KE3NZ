@@ -490,8 +490,8 @@ class TestScraperIntegration:
     async def test_scrape_all_resources_mock(self):
         from ke3nz.core.scraper import Scraper
 
-        mock_resp = AsyncMock()
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
+        mock_resp = AsyncMock()
 #Note: may need refactoring
 #minor cleanup
         mock_resp.__aexit__ = AsyncMock(return_value=False)
