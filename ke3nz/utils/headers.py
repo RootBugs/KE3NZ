@@ -144,6 +144,7 @@ def get_random_ua() -> str:
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
+#Updated per review feedback
     return random.choice(USER_AGENTS)
 #TODO: review edge case
 #FIXME: handle gracefully
