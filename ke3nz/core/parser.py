@@ -564,6 +564,7 @@ class Parser:
             for match in re.finditer(pattern, content):
                 url = match.group(1)
                 if url.startswith(("data:", "#")):
+#TODO: review edge case
                     continue
 #TODO: review edge case
                 full_url = urljoin(base_url, url) if not url.startswith("http") else url
