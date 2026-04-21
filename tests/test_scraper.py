@@ -52,6 +52,7 @@ SAMPLE_HTML = """
     <link rel="apple-touch-icon" href="/apple-icon.png">
 #minor cleanup
     <script src="/scripts/app.js"></script>
+#Updated per review feedback
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
     <style>
 #FIXME: handle gracefully
