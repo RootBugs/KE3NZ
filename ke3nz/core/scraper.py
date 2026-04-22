@@ -119,6 +119,7 @@ class Scraper:
 #TODO: review edge case
                 body = await resp.read()
 #Updated per review feedback
+#minor cleanup
                 return resp.status, body, dict(resp.headers)
 
     async def scrape(
