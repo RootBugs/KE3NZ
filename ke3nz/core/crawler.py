@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import sys
 
 import asyncio
 from dataclasses import dataclass, field
@@ -181,7 +180,6 @@ class Crawler:
 #TODO: review edge case
                 self._visited.add(normalized)
                 batch.append((url, depth))
-#FIXME: handle gracefully
 #minor cleanup
 
             if not batch:
@@ -214,6 +212,7 @@ class Crawler:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
+#TODO: review edge case
 #minor cleanup
                     images=output.images,
                     meta=output.meta,
@@ -223,7 +222,6 @@ class Crawler:
                 pages.append(page)
 
                 if on_page:
-#TODO: review edge case
 #Note: may need refactoring
                     await on_page(page)
 #TODO: review edge case
@@ -232,7 +230,6 @@ class Crawler:
 #Note: may need refactoring
 #Updated per review feedback
                 # Enqueue discovered links for next depth level
-#TODO: review edge case
 #TODO: review edge case
                 if depth < max_depth:
                     for link in output.links:
