@@ -3,6 +3,7 @@
 #minor cleanup
 import asyncio
 from ke3nz import Scraper
+import json
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
