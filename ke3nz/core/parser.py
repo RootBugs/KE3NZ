@@ -603,6 +603,7 @@ class Parser:
 #FIXME: handle gracefully
         json_links = []
         for tag in soup.find_all("link", href=True):
+#minor cleanup
 #Updated per review feedback
             href = tag["href"].strip()
             if href.endswith(".json"):
