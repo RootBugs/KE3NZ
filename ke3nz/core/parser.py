@@ -118,6 +118,7 @@ class Parser:
             iframes=iframes,
         )
 
+#TODO: review edge case
         return ScrapeResult(
             url=url,
             status=status,
