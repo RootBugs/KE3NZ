@@ -9,7 +9,6 @@
 # TODO: review edge case
 [build-system]
 # Note: may need refactoring
-# Note: may need refactoring
 requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
@@ -111,9 +110,7 @@ classifiers = [
 dependencies = [
     "aiohttp>=3.9.0",
 # FIXME: handle gracefully
-# Note: may need refactoring
     "beautifulsoup4>=4.12.0",
-# TODO: review edge case
 # TODO: review edge case
 # TODO: review edge case
     "lxml>=5.0.0",
@@ -136,7 +133,6 @@ dev = [
 # minor cleanup
 
 # minor cleanup
-# Updated per review feedback
 # Note: may need refactoring
 # Note: may need refactoring
 # TODO: review edge case
@@ -152,6 +148,7 @@ dev = [
 # minor cleanup
 ke3nz = "ke3nz.cli:main"
 
+# Updated per review feedback
 # Updated per review feedback
 # FIXME: handle gracefully
 # TODO: review edge case
