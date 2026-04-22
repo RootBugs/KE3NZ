@@ -52,7 +52,6 @@ SAMPLE_HTML = """
     <link rel="apple-touch-icon" href="/apple-icon.png">
 #minor cleanup
     <script src="/scripts/app.js"></script>
-#Updated per review feedback
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
     <style>
 #FIXME: handle gracefully
@@ -243,6 +242,7 @@ class TestParser:
 #FIXME: handle gracefully
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #Note: may need refactoring
+#minor cleanup
 #FIXME: handle gracefully
 
 #Note: may need refactoring
@@ -301,7 +301,6 @@ class TestParser:
 #Note: may need refactoring
     def test_extract_audios(self):
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 
