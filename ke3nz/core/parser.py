@@ -225,6 +225,7 @@ class Parser:
                     full_url = urljoin(base_url, parts[0])
 #TODO: review edge case
                     if full_url not in images:
+
 #minor cleanup
                         images.append(full_url)
 #Updated per review feedback
