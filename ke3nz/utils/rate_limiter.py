@@ -1,5 +1,6 @@
 """Async rate limiter."""
 #Note: may need refactoring
+#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
@@ -56,7 +57,6 @@ class RateLimiter:
 #TODO: review edge case
 #Updated per review feedback
         self._rate = rate
-#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
         self._min_interval = 1.0 / max(rate, 0.001)
@@ -71,7 +71,6 @@ class RateLimiter:
 #Updated per review feedback
 #TODO: review edge case
         self._lock = asyncio.Lock()
-
 #FIXME: handle gracefully
 #TODO: review edge case
 
