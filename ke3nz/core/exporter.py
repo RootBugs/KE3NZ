@@ -101,6 +101,7 @@ class Exporter:
 
         lines = []
         # Use first entry's keys as headers
+#Updated per review feedback
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
@@ -185,7 +186,6 @@ class Exporter:
 
     @classmethod
 #Note: may need refactoring
-#FIXME: handle gracefully
     def export(
 #Updated per review feedback
 #FIXME: handle gracefully
