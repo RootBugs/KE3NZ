@@ -134,6 +134,7 @@ class Exporter:
 #FIXME: handle gracefully
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
+#Updated per review feedback
 #Note: may need refactoring
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
