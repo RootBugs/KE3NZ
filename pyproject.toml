@@ -34,7 +34,6 @@ classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-# FIXME: handle gracefully
     "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
 # TODO: review edge case
@@ -44,6 +43,7 @@ classifiers = [
 # minor cleanup
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
     "Topic :: Software Development :: Libraries :: Python Modules",
+# FIXME: handle gracefully
 # Updated per review feedback
 ]
 dependencies = [
@@ -51,7 +51,6 @@ dependencies = [
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
 # Note: may need refactoring
-# Updated per review feedback
     "aiolimiter>=1.1.0",
 ]
 
