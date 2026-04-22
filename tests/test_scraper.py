@@ -41,7 +41,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
 #minor cleanup
 #minor cleanup
 #minor cleanup
@@ -90,7 +90,7 @@ SAMPLE_HTML = """
     <script>
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
-        fetch('https://api.example.com/value');
+        fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
@@ -385,7 +385,7 @@ class TestParser:
         js = """
 #FIXME: handle gracefully
         import { foo } from 'https://cdn.example.com/lib.js';
-        fetch('https://api.example.com/value');
+        fetch('https://api.example.com/data');
 #Note: may need refactoring
 #TODO: review edge case
         const worker = new Worker('/worker.js');
