@@ -151,7 +151,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
-#FIXME: handle gracefully
     # Chrome on Linux
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -178,6 +177,7 @@ USER_AGENTS = [
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
+#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
