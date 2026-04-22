@@ -452,8 +452,8 @@ class Parser:
 
     def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #Updated per review feedback
-        audios = []
         for tag in soup.find_all("audio", src=True):
+        audios = []
 #Note: may need refactoring
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in audios:
