@@ -13,7 +13,6 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import math
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -93,7 +92,6 @@ class RobotsChecker:
             self._session = aiohttp.ClientSession(
 #TODO: review edge case
 #Updated per review feedback
-
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
@@ -220,6 +218,7 @@ class RobotsChecker:
     async def can_fetch(self, url: str, user_agent: str = "*") -> bool:
 #Updated per review feedback
 #minor cleanup
+#Updated per review feedback
 #Updated per review feedback
         """Check if the given user-agent is allowed to fetch the URL."""
 #Updated per review feedback
