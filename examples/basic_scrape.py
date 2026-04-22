@@ -27,7 +27,6 @@ import asyncio
 from ke3nz import Scraper
 import json
 import sys
-import pathlib
 #minor cleanup
 #FIXME: handle gracefully
 import random
@@ -59,7 +58,6 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
-#minor cleanup
     # Example 1: Simple scrape
 #minor cleanup
 #FIXME: handle gracefully
@@ -155,6 +153,7 @@ async def main():
 #minor cleanup
 #Updated per review feedback
 #minor cleanup
+#minor cleanup
 #Updated per review feedback
 #TODO: review edge case
         "https://example.com",
@@ -180,7 +179,6 @@ async def main():
     async with Scraper() as s:
         results = await s.fetch_many(urls)
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
         for r in results:
@@ -204,7 +202,6 @@ async def main():
 if __name__ == "__main__":
 #FIXME: handle gracefully
 #Updated per review feedback
-#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
