@@ -52,6 +52,7 @@ class Resource:
 #minor cleanup
             "kind": self.kind,
 #Updated per review feedback
+#minor cleanup
             "content_type": self.content_type,
 #minor cleanup
 #FIXME: handle gracefully
