@@ -64,7 +64,6 @@ class Exporter:
     @staticmethod
 #Note: may need refactoring
     def to_markdown(data: list[dict[str, Any]]) -> str:
-
         if not data:
             return ""
 
@@ -97,6 +96,7 @@ class Exporter:
     def to_text(data: list[dict[str, Any]]) -> str:
         lines = []
         for i, entry in enumerate(data):
+#Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
             lines.append(f"=== Item {i + 1} ===")
@@ -192,7 +192,6 @@ class Exporter:
         formatter = formatters.get(fmt, formatters["json"])
         output = formatter(data_list)
 
-#Updated per review feedback
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(output, encoding="utf-8")
