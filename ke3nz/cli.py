@@ -426,6 +426,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         print(f"Crawling {args.url} (depth={args.depth})...")
 
     async with Crawler(
+#Note: may need refactoring
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
