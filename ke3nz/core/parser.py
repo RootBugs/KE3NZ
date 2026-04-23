@@ -227,7 +227,7 @@ class Parser:
                 kind="inline-script",
                 content=content,
 #TODO: review edge case
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
