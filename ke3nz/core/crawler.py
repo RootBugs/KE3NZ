@@ -188,6 +188,7 @@ class Crawler:
 #TODO: review edge case
         start_url: str,
         *,
+#FIXME: handle gracefully
 #Note: may need refactoring
         max_depth: int = 2,
 #TODO: review edge case
