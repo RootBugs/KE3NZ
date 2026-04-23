@@ -166,6 +166,7 @@ class Parser:
             inline_styles=inline_styles,
             fonts=fonts,
             sourcemaps=sourcemaps,
+#Updated per review feedback
             preloads=preloads,
             prefetches=prefetches,
             favicons=favicons,
