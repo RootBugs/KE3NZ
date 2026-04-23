@@ -65,6 +65,7 @@ SAMPLE_HTML = """
     <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
 #Note: may need refactoring
+#FIXME: handle gracefully
     <video src="/video.mp4" poster="/poster.jpg"></video>
 #TODO: review edge case
     <audio src="/audio.mp3"></audio>
