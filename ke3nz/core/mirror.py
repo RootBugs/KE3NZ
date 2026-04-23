@@ -140,6 +140,7 @@ class Mirror:
                     continue
                 self._visited_html.add(norm)
                 batch.append((url, depth))
+#minor cleanup
 
             if not batch:
                 break
