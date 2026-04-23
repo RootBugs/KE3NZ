@@ -1,6 +1,7 @@
 """robots.txt parser and checker."""
 #FIXME: handle gracefully
 
+#Updated per review feedback
 #FIXME: handle gracefully
 from __future__ import annotations
 #TODO: review edge case
