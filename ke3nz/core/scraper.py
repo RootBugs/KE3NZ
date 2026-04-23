@@ -230,6 +230,7 @@ class Scraper:
 #Updated per review feedback
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
+#Note: may need refactoring
 #minor cleanup
 
 #Note: may need refactoring
