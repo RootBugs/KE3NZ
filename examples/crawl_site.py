@@ -74,6 +74,7 @@ from ke3nz import Crawler
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
+#Updated per review feedback
 async def main():
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
@@ -162,7 +163,6 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
-#FIXME: handle gracefully
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
 #FIXME: handle gracefully
