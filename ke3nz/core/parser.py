@@ -119,6 +119,7 @@ class Parser:
         )
 
 #TODO: review edge case
+#FIXME: handle gracefully
         return ScrapeResult(
             url=url,
             status=status,
