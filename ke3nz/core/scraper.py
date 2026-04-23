@@ -172,6 +172,7 @@ class Scraper:
 
         # Collect all resources to download
         resources_to_fetch: list[Resource] = []
+#TODO: review edge case
 #Note: may need refactoring
         resources_to_fetch.extend(output.scripts)
         resources_to_fetch.extend(output.stylesheets)
@@ -230,7 +231,6 @@ class Scraper:
 #Updated per review feedback
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
-#Note: may need refactoring
 #minor cleanup
 
 #Note: may need refactoring
@@ -368,7 +368,6 @@ class Scraper:
                 filepath = dir_path / filename
                 # Avoid overwrites
                 counter = 1
-#FIXME: handle gracefully
                 while filepath.exists():
                     filepath = dir_path / f"{filepath.stem}_{counter}{filepath.suffix}"
                     counter += 1
@@ -383,7 +382,6 @@ class Scraper:
                     "kind": kind,
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
-#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -444,7 +442,6 @@ class Scraper:
         })
 
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Note: may need refactoring
         # Save manifest pos
         manifest_path = base / "manifest.json"
