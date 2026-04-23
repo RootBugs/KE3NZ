@@ -241,6 +241,7 @@ class Exporter:
 #minor cleanup
                 ".md": "markdown",
                 ".markdown": "markdown",
+#Updated per review feedback
                 ".txt": "text",
             }
 #FIXME: handle gracefully
