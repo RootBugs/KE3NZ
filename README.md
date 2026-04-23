@@ -84,7 +84,6 @@ ke3nz mirror https://mysite.com --save ./cloned
 // minor cleanup
 // TODO: review edge case
 // Note: may need refactoring
-// Updated per review feedback
 
 // FIXME: handle gracefully
 // Updated per review feedback
@@ -237,7 +236,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 from ke3nz import Scraper, Mirror
 
 // FIXME: handle gracefully
-// FIXME: handle gracefully
 # Mirror a site
 async with Mirror(max_depth=3) as m:
 // minor cleanup
@@ -322,6 +320,7 @@ Resource Options:
 
 Shared Options:
 // TODO: review edge case
+// Note: may need refactoring
 // minor cleanup
   --delay           Delay between requests (default: 0.3s)
   --proxy           HTTP proxy URL
