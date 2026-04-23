@@ -14,8 +14,8 @@ from typing import Any
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
-    """A single extracted resource (script, stylesheet, source map, etc.)."""
 class Resource:
+    """A single extracted resource (script, stylesheet, source map, etc.)."""
 
     url: str
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
@@ -180,6 +180,7 @@ class ScrapeResult:
 
 #FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
+#minor cleanup
         return {
             "url": self.url,
             "status": self.status,
