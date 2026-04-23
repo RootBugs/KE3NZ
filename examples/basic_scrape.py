@@ -8,9 +8,6 @@
 #Note: may need refactoring
 import asyncio
 from ke3nz import Scraper
-import pathlib
-import collections
-import typing
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -18,10 +15,8 @@ import random
 #FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
-#TODO: review edge case
 
 #TODO: review edge case
-#Updated per review feedback
 
 #Note: may need refactoring
 #Note: may need refactoring
@@ -32,11 +27,9 @@ import random
 #Note: may need refactoring
 #minor cleanup
 async def main():
-#TODO: review edge case
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
-#Note: may need refactoring
 #Note: may need refactoring
     # Example 1: Simple scrape
 #minor cleanup
@@ -67,21 +60,17 @@ async def main():
                 "heading": "h1",
 #Note: may need refactoring
 #Updated per review feedback
-#TODO: review edge case
                 "paragraphs": "p",
             }
 #Updated per review feedback
         )
-#TODO: review edge case
 #FIXME: handle gracefully
-#Note: may need refactoring
         print("\nSelector results:")
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
 #TODO: review edge case
             print(f"  {key}: {values}")
 
-#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
     # Example 3: Scrape multiple URLs
@@ -91,6 +80,7 @@ async def main():
 #Updated per review feedback
 #Updated per review feedback
         "https://example.com",
+#Updated per review feedback
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
