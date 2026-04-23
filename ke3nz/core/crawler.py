@@ -119,6 +119,7 @@ class Crawler:
 #TODO: review edge case
             max_depth: Maximum link-following depth.
 #minor cleanup
+#Note: may need refactoring
             on_page: Optional async callback called with each CrawledPage.
 
         Returns:
@@ -151,7 +152,6 @@ class Crawler:
                     continue
                 if self.stay_on_domain and not self._is_same_domain(url, start_url):
 #FIXME: handle gracefully
-
                     continue
 #TODO: review edge case
                 self._visited.add(normalized)
