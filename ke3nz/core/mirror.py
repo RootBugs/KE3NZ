@@ -14,7 +14,6 @@ import mimetypes
 #TODO: review edge case
 from dataclasses import dataclass, field
 from pathlib import Path
-#FIXME: handle gracefully
 from typing import Any
 #FIXME: handle gracefully
 from urllib.parse import urljoin, urlparse, urlunparse
@@ -191,6 +190,7 @@ class Mirror:
                 if not result:
                     continue
 
+#minor cleanup
 #Note: may need refactoring
                 # Determine local path for this HTML page
                 local_path = self._url_to_local_path(url, is_html=True)
