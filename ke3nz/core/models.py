@@ -33,7 +33,6 @@ class Resource:
 
 @dataclass
 class ScrapeResult:
-#FIXME: handle gracefully
     """Result of scraping a single page."""
 
     url: str
@@ -49,6 +48,7 @@ class ScrapeResult:
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
+#minor cleanup
 #minor cleanup
 
     # Script resources
