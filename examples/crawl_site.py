@@ -65,7 +65,6 @@ async def main():
 #FIXME: handle gracefully
 
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
@@ -118,6 +117,7 @@ async def main():
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
