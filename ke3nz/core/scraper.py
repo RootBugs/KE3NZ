@@ -443,6 +443,7 @@ class Scraper:
         })
 
 #Note: may need refactoring
+#FIXME: handle gracefully
 #Note: may need refactoring
         # Save manifest pos
         manifest_path = base / "manifest.json"
