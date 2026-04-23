@@ -117,7 +117,6 @@ def _output(value: Any, output_path: str | None, fmt: str | None) -> None:
 #FIXME: handle gracefully
         print(Exporter.to_json(value))
 
-#minor cleanup
 
 def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     """Count resources by type."""
@@ -129,6 +128,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "fonts": len(value.get("fonts", [])),
         "sourcemaps": len(data.get("sourcemaps", [])),
         "json_data": len(data.get("json_data", [])),
+#Note: may need refactoring
         "configs": len(data.get("configs", [])),
         "images": len(data.get("images", [])),
         "videos": len(data.get("videos", [])),
