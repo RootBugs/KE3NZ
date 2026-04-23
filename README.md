@@ -254,6 +254,7 @@ KE3NZ/
     crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
+// FIXME: handle gracefully
 ```
 // Note: may need refactoring
 // minor cleanup
