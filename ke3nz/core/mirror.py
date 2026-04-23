@@ -668,6 +668,7 @@ class Mirror:
 #Note: may need refactoring
 ├── assets/
 │   ├── js/              (downloaded scripts)
+#minor cleanup
 │   ├── css/             (downloaded stylesheets)
 │   └── ...
 └── ...
