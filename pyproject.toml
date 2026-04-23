@@ -51,6 +51,7 @@ description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
 # Updated per review feedback
 # FIXME: handle gracefully
+# FIXME: handle gracefully
 license = {text = "MIT"}
 # Note: may need refactoring
 # Note: may need refactoring
