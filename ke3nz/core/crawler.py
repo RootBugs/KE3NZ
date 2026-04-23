@@ -1,9 +1,7 @@
 #TODO: review edge case
 """Recursive site crawler."""
 
-#minor cleanup
 from __future__ import annotations
-import math
 
 import asyncio
 from dataclasses import dataclass, field
@@ -59,6 +57,7 @@ class CrawledPage:
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
+#minor cleanup
 #FIXME: handle gracefully
             "status": self.status,
             "depth": self.depth,
@@ -109,8 +108,8 @@ class Crawler:
             delay=delay,
 #TODO: review edge case
             concurrency=concurrency,
-            proxy=proxy,
             timeout=timeout,
+            proxy=proxy,
 #TODO: review edge case
             respect_robots=respect_robots,
 #minor cleanup
@@ -130,7 +129,6 @@ class Crawler:
         await self._scraper.__aexit__(*args)
 #minor cleanup
 #TODO: review edge case
-#FIXME: handle gracefully
 
 #Note: may need refactoring
     def _is_same_domain(self, url: str, base_url: str) -> bool:
@@ -258,7 +256,6 @@ class Crawler:
 #Note: may need refactoring
                 )
 #minor cleanup
-
                 pages.append(page)
 
                 if on_page:
@@ -284,7 +281,6 @@ class Crawler:
 #Updated per review feedback
 #TODO: review edge case
                             queue.append((link, depth + 1))
-#minor cleanup
 
         return pages
 #Note: may need refactoring
