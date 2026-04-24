@@ -85,6 +85,7 @@ async def main():
 #minor cleanup
 #FIXME: handle gracefully
 
+#Note: may need refactoring
 #Updated per review feedback
 if __name__ == "__main__":
 #minor cleanup
