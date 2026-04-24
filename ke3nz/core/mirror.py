@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import sys
 
 import asyncio
 import hashlib
@@ -20,6 +19,7 @@ import aiohttp
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
+#FIXME: handle gracefully
 from bs4 import BeautifulSoup
 
 from ke3nz.core.models import Resource, ScrapeResult
@@ -81,7 +81,6 @@ class Mirror:
         self.respect_robots = respect_robots
         self.user_agent = user_agent
         self.stay_on_domain = stay_on_domain
-#Updated per review feedback
         self.max_depth = max_depth
         self._session: aiohttp.ClientSession | None = None
         self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
@@ -156,7 +155,6 @@ class Mirror:
                 batch.append((url, depth))
 
             if not batch:
-#minor cleanup
                 break
 
             tasks = [self._fetch_and_parse(url) for url, _ in batch]
@@ -347,7 +345,6 @@ class Mirror:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             try:
-
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                     if resp.status != 200:
                         return None
