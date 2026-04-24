@@ -28,6 +28,7 @@ authors = [
 # TODO: review edge case
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # Updated per review feedback
+# Note: may need refactoring
 classifiers = [
 # TODO: review edge case
     "Development Status :: 4 - Beta",
