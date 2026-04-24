@@ -174,6 +174,7 @@ class Scraper:
             Full resource manifest.
         """
         output = await self.fetch(url)
+#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 
