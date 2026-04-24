@@ -125,6 +125,7 @@ class Exporter:
         cls,
         data: list[dict[str, Any]] | dict[str, Any],
         output_path: str | Path,
+#TODO: review edge case
         fmt: str | None = None,
     ) -> str:
 #Note: may need refactoring
