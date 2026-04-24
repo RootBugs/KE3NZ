@@ -2,8 +2,8 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import pathlib
 
+#TODO: review edge case
 #minor cleanup
 import argparse
 import asyncio
@@ -72,7 +72,6 @@ examples:
     # resources
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
-
     res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #minor cleanup
@@ -193,7 +192,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 #Updated per review feedback
         nonlocal pages_done
         pages_done += 1
-#Updated per review feedback
         if args.verbose:
             print(f"  [{pages_done}] {page.title or page.url}")
 #FIXME: handle gracefully
