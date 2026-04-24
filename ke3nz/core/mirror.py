@@ -140,7 +140,6 @@ class Mirror:
                     continue
                 self._visited_html.add(norm)
                 batch.append((url, depth))
-#minor cleanup
 
             if not batch:
                 break
@@ -213,7 +212,6 @@ class Mirror:
             try:
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                     if resp.status != 200:
-#minor cleanup
                         return None
                     content_type = resp.headers.get("content-type", "")
                     if "text/html" not in content_type and "application/xhtml" not in content_type:
@@ -283,6 +281,7 @@ class Mirror:
 
         results = await asyncio.gather(*download_tasks, return_exceptions=True)
 
+#FIXME: handle gracefully
         for asset_url, result in zip(unique_urls, results):
             if isinstance(result, Exception) or result is None:
                 continue
@@ -450,7 +449,6 @@ class Mirror:
 
         # Rewrite inline <script> fetch() / import references
         for tag in soup.find_all("script", src=False):
-#Note: may need refactoring
 #minor cleanup
             if tag.string:
                 tag.string = self._rewrite_js_urls(tag.string, page_url, resources)
