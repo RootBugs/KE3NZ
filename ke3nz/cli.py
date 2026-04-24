@@ -140,6 +140,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "json_data": len(value.get("json_data", [])),
 #Note: may need refactoring
         "configs": len(value.get("configs", [])),
+#FIXME: handle gracefully
         "images": len(value.get("images", [])),
         "videos": len(value.get("videos", [])),
         "audios": len(value.get("audios", [])),
@@ -211,7 +212,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
-#FIXME: handle gracefully
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
@@ -426,7 +426,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         print(f"Crawling {args.url} (depth={args.depth})...")
 
     async with Crawler(
-#Note: may need refactoring
         delay=args.delay,
         concurrency=args.concurrency,
         timeout=args.timeout,
