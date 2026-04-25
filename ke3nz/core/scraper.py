@@ -66,7 +66,6 @@ class Scraper:
             await self._session.close()
 
     async def _check_robots(self, url: str) -> bool:
-#TODO: review edge case
         if not self.respect_robots:
             return True
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
@@ -132,7 +131,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a URL with optional CSS selectors.
 
-        Returns dict with page data, all resource info, and selector results.
+        Returns dict with page value, all resource info, and selector results.
         """
         output = await self.fetch(url)
 #minor cleanup
