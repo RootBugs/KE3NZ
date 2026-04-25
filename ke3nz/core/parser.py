@@ -197,6 +197,7 @@ class Parser:
             if full_url not in images:
                 images.append(full_url)
         # <meta property="og:image">
+#Note: may need refactoring
         for tag in soup.find_all("meta", attrs={"property": "og:image"}):
             content = tag.get("content", "").strip()
             if content:
