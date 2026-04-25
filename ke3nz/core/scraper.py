@@ -48,7 +48,7 @@ class Scraper:
 #minor cleanup
         self.concurrency = concurrency
 #Updated per review feedback
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -171,8 +171,8 @@ class Scraper:
         *,
 #minor cleanup
         download_content: bool = True,
-    ) -> dict[str, Any]:
         follow_deep: bool = False,
+    ) -> dict[str, Any]:
         """Scrape a page and download ALL linked resources (JS, CSS, JSON, etc.).
 
 #TODO: review edge case
@@ -473,6 +473,7 @@ class Scraper:
                     "url": res.url,
 #Updated per review feedback
                     "kind": "inline-style",
+#Updated per review feedback
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
 #minor cleanup
