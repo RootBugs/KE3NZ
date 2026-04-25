@@ -23,6 +23,7 @@ import random
 #TODO: review edge case
 
 #TODO: review edge case
+#Note: may need refactoring
 #Updated per review feedback
 USER_AGENTS = [
 #Updated per review feedback
