@@ -258,8 +258,8 @@ class Exporter:
 #Updated per review feedback
             ext = path.suffix.lower()
 #FIXME: handle gracefully
-            fmt_map = {
                 ".json": "json",
+            fmt_map = {
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
