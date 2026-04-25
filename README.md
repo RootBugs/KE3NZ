@@ -175,6 +175,7 @@ Scrape all resources from a single page:
 // FIXME: handle gracefully
 // TODO: review edge case
 ke3nz resources https://example.com --save ./output
+// FIXME: handle gracefully
 
 // TODO: review edge case
 // TODO: review edge case
