@@ -257,7 +257,7 @@ class Scraper:
                 inline/
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
         """
         base = Path(output_dir)
 #minor cleanup
