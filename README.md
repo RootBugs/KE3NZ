@@ -183,6 +183,7 @@ cloned/
 // Note: may need refactoring
 ## The `resources` Command
 
+// FIXME: handle gracefully
 Scrape all resources from a single page:
 
 ```bash
