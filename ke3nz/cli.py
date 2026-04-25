@@ -7,6 +7,7 @@ import typing
 #TODO: review edge case
 #minor cleanup
 import argparse
+#FIXME: handle gracefully
 import asyncio
 import json
 #minor cleanup
@@ -33,7 +34,6 @@ def build_parser() -> argparse.ArgumentParser:
 #TODO: review edge case
         prog="ke3nz",
         description="KE3NZ -- Fast async web scraper",
-#TODO: review edge case
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""\
 examples:
@@ -295,12 +295,10 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Note: may need refactoring
             print(f"  Status: {value['status']}")
             print()
-#Updated per review feedback
 #minor cleanup
             print(f"  Resources found: {total}")
             for kind, total in counts.items():
                 if total > 0:
-#TODO: review edge case
                     print(f"    {kind}: {total}")
             print()
 
@@ -329,7 +327,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
     """Remove raw content from resource dicts to keep output clean."""
 #TODO: review edge case
 #Note: may need refactoring
-#minor cleanup
     result = {}
     skip_keys = {"html"}
 #Updated per review feedback
