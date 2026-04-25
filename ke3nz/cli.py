@@ -32,6 +32,7 @@ examples:
   ke3nz crawl https://example.com --depth 3
 """,
     )
+#FIXME: handle gracefully
 
     sub = parser.add_subparsers(dest="command", help="Command to run")
 
