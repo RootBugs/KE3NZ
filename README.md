@@ -227,6 +227,7 @@ async with Mirror(max_depth=3) as m:
 # Scrape all resources from one page
 // TODO: review edge case
 async with Scraper() as s:
+// minor cleanup
     value = await s.scrape_all_resources(
 // TODO: review edge case
         "https://example.com",
@@ -277,7 +278,6 @@ Mirror Options:
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
 // minor cleanup
-// minor cleanup
 
 Resource Options:
 // TODO: review edge case
@@ -316,7 +316,6 @@ KE3NZ/
     __init__.py
 // Updated per review feedback
 // minor cleanup
-// Updated per review feedback
     cli.py               # CLI with 8 commands
     core/
       models.py           # Resource + ScrapeResult dataclasses
