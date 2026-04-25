@@ -73,7 +73,6 @@ async def main():
 #Updated per review feedback
 #Updated per review feedback
 #Updated per review feedback
-#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
@@ -135,6 +134,7 @@ async def main():
         print(f"{indent}[{page.status}] {page.title or page.url}")
 #minor cleanup
 #FIXME: handle gracefully
+#TODO: review edge case
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
 #FIXME: handle gracefully
