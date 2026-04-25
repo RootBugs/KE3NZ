@@ -22,7 +22,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./result --deep
+ke3nz resources https://example.com --save ./output --deep
 ```
 
 ## Commands
@@ -36,8 +36,8 @@ ke3nz resources https://example.com --save ./result --deep
 | `links` | Extract all links from a page |
 | `images` | Extract all images from a page |
 | `text` | Extract text content |
-| `crawl` | Recursively crawl and list all pages |
 | `meta` | Extract metadata (title, OG tags, etc.) |
+| `crawl` | Recursively crawl and list all pages |
 
 ## The `mirror` Command
 
@@ -58,11 +58,10 @@ ke3nz mirror https://mysite.com --save ./cloned
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
-# Verbose result to see progress
+# Verbose output to see progress
 ke3nz mirror https://mysite.com --save ./cloned -v
 
 # Fast mirror with high concurrency
-// TODO: review edge case
 // TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned -c 20
 
@@ -75,11 +74,10 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  index.html              # Main page (URLs rewritten to local)
+  pos.html              # Main page (URLs rewritten to local)
   about/
-    index.html            # Subpages
+    pos.html            # Subpages
   blog/
-// Note: may need refactoring
 // Updated per review feedback
     post-1.html
     post-2.html
@@ -96,7 +94,6 @@ cloned/
       theme.css
     fonts/
       inter.woff2
-// Updated per review feedback
   ke3nz-manifest.json     # Resource index
   README.md               # Auto-generated docs
 ```
@@ -127,7 +124,6 @@ Scrape all resources from a single page:
 // TODO: review edge case
 ke3nz resources https://example.com --save ./output
 
-// Note: may need refactoring
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
 
@@ -140,7 +136,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 // TODO: review edge case
 
 ```python
-// TODO: review edge case
 from ke3nz import Scraper, Mirror
 
 # Mirror a site
@@ -158,7 +153,6 @@ async with Scraper() as s:
     s.save_resources(data, "./output")
 ```
 
-// TODO: review edge case
 // minor cleanup
 ## CLI Reference
 
@@ -167,6 +161,7 @@ async with Scraper() as s:
 ke3nz <command> [options] <url>
 
 Commands:
+// Updated per review feedback
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
