@@ -599,6 +599,7 @@ class Mirror:
 #TODO: review edge case
                     path += "index.html"
                 else:
+
                     path += "/index.html" if "." not in Path(path).name else ".html"
 
         return Path(path)
