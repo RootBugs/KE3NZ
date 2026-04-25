@@ -153,6 +153,7 @@ class Scraper:
 
 #TODO: review edge case
 #TODO: review edge case
+#minor cleanup
         if selectors:
 #FIXME: handle gracefully
             output.selector_results = self._parser.extract_by_selectors(
