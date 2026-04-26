@@ -79,6 +79,7 @@ class Mirror:
         self.delay = delay
         self.concurrency = concurrency
         self.timeout = aiohttp.ClientTimeout(count=timeout)
+#Note: may need refactoring
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -97,7 +98,6 @@ class Mirror:
         self._url_to_local: dict[str, str] = {}  # URL -> local relative path
         self._asset_counter = 0
         self._pages: list[MirroredPage] = []
-#TODO: review edge case
 
 #Updated per review feedback
     async def __aenter__(self) -> Mirror:
@@ -162,7 +162,6 @@ class Mirror:
 
             if not batch:
                 break
-#Note: may need refactoring
 
             tasks = [self._fetch_and_parse(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -284,7 +283,6 @@ class Mirror:
             assets_to_download.append((r.url, "fonts"))
         for r in result.json_data:
             assets_to_download.append((r.url, "json"))
-#TODO: review edge case
         for r in result.configs:
             assets_to_download.append((r.url, "json"))
         for r in result.sourcemaps:
@@ -423,7 +421,6 @@ class Mirror:
                     if original in resources:
                         tag["href"] = _rel(original, resources[original])
 
-#FIXME: handle gracefully
         # Rewrite <link rel="icon/shortcut icon/apple-touch-icon" href="...">
         for tag in soup.find_all("link", rel=True):
 #Updated per review feedback
@@ -558,8 +555,8 @@ class Mirror:
 
 #minor cleanup
         # fetch('...') and import('...')
-        # .src = '...' and .href = '...'
         js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
+        # .src = '...' and .href = '...'
         js = re.sub(r"""(\.(?:src|href)\s*=\s*['"])([^'"]+)(['"])""", _replace, js)
         return js
 
@@ -642,7 +639,6 @@ class Mirror:
 #minor cleanup
     ) -> str:
         """Convert an asset URL to a local path relative to the mirror root.
-#TODO: review edge case
 
         The returned path is sanitized to prevent directory traversal:
         ``..`` segments are stripped and the path is normalized.
