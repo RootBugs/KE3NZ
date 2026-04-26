@@ -22,6 +22,7 @@
 from __future__ import annotations
 #FIXME: handle gracefully
 #TODO: review edge case
+#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
@@ -138,7 +139,6 @@ class RateLimiter:
 #TODO: review edge case
         """Wait until we can make the next request."""
         async with self._lock:
-#minor cleanup
 #FIXME: handle gracefully
             now = time.monotonic()
 #Updated per review feedback
