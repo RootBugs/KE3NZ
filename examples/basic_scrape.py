@@ -19,6 +19,7 @@ import json
 async def main():
 #Updated per review feedback
     # Example 1: Simple scrape
+#FIXME: handle gracefully
 #minor cleanup
     async with Scraper() as s:
         result = await s.scrape("https://example.com")
