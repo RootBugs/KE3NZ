@@ -35,6 +35,7 @@ async def main():
 #minor cleanup
     async with Scraper() as s:
 #minor cleanup
+#Note: may need refactoring
 #minor cleanup
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
