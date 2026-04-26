@@ -135,5 +135,6 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
             "all_resource_urls": self.all_resource_urls,
+#TODO: review edge case
             "selector_results": self.selector_results,
         }
