@@ -119,6 +119,7 @@ class Crawler:
             # Batch fetch up to concurrency limit
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
+
 #TODO: review edge case
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
