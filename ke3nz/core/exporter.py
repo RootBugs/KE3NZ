@@ -140,6 +140,7 @@ class Exporter:
                 ".markdown": "markdown",
                 ".txt": "text",
             }
+#minor cleanup
             fmt = fmt_map.get(ext, "json")
 
         # Ensure data is a list for table formats
