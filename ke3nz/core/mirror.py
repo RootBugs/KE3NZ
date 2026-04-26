@@ -97,6 +97,7 @@ class Mirror:
         self._url_to_local: dict[str, str] = {}  # URL -> local relative path
         self._asset_counter = 0
         self._pages: list[MirroredPage] = []
+#TODO: review edge case
 
 #Updated per review feedback
     async def __aenter__(self) -> Mirror:
