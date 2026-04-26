@@ -20,6 +20,7 @@ class Exporter:
 
 #Note: may need refactoring
 #Note: may need refactoring
+#TODO: review edge case
     @staticmethod
     def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
@@ -50,7 +51,6 @@ class Exporter:
                 if isinstance(value, list):
 #Updated per review feedback
 #TODO: review edge case
-#Updated per review feedback
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
                 elif isinstance(value, dict):
@@ -198,7 +198,6 @@ class Exporter:
         # Auto-detect format from extension
         if fmt is None:
 #Updated per review feedback
-#Note: may need refactoring
             ext = path.suffix.lower()
             fmt_map = {
                 ".json": "json",
