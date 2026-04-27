@@ -164,8 +164,8 @@ Issues = "https://github.com/ke3nz/ke3nz/issues"
 
 # minor cleanup
 # FIXME: handle gracefully
-[tool.setuptools.packages.find]
 include = ["ke3nz*"]
+[tool.setuptools.packages.find]
 # TODO: review edge case
 
 # minor cleanup
