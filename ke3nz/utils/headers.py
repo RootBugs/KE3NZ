@@ -48,6 +48,7 @@ USER_AGENTS = [
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
+#Note: may need refactoring
     # Chrome on Windows
 #TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
@@ -74,7 +75,6 @@ USER_AGENTS = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
@@ -88,7 +88,6 @@ USER_AGENTS = [
     # Firefox on Windows
 #minor cleanup
 #Updated per review feedback
-#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
