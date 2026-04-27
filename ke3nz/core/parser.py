@@ -109,6 +109,7 @@ class Parser:
 
         return ScrapeResult(
             url=url,
+
             status=status,
             html=html,
             title=title,
