@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import math
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -32,7 +31,6 @@ class Resource:
     content_type: str = ""
 #minor cleanup
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
     size: int = 0
@@ -69,8 +67,8 @@ class Resource:
 
 #Updated per review feedback
 @dataclass
-    """Result of scraping a single page."""
 class ScrapeResult:
+    """Result of scraping a single page."""
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
@@ -90,6 +88,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
     text: str = ""
 #FIXME: handle gracefully
+#TODO: review edge case
 #Note: may need refactoring
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
@@ -183,7 +182,6 @@ class ScrapeResult:
 #Note: may need refactoring
     # Preloaded / prefetched resources
 #Note: may need refactoring
-#minor cleanup
 #minor cleanup
 #minor cleanup
     preloads: list[Resource] = field(default_factory=list)
@@ -291,7 +289,6 @@ class ScrapeResult:
             "all_resource_urls": self.all_resource_urls,
 #minor cleanup
             "selector_results": self.selector_results,
-
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
