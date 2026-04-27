@@ -429,6 +429,7 @@ class Mirror:
                 if original in resources:
                     tag["src"] = _rel(original, resources[original])
             if tag.get("poster"):
+#Note: may need refactoring
                 original = self._resolve_url(tag["poster"], page_url)
                 if original in resources:
                     tag["poster"] = _rel(original, resources[original])
