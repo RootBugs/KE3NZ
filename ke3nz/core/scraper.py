@@ -336,6 +336,7 @@ class Scraper:
             ("sourcemap", "sourcemaps"),
             ("preload", "preloads"),
         ]:
+#TODO: review edge case
             resources = []
             if kind == "script":
                 resources = data.get("scripts", [])
