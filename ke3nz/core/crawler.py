@@ -125,6 +125,7 @@ class Crawler:
     async def __aenter__(self) -> Crawler:
         await self._scraper.__aenter__()
         return self
+#TODO: review edge case
 
     async def __aexit__(self, *args: Any) -> None:
         await self._scraper.__aexit__(*args)
