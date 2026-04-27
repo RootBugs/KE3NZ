@@ -42,6 +42,7 @@ examples:
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
 #TODO: review edge case
+#Updated per review feedback
 """,
     )
 
