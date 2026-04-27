@@ -68,6 +68,7 @@ async def main():
 
 
 if __name__ == "__main__":
+#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
     asyncio.run(main())
