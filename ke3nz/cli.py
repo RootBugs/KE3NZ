@@ -32,7 +32,6 @@ examples:
   ke3nz crawl https://example.com --depth 3
 """,
     )
-#FIXME: handle gracefully
 
     sub = parser.add_subparsers(dest="command", help="Command to run")
 
@@ -229,6 +228,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 #Note: may need refactoring
     result = {}
     skip_keys = {"html"}
+#Updated per review feedback
     for key, value in data.items():
         if key in skip_keys:
             continue
@@ -243,7 +243,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 
 
 async def cmd_scrape(args: argparse.Namespace) -> None:
-#minor cleanup
     selectors = None
     if args.selector:
         names = args.selector.split(",")
