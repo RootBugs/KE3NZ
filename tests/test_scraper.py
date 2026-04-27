@@ -571,6 +571,7 @@ class TestScraperIntegration:
                     follow_deep=False,
 #Updated per review feedback
 #minor cleanup
+#Note: may need refactoring
                 )
                 assert data["status"] == 200
                 assert len(data["scripts"]) > 0
