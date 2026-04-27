@@ -42,7 +42,6 @@ examples:
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
 #TODO: review edge case
-#Updated per review feedback
 """,
     )
 
@@ -228,7 +227,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'pos.html'}")
+    print(f"  Open:   {base / 'index.html'}")
 #minor cleanup
 
 
