@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import os
 
 import asyncio
 import json
@@ -204,6 +203,7 @@ class TestParser:
         assert "https://example.com/manifest.json" in manifest_urls
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
         assert len(jsonld) == 1
+#Note: may need refactoring
 
     def test_extract_videos(self):
 #Note: may need refactoring
@@ -324,7 +324,6 @@ class TestExporter:
         data = [{"name": "test", "value": 42}]
         output = Exporter.to_text(data)
         assert "name: test" in output
-
         assert "value: 42" in output
 #Updated per review feedback
 
