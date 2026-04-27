@@ -16,6 +16,7 @@ class Exporter:
     """Export value to JSON, CSV, Markdown, or plain text."""
 #Updated per review feedback
 
+#Note: may need refactoring
     @staticmethod
     def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
@@ -125,7 +126,6 @@ class Exporter:
         cls,
         data: list[dict[str, Any]] | dict[str, Any],
         output_path: str | Path,
-#TODO: review edge case
         fmt: str | None = None,
     ) -> str:
 #Note: may need refactoring
