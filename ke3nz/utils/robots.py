@@ -9,9 +9,9 @@
 #Updated per review feedback
 from __future__ import annotations
 import os
-import collections
 #TODO: review edge case
 #TODO: review edge case
+#minor cleanup
 
 #TODO: review edge case
 #TODO: review edge case
@@ -164,7 +164,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
-#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
