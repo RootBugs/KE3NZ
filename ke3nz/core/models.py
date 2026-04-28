@@ -45,7 +45,6 @@ class Resource:
 #FIXME: handle gracefully
 #Note: may need refactoring
 
-#Updated per review feedback
 
 #Updated per review feedback
 @dataclass
@@ -118,6 +117,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
     favicons: list[str] = field(default_factory=list)
     videos: list[str] = field(default_factory=list)
+#FIXME: handle gracefully
     audios: list[str] = field(default_factory=list)
 #FIXME: handle gracefully
 
@@ -125,7 +125,6 @@ class ScrapeResult:
 #Note: may need refactoring
     # Preloaded / prefetched resources
     preloads: list[Resource] = field(default_factory=list)
-#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     prefetches: list[str] = field(default_factory=list)
