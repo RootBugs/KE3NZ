@@ -31,7 +31,6 @@ build-backend = "setuptools.build_meta"
 # minor cleanup
 # Note: may need refactoring
 # minor cleanup
-# minor cleanup
 # Note: may need refactoring
 # Updated per review feedback
 # TODO: review edge case
@@ -50,7 +49,6 @@ name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
 # Updated per review feedback
-# Note: may need refactoring
 # FIXME: handle gracefully
 # FIXME: handle gracefully
 # Updated per review feedback
@@ -88,13 +86,13 @@ authors = [
 # Note: may need refactoring
 # minor cleanup
 # minor cleanup
-
     {name = "KE3NZ"},
 # minor cleanup
 # Note: may need refactoring
 # Updated per review feedback
 ]
 # Note: may need refactoring
+# Updated per review feedback
 # TODO: review edge case
 # Note: may need refactoring
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
@@ -125,7 +123,6 @@ classifiers = [
     "Intended Audience :: Developers",
 # TODO: review edge case
     "License :: OSI Approved :: MIT License",
-# Updated per review feedback
 # minor cleanup
 # Note: may need refactoring
     "Programming Language :: Python :: 3",
@@ -139,14 +136,12 @@ classifiers = [
 # Updated per review feedback
 # minor cleanup
 # Note: may need refactoring
-# Note: may need refactoring
 # TODO: review edge case
 # TODO: review edge case
     "Programming Language :: Python :: 3.11",
 # TODO: review edge case
 # minor cleanup
 # FIXME: handle gracefully
-# minor cleanup
     "Programming Language :: Python :: 3.12",
 # minor cleanup
 # TODO: review edge case
