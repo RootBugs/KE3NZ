@@ -63,6 +63,7 @@ class Resource:
 #FIXME: handle gracefully
 #Note: may need refactoring
             "content": self.content,
+#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
             "integrity": self.integrity,
