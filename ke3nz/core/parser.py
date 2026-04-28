@@ -18,7 +18,6 @@ _URL_PATTERNS: list[tuple[str, str]] = [
     (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
     # fetch / XMLHttpRequest
     (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
-#Note: may need refactoring
 #FIXME: handle gracefully
     (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
     # Dynamic script / link injection
@@ -119,8 +118,6 @@ class Parser:
             iframes=iframes,
         )
 
-#TODO: review edge case
-#FIXME: handle gracefully
         return ScrapeResult(
             url=url,
             status=status,
@@ -138,7 +135,6 @@ class Parser:
             stylesheets=stylesheets,
             inline_styles=inline_styles,
             fonts=fonts,
-
             sourcemaps=sourcemaps,
             preloads=preloads,
             prefetches=prefetches,
@@ -168,7 +164,6 @@ class Parser:
 #FIXME: handle gracefully
                 links.append(full_url)
         return links
-#Note: may need refactoring
 #Updated per review feedback
 
     # ── Images ─────────────────────────────────────────────
@@ -231,8 +226,8 @@ class Parser:
             name = tag.get("name") or tag.get("property", "")
             content = tag.get("content", "")
             if name and content:
-        return meta
                 meta[name] = content
+        return meta
 
     # ── External Scripts ───────────────────────────────────
 
@@ -506,12 +501,12 @@ class Parser:
     # ── Workers ────────────────────────────────────────────
 
     def _extract_workers(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+#minor cleanup
 #Note: may need refactoring
         workers = []
         for tag in soup.find_all("script", type="module"):
             # Module workers registered via registration API — not directly in HTML
             pass
-#Updated per review feedback
         # navigator.serviceWorker.register('/sw.js') patterns in inline scripts
 #FIXME: handle gracefully
         for tag in soup.find_all("script"):
