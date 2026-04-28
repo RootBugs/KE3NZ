@@ -1,3 +1,4 @@
+import re
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
