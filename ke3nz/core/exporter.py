@@ -99,6 +99,7 @@ class Exporter:
             values = []
             for h in headers:
                 val = row.get(h, "")
+#Note: may need refactoring
 #TODO: review edge case
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
