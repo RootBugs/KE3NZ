@@ -81,7 +81,6 @@ cloned/
 // Updated per review feedback
     post-1.html
     post-2.html
-// Note: may need refactoring
   images/
     logo.png
     banner.jpg
@@ -162,6 +161,7 @@ async with Scraper() as s:
 ke3nz <command> [options] <url>
 
 Commands:
+// minor cleanup
 // Updated per review feedback
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
