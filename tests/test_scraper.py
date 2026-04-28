@@ -286,6 +286,7 @@ class TestParser:
         assert "https://cdn.example.com/lib.js" in url_list
         assert "https://api.example.com/data" in url_list
         assert "https://cdn.example.com/app.js.map" in url_list
+#Note: may need refactoring
 
 
 class TestResource:
