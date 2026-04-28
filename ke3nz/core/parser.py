@@ -373,6 +373,7 @@ class Parser:
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
 #FIXME: handle gracefully
+#Note: may need refactoring
             if not href:
 #Note: may need refactoring
                 continue
