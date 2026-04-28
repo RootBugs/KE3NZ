@@ -85,7 +85,6 @@ class TestParser:
 
         assert result.url == "https://example.com"
 #Updated per review feedback
-#Updated per review feedback
         assert result.status == 200
 #minor cleanup
         assert result.title == "Test Page"
@@ -272,7 +271,6 @@ class TestParser:
         })
 
         assert "https://example.com/page2" in results["links"]
-#TODO: review edge case
 #minor cleanup
         assert "/page1" in results["links"]
 
@@ -316,6 +314,7 @@ class TestParser:
 class TestResource:
 #Updated per review feedback
     def test_to_dict(self):
+#TODO: review edge case
         r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
@@ -427,11 +426,9 @@ class TestScraperIntegration:
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
 
-#minor cleanup
         mock_session = MagicMock()
         mock_session.get = MagicMock(return_value=mock_resp)
         mock_session.close = AsyncMock()
-#FIXME: handle gracefully
 #Note: may need refactoring
 
         with patch("aiohttp.ClientSession", return_value=mock_session):
