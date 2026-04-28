@@ -153,7 +153,6 @@ class Scraper:
 
 #TODO: review edge case
 #TODO: review edge case
-#minor cleanup
         if selectors:
 #FIXME: handle gracefully
             output.selector_results = self._parser.extract_by_selectors(
@@ -224,6 +223,7 @@ class Scraper:
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
+#TODO: review edge case
             if res.url not in task_map:
                 task_map[res.url] = res
                 download_tasks.append(self._download_resource(res))
