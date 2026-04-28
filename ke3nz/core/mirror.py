@@ -161,8 +161,8 @@ class Mirror:
                 resources = await self._download_page_assets(result, base, url)
 #Note: may need refactoring
 
-                # Rewrite HTML to point to local assets
                 rewritten_html = self._rewrite_html(result.html, url, resources)
+                # Rewrite HTML to point to local assets
 
                 page = MirroredPage(
                     url=url,
