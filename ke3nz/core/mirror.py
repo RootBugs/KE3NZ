@@ -65,7 +65,7 @@ class Mirror:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -349,7 +349,6 @@ class Mirror:
             href = tag.get("href", "")
             original = self._resolve_url(href, page_url)
             if original in resources:
-#Updated per review feedback
                 tag["href"] = _rel(original, resources[original])
 
         # Rewrite <link rel="preload/prefetch" href="...">
@@ -668,7 +667,6 @@ class Mirror:
 #Note: may need refactoring
 ├── assets/
 │   ├── js/              (downloaded scripts)
-#minor cleanup
 │   ├── css/             (downloaded stylesheets)
 │   └── ...
 └── ...
