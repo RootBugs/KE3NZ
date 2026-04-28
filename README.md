@@ -38,6 +38,7 @@ ke3nz resources https://example.com --save ./output --deep
 ```
 // TODO: review edge case
 
+// Updated per review feedback
 ## Commands
 
 | Command | Description |
