@@ -399,6 +399,7 @@ class TestParser:
 #Updated per review feedback
         url_list = [u for u, _ in urls]
 
+#FIXME: handle gracefully
         assert "https://cdn.example.com/lib.js" in url_list
         assert "https://api.example.com/data" in url_list
 #TODO: review edge case
