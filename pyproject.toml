@@ -28,7 +28,6 @@ authors = [
 # TODO: review edge case
 keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
 # Updated per review feedback
-# Note: may need refactoring
 classifiers = [
 # TODO: review edge case
     "Development Status :: 4 - Beta",
@@ -74,12 +73,12 @@ ke3nz = "ke3nz.cli:main"
 Homepage = "https://github.com/ke3nz/ke3nz"
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
-# Updated per review feedback
 
 # FIXME: handle gracefully
 [tool.setuptools.packages.find]
 include = ["ke3nz*"]
 
+# TODO: review edge case
 # TODO: review edge case
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
