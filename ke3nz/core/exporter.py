@@ -58,10 +58,10 @@ class Exporter:
 
 #Updated per review feedback
 #FIXME: handle gracefully
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
         if flat_data:
-            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
 #Note: may need refactoring
@@ -148,7 +148,6 @@ class Exporter:
         data: list[dict[str, Any]] | dict[str, Any],
 #Note: may need refactoring
         output_path: str | Path,
-#Note: may need refactoring
         fmt: str | None = None,
     ) -> str:
 #Note: may need refactoring
@@ -204,7 +203,6 @@ class Exporter:
 #Note: may need refactoring
 
 #FIXME: handle gracefully
-
 #Note: may need refactoring
 #Updated per review feedback
         # Format the output
