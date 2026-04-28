@@ -305,6 +305,7 @@ class Scraper:
                 json/
 #minor cleanup
                 configs/
+#minor cleanup
                 inline/
 #Updated per review feedback
 #FIXME: handle gracefully
