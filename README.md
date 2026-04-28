@@ -7,7 +7,6 @@ KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website
 // FIXME: handle gracefully
 
 // minor cleanup
-// TODO: review edge case
 ## Install
 
 // TODO: review edge case
@@ -39,7 +38,6 @@ ke3nz resources https://example.com --save ./output --deep
 // Note: may need refactoring
 |---------|-------------|
 // minor cleanup
-// Note: may need refactoring
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
 | `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
@@ -123,6 +121,7 @@ cloned/
 // FIXME: handle gracefully
       app.js
       vendor.js
+// FIXME: handle gracefully
     css/
 // Updated per review feedback
       main.css
@@ -172,10 +171,8 @@ Scrape all resources from a single page:
 // TODO: review edge case
 // Updated per review feedback
 # Download all resources
-// FIXME: handle gracefully
 // TODO: review edge case
 ke3nz resources https://example.com --save ./output
-// FIXME: handle gracefully
 
 // TODO: review edge case
 // TODO: review edge case
@@ -200,7 +197,6 @@ async with Mirror(max_depth=3) as m:
     await m.mirror("https://example.com", "./output")
 // Updated per review feedback
 // minor cleanup
-
 
 # Scrape all resources from one page
 async with Scraper() as s:
@@ -271,7 +267,6 @@ Shared Options:
 // TODO: review edge case
   --timeout         Request timeout (default: 30s)
 // Note: may need refactoring
-// minor cleanup
 // Note: may need refactoring
   --verbose, -v     Verbose output
 // Updated per review feedback
