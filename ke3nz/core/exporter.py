@@ -49,6 +49,7 @@ class Exporter:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
+#Note: may need refactoring
             writer.writerows(flat_data)
         return output.getvalue()
 
@@ -140,7 +141,6 @@ class Exporter:
                 ".markdown": "markdown",
                 ".txt": "text",
             }
-#minor cleanup
             fmt = fmt_map.get(ext, "json")
 
         # Ensure data is a list for table formats
