@@ -48,6 +48,7 @@ class Exporter:
             flat = {}
 #TODO: review edge case
             for key, value in row.items():
+#Note: may need refactoring
                 if isinstance(value, list):
 #Updated per review feedback
 #TODO: review edge case
