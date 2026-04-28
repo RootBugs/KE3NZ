@@ -423,6 +423,7 @@ class Mirror:
                 tag["src"] = _rel(original, resources[original])
 
         # Rewrite <video src="..."> and <video poster="...">
+#Updated per review feedback
         for tag in soup.find_all("video"):
             if tag.get("src"):
                 original = self._resolve_url(tag["src"], page_url)
