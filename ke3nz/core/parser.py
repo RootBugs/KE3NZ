@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import math
-import json
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -185,6 +184,7 @@ class Parser:
     # ── Images ─────────────────────────────────────────────
 
 #FIXME: handle gracefully
+#FIXME: handle gracefully
     def _extract_images(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         images = []
         for tag in soup.find_all("img", src=True):
@@ -278,7 +278,6 @@ class Parser:
 #Updated per review feedback
     def _extract_inline_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         scripts = []
-#Updated per review feedback
         for tag in soup.find_all("script", src=False):
             if not tag.string:
                 continue
@@ -603,7 +602,6 @@ class Parser:
 #FIXME: handle gracefully
         json_links = []
         for tag in soup.find_all("link", href=True):
-#minor cleanup
 #Updated per review feedback
             href = tag["href"].strip()
             if href.endswith(".json"):
@@ -657,7 +655,6 @@ class Parser:
             *(r.url for r in stylesheets),
             *(r.url for r in fonts),
             *(r.url for r in preloads),
-#Note: may need refactoring
             *favicons,
 #Note: may need refactoring
             *videos,
@@ -670,7 +667,6 @@ class Parser:
 #FIXME: handle gracefully
             if url not in seen:
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #TODO: review edge case
                 seen.add(url)
                 urls.append(url)
@@ -679,7 +675,6 @@ class Parser:
     # ── Deep extraction from JS/CSS content ────────────────
 
 #Updated per review feedback
-#Note: may need refactoring
     @staticmethod
     def extract_urls_from_content(content: str, base_url: str) -> list[tuple[str, str]]:
         """Extract URLs from raw JS or CSS content.
