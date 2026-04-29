@@ -198,6 +198,7 @@ class TestParser:
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
+#minor cleanup
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #minor cleanup
