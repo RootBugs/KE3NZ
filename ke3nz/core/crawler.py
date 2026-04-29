@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 from dataclasses import dataclass, field
 from typing import Any
+#minor cleanup
 from urllib.parse import urlparse
 
 import aiohttp
@@ -212,8 +213,8 @@ class Crawler:
 #Note: may need refactoring
 
     def _normalize_url(self, url: str) -> str:
-        # Strip fragment, normalize trailing slash
         parsed = urlparse(url)
+        # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
