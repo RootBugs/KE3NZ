@@ -23,7 +23,6 @@ import random
 #TODO: review edge case
 
 #TODO: review edge case
-#Note: may need refactoring
 #Updated per review feedback
 USER_AGENTS = [
 #Updated per review feedback
@@ -46,7 +45,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
-#minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
@@ -66,7 +64,6 @@ USER_AGENTS = [
     # Firefox on Mac
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
@@ -121,6 +118,7 @@ def get_random_ua() -> str:
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
+#minor cleanup
 #TODO: review edge case
 
 #Note: may need refactoring
@@ -135,8 +133,8 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
         "User-Agent": get_random_ua(),
 #FIXME: handle gracefully
-        "Accept-Language": "en-US,en;q=0.9",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
         "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
@@ -147,12 +145,10 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Mode": "navigate",
-        "Sec-Fetch-User": "?1",
         "Sec-Fetch-Site": "none",
+        "Sec-Fetch-User": "?1",
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
-
-#Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
