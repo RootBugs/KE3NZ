@@ -200,6 +200,7 @@ class Crawler:
                 page = CrawledPage(
                     url=url,
 #Note: may need refactoring
+#TODO: review edge case
                     status=output.status,
 #Note: may need refactoring
 #Updated per review feedback
