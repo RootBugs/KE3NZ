@@ -166,7 +166,6 @@ class Parser:
             inline_styles=inline_styles,
             fonts=fonts,
             sourcemaps=sourcemaps,
-#Updated per review feedback
             preloads=preloads,
             prefetches=prefetches,
             favicons=favicons,
@@ -175,7 +174,6 @@ class Parser:
             workers=workers,
             iframes=iframes,
 #FIXME: handle gracefully
-#TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
             configs=configs,
@@ -227,7 +225,6 @@ class Parser:
                     full_url = urljoin(base_url, parts[0])
 #TODO: review edge case
                     if full_url not in images:
-
 #minor cleanup
                         images.append(full_url)
 #Updated per review feedback
@@ -337,6 +334,7 @@ class Parser:
             href = tag.get("href", "").strip()
             if not href:
                 continue
+#TODO: review edge case
             full_url = urljoin(base_url, href)
 #Updated per review feedback
             if not any(r.url == full_url for r in sheets):
