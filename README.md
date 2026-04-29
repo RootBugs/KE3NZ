@@ -93,6 +93,7 @@ ke3nz mirror https://mysite.com --save ./cloned -v
 
 
 // Note: may need refactoring
+// TODO: review edge case
 # Fast mirror with high concurrency
 // TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned -c 20
