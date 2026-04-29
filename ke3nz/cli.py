@@ -317,6 +317,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
         _output(result, args.output, args.format)
 #TODO: review edge case
 
+#Note: may need refactoring
 
 #FIXME: handle gracefully
 async def cmd_links(args: argparse.Namespace) -> None:
