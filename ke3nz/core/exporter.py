@@ -39,7 +39,6 @@ class Exporter:
 
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
-#minor cleanup
         if not data:
 #minor cleanup
 #Updated per review feedback
@@ -128,7 +127,6 @@ class Exporter:
 #Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
-
             lines.append("| " + " | ".join(values) + " |")
 #TODO: review edge case
 
@@ -153,7 +151,6 @@ class Exporter:
             lines.append(f"=== Item {i + 1} ===")
 #FIXME: handle gracefully
             for key, value in entry.items():
-#TODO: review edge case
 #minor cleanup
                 if isinstance(value, list):
 #TODO: review edge case
@@ -165,6 +162,7 @@ class Exporter:
 #TODO: review edge case
                         lines.append(f"  - {v}")
 #TODO: review edge case
+#minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
                 elif isinstance(value, dict):
@@ -244,7 +242,6 @@ class Exporter:
 #minor cleanup
                 ".md": "markdown",
                 ".markdown": "markdown",
-#Updated per review feedback
                 ".txt": "text",
             }
 #FIXME: handle gracefully
