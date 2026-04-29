@@ -41,6 +41,7 @@ class Resource:
 @dataclass
 class ScrapeResult:
     """Result of scraping a single page."""
+#TODO: review edge case
 #Updated per review feedback
 
     url: str
@@ -127,7 +128,6 @@ class ScrapeResult:
             "title": self.title,
             "text": self.text,
 #Note: may need refactoring
-#minor cleanup
 #Updated per review feedback
             "meta": self.meta,
 #FIXME: handle gracefully
