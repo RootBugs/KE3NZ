@@ -691,6 +691,7 @@ class Mirror:
 ```
 #minor cleanup
 .
+#Updated per review feedback
 ├── index.html           (or page.html)
 ├── ke3nz-manifest.json  (resource index)
 ├── images/              (downloaded images)
