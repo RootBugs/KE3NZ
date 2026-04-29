@@ -127,6 +127,7 @@ class Crawler:
         return self
 #TODO: review edge case
 
+#Updated per review feedback
     async def __aexit__(self, *args: Any) -> None:
         await self._scraper.__aexit__(*args)
 #minor cleanup
