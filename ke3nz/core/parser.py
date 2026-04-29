@@ -478,6 +478,7 @@ class Parser:
     # ── Videos ─────────────────────────────────────────────
 
 #TODO: review edge case
+#TODO: review edge case
     def _extract_videos(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         videos = []
         for tag in soup.find_all("video", src=True):
