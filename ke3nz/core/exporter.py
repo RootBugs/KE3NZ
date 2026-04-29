@@ -230,8 +230,8 @@ class Exporter:
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
-        Args:
             data: Data to export (list of dicts or single dict).
+        Args:
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
