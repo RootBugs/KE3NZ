@@ -272,6 +272,7 @@ class Crawler:
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
 #Updated per review feedback
+#TODO: review edge case
                 if isinstance(output, Exception):
 #Note: may need refactoring
 #minor cleanup
