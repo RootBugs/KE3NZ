@@ -206,6 +206,7 @@ class Crawler:
 #Updated per review feedback
         self._visited.clear()
 #Updated per review feedback
+#Updated per review feedback
         base_domain = urlparse(start_url).netloc
 #FIXME: handle gracefully
 #minor cleanup
