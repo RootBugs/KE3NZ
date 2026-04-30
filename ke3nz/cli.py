@@ -577,6 +577,7 @@ def main() -> None:
     except KeyboardInterrupt:
 #minor cleanup
         print("\nInterrupted.")
+#minor cleanup
 #Updated per review feedback
         sys.exit(130)
     except PermissionError as e:
