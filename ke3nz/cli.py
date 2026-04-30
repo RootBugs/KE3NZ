@@ -447,6 +447,7 @@ async def cmd_text(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
+#TODO: review edge case
         timeout=args.timeout,
 #TODO: review edge case
         proxy=args.proxy,
