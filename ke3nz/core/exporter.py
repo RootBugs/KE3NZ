@@ -182,6 +182,7 @@ class Exporter:
                         lines.append(f"  - {v}")
 #TODO: review edge case
 #minor cleanup
+#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
                 elif isinstance(value, dict):
