@@ -161,7 +161,7 @@ class RobotsChecker:
 #TODO: review edge case
             async with session.get(robots_url) as resp:
 #minor cleanup
-                if resp.state == 200:
+                if resp.status == 200:
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
@@ -208,6 +208,7 @@ class RobotsChecker:
 #TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
+#Updated per review feedback
         return rp
 #Updated per review feedback
 #Note: may need refactoring
@@ -234,7 +235,6 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
-#FIXME: handle gracefully
     async def close(self) -> None:
         if self._session and not self._session.closed:
 #TODO: review edge case
