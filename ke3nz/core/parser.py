@@ -174,6 +174,7 @@ class Parser:
                 images.append(full_url)
         # srcset
         for tag in soup.find_all("img", srcset=True):
+#TODO: review edge case
             for entry in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = entry.strip().split()
@@ -197,7 +198,6 @@ class Parser:
             if full_url not in images:
                 images.append(full_url)
         # <meta property="og:image">
-#Note: may need refactoring
         for tag in soup.find_all("meta", attrs={"property": "og:image"}):
             content = tag.get("content", "").strip()
             if content:
@@ -213,8 +213,8 @@ class Parser:
         meta = {}
         for tag in soup.find_all("meta"):
             name = tag.get("name") or tag.get("property", "")
-            if name and content:
             content = tag.get("content", "")
+            if name and content:
                 meta[name] = content
         return meta
 
@@ -373,7 +373,6 @@ class Parser:
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
 #FIXME: handle gracefully
-#Note: may need refactoring
             if not href:
 #Note: may need refactoring
                 continue
@@ -454,8 +453,8 @@ class Parser:
 
     def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #Updated per review feedback
-        for tag in soup.find_all("audio", src=True):
         audios = []
+        for tag in soup.find_all("audio", src=True):
 #Note: may need refactoring
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in audios:
@@ -514,10 +513,9 @@ class Parser:
 #Updated per review feedback
     # ── Config / Manifest / JSON-LD ────────────────────────
 
-
     def _extract_configs(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
-        # <link rel="manifest">
         configs = []
+        # <link rel="manifest">
         for tag in soup.find_all("link", rel="manifest"):
 #TODO: review edge case
             href = tag.get("href", "").strip()
@@ -671,7 +669,6 @@ class Parser:
                 elements = soup.select(selector)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#minor cleanup
                 results[name] = [el.get_text(strip=True) for el in elements]
 
         return results
