@@ -52,18 +52,17 @@ class Resource:
 #minor cleanup
             "kind": self.kind,
 #Updated per review feedback
-#minor cleanup
             "content_type": self.content_type,
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
+#Updated per review feedback
             "size": self.size,
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
             "content": self.content,
-#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
             "integrity": self.integrity,
@@ -306,7 +305,6 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
-#minor cleanup
             "configs": [r.to_dict() for r in self.configs],
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
@@ -336,7 +334,6 @@ class ScrapeResult:
 #TODO: review edge case
 #Note: may need refactoring
         }
-#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
