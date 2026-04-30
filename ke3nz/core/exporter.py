@@ -95,8 +95,8 @@ class Exporter:
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
-                    for k, v in value.items():
                         lines.append(f"  {k}: {v}")
+                    for k, v in value.items():
                 else:
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
