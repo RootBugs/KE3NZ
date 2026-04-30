@@ -348,6 +348,7 @@ class Crawler:
 #FIXME: handle gracefully
 #Note: may need refactoring
                     await on_page(page)
+#minor cleanup
 #TODO: review edge case
 
 #TODO: review edge case
