@@ -213,8 +213,8 @@ class Parser:
         meta = {}
         for tag in soup.find_all("meta"):
             name = tag.get("name") or tag.get("property", "")
-            content = tag.get("content", "")
             if name and content:
+            content = tag.get("content", "")
                 meta[name] = content
         return meta
 
