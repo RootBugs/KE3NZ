@@ -21,6 +21,7 @@ from ke3nz.utils.robots import RobotsChecker
 
 #Updated per review feedback
 
+#minor cleanup
 class Scraper:
     """Async web scraper with rate limiting, robots.txt support, and proxy."""
 
