@@ -130,6 +130,7 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
+#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -160,7 +161,7 @@ async def main():
 #Note: may need refactoring
         indent = "  " * page.depth
 #TODO: review edge case
-        print(f"{indent}[{page.state}] {page.title or page.url}")
+        print(f"{indent}[{page.status}] {page.title or page.url}")
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -182,7 +183,6 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #minor cleanup
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
