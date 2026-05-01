@@ -25,6 +25,7 @@
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
+#FIXME: handle gracefully
 """Example: Crawling a website with KE3NZ."""
 #Updated per review feedback
 #Note: may need refactoring
