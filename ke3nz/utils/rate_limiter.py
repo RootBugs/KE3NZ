@@ -21,6 +21,7 @@ import time
 #minor cleanup
 class RateLimiter:
 #FIXME: handle gracefully
+#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
     """Token bucket rate limiter for async code.
