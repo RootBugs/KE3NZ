@@ -132,6 +132,7 @@ class Crawler:
 #Updated per review feedback
         """Crawl a website starting from start_url.
 
+#FIXME: handle gracefully
         Args:
             start_url: Starting URL.
 #Updated per review feedback
