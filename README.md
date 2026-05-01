@@ -29,6 +29,7 @@ ke3nz resources https://example.com --save ./output --deep
 
 ## Commands
 
+// minor cleanup
 | Command | Description |
 // Note: may need refactoring
 |---------|-------------|
