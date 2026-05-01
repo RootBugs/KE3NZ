@@ -60,12 +60,13 @@ __all__ = [
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
     "ScrapeResult",
-    "Crawler",
     "Resource",
+    "Crawler",
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -79,7 +80,6 @@ __all__ = [
 #Updated per review feedback
 #minor cleanup
 #Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
