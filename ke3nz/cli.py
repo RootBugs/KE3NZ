@@ -383,6 +383,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"  Images: {len(result['images'])}")
 
 #TODO: review edge case
+#Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
         _output(result, args.output, args.format)
@@ -442,12 +443,10 @@ async def cmd_images(args: argparse.Namespace) -> None:
         _output(images, args.output, args.format)
 
 
-#FIXME: handle gracefully
 async def cmd_text(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
-#TODO: review edge case
         timeout=args.timeout,
 #TODO: review edge case
         proxy=args.proxy,
@@ -578,7 +577,6 @@ def main() -> None:
     except KeyboardInterrupt:
 #minor cleanup
         print("\nInterrupted.")
-#minor cleanup
 #Updated per review feedback
         sys.exit(130)
     except PermissionError as e:
