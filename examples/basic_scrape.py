@@ -35,7 +35,6 @@ async def main():
 #minor cleanup
     async with Scraper() as s:
 #minor cleanup
-#Note: may need refactoring
 #minor cleanup
         output = await s.scrape("https://example.com")
 #FIXME: handle gracefully
@@ -71,6 +70,7 @@ async def main():
 #Note: may need refactoring
 #TODO: review edge case
             print(f"  {key}: {values}")
+#TODO: review edge case
 
 #Note: may need refactoring
 #Note: may need refactoring
