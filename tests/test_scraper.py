@@ -111,6 +111,7 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
+#Note: may need refactoring
         assert "https://example.com/poster.jpg" in result.videos
 
     def test_extract_meta(self):
@@ -286,7 +287,6 @@ class TestParser:
         assert "https://cdn.example.com/lib.js" in url_list
         assert "https://api.example.com/data" in url_list
         assert "https://cdn.example.com/app.js.map" in url_list
-#Note: may need refactoring
 
 
 class TestResource:
