@@ -161,8 +161,8 @@ class Mirror:
                 resources = await self._download_page_assets(result, base, url)
 #Note: may need refactoring
 
-                rewritten_html = self._rewrite_html(result.html, url, resources)
                 # Rewrite HTML to point to local assets
+                rewritten_html = self._rewrite_html(result.html, url, resources)
 
                 page = MirroredPage(
                     url=url,
@@ -423,14 +423,12 @@ class Mirror:
                 tag["src"] = _rel(original, resources[original])
 
         # Rewrite <video src="..."> and <video poster="...">
-#Updated per review feedback
         for tag in soup.find_all("video"):
             if tag.get("src"):
                 original = self._resolve_url(tag["src"], page_url)
                 if original in resources:
                     tag["src"] = _rel(original, resources[original])
             if tag.get("poster"):
-#Note: may need refactoring
                 original = self._resolve_url(tag["poster"], page_url)
                 if original in resources:
                     tag["poster"] = _rel(original, resources[original])
@@ -536,6 +534,7 @@ class Mirror:
     def _resolve_url(self, href: str, base_url: str) -> str:
         """Resolve a possibly-relative URL against a base URL."""
         href = href.strip()
+#TODO: review edge case
         if href.startswith(("value:", "javascript:", "mailto:", "tel:")):
             return href
         return urljoin(base_url, href)
@@ -691,7 +690,6 @@ class Mirror:
 ```
 #minor cleanup
 .
-#Updated per review feedback
 ├── index.html           (or page.html)
 ├── ke3nz-manifest.json  (resource index)
 ├── images/              (downloaded images)
