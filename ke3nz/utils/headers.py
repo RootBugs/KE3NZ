@@ -6,7 +6,6 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import collections
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
@@ -38,10 +37,9 @@ USER_AGENTS = [
 #FIXME: handle gracefully
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Note: may need refactoring
     # Firefox on Windows
-#FIXME: handle gracefully
-#minor cleanup
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
@@ -104,7 +102,6 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
-
         "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
