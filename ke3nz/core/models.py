@@ -93,6 +93,7 @@ class ScrapeResult:
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
+
     # Media
 #FIXME: handle gracefully
     favicons: list[str] = field(default_factory=list)
