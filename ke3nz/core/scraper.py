@@ -2,10 +2,8 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import math
 
 import asyncio
-#Updated per review feedback
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
@@ -216,7 +214,6 @@ class Scraper:
         result.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
         result.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
 
-#Note: may need refactoring
         return result.to_dict()
 
     async def _download_resource(self, resource: Resource) -> None:
@@ -234,6 +231,7 @@ class Scraper:
                 resource.content_type = headers.get("content-type", "")
                 resource.size = len(body.encode("utf-8"))
         except Exception:
+#Updated per review feedback
             resource.content = f"[failed to fetch: {resource.url}]"
 
     async def fetch_many(self, urls: list[str]) -> list[ScrapeResult]:
@@ -258,10 +256,9 @@ class Scraper:
                 inline/
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
-#minor cleanup
         base.mkdir(parents=True, exist_ok=True)
 
         pos: dict[str, Any] = {
@@ -296,7 +293,6 @@ class Scraper:
             elif kind == "sourcemap":
                 resources = data.get("sourcemaps", [])
             elif kind == "preload":
-#TODO: review edge case
                 resources = data.get("preloads", [])
 
             dir_path = base / folder
@@ -346,7 +342,6 @@ class Scraper:
                     "size": res.size,
 #Note: may need refactoring
 #FIXME: handle gracefully
-#minor cleanup
 #TODO: review edge case
                 })
 
