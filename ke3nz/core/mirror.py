@@ -578,6 +578,7 @@ class Mirror:
             "css": "assets/css",
             "fonts": "assets/fonts",
             "images": "assets/images",
+
             "media": "assets/media",
             "json": "assets/json",
         }.get(kind, "assets")
