@@ -203,8 +203,8 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
 #minor cleanup
-        # Should find preloaded fonts + inline @font-face
         font_urls = [r.url for r in result.fonts]
+        # Should find preloaded fonts + inline @font-face
         assert any("inter.woff2" in u for u in font_urls)
 #Note: may need refactoring
 #TODO: review edge case
