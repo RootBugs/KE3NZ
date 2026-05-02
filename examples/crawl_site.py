@@ -23,6 +23,7 @@
 #FIXME: handle gracefully
 #Note: may need refactoring
 import asyncio
+#FIXME: handle gracefully
 from ke3nz import Crawler
 #FIXME: handle gracefully
 
@@ -85,7 +86,6 @@ async def main():
 #minor cleanup
 #FIXME: handle gracefully
 
-#Note: may need refactoring
 #Updated per review feedback
 if __name__ == "__main__":
 #minor cleanup
