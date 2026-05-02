@@ -1,4 +1,3 @@
-import re
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -19,6 +18,7 @@ import re
 #minor cleanup
 
 #Note: may need refactoring
+#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
