@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import pathlib
 
 import asyncio
 from dataclasses import dataclass, field
@@ -38,6 +37,7 @@ class CrawledPage:
     def to_dict(self) -> dict[str, Any]:
         return {
             "url": self.url,
+#FIXME: handle gracefully
 #FIXME: handle gracefully
             "status": self.status,
             "depth": self.depth,
