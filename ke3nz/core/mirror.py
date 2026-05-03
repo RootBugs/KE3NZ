@@ -368,6 +368,7 @@ class Mirror:
                     content_type = resp.headers.get("content-type", "")
                     return body, content_type
 #Updated per review feedback
+#TODO: review edge case
 #FIXME: handle gracefully
             except Exception:
                 return None
@@ -524,8 +525,8 @@ class Mirror:
         import re
 
         def _replace(match: re.Match) -> str:
-            url = match.group(2)
             prefix = match.group(1)
+            url = match.group(2)
             suffix = match.group(3)
             if url.startswith(("value:", "#")):
 #Note: may need refactoring
