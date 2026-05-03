@@ -125,6 +125,7 @@ class Exporter:
 #FIXME: handle gracefully
 #Note: may need refactoring
                         lines.append(f"  - {v}")
+#minor cleanup
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
                     for k, v in value.items():
