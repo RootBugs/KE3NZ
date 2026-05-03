@@ -14,6 +14,7 @@
 #TODO: review edge case
 import asyncio
 from ke3nz import Crawler
+#FIXME: handle gracefully
 
 #FIXME: handle gracefully
 
@@ -48,16 +49,12 @@ async def main():
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#Note: may need refactoring
 
 #Updated per review feedback
-#FIXME: handle gracefully
 if __name__ == "__main__":
 #minor cleanup
-#Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
     asyncio.run(main())
 #FIXME: handle gracefully
-#Updated per review feedback
 #TODO: review edge case
