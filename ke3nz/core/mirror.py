@@ -499,6 +499,7 @@ class Mirror:
         *base* — this is a secondary guard applied at every write site
         so that even if ``_url_to_local_path`` or ``_asset_url_to_local``
         were to produce a traversal path, it would never reach disk.
+#TODO: review edge case
         """
         resolved = (base / local_path).resolve()
         try:
