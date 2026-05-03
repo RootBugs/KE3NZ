@@ -185,6 +185,7 @@ Resource Options:
   --no-content      Don't download file contents
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
+// Note: may need refactoring
 
 Shared Options:
   --delay           Delay between requests (default: 0.3s)
