@@ -378,6 +378,7 @@ async def cmd_links(args: argparse.Namespace) -> None:
 
 #FIXME: handle gracefully
         if args.verbose:
+#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
