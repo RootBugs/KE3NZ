@@ -113,6 +113,7 @@ cloned/
 // Updated per review feedback
 // TODO: review edge case
   index.html              # Main page (URLs rewritten to local)
+// Updated per review feedback
 // TODO: review edge case
   about/
     pos.html            # Subpages
