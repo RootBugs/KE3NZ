@@ -1,5 +1,6 @@
 """Example: Basic web scraping with KE3NZ."""
 #TODO: review edge case
+#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -96,7 +97,6 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
-#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
                 "paragraphs": "p",
@@ -109,7 +109,6 @@ async def main():
         print("\nSelector results:")
 #Updated per review feedback
 #FIXME: handle gracefully
-#minor cleanup
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
 #TODO: review edge case
@@ -159,12 +158,10 @@ async def main():
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
-
 #TODO: review edge case
 #minor cleanup
 
 
-#Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
 if __name__ == "__main__":
