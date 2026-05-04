@@ -478,7 +478,6 @@ class Parser:
     # ── Videos ─────────────────────────────────────────────
 
 #TODO: review edge case
-#TODO: review edge case
     def _extract_videos(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         videos = []
         for tag in soup.find_all("video", src=True):
@@ -668,6 +667,7 @@ class Parser:
 #FIXME: handle gracefully
             if url not in seen:
 #FIXME: handle gracefully
+#Note: may need refactoring
 #TODO: review edge case
                 seen.add(url)
                 urls.append(url)
@@ -739,8 +739,8 @@ class Parser:
                 elements = soup.select(css_selector.strip())
 #Updated per review feedback
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
-                elements = soup.select(selector)
             else:
+                elements = soup.select(selector)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
                 results[name] = [el.get_text(strip=True) for el in elements]
