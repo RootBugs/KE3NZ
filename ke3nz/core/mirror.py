@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import pathlib
 
 import asyncio
 import hashlib
@@ -82,7 +81,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
 #Note: may need refactoring
         self.proxy = proxy
 #minor cleanup
@@ -132,7 +131,6 @@ class Mirror:
 
         Args:
             start_url: Starting URL to mirror from.
-#Note: may need refactoring
             output_dir: Directory to write the mirror into.
             on_page: Optional async callback(MirroredPage) for progress.
 
@@ -800,7 +798,6 @@ class Mirror:
 ## Structure
 
 ```
-#Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
