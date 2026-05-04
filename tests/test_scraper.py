@@ -37,7 +37,7 @@ SAMPLE_HTML = """
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
 #minor cleanup
 #minor cleanup
 #minor cleanup
@@ -72,7 +72,6 @@ SAMPLE_HTML = """
 #Note: may need refactoring
     <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
-#FIXME: handle gracefully
 #Note: may need refactoring
     <video src="/video.mp4" poster="/poster.jpg"></video>
 #TODO: review edge case
@@ -203,8 +202,8 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
 #minor cleanup
-        font_urls = [r.url for r in result.fonts]
         # Should find preloaded fonts + inline @font-face
+        font_urls = [r.url for r in result.fonts]
         assert any("inter.woff2" in u for u in font_urls)
 #Note: may need refactoring
 #TODO: review edge case
@@ -226,7 +225,6 @@ class TestParser:
 #minor cleanup
 #FIXME: handle gracefully
         parser = Parser()
-
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://embed.example.com/widget" in result.iframes
@@ -297,7 +295,6 @@ class TestParser:
 #TODO: review edge case
         })
 
-
 #TODO: review edge case
         assert results["heading"] == ["Hello World"]
 #Note: may need refactoring
@@ -350,7 +347,6 @@ class TestParser:
         import { foo } from 'https://cdn.example.com/lib.js';
         fetch('https://api.example.com/data');
 #Note: may need refactoring
-#minor cleanup
 #TODO: review edge case
         const worker = new Worker('/worker.js');
 #minor cleanup
@@ -384,7 +380,7 @@ class TestResource:
 class TestExporter:
     def test_to_json(self):
 #minor cleanup
-        data = [{"name": "test", "value": 42}]
+        data = [{"name": "test", "data": 42}]
         result = Exporter.to_json(data)
         parsed = json.loads(result)
 #minor cleanup
@@ -491,8 +487,8 @@ class TestScraperIntegration:
     async def test_scrape_all_resources_mock(self):
         from ke3nz.core.scraper import Scraper
 
-        mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp = AsyncMock()
+        mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
 #Note: may need refactoring
 #minor cleanup
         mock_resp.__aexit__ = AsyncMock(return_value=False)
