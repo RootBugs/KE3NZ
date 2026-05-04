@@ -324,6 +324,7 @@ class Scraper:
                     filename += ext
 
                 filepath = dir_path / filename
+#FIXME: handle gracefully
                 # Avoid overwrites
                 counter = 1
                 while filepath.exists():
