@@ -26,7 +26,6 @@ class Resource:
 #TODO: review edge case
 #TODO: review edge case
     size: int = 0
-#FIXME: handle gracefully
     integrity: str = ""
 #TODO: review edge case
 
@@ -150,7 +149,6 @@ class ScrapeResult:
 #Updated per review feedback
 #Note: may need refactoring
     # Preloaded / prefetched resources
-#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
     preloads: list[Resource] = field(default_factory=list)
@@ -208,6 +206,7 @@ class ScrapeResult:
             "scripts": [r.to_dict() for r in self.scripts],
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
+#TODO: review edge case
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -221,8 +220,8 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
             "configs": [r.to_dict() for r in self.configs],
-            "prefetches": self.prefetches,
             "preloads": [r.to_dict() for r in self.preloads],
+            "prefetches": self.prefetches,
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
