@@ -1,3 +1,4 @@
+import typing
 #Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
