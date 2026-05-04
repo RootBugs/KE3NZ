@@ -739,8 +739,8 @@ class Parser:
                 elements = soup.select(css_selector.strip())
 #Updated per review feedback
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
-            else:
                 elements = soup.select(selector)
+            else:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
                 results[name] = [el.get_text(strip=True) for el in elements]
