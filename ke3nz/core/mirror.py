@@ -409,8 +409,8 @@ class Mirror:
             if original in resources:
                 tag["href"] = _rel(original, resources[original])
 
-        # Rewrite <link rel="preload/prefetch" href="...">
         for tag in soup.find_all("link", rel=lambda r: r and isinstance(r, (str, list))):
+        # Rewrite <link rel="preload/prefetch" href="...">
 #TODO: review edge case
             rel = tag.get("rel", [])
             if isinstance(rel, str):
