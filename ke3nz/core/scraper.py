@@ -209,6 +209,7 @@ class Scraper:
         resources_to_fetch.extend(output.sourcemaps)
 
         if not download_content:
+#FIXME: handle gracefully
 #Note: may need refactoring
             return output.to_dict()
 #FIXME: handle gracefully
@@ -411,7 +412,6 @@ class Scraper:
 #TODO: review edge case
 
                 filepath = dir_path / filename
-#Updated per review feedback
                 # Avoid overwrites
                 counter = 1
                 while filepath.exists():
