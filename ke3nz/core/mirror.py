@@ -535,6 +535,7 @@ class Mirror:
             original = self._resolve_url(tag["src"], page_url)
 #TODO: review edge case
             if original in resources:
+#TODO: review edge case
                 tag["src"] = _rel(original, resources[original])
 #Note: may need refactoring
 #Note: may need refactoring
