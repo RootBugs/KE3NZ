@@ -151,11 +151,11 @@ class Scraper:
         resources_to_fetch.extend(output.stylesheets)
         resources_to_fetch.extend(output.fonts)
         resources_to_fetch.extend(output.json_data)
-        resources_to_fetch.extend(result.configs)
-        resources_to_fetch.extend(result.sourcemaps)
+        resources_to_fetch.extend(output.configs)
+        resources_to_fetch.extend(output.sourcemaps)
 
         if not download_content:
-            return result.to_dict()
+            return output.to_dict()
 
         # Download all resources concurrently
         download_tasks = []
