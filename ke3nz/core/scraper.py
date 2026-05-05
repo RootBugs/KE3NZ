@@ -27,7 +27,6 @@ class Scraper:
         delay: float = 1.0,
         concurrency: int = 5,
         timeout: int = 30,
-#minor cleanup
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
@@ -164,6 +163,7 @@ class Scraper:
         for res in resources_to_fetch:
             if res.url.startswith("#") or res.url.startswith("data:"):
                 continue
+#Note: may need refactoring
             if res.url not in task_map:
                 task_map[res.url] = res
                 download_tasks.append(self._download_resource(res))
