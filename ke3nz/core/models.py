@@ -178,7 +178,6 @@ class ScrapeResult:
 #minor cleanup
 
 #FIXME: handle gracefully
-#Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -196,6 +195,7 @@ class ScrapeResult:
 #Updated per review feedback
 #Updated per review feedback
     videos: list[str] = field(default_factory=list)
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
@@ -336,6 +336,5 @@ class ScrapeResult:
 #Note: may need refactoring
         }
 #FIXME: handle gracefully
-#TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
