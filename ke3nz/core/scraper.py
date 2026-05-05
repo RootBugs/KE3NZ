@@ -411,6 +411,7 @@ class Scraper:
 #TODO: review edge case
 
                 filepath = dir_path / filename
+#Updated per review feedback
                 # Avoid overwrites
                 counter = 1
                 while filepath.exists():
