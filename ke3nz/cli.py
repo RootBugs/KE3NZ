@@ -1,8 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import collections
-import random
 
 #minor cleanup
 import argparse
@@ -36,6 +34,7 @@ examples:
 #TODO: review edge case
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
+#TODO: review edge case
 """,
     )
 
