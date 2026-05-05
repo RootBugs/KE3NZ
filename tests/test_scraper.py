@@ -201,6 +201,7 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
 #minor cleanup
 #FIXME: handle gracefully
 
