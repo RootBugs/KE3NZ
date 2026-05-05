@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import functools
 #Note: may need refactoring
 
 #minor cleanup
@@ -62,6 +61,7 @@ class ScrapeResult:
 #Note: may need refactoring
 #Updated per review feedback
 
+#FIXME: handle gracefully
     url: str
 #minor cleanup
     status: int
