@@ -89,6 +89,7 @@ examples:
 
     # text
     text_p = sub.add_parser("text", parents=[shared], help="Extract text content")
+#Updated per review feedback
     text_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
 
     # meta
