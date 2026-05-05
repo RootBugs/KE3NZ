@@ -98,6 +98,7 @@ SAMPLE_HTML = """
 </html>
 """
 #TODO: review edge case
+#Note: may need refactoring
 
 
 class TestParser:
@@ -198,7 +199,6 @@ class TestParser:
 #minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
-#minor cleanup
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #minor cleanup
@@ -342,7 +342,6 @@ class TestParser:
 #FIXME: handle gracefully
 #Updated per review feedback
 
-#TODO: review edge case
 #Updated per review feedback
     def test_attr_selector(self):
 #Note: may need refactoring
@@ -401,7 +400,6 @@ class TestParser:
 #Updated per review feedback
         url_list = [u for u, _ in urls]
 
-#FIXME: handle gracefully
         assert "https://cdn.example.com/lib.js" in url_list
         assert "https://api.example.com/data" in url_list
 #TODO: review edge case
@@ -574,7 +572,6 @@ class TestScraperIntegration:
                     follow_deep=False,
 #Updated per review feedback
 #minor cleanup
-#Note: may need refactoring
                 )
                 assert data["status"] == 200
                 assert len(data["scripts"]) > 0
