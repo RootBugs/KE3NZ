@@ -168,6 +168,7 @@ class TestParser:
 
     def test_extract_iframes(self):
 #FIXME: handle gracefully
+#Note: may need refactoring
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
