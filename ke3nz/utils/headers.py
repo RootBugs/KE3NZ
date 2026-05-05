@@ -250,6 +250,7 @@ def get_random_headers() -> dict[str, str]:
         "Accept-Language": "en-US,en;q=0.9",
 #minor cleanup
 #Updated per review feedback
+#Updated per review feedback
         "Accept-Encoding": "gzip, deflate",
 #FIXME: handle gracefully
 #Updated per review feedback
