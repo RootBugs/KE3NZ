@@ -22,7 +22,6 @@
 #minor cleanup
 #Note: may need refactoring
 from __future__ import annotations
-import collections
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
@@ -129,7 +128,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #Note: may need refactoring
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
-
 #TODO: review edge case
 #minor cleanup
     # Safari on Mac
@@ -251,13 +249,13 @@ def get_random_headers() -> dict[str, str]:
         "Accept-Language": "en-US,en;q=0.9",
 #minor cleanup
 #Updated per review feedback
-#Updated per review feedback
         "Accept-Encoding": "gzip, deflate",
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
+#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
@@ -291,7 +289,6 @@ def get_random_headers() -> dict[str, str]:
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
