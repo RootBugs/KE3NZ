@@ -101,6 +101,7 @@ class Parser:
         )
 
         return ScrapeResult(
+#Updated per review feedback
             url=url,
             status=status,
             html=html,
