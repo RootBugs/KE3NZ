@@ -54,6 +54,7 @@ SAMPLE_HTML = """
     <a href="javascript:void(0)">JS Link</a>
     <a href="mailto:test@test.com">Email</a>
     <img src="/image1.jpg" alt="Image 1">
+
 #TODO: review edge case
     <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
