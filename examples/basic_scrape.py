@@ -149,6 +149,7 @@ async def main():
     # Example 3: Scrape multiple URLs
 #minor cleanup
 #FIXME: handle gracefully
+#Note: may need refactoring
 #TODO: review edge case
     urls = [
 #FIXME: handle gracefully
