@@ -16,8 +16,8 @@ class Resource:
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
-    integrity: str = ""
     size: int = 0
+    integrity: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -135,6 +135,6 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
             "all_resource_urls": self.all_resource_urls,
-#TODO: review edge case
+#minor cleanup
             "selector_results": self.selector_results,
         }
