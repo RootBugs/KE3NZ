@@ -14,6 +14,7 @@
 #TODO: review edge case
 import asyncio
 from ke3nz import Crawler
+import pathlib
 #FIXME: handle gracefully
 
 #FIXME: handle gracefully
