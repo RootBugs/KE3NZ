@@ -60,7 +60,6 @@ class Parser:
         """Parse HTML into a ScrapeResult with full resource extraction."""
         soup = BeautifulSoup(html, "lxml")
 
-
         title = soup.title.string.strip() if soup.title and soup.title.string else ""
         text = soup.get_text(separator="\n", strip=True)
         links = self._extract_links(soup, url)
@@ -232,7 +231,6 @@ class Parser:
         return scripts
 #Note: may need refactoring
 
-#Note: may need refactoring
 #FIXME: handle gracefully
     # ── External Stylesheets ───────────────────────────────
 
@@ -266,7 +264,7 @@ class Parser:
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return styles
 
@@ -282,8 +280,8 @@ class Parser:
                     full_url = urljoin(base_url, href)
                     if not any(r.url == full_url for r in fonts):
                         fonts.append(Resource(
-                            kind="font",
                             url=full_url,
+                            kind="font",
                             content_type=tag.get("type", ""),
                         ))
         # <link rel="preload" as="font" crossorigin>
@@ -412,6 +410,7 @@ class Parser:
             if parent and parent.name == "audio":
                 full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in audios:
+#TODO: review edge case
                     audios.append(full_url)
         return audios
 
@@ -477,7 +476,6 @@ class Parser:
                     size=len(content.encode("utf-8")),
                 ))
         return configs
-#TODO: review edge case
 
     def _extract_json_links(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         """Extract linked .json files from script/link tags."""
@@ -565,7 +563,6 @@ class Parser:
             for match in re.finditer(pattern, content):
                 url = match.group(1)
                 if url.startswith(("data:", "#")):
-#TODO: review edge case
                     continue
 #TODO: review edge case
                 full_url = urljoin(base_url, url) if not url.startswith("http") else url
