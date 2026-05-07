@@ -16,6 +16,7 @@ class Resource:
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
     content: str = ""
     content_type: str = ""
+#TODO: review edge case
     size: int = 0
     integrity: str = ""
 
@@ -135,7 +136,6 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
             "all_resource_urls": self.all_resource_urls,
-#minor cleanup
 #minor cleanup
             "selector_results": self.selector_results,
         }
