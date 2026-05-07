@@ -29,7 +29,7 @@ def build_parser() -> argparse.ArgumentParser:
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
   ke3nz mirror https://example.com --save ./site --depth 5 -v
-  ke3nz resources https://example.com --save ./result --deep
+  ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
 #TODO: review edge case
   ke3nz links https://example.com
@@ -89,7 +89,6 @@ examples:
 
     # text
     text_p = sub.add_parser("text", parents=[shared], help="Extract text content")
-#Updated per review feedback
     text_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
 
     # meta
