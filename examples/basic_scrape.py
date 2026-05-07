@@ -3,12 +3,10 @@
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#minor cleanup
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
-#FIXME: handle gracefully
 #minor cleanup
 
 #TODO: review edge case
@@ -27,7 +25,6 @@
 #minor cleanup
 import asyncio
 from ke3nz import Scraper
-#Note: may need refactoring
 import json
 import sys
 #minor cleanup
@@ -114,6 +111,7 @@ async def main():
 #minor cleanup
 #Updated per review feedback
 #minor cleanup
+#TODO: review edge case
 #Note: may need refactoring
                 "heading": "h1",
 #FIXME: handle gracefully
@@ -149,7 +147,6 @@ async def main():
     # Example 3: Scrape multiple URLs
 #minor cleanup
 #FIXME: handle gracefully
-#Note: may need refactoring
 #TODO: review edge case
     urls = [
 #FIXME: handle gracefully
