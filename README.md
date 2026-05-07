@@ -308,6 +308,7 @@ Mirror Options:
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
 // minor cleanup
+// Note: may need refactoring
 
 Resource Options:
 // TODO: review edge case
