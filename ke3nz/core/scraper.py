@@ -221,6 +221,7 @@ class Scraper:
         try:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
+#Note: may need refactoring
                 status, body, headers = await self.fetch_bytes(resource.url)
 #Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
