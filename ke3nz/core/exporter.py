@@ -160,6 +160,7 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
                 ".csv": "csv",
+#FIXME: handle gracefully
                 ".md": "markdown",
                 ".markdown": "markdown",
                 ".txt": "text",
