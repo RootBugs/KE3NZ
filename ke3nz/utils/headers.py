@@ -25,7 +25,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
-#minor cleanup
     # Chrome on Windows
 #TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
@@ -44,7 +43,6 @@ USER_AGENTS = [
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
@@ -86,6 +84,7 @@ USER_AGENTS = [
 #Updated per review feedback
 def get_random_ua() -> str:
     """Return a random user-agent string."""
+#Updated per review feedback
 #TODO: review edge case
     return random.choice(USER_AGENTS)
 #FIXME: handle gracefully
