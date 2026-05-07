@@ -101,7 +101,6 @@ class Parser:
         )
 
         return ScrapeResult(
-#Updated per review feedback
             url=url,
             status=status,
             html=html,
@@ -345,6 +344,7 @@ class Parser:
 
     def _extract_prefetches(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         prefetches = []
+#FIXME: handle gracefully
         for tag in soup.find_all("link", rel="prefetch"):
             href = tag.get("href", "").strip()
             if href:
