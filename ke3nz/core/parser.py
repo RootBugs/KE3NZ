@@ -235,6 +235,7 @@ class Parser:
 
     # ── Meta tags ──────────────────────────────────────────
 
+#minor cleanup
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
         meta = {}
 #Updated per review feedback
