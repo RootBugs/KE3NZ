@@ -80,8 +80,6 @@ class RateLimiter:
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
-
-#Note: may need refactoring
     async def acquire(self) -> None:
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -129,6 +127,7 @@ class RateLimiter:
 
 #minor cleanup
 #minor cleanup
+#TODO: review edge case
             self._last_request = time.monotonic()
 #Note: may need refactoring
 #Note: may need refactoring
