@@ -33,6 +33,7 @@
 import asyncio
 from ke3nz import Scraper
 import json
+import os
 #Updated per review feedback
 import sys
 #minor cleanup
