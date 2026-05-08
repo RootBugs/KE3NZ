@@ -1,7 +1,6 @@
 # minor cleanup
 # TODO: review edge case
 # TODO: review edge case
-# FIXME: handle gracefully
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
@@ -26,8 +25,8 @@ license = {text = "MIT"}
 # Note: may need refactoring
 requires-python = ">=3.10"
 # FIXME: handle gracefully
+# TODO: review edge case
 # FIXME: handle gracefully
-# minor cleanup
 # TODO: review edge case
 # minor cleanup
 # Note: may need refactoring
@@ -53,7 +52,6 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
 # TODO: review edge case
-# TODO: review edge case
     "Programming Language :: Python :: 3.11",
 # minor cleanup
     "Programming Language :: Python :: 3.12",
@@ -64,8 +62,8 @@ classifiers = [
 # FIXME: handle gracefully
 # Updated per review feedback
 ]
-    "aiohttp>=3.9.0",
 dependencies = [
+    "aiohttp>=3.9.0",
 # FIXME: handle gracefully
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
@@ -74,8 +72,8 @@ dependencies = [
     "aiolimiter>=1.1.0",
 ]
 
-dev = [
 [project.optional-dependencies]
+dev = [
     "pytest>=7.0.0",
     "pytest-asyncio>=0.23.0",
     "aioresponses>=0.7.0",
