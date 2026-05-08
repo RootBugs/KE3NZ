@@ -3,12 +3,12 @@
 #minor cleanup
 from __future__ import annotations
 
+#minor cleanup
 from dataclasses import dataclass, field
 from typing import Any
 
 
 @dataclass
-#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -60,7 +60,6 @@ class ScrapeResult:
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
-#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 
@@ -72,8 +71,8 @@ class ScrapeResult:
 #Updated per review feedback
 
     # CSS resources
-    inline_styles: list[Resource] = field(default_factory=list)
     stylesheets: list[Resource] = field(default_factory=list)
+    inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 
     # Fonts
@@ -94,8 +93,6 @@ class ScrapeResult:
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
-#TODO: review edge case
-
     # Media
 #FIXME: handle gracefully
     favicons: list[str] = field(default_factory=list)
@@ -126,7 +123,6 @@ class ScrapeResult:
     all_resource_urls: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
-#minor cleanup
         return {
             "url": self.url,
             "status": self.status,
@@ -137,7 +133,6 @@ class ScrapeResult:
             "meta": self.meta,
 #FIXME: handle gracefully
 #Note: may need refactoring
-#FIXME: handle gracefully
             "links": self.links,
             "images": self.images,
             "favicons": self.favicons,
