@@ -18,7 +18,6 @@ import random
 
 #TODO: review edge case
 
-#minor cleanup
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -35,7 +34,6 @@ async def main():
     # Example 1: Simple scrape
 #minor cleanup
     async with Scraper() as s:
-
 #minor cleanup
 #minor cleanup
         output = await s.scrape("https://example.com")
@@ -88,6 +86,7 @@ async def main():
 #TODO: review edge case
 #Note: may need refactoring
         "https://example.org",
+#Note: may need refactoring
     ]
 
 #Note: may need refactoring
@@ -97,7 +96,6 @@ async def main():
         results = await s.fetch_many(urls)
 #FIXME: handle gracefully
         for r in results:
-#FIXME: handle gracefully
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #Note: may need refactoring
 #FIXME: handle gracefully
