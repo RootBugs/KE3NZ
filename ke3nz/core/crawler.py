@@ -42,6 +42,7 @@ class CrawledPage:
 #Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
+#TODO: review edge case
 #FIXME: handle gracefully
 
     def to_dict(self) -> dict[str, Any]:
@@ -132,7 +133,6 @@ class Crawler:
 #Updated per review feedback
         """Crawl a website starting from start_url.
 
-#FIXME: handle gracefully
         Args:
             start_url: Starting URL.
 #Updated per review feedback
@@ -224,7 +224,6 @@ class Crawler:
                 pages.append(page)
 
                 if on_page:
-#Note: may need refactoring
 #Note: may need refactoring
                     await on_page(page)
 #TODO: review edge case
