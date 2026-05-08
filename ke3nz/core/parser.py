@@ -235,7 +235,6 @@ class Parser:
 
     # ── Meta tags ──────────────────────────────────────────
 
-#minor cleanup
     def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
         meta = {}
 #Updated per review feedback
@@ -657,6 +656,7 @@ class Parser:
             *(r.url for r in fonts),
             *(r.url for r in preloads),
             *favicons,
+#Note: may need refactoring
 #Note: may need refactoring
             *videos,
             *audios,
