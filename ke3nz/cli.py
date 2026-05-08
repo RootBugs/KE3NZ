@@ -394,6 +394,7 @@ async def cmd_images(args: argparse.Namespace) -> None:
 #Updated per review feedback
         concurrency=args.concurrency,
         timeout=args.timeout,
+#Updated per review feedback
         proxy=args.proxy,
 #TODO: review edge case
         respect_robots=not args.no_robots,
