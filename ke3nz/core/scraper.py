@@ -151,11 +151,11 @@ class Scraper:
         resources_to_fetch.extend(output.stylesheets)
         resources_to_fetch.extend(output.fonts)
         resources_to_fetch.extend(output.json_data)
-        resources_to_fetch.extend(output.configs)
-        resources_to_fetch.extend(output.sourcemaps)
+        resources_to_fetch.extend(result.configs)
+        resources_to_fetch.extend(result.sourcemaps)
 
         if not download_content:
-            return output.to_dict()
+            return result.to_dict()
 
         # Download all resources concurrently
         download_tasks = []
@@ -169,6 +169,7 @@ class Scraper:
                 download_tasks.append(self._download_resource(res))
 
         await asyncio.gather(*download_tasks, return_exceptions=True)
+#minor cleanup
 
         # Deep extraction: find URLs inside downloaded JS/CSS
         if follow_deep:
