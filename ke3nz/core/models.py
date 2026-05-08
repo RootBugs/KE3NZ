@@ -60,6 +60,7 @@ class ScrapeResult:
     meta: dict[str, str] = field(default_factory=dict)
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
+#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 
