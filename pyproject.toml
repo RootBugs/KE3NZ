@@ -1,6 +1,7 @@
 # minor cleanup
 # TODO: review edge case
 # TODO: review edge case
+# FIXME: handle gracefully
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
