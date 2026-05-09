@@ -374,7 +374,6 @@ class Mirror:
             full_path.write_bytes(body)
             url_to_local[asset_url] = local_path
 #minor cleanup
-
             self._url_to_local[asset_url] = local_path
 
         return url_to_local
@@ -431,6 +430,7 @@ class Mirror:
             return local_path
 #FIXME: handle gracefully
 #Updated per review feedback
+#minor cleanup
 
 #Note: may need refactoring
         # Rewrite <script src="...">
@@ -536,7 +536,6 @@ class Mirror:
             original = self._resolve_url(tag["src"], page_url)
 #TODO: review edge case
             if original in resources:
-#TODO: review edge case
                 tag["src"] = _rel(original, resources[original])
 #Note: may need refactoring
 #Note: may need refactoring
