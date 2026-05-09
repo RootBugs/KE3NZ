@@ -234,6 +234,7 @@ class Scraper:
 #minor cleanup
 
         # Deep extraction: find URLs inside downloaded JS/CSS
+#minor cleanup
         if follow_deep:
             deep_urls = set()
 #Updated per review feedback
