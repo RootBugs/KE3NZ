@@ -27,6 +27,7 @@ name = "ke3nz"
 version = "0.1.0"
 # Updated per review feedback
 # FIXME: handle gracefully
+
 # FIXME: handle gracefully
 # Note: may need refactoring
 description = "Fast async web scraping tool — extract data from any website"
