@@ -83,6 +83,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 # minor cleanup
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+# Note: may need refactoring
 # FIXME: handle gracefully
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
