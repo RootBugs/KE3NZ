@@ -107,8 +107,6 @@ class Crawler:
 #minor cleanup
         start_url: str,
         *,
-#FIXME: handle gracefully
-#minor cleanup
         max_depth: int = 2,
 #TODO: review edge case
         on_page: Any | None = None,
@@ -182,6 +180,7 @@ class Crawler:
 #Note: may need refactoring
 #minor cleanup
                     depth=depth,
+#Updated per review feedback
                     title=output.title,
                     text=output.text,
                     links=output.links,
@@ -190,7 +189,6 @@ class Crawler:
 #minor cleanup
                     images=output.images,
                     meta=output.meta,
-#Note: may need refactoring
 #Note: may need refactoring
                 )
                 pages.append(page)
