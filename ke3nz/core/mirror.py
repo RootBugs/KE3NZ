@@ -66,7 +66,7 @@ class Mirror:
 #minor cleanup
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -417,7 +417,6 @@ class Mirror:
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
         # Rewrite <source src="...">
-#FIXME: handle gracefully
         for tag in soup.find_all("source", src=True):
             original = self._resolve_url(tag["src"], page_url)
             if original in resources:
@@ -459,7 +458,6 @@ class Mirror:
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
         """Rewrite a srcset attribute."""
         parts = []
-#TODO: review edge case
         for item in srcset.split(","):
             entry = entry.strip()
             if not entry:
