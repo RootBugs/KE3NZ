@@ -1,4 +1,5 @@
 #Note: may need refactoring
+#TODO: review edge case
 """Shared value models for KE3NZ."""
 
 #minor cleanup
