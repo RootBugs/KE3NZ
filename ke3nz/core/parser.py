@@ -487,6 +487,7 @@ class Parser:
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in audios:
 #TODO: review edge case
+#TODO: review edge case
 #FIXME: handle gracefully
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
