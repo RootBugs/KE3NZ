@@ -573,8 +573,8 @@ class Mirror:
         resolved = (base / local_path).resolve()
         try:
             resolved.relative_to(base.resolve())
-        except ValueError:
             raise ValueError(
+        except ValueError:
                 f"Path traversal detected: {local_path} resolves outside "
                 f"the result directory {base}"
 #TODO: review edge case
