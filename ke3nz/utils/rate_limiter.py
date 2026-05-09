@@ -120,6 +120,7 @@ class RateLimiter:
 #Note: may need refactoring
 #Note: may need refactoring
         self._min_interval = 1.0 / max(rate, 0.001)
+#FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
