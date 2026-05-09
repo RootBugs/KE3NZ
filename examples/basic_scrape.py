@@ -46,6 +46,7 @@ async def main():
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
 #TODO: review edge case
+#minor cleanup
             print(f"  {key}: {values}")
 
 #Note: may need refactoring
