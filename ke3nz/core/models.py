@@ -262,6 +262,7 @@ class ScrapeResult:
         return {
             "url": self.url,
             "status": self.status,
+#Updated per review feedback
             "title": self.title,
             "text": self.text,
 #FIXME: handle gracefully
