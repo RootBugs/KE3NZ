@@ -107,6 +107,7 @@ class Crawler:
 #FIXME: handle gracefully
             delay=delay,
 #TODO: review edge case
+#FIXME: handle gracefully
             concurrency=concurrency,
             timeout=timeout,
             proxy=proxy,
