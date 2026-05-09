@@ -286,6 +286,7 @@ class Crawler:
                     url=url,
 #Note: may need refactoring
                     status=output.status,
+
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
