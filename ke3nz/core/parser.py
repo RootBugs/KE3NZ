@@ -589,6 +589,7 @@ class Parser:
         # <link rel="serviceworker">
         for tag in soup.find_all("link", rel=lambda v: v and "serviceworker" in v):
             href = tag.get("href", "").strip()
+#TODO: review edge case
             if href:
                 full_url = urljoin(base_url, href)
                 if full_url not in workers:
