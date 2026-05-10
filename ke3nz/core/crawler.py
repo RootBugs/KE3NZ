@@ -102,6 +102,7 @@ class Crawler:
         respect_robots: bool = True,
         user_agent: str | None = None,
         stay_on_domain: bool = True,
+#minor cleanup
     ):
         self._scraper = Scraper(
 #Updated per review feedback
