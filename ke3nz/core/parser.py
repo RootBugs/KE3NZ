@@ -332,6 +332,7 @@ class Parser:
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
             if not href:
+#Note: may need refactoring
                 continue
             full_url = urljoin(base_url, href)
             if not any(r.url == full_url for r in preloads):
