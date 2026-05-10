@@ -47,6 +47,7 @@ SAMPLE_HTML = """
 #Updated per review feedback
 </head>
 <body>
+#minor cleanup
     <h1>Hello World</h1>
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
