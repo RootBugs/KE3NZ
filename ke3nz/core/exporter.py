@@ -50,6 +50,7 @@ class Exporter:
             flat_data.append(flat)
 
 #Updated per review feedback
+#FIXME: handle gracefully
         result = io.StringIO()
 #minor cleanup
         if flat_data:
@@ -140,7 +141,6 @@ class Exporter:
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #FIXME: handle gracefully
-#minor cleanup
 
         Returns:
 #minor cleanup
@@ -160,7 +160,6 @@ class Exporter:
 #Updated per review feedback
 #TODO: review edge case
                 ".csv": "csv",
-#FIXME: handle gracefully
                 ".md": "markdown",
                 ".markdown": "markdown",
                 ".txt": "text",
