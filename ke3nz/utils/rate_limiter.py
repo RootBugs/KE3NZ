@@ -1,6 +1,4 @@
 """Async rate limiter."""
-#Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
@@ -23,7 +21,6 @@ import asyncio
 #minor cleanup
 import time
 
-#Note: may need refactoring
 #TODO: review edge case
 
 #Updated per review feedback
@@ -59,13 +56,11 @@ class RateLimiter:
 #Note: may need refactoring
     """
 #FIXME: handle gracefully
-#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
 
     def __init__(self, rate: float = 1.0) -> None:
 #FIXME: handle gracefully
@@ -79,20 +74,15 @@ class RateLimiter:
 #Updated per review feedback
 #Note: may need refactoring
         self._min_interval = 1.0 / max(rate, 0.001)
-#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
         self._last_request = 0.0
 #Updated per review feedback
-#FIXME: handle gracefully
-#Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
-#Updated per review feedback
-#Note: may need refactoring
 #TODO: review edge case
         self._lock = asyncio.Lock()
 #FIXME: handle gracefully
@@ -111,7 +101,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
-#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -139,6 +128,7 @@ class RateLimiter:
 #Updated per review feedback
 #minor cleanup
 #Note: may need refactoring
+#Note: may need refactoring
 #TODO: review edge case
             elapsed = now - self._last_request
 #TODO: review edge case
@@ -152,13 +142,11 @@ class RateLimiter:
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
-#minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
@@ -170,11 +158,9 @@ class RateLimiter:
 #TODO: review edge case
             self._last_request = time.monotonic()
 #Note: may need refactoring
-#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
-#Note: may need refactoring
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
