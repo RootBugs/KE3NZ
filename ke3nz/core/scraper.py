@@ -383,6 +383,7 @@ class Scraper:
 
         # Save HTML
 #Note: may need refactoring
+#Updated per review feedback
 #FIXME: handle gracefully
         html_path = base / "page.html"
         html_path.write_text(data.get("html", ""), encoding="utf-8")
