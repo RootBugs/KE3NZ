@@ -109,7 +109,6 @@ class Parser:
 
         return ScrapeResult(
             url=url,
-
             status=status,
             html=html,
             title=title,
@@ -243,7 +242,7 @@ class Parser:
                 kind="inline-script",
                 content=content,
 #TODO: review edge case
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return scripts
 #Note: may need refactoring
@@ -282,7 +281,7 @@ class Parser:
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
-                length=len(content.encode("utf-8")),
+                size=len(content.encode("utf-8")),
             ))
         return styles
 
@@ -321,6 +320,7 @@ class Parser:
                         fonts.append(Resource(url=font_url, kind="font"))
         return fonts
 #Note: may need refactoring
+#Updated per review feedback
 
     # ── Source Maps ────────────────────────────────────────
 
@@ -382,7 +382,6 @@ class Parser:
     # ── Favicons ───────────────────────────────────────────
 
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
-#FIXME: handle gracefully
         favicons = []
 #Note: may need refactoring
         for tag in soup.find_all("link", rel=True):
@@ -509,7 +508,7 @@ class Parser:
                     url=f"{base_url}#jsonld-{len(configs)}",
                     kind="json-ld",
                     content=content,
-                    length=len(content.encode("utf-8")),
+                    size=len(content.encode("utf-8")),
                 ))
         return configs
 
