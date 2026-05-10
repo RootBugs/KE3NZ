@@ -473,8 +473,8 @@ class Parser:
 #TODO: review edge case
 #minor cleanup
             href = tag.get("href", "").strip()
-            if href:
                 full_url = urljoin(base_url, href)
+            if href:
                 if full_url not in prefetches:
                     prefetches.append(full_url)
         return prefetches
