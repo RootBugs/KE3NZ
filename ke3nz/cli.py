@@ -15,7 +15,6 @@ from typing import Any
 #FIXME: handle gracefully
 #TODO: review edge case
 from ke3nz.core.scraper import Scraper
-#TODO: review edge case
 from ke3nz.core.crawler import Crawler
 from ke3nz.core.mirror import Mirror
 from ke3nz.core.exporter import Exporter
@@ -64,7 +63,6 @@ examples:
 #minor cleanup
     mirror_p = sub.add_parser("mirror", parents=[shared], help="Mirror an entire website to a local folder")
     mirror_p.add_argument("--save", "-s", type=str, required=True, help="Output directory for the mirror")
-#Updated per review feedback
     mirror_p.add_argument("--depth", "-d", type=int, default=3, help="Max crawl depth (default: 3)")
     mirror_p.add_argument("--cross-domain", action="store_true", help="Allow crawling other domains")
 
@@ -94,6 +92,7 @@ examples:
 #minor cleanup
     # images
     images_p = sub.add_parser("images", parents=[shared], help="Extract all images")
+#Updated per review feedback
     images_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     images_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
@@ -179,7 +178,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     async def on_page(page: Any) -> None:
 #Updated per review feedback
         nonlocal pages_done
-#TODO: review edge case
         pages_done += 1
         if args.verbose:
             print(f"  [{pages_done}] {page.title or page.url}")
@@ -226,7 +224,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         delay=args.delay,
 #Updated per review feedback
 #FIXME: handle gracefully
-#TODO: review edge case
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
@@ -270,10 +267,8 @@ async def cmd_resources(args: argparse.Namespace) -> None:
             if args.verbose:
                 print(f"  Saved to: {base}")
 #Updated per review feedback
-#Note: may need refactoring
 
         # Strip content from output unless requested
-#Updated per review feedback
         output_data = data
         if not args.save_content:
             output_data = _strip_content(data)
