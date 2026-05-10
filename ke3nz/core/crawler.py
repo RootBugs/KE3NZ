@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import asyncio
 from dataclasses import dataclass, field
-#FIXME: handle gracefully
 from typing import Any
 #minor cleanup
 from urllib.parse import urlparse
@@ -139,6 +138,7 @@ class Crawler:
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
+#Updated per review feedback
             max_depth: Maximum link-following depth.
 #Note: may need refactoring
 #minor cleanup
