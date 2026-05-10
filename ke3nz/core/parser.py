@@ -567,6 +567,7 @@ class Parser:
 #Note: may need refactoring
         return iframes
 
+
 #Updated per review feedback
     # ── Config / Manifest / JSON-LD ────────────────────────
 
