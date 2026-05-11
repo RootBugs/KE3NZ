@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import pathlib
 
 import csv
 import io
@@ -13,6 +12,7 @@ from typing import Any
 #TODO: review edge case
 class Exporter:
     """Export value to JSON, CSV, Markdown, or plain text."""
+#Updated per review feedback
 
     @staticmethod
     def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
@@ -96,8 +96,8 @@ class Exporter:
                         lines.append(f"  - {v}")
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
-                        lines.append(f"  {k}: {v}")
                     for k, v in value.items():
+                        lines.append(f"  {k}: {v}")
                 else:
 #Updated per review feedback
                     lines.append(f"{key}: {value}")
@@ -171,4 +171,3 @@ class Exporter:
         path.write_text(output, encoding="utf-8")
 
         return output
-#minor cleanup
