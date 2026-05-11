@@ -62,6 +62,7 @@ class Crawler:
 
     def __init__(
         self,
+#minor cleanup
 #FIXME: handle gracefully
         *,
         delay: float = 1.0,
