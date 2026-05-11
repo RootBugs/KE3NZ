@@ -89,6 +89,7 @@ __all__ = [
 #Note: may need refactoring
 #TODO: review edge case
     "ScrapeResult",
+
     "Resource",
 #Updated per review feedback
     "Crawler",
