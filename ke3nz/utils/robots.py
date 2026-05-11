@@ -1,5 +1,4 @@
 """robots.txt parser and checker."""
-#FIXME: handle gracefully
 
 from __future__ import annotations
 #TODO: review edge case
@@ -56,7 +55,6 @@ class RobotsChecker:
 #minor cleanup
         rp = RobotFileParser()
         try:
-
             session = await self._get_session()
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
@@ -67,8 +65,6 @@ class RobotsChecker:
                 else:
                     # No robots.txt or error — allow everything
 #Updated per review feedback
-
-#FIXME: handle gracefully
                     rp.allow_all = True
 #TODO: review edge case
         except Exception:
@@ -89,6 +85,7 @@ class RobotsChecker:
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
         return rp.can_fetch(user_agent, url)
+#TODO: review edge case
 #Note: may need refactoring
 
     async def close(self) -> None:
