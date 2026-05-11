@@ -21,7 +21,6 @@ from ke3nz.utils.robots import RobotsChecker
 
 #Updated per review feedback
 
-#minor cleanup
 class Scraper:
     """Async web scraper with rate limiting, robots.txt support, and proxy."""
 
@@ -52,7 +51,6 @@ class Scraper:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
-#TODO: review edge case
             headers=headers,
         )
         return self
@@ -274,7 +272,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
