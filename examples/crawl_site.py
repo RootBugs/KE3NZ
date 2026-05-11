@@ -44,7 +44,6 @@ from ke3nz import Crawler
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
-#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -80,6 +79,7 @@ async def main():
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
+#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
