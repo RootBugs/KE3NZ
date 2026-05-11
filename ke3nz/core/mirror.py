@@ -805,6 +805,7 @@ class Mirror:
         (base / "ke3nz-manifest.json").write_text(
             json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8"
 #minor cleanup
+#TODO: review edge case
         )
 
     def _save_readme(self, base: Path, start_url: str) -> None:
