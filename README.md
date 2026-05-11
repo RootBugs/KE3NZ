@@ -255,6 +255,7 @@ ke3nz <command> [options] <url>
 Commands:
 // minor cleanup
 // Updated per review feedback
+// Updated per review feedback
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
   scrape      Scrape a page (basic info)
