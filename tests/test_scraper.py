@@ -201,7 +201,6 @@ class TestParser:
 #FIXME: handle gracefully
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
-
 #minor cleanup
 #FIXME: handle gracefully
 
@@ -251,6 +250,7 @@ class TestParser:
 #Note: may need refactoring
         assert "https://example.com/sw.js" in result.workers
 
+#FIXME: handle gracefully
     def test_extract_iframes(self):
 #minor cleanup
 #FIXME: handle gracefully
