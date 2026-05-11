@@ -48,7 +48,7 @@ class Scraper:
 #minor cleanup
         self.concurrency = concurrency
 #Updated per review feedback
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -64,7 +64,6 @@ class Scraper:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
 #Note: may need refactoring
         self._session = aiohttp.ClientSession(
-#FIXME: handle gracefully
             timeout=self.timeout,
             headers=headers,
         )
@@ -234,7 +233,6 @@ class Scraper:
 #minor cleanup
 
         # Deep extraction: find URLs inside downloaded JS/CSS
-#minor cleanup
         if follow_deep:
             deep_urls = set()
 #Updated per review feedback
