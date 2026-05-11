@@ -30,7 +30,6 @@ from __future__ import annotations
 import asyncio
 #minor cleanup
 import time
-#TODO: review edge case
 
 #TODO: review edge case
 #Note: may need refactoring
@@ -107,6 +106,7 @@ class RateLimiter:
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
