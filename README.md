@@ -38,7 +38,6 @@ ke3nz resources https://example.com --save ./output --deep
 ```
 // TODO: review edge case
 
-// Updated per review feedback
 ## Commands
 
 | Command | Description |
@@ -93,7 +92,6 @@ ke3nz mirror https://mysite.com --save ./cloned -v
 
 
 // Note: may need refactoring
-// TODO: review edge case
 # Fast mirror with high concurrency
 // TODO: review edge case
 ke3nz mirror https://mysite.com --save ./cloned -c 20
@@ -113,7 +111,6 @@ cloned/
 // Updated per review feedback
 // TODO: review edge case
   index.html              # Main page (URLs rewritten to local)
-// Updated per review feedback
 // TODO: review edge case
   about/
     pos.html            # Subpages
@@ -186,7 +183,6 @@ cloned/
 // Note: may need refactoring
 ## The `resources` Command
 
-// FIXME: handle gracefully
 Scrape all resources from a single page:
 
 ```bash
@@ -249,6 +245,7 @@ async with Scraper() as s:
 ## CLI Reference
 
 // TODO: review edge case
+// minor cleanup
 // TODO: review edge case
 ```
 ke3nz <command> [options] <url>
@@ -269,7 +266,6 @@ Commands:
 // Note: may need refactoring
 // Updated per review feedback
 // minor cleanup
-// FIXME: handle gracefully
 // TODO: review edge case
   text        Extract text content
   meta        Extract page metadata
@@ -295,7 +291,6 @@ Resource Options:
 
 Shared Options:
 // TODO: review edge case
-
   --delay           Delay between requests (default: 0.3s)
   --proxy           HTTP proxy URL
   --concurrency, -c Max concurrent requests (default: 10)
@@ -320,7 +315,6 @@ Shared Options:
 KE3NZ/
   ke3nz/
     __init__.py
-// Updated per review feedback
 // Updated per review feedback
 // minor cleanup
     cli.py               # CLI with 8 commands
