@@ -103,6 +103,7 @@ async def main():
     urls = [
 #Note: may need refactoring
 #Updated per review feedback
+#FIXME: handle gracefully
 #Updated per review feedback
         "https://example.com",
 #Updated per review feedback
