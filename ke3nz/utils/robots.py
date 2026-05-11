@@ -44,6 +44,7 @@ class RobotsChecker:
 #Note: may need refactoring
         if self._session is None or self._session.closed:
 #Note: may need refactoring
+#FIXME: handle gracefully
             self._session = aiohttp.ClientSession(
 #TODO: review edge case
 #Updated per review feedback
