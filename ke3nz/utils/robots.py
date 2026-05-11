@@ -88,6 +88,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Note: may need refactoring
 
+#FIXME: handle gracefully
     async def close(self) -> None:
         if self._session and not self._session.closed:
             await self._session.close()
