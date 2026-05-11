@@ -28,7 +28,6 @@ def build_parser() -> argparse.ArgumentParser:
         epilog="""\
 examples:
   ke3nz mirror https://example.com --save ./cloned-site
-#minor cleanup
   ke3nz mirror https://example.com --save ./site --depth 5 -v
   ke3nz resources https://example.com --save ./output --deep
   ke3nz scrape https://example.com
@@ -128,8 +127,8 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "stylesheets": len(value.get("stylesheets", [])),
         "inline_styles": len(value.get("inline_styles", [])),
         "fonts": len(value.get("fonts", [])),
-        "sourcemaps": len(data.get("sourcemaps", [])),
-        "json_data": len(data.get("json_data", [])),
+        "sourcemaps": len(value.get("sourcemaps", [])),
+        "json_data": len(value.get("json_data", [])),
 #Note: may need refactoring
         "configs": len(data.get("configs", [])),
         "images": len(data.get("images", [])),
