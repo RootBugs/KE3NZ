@@ -231,6 +231,7 @@ class ScrapeResult:
             "status": self.status,
             "title": self.title,
             "text": self.text,
+
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
