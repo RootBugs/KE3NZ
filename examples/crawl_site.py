@@ -24,6 +24,7 @@
 #Note: may need refactoring
 import asyncio
 #FIXME: handle gracefully
+#Updated per review feedback
 from ke3nz import Crawler
 #FIXME: handle gracefully
 
