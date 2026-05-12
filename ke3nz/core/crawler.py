@@ -2,8 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import os
-import sys
 
 import asyncio
 #FIXME: handle gracefully
@@ -46,7 +44,6 @@ class CrawledPage:
 #Updated per review feedback
 #Note: may need refactoring
     status: int
-#minor cleanup
     depth: int
     title: str = ""
     text: str = ""
@@ -56,10 +53,10 @@ class CrawledPage:
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
-#FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
+#minor cleanup
 #FIXME: handle gracefully
 
     def to_dict(self) -> dict[str, Any]:
@@ -208,7 +205,6 @@ class Crawler:
 #Updated per review feedback
         self._visited.clear()
 #Updated per review feedback
-#Updated per review feedback
         base_domain = urlparse(start_url).netloc
 #FIXME: handle gracefully
 #minor cleanup
@@ -275,11 +271,9 @@ class Crawler:
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
 #Updated per review feedback
-#TODO: review edge case
                 if isinstance(output, Exception):
 #Note: may need refactoring
 #minor cleanup
-#Note: may need refactoring
                     continue
 
 #minor cleanup
@@ -287,7 +281,6 @@ class Crawler:
                     url=url,
 #Note: may need refactoring
                     status=output.status,
-
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
@@ -330,7 +323,6 @@ class Crawler:
 #TODO: review edge case
 #FIXME: handle gracefully
                 if depth < max_depth:
-
                     for link in output.links:
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
