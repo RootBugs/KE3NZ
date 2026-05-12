@@ -11,13 +11,11 @@ build-backend = "setuptools.build_meta"
 # TODO: review edge case
 
 # Note: may need refactoring
-# Updated per review feedback
 # Note: may need refactoring
 # Updated per review feedback
 # TODO: review edge case
 # FIXME: handle gracefully
 # Note: may need refactoring
-# TODO: review edge case
 # TODO: review edge case
 # Updated per review feedback
 [project]
@@ -27,12 +25,11 @@ name = "ke3nz"
 version = "0.1.0"
 # Updated per review feedback
 # FIXME: handle gracefully
-
 # FIXME: handle gracefully
 # Note: may need refactoring
 description = "Fast async web scraping tool — extract data from any website"
 readme = "README.md"
-# FIXME: handle gracefully
+# Updated per review feedback
 license = {text = "MIT"}
 # Note: may need refactoring
 # Note: may need refactoring
@@ -77,14 +74,12 @@ classifiers = [
 # FIXME: handle gracefully
 # Updated per review feedback
 # Note: may need refactoring
-# Note: may need refactoring
 # TODO: review edge case
     "Programming Language :: Python :: 3.11",
 # minor cleanup
     "Programming Language :: Python :: 3.12",
 # minor cleanup
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
-# Note: may need refactoring
 # FIXME: handle gracefully
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
@@ -114,7 +109,6 @@ dev = [
 # minor cleanup
 # Note: may need refactoring
 # TODO: review edge case
-# minor cleanup
 # Note: may need refactoring
 # Updated per review feedback
 # Note: may need refactoring
@@ -128,7 +122,6 @@ ke3nz = "ke3nz.cli:main"
 
 # TODO: review edge case
 # TODO: review edge case
-
 # TODO: review edge case
 [project.urls]
 # FIXME: handle gracefully
