@@ -439,7 +439,6 @@ class Mirror:
         for tag in soup.find_all("source", srcset=True):
             tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
 
-#TODO: review edge case
         # Rewrite <source src="...">
         for tag in soup.find_all("source", src=True):
             original = self._resolve_url(tag["src"], page_url)
@@ -479,7 +478,6 @@ class Mirror:
             if tag.string:
                 tag.string = self._rewrite_js_urls(tag.string, page_url, resources)
 
-#Updated per review feedback
         return str(soup)
 
     def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
@@ -597,11 +595,11 @@ class Mirror:
         if is_html:
             # Ensure .html extension
             if not path.endswith((".html", ".htm")):
+#minor cleanup
                 if path.endswith("/"):
 #TODO: review edge case
                     path += "index.html"
                 else:
-
                     path += "/index.html" if "." not in Path(path).name else ".html"
 
         return Path(path)
