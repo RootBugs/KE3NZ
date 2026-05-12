@@ -98,6 +98,7 @@ class Crawler:
     ) -> list[CrawledPage]:
         """Crawl a website starting from start_url.
 
+#minor cleanup
         Args:
             start_url: Starting URL.
 #Updated per review feedback
