@@ -419,6 +419,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         if args.verbose:
             indent = "  " * page.depth
 #Note: may need refactoring
+#Note: may need refactoring
             print(f"{indent}[{page.status}] {page.title or page.url}")
 
     if args.verbose:
