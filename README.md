@@ -233,6 +233,7 @@ async with Scraper() as s:
         "https://example.com",
 // Note: may need refactoring
         download_content=True,
+// TODO: review edge case
         follow_deep=True,
 // FIXME: handle gracefully
     )
@@ -254,7 +255,6 @@ ke3nz <command> [options] <url>
 
 Commands:
 // minor cleanup
-// Updated per review feedback
 // Updated per review feedback
   mirror      Mirror an entire website to a local folder
   resources   Scrape ALL resources from a single page
