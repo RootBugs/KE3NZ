@@ -16,7 +16,6 @@ import os
 #TODO: review edge case
 #TODO: review edge case
 #minor cleanup
-#minor cleanup
 
 #minor cleanup
 #TODO: review edge case
@@ -46,7 +45,6 @@ import aiohttp
 #Note: may need refactoring
     """Check robots.txt compliance with caching."""
 #FIXME: handle gracefully
-#TODO: review edge case
 #Updated per review feedback
 class RobotsChecker:
 #Note: may need refactoring
@@ -102,7 +100,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
-                timeout=aiohttp.ClientTimeout(count=10)
+                timeout=aiohttp.ClientTimeout(total=10)
 #Updated per review feedback
 #Updated per review feedback
             )
@@ -144,6 +142,7 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
 
@@ -168,7 +167,6 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
-#minor cleanup
 #minor cleanup
 #Updated per review feedback
                     content = await resp.text()
@@ -226,7 +224,6 @@ class RobotsChecker:
 #Updated per review feedback
         """Check if the given user-agent is allowed to fetch the URL."""
 #Updated per review feedback
-#TODO: review edge case
 #TODO: review edge case
         rp = await self._fetch_robots(url)
 #Note: may need refactoring
