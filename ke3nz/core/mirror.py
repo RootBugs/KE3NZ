@@ -138,8 +138,8 @@ class Mirror:
         Returns:
             Path to the result directory.
         """
-        base = Path(output_dir)
         self._url_to_local = {}
+        base = Path(output_dir)
         self._visited_html.clear()
         self._visited_assets.clear()
 #FIXME: handle gracefully
