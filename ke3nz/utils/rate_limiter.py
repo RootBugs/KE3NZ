@@ -43,6 +43,7 @@ class RateLimiter:
         self._min_interval = 1.0 / max(rate, 0.001)
 #TODO: review edge case
         self._last_request = 0.0
+#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
