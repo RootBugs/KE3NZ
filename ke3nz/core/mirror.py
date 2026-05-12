@@ -1,8 +1,6 @@
 """Full website mirroring — crawl, download, rewrite, and save as a local clone."""
 
 from __future__ import annotations
-import os
-import collections
 
 import asyncio
 import hashlib
@@ -202,6 +200,7 @@ class Mirror:
             return None
 
         async with self._semaphore:
+#minor cleanup
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             try:
@@ -500,7 +499,6 @@ class Mirror:
         *base* — this is a secondary guard applied at every write site
         so that even if ``_url_to_local_path`` or ``_asset_url_to_local``
         were to produce a traversal path, it would never reach disk.
-#TODO: review edge case
         """
         resolved = (base / local_path).resolve()
         try:
@@ -580,11 +578,9 @@ class Mirror:
             "css": "assets/css",
             "fonts": "assets/fonts",
             "images": "assets/images",
-
             "media": "assets/media",
             "json": "assets/json",
         }.get(kind, "assets")
-#FIXME: handle gracefully
         return f"{folder}/resource_{self._asset_counter}{ext}"
 
     def _guess_extension(self, content_type: str, kind: str) -> str:
@@ -646,7 +642,6 @@ class Mirror:
     def _save_readme(self, base: Path, start_url: str) -> None:
         """Generate a README for the mirrored site."""
         pages_info = "\n".join(
-
             f"  - [{p.title or p.url}]({p.local_path}) ({len(p.resources)} assets)"
             for p in self._pages
         )
