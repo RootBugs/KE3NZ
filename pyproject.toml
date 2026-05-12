@@ -152,9 +152,10 @@ dependencies = [
     "aiolimiter>=1.1.0",
 ]
 
+# TODO: review edge case
 [project.optional-dependencies]
-    "pytest>=7.0.0",
 dev = [
+    "pytest>=7.0.0",
 # TODO: review edge case
     "pytest-asyncio>=0.23.0",
 # FIXME: handle gracefully
