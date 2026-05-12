@@ -65,7 +65,6 @@ SAMPLE_HTML = """
     <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
 #Note: may need refactoring
-#FIXME: handle gracefully
     <video src="/video.mp4" poster="/poster.jpg"></video>
 #TODO: review edge case
     <audio src="/audio.mp3"></audio>
@@ -106,7 +105,6 @@ class TestParser:
         assert "https://example.com/page1" in result.links
         assert "https://example.com/page2" in result.links
         assert not any("javascript:" in link for link in result.links)
-#TODO: review edge case
         assert not any("mailto:" in link for link in result.links)
 
 #Updated per review feedback
@@ -228,6 +226,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
 #Updated per review feedback
+#minor cleanup
         manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
         assert "https://example.com/manifest.json" in manifest_urls
         jsonld = [r for r in result.configs if r.kind == "json-ld"]
@@ -390,7 +389,6 @@ class TestExporter:
         assert Exporter.to_text([]) == ""
 
 
-#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
 class TestHeaders:
