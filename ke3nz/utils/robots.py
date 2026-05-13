@@ -58,6 +58,7 @@ import aiohttp
 #minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
+#TODO: review edge case
     """Check robots.txt compliance with caching."""
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -66,7 +67,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #Note: may need refactoring
 #minor cleanup
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
@@ -111,7 +111,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
         if self._session is None or self._session.closed:
 #Note: may need refactoring
-#TODO: review edge case
             self._session = aiohttp.ClientSession(
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -121,7 +120,6 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
-#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
@@ -131,7 +129,6 @@ class RobotsChecker:
 #Updated per review feedback
 #Updated per review feedback
             )
-#Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
         return self._session
@@ -156,7 +153,6 @@ class RobotsChecker:
 #minor cleanup
 #Note: may need refactoring
 
-#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
         if robots_url in self._cache:
@@ -180,7 +176,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
 
 #minor cleanup
