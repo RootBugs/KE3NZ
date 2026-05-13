@@ -45,6 +45,7 @@ SAMPLE_HTML = """
         body { margin: 0; }
         @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
 #Note: may need refactoring
+
     </style>
 #FIXME: handle gracefully
 #Updated per review feedback
