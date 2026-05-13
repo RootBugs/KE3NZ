@@ -359,6 +359,7 @@ class Parser:
             content = tag.string.strip()
 #TODO: review edge case
 #Note: may need refactoring
+#FIXME: handle gracefully
             if not content:
                 continue
             styles.append(Resource(
