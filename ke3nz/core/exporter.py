@@ -17,6 +17,7 @@ class Exporter:
 #Updated per review feedback
 
 #Note: may need refactoring
+#Note: may need refactoring
     @staticmethod
     def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
