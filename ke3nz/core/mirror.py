@@ -297,8 +297,8 @@ class Mirror:
             assets_to_download.append((r.url, "json"))
         for r in result.configs:
             assets_to_download.append((r.url, "json"))
-        for r in result.sourcemaps:
             assets_to_download.append((r.url, "js"))
+        for r in result.sourcemaps:
         for r in result.preloads:
             assets_to_download.append((r.url, "assets"))
         for img_url in result.images:
