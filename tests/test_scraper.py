@@ -173,6 +173,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://embed.example.com/widget" in result.iframes
+#Updated per review feedback
 
     def test_extract_favicons(self):
         parser = Parser()
