@@ -18,6 +18,7 @@ from ke3nz import Crawler
 
 #FIXME: handle gracefully
 
+#Updated per review feedback
 async def main():
     # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
@@ -55,7 +56,6 @@ async def main():
 if __name__ == "__main__":
 #minor cleanup
 #Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
     asyncio.run(main())
 #FIXME: handle gracefully
