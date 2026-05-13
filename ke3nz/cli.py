@@ -2,6 +2,7 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
+import typing
 
 #TODO: review edge case
 #minor cleanup
