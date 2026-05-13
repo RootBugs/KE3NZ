@@ -14,7 +14,6 @@ USER_AGENTS = [
     # Chrome on Windows
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #Note: may need refactoring
-
     # Chrome on Mac
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -68,8 +67,6 @@ def get_random_headers() -> dict[str, str]:
         "Accept-Language": "en-US,en;q=0.9",
         "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
-
-#FIXME: handle gracefully
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -77,6 +74,7 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
+#Note: may need refactoring
         "Cache-Control": "max-age=0",
 #TODO: review edge case
 #TODO: review edge case
