@@ -30,7 +30,7 @@
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
-#Updated per review feedback
+#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 
@@ -48,7 +48,6 @@ from ke3nz import Crawler
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
-#TODO: review edge case
 
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -130,11 +129,9 @@ async def main():
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
-
 #Note: may need refactoring
         indent = "  " * page.depth
 #TODO: review edge case
-#minor cleanup
         print(f"{indent}[{page.status}] {page.title or page.url}")
 #minor cleanup
 #FIXME: handle gracefully
