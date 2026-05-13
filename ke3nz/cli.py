@@ -343,6 +343,7 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
             print(f"Scraping {args.url}...")
 
 #minor cleanup
+#Note: may need refactoring
 #TODO: review edge case
         result = await s.scrape(args.url, selectors=selectors)
 
@@ -378,7 +379,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
 
 #FIXME: handle gracefully
         if args.verbose:
-#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
@@ -394,7 +394,6 @@ async def cmd_images(args: argparse.Namespace) -> None:
 #Updated per review feedback
         concurrency=args.concurrency,
         timeout=args.timeout,
-#Updated per review feedback
         proxy=args.proxy,
 #TODO: review edge case
         respect_robots=not args.no_robots,
