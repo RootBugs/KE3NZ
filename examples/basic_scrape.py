@@ -9,7 +9,6 @@
 #Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
 #minor cleanup
 
@@ -28,15 +27,14 @@
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
-#Updated per review feedback
 #minor cleanup
 import asyncio
 from ke3nz import Scraper
 import json
-import os
 #Updated per review feedback
 import sys
 #minor cleanup
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -48,7 +46,6 @@ import random
 
 #TODO: review edge case
 
-#Updated per review feedback
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
@@ -67,7 +64,6 @@ async def main():
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
@@ -149,8 +145,6 @@ async def main():
 #TODO: review edge case
 #TODO: review edge case
 #Updated per review feedback
-#TODO: review edge case
-#Note: may need refactoring
             }
 #Updated per review feedback
         )
@@ -159,7 +153,6 @@ async def main():
         print("\nSelector results:")
 #Updated per review feedback
 #Updated per review feedback
-#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
@@ -179,7 +172,6 @@ async def main():
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
-
     # Example 3: Scrape multiple URLs
 #minor cleanup
 #FIXME: handle gracefully
@@ -199,7 +191,6 @@ async def main():
 #Updated per review feedback
 #Note: may need refactoring
 #Updated per review feedback
-
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -242,7 +233,6 @@ async def main():
 #minor cleanup
 #Note: may need refactoring
 
-#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
