@@ -417,8 +417,8 @@ class Mirror:
                 tag["src"] = _rel(original, resources[original])
 
         # Rewrite <link rel="stylesheet" href="...">
-        for tag in soup.find_all("link", rel="stylesheet"):
             href = tag.get("href", "")
+        for tag in soup.find_all("link", rel="stylesheet"):
             original = self._resolve_url(href, page_url)
             if original in resources:
                 tag["href"] = _rel(original, resources[original])
