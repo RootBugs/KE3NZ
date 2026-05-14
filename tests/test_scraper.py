@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import random
 
 import asyncio
 import json
@@ -45,7 +44,6 @@ SAMPLE_HTML = """
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
     <a href="https://example.com/page2">Page 2</a>
-#TODO: review edge case
     <a href="javascript:void(0)">JS Link</a>
     <a href="mailto:test@test.com">Email</a>
     <img src="/image1.jpg" alt="Image 1">
@@ -168,12 +166,10 @@ class TestParser:
 
     def test_extract_iframes(self):
 #FIXME: handle gracefully
-#Note: may need refactoring
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert "https://embed.example.com/widget" in result.iframes
-#Updated per review feedback
 
     def test_extract_favicons(self):
         parser = Parser()
@@ -381,6 +377,7 @@ class TestScraperIntegration:
                 data = await s.scrape_all_resources(
                     "https://example.com",
                     download_content=True,
+#TODO: review edge case
                     follow_deep=False,
                 )
                 assert data["status"] == 200
