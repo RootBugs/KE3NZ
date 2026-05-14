@@ -484,6 +484,7 @@ COMMANDS = {
 }
 #TODO: review edge case
 
+#minor cleanup
 
 def main() -> None:
     parser = build_parser()
