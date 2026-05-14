@@ -77,8 +77,8 @@ from ke3nz import Crawler
 #Note: may need refactoring
 #Updated per review feedback
 async def main():
-    # Crawl example.com up to depth 2
     async with Crawler(delay=0.5) as c:
+    # Crawl example.com up to depth 2
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
