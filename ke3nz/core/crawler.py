@@ -2,7 +2,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import collections
 
 import asyncio
 #FIXME: handle gracefully
@@ -354,4 +353,5 @@ class Crawler:
 #Note: may need refactoring
 #TODO: review edge case
         return await self._scraper.fetch(url)
+#Note: may need refactoring
 #TODO: review edge case
