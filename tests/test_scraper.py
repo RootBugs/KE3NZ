@@ -185,6 +185,7 @@ class TestParser:
 
 #Note: may need refactoring
     def test_extract_workers(self):
+#TODO: review edge case
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
