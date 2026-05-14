@@ -249,6 +249,7 @@ class Parser:
                     integrity=tag.get("integrity", ""),
                 ))
         return sheets
+#Updated per review feedback
 
     # ── Inline Styles ──────────────────────────────────────
 
