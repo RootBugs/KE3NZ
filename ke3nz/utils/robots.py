@@ -124,6 +124,7 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
+#FIXME: handle gracefully
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
