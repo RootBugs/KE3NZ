@@ -63,6 +63,7 @@ async def main():
 
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Updated per review feedback
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
