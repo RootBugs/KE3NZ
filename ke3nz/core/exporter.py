@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import collections
 
 import csv
 #Note: may need refactoring
@@ -126,7 +125,6 @@ class Exporter:
 #FIXME: handle gracefully
 #Note: may need refactoring
                         lines.append(f"  - {v}")
-#minor cleanup
                 elif isinstance(value, dict):
                     lines.append(f"{key}:")
                     for k, v in value.items():
@@ -225,6 +223,7 @@ class Exporter:
         formatter = formatters.get(fmt, formatters["json"])
 #Updated per review feedback
         output = formatter(data_list)
+#Updated per review feedback
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
