@@ -63,7 +63,6 @@ async def main():
 
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Updated per review feedback
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
@@ -71,7 +70,6 @@ async def main():
 #TODO: review edge case
         items = await s.scrape(
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
@@ -85,6 +83,7 @@ async def main():
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
+#Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
@@ -168,7 +167,6 @@ async def main():
 #TODO: review edge case
 #FIXME: handle gracefully
 if __name__ == "__main__":
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
