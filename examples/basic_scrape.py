@@ -61,6 +61,7 @@ async def main():
 #Note: may need refactoring
             "https://example.com",
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
             selectors={
 #Updated per review feedback
