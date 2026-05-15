@@ -58,6 +58,7 @@ class ScrapeResult:
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
+#FIXME: handle gracefully
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
