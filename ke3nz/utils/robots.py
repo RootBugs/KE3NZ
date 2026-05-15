@@ -43,6 +43,7 @@ import aiohttp
 #Updated per review feedback
 #TODO: review edge case
 
+#minor cleanup
 #Note: may need refactoring
 #FIXME: handle gracefully
     """Check robots.txt compliance with caching."""
