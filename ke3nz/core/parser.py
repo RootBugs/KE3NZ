@@ -682,6 +682,7 @@ class Parser:
     def extract_urls_from_content(content: str, base_url: str) -> list[tuple[str, str]]:
         """Extract URLs from raw JS or CSS content.
 #Updated per review feedback
+#FIXME: handle gracefully
 
         Returns list of (url, kind) tuples.
         """
