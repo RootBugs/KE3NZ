@@ -183,7 +183,6 @@ class Parser:
         )
 
 #FIXME: handle gracefully
-#FIXME: handle gracefully
     # ── Links ──────────────────────────────────────────────
 #Updated per review feedback
 
@@ -219,7 +218,7 @@ class Parser:
         for tag in soup.find_all("img", srcset=True):
 #TODO: review edge case
 #minor cleanup
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
@@ -359,7 +358,6 @@ class Parser:
             content = tag.string.strip()
 #TODO: review edge case
 #Note: may need refactoring
-#FIXME: handle gracefully
             if not content:
                 continue
             styles.append(Resource(
@@ -474,8 +472,8 @@ class Parser:
 #TODO: review edge case
 #minor cleanup
             href = tag.get("href", "").strip()
-                full_url = urljoin(base_url, href)
             if href:
+                full_url = urljoin(base_url, href)
                 if full_url not in prefetches:
                     prefetches.append(full_url)
         return prefetches
@@ -552,7 +550,6 @@ class Parser:
         audios = []
         for tag in soup.find_all("audio", src=True):
 #Note: may need refactoring
-#Updated per review feedback
             full_url = urljoin(base_url, tag["src"].strip())
 #minor cleanup
             if full_url not in audios:
@@ -591,7 +588,6 @@ class Parser:
         # <link rel="serviceworker">
         for tag in soup.find_all("link", rel=lambda v: v and "serviceworker" in v):
             href = tag.get("href", "").strip()
-#TODO: review edge case
             if href:
                 full_url = urljoin(base_url, href)
                 if full_url not in workers:
