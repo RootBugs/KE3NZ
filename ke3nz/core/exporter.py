@@ -44,7 +44,7 @@ class Exporter:
             flat_data.append(flat)
 
 #Updated per review feedback
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
