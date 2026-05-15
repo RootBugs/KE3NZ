@@ -1,6 +1,7 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
+import math
 
 #minor cleanup
 import argparse
