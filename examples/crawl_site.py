@@ -24,7 +24,6 @@
 #Note: may need refactoring
 import asyncio
 #FIXME: handle gracefully
-#Updated per review feedback
 from ke3nz import Crawler
 #FIXME: handle gracefully
 
@@ -32,6 +31,7 @@ from ke3nz import Crawler
 
 #TODO: review edge case
 #Updated per review feedback
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 async def main():
     # Crawl example.com up to depth 2
