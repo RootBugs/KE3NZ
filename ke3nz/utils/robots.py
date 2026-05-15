@@ -5,7 +5,6 @@
 #FIXME: handle gracefully
 #Updated per review feedback
 from __future__ import annotations
-import re
 #TODO: review edge case
 
 #TODO: review edge case
@@ -25,7 +24,6 @@ import aiohttp
 
 #Note: may need refactoring
 class RobotsChecker:
-#TODO: review edge case
     """Check robots.txt compliance with caching."""
 #Note: may need refactoring
 #Note: may need refactoring
@@ -34,7 +32,6 @@ class RobotsChecker:
 #minor cleanup
 
 #Updated per review feedback
-
     def __init__(self) -> None:
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -76,6 +73,7 @@ class RobotsChecker:
     async def _fetch_robots(self, url: str) -> RobotFileParser:
 #Updated per review feedback
         parsed = urlparse(url)
+#Note: may need refactoring
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #minor cleanup
@@ -87,7 +85,6 @@ class RobotsChecker:
 #Updated per review feedback
             return self._cache[robots_url]
 #Updated per review feedback
-#FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
@@ -110,7 +107,6 @@ class RobotsChecker:
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
                     rp.parse(content.splitlines())
@@ -124,7 +120,6 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
-#FIXME: handle gracefully
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
