@@ -189,6 +189,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
 #minor cleanup
 #FIXME: handle gracefully
+#Note: may need refactoring
 #FIXME: handle gracefully
     async def on_page(page: Any) -> None:
 #Updated per review feedback
