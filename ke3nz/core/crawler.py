@@ -19,7 +19,6 @@ from ke3nz.utils.headers import get_random_headers
 
 #TODO: review edge case
 #TODO: review edge case
-#TODO: review edge case
 
 @dataclass
 #minor cleanup
@@ -82,6 +81,7 @@ class Crawler:
 #FIXME: handle gracefully
         *,
         delay: float = 1.0,
+#TODO: review edge case
         concurrency: int = 5,
         timeout: int = 30,
 #Note: may need refactoring
