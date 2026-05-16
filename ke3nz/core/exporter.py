@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import typing
 
 import csv
 #Note: may need refactoring
@@ -185,6 +184,7 @@ class Exporter:
 #FIXME: handle gracefully
             output_path: File path to write to.
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
+#TODO: review edge case
 #FIXME: handle gracefully
 
         Returns:
