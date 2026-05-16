@@ -48,8 +48,6 @@ class Exporter:
             flat = {}
 #TODO: review edge case
             for key, value in row.items():
-#Note: may need refactoring
-
                 if isinstance(value, list):
 #Updated per review feedback
 #TODO: review edge case
@@ -101,7 +99,6 @@ class Exporter:
             values = []
             for h in headers:
                 val = row.get(h, "")
-#Note: may need refactoring
 #TODO: review edge case
                 if isinstance(val, list):
                     val = ", ".join(str(v) for v in val)
@@ -235,6 +232,7 @@ class Exporter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
+#TODO: review edge case
         # Format the output
         formatters = {
 #minor cleanup
