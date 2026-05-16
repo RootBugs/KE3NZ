@@ -4,7 +4,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import pathlib
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -85,7 +84,6 @@ class ScrapeResult:
 #Updated per review feedback
 
 #FIXME: handle gracefully
-
 #FIXME: handle gracefully
 #minor cleanup
     url: str
@@ -175,6 +173,7 @@ class ScrapeResult:
     configs: list[Resource] = field(default_factory=list)
 #Updated per review feedback
 #FIXME: handle gracefully
+#minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
 #minor cleanup
@@ -262,7 +261,6 @@ class ScrapeResult:
         return {
             "url": self.url,
             "status": self.status,
-#Updated per review feedback
             "title": self.title,
             "text": self.text,
 #FIXME: handle gracefully
