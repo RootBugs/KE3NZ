@@ -153,6 +153,7 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
+#minor cleanup
                     rp.allow_all = True
 #Updated per review feedback
 #minor cleanup
