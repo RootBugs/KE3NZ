@@ -91,8 +91,8 @@ class Crawler:
     async def crawl(
         self,
 #minor cleanup
-        start_url: str,
         *,
+        start_url: str,
         max_depth: int = 2,
 #TODO: review edge case
         on_page: Any | None = None,
