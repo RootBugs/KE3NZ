@@ -11,7 +11,6 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import pathlib
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
@@ -172,6 +171,7 @@ def get_random_headers() -> dict[str, str]:
 #Note: may need refactoring
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
+#Updated per review feedback
         "Accept-Encoding": "gzip, deflate",
 #FIXME: handle gracefully
 #Updated per review feedback
