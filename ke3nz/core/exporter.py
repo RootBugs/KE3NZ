@@ -32,6 +32,7 @@ class Exporter:
     @staticmethod
         indent = 2 if pretty else None
 #Note: may need refactoring
+#FIXME: handle gracefully
 #minor cleanup
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #FIXME: handle gracefully
