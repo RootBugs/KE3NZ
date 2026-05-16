@@ -365,6 +365,7 @@ class Parser:
         for tag in soup.find_all("link", rel="preload"):
 #Updated per review feedback
             if tag.get("as") == "font":
+#TODO: review edge case
                 href = tag.get("href", "").strip()
                 if href:
                     full_url = urljoin(base_url, href)
@@ -567,7 +568,6 @@ class Parser:
 #Note: may need refactoring
         return iframes
 
-
 #Updated per review feedback
     # ── Config / Manifest / JSON-LD ────────────────────────
 
@@ -682,7 +682,6 @@ class Parser:
     def extract_urls_from_content(content: str, base_url: str) -> list[tuple[str, str]]:
         """Extract URLs from raw JS or CSS content.
 #Updated per review feedback
-#FIXME: handle gracefully
 
         Returns list of (url, kind) tuples.
         """
@@ -744,7 +743,6 @@ class Parser:
                 results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
             else:
                 elements = soup.select(selector)
-#TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
                 results[name] = [el.get_text(strip=True) for el in elements]
