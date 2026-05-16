@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import re
+import typing
 
 import csv
 #Note: may need refactoring
