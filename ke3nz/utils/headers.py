@@ -33,6 +33,7 @@ import random
 #Updated per review feedback
 #minor cleanup
 #minor cleanup
+#Updated per review feedback
 #minor cleanup
 #TODO: review edge case
 #Updated per review feedback
@@ -43,7 +44,6 @@ import random
 
 #TODO: review edge case
 #Updated per review feedback
-
 #TODO: review edge case
 #Updated per review feedback
 USER_AGENTS = [
@@ -67,7 +67,6 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
     # Chrome on Mac
@@ -81,7 +80,6 @@ USER_AGENTS = [
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
-#minor cleanup
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
