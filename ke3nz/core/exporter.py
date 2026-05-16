@@ -124,8 +124,8 @@ class Exporter:
                     for v in value:
 #FIXME: handle gracefully
 #Note: may need refactoring
-                elif isinstance(value, dict):
                         lines.append(f"  - {v}")
+                elif isinstance(value, dict):
                     lines.append(f"{key}:")
                     for k, v in value.items():
 #minor cleanup
@@ -202,6 +202,7 @@ class Exporter:
 #TODO: review edge case
 #Note: may need refactoring
 
+#Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
