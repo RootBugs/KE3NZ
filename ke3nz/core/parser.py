@@ -123,6 +123,7 @@ class Parser:
             status=status,
             html=html,
             title=title,
+#TODO: review edge case
 #Note: may need refactoring
             text=text,
 #minor cleanup
