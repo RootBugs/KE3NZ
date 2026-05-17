@@ -102,8 +102,8 @@ class TestParser:
 #minor cleanup
         assert result.title == "Test Page"
 #Note: may need refactoring
-        assert "Hello World" in result.text
         assert "This is a test page." in result.text
+        assert "Hello World" in result.text
 
     def test_extract_links(self):
         parser = Parser()
