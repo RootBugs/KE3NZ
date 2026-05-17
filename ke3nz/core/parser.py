@@ -123,7 +123,6 @@ class Parser:
             status=status,
             html=html,
             title=title,
-#TODO: review edge case
 #Note: may need refactoring
             text=text,
 #minor cleanup
@@ -212,7 +211,6 @@ class Parser:
             content = tag.get("content", "").strip()
             if content:
                 full_url = urljoin(base_url, content)
-#Note: may need refactoring
                 if full_url not in images:
                     images.append(full_url)
         return images
@@ -488,7 +486,6 @@ class Parser:
             full_url = urljoin(base_url, tag["src"].strip())
             if full_url not in audios:
 #TODO: review edge case
-#TODO: review edge case
 #FIXME: handle gracefully
                 audios.append(full_url)
         for tag in soup.find_all("source", src=True):
@@ -611,7 +608,6 @@ class Parser:
         videos: list[str],
         audios: list[str],
         workers: list[str],
-
         iframes: list[str],
     ) -> list[str]:
 #Updated per review feedback
@@ -683,6 +679,7 @@ class Parser:
                     found.append((full_url, kind))
 
         return found
+#Note: may need refactoring
 #Updated per review feedback
 
     # ── CSS Selectors ──────────────────────────────────────
