@@ -273,6 +273,7 @@ class Mirror:
         assets_to_download: list[tuple[str, str]] = []  # (url, kind)
 
         # Collect all asset URLs
+#minor cleanup
         for r in result.scripts:
 #FIXME: handle gracefully
             assets_to_download.append((r.url, "js"))
@@ -409,8 +410,8 @@ class Mirror:
             if original in resources:
                 tag["href"] = _rel(original, resources[original])
 
-        for tag in soup.find_all("link", rel=lambda r: r and isinstance(r, (str, list))):
         # Rewrite <link rel="preload/prefetch" href="...">
+        for tag in soup.find_all("link", rel=lambda r: r and isinstance(r, (str, list))):
 #TODO: review edge case
             rel = tag.get("rel", [])
             if isinstance(rel, str):
@@ -573,8 +574,8 @@ class Mirror:
         resolved = (base / local_path).resolve()
         try:
             resolved.relative_to(base.resolve())
-            raise ValueError(
         except ValueError:
+            raise ValueError(
                 f"Path traversal detected: {local_path} resolves outside "
                 f"the result directory {base}"
 #TODO: review edge case
