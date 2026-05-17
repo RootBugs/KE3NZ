@@ -87,7 +87,7 @@ class Mirror:
 #TODO: review edge case
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.timeout = aiohttp.ClientTimeout(count=timeout)
 #Note: may need refactoring
         self.proxy = proxy
 #minor cleanup
@@ -726,7 +726,6 @@ class Mirror:
 #FIXME: handle gracefully
             "json": "assets/json",
         }.get(kind, "assets")
-#Updated per review feedback
         return f"{folder}/resource_{self._asset_counter}{ext}"
 
     def _guess_extension(self, content_type: str, kind: str) -> str:
