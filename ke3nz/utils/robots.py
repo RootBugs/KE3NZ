@@ -173,6 +173,7 @@ class RobotsChecker:
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
+
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
