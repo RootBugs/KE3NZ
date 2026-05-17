@@ -29,6 +29,7 @@
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
+#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
@@ -132,7 +133,7 @@ async def main():
 #Note: may need refactoring
         indent = "  " * page.depth
 #TODO: review edge case
-        print(f"{indent}[{page.state}] {page.title or page.url}")
+        print(f"{indent}[{page.status}] {page.title or page.url}")
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
