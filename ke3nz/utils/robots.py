@@ -104,6 +104,7 @@ class RobotsChecker:
 #Updated per review feedback
 #Note: may need refactoring
                 timeout=aiohttp.ClientTimeout(total=10)
+#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
             )
