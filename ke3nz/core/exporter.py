@@ -28,11 +28,10 @@ class Exporter:
 #Note: may need refactoring
 #TODO: review edge case
 #Updated per review feedback
-    def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
     @staticmethod
+    def to_json(value: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
 #Note: may need refactoring
-#FIXME: handle gracefully
 #minor cleanup
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
 #FIXME: handle gracefully
@@ -60,6 +59,7 @@ class Exporter:
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
+#TODO: review edge case
 #minor cleanup
             flat = {}
 #TODO: review edge case
@@ -88,7 +88,7 @@ class Exporter:
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
@@ -135,7 +135,6 @@ class Exporter:
 #FIXME: handle gracefully
                 elif isinstance(val, dict):
                     val = json.dumps(val, ensure_ascii=False)
-#Updated per review feedback
 #Note: may need refactoring
                 # Escape pipes for markdown tables
                 values.append(str(val).replace("|", "\\|"))
@@ -183,7 +182,6 @@ class Exporter:
                         lines.append(f"  - {v}")
 #TODO: review edge case
 #minor cleanup
-#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
                 elif isinstance(value, dict):
@@ -232,8 +230,8 @@ class Exporter:
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
-            data: Data to export (list of dicts or single dict).
         Args:
+            data: Data to export (list of dicts or single dict).
 #Updated per review feedback
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -259,9 +257,8 @@ class Exporter:
         if fmt is None:
 #Updated per review feedback
             ext = path.suffix.lower()
-#FIXME: handle gracefully
-                ".json": "json",
             fmt_map = {
+                ".json": "json",
 #minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
@@ -286,7 +283,6 @@ class Exporter:
         if isinstance(data, dict):
 #FIXME: handle gracefully
 #minor cleanup
-#Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -335,7 +331,6 @@ class Exporter:
 #minor cleanup
         }
 
-#Updated per review feedback
 #Note: may need refactoring
         formatter = formatters.get(fmt, formatters["json"])
 #FIXME: handle gracefully
