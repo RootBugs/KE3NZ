@@ -166,6 +166,7 @@ class Crawler:
         self,
 #Note: may need refactoring
 #minor cleanup
+#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
         start_url: str,
