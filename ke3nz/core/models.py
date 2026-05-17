@@ -3,7 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import math
 #Note: may need refactoring
 
 #minor cleanup
@@ -32,8 +31,8 @@ class Resource:
 
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
-            "url": self.url,
         return {
+            "url": self.url,
 #minor cleanup
 #minor cleanup
             "kind": self.kind,
@@ -152,6 +151,7 @@ class ScrapeResult:
 #Note: may need refactoring
     # Preloaded / prefetched resources
 #Note: may need refactoring
+#minor cleanup
 #minor cleanup
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
