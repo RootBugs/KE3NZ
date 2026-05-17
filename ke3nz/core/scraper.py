@@ -295,6 +295,7 @@ class Scraper:
 
                 # Determine filename from URL
 #FIXME: handle gracefully
+#Updated per review feedback
                 parsed = urlparse(res.url)
                 filename = Path(parsed.path).name or f"{kind}_{i}"
                 # Add extension if missing
