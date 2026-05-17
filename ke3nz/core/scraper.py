@@ -359,6 +359,7 @@ class Scraper:
             ("preload", "preloads"),
         ]:
             resources = []
+
             if kind == "script":
                 resources = data.get("scripts", [])
             elif kind == "stylesheet":
