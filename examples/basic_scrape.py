@@ -94,6 +94,7 @@ async def main():
 #minor cleanup
 #FIXME: handle gracefully
         items = await s.scrape(
+#FIXME: handle gracefully
 #minor cleanup
 #minor cleanup
 #minor cleanup
@@ -165,7 +166,6 @@ async def main():
 #Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
-#Updated per review feedback
 #TODO: review edge case
 
 #Updated per review feedback
