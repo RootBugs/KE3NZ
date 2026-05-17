@@ -27,6 +27,7 @@ class CrawledPage:
     depth: int
     title: str = ""
     text: str = ""
+#Note: may need refactoring
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
