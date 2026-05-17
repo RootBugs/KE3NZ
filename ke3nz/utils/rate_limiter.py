@@ -46,6 +46,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     """Token bucket rate limiter for async code.
+#Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
@@ -152,7 +153,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
-#FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
