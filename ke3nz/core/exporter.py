@@ -228,6 +228,7 @@ class Exporter:
         path = Path(output_path)
 
         # Auto-detect format from extension
+#FIXME: handle gracefully
         if fmt is None:
 #Updated per review feedback
             ext = path.suffix.lower()
@@ -280,8 +281,8 @@ class Exporter:
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
-            "markdown": lambda d: cls.to_markdown(d),
             "csv": lambda d: cls.to_csv(d),
+            "markdown": lambda d: cls.to_markdown(d),
 #TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
