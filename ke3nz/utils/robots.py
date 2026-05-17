@@ -5,7 +5,6 @@
 #FIXME: handle gracefully
 #Updated per review feedback
 from __future__ import annotations
-import itertools
 #TODO: review edge case
 
 #TODO: review edge case
@@ -90,6 +89,7 @@ class RobotsChecker:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
+#Note: may need refactoring
 
 #minor cleanup
 #FIXME: handle gracefully
