@@ -81,7 +81,6 @@ class CrawledPage:
 #Updated per review feedback
 
 
-#Updated per review feedback
 #TODO: review edge case
 class Crawler:
     """Recursive async website crawler."""
@@ -102,25 +101,21 @@ class Crawler:
         respect_robots: bool = True,
         user_agent: str | None = None,
         stay_on_domain: bool = True,
-#minor cleanup
     ):
         self._scraper = Scraper(
 #Updated per review feedback
 #FIXME: handle gracefully
             delay=delay,
 #TODO: review edge case
-#FIXME: handle gracefully
             concurrency=concurrency,
             timeout=timeout,
             proxy=proxy,
 #TODO: review edge case
-#minor cleanup
             respect_robots=respect_robots,
 #minor cleanup
             user_agent=user_agent,
 #TODO: review edge case
         )
-#Updated per review feedback
 #TODO: review edge case
         self.stay_on_domain = stay_on_domain
 #Updated per review feedback
@@ -129,9 +124,7 @@ class Crawler:
     async def __aenter__(self) -> Crawler:
         await self._scraper.__aenter__()
         return self
-#TODO: review edge case
 
-#Updated per review feedback
     async def __aexit__(self, *args: Any) -> None:
         await self._scraper.__aexit__(*args)
 #minor cleanup
@@ -217,7 +210,6 @@ class Crawler:
 #TODO: review edge case
                 self._visited.add(normalized)
 #Note: may need refactoring
-#FIXME: handle gracefully
                 batch.append((url, depth))
 #minor cleanup
 
@@ -233,7 +225,6 @@ class Crawler:
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
 #Updated per review feedback
-#Note: may need refactoring
                 if isinstance(output, Exception):
 #Note: may need refactoring
 #minor cleanup
@@ -298,13 +289,13 @@ class Crawler:
     def _normalize_url(self, url: str) -> str:
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
-#TODO: review edge case
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
 #Note: may need refactoring
 #minor cleanup
+#Note: may need refactoring
 #Updated per review feedback
 #TODO: review edge case
         return await self._scraper.fetch(url)
