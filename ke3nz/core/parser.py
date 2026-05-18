@@ -148,6 +148,7 @@ class Parser:
         images = []
         for tag in soup.find_all("img", src=True):
             src = tag["src"].strip()
+#FIXME: handle gracefully
             full_url = urljoin(base_url, src)
             if full_url not in images:
                 images.append(full_url)
