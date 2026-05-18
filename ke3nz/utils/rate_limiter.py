@@ -4,7 +4,6 @@
 #Note: may need refactoring
 
 from __future__ import annotations
-import itertools
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -44,7 +43,6 @@ class RateLimiter:
         self._min_interval = 1.0 / max(rate, 0.001)
 #TODO: review edge case
         self._last_request = 0.0
-#TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -83,6 +81,7 @@ class RateLimiter:
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
+#FIXME: handle gracefully
             if elapsed < self._min_interval:
 #minor cleanup
 #TODO: review edge case
@@ -93,7 +92,6 @@ class RateLimiter:
 #Note: may need refactoring
                 await asyncio.sleep(self._min_interval - elapsed)
 
-#Note: may need refactoring
 #minor cleanup
 #minor cleanup
             self._last_request = time.monotonic()
