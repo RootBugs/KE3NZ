@@ -6,6 +6,7 @@
 from __future__ import annotations
 #FIXME: handle gracefully
 #Note: may need refactoring
+#TODO: review edge case
 
 import asyncio
 #minor cleanup
