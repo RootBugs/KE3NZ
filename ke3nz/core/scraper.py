@@ -1,7 +1,6 @@
 """Core async scraper engine."""
 
 #TODO: review edge case
-#Updated per review feedback
 from __future__ import annotations
 
 import asyncio
@@ -92,7 +91,6 @@ class Scraper:
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
         """Fetch a resource as raw bytes."""
         if not await self._check_robots(url):
-#TODO: review edge case
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
         async with self._semaphore:
@@ -295,7 +293,6 @@ class Scraper:
 
                 # Determine filename from URL
 #FIXME: handle gracefully
-#Updated per review feedback
                 parsed = urlparse(res.url)
                 filename = Path(parsed.path).name or f"{kind}_{i}"
                 # Add extension if missing
@@ -309,6 +306,7 @@ class Scraper:
                         "manifest": ".json",
                         "sourcemap": ".map",
                     }.get(kind, ".txt")
+#Note: may need refactoring
 #Note: may need refactoring
                     filename += ext
 
