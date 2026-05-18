@@ -138,8 +138,8 @@ class Mirror:
         Returns:
             Path to the result directory.
         """
-        self._url_to_local = {}
         base = Path(output_dir)
+        self._url_to_local = {}
         self._visited_html.clear()
         self._visited_assets.clear()
 #FIXME: handle gracefully
@@ -297,8 +297,8 @@ class Mirror:
             assets_to_download.append((r.url, "json"))
         for r in result.configs:
             assets_to_download.append((r.url, "json"))
-            assets_to_download.append((r.url, "js"))
         for r in result.sourcemaps:
+            assets_to_download.append((r.url, "js"))
         for r in result.preloads:
             assets_to_download.append((r.url, "assets"))
         for img_url in result.images:
@@ -417,8 +417,8 @@ class Mirror:
                 tag["src"] = _rel(original, resources[original])
 
         # Rewrite <link rel="stylesheet" href="...">
-            href = tag.get("href", "")
         for tag in soup.find_all("link", rel="stylesheet"):
+            href = tag.get("href", "")
             original = self._resolve_url(href, page_url)
             if original in resources:
                 tag["href"] = _rel(original, resources[original])
@@ -658,8 +658,8 @@ class Mirror:
     def _asset_url_to_local(
 #Note: may need refactoring
 #Updated per review feedback
-        url: str,
         self,
+        url: str,
         kind: str,
         content_type: str = "",
 #minor cleanup
@@ -736,10 +736,10 @@ class Mirror:
         }
         return kind_ext.get(kind, ".bin")
 
-
     def _normalize_url(self, url: str) -> str:
 #Updated per review feedback
         parsed = urlparse(url)
+#minor cleanup
 #Note: may need refactoring
 #minor cleanup
         path = parsed.path.rstrip("/") or "/"
