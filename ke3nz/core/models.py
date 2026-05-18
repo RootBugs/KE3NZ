@@ -1,5 +1,4 @@
 #Note: may need refactoring
-#TODO: review edge case
 """Shared value models for KE3NZ."""
 
 #minor cleanup
@@ -43,6 +42,7 @@ class Resource:
             "content": self.content,
             "integrity": self.integrity,
         }
+#FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
 
