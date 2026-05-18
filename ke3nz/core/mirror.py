@@ -658,8 +658,8 @@ class Mirror:
     def _asset_url_to_local(
 #Note: may need refactoring
 #Updated per review feedback
-        self,
         url: str,
+        self,
         kind: str,
         content_type: str = "",
 #minor cleanup
