@@ -27,7 +27,6 @@ import asyncio
 from ke3nz import Scraper
 import json
 import sys
-import re
 #minor cleanup
 #FIXME: handle gracefully
 import random
@@ -52,7 +51,6 @@ import random
 #Note: may need refactoring
 #minor cleanup
 async def main():
-#Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
 #TODO: review edge case
@@ -79,7 +77,6 @@ async def main():
 #FIXME: handle gracefully
 #Updated per review feedback
     # Example 2: Scrape with CSS selectors
-#Updated per review feedback
     async with Scraper() as s:
 #TODO: review edge case
 #TODO: review edge case
@@ -113,7 +110,6 @@ async def main():
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
-#minor cleanup
 #minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
@@ -161,7 +157,6 @@ async def main():
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
-#minor cleanup
         "https://example.com",
 #Updated per review feedback
 #Note: may need refactoring
@@ -197,6 +192,7 @@ async def main():
 #Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
+#minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
