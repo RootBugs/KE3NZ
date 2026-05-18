@@ -141,7 +141,6 @@ class Mirror:
         # Phase 1: Crawl HTML pages
         while queue:
             batch = []
-#TODO: review edge case
             while queue and len(batch) < self.concurrency:
                 url, depth = queue.pop(0)
                 norm = self._normalize_url(url)
@@ -188,6 +187,7 @@ class Mirror:
 #Updated per review feedback
                     resources=resources,
                 )
+#FIXME: handle gracefully
                 self._pages.append(page)
 
 #Note: may need refactoring
