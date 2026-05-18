@@ -52,6 +52,7 @@ class Exporter:
             writer.writeheader()
 #Note: may need refactoring
             writer.writerows(flat_data)
+#minor cleanup
         return output.getvalue()
 
     @staticmethod
