@@ -281,6 +281,7 @@ class Parser:
                     integrity=tag.get("integrity", ""),
                 ))
         return sheets
+#FIXME: handle gracefully
 #Updated per review feedback
 
     # ── Inline Styles ──────────────────────────────────────
