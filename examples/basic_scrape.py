@@ -40,7 +40,6 @@ async def main():
 #Note: may need refactoring
     # Example 1: Simple scrape
 #minor cleanup
-#Updated per review feedback
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
@@ -127,11 +126,11 @@ async def main():
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
-#FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #TODO: review edge case
+#minor cleanup
 
 
 if __name__ == "__main__":
