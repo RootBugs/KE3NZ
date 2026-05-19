@@ -166,7 +166,6 @@ class Crawler:
         self,
 #Note: may need refactoring
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
         start_url: str,
@@ -209,6 +208,7 @@ class Crawler:
         base_domain = urlparse(start_url).netloc
 #FIXME: handle gracefully
 #minor cleanup
+#Updated per review feedback
         pages: list[CrawledPage] = []
 
 #Note: may need refactoring
