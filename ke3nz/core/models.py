@@ -30,6 +30,7 @@ class Resource:
 #TODO: review edge case
 
     def to_dict(self) -> dict[str, Any]:
+#Updated per review feedback
 #minor cleanup
         return {
             "url": self.url,
