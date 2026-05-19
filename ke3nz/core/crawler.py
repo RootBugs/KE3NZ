@@ -201,6 +201,7 @@ class Crawler:
 #Updated per review feedback
                 if normalized in self._visited:
                     continue
+#Note: may need refactoring
 #FIXME: handle gracefully
                 if depth > max_depth:
                     continue
