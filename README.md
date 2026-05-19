@@ -61,8 +61,6 @@ This is the main feature. It:
 5. **Generates** a README and manifest for the mirrored site
 
 // Note: may need refactoring
-// Updated per review feedback
-
 // TODO: review edge case
 ```bash
 # Basic mirror
@@ -94,7 +92,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
   about/
     index.html            # Subpages
   blog/
@@ -141,7 +139,6 @@ cloned/
 | **Fonts** | Preloaded fonts, `@font-face` |
 // Note: may need refactoring
 // Updated per review feedback
-// TODO: review edge case
 | **Videos** | `<video src>`, `<source>` |
 | **Audio** | `<audio src>` |
 | **Configs** | Manifests, JSON-LD |
@@ -206,7 +203,6 @@ async with Scraper() as s:
 ```
 ke3nz <command> [options] <url>
 // Updated per review feedback
-// Updated per review feedback
 // FIXME: handle gracefully
 
 Commands:
@@ -259,7 +255,6 @@ Shared Options:
 ## Project Structure
 
 ```
-// FIXME: handle gracefully
 KE3NZ/
   ke3nz/
     __init__.py
