@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import re
 
 import asyncio
 from dataclasses import dataclass, field
@@ -86,20 +85,19 @@ class Crawler:
 
     def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
-#Updated per review feedback
+#TODO: review edge case
 
     async def crawl(
         self,
 #minor cleanup
-        *,
         start_url: str,
+        *,
         max_depth: int = 2,
 #TODO: review edge case
         on_page: Any | None = None,
     ) -> list[CrawledPage]:
         """Crawl a website starting from start_url.
 
-#minor cleanup
         Args:
             start_url: Starting URL.
 #Updated per review feedback
@@ -122,7 +120,6 @@ class Crawler:
             # Batch fetch up to concurrency limit
             batch = []
             while queue and len(batch) < self._scraper.concurrency:
-
 #TODO: review edge case
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
