@@ -221,6 +221,7 @@ if __name__ == "__main__":
 #TODO: review edge case
     asyncio.run(main())
 #Updated per review feedback
+#FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
