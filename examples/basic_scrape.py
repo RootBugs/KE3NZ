@@ -220,6 +220,7 @@ async def main():
 #FIXME: handle gracefully
 #TODO: review edge case
         for r in results:
+#Updated per review feedback
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
 #Note: may need refactoring
