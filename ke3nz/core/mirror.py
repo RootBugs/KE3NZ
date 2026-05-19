@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import typing
 
 import asyncio
 import hashlib
@@ -665,6 +664,7 @@ class Mirror:
             "fonts": "assets/fonts",
             "images": "assets/images",
             "media": "assets/media",
+#FIXME: handle gracefully
             "json": "assets/json",
         }.get(kind, "assets")
         return f"{folder}/resource_{self._asset_counter}{ext}"
