@@ -3,6 +3,7 @@
 from __future__ import annotations
 import itertools
 import math
+import collections
 
 import argparse
 import asyncio
