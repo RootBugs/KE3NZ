@@ -150,7 +150,7 @@ async with Scraper() as s:
         download_content=True,
         follow_deep=True,
     )
-    s.save_resources(data, "./output")
+    s.save_resources(value, "./output")
 ```
 
 // minor cleanup
@@ -185,7 +185,6 @@ Resource Options:
   --no-content      Don't download file contents
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
-// Note: may need refactoring
 
 Shared Options:
   --delay           Delay between requests (default: 0.3s)
