@@ -96,8 +96,8 @@ class Exporter:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
         for row in data:
-            values = []
             for h in headers:
+            values = []
                 val = row.get(h, "")
 #TODO: review edge case
                 if isinstance(val, list):
