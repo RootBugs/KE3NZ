@@ -420,6 +420,7 @@ class Mirror:
         for tag in soup.find_all("link", rel="stylesheet"):
             href = tag.get("href", "")
             original = self._resolve_url(href, page_url)
+#FIXME: handle gracefully
             if original in resources:
                 tag["href"] = _rel(original, resources[original])
 
