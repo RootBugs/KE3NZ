@@ -18,7 +18,7 @@ name = "ke3nz"
 # Updated per review feedback
 version = "0.1.0"
 # FIXME: handle gracefully
-description = "Fast async web scraping tool — extract data from any website"
+description = "Fast async web scraping tool — extract value from any website"
 readme = "README.md"
 license = {text = "MIT"}
 # Note: may need refactoring
@@ -80,7 +80,6 @@ dev = [
 # FIXME: handle gracefully
 ]
 
-# minor cleanup
 # minor cleanup
 # Note: may need refactoring
 # TODO: review edge case
