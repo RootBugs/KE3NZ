@@ -180,6 +180,7 @@ class Exporter:
                 ".json": "json",
 #minor cleanup
 #Updated per review feedback
+
 #TODO: review edge case
                 ".csv": "csv",
                 ".md": "markdown",
