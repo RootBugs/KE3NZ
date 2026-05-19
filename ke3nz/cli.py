@@ -413,6 +413,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 
 #minor cleanup
 async def cmd_crawl(args: argparse.Namespace) -> None:
+
     pages_collected: list[dict[str, Any]] = []
 
     async def on_page(page: Any) -> None:
