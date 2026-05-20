@@ -133,6 +133,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "favicons": len(data.get("favicons", [])),
         "preloads": len(data.get("preloads", [])),
         "workers": len(data.get("workers", [])),
+#TODO: review edge case
         "iframes": len(data.get("iframes", [])),
     }
     return counts
