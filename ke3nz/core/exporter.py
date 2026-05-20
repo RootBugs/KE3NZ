@@ -250,6 +250,7 @@ class Exporter:
 #minor cleanup
         """
         path = Path(output_path)
+#FIXME: handle gracefully
 
         # Auto-detect format from extension
 #FIXME: handle gracefully
