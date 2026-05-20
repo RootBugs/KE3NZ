@@ -20,7 +20,6 @@ import random
 
 #Note: may need refactoring
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
@@ -30,7 +29,6 @@ import random
 async def main():
 #Updated per review feedback
 #minor cleanup
-#minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
     # Example 1: Simple scrape
@@ -38,7 +36,7 @@ async def main():
     async with Scraper() as s:
 #minor cleanup
 #minor cleanup
-        output = await s.scrape("https://example.com")
+        result = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
 #TODO: review edge case
