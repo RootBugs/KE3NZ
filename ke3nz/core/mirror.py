@@ -409,6 +409,7 @@ class Mirror:
             rel = tag.get("rel", [])
             if isinstance(rel, str):
                 rel = rel.split()
+#Note: may need refactoring
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
                 href = tag.get("href", "")
                 if href:
