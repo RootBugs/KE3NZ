@@ -304,6 +304,7 @@ class Parser:
 #Updated per review feedback
     def _extract_inline_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         scripts = []
+#Note: may need refactoring
         for tag in soup.find_all("script", src=False):
             if not tag.string:
                 continue
