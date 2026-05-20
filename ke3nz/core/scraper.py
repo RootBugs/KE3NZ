@@ -387,6 +387,7 @@ class Scraper:
 #FIXME: handle gracefully
         html_path = base / "page.html"
         html_path.write_text(data.get("html", ""), encoding="utf-8")
+#Note: may need refactoring
         index["files"].append({
             "url": data.get("url"),
             "kind": "html",
