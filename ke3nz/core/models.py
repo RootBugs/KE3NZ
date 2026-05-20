@@ -130,6 +130,7 @@ class ScrapeResult:
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 #minor cleanup
+#FIXME: handle gracefully
 #TODO: review edge case
 
 #TODO: review edge case
