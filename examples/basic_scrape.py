@@ -1,9 +1,7 @@
 """Example: Basic web scraping with KE3NZ."""
 
-#minor cleanup
 import asyncio
 from ke3nz import Scraper
-import json
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
@@ -19,10 +17,9 @@ import json
 async def main():
 #Updated per review feedback
     # Example 1: Simple scrape
-#FIXME: handle gracefully
 #minor cleanup
     async with Scraper() as s:
-        output = await s.scrape("https://example.com")
+        result = await s.scrape("https://example.com")
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
 #TODO: review edge case
@@ -30,7 +27,6 @@ async def main():
         print(f"Images found: {len(result['images'])}")
 
     # Example 2: Scrape with CSS selectors
-#TODO: review edge case
     async with Scraper() as s:
 #TODO: review edge case
         items = await s.scrape(
@@ -47,7 +43,6 @@ async def main():
         for key, values in items["selector_results"].items():
 #Note: may need refactoring
 #TODO: review edge case
-#minor cleanup
             print(f"  {key}: {values}")
 
 #Note: may need refactoring
@@ -70,7 +65,7 @@ async def main():
 
 
 if __name__ == "__main__":
-#Note: may need refactoring
 #Updated per review feedback
+#minor cleanup
 #minor cleanup
     asyncio.run(main())
