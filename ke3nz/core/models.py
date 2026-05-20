@@ -79,6 +79,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     url: str
+#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
     status: int
