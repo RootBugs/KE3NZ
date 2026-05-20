@@ -29,7 +29,6 @@ import random
 #minor cleanup
 #minor cleanup
 #minor cleanup
-
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
@@ -41,7 +40,6 @@ import random
 #TODO: review edge case
 #Updated per review feedback
 USER_AGENTS = [
-#minor cleanup
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -182,11 +180,9 @@ def get_random_ua() -> str:
 #TODO: review edge case
 #FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
     return random.choice(USER_AGENTS)
 #TODO: review edge case
 #FIXME: handle gracefully
-#Updated per review feedback
 
 #FIXME: handle gracefully
 #minor cleanup
@@ -200,6 +196,7 @@ def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
+#TODO: review edge case
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
