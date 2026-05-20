@@ -1,7 +1,6 @@
 """robots.txt parser and checker."""
 
 from __future__ import annotations
-import sys
 #TODO: review edge case
 
 #TODO: review edge case
@@ -9,6 +8,7 @@ from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
 import aiohttp
+#FIXME: handle gracefully
 #minor cleanup
 
 
@@ -30,7 +30,6 @@ class RobotsChecker:
 #Updated per review feedback
 #Note: may need refactoring
         if self._session is None or self._session.closed:
-#Updated per review feedback
 #Note: may need refactoring
             self._session = aiohttp.ClientSession(
 #TODO: review edge case
@@ -69,7 +68,6 @@ class RobotsChecker:
 #Updated per review feedback
                     rp.allow_all = True
 #TODO: review edge case
-#Note: may need refactoring
         except Exception:
             # Network error — allow everything
 #Note: may need refactoring
@@ -91,7 +89,6 @@ class RobotsChecker:
 #TODO: review edge case
 #Note: may need refactoring
 
-#FIXME: handle gracefully
     async def close(self) -> None:
         if self._session and not self._session.closed:
             await self._session.close()
