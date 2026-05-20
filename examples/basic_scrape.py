@@ -30,6 +30,7 @@ async def main():
         print(f"Images found: {len(result['images'])}")
 
     # Example 2: Scrape with CSS selectors
+#TODO: review edge case
     async with Scraper() as s:
 #TODO: review edge case
         items = await s.scrape(
