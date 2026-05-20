@@ -251,6 +251,7 @@ class Crawler:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
+#Note: may need refactoring
                 self._visited.add(normalized)
 #Note: may need refactoring
                 batch.append((url, depth))
