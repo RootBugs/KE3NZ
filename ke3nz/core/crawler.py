@@ -152,6 +152,7 @@ class Crawler:
                     url=url,
                     status=output.status,
 #minor cleanup
+
                     depth=depth,
                     title=result.title,
                     text=result.text,
