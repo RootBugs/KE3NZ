@@ -202,6 +202,7 @@ class ScrapeResult:
 #Updated per review feedback
             "links": self.links,
             "images": self.images,
+#Updated per review feedback
             "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
