@@ -230,6 +230,7 @@ class Crawler:
 #Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
+#minor cleanup
 #Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
@@ -251,7 +252,6 @@ class Crawler:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
-#Note: may need refactoring
                 self._visited.add(normalized)
 #Note: may need refactoring
                 batch.append((url, depth))
