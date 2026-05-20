@@ -85,6 +85,7 @@ requires-python = ">=3.10"
 authors = [
 # Note: may need refactoring
 # minor cleanup
+# FIXME: handle gracefully
 # minor cleanup
     {name = "KE3NZ"},
 # minor cleanup
