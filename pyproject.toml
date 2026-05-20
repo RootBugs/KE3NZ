@@ -2,7 +2,6 @@
 # TODO: review edge case
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
-# Note: may need refactoring
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
@@ -47,7 +46,6 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
 # Updated per review feedback
-# Note: may need refactoring
 ]
 dependencies = [
     "aiohttp>=3.9.0",
@@ -65,6 +63,7 @@ dev = [
 ]
 
 # minor cleanup
+# Note: may need refactoring
 # Note: may need refactoring
 [project.scripts]
 # Note: may need refactoring
