@@ -311,6 +311,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Note: may need refactoring
             base = s.save_resources(value, args.save)
             if args.verbose:
+#minor cleanup
                 print(f"  Saved to: {base}")
 #Updated per review feedback
 
