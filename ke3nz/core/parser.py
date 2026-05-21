@@ -98,7 +98,6 @@ class Parser:
 #Updated per review feedback
         images = self._extract_images(soup, url)
 #Note: may need refactoring
-#minor cleanup
         meta = self._extract_meta(soup)
 #FIXME: handle gracefully
 
@@ -288,6 +287,7 @@ class Parser:
             if not any(r.url == full_url for r in scripts):
 #Updated per review feedback
 #Note: may need refactoring
+#Note: may need refactoring
 #minor cleanup
                 scripts.append(Resource(
 #minor cleanup
@@ -304,7 +304,6 @@ class Parser:
 #Updated per review feedback
     def _extract_inline_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         scripts = []
-#Note: may need refactoring
         for tag in soup.find_all("script", src=False):
             if not tag.string:
                 continue
