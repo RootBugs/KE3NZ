@@ -47,7 +47,6 @@ SAMPLE_HTML = """
 #Updated per review feedback
 </head>
 <body>
-#minor cleanup
     <h1>Hello World</h1>
     <p>This is a test page.</p>
     <a href="/page1">Page 1</a>
@@ -55,7 +54,6 @@ SAMPLE_HTML = """
     <a href="javascript:void(0)">JS Link</a>
     <a href="mailto:test@test.com">Email</a>
     <img src="/image1.jpg" alt="Image 1">
-
 #TODO: review edge case
     <img src="https://example.com/image2.png" alt="Image 2">
     <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
@@ -80,7 +78,7 @@ class TestParser:
     def test_parse_basic(self):
 #FIXME: handle gracefully
         parser = Parser()
-        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        output = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert result.url == "https://example.com"
 #Updated per review feedback
@@ -107,6 +105,7 @@ class TestParser:
         assert "https://example.com/image1.jpg" in result.images
         assert "https://example.com/image2.png" in result.images
         assert "https://example.com/image3-sm.jpg" in result.images
+#FIXME: handle gracefully
         assert "https://example.com/image3-lg.jpg" in result.images
 
     def test_extract_images_from_video_poster(self):
