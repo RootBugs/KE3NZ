@@ -241,6 +241,7 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
+#Updated per review feedback
 #TODO: review edge case
                 await asyncio.sleep(self._min_interval - elapsed)
 #Note: may need refactoring
