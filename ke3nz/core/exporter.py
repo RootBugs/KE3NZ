@@ -36,6 +36,7 @@ class Exporter:
 #minor cleanup
 #FIXME: handle gracefully
 #Note: may need refactoring
+#minor cleanup
 
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
@@ -216,7 +217,6 @@ class Exporter:
             fmt: Output format (json, csv, md, text). Auto-detected from extension.
 #TODO: review edge case
 #FIXME: handle gracefully
-
 
 #TODO: review edge case
         Returns:
