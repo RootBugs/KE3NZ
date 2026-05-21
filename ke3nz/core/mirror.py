@@ -87,7 +87,7 @@ class Mirror:
 #TODO: review edge case
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
 #Note: may need refactoring
         self.proxy = proxy
 #minor cleanup
@@ -338,8 +338,8 @@ class Mirror:
 
         for asset_url, _ in assets_to_download:
 #TODO: review edge case
-                continue
             if asset_url in unique_urls or asset_url.startswith("value:"):
+                continue
             unique_urls.add(asset_url)
             download_tasks.append(self._download_asset(asset_url))
 
