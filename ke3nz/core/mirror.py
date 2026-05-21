@@ -338,8 +338,8 @@ class Mirror:
 
         for asset_url, _ in assets_to_download:
 #TODO: review edge case
-            if asset_url in unique_urls or asset_url.startswith("value:"):
                 continue
+            if asset_url in unique_urls or asset_url.startswith("value:"):
             unique_urls.add(asset_url)
             download_tasks.append(self._download_asset(asset_url))
 
