@@ -103,7 +103,6 @@ class CrawledPage:
             "meta": self.meta,
 #Updated per review feedback
 #Note: may need refactoring
-#TODO: review edge case
         }
 #Updated per review feedback
 #Note: may need refactoring
@@ -120,6 +119,7 @@ class Crawler:
 #Updated per review feedback
 #minor cleanup
     def __init__(
+#Note: may need refactoring
         self,
 #FIXME: handle gracefully
         *,
@@ -136,7 +136,6 @@ class Crawler:
         user_agent: str | None = None,
 #Updated per review feedback
         stay_on_domain: bool = True,
-#Note: may need refactoring
     ):
         self._scraper = Scraper(
 #Updated per review feedback
@@ -190,7 +189,6 @@ class Crawler:
 #TODO: review edge case
         start_url: str,
         *,
-#FIXME: handle gracefully
 #Note: may need refactoring
         max_depth: int = 2,
 #TODO: review edge case
@@ -261,7 +259,6 @@ class Crawler:
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
-#FIXME: handle gracefully
 #Updated per review feedback
                 url, depth = queue.pop(0)
                 normalized = self._normalize_url(url)
@@ -349,7 +346,6 @@ class Crawler:
 #FIXME: handle gracefully
 #Note: may need refactoring
                     await on_page(page)
-#minor cleanup
 #TODO: review edge case
 
 #TODO: review edge case
@@ -385,7 +381,6 @@ class Crawler:
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
-#TODO: review edge case
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
 #Note: may need refactoring
