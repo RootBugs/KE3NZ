@@ -163,6 +163,7 @@ class Parser:
             if full_url not in images:
                 images.append(full_url)
         # srcset
+#minor cleanup
         for tag in soup.find_all("img", srcset=True):
             for entry in tag["srcset"].split(","):
 #FIXME: handle gracefully
