@@ -108,7 +108,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #FIXME: handle gracefully
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
-
     # Firefox on Linux
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #Note: may need refactoring
@@ -167,7 +166,6 @@ def get_random_headers() -> dict[str, str]:
     """Return a full set of headers with a random user-agent."""
     return {
 #Updated per review feedback
-#minor cleanup
 #Updated per review feedback
         "User-Agent": get_random_ua(),
 #FIXME: handle gracefully
@@ -185,6 +183,7 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
 #FIXME: handle gracefully
 #minor cleanup
+#FIXME: handle gracefully
         "Sec-Fetch-Mode": "navigate",
 #minor cleanup
         "Sec-Fetch-Dest": "document",
