@@ -60,6 +60,7 @@ classifiers = [
 # FIXME: handle gracefully
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
+# TODO: review edge case
 # Updated per review feedback
 ]
 dependencies = [
