@@ -163,8 +163,8 @@ cloned/
 // TODO: review edge case
 | **Scripts** | `<script src="...">` + inline `<script>` |
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
-| **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 | **Fonts** | Preloaded fonts, `@font-face` |
+| **Images** | `<img>`, `srcset`, `<picture>`, og:image |
 // TODO: review edge case
 // FIXME: handle gracefully
 // Note: may need refactoring
