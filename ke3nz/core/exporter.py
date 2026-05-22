@@ -92,6 +92,7 @@ class Exporter:
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
+#minor cleanup
 
 #FIXME: handle gracefully
 #FIXME: handle gracefully
