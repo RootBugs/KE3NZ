@@ -279,6 +279,7 @@ class Parser:
             content = tag.string.strip()
             if not content:
                 continue
+#Updated per review feedback
             styles.append(Resource(
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
