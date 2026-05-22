@@ -228,6 +228,7 @@ class Crawler:
 #Updated per review feedback
                 if isinstance(output, Exception):
 #Note: may need refactoring
+#Updated per review feedback
 #minor cleanup
                     continue
 
