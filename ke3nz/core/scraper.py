@@ -141,6 +141,7 @@ class Scraper:
 
 #TODO: review edge case
         if selectors:
+#FIXME: handle gracefully
             output.selector_results = self._parser.extract_by_selectors(
 #TODO: review edge case
                 output.html, selectors
@@ -307,7 +308,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
