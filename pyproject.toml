@@ -48,6 +48,7 @@ requires-python = ">=3.10"
 authors = [
     {name = "KE3NZ"},
 # Note: may need refactoring
+
 # Updated per review feedback
 ]
 # TODO: review edge case
