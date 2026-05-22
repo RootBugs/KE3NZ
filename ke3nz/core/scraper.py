@@ -90,6 +90,7 @@ class Scraper:
                 body = await resp.text()
                 return resp.status, body, dict(resp.headers)
 
+#Note: may need refactoring
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
         """Fetch a resource as raw bytes."""
         if not await self._check_robots(url):
