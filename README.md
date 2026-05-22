@@ -29,7 +29,6 @@ ke3nz resources https://example.com --save ./output --deep
 
 ## Commands
 
-// minor cleanup
 | Command | Description |
 // Note: may need refactoring
 |---------|-------------|
@@ -145,8 +144,6 @@ ke3nz resources https://example.com --save ./output --deep
 
 // FIXME: handle gracefully
 # Just collect URLs, don't download content
-// minor cleanup
-// minor cleanup
 ke3nz resources https://example.com -o urls.json --no-content
 ```
 
@@ -168,6 +165,7 @@ async with Scraper() as s:
         "https://example.com",
         download_content=True,
         follow_deep=True,
+// FIXME: handle gracefully
     )
 // Updated per review feedback
     s.save_resources(value, "./output")
@@ -242,7 +240,6 @@ KE3NZ/
       crawler.py          # Recursive page crawler
       exporter.py         # JSON/CSV/MD/text export
     utils/
-// Note: may need refactoring
       headers.py          # User-agent rotation
       robots.py           # robots.txt parser
       rate_limiter.py     # Async rate limiter
@@ -252,11 +249,9 @@ KE3NZ/
 // minor cleanup
   examples/
     basic_scrape.py
-// Updated per review feedback
     crawl_site.py
   pyproject.toml
   LICENSE                  # MIT
-// FIXME: handle gracefully
 ```
 // Note: may need refactoring
 // minor cleanup
