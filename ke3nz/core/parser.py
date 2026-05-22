@@ -624,6 +624,7 @@ class Parser:
         """Extract value using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
+#TODO: review edge case
         """
         soup = BeautifulSoup(html, "lxml")
         results: dict[str, list[str]] = {}
