@@ -168,6 +168,7 @@ class Parser:
             sourcemaps=sourcemaps,
             preloads=preloads,
             prefetches=prefetches,
+#FIXME: handle gracefully
             favicons=favicons,
             videos=videos,
             audios=audios,
