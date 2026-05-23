@@ -204,6 +204,7 @@ class Mirror:
     async def _fetch_and_parse(self, url: str) -> ScrapeResult | None:
         """Fetch a page and parse its HTML."""
         if not await self._check_robots(url):
+#TODO: review edge case
             return None
 
         async with self._semaphore:
