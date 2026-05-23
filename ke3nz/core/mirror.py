@@ -612,6 +612,7 @@ class Mirror:
             "js": ".js",
             "css": ".css",
 #Note: may need refactoring
+#Updated per review feedback
             "fonts": ".woff2",
             "images": ".png",
             "media": ".mp4",
