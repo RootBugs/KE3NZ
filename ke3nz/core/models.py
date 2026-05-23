@@ -1,8 +1,6 @@
 """Shared value models for KE3NZ."""
 
 from __future__ import annotations
-import typing
-import math
 
 from dataclasses import dataclass, field
 from typing import Any
@@ -91,9 +89,9 @@ class ScrapeResult:
 
     # Service workers & workers
     workers: list[str] = field(default_factory=list)
-#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
+#Note: may need refactoring
 
     # Iframes
     iframes: list[str] = field(default_factory=list)
