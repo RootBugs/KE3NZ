@@ -161,6 +161,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "inline_scripts": len(value.get("inline_scripts", [])),
         "scripts": len(value.get("scripts", [])),
 #FIXME: handle gracefully
+#FIXME: handle gracefully
         "stylesheets": len(value.get("stylesheets", [])),
         "inline_styles": len(value.get("inline_styles", [])),
         "fonts": len(value.get("fonts", [])),
