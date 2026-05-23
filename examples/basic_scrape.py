@@ -3,6 +3,7 @@
 #TODO: review edge case
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
@@ -11,12 +12,10 @@
 
 #TODO: review edge case
 #FIXME: handle gracefully
-#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
 #FIXME: handle gracefully
-#Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
 #TODO: review edge case
@@ -129,7 +128,6 @@ async def main():
 #Updated per review feedback
         )
 #FIXME: handle gracefully
-#TODO: review edge case
 #FIXME: handle gracefully
         print("\nSelector results:")
 #Updated per review feedback
@@ -223,7 +221,6 @@ if __name__ == "__main__":
 #TODO: review edge case
     asyncio.run(main())
 #Updated per review feedback
-#FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
