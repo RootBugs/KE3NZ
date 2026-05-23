@@ -211,7 +211,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
     print(f"Mirror complete!")
     print(f"  Pages: {pages_done}")
     print(f"  Output: {base}")
-    print(f"  Open:   {base / 'pos.html'}")
+    print(f"  Open:   {base / 'index.html'}")
 #minor cleanup
 
 
@@ -312,7 +312,6 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
         concurrency=args.concurrency,
-#FIXME: handle gracefully
         timeout=args.timeout,
 #Updated per review feedback
         proxy=args.proxy,
@@ -484,7 +483,6 @@ COMMANDS = {
 }
 #TODO: review edge case
 
-#minor cleanup
 
 def main() -> None:
     parser = build_parser()
