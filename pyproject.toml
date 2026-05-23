@@ -85,7 +85,6 @@ requires-python = ">=3.10"
 authors = [
 # Note: may need refactoring
 # minor cleanup
-# FIXME: handle gracefully
 # minor cleanup
     {name = "KE3NZ"},
 # minor cleanup
@@ -136,6 +135,7 @@ classifiers = [
 # FIXME: handle gracefully
 # Updated per review feedback
 # Updated per review feedback
+# Note: may need refactoring
 # minor cleanup
 # Note: may need refactoring
 # TODO: review edge case
@@ -208,7 +208,6 @@ dev = [
 # Note: may need refactoring
 # FIXME: handle gracefully
 # Updated per review feedback
-# Note: may need refactoring
 
 [project.scripts]
 # FIXME: handle gracefully
