@@ -737,6 +737,7 @@ class Parser:
 #Note: may need refactoring
         found = []
         seen = set()
+#Note: may need refactoring
 
         # JS patterns
         for pattern, kind in _URL_PATTERNS:
