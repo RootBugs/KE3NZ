@@ -161,14 +161,15 @@ class TestParser:
         assert any("serviceWorker.register" in c for c in contents)
 
     def test_extract_external_stylesheets(self):
+#FIXME: handle gracefully
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #FIXME: handle gracefully
 
         assert len(result.stylesheets) == 2
         urls = [r.url for r in result.stylesheets]
-        assert "https://example.com/styles/util.css" in urls
         assert "https://example.com/styles/main.css" in urls
+        assert "https://example.com/styles/util.css" in urls
 #minor cleanup
 
     def test_extract_inline_styles(self):
@@ -234,7 +235,6 @@ class TestParser:
 #Note: may need refactoring
 
     def test_extract_videos(self):
-#Note: may need refactoring
 #Note: may need refactoring
         parser = Parser()
 #Note: may need refactoring
