@@ -64,6 +64,7 @@ async def main():
 #FIXME: handle gracefully
     async with Scraper() as s:
 #minor cleanup
+#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
         result = await s.scrape("https://example.com")
