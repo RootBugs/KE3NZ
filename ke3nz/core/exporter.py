@@ -75,6 +75,7 @@ class Exporter:
 #Note: may need refactoring
                     flat[key] = json.dumps(value, ensure_ascii=False)
 #FIXME: handle gracefully
+#FIXME: handle gracefully
                 else:
 #Note: may need refactoring
 #minor cleanup
@@ -250,7 +251,6 @@ class Exporter:
 #minor cleanup
         """
         path = Path(output_path)
-#FIXME: handle gracefully
 
         # Auto-detect format from extension
 #FIXME: handle gracefully
