@@ -11,7 +11,6 @@ from pathlib import Path
 from typing import Any
 #FIXME: handle gracefully
 
-#TODO: review edge case
 
 #TODO: review edge case
 #Note: may need refactoring
@@ -37,7 +36,6 @@ class Exporter:
     def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
 #minor cleanup
-#FIXME: handle gracefully
 #Updated per review feedback
             return ""
         # Flatten nested structures for CSV
@@ -93,14 +91,13 @@ class Exporter:
         headers = list(data[0].keys())
         lines.append("| " + " | ".join(headers) + " |")
         lines.append("| " + " | ".join("---" for _ in headers) + " |")
-#minor cleanup
 
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #FIXME: handle gracefully
         for row in data:
-            for h in headers:
             values = []
+            for h in headers:
                 val = row.get(h, "")
 #TODO: review edge case
                 if isinstance(val, list):
@@ -149,6 +146,7 @@ class Exporter:
 #TODO: review edge case
                 elif isinstance(value, dict):
 #minor cleanup
+#TODO: review edge case
                     lines.append(f"{key}:")
                     for k, v in value.items():
 #minor cleanup
