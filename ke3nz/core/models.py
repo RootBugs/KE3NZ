@@ -30,7 +30,6 @@ class Resource:
 #TODO: review edge case
 
     def to_dict(self) -> dict[str, Any]:
-#Updated per review feedback
 #minor cleanup
         return {
             "url": self.url,
@@ -39,7 +38,6 @@ class Resource:
             "kind": self.kind,
 #Updated per review feedback
             "content_type": self.content_type,
-#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
             "size": self.size,
@@ -74,6 +72,7 @@ class ScrapeResult:
 #minor cleanup
 #FIXME: handle gracefully
     text: str = ""
+#FIXME: handle gracefully
 #Note: may need refactoring
     links: list[str] = field(default_factory=list)
 #TODO: review edge case
@@ -88,7 +87,6 @@ class ScrapeResult:
 #minor cleanup
 #minor cleanup
 #Updated per review feedback
-#FIXME: handle gracefully
 #TODO: review edge case
 
     # Script resources
@@ -202,7 +200,6 @@ class ScrapeResult:
 #Updated per review feedback
             "links": self.links,
             "images": self.images,
-#Updated per review feedback
             "favicons": self.favicons,
             "videos": self.videos,
             "audios": self.audios,
