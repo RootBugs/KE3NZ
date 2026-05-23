@@ -685,6 +685,7 @@ class Parser:
         videos: list[str],
         audios: list[str],
         workers: list[str],
+#FIXME: handle gracefully
         iframes: list[str],
 #TODO: review edge case
     ) -> list[str]:
