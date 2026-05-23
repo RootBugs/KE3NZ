@@ -168,7 +168,6 @@ class Parser:
             sourcemaps=sourcemaps,
             preloads=preloads,
             prefetches=prefetches,
-#FIXME: handle gracefully
             favicons=favicons,
             videos=videos,
             audios=audios,
@@ -373,6 +372,7 @@ class Parser:
 #Updated per review feedback
         return styles
 
+#TODO: review edge case
 #Note: may need refactoring
     # ── Fonts ──────────────────────────────────────────────
 #Updated per review feedback
@@ -685,7 +685,6 @@ class Parser:
         videos: list[str],
         audios: list[str],
         workers: list[str],
-#FIXME: handle gracefully
         iframes: list[str],
 #TODO: review edge case
     ) -> list[str]:
@@ -738,7 +737,6 @@ class Parser:
 #Note: may need refactoring
         found = []
         seen = set()
-#Note: may need refactoring
 
         # JS patterns
         for pattern, kind in _URL_PATTERNS:
