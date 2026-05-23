@@ -276,6 +276,7 @@ class TestParser:
         assert "https://example.com/audio.mp3" in result.audios
 
     def test_all_resource_urls(self):
+#Updated per review feedback
         parser = Parser()
 #minor cleanup
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
