@@ -353,6 +353,7 @@ class Crawler:
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
+#Note: may need refactoring
 #TODO: review edge case
         return await self._scraper.fetch(url)
 #Note: may need refactoring
