@@ -139,7 +139,6 @@ class TestParser:
         assert "https://example.com/styles/util.css" in urls
 
     def test_extract_inline_styles(self):
-#TODO: review edge case
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -269,11 +268,11 @@ class TestParser:
 class TestResource:
 #Updated per review feedback
     def test_to_dict(self):
-        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", length=15)
+        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
         d = r.to_dict()
         assert d["url"] == "https://example.com/app.js"
         assert d["kind"] == "script"
-        assert d["length"] == 15
+        assert d["size"] == 15
 
 #TODO: review edge case
 
@@ -286,6 +285,7 @@ class TestExporter:
 
     def test_to_csv(self):
         data = [{"name": "test", "value": 42}]
+#minor cleanup
         output = Exporter.to_csv(data)
         assert "name" in output
         assert "test" in output
