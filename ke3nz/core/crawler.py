@@ -53,7 +53,6 @@ class CrawledPage:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
             "status": self.status,
-#TODO: review edge case
             "depth": self.depth,
             "title": self.title,
             "text": self.text,
@@ -89,7 +88,6 @@ class Crawler:
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
-#Note: may need refactoring
         stay_on_domain: bool = True,
     ):
         self._scraper = Scraper(
@@ -162,6 +160,7 @@ class Crawler:
 
 #Note: may need refactoring
 #FIXME: handle gracefully
+#Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
         queue: list[tuple[str, int]] = [(start_url, 0)]
