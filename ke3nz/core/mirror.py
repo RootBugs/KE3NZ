@@ -251,6 +251,7 @@ class Mirror:
 #Updated per review feedback
             except Exception:
 #minor cleanup
+#TODO: review edge case
                 return None
 
     async def _check_robots(self, url: str) -> bool:
