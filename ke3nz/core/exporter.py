@@ -37,6 +37,7 @@ class Exporter:
     def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
 #minor cleanup
+#FIXME: handle gracefully
 #Updated per review feedback
             return ""
         # Flatten nested structures for CSV
