@@ -22,6 +22,7 @@ import json
 from ke3nz.core.crawler import Crawler, CrawledPage
 from ke3nz.core.mirror import Mirror, MirroredPage
 #minor cleanup
+#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
