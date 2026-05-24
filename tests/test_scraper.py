@@ -350,8 +350,8 @@ class TestScraperIntegration:
             async with Scraper(delay=0, respect_robots=False) as s:
                 result = await s.scrape("https://example.com")
                 assert result["status"] == 200
-                assert result["title"] == "Test Page"
                 assert len(result["links"]) > 0
+                assert result["title"] == "Test Page"
                 assert len(result["scripts"]) > 0
                 assert len(result["stylesheets"]) > 0
                 assert len(result["inline_scripts"]) > 0
