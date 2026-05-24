@@ -18,7 +18,6 @@
 #Updated per review feedback
 import asyncio
 from ke3nz import Scraper
-import functools
 #FIXME: handle gracefully
 import random
 #Note: may need refactoring
@@ -163,6 +162,7 @@ async def main():
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
+#Note: may need refactoring
 
 
 #TODO: review edge case
