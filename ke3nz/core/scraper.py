@@ -2,7 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import random
 
 import asyncio
 from pathlib import Path
@@ -90,7 +89,6 @@ class Scraper:
                 body = await resp.text()
                 return resp.status, body, dict(resp.headers)
 
-#Note: may need refactoring
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
         """Fetch a resource as raw bytes."""
         if not await self._check_robots(url):
@@ -206,6 +204,7 @@ class Scraper:
 #Updated per review feedback
         # Also download inline script/style content (already parsed)
         # They already have content from the HTML parse
+#minor cleanup
 
 #Note: may need refactoring
         # Update result with downloaded content
@@ -223,7 +222,6 @@ class Scraper:
         try:
             is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
             if is_binary:
-#Note: may need refactoring
                 status, body, headers = await self.fetch_bytes(resource.url)
 #Updated per review feedback
                 resource.content_type = headers.get("content-type", "")
@@ -385,11 +383,9 @@ class Scraper:
 
         # Save HTML
 #Note: may need refactoring
-#Updated per review feedback
 #FIXME: handle gracefully
         html_path = base / "page.html"
         html_path.write_text(data.get("html", ""), encoding="utf-8")
-#Note: may need refactoring
         index["files"].append({
             "url": data.get("url"),
             "kind": "html",
