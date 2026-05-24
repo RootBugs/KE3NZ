@@ -1,4 +1,3 @@
-#minor cleanup
 """Shared value models for KE3NZ."""
 
 from __future__ import annotations
@@ -27,6 +26,7 @@ class Resource:
 #minor cleanup
             "kind": self.kind,
             "content_type": self.content_type,
+#minor cleanup
             "size": self.size,
             "content": self.content,
             "integrity": self.integrity,
