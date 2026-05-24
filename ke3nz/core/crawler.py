@@ -156,6 +156,7 @@ class Crawler:
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
+#Updated per review feedback
 #minor cleanup
     def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
