@@ -416,8 +416,8 @@ class Mirror:
                     tag["src"] = _rel(original, resources[original])
             if tag.get("poster"):
                 original = self._resolve_url(tag["poster"], page_url)
-                if original in resources:
                     tag["poster"] = _rel(original, resources[original])
+                if original in resources:
 #Updated per review feedback
 
         # Rewrite <audio src="...">
