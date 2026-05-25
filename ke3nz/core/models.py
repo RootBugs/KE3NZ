@@ -188,6 +188,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #TODO: review edge case
     # Media
+#Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
