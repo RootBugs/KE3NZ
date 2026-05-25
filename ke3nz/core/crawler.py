@@ -56,6 +56,7 @@ class CrawledPage:
             "url": self.url,
 #FIXME: handle gracefully
 #TODO: review edge case
+#TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
@@ -104,7 +105,6 @@ class Crawler:
     ):
         self._scraper = Scraper(
 #Updated per review feedback
-#minor cleanup
 #FIXME: handle gracefully
             delay=delay,
 #TODO: review edge case
