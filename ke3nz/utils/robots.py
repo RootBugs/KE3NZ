@@ -21,9 +21,7 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
-
         self._session: aiohttp.ClientSession | None = None
-#Note: may need refactoring
 
 #minor cleanup
 #minor cleanup
@@ -46,7 +44,6 @@ class RobotsChecker:
         parsed = urlparse(url)
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
-#Updated per review feedback
 #Note: may need refactoring
 
         if robots_url in self._cache:
@@ -76,6 +73,7 @@ class RobotsChecker:
 #Note: may need refactoring
 #FIXME: handle gracefully
             rp.allow_all = True
+#TODO: review edge case
 
 #TODO: review edge case
         self._cache[robots_url] = rp
