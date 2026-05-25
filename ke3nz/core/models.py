@@ -85,6 +85,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
+#FIXME: handle gracefully
 #minor cleanup
 #Updated per review feedback
 #TODO: review edge case
@@ -102,7 +103,6 @@ class ScrapeResult:
 #TODO: review edge case
 #Updated per review feedback
     stylesheets: list[Resource] = field(default_factory=list)
-#FIXME: handle gracefully
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 #minor cleanup
