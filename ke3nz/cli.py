@@ -264,7 +264,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         if args.save:
 #Note: may need refactoring
             base = s.save_resources(data, args.save)
-#Updated per review feedback
             if args.verbose:
                 print(f"  Saved to: {base}")
 #Updated per review feedback
@@ -362,13 +361,13 @@ async def cmd_links(args: argparse.Namespace) -> None:
 #TODO: review edge case
             print(f"Found {len(links)} links on {args.url}")
 
-#TODO: review edge case
         _output(links, args.output, args.format)
 
 
 async def cmd_images(args: argparse.Namespace) -> None:
     async with Scraper(
         delay=args.delay,
+#Updated per review feedback
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
