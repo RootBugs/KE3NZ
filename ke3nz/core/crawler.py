@@ -108,8 +108,8 @@ class Crawler:
     def __init__(
         self,
 #FIXME: handle gracefully
-        *,
         delay: float = 1.0,
+        *,
 #TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
