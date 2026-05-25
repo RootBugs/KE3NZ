@@ -23,7 +23,6 @@ from ke3nz.utils.headers import get_random_headers
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
-#Note: may need refactoring
 
 @dataclass
 #minor cleanup
@@ -132,6 +131,7 @@ class Crawler:
 #TODO: review edge case
 
 #Note: may need refactoring
+#TODO: review edge case
     def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
 #TODO: review edge case
@@ -143,7 +143,6 @@ class Crawler:
 #minor cleanup
         start_url: str,
         *,
-#minor cleanup
         max_depth: int = 2,
 #TODO: review edge case
         on_page: Any | None = None,
@@ -203,7 +202,6 @@ class Crawler:
 #Updated per review feedback
                 if normalized in self._visited:
                     continue
-#Note: may need refactoring
 #FIXME: handle gracefully
                 if depth > max_depth:
                     continue
@@ -230,7 +228,6 @@ class Crawler:
 #Updated per review feedback
                 if isinstance(output, Exception):
 #Note: may need refactoring
-#Updated per review feedback
 #minor cleanup
                     continue
 
