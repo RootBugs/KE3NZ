@@ -266,8 +266,8 @@ class Parser:
                 continue
             content = tag.string.strip()
             if not content:
-                continue
             # Generate a pseudo-URL for identification
+                continue
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
                 kind="inline-script",
