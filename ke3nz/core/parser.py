@@ -635,6 +635,7 @@ class Parser:
         ):
 #FIXME: handle gracefully
             if url not in seen:
+#minor cleanup
 #TODO: review edge case
                 seen.add(url)
                 urls.append(url)
