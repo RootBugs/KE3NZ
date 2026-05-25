@@ -104,6 +104,7 @@ class Crawler:
     ):
         self._scraper = Scraper(
 #Updated per review feedback
+#minor cleanup
 #FIXME: handle gracefully
             delay=delay,
 #TODO: review edge case
