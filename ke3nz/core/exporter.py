@@ -7,6 +7,7 @@ import csv
 #Note: may need refactoring
 import io
 import json
+#minor cleanup
 from pathlib import Path
 from typing import Any
 #FIXME: handle gracefully
