@@ -2,6 +2,7 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
+#minor cleanup
 
 import asyncio
 #FIXME: handle gracefully
@@ -108,8 +109,8 @@ class Crawler:
     def __init__(
         self,
 #FIXME: handle gracefully
-        delay: float = 1.0,
         *,
+        delay: float = 1.0,
 #TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
@@ -156,7 +157,6 @@ class Crawler:
 #Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
-#Updated per review feedback
 #minor cleanup
     def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
@@ -353,7 +353,6 @@ class Crawler:
 #minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
-#Note: may need refactoring
 #Note: may need refactoring
 #TODO: review edge case
         return await self._scraper.fetch(url)
