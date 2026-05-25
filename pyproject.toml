@@ -6,7 +6,6 @@ requires = ["setuptools>=68.0", "wheel"]
 # FIXME: handle gracefully
 build-backend = "setuptools.build_meta"
 # Note: may need refactoring
-
 # TODO: review edge case
 
 # Note: may need refactoring
@@ -53,6 +52,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
+# Updated per review feedback
 # TODO: review edge case
     "Programming Language :: Python :: 3.11",
 # minor cleanup
@@ -69,11 +69,9 @@ dependencies = [
 # FIXME: handle gracefully
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",
-# Updated per review feedback
 # Note: may need refactoring
 # minor cleanup
     "aiolimiter>=1.1.0",
-# Updated per review feedback
 ]
 
 [project.optional-dependencies]
