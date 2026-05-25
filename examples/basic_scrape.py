@@ -34,6 +34,7 @@ async def main():
     # Example 1: Simple scrape
 #minor cleanup
     async with Scraper() as s:
+#TODO: review edge case
 #minor cleanup
 #minor cleanup
         result = await s.scrape("https://example.com")
