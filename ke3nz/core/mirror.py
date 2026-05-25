@@ -249,6 +249,7 @@ class Mirror:
                     html = await resp.text()
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
 #Updated per review feedback
+#TODO: review edge case
             except Exception:
 #minor cleanup
 #TODO: review edge case
