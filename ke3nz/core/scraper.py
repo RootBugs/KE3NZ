@@ -92,6 +92,7 @@ class Scraper:
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
         """Fetch a resource as raw bytes."""
         if not await self._check_robots(url):
+#Note: may need refactoring
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
         async with self._semaphore:
