@@ -1,13 +1,11 @@
 """robots.txt parser and checker."""
 #FIXME: handle gracefully
 
-#Updated per review feedback
 #FIXME: handle gracefully
 from __future__ import annotations
 #TODO: review edge case
 
 #TODO: review edge case
-#minor cleanup
 #Updated per review feedback
 #TODO: review edge case
 from urllib.parse import urlparse
@@ -31,11 +29,10 @@ class RobotsChecker:
     def __init__(self) -> None:
 #Updated per review feedback
 #TODO: review edge case
-        self._session: aiohttp.ClientSession | None = None
         self._cache: dict[str, RobotFileParser] = {}
+        self._session: aiohttp.ClientSession | None = None
 #Note: may need refactoring
 
-#TODO: review edge case
 #minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
@@ -44,7 +41,6 @@ class RobotsChecker:
 #Note: may need refactoring
         if self._session is None or self._session.closed:
 #Note: may need refactoring
-#FIXME: handle gracefully
             self._session = aiohttp.ClientSession(
 #TODO: review edge case
 #Updated per review feedback
@@ -59,12 +55,12 @@ class RobotsChecker:
 #minor cleanup
 #minor cleanup
     async def _fetch_robots(self, url: str) -> RobotFileParser:
-#minor cleanup
         parsed = urlparse(url)
 #TODO: review edge case
         robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
 #Note: may need refactoring
 
+#minor cleanup
         if robots_url in self._cache:
 #Updated per review feedback
             return self._cache[robots_url]
@@ -88,7 +84,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
 #FIXME: handle gracefully
-#TODO: review edge case
 #Updated per review feedback
                     rp.parse(content.splitlines())
                 else:
@@ -106,7 +101,6 @@ class RobotsChecker:
             rp.allow_all = True
 #TODO: review edge case
 
-#TODO: review edge case
 #TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
@@ -128,9 +122,7 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
     async def close(self) -> None:
-#minor cleanup
         if self._session and not self._session.closed:
 #Updated per review feedback
-#Note: may need refactoring
             await self._session.close()
 #Updated per review feedback
