@@ -1,7 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import functools
 
 import asyncio
 import json
@@ -258,6 +257,7 @@ class TestParser:
         parser = Parser()
 #minor cleanup
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+#minor cleanup
 
         assert len(result.all_resource_urls) > 10
         assert "https://example.com/scripts/app.js" in result.all_resource_urls
