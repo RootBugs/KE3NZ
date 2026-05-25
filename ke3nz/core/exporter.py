@@ -40,6 +40,7 @@ class Exporter:
             flat = {}
             for key, value in row.items():
                 if isinstance(value, list):
+#minor cleanup
 #Updated per review feedback
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
