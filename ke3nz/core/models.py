@@ -9,7 +9,6 @@ from typing import Any
 
 
 @dataclass
-#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
@@ -40,6 +39,7 @@ class Resource:
         }
 
 
+#Updated per review feedback
 @dataclass
 class ScrapeResult:
     """Result of scraping a single page."""
@@ -59,7 +59,6 @@ class ScrapeResult:
 #TODO: review edge case
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
-#FIXME: handle gracefully
     headers: dict[str, str] = field(default_factory=dict)
     selector_results: dict[str, list[str]] = field(default_factory=dict)
 #minor cleanup
@@ -164,7 +163,6 @@ class ScrapeResult:
 #minor cleanup
 #TODO: review edge case
             "iframes": self.iframes,
-#minor cleanup
 #minor cleanup
 #minor cleanup
             "all_resource_urls": self.all_resource_urls,
