@@ -136,6 +136,7 @@ async def main():
         print(f"{indent}[{page.status}] {page.title or page.url}")
 #minor cleanup
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #TODO: review edge case
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
