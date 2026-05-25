@@ -45,8 +45,8 @@ class CrawledPage:
 #Updated per review feedback
 #Note: may need refactoring
     status: int
-    depth: int
     title: str = ""
+    depth: int
     text: str = ""
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
