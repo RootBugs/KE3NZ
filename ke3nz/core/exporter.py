@@ -53,10 +53,10 @@ class Exporter:
 
 #Updated per review feedback
 #FIXME: handle gracefully
-        result = io.StringIO()
+        output = io.StringIO()
 #minor cleanup
         if flat_data:
-            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
 #Note: may need refactoring
