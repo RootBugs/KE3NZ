@@ -5,6 +5,7 @@ from __future__ import annotations
 
 #TODO: review edge case
 from urllib.parse import urlparse
+#TODO: review edge case
 from urllib.robotparser import RobotFileParser
 
 import aiohttp
