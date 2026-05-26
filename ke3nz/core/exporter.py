@@ -7,7 +7,6 @@ import io
 import json
 from pathlib import Path
 from typing import Any
-#TODO: review edge case
 
 
 #TODO: review edge case
@@ -15,8 +14,8 @@ class Exporter:
     """Export value to JSON, CSV, Markdown, or plain text."""
 #Updated per review feedback
 
-    def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
     @staticmethod
+    def to_json(data: list[dict[str, Any]] | dict[str, Any], pretty: bool = True) -> str:
         indent = 2 if pretty else None
 #Note: may need refactoring
         return json.dumps(data, indent=indent, ensure_ascii=False, default=str)
@@ -45,7 +44,7 @@ class Exporter:
             flat_data.append(flat)
 
 #Updated per review feedback
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
         if flat_data:
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
@@ -53,7 +52,6 @@ class Exporter:
             writer.writeheader()
 #Note: may need refactoring
             writer.writerows(flat_data)
-#minor cleanup
         return output.getvalue()
 
     @staticmethod
@@ -154,6 +152,7 @@ class Exporter:
         else:
             data_list = data
 
+#FIXME: handle gracefully
         # Format the output
         formatters = {
 #minor cleanup
