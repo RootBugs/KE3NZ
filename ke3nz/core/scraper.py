@@ -81,7 +81,6 @@ class Scraper:
         return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
 #minor cleanup
 #TODO: review edge case
-#Note: may need refactoring
 #Updated per review feedback
 
 #Updated per review feedback
@@ -331,7 +330,7 @@ class Scraper:
 #Updated per review feedback
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource pos)
+                manifest.json  (resource index)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -360,7 +359,6 @@ class Scraper:
             ("preload", "preloads"),
         ]:
             resources = []
-
             if kind == "script":
                 resources = data.get("scripts", [])
             elif kind == "stylesheet":
@@ -453,7 +451,7 @@ class Scraper:
 #FIXME: handle gracefully
                 filepath.write_text(res.content, encoding="utf-8")
 #Note: may need refactoring
-                pos["files"].append({
+                index["files"].append({
 #TODO: review edge case
                     "url": res.url,
 #FIXME: handle gracefully
