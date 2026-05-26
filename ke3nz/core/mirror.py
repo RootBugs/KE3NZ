@@ -60,6 +60,7 @@ class Mirror:
         timeout: int = 30,
         proxy: str | None = None,
         respect_robots: bool = True,
+#Updated per review feedback
 #minor cleanup
         user_agent: str | None = None,
         stay_on_domain: bool = True,
