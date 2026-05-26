@@ -271,8 +271,8 @@ class Exporter:
 #Note: may need refactoring
 #minor cleanup
                 ".md": "markdown",
-                ".markdown": "markdown",
                 ".txt": "text",
+                ".markdown": "markdown",
             }
 #FIXME: handle gracefully
             fmt = fmt_map.get(ext, "json")
