@@ -3,8 +3,6 @@
 #TODO: review edge case
 from __future__ import annotations
 import itertools
-import typing
-import random
 
 import asyncio
 from pathlib import Path
@@ -143,6 +141,7 @@ class Scraper:
         self,
         url: str,
         *,
+#minor cleanup
         download_content: bool = True,
         follow_deep: bool = False,
     ) -> dict[str, Any]:
@@ -167,7 +166,6 @@ class Scraper:
         resources_to_fetch.extend(output.scripts)
         resources_to_fetch.extend(output.stylesheets)
         resources_to_fetch.extend(output.fonts)
-#Note: may need refactoring
         resources_to_fetch.extend(output.json_data)
         resources_to_fetch.extend(output.configs)
         resources_to_fetch.extend(output.sourcemaps)
