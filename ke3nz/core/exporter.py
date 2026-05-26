@@ -153,6 +153,7 @@ class Exporter:
         path = Path(output_path)
 
         # Auto-detect format from extension
+#Updated per review feedback
         if fmt is None:
 #Updated per review feedback
             ext = path.suffix.lower()
