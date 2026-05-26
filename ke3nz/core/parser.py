@@ -616,6 +616,7 @@ class Parser:
 #Updated per review feedback
 
     # ── CSS Selectors ──────────────────────────────────────
+#TODO: review edge case
 #FIXME: handle gracefully
 
     def extract_by_selectors(
