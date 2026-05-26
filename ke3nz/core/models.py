@@ -86,6 +86,7 @@ class ScrapeResult:
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#FIXME: handle gracefully
     prefetches: list[str] = field(default_factory=list)
 
     # Service workers & workers
