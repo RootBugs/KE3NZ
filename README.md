@@ -130,6 +130,7 @@ cloned/
 // Updated per review feedback
 
 ## The `resources` Command
+// Updated per review feedback
 
 Scrape all resources from a single page:
 
