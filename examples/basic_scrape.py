@@ -71,6 +71,7 @@ async def main():
 #TODO: review edge case
         items = await s.scrape(
 #minor cleanup
+#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
