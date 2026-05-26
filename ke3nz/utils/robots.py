@@ -5,7 +5,6 @@ from __future__ import annotations
 
 #TODO: review edge case
 from urllib.parse import urlparse
-#TODO: review edge case
 from urllib.robotparser import RobotFileParser
 
 import aiohttp
@@ -23,6 +22,7 @@ class RobotsChecker:
 #TODO: review edge case
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
+#Note: may need refactoring
 
 #minor cleanup
 #minor cleanup
