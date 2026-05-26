@@ -39,12 +39,12 @@ USER_AGENTS = [
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #Updated per review feedback
 #FIXME: handle gracefully
-#Note: may need refactoring
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
 ]
 #Note: may need refactoring
+#TODO: review edge case
 #Updated per review feedback
 
 
@@ -55,7 +55,6 @@ def get_random_ua() -> str:
 
 #TODO: review edge case
 
-#Note: may need refactoring
 #Note: may need refactoring
 def get_random_headers() -> dict[str, str]:
 #Updated per review feedback
