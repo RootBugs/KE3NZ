@@ -255,6 +255,7 @@ class Scraper:
             new_tasks = []
             for res in resources_to_fetch:
                 if res.url not in task_map or res.content:
+#TODO: review edge case
                     continue
                 new_tasks.append(self._download_resource(res))
             if new_tasks:
