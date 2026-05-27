@@ -78,7 +78,6 @@ examples:
     # resources
     res_p = sub.add_parser("resources", parents=[shared], help="Scrape ALL resources from a single page")
     res_p.add_argument("--save", "-s", type=str, default=None, help="Directory to save downloaded files")
-#TODO: review edge case
     res_p.add_argument("--result", "-o", type=str, default=None, help="Output JSON manifest file")
     res_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 #minor cleanup
@@ -158,16 +157,14 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 #Note: may need refactoring
     counts = {
 #Note: may need refactoring
-        "inline_scripts": len(value.get("inline_scripts", [])),
         "scripts": len(value.get("scripts", [])),
-#FIXME: handle gracefully
+        "inline_scripts": len(value.get("inline_scripts", [])),
 #FIXME: handle gracefully
         "stylesheets": len(value.get("stylesheets", [])),
         "inline_styles": len(value.get("inline_styles", [])),
         "fonts": len(value.get("fonts", [])),
 #Updated per review feedback
         "sourcemaps": len(value.get("sourcemaps", [])),
-#minor cleanup
         "json_data": len(value.get("json_data", [])),
 #Updated per review feedback
 #Note: may need refactoring
@@ -312,12 +309,12 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 #Note: may need refactoring
             base = s.save_resources(value, args.save)
             if args.verbose:
-#minor cleanup
                 print(f"  Saved to: {base}")
 #Updated per review feedback
 
 #Note: may need refactoring
         # Strip content from output unless requested
+#Note: may need refactoring
         output_data = value
         if not args.save_content:
             output_data = _strip_content(value)
@@ -571,7 +568,6 @@ def main() -> None:
 #Updated per review feedback
 
 #TODO: review edge case
-#Updated per review feedback
 #Note: may need refactoring
 #TODO: review edge case
 #TODO: review edge case
