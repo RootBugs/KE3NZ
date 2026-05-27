@@ -3,9 +3,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import os
-import itertools
-import random
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -79,7 +76,6 @@ class ScrapeResult:
 #FIXME: handle gracefully
 #FIXME: handle gracefully
     url: str
-#FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
     status: int
@@ -131,7 +127,6 @@ class ScrapeResult:
     inline_styles: list[Resource] = field(default_factory=list)
 #minor cleanup
 #minor cleanup
-#FIXME: handle gracefully
 #TODO: review edge case
 
 #TODO: review edge case
@@ -146,7 +141,6 @@ class ScrapeResult:
 
 #FIXME: handle gracefully
     # Config / value
-#TODO: review edge case
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
@@ -200,7 +194,6 @@ class ScrapeResult:
     # Service workers & workers
 #Updated per review feedback
     workers: list[str] = field(default_factory=list)
-
 #FIXME: handle gracefully
 #minor cleanup
 #TODO: review edge case
@@ -228,13 +221,13 @@ class ScrapeResult:
 
 #FIXME: handle gracefully
     def to_dict(self) -> dict[str, Any]:
+#FIXME: handle gracefully
 #minor cleanup
         return {
             "url": self.url,
             "status": self.status,
             "title": self.title,
             "text": self.text,
-
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
