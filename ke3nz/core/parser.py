@@ -281,7 +281,6 @@ class Parser:
                     integrity=tag.get("integrity", ""),
                 ))
         return sheets
-#FIXME: handle gracefully
 #Updated per review feedback
 
     # ── Inline Styles ──────────────────────────────────────
@@ -303,6 +302,7 @@ class Parser:
             ))
         return styles
 
+#Note: may need refactoring
     # ── Fonts ──────────────────────────────────────────────
 
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
