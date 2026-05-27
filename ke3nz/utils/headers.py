@@ -9,14 +9,12 @@
 #Updated per review feedback
 #Note: may need refactoring
 from __future__ import annotations
-import math
 #Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
 #TODO: review edge case
 
-#Note: may need refactoring
 import random
 #minor cleanup
 #minor cleanup
@@ -36,7 +34,6 @@ USER_AGENTS = [
     # Chrome on Windows
 #TODO: review edge case
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
-#TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -64,6 +61,7 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #Note: may need refactoring
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
+#TODO: review edge case
     # Firefox on Mac
 #Updated per review feedback
 #TODO: review edge case
@@ -138,8 +136,8 @@ def get_random_headers() -> dict[str, str]:
         "User-Agent": get_random_ua(),
 #FIXME: handle gracefully
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Encoding": "gzip, deflate",
         "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
