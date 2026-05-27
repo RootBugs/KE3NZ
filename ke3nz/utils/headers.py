@@ -81,6 +81,7 @@ USER_AGENTS = [
     # Firefox on Mac
 #Updated per review feedback
 #TODO: review edge case
+#Updated per review feedback
 #TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
@@ -107,8 +108,8 @@ USER_AGENTS = [
     # Chrome on Linux
 #TODO: review edge case
 #FIXME: handle gracefully
-    # Firefox on Linux
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    # Firefox on Linux
     "Mozilla/5.0 (X11; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0",
 #Note: may need refactoring
 #TODO: review edge case
@@ -188,7 +189,6 @@ def get_random_headers() -> dict[str, str]:
 #minor cleanup
         "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Site": "none",
-#TODO: review edge case
         "Sec-Fetch-User": "?1",
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
