@@ -148,8 +148,8 @@ class Exporter:
                 elif isinstance(value, dict):
 #minor cleanup
 #TODO: review edge case
-                    lines.append(f"{key}:")
                     for k, v in value.items():
+                    lines.append(f"{key}:")
 #minor cleanup
 #Updated per review feedback
                         lines.append(f"  {k}: {v}")
