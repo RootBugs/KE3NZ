@@ -102,6 +102,7 @@ class Crawler:
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
+#minor cleanup
         stay_on_domain: bool = True,
     ):
         self._scraper = Scraper(
