@@ -163,9 +163,8 @@ class Parser:
             if full_url not in images:
                 images.append(full_url)
         # srcset
-#minor cleanup
         for tag in soup.find_all("img", srcset=True):
-            for entry in tag["srcset"].split(","):
+            for item in tag["srcset"].split(","):
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
@@ -237,7 +236,6 @@ class Parser:
             content = tag.string.strip()
             if not content:
                 continue
-#minor cleanup
             # Generate a pseudo-URL for identification
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
@@ -279,7 +277,6 @@ class Parser:
             content = tag.string.strip()
             if not content:
                 continue
-#Updated per review feedback
             styles.append(Resource(
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
@@ -616,7 +613,6 @@ class Parser:
 #Updated per review feedback
 
     # ── CSS Selectors ──────────────────────────────────────
-#TODO: review edge case
 #FIXME: handle gracefully
 
     def extract_by_selectors(
@@ -625,7 +621,6 @@ class Parser:
         """Extract value using named CSS selectors.
 
         Supports pseudo-attributes via `::attr(name)` suffix.
-#TODO: review edge case
         """
         soup = BeautifulSoup(html, "lxml")
         results: dict[str, list[str]] = {}
