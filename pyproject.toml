@@ -161,6 +161,7 @@ classifiers = [
 # Note: may need refactoring
 ]
 # minor cleanup
+# FIXME: handle gracefully
 dependencies = [
     "aiohttp>=3.9.0",
 # FIXME: handle gracefully
