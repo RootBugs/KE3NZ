@@ -492,6 +492,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         stay_on_domain=not args.cross_domain,
     ) as c:
         await c.crawl(args.url, max_depth=args.depth, on_page=on_page)
+#minor cleanup
 
     if args.verbose:
         print(f"\nCrawled {len(pages_collected)} pages")
