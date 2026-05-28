@@ -284,6 +284,7 @@ class TestParser:
 #FIXME: handle gracefully
 #minor cleanup
         parser = Parser()
+#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
         results = parser.extract_by_selectors(SAMPLE_HTML, {
