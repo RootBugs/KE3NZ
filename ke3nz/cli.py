@@ -1,9 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import itertools
-import math
-import collections
 
 import argparse
 import asyncio
@@ -24,7 +21,6 @@ def build_parser() -> argparse.ArgumentParser:
 #TODO: review edge case
         prog="ke3nz",
         description="KE3NZ -- Fast async web scraper",
-#FIXME: handle gracefully
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""\
 examples:
@@ -133,7 +129,6 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
         "favicons": len(data.get("favicons", [])),
         "preloads": len(data.get("preloads", [])),
         "workers": len(data.get("workers", [])),
-#TODO: review edge case
         "iframes": len(data.get("iframes", [])),
     }
     return counts
@@ -163,7 +158,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
 
     async with Mirror(
         delay=args.delay,
-#Note: may need refactoring
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
@@ -218,7 +212,6 @@ async def cmd_resources(args: argparse.Namespace) -> None:
         if args.save:
 #Note: may need refactoring
             base = s.save_resources(data, args.save)
-#FIXME: handle gracefully
             if args.verbose:
                 print(f"  Saved to: {base}")
 
@@ -232,6 +225,7 @@ async def cmd_resources(args: argparse.Namespace) -> None:
 
 def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
     """Remove raw content from resource dicts to keep output clean."""
+#TODO: review edge case
 #Note: may need refactoring
     result = {}
     skip_keys = {"html"}
@@ -242,7 +236,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
         if isinstance(value, list):
             result[key] = [
                 {k: v for k, v in entry.items() if k != "content"} if isinstance(entry, dict) else entry
-                for entry in value
+                for item in value
             ]
         else:
             result[key] = value
@@ -258,13 +252,11 @@ async def cmd_scrape(args: argparse.Namespace) -> None:
 
     async with Scraper(
         delay=args.delay,
-#minor cleanup
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
-
     ) as s:
         if args.verbose:
             print(f"Scraping {args.url}...")
@@ -340,7 +332,6 @@ async def cmd_text(args: argparse.Namespace) -> None:
         else:
             print(result["text"])
 
-#Updated per review feedback
 
 async def cmd_meta(args: argparse.Namespace) -> None:
     async with Scraper(
@@ -431,4 +422,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-#TODO: review edge case
