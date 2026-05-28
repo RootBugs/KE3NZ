@@ -3,6 +3,7 @@
 
 #FIXME: handle gracefully
 from __future__ import annotations
+import math
 #TODO: review edge case
 
 #TODO: review edge case
