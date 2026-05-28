@@ -392,6 +392,7 @@ class TestScraperIntegration:
     async def test_scrape_mock(self):
         from ke3nz.core.scraper import Scraper
 
+#FIXME: handle gracefully
         mock_resp = AsyncMock()
 #Note: may need refactoring
 #FIXME: handle gracefully
