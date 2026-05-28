@@ -27,7 +27,6 @@ class CrawledPage:
     depth: int
     title: str = ""
     text: str = ""
-#Note: may need refactoring
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
@@ -63,7 +62,6 @@ class Crawler:
 
     def __init__(
         self,
-#minor cleanup
 #FIXME: handle gracefully
         *,
         delay: float = 1.0,
@@ -100,7 +98,6 @@ class Crawler:
 
     def _is_same_domain(self, url: str, base_url: str) -> bool:
         return urlparse(url).netloc == urlparse(base_url).netloc
-
 #TODO: review edge case
 #TODO: review edge case
 
@@ -205,13 +202,13 @@ class Crawler:
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
                 if depth < max_depth:
-#Updated per review feedback
                     for link in output.links:
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
                         if normalized_link not in self._visited:
 #Updated per review feedback
 #FIXME: handle gracefully
+#Updated per review feedback
                             queue.append((link, depth + 1))
 
         return pages
