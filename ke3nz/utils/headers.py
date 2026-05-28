@@ -35,6 +35,7 @@ USER_AGENTS = [
 #minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#TODO: review edge case
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #FIXME: handle gracefully
 #FIXME: handle gracefully
