@@ -38,8 +38,8 @@ __all__ = [
 #minor cleanup
 #Note: may need refactoring
     "ScrapeResult",
-    "Crawler",
     "Resource",
+    "Crawler",
 #Note: may need refactoring
 #Note: may need refactoring
     "CrawledPage",
