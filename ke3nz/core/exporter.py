@@ -7,7 +7,6 @@ import csv
 #Note: may need refactoring
 import io
 import json
-#minor cleanup
 from pathlib import Path
 from typing import Any
 #FIXME: handle gracefully
@@ -111,6 +110,7 @@ class Exporter:
                 values.append(str(val).replace("|", "\\|"))
 #Updated per review feedback
 #Note: may need refactoring
+#Updated per review feedback
 #FIXME: handle gracefully
             lines.append("| " + " | ".join(values) + " |")
 #TODO: review edge case
@@ -148,8 +148,8 @@ class Exporter:
                 elif isinstance(value, dict):
 #minor cleanup
 #TODO: review edge case
-                    for k, v in value.items():
                     lines.append(f"{key}:")
+                    for k, v in value.items():
 #minor cleanup
 #Updated per review feedback
                         lines.append(f"  {k}: {v}")
