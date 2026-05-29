@@ -192,7 +192,6 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
         try:
-#TODO: review edge case
             session = await self._get_session()
 #minor cleanup
 #Updated per review feedback
@@ -292,6 +291,7 @@ class RobotsChecker:
         if self._session and not self._session.closed:
 #TODO: review edge case
 #Updated per review feedback
+#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
             await self._session.close()
