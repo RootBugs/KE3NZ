@@ -18,7 +18,6 @@ KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website
 ```bash
 cd KE3NZ
 pip install -e .
-// Updated per review feedback
 // FIXME: handle gracefully
 ```
 
@@ -85,7 +84,6 @@ ke3nz mirror https://mysite.com --save ./cloned
 // TODO: review edge case
 // minor cleanup
 // TODO: review edge case
-// minor cleanup
 // Note: may need refactoring
 
 // FIXME: handle gracefully
@@ -177,6 +175,7 @@ cloned/
 
 | Type | Source |
 // TODO: review edge case
+// FIXME: handle gracefully
 // Updated per review feedback
 |------|--------|
 | **HTML pages** | `<a>` links crawled recursively |
@@ -235,11 +234,9 @@ ke3nz resources https://example.com -o urls.json --no-content
 ## Python API
 // TODO: review edge case
 
-// TODO: review edge case
 ```python
 from ke3nz import Scraper, Mirror
 
-// Note: may need refactoring
 // FIXME: handle gracefully
 # Mirror a site
 async with Mirror(max_depth=3) as m:
@@ -305,7 +302,6 @@ Commands:
 // Updated per review feedback
   crawl       Crawl a website and list pages
 
-
 // FIXME: handle gracefully
 Mirror Options:
   --save, -s        Output directory (required for mirror)
@@ -313,7 +309,6 @@ Mirror Options:
   --cross-domain    Allow crawling other domains
 // Updated per review feedback
 // minor cleanup
-// Note: may need refactoring
 
 Resource Options:
 // TODO: review edge case
@@ -337,7 +332,6 @@ Shared Options:
 // TODO: review edge case
 // minor cleanup
   --user-agent      Custom user agent
-// TODO: review edge case
 // TODO: review edge case
 // Updated per review feedback
   --timeout         Request timeout (default: 30s)
@@ -376,8 +370,8 @@ KE3NZ/
 // minor cleanup
 // Updated per review feedback
       crawler.py          # Recursive page crawler
-    utils/
       exporter.py         # JSON/CSV/MD/text export
+    utils/
       headers.py          # User-agent rotation
 // Note: may need refactoring
       robots.py           # robots.txt parser
@@ -399,7 +393,6 @@ KE3NZ/
 ```
 // Note: may need refactoring
 // minor cleanup
-
 
 ## License
 
