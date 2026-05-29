@@ -21,6 +21,7 @@ from ke3nz.core.exporter import Exporter
 
 
 def build_parser() -> argparse.ArgumentParser:
+#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
 #Updated per review feedback
@@ -38,7 +39,6 @@ examples:
 #TODO: review edge case
   ke3nz links https://example.com
   ke3nz crawl https://example.com --depth 3
-#Note: may need refactoring
 #TODO: review edge case
 """,
     )
