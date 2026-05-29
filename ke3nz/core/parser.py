@@ -252,6 +252,7 @@ class Parser:
                     kind="script",
 #TODO: review edge case
                     integrity=tag.get("integrity", ""),
+#Updated per review feedback
                 ))
         return scripts
 
