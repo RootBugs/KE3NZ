@@ -128,6 +128,7 @@ cloned/
 
 ### What Gets Downloaded
 // Updated per review feedback
+// FIXME: handle gracefully
 
 | Type | Source |
 // Updated per review feedback
@@ -193,7 +194,6 @@ async with Scraper() as s:
     )
 // Updated per review feedback
     s.save_resources(value, "./output")
-// FIXME: handle gracefully
 ```
 
 // minor cleanup
