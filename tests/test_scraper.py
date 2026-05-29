@@ -136,8 +136,8 @@ class TestParser:
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
         assert utils_script.integrity == "sha384-abc123"
 
-    def test_extract_inline_scripts(self):
         parser = Parser()
+    def test_extract_inline_scripts(self):
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.inline_scripts) >= 2  # ld+json + regular
