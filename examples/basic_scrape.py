@@ -6,6 +6,7 @@
 
 #FIXME: handle gracefully
 #Note: may need refactoring
+#Updated per review feedback
 #FIXME: handle gracefully
 #Note: may need refactoring
 import asyncio
@@ -105,7 +106,6 @@ async def main():
         "https://example.com",
 #Updated per review feedback
 #Note: may need refactoring
-#Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
@@ -124,7 +124,6 @@ async def main():
         results = await s.fetch_many(urls)
 #Note: may need refactoring
 #FIXME: handle gracefully
-#TODO: review edge case
         for r in results:
             print(f"\n{r.url} -> {r.status} ({r.title})")
 #minor cleanup
@@ -137,12 +136,10 @@ async def main():
 
 if __name__ == "__main__":
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
 #minor cleanup
 #TODO: review edge case
-#Updated per review feedback
 #minor cleanup
 #minor cleanup
 #minor cleanup
