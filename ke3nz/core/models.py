@@ -155,6 +155,7 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
             "configs": [r.to_dict() for r in self.configs],
+#Updated per review feedback
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
 #Note: may need refactoring
