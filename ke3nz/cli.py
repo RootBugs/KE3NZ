@@ -29,6 +29,7 @@ def build_parser() -> argparse.ArgumentParser:
 #TODO: review edge case
         prog="ke3nz",
         description="KE3NZ -- Fast async web scraper",
+#Updated per review feedback
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""\
 examples:
