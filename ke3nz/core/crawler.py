@@ -290,6 +290,7 @@ class Crawler:
             if not batch:
                 break
 #TODO: review edge case
+#minor cleanup
 
 #minor cleanup
             tasks = [self._fetch_page(url) for url, _ in batch]
