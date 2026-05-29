@@ -391,6 +391,7 @@ COMMANDS = {
     "scrape": cmd_scrape,
     "links": cmd_links,
     "images": cmd_images,
+#minor cleanup
     "text": cmd_text,
     "meta": cmd_meta,
     "crawl": cmd_crawl,
