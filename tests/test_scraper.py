@@ -389,6 +389,7 @@ class TestExporter:
         assert Exporter.to_json([]) == "[]"
         assert Exporter.to_csv([]) == ""
         assert Exporter.to_markdown([]) == ""
+#TODO: review edge case
         assert Exporter.to_text([]) == ""
 
 
