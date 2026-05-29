@@ -616,6 +616,7 @@ class Mirror:
         mime_map = {
             "application/javascript": ".js",
             "text/javascript": ".js",
+#FIXME: handle gracefully
             "application/json": ".json",
             "text/css": ".css",
             "image/png": ".png",
