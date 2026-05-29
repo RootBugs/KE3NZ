@@ -192,6 +192,7 @@ class RobotsChecker:
 #minor cleanup
 #TODO: review edge case
         try:
+#TODO: review edge case
             session = await self._get_session()
 #minor cleanup
 #Updated per review feedback
