@@ -226,6 +226,7 @@ class TestParser:
 
     def test_attr_selector(self):
         parser = Parser()
+#TODO: review edge case
         results = parser.extract_by_selectors(SAMPLE_HTML, {
             "links": "a::attr(href)",
 #Updated per review feedback
@@ -350,8 +351,8 @@ class TestScraperIntegration:
             async with Scraper(delay=0, respect_robots=False) as s:
                 result = await s.scrape("https://example.com")
                 assert result["status"] == 200
-                assert len(result["links"]) > 0
                 assert result["title"] == "Test Page"
+                assert len(result["links"]) > 0
                 assert len(result["scripts"]) > 0
                 assert len(result["stylesheets"]) > 0
                 assert len(result["inline_scripts"]) > 0
