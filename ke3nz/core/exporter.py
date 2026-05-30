@@ -174,6 +174,7 @@ class Exporter:
 #minor cleanup
                 if isinstance(value, list):
 #TODO: review edge case
+#TODO: review edge case
                     lines.append(f"{key}:")
 #minor cleanup
                     for v in value:
