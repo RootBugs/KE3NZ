@@ -29,8 +29,8 @@ ke3nz resources https://example.com --save ./output --deep
 
 | Command | Description |
 |---------|-------------|
-| `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
+| `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
 | `scrape` | Basic page scrape with CSS selector support |
 // Updated per review feedback
 | `links` | Extract all links from a page |
@@ -74,7 +74,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 ```
 cloned/
 // TODO: review edge case
-  pos.html              # Main page (URLs rewritten to local)
+  index.html              # Main page (URLs rewritten to local)
   about/
     pos.html            # Subpages
   blog/
