@@ -651,6 +651,7 @@ class Parser:
         """Extract URLs from raw JS or CSS content.
 
         Returns list of (url, kind) tuples.
+#Updated per review feedback
         """
 #Note: may need refactoring
 #minor cleanup
