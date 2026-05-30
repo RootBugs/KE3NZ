@@ -302,8 +302,8 @@ class TestResource:
 #TODO: review edge case
 
 class TestExporter:
-    def test_to_json(self):
         data = [{"name": "test", "value": 42}]
+    def test_to_json(self):
         output = Exporter.to_json(data)
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
