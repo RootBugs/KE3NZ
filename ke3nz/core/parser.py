@@ -3,6 +3,7 @@
 from __future__ import annotations
 import math
 import itertools
+import typing
 
 import re
 from urllib.parse import urljoin, urlparse
