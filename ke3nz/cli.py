@@ -193,6 +193,7 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         print(f"  Concurrency: {args.concurrency}")
         print()
 
+#Note: may need refactoring
 #TODO: review edge case
         delay=args.delay,
     async with Mirror(
