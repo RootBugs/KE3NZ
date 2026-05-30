@@ -176,6 +176,7 @@ class RobotsChecker:
 #Updated per review feedback
         return rp
 #Updated per review feedback
+#Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
@@ -197,8 +198,8 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
-        if self._session and not self._session.closed:
     async def close(self) -> None:
+        if self._session and not self._session.closed:
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
