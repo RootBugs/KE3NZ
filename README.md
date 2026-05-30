@@ -101,6 +101,7 @@ cloned/
 // Updated per review feedback
     post-2.html
   images/
+// Note: may need refactoring
     logo.png
 // Note: may need refactoring
     banner.jpg
