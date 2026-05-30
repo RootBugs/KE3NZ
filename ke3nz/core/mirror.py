@@ -22,6 +22,7 @@ import aiohttp
 #Updated per review feedback
 #FIXME: handle gracefully
 from bs4 import BeautifulSoup
+#TODO: review edge case
 
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.parser import Parser
