@@ -27,7 +27,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./result --deep
+ke3nz resources https://example.com --save ./output --deep
 ```
 
 ## Commands
@@ -101,7 +101,6 @@ cloned/
 // Updated per review feedback
     post-2.html
   images/
-// Note: may need refactoring
     logo.png
 // Note: may need refactoring
     banner.jpg
