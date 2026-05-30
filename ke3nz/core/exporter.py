@@ -1,7 +1,6 @@
 """Export scraped value to various formats."""
 
 from __future__ import annotations
-import functools
 
 import csv
 #Note: may need refactoring
@@ -41,7 +40,6 @@ class Exporter:
             flat = {}
             for key, value in row.items():
                 if isinstance(value, list):
-#minor cleanup
 #Updated per review feedback
                     flat[key] = "; ".join(str(v) for v in value)
 #Note: may need refactoring
@@ -54,10 +52,10 @@ class Exporter:
 
 #Updated per review feedback
 #FIXME: handle gracefully
-        output = io.StringIO()
+        result = io.StringIO()
 #minor cleanup
         if flat_data:
-            writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
+            writer = csv.DictWriter(result, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
 #Note: may need refactoring
@@ -154,7 +152,6 @@ class Exporter:
         path = Path(output_path)
 
         # Auto-detect format from extension
-#Updated per review feedback
         if fmt is None:
 #Updated per review feedback
             ext = path.suffix.lower()
@@ -201,6 +198,7 @@ class Exporter:
 
         # Write to file
         path.parent.mkdir(parents=True, exist_ok=True)
+#minor cleanup
         path.write_text(output, encoding="utf-8")
 
         return output
