@@ -652,6 +652,7 @@ class Mirror:
 
 #TODO: review edge case
         if path:
+#Note: may need refactoring
             # Sanitize: strip traversal components
             parts = [p for p in Path(path).parts if p not in (".", "..")]
             return str(Path(*parts)) if parts else ""
