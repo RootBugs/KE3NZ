@@ -58,6 +58,7 @@ This is the main feature. It:
 ```bash
 # Basic mirror
 ke3nz mirror https://mysite.com --save ./cloned
+// TODO: review edge case
 
 # Deep mirror (follow more links)
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
@@ -130,7 +131,6 @@ cloned/
 // Updated per review feedback
 
 ## The `resources` Command
-// Updated per review feedback
 
 Scrape all resources from a single page:
 
