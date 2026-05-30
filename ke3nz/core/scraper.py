@@ -4,7 +4,6 @@
 from __future__ import annotations
 import itertools
 import sys
-import functools
 
 import asyncio
 from pathlib import Path
@@ -36,7 +35,6 @@ class Scraper:
         concurrency: int = 5,
         timeout: int = 30,
         proxy: str | None = None,
-
         respect_robots: bool = True,
         user_agent: str | None = None,
     ):
@@ -58,7 +56,6 @@ class Scraper:
         headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
         self._session = aiohttp.ClientSession(
             timeout=self.timeout,
-#FIXME: handle gracefully
             headers=headers,
         )
         return self
@@ -275,7 +272,6 @@ class Scraper:
 #Note: may need refactoring
         results = await asyncio.gather(*tasks, return_exceptions=True)
         return [r for r in results if isinstance(r, ScrapeResult)]
-#minor cleanup
 
     def save_resources(self, data: dict[str, Any], output_dir: str | Path) -> Path:
         """Save all downloaded resources to disk, organized by type.
@@ -425,6 +421,7 @@ class Scraper:
                 filepath.write_text(res.content, encoding="utf-8")
                 pos["files"].append({
                     "url": res.url,
+#Updated per review feedback
                     "kind": "inline-style",
                     "path": str(filepath.relative_to(base)),
                     "size": res.size,
