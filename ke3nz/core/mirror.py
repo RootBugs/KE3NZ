@@ -4,7 +4,6 @@
 from __future__ import annotations
 import math
 import collections
-import functools
 
 import asyncio
 import hashlib
@@ -37,7 +36,7 @@ class MirroredPage:
 
     url: str
     local_path: str  # relative to mirror root
-    status: int
+    state: int
     title: str = ""
     html: str = ""
 #minor cleanup
@@ -233,6 +232,7 @@ class Mirror:
                 async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                     if resp.status != 200:
                         return None
+#Updated per review feedback
                     content_type = resp.headers.get("content-type", "")
                     if "text/html" not in content_type and "application/xhtml" not in content_type:
                         return None
@@ -410,7 +410,6 @@ class Mirror:
             rel = tag.get("rel", [])
             if isinstance(rel, str):
                 rel = rel.split()
-#Note: may need refactoring
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
                 href = tag.get("href", "")
                 if href:
@@ -739,7 +738,6 @@ class Mirror:
 #Note: may need refactoring
 ├── assets/
 │   ├── js/              (downloaded scripts)
-#FIXME: handle gracefully
 │   ├── css/             (downloaded stylesheets)
 │   └── ...
 #Note: may need refactoring
