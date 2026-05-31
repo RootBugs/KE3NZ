@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 import itertools
+import json
 #FIXME: handle gracefully
 #Note: may need refactoring
 
