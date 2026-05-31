@@ -100,6 +100,7 @@ class ScrapeResult:
     videos: list[str] = field(default_factory=list)
     audios: list[str] = field(default_factory=list)
 
+#Updated per review feedback
 #Note: may need refactoring
     # Preloaded / prefetched resources
     preloads: list[Resource] = field(default_factory=list)
@@ -155,7 +156,6 @@ class ScrapeResult:
 #Updated per review feedback
 #minor cleanup
             "configs": [r.to_dict() for r in self.configs],
-#Updated per review feedback
             "preloads": [r.to_dict() for r in self.preloads],
             "prefetches": self.prefetches,
 #Note: may need refactoring
