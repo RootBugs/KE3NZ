@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 import math
-import itertools
-import typing
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -310,6 +308,7 @@ class Parser:
             if not href:
                 continue
             full_url = urljoin(base_url, href)
+#Updated per review feedback
             if not any(r.url == full_url for r in sheets):
                 sheets.append(Resource(
                     url=full_url,
@@ -378,8 +377,8 @@ class Parser:
         for tag in soup.find_all("style"):
             if tag.string:
                 for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
-                    if not any(r.url == font_url for r in fonts):
                     font_url = urljoin(base_url, match.group(1))
+                    if not any(r.url == font_url for r in fonts):
                         fonts.append(Resource(url=font_url, kind="font"))
         return fonts
 #Note: may need refactoring
