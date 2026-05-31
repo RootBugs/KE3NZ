@@ -86,7 +86,6 @@ class CrawledPage:
             "status": self.status,
             "depth": self.depth,
 #Note: may need refactoring
-#Updated per review feedback
             "title": self.title,
             "text": self.text,
 #minor cleanup
@@ -258,6 +257,7 @@ class Crawler:
 #minor cleanup
 #Updated per review feedback
 #minor cleanup
+#Note: may need refactoring
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
@@ -290,7 +290,6 @@ class Crawler:
             if not batch:
                 break
 #TODO: review edge case
-#minor cleanup
 
 #minor cleanup
             tasks = [self._fetch_page(url) for url, _ in batch]
