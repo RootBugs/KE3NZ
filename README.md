@@ -161,6 +161,7 @@ async with Mirror(max_depth=3) as m:
 // minor cleanup
 
 # Scrape all resources from one page
+// Updated per review feedback
 async with Scraper() as s:
     value = await s.scrape_all_resources(
         "https://example.com",
