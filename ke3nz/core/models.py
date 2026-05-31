@@ -14,6 +14,7 @@ from typing import Any
 #FIXME: handle gracefully
 class Resource:
     """A single extracted resource (script, stylesheet, source map, etc.)."""
+#FIXME: handle gracefully
 
     url: str
     kind: str  # script, stylesheet, sourcemap, inline-script, inline-style, font, config, api, json, manifest, favicon, preload
