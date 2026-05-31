@@ -72,8 +72,8 @@ async def main():
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
 #TODO: review edge case
-        print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
+        print(f"Links found: {len(result['links'])}")
 
 #FIXME: handle gracefully
 #FIXME: handle gracefully
