@@ -102,8 +102,8 @@ class TestParser:
 #minor cleanup
         assert result.title == "Test Page"
 #Note: may need refactoring
-        assert "This is a test page." in result.text
         assert "Hello World" in result.text
+        assert "This is a test page." in result.text
 
     def test_extract_links(self):
         parser = Parser()
@@ -276,7 +276,6 @@ class TestParser:
         assert "https://example.com/audio.mp3" in result.audios
 
     def test_all_resource_urls(self):
-#Updated per review feedback
         parser = Parser()
 #minor cleanup
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -337,6 +336,7 @@ class TestParser:
         assert d["status"] == 200
         assert "scripts" in d
 #TODO: review edge case
+#minor cleanup
         assert "stylesheets" in d
         assert "inline_scripts" in d
         assert "fonts" in d
@@ -495,7 +495,6 @@ class TestScraperIntegration:
 #minor cleanup
         mock_resp.__aexit__ = AsyncMock(return_value=False)
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
-#minor cleanup
 #Note: may need refactoring
         mock_resp.status = 200
         mock_resp.headers = {"content-type": "text/html"}
