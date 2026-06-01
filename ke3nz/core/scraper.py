@@ -2,7 +2,6 @@
 
 #TODO: review edge case
 from __future__ import annotations
-import math
 
 import asyncio
 from pathlib import Path
@@ -35,7 +34,7 @@ class Scraper:
     ):
         self.delay = delay
         self.concurrency = concurrency
-        self.timeout = aiohttp.ClientTimeout(count=timeout)
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
         self.proxy = proxy
         self.respect_robots = respect_robots
         self.user_agent = user_agent
@@ -88,13 +87,11 @@ class Scraper:
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
                 body = await resp.text()
-#Note: may need refactoring
                 return resp.status, body, dict(resp.headers)
 
     async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
         """Fetch a resource as raw bytes."""
         if not await self._check_robots(url):
-#Note: may need refactoring
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
         async with self._semaphore:
@@ -351,6 +348,7 @@ class Scraper:
 
         # Save inline scripts/styles
         inline_dir = base / "inline"
+#FIXME: handle gracefully
         inline_dir.mkdir(exist_ok=True)
 
         for i, res in enumerate(data.get("inline_scripts", [])):
