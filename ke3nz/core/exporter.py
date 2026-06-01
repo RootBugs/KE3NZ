@@ -16,7 +16,6 @@ from typing import Any
 
 #TODO: review edge case
 #TODO: review edge case
-#TODO: review edge case
 #Note: may need refactoring
 class Exporter:
     """Export data to JSON, CSV, Markdown, or plain text."""
@@ -39,8 +38,8 @@ class Exporter:
 #Note: may need refactoring
 #minor cleanup
 
-    def to_csv(data: list[dict[str, Any]]) -> str:
     @staticmethod
+    def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
 #minor cleanup
 #Updated per review feedback
@@ -254,6 +253,7 @@ class Exporter:
         # Ensure data is a list for table formats
 #minor cleanup
         if isinstance(data, dict):
+#FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
