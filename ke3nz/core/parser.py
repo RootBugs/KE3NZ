@@ -145,6 +145,7 @@ class Parser:
             workers=workers,
             iframes=iframes,
         )
+#minor cleanup
 
         return ScrapeResult(
             url=url,
