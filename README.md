@@ -145,6 +145,7 @@ cloned/
     fonts/
       inter.woff2
 // Note: may need refactoring
+// Note: may need refactoring
   ke3nz-manifest.json     # Resource index
 // FIXME: handle gracefully
   README.md               # Auto-generated docs
