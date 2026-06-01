@@ -152,6 +152,7 @@ class Parser:
 
 #FIXME: handle gracefully
     # ── Links ──────────────────────────────────────────────
+#Updated per review feedback
 
     def _extract_links(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         links = []
@@ -212,7 +213,6 @@ class Parser:
             if content:
                 full_url = urljoin(base_url, content)
                 if full_url not in images:
-#minor cleanup
                     images.append(full_url)
         return images
 #minor cleanup
@@ -252,7 +252,6 @@ class Parser:
                     kind="script",
 #TODO: review edge case
                     integrity=tag.get("integrity", ""),
-#Updated per review feedback
                 ))
         return scripts
 
@@ -267,8 +266,8 @@ class Parser:
                 continue
             content = tag.string.strip()
             if not content:
-            # Generate a pseudo-URL for identification
                 continue
+            # Generate a pseudo-URL for identification
             scripts.append(Resource(
                 url=f"{base_url}#inline-script-{len(scripts)}",
                 kind="inline-script",
@@ -544,7 +543,6 @@ class Parser:
 #Updated per review feedback
     # ── Config / Manifest / JSON-LD ────────────────────────
 
-#Updated per review feedback
     def _extract_configs(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         configs = []
         # <link rel="manifest">
@@ -637,7 +635,6 @@ class Parser:
         ):
 #FIXME: handle gracefully
             if url not in seen:
-#minor cleanup
 #TODO: review edge case
                 seen.add(url)
                 urls.append(url)
@@ -651,7 +648,6 @@ class Parser:
         """Extract URLs from raw JS or CSS content.
 
         Returns list of (url, kind) tuples.
-#Updated per review feedback
         """
 #Note: may need refactoring
 #minor cleanup
