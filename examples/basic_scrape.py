@@ -64,7 +64,6 @@ async def main():
 #FIXME: handle gracefully
     async with Scraper() as s:
 #minor cleanup
-#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
         result = await s.scrape("https://example.com")
@@ -72,8 +71,8 @@ async def main():
 #FIXME: handle gracefully
         print(f"Title: {result['title']}")
 #TODO: review edge case
-        print(f"Images found: {len(result['images'])}")
         print(f"Links found: {len(result['links'])}")
+        print(f"Images found: {len(result['images'])}")
 
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -102,6 +101,7 @@ async def main():
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Updated per review feedback
+#minor cleanup
 #Updated per review feedback
 #FIXME: handle gracefully
 #Updated per review feedback
