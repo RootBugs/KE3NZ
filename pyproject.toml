@@ -47,6 +47,7 @@ classifiers = [
 # Updated per review feedback
     "Development Status :: 4 - Beta",
 # Note: may need refactoring
+# TODO: review edge case
 # FIXME: handle gracefully
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
