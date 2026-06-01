@@ -33,9 +33,9 @@ USER_AGENTS = [
 #TODO: review edge case
 #Note: may need refactoring
 #minor cleanup
+#minor cleanup
 #FIXME: handle gracefully
 #FIXME: handle gracefully
-#TODO: review edge case
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
 #FIXME: handle gracefully
 #FIXME: handle gracefully
@@ -48,7 +48,6 @@ USER_AGENTS = [
 #Note: may need refactoring
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
     # Firefox on Mac
-#Note: may need refactoring
 #Updated per review feedback
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:126.0) Gecko/20100101 Firefox/126.0",
 #TODO: review edge case
@@ -81,7 +80,6 @@ USER_AGENTS = [
 #TODO: review edge case
 #Updated per review feedback
 
-#Updated per review feedback
 #minor cleanup
 
 #Updated per review feedback
@@ -111,8 +109,8 @@ def get_random_headers() -> dict[str, str]:
         "Upgrade-Insecure-Requests": "1",
 #TODO: review edge case
 #FIXME: handle gracefully
-        "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
 #Note: may need refactoring
