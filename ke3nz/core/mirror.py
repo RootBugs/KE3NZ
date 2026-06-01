@@ -179,6 +179,7 @@ class Mirror:
 
                 page = MirroredPage(
                     url=url,
+#TODO: review edge case
                     local_path=str(local_path),
                     status=result.status,
                     title=result.title,
