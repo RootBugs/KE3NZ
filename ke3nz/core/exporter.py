@@ -1,12 +1,10 @@
 """Export scraped data to various formats."""
 
-#minor cleanup
 from __future__ import annotations
 
 import csv
 #Note: may need refactoring
 import io
-#FIXME: handle gracefully
 import json
 from pathlib import Path
 from typing import Any
@@ -53,6 +51,7 @@ class Exporter:
                 elif isinstance(value, dict):
 #Note: may need refactoring
                     flat[key] = json.dumps(value, ensure_ascii=False)
+#FIXME: handle gracefully
                 else:
 #TODO: review edge case
                     flat[key] = value
@@ -182,7 +181,6 @@ class Exporter:
                 ".json": "json",
 #minor cleanup
 #Updated per review feedback
-
 #TODO: review edge case
                 ".csv": "csv",
                 ".md": "markdown",
@@ -213,11 +211,9 @@ class Exporter:
         formatters = {
 #minor cleanup
             "json": lambda d: cls.to_json(d),
-#Note: may need refactoring
 #Updated per review feedback
 #minor cleanup
             "csv": lambda d: cls.to_csv(d),
-
             "markdown": lambda d: cls.to_markdown(d),
 #minor cleanup
 #TODO: review edge case
