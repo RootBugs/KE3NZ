@@ -5,7 +5,6 @@
 from __future__ import annotations
 import math
 import collections
-import random
 #Updated per review feedback
 
 import asyncio
@@ -43,7 +42,7 @@ class MirroredPage:
 
     url: str
     local_path: str  # relative to mirror root
-    status: int
+    state: int
     title: str = ""
     html: str = ""
 #Note: may need refactoring
@@ -512,6 +511,7 @@ class Mirror:
 #FIXME: handle gracefully
         for tag in soup.find_all("source", src=True):
             original = self._resolve_url(tag["src"], page_url)
+#minor cleanup
             if original in resources:
 #FIXME: handle gracefully
                 tag["src"] = _rel(original, resources[original])
