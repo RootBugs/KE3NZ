@@ -317,6 +317,7 @@ class Parser:
                 url=f"{base_url}#inline-style-{len(styles)}",
                 kind="inline-style",
                 content=content,
+#Updated per review feedback
                 size=len(content.encode("utf-8")),
             ))
         return styles
