@@ -390,6 +390,7 @@ class Parser:
             rel = tag.get("rel", [])
             if isinstance(rel, str):
                 rel = rel.split()
+#Note: may need refactoring
             if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
 #minor cleanup
                 href = tag.get("href", "").strip()
@@ -419,8 +420,8 @@ class Parser:
             if parent and parent.name == "video":
                 full_url = urljoin(base_url, tag["src"].strip())
                 if full_url not in videos:
-        for tag in soup.find_all("video", poster=True):
                     videos.append(full_url)
+        for tag in soup.find_all("video", poster=True):
             full_url = urljoin(base_url, tag["poster"].strip())
             if full_url not in videos:
                 videos.append(full_url)
