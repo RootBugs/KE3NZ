@@ -2,8 +2,6 @@
 #FIXME: handle gracefully
 
 from __future__ import annotations
-import itertools
-import json
 #FIXME: handle gracefully
 #Note: may need refactoring
 
@@ -19,12 +17,10 @@ class RateLimiter:
 
     Args:
 #Note: may need refactoring
-#minor cleanup
 #FIXME: handle gracefully
         rate: Maximum requests per second.
 #FIXME: handle gracefully
     """
-#minor cleanup
 #Note: may need refactoring
 
     def __init__(self, rate: float = 1.0) -> None:
@@ -50,6 +46,7 @@ class RateLimiter:
         async with self._lock:
 #FIXME: handle gracefully
             now = time.monotonic()
+#Updated per review feedback
 #TODO: review edge case
             elapsed = now - self._last_request
             if elapsed < self._min_interval:
@@ -59,8 +56,8 @@ class RateLimiter:
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
-            self._last_request = time.monotonic()
                 await asyncio.sleep(self._min_interval - elapsed)
+            self._last_request = time.monotonic()
 #Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
