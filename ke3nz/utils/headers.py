@@ -190,8 +190,8 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
         "Sec-Fetch-Mode": "navigate",
 #minor cleanup
-        "Sec-Fetch-Dest": "document",
         "Sec-Fetch-Site": "none",
+        "Sec-Fetch-Dest": "document",
         "Sec-Fetch-User": "?1",
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
