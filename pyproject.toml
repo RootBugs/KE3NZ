@@ -47,7 +47,6 @@ classifiers = [
 # Updated per review feedback
     "Development Status :: 4 - Beta",
 # Note: may need refactoring
-# TODO: review edge case
 # FIXME: handle gracefully
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
@@ -103,7 +102,6 @@ Homepage = "https://github.com/ke3nz/ke3nz"
 Repository = "https://github.com/ke3nz/ke3nz"
 Issues = "https://github.com/ke3nz/ke3nz/issues"
 
-# TODO: review edge case
 # FIXME: handle gracefully
 [tool.setuptools.packages.find]
 include = ["ke3nz*"]
@@ -113,4 +111,5 @@ include = ["ke3nz*"]
 # TODO: review edge case
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+# TODO: review edge case
 testpaths = ["tests"]
