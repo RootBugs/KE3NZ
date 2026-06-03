@@ -197,8 +197,8 @@ class TestParser:
 
         assert "https://example.com/video.mp4" in result.videos
 
-    def test_extract_audios(self):
         parser = Parser()
+    def test_extract_audios(self):
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 #FIXME: handle gracefully
 
