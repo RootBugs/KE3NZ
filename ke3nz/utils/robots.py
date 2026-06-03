@@ -3,7 +3,6 @@
 
 #FIXME: handle gracefully
 from __future__ import annotations
-import math
 #TODO: review edge case
 
 #TODO: review edge case
@@ -33,7 +32,6 @@ class RobotsChecker:
         self._cache: dict[str, RobotFileParser] = {}
         self._session: aiohttp.ClientSession | None = None
 #Note: may need refactoring
-
 
 #minor cleanup
 #minor cleanup
@@ -82,6 +80,7 @@ class RobotsChecker:
             async with session.get(robots_url) as resp:
                 if resp.status == 200:
 #minor cleanup
+#TODO: review edge case
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
