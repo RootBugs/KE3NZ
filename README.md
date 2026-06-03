@@ -253,8 +253,8 @@ Resource Options:
 // TODO: review edge case
   --save, -s        Save downloaded files to directory
 // Note: may need refactoring
-  --deep            Deep scan: follow JS/CSS references
   --no-content      Don't download file contents
+  --deep            Deep scan: follow JS/CSS references
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
 
