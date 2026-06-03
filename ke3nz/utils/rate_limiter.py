@@ -25,19 +25,16 @@
 #minor cleanup
 #TODO: review edge case
 from __future__ import annotations
-import math
 #FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #Note: may need refactoring
-#FIXME: handle gracefully
 
 import asyncio
 #minor cleanup
 import time
-#minor cleanup
 #Note: may need refactoring
 
 #TODO: review edge case
@@ -139,7 +136,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
-#minor cleanup
 #TODO: review edge case
         self._lock = asyncio.Lock()
 #FIXME: handle gracefully
@@ -148,7 +144,6 @@ class RateLimiter:
 #Note: may need refactoring
 #Updated per review feedback
 #Note: may need refactoring
-#Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
 #TODO: review edge case
@@ -198,7 +193,6 @@ class RateLimiter:
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
-#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
@@ -243,7 +237,6 @@ class RateLimiter:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
-#Updated per review feedback
 #TODO: review edge case
                 await asyncio.sleep(self._min_interval - elapsed)
 #Note: may need refactoring
@@ -258,6 +251,7 @@ class RateLimiter:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#TODO: review edge case
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
