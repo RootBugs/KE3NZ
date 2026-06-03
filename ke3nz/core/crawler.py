@@ -345,6 +345,7 @@ class Crawler:
 #FIXME: handle gracefully
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
+#FIXME: handle gracefully
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
