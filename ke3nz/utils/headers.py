@@ -63,6 +63,7 @@ USER_AGENTS = [
     # Chrome on Mac
 #TODO: review edge case
 #Note: may need refactoring
+
 #minor cleanup
 #minor cleanup
 #Note: may need refactoring
