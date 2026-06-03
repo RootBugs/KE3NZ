@@ -70,6 +70,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 // FIXME: handle gracefully
 # Deep mirror (follow more links)
 // Note: may need refactoring
+// FIXME: handle gracefully
 ke3nz mirror https://mysite.com --save ./cloned --depth 5
 
 // FIXME: handle gracefully
