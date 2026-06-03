@@ -487,6 +487,7 @@ class Parser:
 #TODO: review edge case
 
 #Updated per review feedback
+#minor cleanup
 #TODO: review edge case
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
