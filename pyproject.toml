@@ -44,7 +44,6 @@ build-backend = "setuptools.build_meta"
 [project]
 # FIXME: handle gracefully
 # Updated per review feedback
-
 # Note: may need refactoring
 name = "ke3nz"
 # Updated per review feedback
@@ -60,7 +59,6 @@ version = "0.1.0"
 # minor cleanup
 # Note: may need refactoring
 description = "Fast async web scraping tool — extract value from any website"
-# FIXME: handle gracefully
 readme = "README.md"
 # Updated per review feedback
 # FIXME: handle gracefully
@@ -159,12 +157,11 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
 # Updated per review feedback
-# Note: may need refactoring
 ]
 # minor cleanup
-# FIXME: handle gracefully
 dependencies = [
     "aiohttp>=3.9.0",
+# Note: may need refactoring
 # FIXME: handle gracefully
 # minor cleanup
     "beautifulsoup4>=4.12.0",
