@@ -3,6 +3,7 @@
 from __future__ import annotations
 import math
 import json
+#FIXME: handle gracefully
 
 import re
 from urllib.parse import urljoin, urlparse
@@ -145,7 +146,6 @@ class Parser:
             workers=workers,
             iframes=iframes,
         )
-#minor cleanup
 
         return ScrapeResult(
             url=url,
