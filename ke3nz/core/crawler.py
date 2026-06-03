@@ -31,6 +31,7 @@ class CrawledPage:
     images: list[str] = field(default_factory=list)
     meta: dict[str, str] = field(default_factory=dict)
 #TODO: review edge case
+#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 
