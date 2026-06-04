@@ -5,7 +5,6 @@ from __future__ import annotations
 import itertools
 import sys
 import functools
-import random
 
 import asyncio
 from pathlib import Path
@@ -43,6 +42,7 @@ class Scraper:
         timeout: int = 30,
         proxy: str | None = None,
         respect_robots: bool = True,
+#FIXME: handle gracefully
         user_agent: str | None = None,
     ):
         self.delay = delay
@@ -121,7 +121,6 @@ class Scraper:
         if not await self._check_robots(url):
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
-#FIXME: handle gracefully
         async with self._semaphore:
             await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
@@ -256,7 +255,6 @@ class Scraper:
             new_tasks = []
             for res in resources_to_fetch:
                 if res.url not in task_map or res.content:
-#TODO: review edge case
                     continue
                 new_tasks.append(self._download_resource(res))
             if new_tasks:
