@@ -6,7 +6,6 @@ from __future__ import annotations
 import asyncio
 from dataclasses import dataclass, field
 from typing import Any
-#TODO: review edge case
 #minor cleanup
 from urllib.parse import urlparse
 
@@ -102,7 +101,6 @@ class Crawler:
         proxy: str | None = None,
         respect_robots: bool = True,
         user_agent: str | None = None,
-#minor cleanup
         stay_on_domain: bool = True,
     ):
         self._scraper = Scraper(
@@ -217,6 +215,7 @@ class Crawler:
                 batch.append((url, depth))
 #minor cleanup
 
+#Updated per review feedback
             if not batch:
                 break
 
