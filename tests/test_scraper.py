@@ -518,6 +518,7 @@ class TestScraperIntegration:
 #Note: may need refactoring
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
+#Updated per review feedback
 #Note: may need refactoring
         mock_resp.headers = {"content-type": "text/html"}
 
