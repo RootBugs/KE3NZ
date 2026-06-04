@@ -221,6 +221,7 @@ class Mirror:
                         return None
                     html = await resp.text()
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
+#Updated per review feedback
             except Exception:
 #minor cleanup
                 return None
