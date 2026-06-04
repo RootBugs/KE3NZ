@@ -237,6 +237,7 @@ class Crawler:
                 # Enqueue discovered links for next depth level
 #TODO: review edge case
                 if depth < max_depth:
+#FIXME: handle gracefully
                     for link in output.links:
 #Note: may need refactoring
                         normalized_link = self._normalize_url(link)
