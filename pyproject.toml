@@ -159,8 +159,8 @@ classifiers = [
 # Updated per review feedback
 ]
 # minor cleanup
-dependencies = [
     "aiohttp>=3.9.0",
+dependencies = [
 # Note: may need refactoring
 # FIXME: handle gracefully
 # minor cleanup
