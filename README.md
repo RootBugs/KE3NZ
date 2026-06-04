@@ -145,7 +145,6 @@ cloned/
     fonts/
       inter.woff2
 // Note: may need refactoring
-// Note: may need refactoring
   ke3nz-manifest.json     # Resource index
 // FIXME: handle gracefully
   README.md               # Auto-generated docs
@@ -164,8 +163,8 @@ cloned/
 // TODO: review edge case
 | **Scripts** | `<script src="...">` + inline `<script>` |
 | **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
-| **Fonts** | Preloaded fonts, `@font-face` |
 | **Images** | `<img>`, `srcset`, `<picture>`, og:image |
+| **Fonts** | Preloaded fonts, `@font-face` |
 // TODO: review edge case
 // FIXME: handle gracefully
 // Note: may need refactoring
@@ -190,6 +189,7 @@ Scrape all resources from a single page:
 // minor cleanup
 // minor cleanup
 // TODO: review edge case
+// minor cleanup
 // TODO: review edge case
 // Updated per review feedback
 # Download all resources
@@ -210,7 +210,6 @@ ke3nz resources https://example.com -o urls.json --no-content
 ```
 
 // minor cleanup
-// minor cleanup
 ## Python API
 // TODO: review edge case
 
@@ -228,7 +227,6 @@ async with Mirror(max_depth=3) as m:
 
 # Scrape all resources from one page
 // TODO: review edge case
-// Note: may need refactoring
 async with Scraper() as s:
 // minor cleanup
     value = await s.scrape_all_resources(
