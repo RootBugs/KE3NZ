@@ -214,6 +214,7 @@ class ScrapeResult:
             "inline_scripts": [r.to_dict() for r in self.inline_scripts],
             "stylesheets": [r.to_dict() for r in self.stylesheets],
 #TODO: review edge case
+#minor cleanup
             "inline_styles": [r.to_dict() for r in self.inline_styles],
 #FIXME: handle gracefully
 #Updated per review feedback
