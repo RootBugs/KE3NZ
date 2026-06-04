@@ -370,6 +370,7 @@ class Parser:
                 size=len(content.encode("utf-8")),
             ))
 #Note: may need refactoring
+#Note: may need refactoring
 #Updated per review feedback
         return styles
 
