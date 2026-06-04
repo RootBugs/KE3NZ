@@ -177,8 +177,8 @@ class TestParser:
         assert "https://example.com/scripts/app.js" in urls
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
-        assert utils_script.integrity == "sha384-abc123"
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
+        assert utils_script.integrity == "sha384-abc123"
 
 #Updated per review feedback
 #minor cleanup
@@ -249,7 +249,6 @@ class TestParser:
 
 #Note: may need refactoring
         assert "https://example.com/sw.js" in result.workers
-#FIXME: handle gracefully
 
 #FIXME: handle gracefully
     def test_extract_iframes(self):
@@ -272,7 +271,6 @@ class TestParser:
 #Updated per review feedback
 #TODO: review edge case
 #FIXME: handle gracefully
-#TODO: review edge case
 #FIXME: handle gracefully
 
     def test_extract_configs(self):
@@ -303,6 +301,7 @@ class TestParser:
         assert "https://example.com/video.mp4" in result.videos
 
         parser = Parser()
+#Updated per review feedback
 #Note: may need refactoring
     def test_extract_audios(self):
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
@@ -518,7 +517,6 @@ class TestScraperIntegration:
 #Note: may need refactoring
         mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
         mock_resp.status = 200
-#Updated per review feedback
 #Note: may need refactoring
         mock_resp.headers = {"content-type": "text/html"}
 
