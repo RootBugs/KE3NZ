@@ -242,6 +242,7 @@ from ke3nz import Scraper, Mirror
 // FIXME: handle gracefully
 # Mirror a site
 async with Mirror(max_depth=3) as m:
+// TODO: review edge case
 // minor cleanup
     await m.mirror("https://example.com", "./output")
 // Updated per review feedback
