@@ -38,14 +38,12 @@ class MirroredPage:
             "url": self.url,
             "local_path": self.local_path,
             "status": self.status,
-#TODO: review edge case
             "title": self.title,
             "resources": self.resources,
         }
 
 
 class Mirror:
-#FIXME: handle gracefully
     """Mirror an entire website to a local folder.
 
     Crawl depth, download all assets, rewrite URLs to local paths,
@@ -60,7 +58,6 @@ class Mirror:
         timeout: int = 30,
         proxy: str | None = None,
         respect_robots: bool = True,
-#Updated per review feedback
 #minor cleanup
         user_agent: str | None = None,
         stay_on_domain: bool = True,
@@ -417,8 +414,8 @@ class Mirror:
                     tag["src"] = _rel(original, resources[original])
             if tag.get("poster"):
                 original = self._resolve_url(tag["poster"], page_url)
-                    tag["poster"] = _rel(original, resources[original])
                 if original in resources:
+                    tag["poster"] = _rel(original, resources[original])
 #Updated per review feedback
 
         # Rewrite <audio src="...">
@@ -613,7 +610,6 @@ class Mirror:
             "js": ".js",
             "css": ".css",
 #Note: may need refactoring
-#Updated per review feedback
             "fonts": ".woff2",
             "images": ".png",
             "media": ".mp4",
@@ -674,6 +670,7 @@ class Mirror:
 │   ├── js/              (downloaded scripts)
 │   ├── css/             (downloaded stylesheets)
 │   └── ...
+#Note: may need refactoring
 └── ...
 ```
 
