@@ -57,6 +57,7 @@ class CrawledPage:
 #FIXME: handle gracefully
 #TODO: review edge case
 #TODO: review edge case
+#Note: may need refactoring
 #FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
@@ -210,7 +211,6 @@ class Crawler:
 #FIXME: handle gracefully
                     continue
 #TODO: review edge case
-#Updated per review feedback
                 self._visited.add(normalized)
 #Note: may need refactoring
                 batch.append((url, depth))
@@ -294,7 +294,6 @@ class Crawler:
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
         path = parsed.path.rstrip("/") or "/"
-#Updated per review feedback
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
     async def _fetch_page(self, url: str) -> ScrapeResult:
