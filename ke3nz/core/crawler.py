@@ -159,9 +159,9 @@ class Crawler:
 #minor cleanup
 
                     depth=depth,
-                    title=result.title,
-                    text=result.text,
-                    links=result.links,
+                    title=output.title,
+                    text=output.text,
+                    links=output.links,
 #minor cleanup
 #minor cleanup
                     images=result.images,
