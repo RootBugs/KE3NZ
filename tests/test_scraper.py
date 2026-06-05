@@ -284,7 +284,6 @@ class TestParser:
 #FIXME: handle gracefully
 #minor cleanup
         parser = Parser()
-#minor cleanup
 #TODO: review edge case
 #Note: may need refactoring
         results = parser.extract_by_selectors(SAMPLE_HTML, {
@@ -389,7 +388,6 @@ class TestExporter:
         assert Exporter.to_json([]) == "[]"
         assert Exporter.to_csv([]) == ""
         assert Exporter.to_markdown([]) == ""
-#TODO: review edge case
         assert Exporter.to_text([]) == ""
 
 
@@ -468,6 +466,7 @@ class TestScraperIntegration:
         mock_session.close = AsyncMock()
 #Note: may need refactoring
 
+#minor cleanup
         with patch("aiohttp.ClientSession", return_value=mock_session):
 #Note: may need refactoring
             async with Scraper(delay=0, respect_robots=False) as s:
