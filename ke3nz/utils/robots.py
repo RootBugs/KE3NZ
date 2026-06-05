@@ -186,7 +186,6 @@ class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
 
-#Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
         rp = RobotFileParser()
@@ -242,6 +241,7 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #Note: may need refactoring
 #FIXME: handle gracefully
+#FIXME: handle gracefully
             rp.allow_all = True
 #Updated per review feedback
 #minor cleanup
@@ -294,7 +294,6 @@ class RobotsChecker:
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
-#TODO: review edge case
 #FIXME: handle gracefully
             await self._session.close()
 #Updated per review feedback
