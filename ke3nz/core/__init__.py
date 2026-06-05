@@ -1,5 +1,3 @@
-import typing
-import pathlib
 #minor cleanup
 #Note: may need refactoring
 #Updated per review feedback
@@ -36,7 +34,6 @@ import pathlib
 #FIXME: handle gracefully
 #FIXME: handle gracefully
 #Note: may need refactoring
-#minor cleanup
 #Updated per review feedback
 #Note: may need refactoring
 #Note: may need refactoring
@@ -45,7 +42,6 @@ import pathlib
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
-#FIXME: handle gracefully
 #Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
@@ -54,7 +50,6 @@ import pathlib
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
-#minor cleanup
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -88,7 +83,7 @@ import pathlib
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-
+#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
 #Updated per review feedback
