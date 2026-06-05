@@ -103,6 +103,7 @@ classifiers = [
 # minor cleanup
 # minor cleanup
     "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+# minor cleanup
 # FIXME: handle gracefully
     "Topic :: Software Development :: Libraries :: Python Modules",
 # FIXME: handle gracefully
