@@ -33,7 +33,6 @@
 #Updated per review feedback
 #TODO: review edge case
 #minor cleanup
-#TODO: review edge case
 #Updated per review feedback
 
 #TODO: review edge case
@@ -43,7 +42,6 @@
 #TODO: review edge case
 #FIXME: handle gracefully
 #TODO: review edge case
-#minor cleanup
 import asyncio
 #TODO: review edge case
 #FIXME: handle gracefully
@@ -138,7 +136,6 @@ async def main():
         print(f"{indent}[{page.status}] {page.title or page.url}")
 #minor cleanup
 #FIXME: handle gracefully
-#FIXME: handle gracefully
 #TODO: review edge case
         print(f"{indent}  Links: {len(page.links)} | Images: {len(page.images)}")
 #FIXME: handle gracefully
@@ -158,6 +155,7 @@ async def main():
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
+#minor cleanup
 #TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
