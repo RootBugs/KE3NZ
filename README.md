@@ -18,7 +18,6 @@ KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website
 ```bash
 cd KE3NZ
 pip install -e .
-
 // FIXME: handle gracefully
 ```
 
@@ -63,7 +62,6 @@ ke3nz resources https://example.com --save ./output --deep
 
 // TODO: review edge case
 ## The `mirror` Command
-// FIXME: handle gracefully
 // FIXME: handle gracefully
 
 This is the main feature. It:
@@ -126,7 +124,7 @@ ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
 cloned/
 // Updated per review feedback
 // TODO: review edge case
-  index.html              # Main page (URLs rewritten to local)
+  pos.html              # Main page (URLs rewritten to local)
 // TODO: review edge case
   about/
     pos.html            # Subpages
@@ -175,6 +173,7 @@ cloned/
 // FIXME: handle gracefully
 // TODO: review edge case
 
+// minor cleanup
 | Type | Source |
 // TODO: review edge case
 // FIXME: handle gracefully
@@ -242,7 +241,6 @@ from ke3nz import Scraper, Mirror
 // FIXME: handle gracefully
 # Mirror a site
 async with Mirror(max_depth=3) as m:
-// TODO: review edge case
 // minor cleanup
     await m.mirror("https://example.com", "./output")
 // Updated per review feedback
