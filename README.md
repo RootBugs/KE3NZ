@@ -24,7 +24,7 @@ ke3nz mirror https://example.com --save ./my-site
 ke3nz mirror https://example.com --save ./site --depth 5 -v
 
 # Just scrape resources from a single page
-ke3nz resources https://example.com --save ./output --deep
+ke3nz resources https://example.com --save ./result --deep
 ```
 
 ## Commands
@@ -161,7 +161,6 @@ async with Mirror(max_depth=3) as m:
 // minor cleanup
 
 # Scrape all resources from one page
-// Updated per review feedback
 async with Scraper() as s:
     value = await s.scrape_all_resources(
         "https://example.com",
@@ -259,7 +258,6 @@ KE3NZ/
 // minor cleanup
 
 ## License
-// Updated per review feedback
 
 // Updated per review feedback
 MIT License
