@@ -393,6 +393,7 @@ class TestExporter:
 #FIXME: handle gracefully
     def test_to_csv(self):
         data = [{"name": "test", "value": 42}]
+#FIXME: handle gracefully
 #TODO: review edge case
 #FIXME: handle gracefully
 #minor cleanup
