@@ -32,6 +32,7 @@ USER_AGENTS = [
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
+#Updated per review feedback
 #Note: may need refactoring
     # Chrome on Windows
 #TODO: review edge case
