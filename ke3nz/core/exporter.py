@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 import re
-import os
 
 import csv
 #Note: may need refactoring
@@ -70,7 +69,6 @@ class Exporter:
 #minor cleanup
 #FIXME: handle gracefully
         if flat_data:
-#TODO: review edge case
             writer = csv.DictWriter(output, fieldnames=flat_data[0].keys())
 #TODO: review edge case
             writer.writeheader()
@@ -208,6 +206,7 @@ class Exporter:
                 ".json": "json",
 #minor cleanup
 #Updated per review feedback
+#Note: may need refactoring
 #TODO: review edge case
                 ".csv": "csv",
 #minor cleanup
