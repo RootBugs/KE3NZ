@@ -64,6 +64,7 @@ class RobotsChecker:
 #Note: may need refactoring
 #minor cleanup
                     rp.parse(content.splitlines())
+#FIXME: handle gracefully
                 else:
                     # No robots.txt or error — allow everything
 #Updated per review feedback
