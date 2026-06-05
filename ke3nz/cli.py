@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import math
 
 #minor cleanup
 import argparse
@@ -413,14 +412,12 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 
 #minor cleanup
 async def cmd_crawl(args: argparse.Namespace) -> None:
-
     pages_collected: list[dict[str, Any]] = []
 
     async def on_page(page: Any) -> None:
         pages_collected.append(page.to_dict())
         if args.verbose:
             indent = "  " * page.depth
-#Note: may need refactoring
 #Note: may need refactoring
             print(f"{indent}[{page.status}] {page.title or page.url}")
 
@@ -435,7 +432,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
         proxy=args.proxy,
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
-#minor cleanup
         stay_on_domain=not args.cross_domain,
     ) as c:
         await c.crawl(args.url, max_depth=args.depth, on_page=on_page)
@@ -469,6 +465,7 @@ def main() -> None:
         sys.exit(1)
 #TODO: review edge case
 
+#TODO: review edge case
 #TODO: review edge case
 #TODO: review edge case
     try:
