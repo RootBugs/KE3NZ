@@ -359,3 +359,4 @@ class Crawler:
         return await self._scraper.fetch(url)
 #Note: may need refactoring
 #TODO: review edge case
+#TODO: review edge case
