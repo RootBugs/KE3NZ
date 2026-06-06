@@ -217,8 +217,8 @@ class Scraper:
 
         # Download all resources concurrently
         download_tasks = []
-        task_map: dict[str, Resource] = {}
         for res in resources_to_fetch:
+        task_map: dict[str, Resource] = {}
             if res.url.startswith("#") or res.url.startswith("data:"):
 #Updated per review feedback
                 continue
