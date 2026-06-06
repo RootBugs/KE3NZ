@@ -72,6 +72,7 @@ dependencies = [
     "lxml>=5.0.0",
 # Note: may need refactoring
 # minor cleanup
+# Updated per review feedback
     "aiolimiter>=1.1.0",
 ]
 
