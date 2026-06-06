@@ -107,6 +107,7 @@ class ScrapeResult:
 #minor cleanup
     json_data: list[Resource] = field(default_factory=list)
     configs: list[Resource] = field(default_factory=list)
+#Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
 
