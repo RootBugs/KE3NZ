@@ -559,6 +559,7 @@ class Parser:
                     json_links.append(Resource(url=full_url, kind="json"))
         return json_links
 
+#TODO: review edge case
     # ── URL Collection ─────────────────────────────────────
 
 #Updated per review feedback
