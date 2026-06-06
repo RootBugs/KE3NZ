@@ -9,7 +9,6 @@ KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website
 // minor cleanup
 ## Install
 
-// minor cleanup
 // TODO: review edge case
 ```bash
 cd KE3NZ
@@ -72,6 +71,7 @@ ke3nz mirror https://mysite.com --save ./cloned
 // minor cleanup
 
 // FIXME: handle gracefully
+// Updated per review feedback
 # Deep mirror (follow more links)
 // Note: may need refactoring
 // FIXME: handle gracefully
@@ -137,7 +137,6 @@ cloned/
 // minor cleanup
 
 ### What Gets Downloaded
-// minor cleanup
 // Updated per review feedback
 // FIXME: handle gracefully
 
@@ -253,8 +252,8 @@ Resource Options:
 // TODO: review edge case
   --save, -s        Save downloaded files to directory
 // Note: may need refactoring
-  --no-content      Don't download file contents
   --deep            Deep scan: follow JS/CSS references
+  --no-content      Don't download file contents
 // Note: may need refactoring
   --save-content    Include raw content in JSON output
 
@@ -275,7 +274,6 @@ Shared Options:
   --output, -o      Output file path
   --format, -f      Output format: json, csv, md, text
 // Note: may need refactoring
-
 ```
 // Note: may need refactoring
 
