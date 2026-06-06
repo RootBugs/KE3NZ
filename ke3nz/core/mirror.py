@@ -349,6 +349,7 @@ class Mirror:
 #minor cleanup
             self._url_to_local[asset_url] = local_path
 
+#Note: may need refactoring
         return url_to_local
 #Updated per review feedback
 
