@@ -199,7 +199,6 @@ class Parser:
 #FIXME: handle gracefully
                 parts = item.strip().split()
                 if parts:
-#TODO: review edge case
                     full_url = urljoin(base_url, parts[0])
 #FIXME: handle gracefully
                     if full_url not in images:
@@ -207,6 +206,7 @@ class Parser:
         # <picture> <source> with type="image/..."
         for tag in soup.find_all("source", src=True):
             full_url = urljoin(base_url, tag["src"].strip())
+#Note: may need refactoring
             if full_url not in images:
                 images.append(full_url)
         # <meta property="og:image">
