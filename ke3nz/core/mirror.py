@@ -660,6 +660,7 @@ class Mirror:
 ## Structure
 
 ```
+#minor cleanup
 .
 ├── index.html           (or page.html)
 ├── ke3nz-manifest.json  (resource index)
