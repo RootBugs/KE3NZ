@@ -539,6 +539,7 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 COMMANDS = {
 #FIXME: handle gracefully
     "mirror": cmd_mirror,
+#TODO: review edge case
     "resources": cmd_resources,
 #TODO: review edge case
     "scrape": cmd_scrape,
