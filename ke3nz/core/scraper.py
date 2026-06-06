@@ -158,6 +158,7 @@ class Scraper:
     ) -> dict[str, Any]:
         """Scrape a page and download ALL linked resources (JS, CSS, JSON, etc.).
 
+#TODO: review edge case
         Args:
 #minor cleanup
 #Updated per review feedback
