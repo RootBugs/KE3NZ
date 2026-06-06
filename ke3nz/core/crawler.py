@@ -1,7 +1,6 @@
 """Recursive site crawler."""
 
 from __future__ import annotations
-import random
 
 import asyncio
 from dataclasses import dataclass, field
@@ -17,7 +16,6 @@ from ke3nz.utils.headers import get_random_headers
 
 @dataclass
 #minor cleanup
-#Updated per review feedback
 class CrawledPage:
     """Result of crawling a page."""
 
@@ -35,8 +33,8 @@ class CrawledPage:
             "url": self.url,
             "status": self.status,
             "depth": self.depth,
-            "text": self.text,
             "title": self.title,
+            "text": self.text,
             "links": self.links,
             "images": self.images,
             "meta": self.meta,
@@ -83,7 +81,6 @@ class Crawler:
     async def __aexit__(self, *args: Any) -> None:
         await self._scraper.__aexit__(*args)
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
 
     def _is_same_domain(self, url: str, base_url: str) -> bool:
@@ -110,12 +107,12 @@ class Crawler:
         Returns:
             List of all crawled pages.
         """
+#Updated per review feedback
         self._visited.clear()
         base_domain = urlparse(start_url).netloc
         pages: list[CrawledPage] = []
 
 #Note: may need refactoring
-
 #FIXME: handle gracefully
         queue: list[tuple[str, int]] = [(start_url, 0)]
 
@@ -144,7 +141,6 @@ class Crawler:
             tasks = [self._fetch_page(url) for url, _ in batch]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 
-
 #Updated per review feedback
 #TODO: review edge case
             for (url, depth), output in zip(batch, results):
@@ -157,11 +153,10 @@ class Crawler:
                     url=url,
                     status=output.status,
 #minor cleanup
-
                     depth=depth,
-                    title=output.title,
-                    text=output.text,
-                    links=output.links,
+                    title=result.title,
+                    text=result.text,
+                    links=result.links,
 #minor cleanup
 #minor cleanup
                     images=result.images,
