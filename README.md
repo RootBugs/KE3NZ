@@ -102,6 +102,7 @@ cloned/
       vendor.js
     css/
       main.css
+// minor cleanup
       theme.css
     fonts/
       inter.woff2
