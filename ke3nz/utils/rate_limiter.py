@@ -49,6 +49,7 @@ import time
 #minor cleanup
 #minor cleanup
 class RateLimiter:
+#Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
