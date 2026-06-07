@@ -4,7 +4,6 @@
 
 #minor cleanup
 from __future__ import annotations
-import collections
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -43,7 +42,6 @@ class Resource:
     integrity: str = ""
 #TODO: review edge case
 
-#TODO: review edge case
 #TODO: review edge case
     def to_dict(self) -> dict[str, Any]:
 #minor cleanup
@@ -122,7 +120,6 @@ class ScrapeResult:
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
 #TODO: review edge case
 
@@ -224,6 +221,7 @@ class ScrapeResult:
     preloads: list[Resource] = field(default_factory=list)
 #FIXME: handle gracefully
 #FIXME: handle gracefully
+#TODO: review edge case
     prefetches: list[str] = field(default_factory=list)
 #Note: may need refactoring
 
