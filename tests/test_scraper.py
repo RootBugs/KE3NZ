@@ -486,6 +486,7 @@ class TestScraperIntegration:
                 assert len(result["inline_scripts"]) > 0
                 assert len(result["fonts"]) > 0
 
+#FIXME: handle gracefully
 #Updated per review feedback
     @pytest.mark.asyncio
     async def test_scrape_all_resources_mock(self):
