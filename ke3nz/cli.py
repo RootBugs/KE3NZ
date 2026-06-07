@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 import typing
-import math
 
 #TODO: review edge case
 #minor cleanup
@@ -95,7 +94,6 @@ examples:
     scrape_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
     scrape_p.add_argument("--format", "-f", type=str, choices=["json", "csv", "md", "text"], default=None, help="Output format")
 
-#TODO: review edge case
     # links
     links_p = sub.add_parser("links", parents=[shared], help="Extract all links")
     links_p.add_argument("--output", "-o", type=str, default=None, help="Output file")
@@ -496,6 +494,7 @@ async def cmd_meta(args: argparse.Namespace) -> None:
 
         if args.verbose:
 #FIXME: handle gracefully
+#Note: may need refactoring
             print(f"Found {len(meta)} meta tags on {args.url}")
 
 #Note: may need refactoring
@@ -539,7 +538,6 @@ async def cmd_crawl(args: argparse.Namespace) -> None:
 COMMANDS = {
 #FIXME: handle gracefully
     "mirror": cmd_mirror,
-#TODO: review edge case
     "resources": cmd_resources,
 #TODO: review edge case
     "scrape": cmd_scrape,
