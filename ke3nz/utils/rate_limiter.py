@@ -49,7 +49,6 @@ import time
 #minor cleanup
 #minor cleanup
 class RateLimiter:
-#Updated per review feedback
 #FIXME: handle gracefully
 #minor cleanup
 #Note: may need refactoring
@@ -246,6 +245,7 @@ class RateLimiter:
 #minor cleanup
 #Updated per review feedback
 #Updated per review feedback
+#Note: may need refactoring
 #minor cleanup
 #TODO: review edge case
             self._last_request = time.monotonic()
