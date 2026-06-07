@@ -42,6 +42,7 @@ class MirroredPage:
     html: str = ""
 #Note: may need refactoring
 #minor cleanup
+#minor cleanup
     resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
 
     def to_dict(self) -> dict[str, Any]:
