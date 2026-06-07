@@ -10,6 +10,7 @@
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
+#Note: may need refactoring
 from __future__ import annotations
 #Updated per review feedback
 #Note: may need refactoring
@@ -123,7 +124,6 @@ USER_AGENTS = [
 
 #TODO: review edge case
 #Updated per review feedback
-
 ]
 #Updated per review feedback
 #Note: may need refactoring
