@@ -22,7 +22,6 @@ import aiohttp
 #Updated per review feedback
 #FIXME: handle gracefully
 from bs4 import BeautifulSoup
-#TODO: review edge case
 
 from ke3nz.core.models import Resource, ScrapeResult
 from ke3nz.core.parser import Parser
@@ -250,10 +249,8 @@ class Mirror:
                     html = await resp.text()
                     return self._parser.parse(url, resp.status, html, dict(resp.headers))
 #Updated per review feedback
-#TODO: review edge case
             except Exception:
 #minor cleanup
-#TODO: review edge case
                 return None
 
     async def _check_robots(self, url: str) -> bool:
@@ -349,7 +346,6 @@ class Mirror:
 #minor cleanup
             self._url_to_local[asset_url] = local_path
 
-#Note: may need refactoring
         return url_to_local
 #Updated per review feedback
 
@@ -654,7 +650,6 @@ class Mirror:
 
 #TODO: review edge case
         if path:
-#Note: may need refactoring
             # Sanitize: strip traversal components
             parts = [p for p in Path(path).parts if p not in (".", "..")]
             return str(Path(*parts)) if parts else ""
@@ -733,6 +728,7 @@ class Mirror:
         """Save a JSON manifest of everything that was mirrored."""
         manifest = {
             "source_url": start_url,
+#minor cleanup
             "tool": "KE3NZ Mirror",
 #FIXME: handle gracefully
             "pages": [p.to_dict() for p in self._pages],
