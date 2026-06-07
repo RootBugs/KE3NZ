@@ -535,6 +535,7 @@ class Mirror:
         path = path.lstrip("/")
 
         # Normalize to remove any ".." or "." segments that could escape
+#FIXME: handle gracefully
         # the result directory. PurePython Path.as_posix + resolve tricks
         # won't help without a base, so we just strip traversal components.
         parts = [p for p in Path(path).parts if p not in (".", "..")]
