@@ -377,6 +377,7 @@ class Parser:
 #Note: may need refactoring
     # ── Fonts ──────────────────────────────────────────────
 #Updated per review feedback
+#minor cleanup
 
 #TODO: review edge case
     def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
