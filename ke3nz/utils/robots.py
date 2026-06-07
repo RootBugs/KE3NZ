@@ -63,8 +63,8 @@ class RobotsChecker:
                     content = await resp.text()
 #Note: may need refactoring
 #minor cleanup
-                    rp.parse(content.splitlines())
 #FIXME: handle gracefully
+                    rp.parse(content.splitlines())
                 else:
                     # No robots.txt or error — allow everything
 #Updated per review feedback
@@ -77,7 +77,6 @@ class RobotsChecker:
             rp.allow_all = True
 #TODO: review edge case
 
-#Updated per review feedback
 #TODO: review edge case
         self._cache[robots_url] = rp
 #Updated per review feedback
@@ -93,7 +92,7 @@ class RobotsChecker:
 #TODO: review edge case
 #Note: may need refactoring
 
-        if self._session and not self._session.closed:
     async def close(self) -> None:
+        if self._session and not self._session.closed:
             await self._session.close()
 #Updated per review feedback
