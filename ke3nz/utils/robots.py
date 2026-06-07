@@ -1,3 +1,4 @@
+#Note: may need refactoring
 #TODO: review edge case
 """robots.txt parser and checker."""
 #FIXME: handle gracefully
@@ -118,7 +119,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
 #Updated per review feedback
 #Note: may need refactoring
-#Updated per review feedback
 
 #minor cleanup
 #FIXME: handle gracefully
