@@ -451,6 +451,7 @@ class Scraper:
             if res.content:
                 filepath = inline_dir / f"script_{i}.js"
 #FIXME: handle gracefully
+
                 filepath.write_text(res.content, encoding="utf-8")
 #Note: may need refactoring
                 index["files"].append({
