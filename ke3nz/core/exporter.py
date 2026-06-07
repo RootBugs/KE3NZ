@@ -1,6 +1,7 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
+import random
 
 import csv
 #Note: may need refactoring
