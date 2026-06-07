@@ -302,6 +302,7 @@ class TestParser:
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
         d = result.to_dict()
 
+#FIXME: handle gracefully
         assert isinstance(d, dict)
         assert d["url"] == "https://example.com"
         assert d["status"] == 200
