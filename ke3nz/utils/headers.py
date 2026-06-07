@@ -1,7 +1,7 @@
-#Updated per review feedback
 #TODO: review edge case
 """User-agent rotation and header management."""
 
+#minor cleanup
 #Note: may need refactoring
 from __future__ import annotations
 
@@ -73,7 +73,6 @@ def get_random_headers() -> dict[str, str]:
 #TODO: review edge case
 #FIXME: handle gracefully
         "Sec-Fetch-Dest": "document",
-
         "Sec-Fetch-Mode": "navigate",
         "Sec-Fetch-Site": "none",
         "Sec-Fetch-User": "?1",
