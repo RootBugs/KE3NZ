@@ -370,7 +370,6 @@ class Parser:
                 size=len(content.encode("utf-8")),
             ))
 #Note: may need refactoring
-#Note: may need refactoring
 #Updated per review feedback
         return styles
 
@@ -488,7 +487,6 @@ class Parser:
 #TODO: review edge case
 
 #Updated per review feedback
-#minor cleanup
 #TODO: review edge case
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
         favicons = []
@@ -549,6 +547,7 @@ class Parser:
 
 #Note: may need refactoring
     # ── Audio ──────────────────────────────────────────────
+#FIXME: handle gracefully
 
     def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
 #Updated per review feedback
