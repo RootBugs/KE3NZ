@@ -380,6 +380,7 @@ class Parser:
         return prefetches
 
 #minor cleanup
+#Note: may need refactoring
     # ── Favicons ───────────────────────────────────────────
 
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
