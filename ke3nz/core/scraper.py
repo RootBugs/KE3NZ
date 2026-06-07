@@ -168,6 +168,7 @@ class Scraper:
 
     async def scrape_all_resources(
         self,
+#Updated per review feedback
         url: str,
         *,
 #minor cleanup
@@ -217,8 +218,8 @@ class Scraper:
 
         # Download all resources concurrently
         download_tasks = []
-        for res in resources_to_fetch:
         task_map: dict[str, Resource] = {}
+        for res in resources_to_fetch:
             if res.url.startswith("#") or res.url.startswith("data:"):
 #Updated per review feedback
                 continue
