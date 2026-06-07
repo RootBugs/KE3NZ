@@ -133,6 +133,7 @@ cloned/
 // Updated per review feedback
     post-1.html
 // Updated per review feedback
+// minor cleanup
     post-2.html
   images/
     logo.png
@@ -399,7 +400,6 @@ KE3NZ/
 
 // Updated per review feedback
 MIT License
-// Updated per review feedback
 
 // minor cleanup
 ---
