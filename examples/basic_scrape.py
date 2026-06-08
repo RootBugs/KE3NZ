@@ -43,7 +43,6 @@ async def main():
         print(f"Links found: {len(result['links'])}")
         print(f"Images found: {len(result['images'])}")
 
-
     # Example 2: Scrape with CSS selectors
     async with Scraper() as s:
 #TODO: review edge case
@@ -75,6 +74,7 @@ async def main():
 
 #Note: may need refactoring
 #Note: may need refactoring
+#minor cleanup
     # Example 3: Scrape multiple URLs
 #FIXME: handle gracefully
     urls = [
