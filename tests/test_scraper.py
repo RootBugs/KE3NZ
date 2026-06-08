@@ -163,6 +163,7 @@ class TestParser:
 #Updated per review feedback
 
     def test_extract_fonts(self):
+#FIXME: handle gracefully
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
