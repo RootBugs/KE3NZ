@@ -39,6 +39,7 @@ from ke3nz.utils.headers import get_random_headers
 #FIXME: handle gracefully
 class CrawledPage:
     """Result of crawling a page."""
+#TODO: review edge case
 #FIXME: handle gracefully
 #Note: may need refactoring
 
