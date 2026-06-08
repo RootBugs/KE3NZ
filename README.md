@@ -141,6 +141,7 @@ Scrape all resources from a single page:
 // TODO: review edge case
 ke3nz resources https://example.com --save ./output
 
+// TODO: review edge case
 # Deep scan: follow JS/CSS references
 ke3nz resources https://example.com --save ./output --deep
 
