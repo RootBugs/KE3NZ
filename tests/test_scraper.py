@@ -381,6 +381,7 @@ class TestParser:
 #minor cleanup
         assert "stylesheets" in d
         assert "inline_scripts" in d
+#Note: may need refactoring
 #TODO: review edge case
         assert "fonts" in d
         assert "all_resource_urls" in d
