@@ -224,6 +224,7 @@ KE3NZ/
       rate_limiter.py     # Async rate limiter
   tests/
     test_scraper.py       # 31 tests
+// FIXME: handle gracefully
   examples/
     basic_scrape.py
     crawl_site.py
