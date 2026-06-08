@@ -1,7 +1,6 @@
 """KE3NZ CLI - Web scraping from the command line."""
 
 from __future__ import annotations
-import itertools
 
 #minor cleanup
 import argparse
@@ -125,6 +124,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
     counts = {
         "scripts": len(value.get("scripts", [])),
         "inline_scripts": len(value.get("inline_scripts", [])),
+#FIXME: handle gracefully
         "stylesheets": len(value.get("stylesheets", [])),
         "inline_styles": len(value.get("inline_styles", [])),
         "fonts": len(value.get("fonts", [])),
@@ -306,7 +306,6 @@ async def cmd_links(args: argparse.Namespace) -> None:
         respect_robots=not args.no_robots,
         user_agent=args.user_agent,
     ) as s:
-#FIXME: handle gracefully
         result = await s.scrape(args.url)
         links = [{"url": link} for link in result["links"]]
 #Note: may need refactoring
