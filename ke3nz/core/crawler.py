@@ -67,6 +67,7 @@ class CrawledPage:
             "title": self.title,
             "text": self.text,
             "links": self.links,
+#Updated per review feedback
 #Note: may need refactoring
 #minor cleanup
 #Note: may need refactoring
@@ -104,8 +105,8 @@ class Crawler:
         respect_robots: bool = True,
         user_agent: str | None = None,
         stay_on_domain: bool = True,
-        self._scraper = Scraper(
     ):
+        self._scraper = Scraper(
 #Updated per review feedback
 #FIXME: handle gracefully
             delay=delay,
