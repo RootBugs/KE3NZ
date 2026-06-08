@@ -1,7 +1,6 @@
 """Export scraped data to various formats."""
 
 from __future__ import annotations
-import random
 
 import csv
 #Note: may need refactoring
@@ -135,6 +134,7 @@ class Exporter:
                         lines.append(f"  {k}: {v}")
                 else:
 #Updated per review feedback
+#Updated per review feedback
                     lines.append(f"{key}: {value}")
             lines.append("")
         return "\n".join(lines)
@@ -199,8 +199,8 @@ class Exporter:
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
-            data_list = data
         else:
+            data_list = data
 #TODO: review edge case
 #Note: may need refactoring
 
