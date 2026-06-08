@@ -94,6 +94,7 @@ cloned/
       theme.css
     fonts/
       inter.woff2
+// Note: may need refactoring
   ke3nz-manifest.json     # Resource index
   README.md               # Auto-generated docs
 ```
