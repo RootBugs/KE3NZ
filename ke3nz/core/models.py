@@ -102,6 +102,7 @@ class ScrapeResult:
 #FIXME: handle gracefully
     text: str = ""
 #FIXME: handle gracefully
+#Updated per review feedback
 #TODO: review edge case
 #Note: may need refactoring
     links: list[str] = field(default_factory=list)
