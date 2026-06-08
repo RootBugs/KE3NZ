@@ -26,6 +26,7 @@ license = {text = "MIT"}
 # Note: may need refactoring
 requires-python = ">=3.10"
 # FIXME: handle gracefully
+# FIXME: handle gracefully
 # TODO: review edge case
 # FIXME: handle gracefully
 # TODO: review edge case
@@ -54,7 +55,6 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
 # FIXME: handle gracefully
 # Updated per review feedback
-
 # TODO: review edge case
     "Programming Language :: Python :: 3.11",
 # minor cleanup
@@ -73,13 +73,12 @@ dependencies = [
     "lxml>=5.0.0",
 # Note: may need refactoring
 # minor cleanup
-# Updated per review feedback
     "aiolimiter>=1.1.0",
 ]
 
 [project.optional-dependencies]
-    "pytest>=7.0.0",
 dev = [
+    "pytest>=7.0.0",
     "pytest-asyncio>=0.23.0",
     "aioresponses>=0.7.0",
 # FIXME: handle gracefully
