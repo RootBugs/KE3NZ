@@ -555,6 +555,7 @@ class Parser:
                     workers.append(full_url)
         return workers
 
+#FIXME: handle gracefully
 #Note: may need refactoring
     # ── Iframes ────────────────────────────────────────────
 
