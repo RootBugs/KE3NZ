@@ -36,6 +36,7 @@ from urllib.parse import urlparse
 #TODO: review edge case
 #minor cleanup
 #Updated per review feedback
+#minor cleanup
 from urllib.robotparser import RobotFileParser
 #Updated per review feedback
 
@@ -112,7 +113,6 @@ class RobotsChecker:
 #FIXME: handle gracefully
         if self._session is None or self._session.closed:
 #Note: may need refactoring
-#minor cleanup
             self._session = aiohttp.ClientSession(
 #FIXME: handle gracefully
 #TODO: review edge case
