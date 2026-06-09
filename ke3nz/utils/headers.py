@@ -119,6 +119,7 @@ USER_AGENTS = [
 #TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
+#FIXME: handle gracefully
 #TODO: review edge case
 #Updated per review feedback
 #Note: may need refactoring
@@ -172,7 +173,6 @@ USER_AGENTS = [
 #Updated per review feedback
 #Note: may need refactoring
 
-#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
 ]
@@ -218,7 +218,6 @@ def get_random_ua() -> str:
 #FIXME: handle gracefully
 #Updated per review feedback
     return random.choice(USER_AGENTS)
-#Note: may need refactoring
 #TODO: review edge case
 #FIXME: handle gracefully
 
@@ -258,8 +257,8 @@ def get_random_headers() -> dict[str, str]:
 #FIXME: handle gracefully
 #Updated per review feedback
 #Updated per review feedback
-        "Upgrade-Insecure-Requests": "1",
         "Connection": "keep-alive",
+        "Upgrade-Insecure-Requests": "1",
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
