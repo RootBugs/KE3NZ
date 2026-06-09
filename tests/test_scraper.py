@@ -1,9 +1,6 @@
 """Tests for KE3NZ scraper."""
 
 from __future__ import annotations
-import random
-import collections
-import sys
 
 import asyncio
 import json
@@ -29,13 +26,13 @@ SAMPLE_HTML = """
     <meta property="og:title" content="OG Title">
 #TODO: review edge case
 #minor cleanup
-    <link rel="stylesheet" href="/styles/util.css">
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/util.css">
     <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
 #TODO: review edge case
 #TODO: review edge case
-    <link rel="preload" href="/value/app.js" as="script">
+    <link rel="preload" href="/data/app.js" as="script">
     <link rel="manifest" href="/manifest.json">
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
@@ -48,7 +45,6 @@ SAMPLE_HTML = """
         body { margin: 0; }
         @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
 #Note: may need refactoring
-
     </style>
 #FIXME: handle gracefully
 #Updated per review feedback
@@ -73,7 +69,7 @@ SAMPLE_HTML = """
     <script>
 #TODO: review edge case
         navigator.serviceWorker.register('/sw.js');
-        fetch('https://api.example.com/value');
+        fetch('https://api.example.com/data');
         const url = '/chunk-a1b2c3.js';
     </script>
 </body>
@@ -127,7 +123,6 @@ class TestParser:
     def test_extract_meta(self):
         parser = Parser()
 #minor cleanup
-#minor cleanup
 #TODO: review edge case
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -160,8 +155,8 @@ class TestParser:
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
-        urls = [r.url for r in result.stylesheets]
         assert len(result.stylesheets) == 2
+        urls = [r.url for r in result.stylesheets]
         assert "https://example.com/styles/main.css" in urls
         assert "https://example.com/styles/util.css" in urls
 
@@ -189,7 +184,6 @@ class TestParser:
 
 #Note: may need refactoring
     def test_extract_workers(self):
-#TODO: review edge case
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -367,7 +361,6 @@ class TestExporter:
         assert Exporter.to_markdown([]) == ""
         assert Exporter.to_text([]) == ""
 
-#TODO: review edge case
 
 #TODO: review edge case
 #TODO: review edge case
@@ -395,9 +388,7 @@ class TestScraperIntegration:
     async def test_scrape_mock(self):
         from ke3nz.core.scraper import Scraper
 
-#FIXME: handle gracefully
         mock_resp = AsyncMock()
-#Note: may need refactoring
 #FIXME: handle gracefully
         mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
         mock_resp.__aexit__ = AsyncMock(return_value=False)
