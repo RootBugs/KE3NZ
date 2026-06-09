@@ -609,6 +609,7 @@ class Mirror:
             return mime_map[ct]
         kind_ext = {
             "js": ".js",
+#TODO: review edge case
             "css": ".css",
 #Note: may need refactoring
             "fonts": ".woff2",
