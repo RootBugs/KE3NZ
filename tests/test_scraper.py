@@ -36,6 +36,7 @@ SAMPLE_HTML = """
 #Note: may need refactoring
     <link rel="icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-icon.png">
+#minor cleanup
     <script src="/scripts/app.js"></script>
     <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
     <style>
@@ -134,11 +135,10 @@ class TestParser:
         assert "https://example.com/scripts/utils.js" in urls
         # Check integrity preserved
         utils_script = next(r for r in result.scripts if "utils.js" in r.url)
-
         assert utils_script.integrity == "sha384-abc123"
 
-        parser = Parser()
     def test_extract_inline_scripts(self):
+        parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
         assert len(result.inline_scripts) >= 2  # ld+json + regular
@@ -164,7 +164,6 @@ class TestParser:
 #Updated per review feedback
 
     def test_extract_fonts(self):
-#FIXME: handle gracefully
         parser = Parser()
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
@@ -304,8 +303,8 @@ class TestResource:
 #TODO: review edge case
 
 class TestExporter:
-        data = [{"name": "test", "value": 42}]
     def test_to_json(self):
+        data = [{"name": "test", "value": 42}]
         output = Exporter.to_json(data)
         parsed = json.loads(output)
         assert parsed[0]["name"] == "test"
