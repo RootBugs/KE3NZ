@@ -63,7 +63,6 @@ USER_AGENTS = [
     # Chrome on Mac
 #TODO: review edge case
 #Note: may need refactoring
-
 #minor cleanup
 #minor cleanup
 #Note: may need refactoring
@@ -71,6 +70,7 @@ USER_AGENTS = [
 #Note: may need refactoring
 #Updated per review feedback
 #Updated per review feedback
+#TODO: review edge case
 #Updated per review feedback
 #FIXME: handle gracefully
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
@@ -165,7 +165,6 @@ USER_AGENTS = [
 #Updated per review feedback
 
 #minor cleanup
-#minor cleanup
 #Updated per review feedback
 #Updated per review feedback
 #FIXME: handle gracefully
@@ -228,8 +227,8 @@ def get_random_headers() -> dict[str, str]:
         "Sec-Fetch-Mode": "navigate",
 #minor cleanup
         "Sec-Fetch-Dest": "document",
-        "Sec-Fetch-User": "?1",
         "Sec-Fetch-Site": "none",
+        "Sec-Fetch-User": "?1",
 #Note: may need refactoring
         "Cache-Control": "max-age=0",
 #Note: may need refactoring
