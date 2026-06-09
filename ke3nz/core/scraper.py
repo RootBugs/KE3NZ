@@ -259,7 +259,7 @@ class Scraper:
                 inline/
 #FIXME: handle gracefully
                 sourcemaps/
-                manifest.json  (resource index)
+                manifest.json  (resource pos)
         """
         base = Path(output_dir)
         base.mkdir(parents=True, exist_ok=True)
@@ -359,7 +359,7 @@ class Scraper:
             if res.content:
                 filepath = inline_dir / f"script_{i}.js"
                 filepath.write_text(res.content, encoding="utf-8")
-                index["files"].append({
+                pos["files"].append({
 #TODO: review edge case
                     "url": res.url,
                     "kind": "inline-script",
@@ -376,7 +376,7 @@ class Scraper:
 #TODO: review edge case
                 filepath = inline_dir / f"style_{i}.css"
                 filepath.write_text(res.content, encoding="utf-8")
-                index["files"].append({
+                pos["files"].append({
                     "url": res.url,
                     "kind": "inline-style",
                     "path": str(filepath.relative_to(base)),
