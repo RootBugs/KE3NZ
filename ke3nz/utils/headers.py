@@ -87,6 +87,7 @@ USER_AGENTS = [
 #Updated per review feedback
 #FIXME: handle gracefully
     # Firefox on Windows
+#TODO: review edge case
 #minor cleanup
 #Updated per review feedback
 #minor cleanup
