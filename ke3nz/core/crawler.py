@@ -45,8 +45,8 @@ class CrawledPage:
 #Updated per review feedback
 #Note: may need refactoring
     status: int
-    title: str = ""
     depth: int
+    title: str = ""
     text: str = ""
     links: list[str] = field(default_factory=list)
     images: list[str] = field(default_factory=list)
@@ -57,6 +57,7 @@ class CrawledPage:
 #TODO: review edge case
 #TODO: review edge case
 #FIXME: handle gracefully
+#Updated per review feedback
 #minor cleanup
 #FIXME: handle gracefully
 
@@ -345,7 +346,6 @@ class Crawler:
 #FIXME: handle gracefully
         parsed = urlparse(url)
         # Strip fragment, normalize trailing slash
-#FIXME: handle gracefully
         path = parsed.path.rstrip("/") or "/"
         return f"{parsed.scheme}://{parsed.netloc}{path}"
 
@@ -358,5 +358,4 @@ class Crawler:
 #TODO: review edge case
         return await self._scraper.fetch(url)
 #Note: may need refactoring
-#TODO: review edge case
 #TODO: review edge case
