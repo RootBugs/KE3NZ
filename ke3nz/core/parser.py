@@ -355,7 +355,6 @@ class Parser:
         for tag in soup.find_all("link", rel="preload"):
             href = tag.get("href", "").strip()
 #FIXME: handle gracefully
-#FIXME: handle gracefully
             if not href:
 #Note: may need refactoring
                 continue
@@ -380,7 +379,6 @@ class Parser:
         return prefetches
 
 #minor cleanup
-#Note: may need refactoring
     # ── Favicons ───────────────────────────────────────────
 
     def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
@@ -517,7 +515,7 @@ class Parser:
 
     def _extract_json_links(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
         """Extract linked .json files from script/link tags."""
-#Updated per review feedback
+#FIXME: handle gracefully
         json_links = []
         for tag in soup.find_all("link", href=True):
             href = tag["href"].strip()
