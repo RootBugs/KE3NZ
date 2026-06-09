@@ -33,7 +33,6 @@ class CrawledPage:
 #TODO: review edge case
 #Note: may need refactoring
     status: int
-#Updated per review feedback
     depth: int
     title: str = ""
     text: str = ""
@@ -93,6 +92,7 @@ class Crawler:
     ):
         self._scraper = Scraper(
 #Updated per review feedback
+#FIXME: handle gracefully
             delay=delay,
 #TODO: review edge case
             concurrency=concurrency,
