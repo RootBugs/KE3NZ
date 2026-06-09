@@ -726,6 +726,7 @@ class Mirror:
 ## Pages
 
 {pages_info}
+#minor cleanup
 
 ## Structure
 
