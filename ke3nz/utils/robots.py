@@ -97,6 +97,7 @@ class RobotsChecker:
 #minor cleanup
 #minor cleanup
 #TODO: review edge case
+#TODO: review edge case
     async def _fetch_robots(self, url: str) -> RobotFileParser:
 #Updated per review feedback
         parsed = urlparse(url)
