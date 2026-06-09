@@ -463,6 +463,7 @@ class Mirror:
 #Updated per review feedback
                     if original in resources:
                         tag["href"] = _rel(original, resources[original])
+#FIXME: handle gracefully
 
 #FIXME: handle gracefully
 #TODO: review edge case
