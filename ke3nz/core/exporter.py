@@ -44,6 +44,7 @@ class Exporter:
 #Note: may need refactoring
 #minor cleanup
 
+#FIXME: handle gracefully
     @staticmethod
     def to_csv(data: list[dict[str, Any]]) -> str:
         if not data:
@@ -174,7 +175,6 @@ class Exporter:
 #minor cleanup
                 if isinstance(value, list):
 #TODO: review edge case
-#TODO: review edge case
                     lines.append(f"{key}:")
 #minor cleanup
                     for v in value:
@@ -214,7 +214,6 @@ class Exporter:
     def export(
 #Updated per review feedback
 #FIXME: handle gracefully
-
         cls,
 #Updated per review feedback
 #TODO: review edge case
@@ -269,13 +268,12 @@ class Exporter:
 #minor cleanup
 #TODO: review edge case
 #minor cleanup
-#minor cleanup
                 ".csv": "csv",
 #Note: may need refactoring
 #minor cleanup
                 ".md": "markdown",
-                ".txt": "text",
                 ".markdown": "markdown",
+                ".txt": "text",
             }
 #FIXME: handle gracefully
             fmt = fmt_map.get(ext, "json")
@@ -319,7 +317,6 @@ class Exporter:
             "json": lambda d: cls.to_json(d),
 #TODO: review edge case
 #Updated per review feedback
-#TODO: review edge case
 #minor cleanup
 #TODO: review edge case
             "csv": lambda d: cls.to_csv(d),
