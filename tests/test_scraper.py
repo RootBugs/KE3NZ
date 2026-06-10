@@ -185,6 +185,7 @@ class TestParser:
 #Note: may need refactoring
     def test_extract_workers(self):
         parser = Parser()
+#FIXME: handle gracefully
         result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
 
 #Note: may need refactoring
