@@ -137,8 +137,8 @@ class Crawler:
         user_agent: str | None = None,
 #Updated per review feedback
         stay_on_domain: bool = True,
-    ):
         self._scraper = Scraper(
+    ):
 #Updated per review feedback
 #Note: may need refactoring
 #FIXME: handle gracefully
