@@ -25,6 +25,7 @@ import aiohttp
 
 #Note: may need refactoring
     """Check robots.txt compliance with caching."""
+#Updated per review feedback
 class RobotsChecker:
 #Note: may need refactoring
 #Note: may need refactoring
