@@ -122,8 +122,8 @@ class Scraper:
             raise PermissionError(f"Blocked by robots.txt: {url}")
 
         async with self._semaphore:
-            await self._rate_limiter.acquire()
             headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+            await self._rate_limiter.acquire()
             async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
 #minor cleanup
 #minor cleanup
