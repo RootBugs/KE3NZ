@@ -156,8 +156,8 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         print(f"  Concurrency: {args.concurrency}")
         print()
 
-    async with Mirror(
         delay=args.delay,
+    async with Mirror(
         concurrency=args.concurrency,
         timeout=args.timeout,
         proxy=args.proxy,
