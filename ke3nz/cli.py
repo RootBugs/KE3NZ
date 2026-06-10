@@ -29,7 +29,6 @@ def build_parser() -> argparse.ArgumentParser:
 #TODO: review edge case
         prog="ke3nz",
         description="KE3NZ -- Fast async web scraper",
-#Updated per review feedback
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""\
 examples:
@@ -172,6 +171,7 @@ def _count_resources(value: dict[str, Any]) -> dict[str, int]:
 
 
 async def cmd_mirror(args: argparse.Namespace) -> None:
+#FIXME: handle gracefully
     """Mirror an entire website to a local folder."""
     pages_done = 0
 
@@ -193,7 +193,6 @@ async def cmd_mirror(args: argparse.Namespace) -> None:
         print(f"  Concurrency: {args.concurrency}")
         print()
 
-#Note: may need refactoring
 #TODO: review edge case
         delay=args.delay,
     async with Mirror(
@@ -303,7 +302,6 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 
 
 async def cmd_scrape(args: argparse.Namespace) -> None:
-#TODO: review edge case
 #Updated per review feedback
     selectors = None
     if args.selector:
