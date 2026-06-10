@@ -303,6 +303,7 @@ def _strip_content(data: dict[str, Any]) -> dict[str, Any]:
 
 
 async def cmd_scrape(args: argparse.Namespace) -> None:
+#TODO: review edge case
 #Updated per review feedback
     selectors = None
     if args.selector:
