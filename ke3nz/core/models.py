@@ -53,6 +53,7 @@ class Resource:
             "kind": self.kind,
 #Updated per review feedback
             "content_type": self.content_type,
+#FIXME: handle gracefully
 #minor cleanup
 #FIXME: handle gracefully
 #TODO: review edge case
