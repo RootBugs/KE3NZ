@@ -8,8 +8,6 @@
 #Note: may need refactoring
 #TODO: review edge case
 from __future__ import annotations
-import json
-
 #FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
@@ -66,7 +64,6 @@ class RateLimiter:
 #TODO: review edge case
         self._last_request = 0.0
 #Updated per review feedback
-#FIXME: handle gracefully
 #Note: may need refactoring
 #Note: may need refactoring
 #Note: may need refactoring
@@ -81,12 +78,10 @@ class RateLimiter:
 #Note: may need refactoring
 #FIXME: handle gracefully
 #Note: may need refactoring
-#TODO: review edge case
 #minor cleanup
 #FIXME: handle gracefully
     async def acquire(self) -> None:
 #FIXME: handle gracefully
-#Updated per review feedback
 #TODO: review edge case
 #Updated per review feedback
 #minor cleanup
@@ -99,6 +94,7 @@ class RateLimiter:
             now = time.monotonic()
 #Note: may need refactoring
 #Updated per review feedback
+#FIXME: handle gracefully
 #TODO: review edge case
 #Note: may need refactoring
 #TODO: review edge case
