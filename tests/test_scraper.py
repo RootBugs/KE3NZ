@@ -1,0 +1,357 @@
+"""Tests for KE3NZ scraper."""
+
+from __future__ import annotations
+
+import asyncio
+import json
+from unittest.mock import AsyncMock, MagicMock, patch
+
+import pytest
+
+from ke3nz.core.parser import Parser
+from ke3nz.core.exporter import Exporter
+from ke3nz.core.models import Resource
+from ke3nz.utils.headers import get_random_headers, get_random_ua
+
+
+SAMPLE_HTML = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test Page</title>
+    <meta name="description" content="A test page for KE3NZ">
+    <meta property="og:title" content="OG Title">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/util.css">
+    <link rel="preload" as="font" href="/fonts/inter.woff2" crossorigin>
+    <link rel="preload" as="font" href="/fonts/inter-bold.woff2" crossorigin>
+    <link rel="preload" href="/data/app.js" as="script">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-icon.png">
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/utils.js" integrity="sha384-abc123"></script>
+    <style>
+        body { margin: 0; }
+        @font-face { font-family: 'Custom'; src: url('/fonts/custom.woff2'); }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <p>This is a test page.</p>
+    <a href="/page1">Page 1</a>
+    <a href="https://example.com/page2">Page 2</a>
+    <a href="javascript:void(0)">JS Link</a>
+    <a href="mailto:test@test.com">Email</a>
+    <img src="/image1.jpg" alt="Image 1">
+    <img src="https://example.com/image2.png" alt="Image 2">
+    <img srcset="/image3-sm.jpg 480w, /image3-lg.jpg 1024w">
+    <video src="/video.mp4" poster="/poster.jpg"></video>
+    <audio src="/audio.mp3"></audio>
+    <iframe src="https://embed.example.com/widget"></iframe>
+    <script type="application/ld+json">{"@type": "WebPage"}</script>
+    <script>
+        navigator.serviceWorker.register('/sw.js');
+        fetch('https://api.example.com/data');
+        const url = '/chunk-a1b2c3.js';
+    </script>
+</body>
+</html>
+"""
+
+
+class TestParser:
+    def test_parse_basic(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert result.url == "https://example.com"
+        assert result.status == 200
+        assert result.title == "Test Page"
+        assert "Hello World" in result.text
+        assert "This is a test page." in result.text
+
+    def test_extract_links(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert "https://example.com/page1" in result.links
+        assert "https://example.com/page2" in result.links
+        assert not any("javascript:" in link for link in result.links)
+        assert not any("mailto:" in link for link in result.links)
+
+    def test_extract_images(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert "https://example.com/image1.jpg" in result.images
+        assert "https://example.com/image2.png" in result.images
+        assert "https://example.com/image3-sm.jpg" in result.images
+        assert "https://example.com/image3-lg.jpg" in result.images
+
+    def test_extract_images_from_video_poster(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert "https://example.com/poster.jpg" in result.videos
+
+    def test_extract_meta(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert result.meta.get("description") == "A test page for KE3NZ"
+        assert result.meta.get("og:title") == "OG Title"
+
+    def test_extract_external_scripts(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert len(result.scripts) == 2
+        urls = [r.url for r in result.scripts]
+        assert "https://example.com/scripts/app.js" in urls
+        assert "https://example.com/scripts/utils.js" in urls
+        # Check integrity preserved
+        utils_script = next(r for r in result.scripts if "utils.js" in r.url)
+        assert utils_script.integrity == "sha384-abc123"
+
+    def test_extract_inline_scripts(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert len(result.inline_scripts) >= 2  # ld+json + regular
+        contents = [r.content for r in result.inline_scripts]
+        assert any("serviceWorker.register" in c for c in contents)
+
+    def test_extract_external_stylesheets(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert len(result.stylesheets) == 2
+        urls = [r.url for r in result.stylesheets]
+        assert "https://example.com/styles/main.css" in urls
+        assert "https://example.com/styles/util.css" in urls
+
+    def test_extract_inline_styles(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert len(result.inline_styles) >= 1
+        assert any("margin" in r.content for r in result.inline_styles)
+
+    def test_extract_fonts(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        # Should find preloaded fonts + inline @font-face
+        font_urls = [r.url for r in result.fonts]
+        assert any("inter.woff2" in u for u in font_urls)
+        assert any("inter-bold.woff2" in u for u in font_urls)
+        assert any("custom.woff2" in u for u in font_urls)
+
+    def test_extract_workers(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert "https://example.com/sw.js" in result.workers
+
+    def test_extract_iframes(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert "https://embed.example.com/widget" in result.iframes
+
+    def test_extract_favicons(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert "https://example.com/favicon.ico" in result.favicons
+        assert "https://example.com/apple-icon.png" in result.favicons
+
+    def test_extract_configs(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        manifest_urls = [r.url for r in result.configs if r.kind == "manifest"]
+        assert "https://example.com/manifest.json" in manifest_urls
+        jsonld = [r for r in result.configs if r.kind == "json-ld"]
+        assert len(jsonld) == 1
+
+    def test_extract_videos(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert "https://example.com/video.mp4" in result.videos
+
+    def test_extract_audios(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert "https://example.com/audio.mp3" in result.audios
+
+    def test_all_resource_urls(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+
+        assert len(result.all_resource_urls) > 10
+        assert "https://example.com/scripts/app.js" in result.all_resource_urls
+        assert "https://example.com/styles/main.css" in result.all_resource_urls
+
+    def test_css_selectors(self):
+        parser = Parser()
+        results = parser.extract_by_selectors(SAMPLE_HTML, {
+            "heading": "h1",
+            "cards": ".card",
+        })
+
+        assert results["heading"] == ["Hello World"]
+        assert results["cards"] == []
+
+    def test_attr_selector(self):
+        parser = Parser()
+        results = parser.extract_by_selectors(SAMPLE_HTML, {
+            "links": "a::attr(href)",
+        })
+
+        assert "https://example.com/page2" in results["links"]
+        assert "/page1" in results["links"]
+
+    def test_to_dict(self):
+        parser = Parser()
+        result = parser.parse("https://example.com", 200, SAMPLE_HTML, {})
+        d = result.to_dict()
+
+        assert isinstance(d, dict)
+        assert d["url"] == "https://example.com"
+        assert d["status"] == 200
+        assert "scripts" in d
+        assert "stylesheets" in d
+        assert "inline_scripts" in d
+        assert "fonts" in d
+        assert "all_resource_urls" in d
+
+    def test_extract_urls_from_js(self):
+        js = """
+        import { foo } from 'https://cdn.example.com/lib.js';
+        fetch('https://api.example.com/data');
+        const worker = new Worker('/worker.js');
+        //# sourceMappingURL=https://cdn.example.com/app.js.map
+        """
+        urls = Parser.extract_urls_from_content(js, "https://example.com")
+        url_list = [u for u, _ in urls]
+
+        assert "https://cdn.example.com/lib.js" in url_list
+        assert "https://api.example.com/data" in url_list
+        assert "https://cdn.example.com/app.js.map" in url_list
+
+
+class TestResource:
+    def test_to_dict(self):
+        r = Resource(url="https://example.com/app.js", kind="script", content="console.log()", size=15)
+        d = r.to_dict()
+        assert d["url"] == "https://example.com/app.js"
+        assert d["kind"] == "script"
+        assert d["size"] == 15
+
+
+class TestExporter:
+    def test_to_json(self):
+        data = [{"name": "test", "value": 42}]
+        output = Exporter.to_json(data)
+        parsed = json.loads(output)
+        assert parsed[0]["name"] == "test"
+
+    def test_to_csv(self):
+        data = [{"name": "test", "value": 42}]
+        output = Exporter.to_csv(data)
+        assert "name" in output
+        assert "test" in output
+
+    def test_to_markdown(self):
+        data = [{"name": "test", "value": 42}]
+        output = Exporter.to_markdown(data)
+        assert "| name |" in output
+        assert "| test |" in output
+
+    def test_to_text(self):
+        data = [{"name": "test", "value": 42}]
+        output = Exporter.to_text(data)
+        assert "name: test" in output
+        assert "value: 42" in output
+
+    def test_empty_data(self):
+        assert Exporter.to_json([]) == "[]"
+        assert Exporter.to_csv([]) == ""
+        assert Exporter.to_markdown([]) == ""
+        assert Exporter.to_text([]) == ""
+
+
+class TestHeaders:
+    def test_random_ua(self):
+        ua = get_random_ua()
+        assert isinstance(ua, str)
+        assert len(ua) > 20
+
+    def test_random_headers(self):
+        headers = get_random_headers()
+        assert "User-Agent" in headers
+        assert "Accept" in headers
+        assert "Accept-Language" in headers
+
+
+class TestScraperIntegration:
+    """Integration tests using mocked HTTP responses."""
+
+    @pytest.mark.asyncio
+    async def test_scrape_mock(self):
+        from ke3nz.core.scraper import Scraper
+
+        mock_resp = AsyncMock()
+        mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
+        mock_resp.__aexit__ = AsyncMock(return_value=False)
+        mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
+        mock_resp.status = 200
+        mock_resp.headers = {"content-type": "text/html"}
+
+        mock_session = MagicMock()
+        mock_session.get = MagicMock(return_value=mock_resp)
+        mock_session.close = AsyncMock()
+
+        with patch("aiohttp.ClientSession", return_value=mock_session):
+            async with Scraper(delay=0, respect_robots=False) as s:
+                result = await s.scrape("https://example.com")
+                assert result["status"] == 200
+                assert result["title"] == "Test Page"
+                assert len(result["links"]) > 0
+                assert len(result["scripts"]) > 0
+                assert len(result["stylesheets"]) > 0
+                assert len(result["inline_scripts"]) > 0
+                assert len(result["fonts"]) > 0
+
+    @pytest.mark.asyncio
+    async def test_scrape_all_resources_mock(self):
+        from ke3nz.core.scraper import Scraper
+
+        mock_resp = AsyncMock()
+        mock_resp.__aenter__ = AsyncMock(return_value=mock_resp)
+        mock_resp.__aexit__ = AsyncMock(return_value=False)
+        mock_resp.text = AsyncMock(return_value=SAMPLE_HTML)
+        mock_resp.status = 200
+        mock_resp.headers = {"content-type": "text/html"}
+
+        mock_session = MagicMock()
+        mock_session.get = MagicMock(return_value=mock_resp)
+        mock_session.close = AsyncMock()
+
+        with patch("aiohttp.ClientSession", return_value=mock_session):
+            async with Scraper(delay=0, respect_robots=False) as s:
+                data = await s.scrape_all_resources(
+                    "https://example.com",
+                    download_content=True,
+                    follow_deep=False,
+                )
+                assert data["status"] == 200
+                assert len(data["scripts"]) > 0
+                assert len(data["stylesheets"]) > 0
+                assert len(data["fonts"]) > 0
+                assert len(data["inline_scripts"]) > 0
+                assert len(data["inline_styles"]) > 0

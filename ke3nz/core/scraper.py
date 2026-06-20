@@ -1,0 +1,357 @@
+"""Core async scraper engine."""
+
+from __future__ import annotations
+
+import asyncio
+from pathlib import Path
+from typing import Any
+from urllib.parse import urlparse
+
+import aiohttp
+
+from ke3nz.core.models import Resource, ScrapeResult
+from ke3nz.core.parser import Parser
+from ke3nz.utils.headers import get_random_headers
+from ke3nz.utils.rate_limiter import RateLimiter
+from ke3nz.utils.robots import RobotsChecker
+
+
+class Scraper:
+    """Async web scraper with rate limiting, robots.txt support, and proxy."""
+
+    def __init__(
+        self,
+        *,
+        delay: float = 1.0,
+        concurrency: int = 5,
+        timeout: int = 30,
+        proxy: str | None = None,
+        respect_robots: bool = True,
+        user_agent: str | None = None,
+    ):
+        self.delay = delay
+        self.concurrency = concurrency
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.proxy = proxy
+        self.respect_robots = respect_robots
+        self.user_agent = user_agent
+        self._session: aiohttp.ClientSession | None = None
+        self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
+        self._robots = RobotsChecker()
+        self._semaphore = asyncio.Semaphore(concurrency)
+        self._parser = Parser()
+
+    async def __aenter__(self) -> Scraper:
+        headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
+        self._session = aiohttp.ClientSession(
+            timeout=self.timeout,
+            headers=headers,
+        )
+        return self
+
+    async def __aexit__(self, *args: Any) -> None:
+        if self._session:
+            await self._session.close()
+
+    async def _check_robots(self, url: str) -> bool:
+        if not self.respect_robots:
+            return True
+        return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
+
+    async def fetch(self, url: str) -> ScrapeResult:
+        """Fetch a single URL and return parsed results."""
+        if not await self._check_robots(url):
+            raise PermissionError(f"Blocked by robots.txt: {url}")
+
+        async with self._semaphore:
+            await self._rate_limiter.acquire()
+            headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+            async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
+                html = await resp.text()
+                result = self._parser.parse(url, resp.status, html, dict(resp.headers))
+                return result
+
+    async def fetch_resource(self, url: str) -> tuple[int, str, dict[str, str]]:
+        """Fetch a raw resource and return (status, body, headers)."""
+        if not await self._check_robots(url):
+            raise PermissionError(f"Blocked by robots.txt: {url}")
+
+        async with self._semaphore:
+            await self._rate_limiter.acquire()
+            headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+            async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
+                body = await resp.text()
+                return resp.status, body, dict(resp.headers)
+
+    async def fetch_bytes(self, url: str) -> tuple[int, bytes, dict[str, str]]:
+        """Fetch a resource as raw bytes."""
+        if not await self._check_robots(url):
+            raise PermissionError(f"Blocked by robots.txt: {url}")
+
+        async with self._semaphore:
+            await self._rate_limiter.acquire()
+            headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+            async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
+                body = await resp.read()
+                return resp.status, body, dict(resp.headers)
+
+    async def scrape(
+        self,
+        url: str,
+        *,
+        selectors: dict[str, str] | None = None,
+    ) -> dict[str, Any]:
+        """Scrape a URL with optional CSS selectors.
+
+        Returns dict with page data, all resource info, and selector results.
+        """
+        result = await self.fetch(url)
+
+        if selectors:
+            result.selector_results = self._parser.extract_by_selectors(
+                result.html, selectors
+            )
+
+        return result.to_dict()
+
+    async def scrape_all_resources(
+        self,
+        url: str,
+        *,
+        download_content: bool = True,
+        follow_deep: bool = False,
+    ) -> dict[str, Any]:
+        """Scrape a page and download ALL linked resources (JS, CSS, JSON, etc.).
+
+        Args:
+            url: Target URL.
+            download_content: If True, download and include the body of each resource.
+            follow_deep: If True, extract URLs from downloaded JS/CSS and fetch those too.
+
+        Returns:
+            Full resource manifest.
+        """
+        result = await self.fetch(url)
+
+        # Collect all resources to download
+        resources_to_fetch: list[Resource] = []
+        resources_to_fetch.extend(result.scripts)
+        resources_to_fetch.extend(result.stylesheets)
+        resources_to_fetch.extend(result.fonts)
+        resources_to_fetch.extend(result.json_data)
+        resources_to_fetch.extend(result.configs)
+        resources_to_fetch.extend(result.sourcemaps)
+
+        if not download_content:
+            return result.to_dict()
+
+        # Download all resources concurrently
+        download_tasks = []
+        task_map: dict[str, Resource] = {}
+        for res in resources_to_fetch:
+            if res.url.startswith("#") or res.url.startswith("data:"):
+                continue
+            if res.url not in task_map:
+                task_map[res.url] = res
+                download_tasks.append(self._download_resource(res))
+
+        await asyncio.gather(*download_tasks, return_exceptions=True)
+
+        # Deep extraction: find URLs inside downloaded JS/CSS
+        if follow_deep:
+            deep_urls = set()
+            for res in resources_to_fetch:
+                if res.content and res.kind in ("script", "stylesheet"):
+                    urls = self._parser.extract_urls_from_content(res.content, res.url)
+                    for found_url, kind in urls:
+                        if found_url not in deep_urls and found_url not in task_map:
+                            deep_urls.add(found_url)
+                            deep_res = Resource(url=found_url, kind=kind)
+                            resources_to_fetch.append(deep_res)
+                            task_map[found_url] = deep_res
+
+            # Download deep resources
+            new_tasks = []
+            for res in resources_to_fetch:
+                if res.url not in task_map or res.content:
+                    continue
+                new_tasks.append(self._download_resource(res))
+            if new_tasks:
+                await asyncio.gather(*new_tasks, return_exceptions=True)
+
+        # Also download inline script/style content (already parsed)
+        # They already have content from the HTML parse
+
+        # Update result with downloaded content
+        result.scripts = [task_map.get(r.url, r) for r in result.scripts if r.url in task_map or not r.url.startswith("#")]
+        result.stylesheets = [task_map.get(r.url, r) for r in result.stylesheets if r.url in task_map or not r.url.startswith("#")]
+        result.fonts = [task_map.get(r.url, r) for r in result.fonts if r.url in task_map or not r.url.startswith("#")]
+        result.json_data = [task_map.get(r.url, r) for r in result.json_data if r.url in task_map or not r.url.startswith("#")]
+        result.configs = [task_map.get(r.url, r) for r in result.configs if r.url in task_map or not r.url.startswith("#")]
+        result.sourcemaps = [task_map.get(r.url, r) for r in result.sourcemaps if r.url in task_map or not r.url.startswith("#")]
+
+        return result.to_dict()
+
+    async def _download_resource(self, resource: Resource) -> None:
+        """Download a resource and populate its content/size."""
+        try:
+            is_binary = resource.kind in ("font", "image") or resource.url.endswith(('.woff', '.woff2', '.ttf', '.eot', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.svg', '.mp4', '.mp3', '.avif'))
+            if is_binary:
+                status, body, headers = await self.fetch_bytes(resource.url)
+                resource.content_type = headers.get("content-type", "")
+                resource.size = len(body)
+            else:
+                status, body, headers = await self.fetch_resource(resource.url)
+                resource.content = body
+                resource.content_type = headers.get("content-type", "")
+                resource.size = len(body.encode("utf-8"))
+        except Exception:
+            resource.content = f"[failed to fetch: {resource.url}]"
+
+    async def fetch_many(self, urls: list[str]) -> list[ScrapeResult]:
+        """Fetch multiple URLs concurrently."""
+        tasks = [self.fetch(url) for url in urls]
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+        return [r for r in results if isinstance(r, ScrapeResult)]
+
+    def save_resources(self, data: dict[str, Any], output_dir: str | Path) -> Path:
+        """Save all downloaded resources to disk, organized by type.
+
+        Creates structure:
+            output_dir/
+                scripts/
+                styles/
+                fonts/
+                json/
+                configs/
+                inline/
+                sourcemaps/
+                manifest.json  (resource index)
+        """
+        base = Path(output_dir)
+        base.mkdir(parents=True, exist_ok=True)
+
+        index: dict[str, Any] = {
+            "source_url": data.get("url"),
+            "title": data.get("title"),
+            "files": [],
+        }
+
+        for kind, folder in [
+            ("script", "scripts"),
+            ("stylesheet", "styles"),
+            ("font", "fonts"),
+            ("json", "json"),
+            ("json-ld", "json"),
+            ("manifest", "configs"),
+            ("sourcemap", "sourcemaps"),
+            ("preload", "preloads"),
+        ]:
+            resources = []
+            if kind == "script":
+                resources = data.get("scripts", [])
+            elif kind == "stylesheet":
+                resources = data.get("stylesheets", [])
+            elif kind == "font":
+                resources = data.get("fonts", [])
+            elif kind in ("json", "json-ld"):
+                resources = data.get("json_data", [])
+            elif kind == "manifest":
+                resources = data.get("configs", [])
+            elif kind == "sourcemap":
+                resources = data.get("sourcemaps", [])
+            elif kind == "preload":
+                resources = data.get("preloads", [])
+
+            dir_path = base / folder
+            dir_path.mkdir(exist_ok=True)
+
+            for i, res in enumerate(resources):
+                if isinstance(res, dict):
+                    res = Resource(**res)
+                if not res.content:
+                    continue
+
+                # Determine filename from URL
+                parsed = urlparse(res.url)
+                filename = Path(parsed.path).name or f"{kind}_{i}"
+                # Add extension if missing
+                if "." not in filename:
+                    ext = {
+                        "script": ".js",
+                        "stylesheet": ".css",
+                        "font": ".woff2",
+                        "json": ".json",
+                        "json-ld": ".json",
+                        "manifest": ".json",
+                        "sourcemap": ".map",
+                    }.get(kind, ".txt")
+                    filename += ext
+
+                filepath = dir_path / filename
+                # Avoid overwrites
+                counter = 1
+                while filepath.exists():
+                    filepath = dir_path / f"{filepath.stem}_{counter}{filepath.suffix}"
+                    counter += 1
+
+                # Fonts and images are binary — write as bytes
+                if kind in ("font",) or filepath.suffix in (".woff", ".woff2", ".ttf", ".eot", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".avif", ".mp4", ".mp3"):
+                    filepath.write_bytes(res.content if isinstance(res.content, bytes) else res.content.encode("utf-8"))
+                else:
+                    filepath.write_text(res.content, encoding="utf-8")
+                index["files"].append({
+                    "url": res.url,
+                    "kind": kind,
+                    "path": str(filepath.relative_to(base)),
+                    "size": res.size,
+                })
+
+        # Save inline scripts/styles
+        inline_dir = base / "inline"
+        inline_dir.mkdir(exist_ok=True)
+
+        for i, res in enumerate(data.get("inline_scripts", [])):
+            if isinstance(res, dict):
+                res = Resource(**res)
+            if res.content:
+                filepath = inline_dir / f"script_{i}.js"
+                filepath.write_text(res.content, encoding="utf-8")
+                index["files"].append({
+                    "url": res.url,
+                    "kind": "inline-script",
+                    "path": str(filepath.relative_to(base)),
+                    "size": res.size,
+                })
+
+        for i, res in enumerate(data.get("inline_styles", [])):
+            if isinstance(res, dict):
+                res = Resource(**res)
+            if res.content:
+                filepath = inline_dir / f"style_{i}.css"
+                filepath.write_text(res.content, encoding="utf-8")
+                index["files"].append({
+                    "url": res.url,
+                    "kind": "inline-style",
+                    "path": str(filepath.relative_to(base)),
+                    "size": res.size,
+                })
+
+        # Save HTML
+        html_path = base / "page.html"
+        html_path.write_text(data.get("html", ""), encoding="utf-8")
+        index["files"].append({
+            "url": data.get("url"),
+            "kind": "html",
+            "path": "page.html",
+            "size": len(data.get("html", "").encode("utf-8")),
+        })
+
+        # Save manifest index
+        manifest_path = base / "manifest.json"
+        manifest_path.write_text(
+            __import__("json").dumps(index, indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+
+        return base

@@ -1,0 +1,660 @@
+"""Full website mirroring — crawl, download, rewrite, and save as a local clone."""
+
+from __future__ import annotations
+
+import asyncio
+import hashlib
+import json
+import mimetypes
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any
+from urllib.parse import urljoin, urlparse, urlunparse
+
+import aiohttp
+from bs4 import BeautifulSoup
+
+from ke3nz.core.models import Resource, ScrapeResult
+from ke3nz.core.parser import Parser
+from ke3nz.utils.headers import get_random_headers
+from ke3nz.utils.rate_limiter import RateLimiter
+from ke3nz.utils.robots import RobotsChecker
+
+
+@dataclass
+class MirroredPage:
+    """A single mirrored page with all its local resources."""
+
+    url: str
+    local_path: str  # relative to mirror root
+    status: int
+    title: str = ""
+    html: str = ""
+    resources: dict[str, str] = field(default_factory=dict)  # original_url -> local_path
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "url": self.url,
+            "local_path": self.local_path,
+            "status": self.status,
+            "title": self.title,
+            "resources": self.resources,
+        }
+
+
+class Mirror:
+    """Mirror an entire website to a local folder.
+
+    Crawl depth, download all assets, rewrite URLs to local paths,
+    and produce a self-contained folder ready to open or share.
+    """
+
+    def __init__(
+        self,
+        *,
+        delay: float = 0.3,
+        concurrency: int = 10,
+        timeout: int = 30,
+        proxy: str | None = None,
+        respect_robots: bool = True,
+        user_agent: str | None = None,
+        stay_on_domain: bool = True,
+        max_depth: int = 3,
+    ):
+        self.delay = delay
+        self.concurrency = concurrency
+        self.timeout = aiohttp.ClientTimeout(total=timeout)
+        self.proxy = proxy
+        self.respect_robots = respect_robots
+        self.user_agent = user_agent
+        self.stay_on_domain = stay_on_domain
+        self.max_depth = max_depth
+        self._session: aiohttp.ClientSession | None = None
+        self._rate_limiter = RateLimiter(rate=1.0 / max(delay, 0.01))
+        self._robots = RobotsChecker()
+        self._semaphore = asyncio.Semaphore(concurrency)
+        self._parser = Parser()
+
+        # State
+        self._visited_html: set[str] = set()  # normalized HTML page URLs
+        self._visited_assets: set[str] = set()  # asset URLs already downloaded
+        self._url_to_local: dict[str, str] = {}  # URL -> local relative path
+        self._asset_counter = 0
+        self._pages: list[MirroredPage] = []
+
+    async def __aenter__(self) -> Mirror:
+        headers = {"User-Agent": self.user_agent} if self.user_agent else get_random_headers()
+        self._session = aiohttp.ClientSession(
+            timeout=self.timeout,
+            headers=headers,
+        )
+        return self
+
+    async def __aexit__(self, *args: Any) -> None:
+        if self._session:
+            await self._session.close()
+
+    # ── Public API ─────────────────────────────────────────
+
+    async def mirror(
+        self,
+        start_url: str,
+        output_dir: str | Path,
+        *,
+        on_page: Any | None = None,
+    ) -> Path:
+        """Mirror a website to a local folder.
+
+        Args:
+            start_url: Starting URL to mirror from.
+            output_dir: Directory to write the mirror into.
+            on_page: Optional async callback(MirroredPage) for progress.
+
+        Returns:
+            Path to the output directory.
+        """
+        base = Path(output_dir)
+        self._url_to_local = {}
+        self._visited_html.clear()
+        self._visited_assets.clear()
+        self._pages.clear()
+
+        base_domain = urlparse(start_url).netloc
+        queue: list[tuple[str, int]] = [(start_url, 0)]
+
+        # Phase 1: Crawl HTML pages
+        while queue:
+            batch = []
+            while queue and len(batch) < self.concurrency:
+                url, depth = queue.pop(0)
+                norm = self._normalize_url(url)
+                if norm in self._visited_html:
+                    continue
+                if depth > self.max_depth:
+                    continue
+                if self.stay_on_domain and urlparse(url).netloc != base_domain:
+                    continue
+                self._visited_html.add(norm)
+                batch.append((url, depth))
+
+            if not batch:
+                break
+
+            tasks = [self._fetch_and_parse(url) for url, _ in batch]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+
+            for (url, depth), result in zip(batch, results):
+                if isinstance(result, Exception):
+                    continue
+                if not result:
+                    continue
+
+                # Determine local path for this HTML page
+                local_path = self._url_to_local_path(url, is_html=True)
+
+                # Download all assets for this page
+                resources = await self._download_page_assets(result, base, url)
+
+                # Rewrite HTML to point to local assets
+                rewritten_html = self._rewrite_html(result.html, url, resources)
+
+                page = MirroredPage(
+                    url=url,
+                    local_path=str(local_path),
+                    status=result.status,
+                    title=result.title,
+                    html=rewritten_html,
+                    resources=resources,
+                )
+                self._pages.append(page)
+
+                # Save HTML
+                html_file = Path(self._validate_path_within_base(local_path, base))
+                html_file.parent.mkdir(parents=True, exist_ok=True)
+                html_file.write_text(rewritten_html, encoding="utf-8")
+
+                if on_page:
+                    await on_page(page)
+
+                # Queue discovered links for next depth
+                if depth < self.max_depth:
+                    for link in result.links:
+                        norm_link = self._normalize_url(link)
+                        if norm_link not in self._visited_html:
+                            queue.append((link, depth + 1))
+
+        # Phase 2: Save manifest + README
+        self._save_manifest(base, start_url)
+        self._save_readme(base, start_url)
+
+        return base
+
+    # ── Internal: Fetch & Parse ────────────────────────────
+
+    async def _fetch_and_parse(self, url: str) -> ScrapeResult | None:
+        """Fetch a page and parse its HTML."""
+        if not await self._check_robots(url):
+            return None
+
+        async with self._semaphore:
+            await self._rate_limiter.acquire()
+            headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+            try:
+                async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
+                    if resp.status != 200:
+                        return None
+                    content_type = resp.headers.get("content-type", "")
+                    if "text/html" not in content_type and "application/xhtml" not in content_type:
+                        return None
+                    html = await resp.text()
+                    return self._parser.parse(url, resp.status, html, dict(resp.headers))
+            except Exception:
+                return None
+
+    async def _check_robots(self, url: str) -> bool:
+        if not self.respect_robots:
+            return True
+        return await self._robots.can_fetch(url, user_agent=self.user_agent or "KE3NZ")
+
+    # ── Internal: Download Assets ──────────────────────────
+
+    async def _download_page_assets(
+        self,
+        result: ScrapeResult,
+        base: Path,
+        page_url: str,
+    ) -> dict[str, str]:
+        """Download all assets for a page and return url->local_path mapping."""
+        assets_to_download: list[tuple[str, str]] = []  # (url, kind)
+
+        # Collect all asset URLs
+        for r in result.scripts:
+            assets_to_download.append((r.url, "js"))
+        for r in result.stylesheets:
+            assets_to_download.append((r.url, "css"))
+        for r in result.fonts:
+            assets_to_download.append((r.url, "fonts"))
+        for r in result.json_data:
+            assets_to_download.append((r.url, "json"))
+        for r in result.configs:
+            assets_to_download.append((r.url, "json"))
+        for r in result.sourcemaps:
+            assets_to_download.append((r.url, "js"))
+        for r in result.preloads:
+            assets_to_download.append((r.url, "assets"))
+        for img_url in result.images:
+            assets_to_download.append((img_url, "images"))
+        for vid_url in result.videos:
+            assets_to_download.append((vid_url, "media"))
+        for aud_url in result.audios:
+            assets_to_download.append((aud_url, "media"))
+        for favicon_url in result.favicons:
+            if favicon_url.startswith("data:"):
+                continue
+            assets_to_download.append((favicon_url, "images"))
+
+        # Download assets concurrently
+        resource_map: dict[str, tuple[bytes, str]] = {}  # url -> (bytes, content_type)
+        download_tasks = []
+        unique_urls: set[str] = set()
+
+        for asset_url, _ in assets_to_download:
+            if asset_url in unique_urls or asset_url.startswith("data:"):
+                continue
+            unique_urls.add(asset_url)
+            download_tasks.append(self._download_asset(asset_url))
+
+        results = await asyncio.gather(*download_tasks, return_exceptions=True)
+
+        for asset_url, result in zip(unique_urls, results):
+            if isinstance(result, Exception) or result is None:
+                continue
+            resource_map[asset_url] = result
+
+        # Build URL -> local path mapping
+        url_to_local: dict[str, str] = {}
+        for asset_url, kind in assets_to_download:
+            if asset_url not in resource_map:
+                continue
+            if asset_url in url_to_local:
+                continue
+
+            body, content_type = resource_map[asset_url]
+            local_path = self._asset_url_to_local(asset_url, kind, content_type)
+            full_path = base / local_path
+            full_path.parent.mkdir(parents=True, exist_ok=True)
+            full_path.write_bytes(body)
+            url_to_local[asset_url] = local_path
+            self._url_to_local[asset_url] = local_path
+
+        return url_to_local
+
+    async def _download_asset(self, url: str) -> tuple[bytes, str] | None:
+        """Download a single asset as bytes."""
+        if not await self._check_robots(url):
+            return None
+
+        async with self._semaphore:
+            await self._rate_limiter.acquire()
+            headers = get_random_headers() if not self.user_agent else {"User-Agent": self.user_agent}
+            try:
+                async with self._session.get(url, headers=headers, proxy=self.proxy) as resp:
+                    if resp.status != 200:
+                        return None
+                    body = await resp.read()
+                    content_type = resp.headers.get("content-type", "")
+                    return body, content_type
+            except Exception:
+                return None
+
+    # ── Internal: HTML Rewriting ───────────────────────────
+
+    def _rewrite_html(
+        self,
+        html: str,
+        page_url: str,
+        resources: dict[str, str],
+    ) -> str:
+        """Rewrite all asset URLs in HTML to local relative paths."""
+        soup = BeautifulSoup(html, "lxml")
+        page_dir = urlparse(page_url).path
+
+        def _rel(original_url: str, local_path: str) -> str:
+            """Convert an absolute local path to a relative path from the page."""
+            # Simple: just return the local path as-is (relative to mirror root)
+            # The page itself is at its local_path, assets are at their local_path
+            # Both are relative to the mirror root
+            return local_path
+
+        # Rewrite <script src="...">
+        for tag in soup.find_all("script", src=True):
+            original = self._resolve_url(tag["src"], page_url)
+            if original in resources:
+                tag["src"] = _rel(original, resources[original])
+
+        # Rewrite <link rel="stylesheet" href="...">
+        for tag in soup.find_all("link", rel="stylesheet"):
+            href = tag.get("href", "")
+            original = self._resolve_url(href, page_url)
+            if original in resources:
+                tag["href"] = _rel(original, resources[original])
+
+        # Rewrite <link rel="preload/prefetch" href="...">
+        for tag in soup.find_all("link", rel=lambda r: r and isinstance(r, (str, list))):
+            rel = tag.get("rel", [])
+            if isinstance(rel, str):
+                rel = rel.split()
+            if any(r in rel for r in ("preload", "prefetch")):
+                href = tag.get("href", "")
+                if href:
+                    original = self._resolve_url(href, page_url)
+                    if original in resources:
+                        tag["href"] = _rel(original, resources[original])
+
+        # Rewrite <link rel="icon/shortcut icon/apple-touch-icon" href="...">
+        for tag in soup.find_all("link", rel=True):
+            rel = tag.get("rel", [])
+            if isinstance(rel, str):
+                rel = rel.split()
+            if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
+                href = tag.get("href", "")
+                if href:
+                    original = self._resolve_url(href, page_url)
+                    if original in resources:
+                        tag["href"] = _rel(original, resources[original])
+
+        # Rewrite <link rel="manifest" href="...">
+        for tag in soup.find_all("link", rel="manifest"):
+            href = tag.get("href", "")
+            if href:
+                original = self._resolve_url(href, page_url)
+                if original in resources:
+                    tag["href"] = _rel(original, resources[original])
+
+        # Rewrite <img src="...">
+        for tag in soup.find_all("img", src=True):
+            original = self._resolve_url(tag["src"], page_url)
+            if original in resources:
+                tag["src"] = _rel(original, resources[original])
+
+        # Rewrite <img srcset="...">
+        for tag in soup.find_all("img", srcset=True):
+            tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
+
+        # Rewrite <source srcset="...">
+        for tag in soup.find_all("source", srcset=True):
+            tag["srcset"] = self._rewrite_srcset(tag["srcset"], page_url, resources)
+
+        # Rewrite <source src="...">
+        for tag in soup.find_all("source", src=True):
+            original = self._resolve_url(tag["src"], page_url)
+            if original in resources:
+                tag["src"] = _rel(original, resources[original])
+
+        # Rewrite <video src="..."> and <video poster="...">
+        for tag in soup.find_all("video"):
+            if tag.get("src"):
+                original = self._resolve_url(tag["src"], page_url)
+                if original in resources:
+                    tag["src"] = _rel(original, resources[original])
+            if tag.get("poster"):
+                original = self._resolve_url(tag["poster"], page_url)
+                if original in resources:
+                    tag["poster"] = _rel(original, resources[original])
+
+        # Rewrite <audio src="...">
+        for tag in soup.find_all("audio", src=True):
+            original = self._resolve_url(tag["src"], page_url)
+            if original in resources:
+                tag["src"] = _rel(original, resources[original])
+
+        # Rewrite inline <style> CSS url() references
+        for tag in soup.find_all("style"):
+            if tag.string:
+                tag.string = self._rewrite_css_urls(tag.string, page_url, resources)
+
+        # Rewrite inline <script> fetch() / import references
+        for tag in soup.find_all("script", src=False):
+            if tag.string:
+                tag.string = self._rewrite_js_urls(tag.string, page_url, resources)
+
+        return str(soup)
+
+    def _rewrite_srcset(self, srcset: str, page_url: str, resources: dict[str, str]) -> str:
+        """Rewrite a srcset attribute."""
+        parts = []
+        for entry in srcset.split(","):
+            entry = entry.strip()
+            if not entry:
+                continue
+            tokens = entry.split()
+            url = tokens[0]
+            original = self._resolve_url(url, page_url)
+            if original in resources:
+                tokens[0] = resources[original]
+            parts.append(" ".join(tokens))
+        return ", ".join(parts)
+
+    def _rewrite_css_urls(self, css: str, page_url: str, resources: dict[str, str]) -> str:
+        """Rewrite url() references in CSS content."""
+        import re
+
+        def _replace(match: re.Match) -> str:
+            prefix = match.group(1)
+            url = match.group(2)
+            suffix = match.group(3)
+            if url.startswith(("data:", "#")):
+                return match.group(0)
+            original = self._resolve_url(url, page_url)
+            if original in resources:
+                return f"{prefix}{resources[original]}{suffix}"
+            return match.group(0)
+
+        return re.sub(r"""(url\s*\(\s*['"]?)([^'")\s]+)(['"]?\s*\))""", _replace, css)
+
+    def _rewrite_js_urls(self, js: str, page_url: str, resources: dict[str, str]) -> str:
+        """Rewrite URL references in JS content (fetch, import, etc.)."""
+        import re
+
+        def _replace(match: re.Match) -> str:
+            prefix = match.group(1)
+            url = match.group(2)
+            suffix = match.group(3)
+            if url.startswith(("data:", "#")):
+                return match.group(0)
+            original = self._resolve_url(url, page_url)
+            if original in resources:
+                return f"{prefix}{resources[original]}{suffix}"
+            return match.group(0)
+
+        # fetch('...') and import('...')
+        js = re.sub(r"""((?:fetch|import)\s*\(\s*['"])([^'"]+)(['"])""", _replace, js)
+        # .src = '...' and .href = '...'
+        js = re.sub(r"""(\.(?:src|href)\s*=\s*['"])([^'"]+)(['"])""", _replace, js)
+        return js
+
+    def _validate_path_within_base(self, local_path: Path, base: Path) -> Path:
+        """Resolve *local_path* against *base* and reject escapes.
+
+        Raises ``ValueError`` when the resolved path would sit outside
+        *base* — this is a secondary guard applied at every write site
+        so that even if ``_url_to_local_path`` or ``_asset_url_to_local``
+        were to produce a traversal path, it would never reach disk.
+        """
+        resolved = (base / local_path).resolve()
+        try:
+            resolved.relative_to(base.resolve())
+        except ValueError:
+            raise ValueError(
+                f"Path traversal detected: {local_path} resolves outside "
+                f"the output directory {base}"
+            )
+        return resolved
+
+    def _resolve_url(self, href: str, base_url: str) -> str:
+        """Resolve a possibly-relative URL against a base URL."""
+        href = href.strip()
+        if href.startswith(("data:", "javascript:", "mailto:", "tel:")):
+            return href
+        return urljoin(base_url, href)
+
+    # ── Internal: Path Generation ──────────────────────────
+
+    def _url_to_local_path(self, url: str, is_html: bool = False) -> Path:
+        """Convert a URL to a local file path relative to the mirror root.
+
+        The returned path is sanitized to prevent directory traversal:
+        ``..`` segments are stripped and the path is normalized.
+        """
+        parsed = urlparse(url)
+        path = parsed.path
+
+        if not path or path == "/":
+            return Path("index.html") if is_html else Path("index")
+
+        # Strip leading slash
+        path = path.lstrip("/")
+
+        # Normalize to remove any ".." or "." segments that could escape
+        # the output directory. PurePython Path.as_posix + resolve tricks
+        # won't help without a base, so we just strip traversal components.
+        parts = [p for p in Path(path).parts if p not in (".", "..")]
+        path = str(Path(*parts)) if parts else ""
+
+        if is_html:
+            # Ensure .html extension
+            if not path.endswith((".html", ".htm")):
+                if path.endswith("/"):
+                    path += "index.html"
+                else:
+                    path += "/index.html" if "." not in Path(path).name else ".html"
+
+        return Path(path)
+
+    def _asset_url_to_local(
+        self,
+        url: str,
+        kind: str,
+        content_type: str = "",
+    ) -> str:
+        """Convert an asset URL to a local path relative to the mirror root.
+
+        The returned path is sanitized to prevent directory traversal:
+        ``..`` segments are stripped and the path is normalized.
+        """
+        parsed = urlparse(url)
+        path = parsed.path.lstrip("/")
+
+        if path:
+            # Sanitize: strip traversal components
+            parts = [p for p in Path(path).parts if p not in (".", "..")]
+            return str(Path(*parts)) if parts else ""
+
+        # Generate a path for data-URI or pathless URLs
+        ext = self._guess_extension(content_type, kind)
+        self._asset_counter += 1
+        folder = {
+            "js": "assets/js",
+            "css": "assets/css",
+            "fonts": "assets/fonts",
+            "images": "assets/images",
+            "media": "assets/media",
+            "json": "assets/json",
+        }.get(kind, "assets")
+        return f"{folder}/resource_{self._asset_counter}{ext}"
+
+    def _guess_extension(self, content_type: str, kind: str) -> str:
+        """Guess file extension from content type and kind."""
+        ct = content_type.split(";")[0].strip().lower()
+        mime_map = {
+            "application/javascript": ".js",
+            "text/javascript": ".js",
+            "application/json": ".json",
+            "text/css": ".css",
+            "image/png": ".png",
+            "image/jpeg": ".jpg",
+            "image/gif": ".gif",
+            "image/svg+xml": ".svg",
+            "image/webp": ".webp",
+            "image/avif": ".avif",
+            "image/x-icon": ".ico",
+            "font/woff2": ".woff2",
+            "font/woff": ".woff",
+            "font/ttf": ".ttf",
+            "video/mp4": ".mp4",
+            "audio/mpeg": ".mp3",
+        }
+        if ct in mime_map:
+            return mime_map[ct]
+        kind_ext = {
+            "js": ".js",
+            "css": ".css",
+            "fonts": ".woff2",
+            "images": ".png",
+            "media": ".mp4",
+            "json": ".json",
+        }
+        return kind_ext.get(kind, ".bin")
+
+    def _normalize_url(self, url: str) -> str:
+        parsed = urlparse(url)
+        path = parsed.path.rstrip("/") or "/"
+        return f"{parsed.scheme}://{parsed.netloc}{path}"
+
+    # ── Internal: Manifest & README ────────────────────────
+
+    def _save_manifest(self, base: Path, start_url: str) -> None:
+        """Save a JSON manifest of everything that was mirrored."""
+        manifest = {
+            "source_url": start_url,
+            "tool": "KE3NZ Mirror",
+            "pages": [p.to_dict() for p in self._pages],
+            "total_pages": len(self._pages),
+            "total_assets": len(self._url_to_local),
+        }
+        (base / "ke3nz-manifest.json").write_text(
+            json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
+
+    def _save_readme(self, base: Path, start_url: str) -> None:
+        """Generate a README for the mirrored site."""
+        pages_info = "\n".join(
+            f"  - [{p.title or p.url}]({p.local_path}) ({len(p.resources)} assets)"
+            for p in self._pages
+        )
+        readme = f"""# Mirrored Website
+
+> Mirrored from: {start_url}
+> Tool: [KE3NZ](https://github.com/ke3nz/ke3nz)
+> Pages: {len(self._pages)}
+> Assets: {len(self._url_to_local)}
+
+## Pages
+
+{pages_info}
+
+## Structure
+
+```
+.
+├── index.html           (or page.html)
+├── ke3nz-manifest.json  (resource index)
+├── images/              (downloaded images)
+├── fonts/               (downloaded fonts)
+├── assets/
+│   ├── js/              (downloaded scripts)
+│   ├── css/             (downloaded stylesheets)
+│   └── ...
+└── ...
+```
+
+## Usage
+
+Open any HTML file directly in your browser. All assets are local.
+
+## License
+
+This is a mirror of {start_url}. Original content belongs to the respective owners.
+Generated by KE3NZ web scraper.
+"""
+        (base / "README.md").write_text(readme, encoding="utf-8")

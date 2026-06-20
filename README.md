@@ -1,0 +1,214 @@
+# KE3NZ - Open Source Web Scraper
+
+> **Mirror any website** — crawl every page, download every asset, rewrite every URL, save as a self-contained folder.
+
+KE3NZ is a full-stack web scraper. The `mirror` command clones an entire website locally: HTML pages, scripts, CSS, images, fonts, source maps, configs, and more. Everything gets rewritten to local paths so the folder works offline, ready to share or open-source.
+
+## Install
+
+```bash
+cd KE3NZ
+pip install -e .
+```
+
+## Quick Start
+
+```bash
+# Mirror an entire website to a local folder
+ke3nz mirror https://example.com --save ./my-site
+
+# Mirror with deeper crawl
+ke3nz mirror https://example.com --save ./site --depth 5 -v
+
+# Just scrape resources from a single page
+ke3nz resources https://example.com --save ./output --deep
+```
+
+## Commands
+
+| Command | Description |
+|---------|-------------|
+| `mirror` | **Mirror an entire website** — crawl, download, rewrite, save as folder |
+| `resources` | Scrape ALL resources from a single page (JS, CSS, fonts, etc.) |
+| `scrape` | Basic page scrape with CSS selector support |
+| `links` | Extract all links from a page |
+| `images` | Extract all images from a page |
+| `text` | Extract text content |
+| `meta` | Extract metadata (title, OG tags, etc.) |
+| `crawl` | Recursively crawl and list all pages |
+
+## The `mirror` Command
+
+This is the main feature. It:
+
+1. **Crawls** every page on the site (configurable depth)
+2. **Downloads** every resource: JS, CSS, images, fonts, videos, audio, configs, source maps
+3. **Rewrites** all URLs in HTML/CSS/JS to point to local files
+4. **Saves** everything in a clean folder structure
+5. **Generates** a README and manifest for the mirrored site
+
+```bash
+# Basic mirror
+ke3nz mirror https://mysite.com --save ./cloned
+
+# Deep mirror (follow more links)
+ke3nz mirror https://mysite.com --save ./cloned --depth 5
+
+# Verbose output to see progress
+ke3nz mirror https://mysite.com --save ./cloned -v
+
+# Fast mirror with high concurrency
+ke3nz mirror https://mysite.com --save ./cloned -c 20
+
+# Mirror with proxy
+ke3nz mirror https://mysite.com --save ./cloned --proxy http://127.0.0.1:8080
+```
+
+### Output Structure
+
+```
+cloned/
+  index.html              # Main page (URLs rewritten to local)
+  about/
+    index.html            # Subpages
+  blog/
+    post-1.html
+    post-2.html
+  images/
+    logo.png
+    banner.jpg
+  assets/
+    js/
+      app.js
+      vendor.js
+    css/
+      main.css
+      theme.css
+    fonts/
+      inter.woff2
+  ke3nz-manifest.json     # Resource index
+  README.md               # Auto-generated docs
+```
+
+### What Gets Downloaded
+
+| Type | Source |
+|------|--------|
+| **HTML pages** | `<a>` links crawled recursively |
+| **Scripts** | `<script src="...">` + inline `<script>` |
+| **Stylesheets** | `<link rel="stylesheet">` + inline `<style>` |
+| **Images** | `<img>`, `srcset`, `<picture>`, og:image |
+| **Fonts** | Preloaded fonts, `@font-face` |
+| **Videos** | `<video src>`, `<source>` |
+| **Audio** | `<audio src>` |
+| **Configs** | Manifests, JSON-LD |
+| **JSON** | Linked `.json` files |
+| **Favicons** | Icons, apple-touch-icon |
+| **Source Maps** | sourceMappingURL references |
+
+## The `resources` Command
+
+Scrape all resources from a single page:
+
+```bash
+# Download all resources
+ke3nz resources https://example.com --save ./output
+
+# Deep scan: follow JS/CSS references
+ke3nz resources https://example.com --save ./output --deep
+
+# Just collect URLs, don't download content
+ke3nz resources https://example.com -o urls.json --no-content
+```
+
+## Python API
+
+```python
+from ke3nz import Scraper, Mirror
+
+# Mirror a site
+async with Mirror(max_depth=3) as m:
+    await m.mirror("https://example.com", "./output")
+
+# Scrape all resources from one page
+async with Scraper() as s:
+    data = await s.scrape_all_resources(
+        "https://example.com",
+        download_content=True,
+        follow_deep=True,
+    )
+    s.save_resources(data, "./output")
+```
+
+## CLI Reference
+
+```
+ke3nz <command> [options] <url>
+
+Commands:
+  mirror      Mirror an entire website to a local folder
+  resources   Scrape ALL resources from a single page
+  scrape      Scrape a page (basic info)
+  links       Extract all links
+  images      Extract all images
+  text        Extract text content
+  meta        Extract page metadata
+  crawl       Crawl a website and list pages
+
+Mirror Options:
+  --save, -s        Output directory (required for mirror)
+  --depth, -d       Max crawl depth (default: 3)
+  --cross-domain    Allow crawling other domains
+
+Resource Options:
+  --save, -s        Save downloaded files to directory
+  --deep            Deep scan: follow JS/CSS references
+  --no-content      Don't download file contents
+  --save-content    Include raw content in JSON output
+
+Shared Options:
+  --delay           Delay between requests (default: 0.3s)
+  --concurrency, -c Max concurrent requests (default: 10)
+  --proxy           HTTP proxy URL
+  --no-robots       Ignore robots.txt
+  --user-agent      Custom user agent
+  --timeout         Request timeout (default: 30s)
+  --verbose, -v     Verbose output
+  --output, -o      Output file path
+  --format, -f      Output format: json, csv, md, text
+```
+
+## Project Structure
+
+```
+KE3NZ/
+  ke3nz/
+    __init__.py
+    cli.py               # CLI with 8 commands
+    core/
+      models.py           # Resource + ScrapeResult dataclasses
+      parser.py           # HTML parsing + full resource extraction
+      scraper.py          # Async fetch engine + deep scanning
+      mirror.py           # Full website mirroring (THE MAIN FEATURE)
+      crawler.py          # Recursive page crawler
+      exporter.py         # JSON/CSV/MD/text export
+    utils/
+      headers.py          # User-agent rotation
+      robots.py           # robots.txt parser
+      rate_limiter.py     # Async rate limiter
+  tests/
+    test_scraper.py       # 31 tests
+  examples/
+    basic_scrape.py
+    crawl_site.py
+  pyproject.toml
+  LICENSE                  # MIT
+```
+
+## License
+
+MIT License
+
+---
+
+Built by KE3NZ

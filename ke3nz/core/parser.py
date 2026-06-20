@@ -1,0 +1,563 @@
+"""HTML parsing and resource extraction."""
+
+from __future__ import annotations
+
+import re
+from urllib.parse import urljoin, urlparse
+
+from bs4 import BeautifulSoup, Tag
+
+from ke3nz.core.models import Resource, ScrapeResult
+
+# URL patterns found inside JS/CSS for deep extraction
+_URL_PATTERNS: list[tuple[str, str]] = [
+    # import/export paths (bare specifiers are skipped by regex)
+    (r"""(?:import|from|require)\s*\(\s*['"](https?://[^'"]+)['"]""", "import"),
+    (r"""(?:import|from|require)\s*\(\s*['"](\./[^'"]+|\.\./[^'"]+)['"]""", "relative-import"),
+    # fetch / XMLHttpRequest
+    (r"""fetch\s*\(\s*['"](https?://[^'"]+)['"]""", "fetch"),
+    (r"""\.open\s*\(\s*['"]\w+['"]\s*,\s*['"](https?://[^'"]+)['"]""", "xhr"),
+    # Dynamic script / link injection
+    (r"""createElement\s*\(\s*['"]script['"]\s*\).*?src\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-script"),
+    (r"""createElement\s*\(\s*['"]link['"]\s*\).*?href\s*=\s*['"](https?://[^'"]+)['"]""", "dynamic-link"),
+    # src/href assignments
+    (r"""\.src\s*=\s*['"](https?://[^'"]+)['"]""", "src-assign"),
+    (r"""\.href\s*=\s*['"](https?://[^'"]+)['"]""", "href-assign"),
+    # Source maps
+    (r"""sourceMappingURL\s*=\s*(https?://[^\s'"]+)""", "sourcemap"),
+    (r"""//#\s*sourceMappingURL\s*=\s*([^\s'"]+)""", "sourcemap"),
+    # Webpack / Vite chunk imports
+    (r"""['"](https?://[^'"]+\.(?:js|mjs|ts|tsx|jsx))['"]""", "chunk"),
+    # JSON imports
+    (r"""fetch\s*\(\s*['"](https?://[^'"]+\.json)['"]""", "json-fetch"),
+]
+
+# CSS url() and @import patterns
+_CSS_URL_PATTERNS: list[tuple[str, str]] = [
+    (r"""url\s*\(\s*['"]?(https?://[^'")\s]+)['"]?\s*\)""", "css-url"),
+    (r"""@import\s+['"]?(https?://[^'")\s]+)['"]?""", "css-import"),
+    (r"""@import\s+['"]?([^'")\s]+\.css)['"]?""", "css-import-relative"),
+]
+
+# Inline resource type detection
+_INLINE_SCRIPT_RE = re.compile(r"<script[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
+_INLINE_STYLE_RE = re.compile(r"<style[^>]*>(.*?)</style>", re.DOTALL | re.IGNORECASE)
+
+
+class Parser:
+    """Parse HTML and extract all resources, scripts, styles, and linked assets."""
+
+    def parse(
+        self,
+        url: str,
+        status: int,
+        html: str,
+        headers: dict[str, str],
+    ) -> ScrapeResult:
+        """Parse HTML into a ScrapeResult with full resource extraction."""
+        soup = BeautifulSoup(html, "lxml")
+
+        title = soup.title.string.strip() if soup.title and soup.title.string else ""
+        text = soup.get_text(separator="\n", strip=True)
+        links = self._extract_links(soup, url)
+        images = self._extract_images(soup, url)
+        meta = self._extract_meta(soup)
+
+        # Extract all resource types
+        scripts = self._extract_external_scripts(soup, url)
+        inline_scripts = self._extract_inline_scripts(soup, url)
+        stylesheets = self._extract_external_stylesheets(soup, url)
+        inline_styles = self._extract_inline_styles(soup, url)
+        fonts = self._extract_fonts(soup, url)
+        sourcemaps = self._extract_sourcemaps(soup, url)
+        preloads = self._extract_preloads(soup, url)
+        prefetches = self._extract_prefetches(soup, url)
+        favicons = self._extract_favicons(soup, url)
+        videos = self._extract_videos(soup, url)
+        audios = self._extract_audios(soup, url)
+        workers = self._extract_workers(soup, url)
+        iframes = self._extract_iframes(soup, url)
+        configs = self._extract_configs(soup, url)
+        json_data = self._extract_json_links(soup, url)
+
+        # Collect all discovered resource URLs
+        all_urls = self._collect_all_urls(
+            links=links,
+            images=images,
+            scripts=scripts,
+            stylesheets=stylesheets,
+            fonts=fonts,
+            preloads=preloads,
+            favicons=favicons,
+            videos=videos,
+            audios=audios,
+            workers=workers,
+            iframes=iframes,
+        )
+
+        return ScrapeResult(
+            url=url,
+            status=status,
+            html=html,
+            title=title,
+            text=text,
+            links=links,
+            images=images,
+            meta=meta,
+            headers=headers,
+            scripts=scripts,
+            inline_scripts=inline_scripts,
+            stylesheets=stylesheets,
+            inline_styles=inline_styles,
+            fonts=fonts,
+            sourcemaps=sourcemaps,
+            preloads=preloads,
+            prefetches=prefetches,
+            favicons=favicons,
+            videos=videos,
+            audios=audios,
+            workers=workers,
+            iframes=iframes,
+            configs=configs,
+            json_data=json_data,
+            all_resource_urls=all_urls,
+        )
+
+    # ── Links ──────────────────────────────────────────────
+
+    def _extract_links(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+        links = []
+        for tag in soup.find_all("a", href=True):
+            href = tag["href"].strip()
+            if href.startswith(("javascript:", "mailto:", "tel:", "#", "data:")):
+                continue
+            full_url = urljoin(base_url, href)
+            if full_url not in links:
+                links.append(full_url)
+        return links
+
+    # ── Images ─────────────────────────────────────────────
+
+    def _extract_images(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+        images = []
+        for tag in soup.find_all("img", src=True):
+            src = tag["src"].strip()
+            full_url = urljoin(base_url, src)
+            if full_url not in images:
+                images.append(full_url)
+        # srcset
+        for tag in soup.find_all("img", srcset=True):
+            for entry in tag["srcset"].split(","):
+                parts = entry.strip().split()
+                if parts:
+                    full_url = urljoin(base_url, parts[0])
+                    if full_url not in images:
+                        images.append(full_url)
+        # <picture> <source>
+        for tag in soup.find_all("source", srcset=True):
+            for entry in tag["srcset"].split(","):
+                parts = entry.strip().split()
+                if parts:
+                    full_url = urljoin(base_url, parts[0])
+                    if full_url not in images:
+                        images.append(full_url)
+        # <picture> <source> with type="image/..."
+        for tag in soup.find_all("source", src=True):
+            full_url = urljoin(base_url, tag["src"].strip())
+            if full_url not in images:
+                images.append(full_url)
+        # <meta property="og:image">
+        for tag in soup.find_all("meta", attrs={"property": "og:image"}):
+            content = tag.get("content", "").strip()
+            if content:
+                full_url = urljoin(base_url, content)
+                if full_url not in images:
+                    images.append(full_url)
+        return images
+
+    # ── Meta tags ──────────────────────────────────────────
+
+    def _extract_meta(self, soup: BeautifulSoup) -> dict[str, str]:
+        meta = {}
+        for tag in soup.find_all("meta"):
+            name = tag.get("name") or tag.get("property", "")
+            content = tag.get("content", "")
+            if name and content:
+                meta[name] = content
+        return meta
+
+    # ── External Scripts ───────────────────────────────────
+
+    def _extract_external_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+        scripts = []
+        for tag in soup.find_all("script", src=True):
+            src = tag["src"].strip()
+            full_url = urljoin(base_url, src)
+            if not any(r.url == full_url for r in scripts):
+                scripts.append(Resource(
+                    url=full_url,
+                    kind="script",
+                    integrity=tag.get("integrity", ""),
+                ))
+        return scripts
+
+    # ── Inline Scripts ─────────────────────────────────────
+
+    def _extract_inline_scripts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+        scripts = []
+        for tag in soup.find_all("script", src=False):
+            if not tag.string:
+                continue
+            content = tag.string.strip()
+            if not content:
+                continue
+            # Generate a pseudo-URL for identification
+            scripts.append(Resource(
+                url=f"{base_url}#inline-script-{len(scripts)}",
+                kind="inline-script",
+                content=content,
+                size=len(content.encode("utf-8")),
+            ))
+        return scripts
+
+    # ── External Stylesheets ───────────────────────────────
+
+    def _extract_external_stylesheets(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+        sheets = []
+        for tag in soup.find_all("link", rel="stylesheet"):
+            href = tag.get("href", "").strip()
+            if not href:
+                continue
+            full_url = urljoin(base_url, href)
+            if not any(r.url == full_url for r in sheets):
+                sheets.append(Resource(
+                    url=full_url,
+                    kind="stylesheet",
+                    integrity=tag.get("integrity", ""),
+                ))
+        return sheets
+
+    # ── Inline Styles ──────────────────────────────────────
+
+    def _extract_inline_styles(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+        styles = []
+        for tag in soup.find_all("style"):
+            if not tag.string:
+                continue
+            content = tag.string.strip()
+            if not content:
+                continue
+            styles.append(Resource(
+                url=f"{base_url}#inline-style-{len(styles)}",
+                kind="inline-style",
+                content=content,
+                size=len(content.encode("utf-8")),
+            ))
+        return styles
+
+    # ── Fonts ──────────────────────────────────────────────
+
+    def _extract_fonts(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+        fonts = []
+        # <link rel="preload" as="font">
+        for tag in soup.find_all("link", rel="preload"):
+            if tag.get("as") == "font":
+                href = tag.get("href", "").strip()
+                if href:
+                    full_url = urljoin(base_url, href)
+                    if not any(r.url == full_url for r in fonts):
+                        fonts.append(Resource(
+                            url=full_url,
+                            kind="font",
+                            content_type=tag.get("type", ""),
+                        ))
+        # <link rel="preload" as="font" crossorigin>
+        for tag in soup.find_all("link", rel="preload"):
+            if tag.get("as") == "font":
+                href = tag.get("href", "").strip()
+                if href:
+                    full_url = urljoin(base_url, href)
+                    if not any(r.url == full_url for r in fonts):
+                        fonts.append(Resource(url=full_url, kind="font"))
+        # @font-face in inline styles
+        for tag in soup.find_all("style"):
+            if tag.string:
+                for match in re.finditer(r"""url\s*\(\s*['"]?([^'")\s]+\.(?:woff2?|ttf|otf|eot))['"]?\s*\)""", tag.string, re.IGNORECASE):
+                    font_url = urljoin(base_url, match.group(1))
+                    if not any(r.url == font_url for r in fonts):
+                        fonts.append(Resource(url=font_url, kind="font"))
+        return fonts
+
+    # ── Source Maps ────────────────────────────────────────
+
+    def _extract_sourcemaps(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+        maps = []
+        # sourceMappingURL in <script> tags
+        for tag in soup.find_all("script"):
+            if tag.string:
+                for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
+                    map_url = urljoin(base_url, match.group(1))
+                    if not any(r.url == map_url for r in maps):
+                        maps.append(Resource(url=map_url, kind="sourcemap"))
+        # sourceMappingURL in <style> tags
+        for tag in soup.find_all("style"):
+            if tag.string:
+                for match in re.finditer(r"""sourceMappingURL\s*=\s*([^\s'"]+)""", tag.string):
+                    map_url = urljoin(base_url, match.group(1))
+                    if not any(r.url == map_url for r in maps):
+                        maps.append(Resource(url=map_url, kind="sourcemap"))
+        return maps
+
+    # ── Preloads / Prefetches ──────────────────────────────
+
+    def _extract_preloads(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+        preloads = []
+        for tag in soup.find_all("link", rel="preload"):
+            href = tag.get("href", "").strip()
+            if not href:
+                continue
+            full_url = urljoin(base_url, href)
+            if not any(r.url == full_url for r in preloads):
+                preloads.append(Resource(
+                    url=full_url,
+                    kind="preload",
+                    content_type=tag.get("type", ""),
+                ))
+        return preloads
+
+    def _extract_prefetches(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+        prefetches = []
+        for tag in soup.find_all("link", rel="prefetch"):
+            href = tag.get("href", "").strip()
+            if href:
+                full_url = urljoin(base_url, href)
+                if full_url not in prefetches:
+                    prefetches.append(full_url)
+        return prefetches
+
+    # ── Favicons ───────────────────────────────────────────
+
+    def _extract_favicons(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+        favicons = []
+        for tag in soup.find_all("link", rel=True):
+            rel = tag.get("rel", [])
+            if isinstance(rel, str):
+                rel = rel.split()
+            if any(r in rel for r in ("icon", "shortcut icon", "apple-touch-icon")):
+                href = tag.get("href", "").strip()
+                if href:
+                    full_url = urljoin(base_url, href)
+                    if full_url not in favicons:
+                        favicons.append(full_url)
+        # Default favicon
+        default = urljoin(base_url, "/favicon.ico")
+        if default not in favicons:
+            favicons.append(default)
+        return favicons
+
+    # ── Videos ─────────────────────────────────────────────
+
+    def _extract_videos(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+        videos = []
+        for tag in soup.find_all("video", src=True):
+            full_url = urljoin(base_url, tag["src"].strip())
+            if full_url not in videos:
+                videos.append(full_url)
+        for tag in soup.find_all("source", src=True):
+            parent = tag.parent
+            if parent and parent.name == "video":
+                full_url = urljoin(base_url, tag["src"].strip())
+                if full_url not in videos:
+                    videos.append(full_url)
+        for tag in soup.find_all("video", poster=True):
+            full_url = urljoin(base_url, tag["poster"].strip())
+            if full_url not in videos:
+                videos.append(full_url)
+        return videos
+
+    # ── Audio ──────────────────────────────────────────────
+
+    def _extract_audios(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+        audios = []
+        for tag in soup.find_all("audio", src=True):
+            full_url = urljoin(base_url, tag["src"].strip())
+            if full_url not in audios:
+                audios.append(full_url)
+        for tag in soup.find_all("source", src=True):
+            parent = tag.parent
+            if parent and parent.name == "audio":
+                full_url = urljoin(base_url, tag["src"].strip())
+                if full_url not in audios:
+                    audios.append(full_url)
+        return audios
+
+    # ── Workers ────────────────────────────────────────────
+
+    def _extract_workers(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+        workers = []
+        for tag in soup.find_all("script", type="module"):
+            # Module workers registered via registration API — not directly in HTML
+            pass
+        # navigator.serviceWorker.register('/sw.js') patterns in inline scripts
+        for tag in soup.find_all("script"):
+            if tag.string:
+                for match in re.finditer(r"""register\s*\(\s*['"]([^'"]+)['"]""", tag.string):
+                    worker_url = urljoin(base_url, match.group(1))
+                    if worker_url not in workers:
+                        workers.append(worker_url)
+        # <link rel="serviceworker">
+        for tag in soup.find_all("link", rel=lambda v: v and "serviceworker" in v):
+            href = tag.get("href", "").strip()
+            if href:
+                full_url = urljoin(base_url, href)
+                if full_url not in workers:
+                    workers.append(full_url)
+        return workers
+
+    # ── Iframes ────────────────────────────────────────────
+
+    def _extract_iframes(self, soup: BeautifulSoup, base_url: str) -> list[str]:
+        iframes = []
+        for tag in soup.find_all("iframe", src=True):
+            src = tag["src"].strip()
+            if src and not src.startswith(("about:", "javascript:", "data:")):
+                full_url = urljoin(base_url, src)
+                if full_url not in iframes:
+                    iframes.append(full_url)
+        return iframes
+
+    # ── Config / Manifest / JSON-LD ────────────────────────
+
+    def _extract_configs(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+        configs = []
+        # <link rel="manifest">
+        for tag in soup.find_all("link", rel="manifest"):
+            href = tag.get("href", "").strip()
+            if href:
+                full_url = urljoin(base_url, href)
+                if not any(r.url == full_url for r in configs):
+                    configs.append(Resource(url=full_url, kind="manifest"))
+        # JSON-LD structured data
+        for tag in soup.find_all("script", type="application/ld+json"):
+            if tag.string:
+                content = tag.string.strip()
+                configs.append(Resource(
+                    url=f"{base_url}#jsonld-{len(configs)}",
+                    kind="json-ld",
+                    content=content,
+                    size=len(content.encode("utf-8")),
+                ))
+        return configs
+
+    def _extract_json_links(self, soup: BeautifulSoup, base_url: str) -> list[Resource]:
+        """Extract linked .json files from script/link tags."""
+        json_links = []
+        for tag in soup.find_all("link", href=True):
+            href = tag["href"].strip()
+            if href.endswith(".json"):
+                full_url = urljoin(base_url, href)
+                if not any(r.url == full_url for r in json_links):
+                    json_links.append(Resource(url=full_url, kind="json"))
+        for tag in soup.find_all("script", src=True):
+            src = tag["src"].strip()
+            if src.endswith(".json"):
+                full_url = urljoin(base_url, src)
+                if not any(r.url == full_url for r in json_links):
+                    json_links.append(Resource(url=full_url, kind="json"))
+        return json_links
+
+    # ── URL Collection ─────────────────────────────────────
+
+    def _collect_all_urls(
+        self,
+        links: list[str],
+        images: list[str],
+        scripts: list[Resource],
+        stylesheets: list[Resource],
+        fonts: list[Resource],
+        preloads: list[Resource],
+        favicons: list[str],
+        videos: list[str],
+        audios: list[str],
+        workers: list[str],
+        iframes: list[str],
+    ) -> list[str]:
+        """Collect all discovered resource URLs into a deduplicated flat list."""
+        seen = set()
+        urls = []
+        for url in (
+            *links,
+            *images,
+            *(r.url for r in scripts),
+            *(r.url for r in stylesheets),
+            *(r.url for r in fonts),
+            *(r.url for r in preloads),
+            *favicons,
+            *videos,
+            *audios,
+            *workers,
+            *iframes,
+        ):
+            if url not in seen:
+                seen.add(url)
+                urls.append(url)
+        return urls
+
+    # ── Deep extraction from JS/CSS content ────────────────
+
+    @staticmethod
+    def extract_urls_from_content(content: str, base_url: str) -> list[tuple[str, str]]:
+        """Extract URLs from raw JS or CSS content.
+
+        Returns list of (url, kind) tuples.
+        """
+        found = []
+        seen = set()
+
+        # JS patterns
+        for pattern, kind in _URL_PATTERNS:
+            for match in re.finditer(pattern, content):
+                url = match.group(1)
+                if url.startswith(("data:", "#")):
+                    continue
+                full_url = urljoin(base_url, url) if not url.startswith("http") else url
+                if full_url not in seen:
+                    seen.add(full_url)
+                    found.append((full_url, kind))
+
+        # CSS patterns
+        for pattern, kind in _CSS_URL_PATTERNS:
+            for match in re.finditer(pattern, content):
+                url = match.group(1)
+                if url.startswith(("data:", "#")):
+                    continue
+                full_url = urljoin(base_url, url) if not url.startswith("http") else url
+                if full_url not in seen:
+                    seen.add(full_url)
+                    found.append((full_url, kind))
+
+        return found
+
+    # ── CSS Selectors ──────────────────────────────────────
+
+    def extract_by_selectors(
+        self, html: str, selectors: dict[str, str]
+    ) -> dict[str, list[str]]:
+        """Extract data using named CSS selectors.
+
+        Supports pseudo-attributes via `::attr(name)` suffix.
+        """
+        soup = BeautifulSoup(html, "lxml")
+        results: dict[str, list[str]] = {}
+
+        for name, selector in selectors.items():
+            attr_match = re.match(r"(.+?)::attr\((\w+)\)$", selector)
+            if attr_match:
+                css_selector, attr_name = attr_match.groups()
+                elements = soup.select(css_selector.strip())
+                results[name] = [el.get(attr_name, "") for el in elements if el.get(attr_name)]
+            else:
+                elements = soup.select(selector)
+                results[name] = [el.get_text(strip=True) for el in elements]
+
+        return results

@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ke3nz"
+version = "0.1.0"
+description = "Fast async web scraping tool — extract data from any website"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "KE3NZ"},
+]
+keywords = ["scraper", "web-scraping", "crawler", "async", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "aiohttp>=3.9.0",
+    "beautifulsoup4>=4.12.0",
+    "lxml>=5.0.0",
+    "aiolimiter>=1.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.23.0",
+    "aioresponses>=0.7.0",
+]
+
+[project.scripts]
+ke3nz = "ke3nz.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ke3nz/ke3nz"
+Repository = "https://github.com/ke3nz/ke3nz"
+Issues = "https://github.com/ke3nz/ke3nz/issues"
+
+[tool.setuptools.packages.find]
+include = ["ke3nz*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
